@@ -1,2 +1,3 @@
 production:
   app_host: http://sim.demo.llp.pl
+  honeybadger_env: demo

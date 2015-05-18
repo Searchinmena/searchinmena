@@ -2,7 +2,9 @@ defaults: &defaults
   app_host: http://localhost:3000
 
 development:
+  honeybadger_env: development
   <<: *defaults
 
 test:
+  honeybadger_env: test
   <<: *defaults

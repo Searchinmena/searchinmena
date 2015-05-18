@@ -1,0 +1,3 @@
+---
+api_key: '7954f83f'
+env: '<%= A9n.honeybadger_env %>'
