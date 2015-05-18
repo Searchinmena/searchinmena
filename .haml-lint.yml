@@ -1,0 +1,3 @@
+linters:
+  UnnecessaryStringOutput:
+    enabled: false

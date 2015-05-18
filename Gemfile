@@ -27,6 +27,7 @@ end
 
 group :development do
   gem 'rubocop'
+  gem 'haml-lint', require: false
 end
 
 group :production do
