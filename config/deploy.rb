@@ -1,6 +1,6 @@
 set :application, 'sim'
-server "sim.demo.llp.pl", user: "lunar", roles: %w{web app db}, port: 20022
-set :port, 20022
+server "sim.demo.llp.pl", user: "lunar", roles: %w{web app db}, port: 20_022
+set :port, 20_022
 set :branch, "master"
 
 set :repo_url, "git@github.com:LunarLogic/sim.git"
@@ -17,11 +17,16 @@ set :unicorn_pid, -> { File.join(current_path, "pids/unicorn.pid") }
 set :rails_env, "production"
 set :deploy_env, -> { fetch(:rails_env) }
 fetch(:default_env).merge!(rails_env: "production", rack_env: "production")
-set :ssh_options, { forward_agent: true }
+set :ssh_options, forward_agent: true
 
 set :rvm_type, :system
 set :rvm_ruby_version, -> { "2.2.2@#{fetch(:application)}" }
-set :bundle_path, -> { File.join(fetch(:rvm_path), "gems/ruby-#{fetch(:rvm_ruby_version)}") }
+set :bundle_path, lambda {
+  File.join(
+    fetch(:rvm_path),
+    "gems/ruby-#{fetch(:rvm_ruby_version)}"
+  )
+}
 set :bundle_cmd, -> { File.join(fetch(:bundle_path), "bin/bundle") }
 
 set :bundle_binstubs, -> { File.join(fetch(:bundle_path), "bin") }
@@ -36,7 +41,8 @@ namespace :deploy do
   task :copy_configuration do
     on roles(:app) do
       within fetch(:release_path) do
-        execute :cp, "config/configuration.yml.#{fetch(:stage)}", "config/configuration.yml"
+        execute :cp, "config/configuration.yml.#{fetch(:stage)}",
+                     "config/configuration.yml"
       end
     end
   end

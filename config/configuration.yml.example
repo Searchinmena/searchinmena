@@ -1,2 +1,8 @@
-development:
+defaults: &defaults
   app_host: http://localhost:3000
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
