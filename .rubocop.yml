@@ -114,7 +114,7 @@ Style/BarePercentLiterals:
     - bare_percent
 
 Style/BracesAroundHashParameters:
-  EnforcedStyle: no_braces
+  EnforcedStyle: context_dependent
   SupportedStyles:
     # The `braces` style enforces braces around all method parameters that are
     # hashes.
