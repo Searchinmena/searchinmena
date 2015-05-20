@@ -1,0 +1,11 @@
+$base-font: "Roboto", Helvetica, sans-serif;
+$bold-font: "Roboto", Helvetica, sans-serif;
+$base-arabic-font: "NotoNaskhArabic-Regular", Helvetica, serif;
+$bold-arabic-font: "NotoNaskhArabic-Bold", Helvetica, serif;
+
+body {
+  font-family: $base-font;
+  color: $basic-font;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+}

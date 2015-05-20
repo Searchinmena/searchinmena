@@ -1,0 +1,32 @@
+header {
+  @extend %clearfix;
+  background-color: white;
+  margin: 0 0 $bs2 0;
+}
+
+.logo {
+  float: left;
+  padding: $bs1 0 $bs0;
+}
+
+nav {
+  float: right;
+
+  li {
+    display: inline-block;
+    float: left;
+  }
+
+  a {
+    @include transition(all, .1s, ease-in);
+    display: block;
+    padding: $bs3 $bs1 $bs2;
+    color: $nav-link;
+    text-decoration: none;
+    &:hover {
+      background-color: $nav-link;
+      color: white;
+    }
+  }
+}
+

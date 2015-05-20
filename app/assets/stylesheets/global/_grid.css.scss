@@ -1,0 +1,17 @@
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%max-width-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $bs2;
+}
+
+.basic-container {
+  @extend %max-width-container;
+}
