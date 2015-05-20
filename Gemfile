@@ -13,10 +13,14 @@ gem 'devise'
 gem 'a9n'
 gem 'honeybadger', '~> 2.0'
 
+gem 'dependor'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'bogus'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
 end
