@@ -1,10 +1,15 @@
 %header
   .basic-container
-    %a.logo
+    .language-selection
+      .language-choice
+        english
+      .language-choice{ lang: "ar" }
+        العربية
+    = link_to(root_path, class: "logo") do
       = image_tag("logo.png")
     %nav{ role: "navigation" }
       %ul
         %li
-          = link_to "Sign up"
+          = link_to "Sign up", root_path, class: "nav-link"
         %li
-          = link_to "Log in"
+          = link_to "Log in", root_path, class: "nav-link"

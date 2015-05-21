@@ -1,0 +1,68 @@
+.form-wrapper {
+  @extend %clearfix;
+  background-color: white;
+  border-radius: $bs-3;
+  border: 1px solid #ddd;
+  padding: 0 0 0 $bs2;
+
+  h1, h3 {
+    display: inline-block;
+    font-weight: 100;
+  }
+
+  h1 {
+    color: $purple-basic;
+    margin-right: $bs3;
+  }
+
+  h3 {
+    color: #777;
+    font-size: $bs0;
+    vertical-align: middle;
+  }
+
+  a {
+    color: $blue-basic;
+    text-decoration: none;
+    border-bottom: 1px solid $blue-basic;
+  }
+}
+
+.registration-benefits {
+  background-color: $blue-basic;
+  float: right;
+  width: 3 * $bs9;
+  height: 40em;
+  border-radius: 0 $bs-3 $bs-3 0;
+  padding: 0 $bs2 0 $bs3;
+  font-weight: 100;
+
+  [dir="rtl"] & {
+    float: left;
+  }
+
+  h1, h2 {
+    display: block;
+    font-weight: 100;
+    color: $blue-light;
+
+    span {
+      font-weight: 400;
+      color: white;
+    }
+  }
+
+  h2 {
+    margin: $bs5 0 $bs-1;
+  }
+
+   p, li {
+    line-height: 1.6;
+    color: $blue-light;
+    font-size: 14px;
+  }
+
+  li {
+    list-style: none;
+  }
+}
