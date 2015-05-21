@@ -10,4 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require sim
+//= require router
+//= require_tree ./services
 //= require_tree .
