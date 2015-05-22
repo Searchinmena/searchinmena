@@ -1,69 +1,57 @@
-.form-wrapper {
-  @extend %clearfix;
-  background-color: white;
-  border-radius: $bs-3;
-  border: 1px solid #ddd;
-  padding: 0 0 0 $bs2;
+%basic-input {
+  line-height: 2;
+  padding: 0 $bs-3;
+  width: 100%;
+  border: 1px solid $border-grey;
+  display: block;
+  font-family: inherit;
 
-  h1, h3 {
-    display: inline-block;
-    font-weight: 100;
+  &:focus {
+    outline: 0;
+    border: 1px solid $blue-basic;
   }
 
-  h1 {
-    color: $purple-basic;
-    margin-right: $bs3;
-    text-transform: uppercase;
-
-  }
-
-  h3 {
-    color: #777;
-    font-size: $bs0;
-    vertical-align: middle;
-  }
-
-  a {
-    color: $blue-basic;
-    text-decoration: none;
-    border-bottom: 1px solid $blue-basic;
+  @media screen and (min-width: $tablet) {
+    max-width: 2 * $bs9;
   }
 }
 
-.registration-benefits {
-  background-color: $light-grey;
-  float: right;
-  width: 3 * $bs9;
-  height: 40em;
-  border-radius: 0 $bs-3 $bs-3 0;
-  padding: 0 $bs2 0 $bs3;
+form {
+  padding: $bs2;
+}
+
+label {
   font-weight: 100;
+  display: block;
+  margin-bottom: $bs-5;
+  width: 100%;
 
-  [dir="rtl"] & {
-    float: left;
+  @media screen and (min-width: $tablet) {
+    max-width: 2 * $bs9;
   }
+}
 
-  h1, h2 {
-    display: block;
-    font-weight: 100;
-    text-transform: uppercase;
-    color: $basic-font;
+.field-comment {
+  display: inline;
+  color: $grey;
+  font-weight: 100;
+  font-size: $bs09;
+}
 
-    span {
-      font-weight: 400;
-    }
+input[type="text"], input[type="email"], input[type="password"] {
+  @extend %basic-input;
+}
+
+.field {
+  margin: 0 0 $bs2 0;
+}
+
+.field, .actions {
+  @media screen and (min-width: $tablet) {
+    max-width: 2 * $bs9 + 2 * $bs2;
   }
+}
 
-  h2 {
-    margin: $bs5 0 $bs-1;
-  }
-
-   p, li {
-    line-height: 1.6;
-    font-size: 14px;
-  }
-
-  li {
-    list-style: none;
-  }
+.actions {
+  margin: $bs3 0 0 0;
 }

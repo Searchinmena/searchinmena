@@ -7,6 +7,7 @@ header {
 .logo {
   float: left;
   padding: $bs1 0 $bs0;
+  border-bottom: 0;
 
   [dir="rtl"] & {
     float: right;
@@ -30,6 +31,7 @@ nav {
     display: block;
     padding: $bs3 $bs1 $bs2;
     color: $nav-link;
+    border-bottom: 0;
     text-decoration: none;
     text-transform: uppercase;
     

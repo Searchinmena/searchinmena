@@ -1,5 +1,5 @@
 %header
-  .basic-container
+  .container
     .language-selection
       .language-choice
         english
@@ -10,6 +10,6 @@
     %nav{ role: "navigation" }
       %ul
         %li
-          = link_to "Sign up", root_path, class: "nav-link"
+          = link_to "Sign up", new_user_registration_path, class: "nav-link"
         %li
-          = link_to "Log in", root_path, class: "nav-link"
+          = link_to "Log in", user_session_path, class: "nav-link"

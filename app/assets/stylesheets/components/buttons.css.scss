@@ -1,0 +1,31 @@
+%basic-button {
+  @include transition(all, .25s, ease-in-out);
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: $bs1 $bs2 $bs0;
+  border: none;
+  text-transform: uppercase;
+  font-family: inherit;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 2 * $bs9;
+  }
+}
+
+%primary-button {
+  color: white;
+  background-color: $primary-button-bg;
+  border-bottom: $bs-5 solid $primary-button-border;
+  font-weight: 100;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $primary-button-border;
+  }
+}
+
+input[type="submit"] {
+  @extend %basic-button;
+  @extend %primary-button;
+}

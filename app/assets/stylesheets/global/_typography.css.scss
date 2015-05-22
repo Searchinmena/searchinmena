@@ -13,3 +13,18 @@ body {
 [lang="ar"] {
   font-family: $base-arabic-font;
 }
+
+a {
+  color: $blue-basic;
+  text-decoration: none;
+  border-bottom: 1px solid $blue-basic;
+}
+
+p {
+  line-height: 1.6;
+}
+
+%basic-title {
+  text-transform: uppercase;
+  font-weight: 100;
+}
