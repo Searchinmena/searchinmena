@@ -31,6 +31,7 @@ nav {
     padding: $bs3 $bs1 $bs2;
     color: $nav-link;
     text-decoration: none;
+    text-transform: uppercase;
     
     &:hover {
       background-color: $nav-link;

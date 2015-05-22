@@ -13,6 +13,8 @@
   h1 {
     color: $purple-basic;
     margin-right: $bs3;
+    text-transform: uppercase;
+
   }
 
   h3 {
@@ -29,7 +31,7 @@
 }
 
 .registration-benefits {
-  background-color: $blue-basic;
+  background-color: $light-grey;
   float: right;
   width: 3 * $bs9;
   height: 40em;
@@ -44,11 +46,11 @@
   h1, h2 {
     display: block;
     font-weight: 100;
-    color: $blue-light;
+    text-transform: uppercase;
+    color: $basic-font;
 
     span {
       font-weight: 400;
-      color: white;
     }
   }
 
@@ -58,7 +60,6 @@
 
    p, li {
     line-height: 1.6;
-    color: $blue-light;
     font-size: 14px;
   }
 

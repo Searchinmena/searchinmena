@@ -4,6 +4,13 @@ html, *, *:before, *:after {
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background-color: $snow-white;
+    min-height: 100%;
+    background-color: #E8EBEF;
+    background-image: -webkit-linear-gradient(-225deg, #F3E9EE 0%, #C3DEEA 100%);
+    background-image: linear-gradient(-45deg, #F5E6EC 0%, rgba(114, 164, 193, 0.7) 100%);
 }
