@@ -5,7 +5,7 @@
   "devDependencies": {
     "coffee-script": "^1.9.2",
     "protractor": "^2.1.0",
-    "phantomjs":"^1.9.17",
+    "phantomjs":"1.9.8",
     "karma":"^0.12.32",
     "karma-jasmine": "~0.1.0",
     "karma-phantomjs-launcher": "~0.1",
@@ -13,16 +13,13 @@
     "bower": "^1.4.1"
   },
   "scripts": {
-    "preupdate-webdriver": "npm install",
-    "update-webdriver": "webdriver-manager update",
+    "test": "./node_modules/karma/bin/karma start spec/karma.conf.coffee",
 
-    "pretest": "npm install",
-    "test": "karma start spec/karma.conf.coffee",
+    "karma": "./node_modules/karma/bin/karma start spec/karma.conf.coffee  --single-run",
 
-    "prekarma": "npm install",
-    "karma": "karma start spec/karma.conf.coffee  --single-run",
+    "update-webdriver": "./node_modules/protractor/bin/webdriver-manager update",
+    "start-webdriver": "./node_modules/protractor/bin/webdriver-manager start",
 
-    "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor spec/protractor-conf.coffee"
+    "protractor": "./node_modules/protractor/bin/protractor spec/protractor-conf.coffee"
   }
 }

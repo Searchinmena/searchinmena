@@ -1,11 +1,15 @@
 machine:
   node:
     version:
-      0.10.28
+      0.12.2
 test:
   pre:
     - bundle exec rake bower:install
     - bundle exec rails s:
+        background: true
+    - npm install
+    - npm run update-webdriver
+    - npm run start-webdriver:
         background: true
     - sleep 5
   override:
