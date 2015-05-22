@@ -1,0 +1,17 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "sim",
+  "devDependencies": {
+    "coffee-script": "^1.9.2",
+    "protractor": "^2.1.0",
+    "phantomjs":"^1.9.17"
+  },
+  "scripts": {
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor spec/conf.coffee"
+  }
+}

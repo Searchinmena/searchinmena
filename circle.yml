@@ -1,5 +1,15 @@
+machine:
+  node:
+    version:
+      0.10.28
 test:
+  pre:
+    - bundle exec rake bower:install
+    - bundle exec rails s:
+        background: true
+    - sleep 5
   override:
     - bundle exec rspec --color --require spec_helper spec --format progress
+    - npm run protractor
     - bundle exec rubocop
     - bundle exec haml-lint app/views/ -e app/views/layouts/_head.html.haml
