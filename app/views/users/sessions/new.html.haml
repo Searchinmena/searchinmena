@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container
   .log-in-wrapper
     .form-wrapper
@@ -17,3 +18,18 @@
         .actions
           = f.submit "Log in"
     = render "users/shared/links"
+=======
+%h2= t("devise.sessions.new_page_header")
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field
+    = f.label :email, t("devise.active_record.attributes.user.email")
+    %br/
+    = f.email_field :email, autofocus: true
+  .field
+    = f.label :password, t("devise.sessions.password")
+    %br/
+    = f.password_field :password, autocomplete: "off"
+  .actions
+    = f.submit t("devise.sessions.submit")
+= render "users/shared/links"
+>>>>>>> [#1756880] use translation in views
