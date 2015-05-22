@@ -18,6 +18,7 @@ gem 'dependor'
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'jasmine-rails'
   gem 'bogus'
   gem 'spring'
   gem 'spring-commands-rspec'
