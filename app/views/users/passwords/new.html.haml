@@ -1,11 +1,11 @@
-%h2 Forgot your password?
+%h2= t("devise.passwords.new_page_header")
 = form_for(resource, as: resource_name,
 url: password_path(resource_name), html: { method: :post }) do |f|
   = devise_error_messages!
   .field
-    = f.label :email
+    = f.label :email, t("devise.active_record.attributes.user.email")
     %br/
     = f.email_field :email, autofocus: true
   .actions
-    = f.submit "Send me reset password instructions"
+    = f.submit t("devise.passwords.submit")
 = render "users/shared/links"
