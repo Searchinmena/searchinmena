@@ -10,6 +10,7 @@ test:
     - sleep 5
   override:
     - bundle exec rspec --color --require spec_helper spec --format progress
+    - npm run karma
     - npm run protractor
     - bundle exec rubocop
     - bundle exec haml-lint app/views/ -e app/views/layouts/_head.html.haml
