@@ -15,11 +15,13 @@ html: { method: :put }) do |f|
     %br/
     = f.password_field :password, autocomplete: "off"
   .field
-    = f.label :password_confirmation, t("devise.registrations.password_confirmation")
+    = f.label :password_confirmation,
+    t("devise.registrations.password_confirmation")
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
   .field
-    = f.label :current_password, t("devise.registrations.edit_password_confirmation_label")
+    = f.label :current_password,
+    t("devise.registrations.edit_password_confirmation_label")
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "off"
