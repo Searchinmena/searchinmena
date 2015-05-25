@@ -3,7 +3,7 @@
   %head
     = render "/layouts/head"
 
-  %body
+  %body{ 'ng-app' => 'sim' }
     = render "components/header"
     = yield
     = render "components/footer"

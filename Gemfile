@@ -10,13 +10,20 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer'
 gem 'devise'
+gem 'bower-rails'
+
 gem 'a9n'
 gem 'honeybadger', '~> 2.0'
+
+gem 'dependor'
 
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
+  gem 'jasmine-rails'
+  gem 'bogus'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
   gem 'guard-rubocop'
 end

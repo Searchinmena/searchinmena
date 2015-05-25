@@ -1,0 +1,2 @@
+class UserRepository < AbstractRepository
+end

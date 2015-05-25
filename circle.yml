@@ -1,5 +1,20 @@
+machine:
+  node:
+    version:
+      0.12.2
 test:
+  pre:
+    - bundle exec rake bower:install
+    - bundle exec rails s:
+        background: true
+    - npm install
+    - npm run update-webdriver
+    - npm run start-webdriver:
+        background: true
+    - sleep 5
   override:
     - bundle exec rspec --color --require spec_helper spec --format progress
+    - npm run karma
+    - npm run protractor
     - bundle exec rubocop
     - bundle exec haml-lint app/views/ -e app/views/layouts/_head.html.haml
