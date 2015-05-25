@@ -2,7 +2,7 @@
   .form-header
     %h1.form-title Create Account
     %h3
-      Already have an account?
+      = t("devise.links.login_text")
       = link_to t("devise.sessions.submit"), user_session_path
 
   = form_for(resource, as: resource_name,
