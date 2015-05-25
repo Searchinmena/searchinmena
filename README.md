@@ -36,7 +36,7 @@ bundle exec rspec spec
 npm run karma
 ```
 
-Or if you prefer browser view go to: http://localhost:3000/tests
+Or if you prefer browser view go to: http://localhost:3000/specs
 
 Tests located in `spec/javascripts/unit`.
 
