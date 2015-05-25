@@ -21,6 +21,12 @@
         .field
           = f.label :password_confirmation
           = f.password_field :password_confirmation, autocomplete: "off"
+        .field
+          %label I am a:
+          %br
+          - User::TYPES.each do |type|
+            = f.radio_button :category, type
+            = f.label type, for: "user_category_" + type, class: "inline-label"
         .actions
           = f.submit "Create Account"
 
