@@ -5,10 +5,7 @@ namespace :spec do
   task :run_all do
     commands = YAML.load_file('circle.yml')['test']['override']
 
-    success = true
-    commands.each do |command|
-      success = system(command)
-    end
-    fail "Some tests failed" unless success
+    statuses = commands.map { |command| system(command) }
+    exit 1 unless statuses.all?
   end
 end
