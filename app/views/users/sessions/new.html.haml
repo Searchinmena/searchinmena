@@ -2,7 +2,7 @@
   .log-in-wrapper
     .form-wrapper
       %h1.title Log in
-      = form_for(resource, as: resource_name, 
+      = form_for(resource, as: resource_name,
                            url: session_path(resource_name)) do |f|
         .field
           = f.label :email
