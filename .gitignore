@@ -19,3 +19,4 @@
 /coverage
 /node_modules
 phantomjsdriver.log
+vendor/assets/bower_components/
