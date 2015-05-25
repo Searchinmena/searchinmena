@@ -1,5 +1,5 @@
 describe 'DashboardCtrl', ->
-  it 'should have proper greeting', ->
+  xit 'should have proper greeting', ->
     browser.get('/#/dashboard')
     greeting = element(By.binding('test'))
 

@@ -301,6 +301,22 @@ Directory structure (`app/assets/javascripts`):
     $scope.test = "Hello world! " + sampleService.randomNumber()
 ]
 ```
+And test for it (in `spec/javascripts/unit/services/sample_service_spec.coffee`
+
+```coffee
+describe "sampleService", ->
+  _sampleService = null
+
+  beforeEach ->
+    angular.mock.module('sim')
+    inject (sampleService) ->
+      _sampleService = sampleService
+
+  describe "randomNumber", ->
+    it "returns 4", ->
+      expect(_sampleService.randomNumber()).toEqual(4)
+```
+
 - `router.coffee` - routing for the js part of the app
 - `sim.coffee` - definition of the `@Sim` app and all modules it needs 
 - `services` - directory with controllers, sample service:
@@ -322,3 +338,4 @@ Directory structure (`app/assets/javascripts`):
 - [Great Angular Tutorial, must read](https://thinkster.io/angular-rails/)
 - [Good Anguar Practises](https://teamgaslight.com/blog/4-lessons-learned-doing-angular-on-rails)
 - [Really good protractor Overview](http://ramonvictor.github.io/protractor/slides/#/52)
+
