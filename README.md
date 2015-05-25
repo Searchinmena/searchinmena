@@ -71,7 +71,7 @@ More info: [Protractor docs](http://angular.github.io/protractor/#/tutorial)
 ##### Using guard
 
 For ruby unit tests you can use [guard](https://github.com/guard/guard).
-It's separate process which you can have always visible e.g. on one monitor. It monitors the files and automatically runs related unit tests as soon as you save a file.
+It's a separate process which you can keep visible on one of your screens. It monitors the files and automatically runs related unit tests as soon as you save a file.
 
 To run it just type:
 
@@ -84,7 +84,7 @@ It works only for ruby tests (yet). There is no way for running protractor tests
 #### Services
 
 General most imporant rule - try to create small classes with one responsibility (Single Responsibility Principle).
-So all the code that you need in e. g. controller should go somewhere else. The best way is to create service (or even more than one if one is getting to big).
+So for example you might have a case where a lot of code in your controller should actually go somewhere else. The best way is to create service (or even more than one if one is getting too big).
 
 Place them in `app/services` directory.
 
@@ -117,7 +117,7 @@ end
 
 #### Dependor
 
-We should try to think about building application like if we were building it from small boxes which uses each other. So we should create lot's of small services (as mentioned above). To make them use each other, we need to inject responsibilities somehow.
+We should try to think about building application as if we were building it from small boxes that use each other. So we should create lots of small services (as mentioned above). To make them use each other, we need to inject responsibilities somehow.
 We can do this just by passing other service in the `initialize` method. But we can also use `dependor`, which automates that for us.
 
 See above example with using `dependor`:
@@ -142,15 +142,15 @@ class SampleService
 end
 ```
 
-Generally we should try to use `takes` everywhere possible. But sometimes it's not possible (for example in controllers you don't have control over creating controller instance and you cannot just change it's initializer), then you can use `inject`.
+Generally we should try to use `takes` whenever possible. But sometimes it's not possible (for example in controllers you don't have control over creating controller instance and you cannot just change it's initializer) - in such cases you can use `inject`.
 
 See more info [here](https://github.com/psyho/dependor).
 
 #### Write tests
 
-As a general rule we should try to implement tests for every change.
+As a general rule we should try to implement tests for everything.
 We have [rcov](https://github.com/relevance/rcov) setup to measure ruby code coverage - you can see percentage after running ruby test suite (`rspec spec`).
-But of course it doesn't mean that we need to test every line just to have test - let's try to be reasonable and have meaningful, and which is even more imporartant, useful tests.
+But of course it doesn't mean that we need to test every line just to have test - let's try to be reasonable and have meaningful, and more importantly useful tests.
 
 Example test for above service:
 
@@ -253,8 +253,8 @@ user = user_repository.find_by_id(params[:id])
 #### Rendering views
 
 Try to avoid using `@ivars` (instance variables) in views.
-Render view explicetly at the end of controller action, passing all variables as local ones.
-It's more clear what view depends on then.
+Render view explicitly at the end of controller action, passing all variables as local ones.
+This way it's clearer what the view depends on.
 
 E. g.:
 
@@ -265,7 +265,7 @@ render :show, locals: { user: user }
 
 #### Presenters
 
-Try to extract all presentation related things to presenters - if you have lot's of things to display in view (or some trivial computation to make, like combining name and surname to full name or formatting date/price), group them in presenters - just simple class in `app/presenters` directory.
+Try to extract all presentation related things to presenters - if you have lots of things to display in a view (or some trivial computation to make, like combining name and surname to full name or formatting date/price), group them in presenters - simple classes in `app/presenters` directory.
 
 E .g.:
 
@@ -285,8 +285,10 @@ E .g.:
 
 And then in view:
 
+```
 user = user_repository.find_by_id(params[:id])
 render :show, locals: { user: UserPresenter.new(user) }
+```
 
 #### Angular
 
