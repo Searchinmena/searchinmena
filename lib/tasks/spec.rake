@@ -1,13 +1,9 @@
+require 'yaml'
+
 namespace :spec do
-  desc "Run all tests (ruby, javascript, integration)"
-  task run_all: :environment do
-    commands = [
-      "bundle exec rspec --color --require spec_helper spec --format progress",
-      "npm run karma",
-      "npm run protractor",
-      "bundle exec rubocop",
-      "bundle exec haml-lint app/views/ -e app/views/layouts/_head.html.haml"
-    ]
+  desc "Run all tests that are run on CI (ruby, javascript, integration)"
+  task :run_all do
+    commands = YAML.load_file('circle.yml')['test']['override']
 
     success = true
     commands.each do |command|
