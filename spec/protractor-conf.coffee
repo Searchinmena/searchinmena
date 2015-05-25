@@ -1,8 +1,6 @@
 exports.config =
   capabilities: {
-    'browserName': 'phantomjs',
-    'phantomjs.binary.path': require('phantomjs').path,
-  }
+    'browserName': 'firefox'
+  },
   specs: ['javascripts/e2e/*.coffee'],
   baseUrl: 'http://localhost:3000/'
-

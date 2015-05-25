@@ -15,11 +15,11 @@ module.exports = (config) ->
 
     frameworks: ['jasmine'],
 
-    browsers: ['PhantomJS'],
+    browsers: ['Firefox'],
 
     plugins : [
             'karma-coffee-preprocessor',
-            'karma-phantomjs-launcher',
+            'karma-firefox-launcher',
             'karma-jasmine'
             ],
 
