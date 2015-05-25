@@ -4,8 +4,9 @@
       .form-header
         %h1.form-title= t("devise.sessions.new_page_header")
         %h3
-          Don't have an account yet?
-          = link_to t("devise.links.signup"), new_registration_path(resource_name)
+          = t("devise.links.signup_text")
+          = link_to t("devise.links.signup"), 
+            new_registration_path(resource_name)
       = form_for(resource, as: resource_name,
       url: session_path(resource_name)) do |f|
         .field
@@ -21,7 +22,8 @@
         .actions
           = f.submit t("devise.sessions.submit")
       .form-links
-        = link_to t("devise.links.forgot_password"), new_password_path(resource_name), class: "form-link"
+        = link_to t("devise.links.forgot_password"), 
+          new_password_path(resource_name), class: "form-link"
 
     .form-additional-panel
       %h1.title.centered Great to see you again!
