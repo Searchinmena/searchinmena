@@ -24,6 +24,10 @@ nav {
   li {
     display: inline-block;
     float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 
   .nav-link {
