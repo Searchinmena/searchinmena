@@ -61,12 +61,12 @@
   background-color: $light-grey;
   width: 100%;
   border-radius: 0 $bs-3 $bs-3 0;
-  padding: 0 $bs2 0 $bs3;
+  padding: 0 $bs2 $bs3 $bs3;
   font-weight: 100;
 
   @media screen and (min-width: $desktop) {
     max-width: 3 * $bs9;
-    height: 32em;
+    min-height: 35em;
     float: right;
 
     [dir="rtl"] & {
@@ -97,5 +97,16 @@
 
   .registration-benefit {
     list-style: none;
+    position: relative;
+    padding: 0 0 0 $bs2;
+    margin: 0 0 $bs-3 0;
+
+    &:before {
+      font-family: 'flatline';
+      content: "\e621";
+      position: absolute;
+      left: 0;
+      vertical-align: middle;
+    }
   }
 }
