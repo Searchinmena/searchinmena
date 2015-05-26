@@ -9,30 +9,8 @@
   border: 1px solid #ddd;
 }
 
-.log-in-wrapper {
-  @extend %form-container;
-  
-  .title {
-    @extend %form-title;
-    padding: 0 $bs2;
-  }
-}
-
-.sign-up-wrapper {
-  @extend %clearfix;
-  @extend %form-container;
-
-  .form-wrapper {
-    @extend %clearfix;
-    
-    @media screen and (min-width: $desktop) {
-      float: left;
-
-      [dir="rtl"] & {
-        float: right;
-      }
-    }
-  }
+.form-header {
+  min-width: 4.3 * $bs9;
 
   .form-title {
     @extend %form-title;
@@ -57,14 +35,52 @@
   }
 }
 
-.registration-benefits {
+.form-links {
+  padding: $bs2;
+}
+
+.log-in-wrapper {
+  @extend %clearfix;
+  @extend %form-container;
+  
+  .form-wrapper {
+    @extend %clearfix;
+    
+    @media screen and (min-width: $desktop) {
+      float: left;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
+  }  
+}
+
+.sign-up-wrapper {
+  @extend %clearfix;
+  @extend %form-container;
+
+  .form-wrapper {
+    @extend %clearfix;
+    
+    @media screen and (min-width: $desktop) {
+      float: left;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
+  }
+}
+
+.form-additional-panel {
   background-color: $light-grey;
   width: 100%;
   border-radius: 0 $bs-3 $bs-3 0;
   padding: 0 $bs2 $bs3 $bs3;
   font-weight: 100;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: 1150px) {
     max-width: 3 * $bs9;
     min-height: 35em;
     float: right;
@@ -76,6 +92,14 @@
 
   .title {
     padding-top: $bs3;
+
+    &.centered {
+      text-align: center;
+
+      @media screen and (min-width: 1150px) {
+        margin-top: 50%;
+      }
+    }
   }
 
   .title, .subtitle {
