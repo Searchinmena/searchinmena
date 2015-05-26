@@ -10,17 +10,21 @@
     %nav{ role: "navigation" }
       %ul
         %li
+          = link_to("#", class: "nav-link") do
+            %span.icon.icon-search
+            Browse
+        %li
           - if user_signed_in?
-            = link_to("#", class: "nav-link") do
+            = link_to(dashboard_home_path, class: "nav-link user-link") do
               %span.icon.icon-home
               Your Dashboard
           - else
             = link_to "Sign up", new_user_registration_path,
-              class: "nav-link"
+              class: "nav-link user-link"
         %li
           - if user_signed_in?
-            = link_to(destroy_user_session_path, class: "nav-link") do
+            = link_to(destroy_user_session_path, class: "nav-link user-link") do
               %span.icon.icon-off
               Logout
           - else
-            = link_to "Log in", user_session_path, class: "nav-link"
+            = link_to "Log in", user_session_path, class: "nav-link user-link"
