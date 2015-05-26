@@ -1,4 +1,5 @@
 class Business < ActiveRecord::Base
+  belongs_to :user
   has_and_belongs_to_many :tags
 
   enum types: [:manufacturer, :trading_company, :buying_office, :agent,
