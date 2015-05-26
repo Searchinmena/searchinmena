@@ -1,0 +1,17 @@
+.dashboard-container {
+  @extend %clearfix;
+  background-color: white;
+}
+
+.dashboard-content {
+  overflow: hidden;
+  padding: $bs4 $bs2 $bs3;
+
+  .title, .subtitle {
+    @extend %basic-title;
+  }
+
+  .subtitle {
+    color: $grey;
+  }
+}

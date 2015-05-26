@@ -29,10 +29,11 @@ nav {
       float: right;
     }
   }
-  
+
   .icon {
     font-size: $bs2;
-    vertical-align: text-bottom;
+    line-height: 1px;
+    vertical-align: sub;
   }
 
   .nav-link {
@@ -46,6 +47,15 @@ nav {
     
     &:hover, &:focus {
       background-color: $nav-link;
+      color: white;
+    }
+  }
+
+  .user-link {
+    color: $purple-basic;
+
+    &:hover, &:focus {
+      background-color: $purple-basic;
       color: white;
     }
   }
