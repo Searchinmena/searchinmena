@@ -1,49 +1,23 @@
 .container
   .sign-up-wrapper
-    .form-wrapper
-      %h1.form-title Create Account
-      %h3
-        Already have an account?
-        = link_to "Sign in", user_session_path
+    = render "users/registrations/form"
 
-      = form_for(resource, as: resource_name,
-        url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .field
-          = f.label :email
-          = f.email_field :email, autofocus: true
-        .field
-          = f.label :password
-          - if @validatable
-            .field-comment
-              (#{@minimum_password_length} characters minimum)
-          = f.password_field :password, autocomplete: "off"
-        .field
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation, autocomplete: "off"
-        .actions
-          = f.submit "Create Account"
-
-    .registration-benefits
-      %h1.title What you get
-      %p.description
-        By creating an account you’re gaining full access
-        to best offers on the market.
-        You will be able to find exactly these offers
-        that match your expectations.
+    .form-additional-panel
+      %h1.title= t("text.title")
+      %p.description= t("text.description")
 
       %h2.subtitle
-        As a
-        %span seller
+        = t("text.line")
+        %span= t("text.subtitle_1")
       %ul
-        %li.registration-benefit you can create public profile of your company
-        %li.registration-benefit show products and services that you offer
-        %li.registration-benefit reach your potential client.
+        %li.registration-benefit= t("text.seller_line_1")
+        %li.registration-benefit= t("text.seller_line_2")
+        %li.registration-benefit= t("text.seller_line_3")
 
       %h2.subtitle
-        As a
-        %span buyer
+        = t("text.line")
+        %span= t("text.subtitle_2")
       %ul
-        %li.registration-benefit you can create a buying request
-        %li.registration-benefit find best offer
-        %li.registration-benefit make contact with sellers.
+        %li.registration-benefit= t("text.buyer_line_1")
+        %li.registration-benefit= t("text.buyer_line_2")
+        %li.registration-benefit= t("text.buyer_line_3")

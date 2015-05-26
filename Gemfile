@@ -12,7 +12,6 @@ gem 'jquery-rails'
 gem 'therubyracer'
 gem 'devise'
 gem 'bower-rails'
-
 gem 'a9n'
 gem 'honeybadger', '~> 2.0'
 

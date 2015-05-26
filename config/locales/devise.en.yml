@@ -2,6 +2,10 @@
 
 en:
   devise:
+    active_record:
+      attributes:
+        user:
+          email: "Email"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -17,12 +21,22 @@ en:
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
+      msg_line_1: "Someone has requested a link to change your password. You can do this through the link below."
+      msg_line_2: "If you didn't request this, please ignore this email."
+      msg_line_3: "Your password won't change until you access the link above and create a new one."
+      hello_msg: "Hello!"
+      confirm_msg: "You can confirm your account email through the link below:"
+      confirm_account: "Confirm my account"
       confirmation_instructions:
         subject: "Confirmation instructions"
       reset_password_instructions:
         subject: "Reset password instructions"
+      unlock_text: 'Unlock my account'
       unlock_instructions:
         subject: "Unlock instructions"
+      lock_msg_1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+      lock_msg_2: "Click the link below to unlock your account:"
+
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
@@ -32,7 +46,18 @@ en:
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
+      new_page_header: "Forgot your password?"
+      edit_page_header: "Change your password"
+      new_password_field: "New password"
+      confirm_password_field: "Confirm new password"
+      submit: "Send me reset password instructions"
+      submit_edit: "Update"
     registrations:
+      create: "Create Account"
+      ask: "Are you sure?"
+      unhappy: "Unhappy?"
+      cancel_account: "Cancel my account"
+      confirm_msg: "Currently waiting confirmation for:"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -40,14 +65,37 @@ en:
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
+      new_page_header: "Sign up"
+      edit_page_header: "Edit your account settings"
+      submit: "Sign up"
+      submit_edit: "Update"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      password_field_info: "(%{number} characters minimum)"
+      edit_password_label: "New password"
+      edit_password_field_info: "(leave blank if you don't want to change it)"
+      edit_password_confirmation_label: "Current password"
+      edit_password_confirmation_field_info: "(we need your current password to confirm your changes)"
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      great: "Great to see you again!"
+      signed_in: "Logged in successfully."
+      signed_out: "Logged out successfully."
+      already_signed_out: "Logged out successfully."
+      new_page_header: "Log in"
+      password: "Password"
+      submit: "Log in"
+      remember_me: "Remember me"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    links:
+      login: "Log in"
+      login_text: "Already have an account?"
+      signup: "Sign up"
+      signup_text: "Don't have an account yet?"
+      forgot_password: "Forgot your password?"
+      back: "Back"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
