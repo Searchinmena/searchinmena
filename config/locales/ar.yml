@@ -1,16 +1,4 @@
 ar:
-  business:
-    types:
-      manufacturer: "مصنع"
-      trading_company: "شركة تجارية"
-      bying_office: "مكتب مشتريات"
-      agent: Agent "وكيل"
-      distributer:  "موزع / تجار الجملة"
-      goverment_entity: "هيئة حكومية"
-      association: "جمعية"
-      business_services: "خدمات"
-      other: "أخرى"
-
   main_nav:
     browse: "Browse"
     dashboard: "Your Dashboard"
@@ -41,3 +29,16 @@ ar:
     buyer_line_1: "you can create a buying request"
     buyer_line_2: "find best offer"
     buyer_line_3: "make contact with sellers."
+
+  business:
+    types:
+      manufacturer: "مصنع"
+      trading_company: "شركة تجارية"
+      bying_office: "مكتب مشتريات"
+      agent: Agent "وكيل"
+      distributer:  "موزع / تجار الجملة"
+      goverment_entity: "هيئة حكومية"
+      association: "جمعية"
+      business_services: "خدمات"
+      other: "أخرى"
+
