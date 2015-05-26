@@ -1,9 +1,9 @@
 !!!
-%html
+%html{ lang: I18n.locale }
   %head
     = render "/layouts/head"
 
-  %body{ 'ng-app' => 'sim' }
+  %body{ 'ng-app' => 'sim', 'dir' => dir }
     = render "components/header"
     = yield
     = render "components/footer"
