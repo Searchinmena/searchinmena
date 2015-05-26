@@ -53,6 +53,7 @@ en:
       submit: "Send me reset password instructions"
       submit_edit: "Update"
     registrations:
+      create: "Create Account"
       ask: "Are you sure?"
       unhappy: "Unhappy?"
       cancel_account: "Cancel my account"
@@ -76,6 +77,7 @@ en:
       edit_password_confirmation_label: "Current password"
       edit_password_confirmation_field_info: "(we need your current password to confirm your changes)"
     sessions:
+      great: "Great to see you again!"
       signed_in: "Logged in successfully."
       signed_out: "Logged out successfully."
       already_signed_out: "Logged out successfully."

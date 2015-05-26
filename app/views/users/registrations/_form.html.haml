@@ -1,6 +1,6 @@
 .form-wrapper
   .form-header
-    %h1.form-title Create Account
+    %h1.form-title= t("devise.registrations.create")
     %h3
       = t("devise.links.login_text")
       = link_to t("devise.sessions.submit"), user_session_path

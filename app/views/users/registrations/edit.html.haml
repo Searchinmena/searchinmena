@@ -22,7 +22,7 @@ html: { method: :put }) do |f|
   .field
     = f.label :current_password,
     t("devise.registrations.edit_password_confirmation_label")
-    %i (we need your current password to confirm your changes)
+    %i= t("devise.registrations.edit_password_confirmation_field_info")
     %br/
     = f.password_field :current_password, autocomplete: "off"
   .actions
