@@ -32,3 +32,19 @@ en:
       association: Association
       business_services: Business Services
       other: Other
+
+  text:
+    title: "What you get"
+    description: "By creating an account you’re gaining full access
+        to best offers on the market.
+        You will be able to find exactly these offers
+        that match your expectations."
+    line: "As a"
+    subtitle_1: "seller"
+    subtitle_2: "buyer"
+    seller_line_1: "you can create public profile of your company"
+    seller_line_2: "show products and services that you offer"
+    seller_line_3: "reach your potential client."
+    buyer_line_1: "you can create a buying request"
+    buyer_line_2: "find best offer"
+    buyer_line_3: "make contact with sellers."
