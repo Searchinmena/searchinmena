@@ -2,14 +2,25 @@
   .container
     .language-selection
       .language-choice
-        english
-      .language-choice{ lang: "ar" }
-        العربية
+      = link_to 'english', url_for(locale: :en), class: "language-choice"
+      = link_to 'العربية', url_for(locale: :ar), class: "language-choice"
+
     = link_to(root_path, class: "logo") do
       = image_tag("logo.png")
     %nav{ role: "navigation" }
       %ul
         %li
-          = link_to "Sign up", new_user_registration_path, class: "nav-link"
+          - if user_signed_in?
+            = link_to("#", class: "nav-link") do
+              %span.icon.icon-home
+              Your Dashboard
+          - else
+            = link_to "Sign up", new_user_registration_path,
+              class: "nav-link"
         %li
-          = link_to "Log in", user_session_path, class: "nav-link"
+          - if user_signed_in?
+            = link_to(destroy_user_session_path, class: "nav-link") do
+              %span.icon.icon-off
+              Logout
+          - else
+            = link_to "Log in", user_session_path, class: "nav-link"
