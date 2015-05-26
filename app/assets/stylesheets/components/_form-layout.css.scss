@@ -18,7 +18,7 @@
     margin: $bs2 0 $bs0 $bs2;
 
     [dir="rtl"] & {
-      margin: $bs2 0 $bs0 $bs3;
+      margin: $bs2 $bs2 $bs0 0;
     }
   }
 
@@ -125,12 +125,21 @@
     padding: 0 0 0 $bs2;
     margin: 0 0 $bs-3 0;
 
+    [dir="rtl"] & {
+      padding: 0 $bs2 0 0;
+    }
+
     &:before {
       font-family: 'flatline';
       content: "\e621";
       position: absolute;
       left: 0;
       vertical-align: middle;
+
+      [dir="rtl"] & {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }
