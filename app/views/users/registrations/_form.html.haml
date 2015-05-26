@@ -21,7 +21,7 @@
       t("devise.registrations.password_confirmation")
       = f.password_field :password_confirmation, autocomplete: "off"
     .field
-      %label I am a:
+      %label= t("devise.registrations.category_label")
       %br
       - User.categories.keys.each do |cat|
         = f.radio_button :category, cat

@@ -65,6 +65,7 @@ ar:
       password: "كلمة المرور"
       password_confirmation: "تأكيد كلمة المرور "
       password_field_info: "(%{number} حروف أقل شئ)"
+      category_label: "I am a:"
       edit_password_label: "كلمة المرور جديدة"
       edit_password_field_info: "(لعدم التعديل الرجاء ترك فراغ)"
       edit_password_confirmation_label: "كلمة المرور الحالية"
