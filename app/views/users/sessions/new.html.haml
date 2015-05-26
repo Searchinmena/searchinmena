@@ -1,35 +1,19 @@
-<<<<<<< HEAD
 .container
   .log-in-wrapper
     .form-wrapper
-      %h1.title Log in
+      %h2.title= t("devise.sessions.new_page_header")
       = form_for(resource, as: resource_name,
-                           url: session_path(resource_name)) do |f|
+      url: session_path(resource_name)) do |f|
         .field
-          = f.label :email
+          = f.label :email, t("devise.active_record.attributes.user.email")
           = f.email_field :email, autofocus: true
         .field
-          = f.label :password
+          = f.label :password, t("devise.sessions.password")
           = f.password_field :password, autocomplete: "off"
         - if devise_mapping.rememberable?
           .field
             = f.check_box :remember_me
-            = f.label :remember_me
+            = f.label :remember_me, t("devise.sessions.remember_me")
         .actions
-          = f.submit "Log in"
+          = f.submit t("devise.sessions.submit")
     = render "users/shared/links"
-=======
-%h2= t("devise.sessions.new_page_header")
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email, t("devise.active_record.attributes.user.email")
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password, t("devise.sessions.password")
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .actions
-    = f.submit t("devise.sessions.submit")
-= render "users/shared/links"
->>>>>>> [#1756880] use translation in views
