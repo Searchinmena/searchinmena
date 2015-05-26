@@ -1,0 +1,3 @@
+class BusinessRepository < AbstractRepository
+end
+
