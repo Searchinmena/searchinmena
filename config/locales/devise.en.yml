@@ -41,6 +41,10 @@ en:
       submit: "Send me reset password instructions"
       submit_edit: "Update"
     registrations:
+      ask: "Are you sure?"
+      unhappy: "Unhappy?"
+      cancel_account: "Cancel my account"
+      confirm_msg: "Currently waiting confirmation for:"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."

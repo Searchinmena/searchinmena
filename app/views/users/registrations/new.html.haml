@@ -3,26 +3,21 @@
     = render "users/registrations/form"
 
     .form-additional-panel
-      %h1.title What you get
-      %p.description
-        By creating an account you’re gaining full access
-        to best offers on the market.
-        You will be able to find exactly these offers
-        that match your expectations.
+      %h1.title= t("text.title")
+      %p.description= t("text.description")
+
+      %h2.subtitle 
+        = t("text.line")
+        %span= t("text.subtitle_1")
+      %ul
+        %li.registration-benefit= t("text.seller_line_1")
+        %li.registration-benefit= t("text.seller_line_2")
+        %li.registration-benefit= t("text.seller_line_3")
 
       %h2.subtitle
-        As a
-        %span seller
+        = t("text.line")
+        %span= t("text.subtitle_2")
       %ul
-        %li.registration-benefit you can create public profile of your company
-        %li.registration-benefit show products and services that you offer
-        %li.registration-benefit reach your potential client.
-
-      %h2.subtitle
-        As a
-        %span buyer
-      %ul
-        %li.registration-benefit you can create a buying request
-        %li.registration-benefit find best offer
-        %li.registration-benefit make contact with sellers.
-        %li.registration-benefit make contact with sellers.
+        %li.registration-benefit= t("text.buyer_line_1")
+        %li.registration-benefit= t("text.buyer_line_2")
+        %li.registration-benefit= t("text.buyer_line_3")
