@@ -2,9 +2,9 @@
   .container
     .language-selection
       .language-choice
-        english
-      .language-choice{ lang: "ar" }
-        العربية
+      = link_to 'english', url_for(locale: :en), class: "language-choice"
+      = link_to 'العربية', url_for(locale: :ar), class: "language-choice"
+
     = link_to(root_path, class: "logo") do
       = image_tag("logo.png")
     %nav{ role: "navigation" }
