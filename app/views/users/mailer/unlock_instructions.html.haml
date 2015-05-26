@@ -1,0 +1,4 @@
+%p= ("devise.mailer.hello_msg","#{@resource.email}!")
+%p= ("devise.mailer.lock_msg_1")
+%p= ("devise.mailer.lock_msg_2")
+%p= link_to = ("devise.mailer.unlock_text"), unlock_url(@resource, unlock_token: @token)
