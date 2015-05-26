@@ -29,7 +29,7 @@ html: { method: :put }) do |f|
     = f.submit t("devise.registrations.submit_edit")
 %h3= t("devise.registrations.cancel_account")
 %p= t("devise.registrations.unhappy")
-puts button_to t("devise.registrations.cancel_account"),
+= button_to t("devise.registrations.cancel_account"),
 registration_path(resource_name),
 data: { confirm: t("devise.registrations.ask")},
 method: :delete
