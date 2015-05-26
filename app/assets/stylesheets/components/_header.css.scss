@@ -29,6 +29,11 @@ nav {
       float: right;
     }
   }
+  
+  .icon {
+    font-size: $bs2;
+    vertical-align: text-bottom;
+  }
 
   .nav-link {
     @include transition(all, .1s, ease-in);
