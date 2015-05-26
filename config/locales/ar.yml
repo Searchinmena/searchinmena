@@ -1,0 +1,14 @@
+ar:
+  hello: "Hello world"
+  business:
+    types:
+      manufacturer: Manufacturer
+      trading_company: Trading Company
+      bying_office: Buying Office
+      agent: Agent
+      distributer: Distributer/Wholesalers
+      goverment_entity: Government Entity
+      association: Association
+      business_services: Business Services
+      other: Other
+

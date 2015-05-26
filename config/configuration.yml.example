@@ -1,5 +1,8 @@
 defaults: &defaults
   app_host: http://localhost:3000
+  validations:
+    max_text_area_size: 2000
+    max_text_field_size: 255
 
 development:
   honeybadger_env: development
