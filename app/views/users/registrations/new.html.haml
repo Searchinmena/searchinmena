@@ -1,29 +1,6 @@
-<<<<<<< HEAD
 .container
   .sign-up-wrapper
-    .form-wrapper
-      %h1.form-title Create Account
-      %h3
-        Already have an account?
-        = link_to "Sign in", user_session_path
-
-      = form_for(resource, as: resource_name,
-        url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .field
-          = f.label :email
-          = f.email_field :email, autofocus: true
-        .field
-          = f.label :password
-          - if @validatable
-            .field-comment
-              (#{@minimum_password_length} characters minimum)
-          = f.password_field :password, autocomplete: "off"
-        .field
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation, autocomplete: "off"
-        .actions
-          = f.submit "Create Account"
+    = render "users/registrations/form"
 
     .registration-benefits
       %h1.title What you get
@@ -47,16 +24,5 @@
       %ul
         %li.registration-benefit you can create a buying request
         %li.registration-benefit find best offer
-<<<<<<< HEAD
         %li.registration-benefit make contact with sellers.
-=======
         %li.registration-benefit make contact with sellers.
-
-=======
-%h2= t("devise.registrations.new_page_header")
-
-= render "users/registrations/form"
-
-= render "users/shared/links"
->>>>>>> [#1756880] use translation in views
->>>>>>> [#1756880] use translation in views
