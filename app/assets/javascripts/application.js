@@ -12,8 +12,6 @@
 //
 //= require angular
 //= require angular-ui-router
-//= require jquery
-//= require jquery_ujs
 //= require sim
 //= require router
 //= require_tree ./services

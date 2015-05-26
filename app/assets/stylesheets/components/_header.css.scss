@@ -29,10 +29,11 @@ nav {
       float: right;
     }
   }
-  
+
   .icon {
     font-size: $bs2;
-    vertical-align: text-bottom;
+    line-height: 1px;
+    vertical-align: sub;
   }
 
   .nav-link {
@@ -49,12 +50,20 @@ nav {
       color: white;
     }
   }
+
+  .user-link {
+    color: $purple-basic;
+
+    &:hover, &:focus {
+      background-color: $purple-basic;
+      color: white;
+    }
+  }
 }
 
 .language-selection {
   @extend %clearfix;
   padding: 0 $bs1;
-  color: $grey;
   border-bottom: 1px solid $border-grey;
 }
 
@@ -62,10 +71,16 @@ nav {
   display: inline-block;
   font-size: $bs09;
   float: right;
+  color: $grey;
   padding: $bs-3 0 0 $bs-3;
+  border-bottom: 0;
 
   [dir="rtl"] & {
     float: left;
     padding: $bs-3 $bs-3 0 0;
+  }
+
+  &:hover {
+    color: $basic-font;
   }
 }

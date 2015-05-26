@@ -8,11 +8,9 @@ gem 'sass-rails', '~> 5.0'
 gem 'haml'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
 gem 'therubyracer'
 gem 'devise'
 gem 'bower-rails'
-
 gem 'a9n'
 gem 'honeybadger', '~> 2.0'
 

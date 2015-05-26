@@ -12,7 +12,7 @@
   }
 
   @media screen and (min-width: $tablet) {
-    max-width: 2 * $bs9;
+    max-width: 4 * $bs9;
   }
 }
 
@@ -28,6 +28,10 @@ label {
 
   @media screen and (min-width: $tablet) {
     max-width: 2 * $bs9;
+  }
+
+  .checkbox & {
+    display: inline;
   }
 }
 
@@ -49,12 +53,6 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .field {
   margin: 0 0 $bs2 0;
-}
-
-.field, .actions {
-  @media screen and (min-width: $tablet) {
-    max-width: 2 * $bs9 + 2 * $bs2;
-  }
 }
 
 .actions {

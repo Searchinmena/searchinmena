@@ -1,26 +1,32 @@
 %header
   .container
     .language-selection
-      .language-choice
       = link_to 'english', url_for(locale: :en), class: "language-choice"
-      = link_to 'العربية', url_for(locale: :ar), class: "language-choice"
+      = link_to 'العربية', url_for(locale: :ar), class: "language-choice",
+         lang: "ar"
 
     = link_to(root_path, class: "logo") do
       = image_tag("logo.png")
     %nav{ role: "navigation" }
       %ul
         %li
-          - if user_signed_in?
-            = link_to("#", class: "nav-link") do
-              %span.icon.icon-home
-              Your Dashboard
-          - else
-            = link_to "Sign up", new_user_registration_path,
-              class: "nav-link"
+          = link_to("#", class: "nav-link") do
+            %span.icon.icon-search
+            = t('main_nav.browse')
         %li
           - if user_signed_in?
-            = link_to(destroy_user_session_path, class: "nav-link") do
-              %span.icon.icon-off
-              Logout
+            = link_to(dashboard_home_path, class: "nav-link user-link") do
+              %span.icon.icon-home
+              = t('main_nav.dashboard')
           - else
-            = link_to "Log in", user_session_path, class: "nav-link"
+            = link_to(new_user_registration_path,
+              class: "nav-link user-link") do
+              = t('main_nav.signup')
+        %li
+          - if user_signed_in?
+            = link_to(destroy_user_session_path, class: "nav-link user-link") do
+              %span.icon.icon-off
+              = t('main_nav.logout')
+          - else
+            = link_to(user_session_path, class: "nav-link user-link") do
+              = t('main_nav.login')

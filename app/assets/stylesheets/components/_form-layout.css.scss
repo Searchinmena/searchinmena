@@ -9,13 +9,51 @@
   border: 1px solid #ddd;
 }
 
+.form-header {
+  min-width: 4.3 * $bs9;
+
+  .form-title {
+    @extend %form-title;
+    display: inline-block;
+    margin: $bs2 0 $bs0 $bs2;
+
+    [dir="rtl"] & {
+      margin: $bs2 $bs2 $bs0 0;
+    }
+  }
+
+  h3 {
+    color: #777;
+    font-weight: 100;
+    font-size: $bs0;
+    display: block;
+    margin: $bs0 $bs3;
+
+    @media screen and (min-width: 1100px) {
+      display: inline-block;
+    }
+  }
+}
+
+.form-links {
+  padding: $bs2;
+}
+
 .log-in-wrapper {
+  @extend %clearfix;
   @extend %form-container;
   
-  .title {
-    @extend %form-title;
-    padding: 0 $bs2;
-  }
+  .form-wrapper {
+    @extend %clearfix;
+    
+    @media screen and (min-width: $desktop) {
+      float: left;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
+  }  
 }
 
 .sign-up-wrapper {
@@ -33,38 +71,16 @@
       }
     }
   }
-
-  .form-title {
-    @extend %form-title;
-    display: inline-block;
-    margin: $bs2 0 $bs0 $bs2;
-
-    [dir="rtl"] & {
-      margin: $bs2 0 $bs0 $bs3;
-    }
-  }
-
-  h3 {
-    color: #777;
-    font-weight: 100;
-    font-size: $bs0;
-    display: block;
-    margin: $bs0 $bs3;
-
-    @media screen and (min-width: 1100px) {
-      display: inline-block;
-    }
-  }
 }
 
-.registration-benefits {
+.form-additional-panel {
   background-color: $light-grey;
   width: 100%;
   border-radius: 0 $bs-3 $bs-3 0;
   padding: 0 $bs2 $bs3 $bs3;
   font-weight: 100;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: 1150px) {
     max-width: 3 * $bs9;
     min-height: 35em;
     float: right;
@@ -76,6 +92,14 @@
 
   .title {
     padding-top: $bs3;
+
+    &.centered {
+      text-align: center;
+
+      @media screen and (min-width: 1150px) {
+        margin-top: 50%;
+      }
+    }
   }
 
   .title, .subtitle {
@@ -101,12 +125,21 @@
     padding: 0 0 0 $bs2;
     margin: 0 0 $bs-3 0;
 
+    [dir="rtl"] & {
+      padding: 0 $bs2 0 0;
+    }
+
     &:before {
       font-family: 'flatline';
       content: "\e621";
       position: absolute;
       left: 0;
       vertical-align: middle;
+
+      [dir="rtl"] & {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }
