@@ -64,7 +64,6 @@ nav {
 .language-selection {
   @extend %clearfix;
   padding: 0 $bs1;
-  color: $grey;
   border-bottom: 1px solid $border-grey;
 }
 
@@ -72,10 +71,16 @@ nav {
   display: inline-block;
   font-size: $bs09;
   float: right;
+  color: $grey;
   padding: $bs-3 0 0 $bs-3;
+  border-bottom: 0;
 
   [dir="rtl"] & {
     float: left;
     padding: $bs-3 $bs-3 0 0;
+  }
+
+  &:hover {
+    color: $basic-font;
   }
 }

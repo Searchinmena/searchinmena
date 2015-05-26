@@ -70,7 +70,13 @@
 
   .icon {
     font-size: $bs2;
-    line-height: 1px;
-    vertical-align: sub;
+    display: inline-block;
+    float: right;
+    padding: $bs-5;
+    margin-top: -$bs-3;
+
+    [dir="rtl"] & {
+      float: left;
+    }
   }
 }
