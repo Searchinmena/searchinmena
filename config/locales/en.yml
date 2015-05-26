@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   business:
     types:
       manufacturer: Manufacturer
@@ -32,6 +31,21 @@ en:
       association: Association
       business_services: Business Services
       other: Other
+  
+  main_nav:
+    browse: "Browse"
+    dashboard: "Your Dashboard"
+    logout: "Logout"
+    login: "Log in"
+    signup: "Sign Up"
+
+  dashboard_nav: 
+    home: "Home"
+    company: "Company"
+    products: "Products"
+    services: "Services"
+    messages: "Messages"
+    settings: "Account Settings"
 
   text:
     title: "What you get"
