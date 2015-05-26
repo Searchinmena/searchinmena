@@ -21,6 +21,22 @@
 
 en:
   hello: "Hello world"
+  
+  main_nav:
+    browse: "Browse"
+    dashboard: "Your Dashboard"
+    logout: "Logout"
+    login: "Log in"
+    signup: "Sign Up"
+
+  dashboard_nav: 
+    home: "Home"
+    company: "Company"
+    products: "Products"
+    services: "Services"
+    messages: "Messages"
+    settings: "Account Settings"
+
   text:
     title: "What you get"
     description: "By creating an account you’re gaining full access
