@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  user:
+    types:
+      seller: "seller"
+      buyer: "buyer"
+      both: "both"

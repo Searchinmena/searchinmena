@@ -1,2 +1,7 @@
 ar:
   hello: "Hello world in Arabic... ;)"
+  user:
+    types:
+      seller: "seller in Arabic"
+      buyer: "buyer in Arabic"
+      both: "both in Arabic"

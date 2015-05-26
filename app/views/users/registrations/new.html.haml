@@ -24,9 +24,10 @@
         .field
           %label I am a:
           %br
-          - User::TYPES.each do |type|
-            = f.radio_button :category, type
-            = f.label type, for: "user_category_" + type, class: "inline-label"
+          - User.categories.keys.each do |cat|
+            = f.radio_button :category, cat
+            = f.label User.category_name(cat), for: "user_category_" + cat,
+              class: "inline-label"
         .actions
           = f.submit "Create Account"
 

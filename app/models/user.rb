@@ -4,9 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  TYPES = %w(
-    seller
-    buyer
-    both
-  )
+  enum category: [:seller, :buyer, :both]
+
+  validates :category, presence: true
+
+  def self.category_name(type)
+    I18n.t("user.types.#{type}")
+  end
 end
