@@ -48,9 +48,19 @@ namespace :deploy do
   end
 
   task default: :notify
+
+  desc "bower install"
+  task :bower_install do
+    on roles(:app) do
+      within release_path do
+        execute :rake, 'bower:install CI=true'
+      end
+    end
+  end
 end
 
 after "deploy:updating",   "deploy:copy_configuration"
 after "deploy:publishing", "unicorn:restart"
 after "deploy:finishing",  "deploy:cleanup"
 
+before "deploy:compile_assets", "deploy:bower_install"
