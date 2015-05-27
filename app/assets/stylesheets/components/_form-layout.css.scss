@@ -10,7 +10,9 @@
 }
 
 .form-header {
-  min-width: 4.3 * $bs9;
+  @media screen and (min-width: 1100px) {
+    min-width: 4.3 * $bs9;
+  }
 
   .form-title {
     @extend %form-title;
@@ -80,6 +82,10 @@
   padding: 0 $bs2 $bs3 $bs3;
   font-weight: 100;
 
+  [dir="rtl"] & {
+    border-radius: $bs-3 0 0 $bs-3;
+  }
+
   @media screen and (min-width: 1150px) {
     max-width: 3 * $bs9;
     min-height: 35em;
@@ -131,7 +137,7 @@
 
     &:before {
       font-family: 'flatline';
-      content: "\e621";
+      content: "\e652";
       position: absolute;
       left: 0;
       vertical-align: middle;

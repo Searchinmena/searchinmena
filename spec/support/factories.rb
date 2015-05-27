@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :user do
-    sequence(:email) { |n| "user#{n}@example.org" }
-    password { "testtest" }
-    password_confirmation { "testtest" }
+    sequence(:email) { |n| "aliciaflorrick#{n}@gmail.com" }
+    password { "voteforalicia" }
+    password_confirmation { "voteforalicia" }
+    category { User.categories[:seller] }
   end
 
   factory :business do

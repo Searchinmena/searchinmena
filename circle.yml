@@ -6,7 +6,7 @@ deployment:
   demo:
     branch: master
     commands:
-      - bundle exec cap demo deploy:migrate
+      - bundle exec cap demo deploy
 test:
   pre:
     - bundle exec rake bower:install
