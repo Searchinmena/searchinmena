@@ -41,6 +41,10 @@
   padding: $bs2;
 }
 
+.form-link {
+  font-weight: 100;
+}
+
 .log-in-wrapper {
   @extend %clearfix;
   @extend %form-container;
