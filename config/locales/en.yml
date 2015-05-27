@@ -32,12 +32,19 @@ en:
   
   business:
     types:
-      manufacturer: Manufacturer
-      trading_company: Trading Company
-      bying_office: Buying Office
-      agent: Agent
-      distributer: Distributer/Wholesalers
-      goverment_entity: Government Entity
-      association: Association
-      business_services: Business Services
-      other: Other
+      manufacturer: "Manufacturer"
+      trading_company: "Trading Company"
+      bying_office: "Buying Office"
+      agent: "Agent"
+      distributer: "Distributer/Wholesalers"
+      goverment_entity: "Government Entity"
+      association: "Association"
+      business_services: "Business Services"
+      other: "Other"
+
+  sign_up:
+    contant_info_header: "Your Contact Information"
+    location: "Location"
+    contact_number: "Contact Number"
+    business_type: "Business Type"
+    main_products: "Main Products"

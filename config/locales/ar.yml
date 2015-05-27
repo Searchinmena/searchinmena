@@ -42,3 +42,10 @@ ar:
       business_services: "خدمات"
       other: "أخرى"
 
+  sign_up:
+    contant_info_header: "Your Contact Information"
+    location: "Location"
+    contact_number: "Contact Number"
+    business_type: "Business Type"
+    main_products: "Main Products"
+
