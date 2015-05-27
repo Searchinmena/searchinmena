@@ -21,6 +21,13 @@
       = f.label :password_confirmation,
       t("devise.registrations.password_confirmation")
       = f.password_field :password_confirmation, autocomplete: "off"
+    .field
+      %label= t("text.category_label")
+      %br
+      - User.categories.keys.each do |cat|
+        = f.radio_button :category, cat
+        = f.label User.category_name(cat), for: "user_category_" + cat,
+          class: "inline-label"
     .actions
       = f.submit t("devise.registrations.submit")
 

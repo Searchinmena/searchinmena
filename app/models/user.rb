@@ -3,4 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  enum category: [:seller, :buyer, :both]
+
+  validates :category, presence: true
+
+  def self.category_name(type)
+    I18n.t("user.types.#{type}")
+  end
 end
