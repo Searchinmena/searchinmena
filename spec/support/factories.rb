@@ -10,5 +10,6 @@ FactoryGirl.define do
     country { "ARE" }
     phone { "777-777-777" }
     business_type { Business.types[:agent] }
+    association :user
   end
 end

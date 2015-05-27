@@ -29,7 +29,7 @@ describe BusinessCreator do
     context "successful save" do
       let(:successful) { true }
 
-      it { expect(subject.successful?).to be true }
+      it { is_expected.to be_successful }
 
       it "assigns business to user" do
         subject
@@ -40,7 +40,7 @@ describe BusinessCreator do
     context "save failed" do
       let(:successful) { false }
 
-      it { expect(subject.successful?).to be false }
+      it { is_expected.not_to be_successful }
     end
   end
 end
