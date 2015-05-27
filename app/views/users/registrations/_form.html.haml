@@ -14,7 +14,8 @@
     .field
       = f.label :password, t("devise.registrations.password")
       - if @validatable
-        .field-comment= t("devise.registrations.password_field_info")
+        .field-comment= t("devise.registrations.password_field_info",
+        number: @minimum_password_length)
       = f.password_field :password, autocomplete: "off"
     .field
       = f.label :password_confirmation,
