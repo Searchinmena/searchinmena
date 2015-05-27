@@ -13,16 +13,17 @@
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
       = f.email_field :email, autofocus: true
-    .field
-      = f.label :password, t("devise.registrations.password")
-      - if @validatable
-        .field-comment= t("devise.registrations.password_field_info",
-        number: @minimum_password_length)
-      = f.password_field :password, autocomplete: "off"
-    .field
-      = f.label :password_confirmation,
-      t("devise.registrations.password_confirmation")
-      = f.password_field :password_confirmation, autocomplete: "off"
+    - unless resource.password.present?
+      .field
+        = f.label :password, t("devise.registrations.password")
+        - if @validatable
+          .field-comment= t("devise.registrations.password_field_info",
+          number: @minimum_password_length)
+        = f.password_field :password, autocomplete: "off"
+      .field
+        = f.label :password_confirmation,
+        t("devise.registrations.password_confirmation")
+        = f.password_field :password_confirmation, autocomplete: "off"
     .field
       %label= t("text.category_label")
       %br

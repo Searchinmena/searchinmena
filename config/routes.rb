@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: "registrations"
-  }
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+
+  devise_for :users, controllers: {
+    registrations: "registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
   get "/home" => "pages#home", as: :home
   get "/dashboard" => "dashboard#dashboard_home", as: :dashboard_home
