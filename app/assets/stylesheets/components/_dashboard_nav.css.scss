@@ -4,6 +4,7 @@
   float: left;
   list-style: none;
   width: 2*$bs9;
+  min-height: 70em;
 
   [dir="rtl"] & {
     float: right;
@@ -14,16 +15,11 @@
   .nav-link {
     @include transition(all, .25s, ease-in-out);
     display: block;
-    text-align: right;
     text-decoration: none;
     text-transform: uppercase;
     padding: $bs2;
     border-bottom: 1px solid $border-grey;
     position: relative;
-
-    [dir="rtl"] & {
-      text-align: left;
-    }
 
     &.active {
       color: white;
@@ -72,12 +68,12 @@
   .icon {
     font-size: $bs2;
     display: inline-block;
-    float: right;
+    float: left;
     padding: $bs-5;
     margin-top: -$bs-3;
 
     [dir="rtl"] & {
-      float: left;
+      float: right;
     }
   }
 }

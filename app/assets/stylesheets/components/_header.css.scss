@@ -1,8 +1,14 @@
 header {
   @extend %clearfix;
-  background-color: $white-opaque;
-  margin: 0 0 $bs4 0;
+  background-color: white;
   padding: 0 $bs2;
+}
+
+.gradient-decor {
+  height: $bs2;
+  background-color: #E8EBEF;
+  background-image: -webkit-linear-gradient(-225deg, $purple-basic 0%, $blue-basic 100%);
+  background-image: linear-gradient(-45deg, $purple-basic 0%, $blue-basic 100%);
 }
 
 .logo {
