@@ -10,6 +10,10 @@ body {
   font-size: 16px;
 }
 
+[dir="rtl"] {
+  font-family: $base-arabic-font;
+}
+
 [lang="ar"] {
   font-family: $base-arabic-font;
 }

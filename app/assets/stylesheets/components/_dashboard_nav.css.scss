@@ -33,6 +33,10 @@
     &.active {
       background-color: $nav-link;
       color: white;
+
+      &:hover, &:focus {
+        background-color: $nav-link;
+      }
     }
 
     &:hover, &.focus {
