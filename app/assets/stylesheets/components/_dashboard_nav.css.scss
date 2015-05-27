@@ -3,6 +3,7 @@
   border-right: 1px solid $border-grey;
   float: left;
   list-style: none;
+  width: 2*$bs9;
 
   [dir="rtl"] & {
     float: right;
