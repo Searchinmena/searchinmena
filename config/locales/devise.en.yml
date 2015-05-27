@@ -7,6 +7,8 @@ en:
         user:
           email: "Email"
     confirmations:
+      msg: "Resend confirmation instructions"
+      email: "email"
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -36,7 +38,6 @@ en:
         subject: "Unlock instructions"
       lock_msg_1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
       lock_msg_2: "Click the link below to unlock your account:"
-
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
