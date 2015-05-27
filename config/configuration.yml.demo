@@ -1,3 +1,5 @@
 production:
   app_host: http://sim.demo.llp.pl
   honeybadger_env: demo
+  fb_app_id: 838866496206335
+  fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41

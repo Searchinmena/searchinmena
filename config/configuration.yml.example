@@ -1,5 +1,7 @@
 defaults: &defaults
   app_host: http://localhost:3000
+  fb_app_id: 838866496206335
+  fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
 
 development:
   honeybadger_env: development
