@@ -35,7 +35,7 @@ ar:
       manufacturer: "مصنع"
       trading_company: "شركة تجارية"
       bying_office: "مكتب مشتريات"
-      agent: Agent "وكيل"
+      agent: "وكيل"
       distributer:  "موزع / تجار الجملة"
       goverment_entity: "هيئة حكومية"
       association: "جمعية"
