@@ -16,6 +16,7 @@ set :unicorn_pid, -> { File.join(current_path, "pids/unicorn.pid") }
 
 set :rails_env, "production"
 set :deploy_env, -> { fetch(:rails_env) }
+set :honeybadger_env, -> { fetch(:stage) }
 fetch(:default_env).merge!(rails_env: "production", rack_env: "production")
 set :ssh_options, forward_agent: true
 
@@ -53,6 +54,7 @@ namespace :deploy do
   task :bower_install do
     on roles(:app) do
       within release_path do
+        execute :npm, 'install'
         execute :rake, 'bower:install CI=true'
       end
     end
