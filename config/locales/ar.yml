@@ -1,14 +1,14 @@
 ar:
-  hello: "Hello world"
+  hello: "مرحبا"
   business:
     types:
-      manufacturer: Manufacturer
-      trading_company: Trading Company
-      bying_office: Buying Office
-      agent: Agent
-      distributer: Distributer/Wholesalers
-      goverment_entity: Government Entity
-      association: Association
-      business_services: Business Services
-      other: Other
+      manufacturer: "مصنع"
+      trading_company: "شركة تجارية"
+      bying_office: "مكتب مشتريات"
+      agent: Agent "وكيل"
+      distributer:  "موزع / تجار الجملة"
+      goverment_entity: "هيئة حكومية"
+      association: "جمعية"
+      business_services: "خدمات"
+      other: "أخرى"
 
