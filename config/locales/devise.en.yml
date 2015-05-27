@@ -72,7 +72,6 @@ en:
       password: "Password"
       password_confirmation: "Password confirmation"
       password_field_info: "(%{number} characters minimum)"
-      category_label: "I am a:"
       edit_password_label: "New password"
       edit_password_field_info: "(leave blank if you don't want to change it)"
       edit_password_confirmation_label: "Current password"

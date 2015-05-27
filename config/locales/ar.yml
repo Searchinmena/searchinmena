@@ -24,7 +24,8 @@ ar:
 
   text:
     title: "What you get"
-    description: "By creating an account you’re gaining full access
+    description:
+        "By creating an account you’re gaining full access
         to best offers on the market.
         You will be able to find exactly these offers
         that match your expectations."
@@ -37,3 +38,4 @@ ar:
     buyer_line_1: "you can create a buying request"
     buyer_line_2: "find best offer"
     buyer_line_3: "make contact with sellers."
+    category_label: "أنا:"
