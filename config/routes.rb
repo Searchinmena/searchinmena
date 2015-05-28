@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
-  devise_for :users, controllers: {
-    registrations: "registrations",
-    omniauth_callbacks: "users/omniauth_callbacks"
-  }
+  scope "(:locale)", locale: /en|ar/ do
+    devise_for :users, controllers: {
+      registrations: "registrations",
+      omniauth_callbacks: "users/omniauth_callbacks"
+    }
 
-  get "/home" => "pages#home", as: :home
-  get "/dashboard" => "dashboard#dashboard_home", as: :dashboard_home
+    get "/home" => "pages#home", as: :home
+    get "/dashboard" => "dashboard#dashboard_home", as: :dashboard_home
 
-  root to: "pages#home"
+    root to: "pages#home"
+  end
 end
