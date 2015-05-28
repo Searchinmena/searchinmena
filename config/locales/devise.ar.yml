@@ -6,6 +6,8 @@ ar:
       attributes:
         user:
           email: "البريد الالكتروني"
+          first_name: "First name"
+          last_name: "Last name"
     confirmations:
       confirmed: "لقد تم تأكيد حسابك بنجاح، وتم تسجيل دخولك."
       send_instructions: "ستصلك خلال دقائق رسالة على بريدك الإلكتروني تتضمن الخطوات اللازمة لتأكيد حسابك."
