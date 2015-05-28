@@ -1,9 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
-  inject :user_repository, :business_repository, :business_presenter
+  inject :user_repository, :business_repository, :business_presenter,
+         :user_factory
 
   def new
-    user = user_repository.new
+    user = user_factory.build(params[:type], session["devise.auth_data"])
     business = business_repository.new
+    session["devise.auth_data"] = nil
     render_new(user, business)
   end
 
