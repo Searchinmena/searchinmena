@@ -15,6 +15,11 @@ header {
   float: left;
   padding: $bs1 0 $bs0;
   border-bottom: 0;
+  max-width: 230px;
+
+  img {
+    width: 100%;
+  }
 
   [dir="rtl"] & {
     float: right;
