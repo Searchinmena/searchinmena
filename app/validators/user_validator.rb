@@ -1,6 +1,6 @@
 class UserValidator < BaseValidator
   def self.fields
-    [:email, :password, :password_confirmation]
+    [:id, :email, :password, :password_confirmation]
   end
 
   attr_accessor(*fields)
@@ -10,4 +10,17 @@ class UserValidator < BaseValidator
     { maximum: A9n.validations[:max_text_field_size] }
   validates :email, format: { with: A9n.validations[:email_format] }
   validates :password, confirmation: true
+
+  validate :uniqueness
+
+  def uniqueness
+    existing_count = User.where(email: email)
+      .where.not(id: id).count
+
+    if existing_count > 0
+      error_message = I18n.t(
+        "activerecord.errors.messages.uniqueness")
+      errors[:email] << error_message
+    end
+  end
 end
