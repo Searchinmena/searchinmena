@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    registrations: "registrations"
-  }
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
-  get "/home" => "pages#home", as: :home
+  scope "(:locale)", locale: /en|ar/ do
+    devise_for :users, controllers: {
+      registrations: "registrations"
+    }
 
-  resource :dashboard, controller: :dashboard
+    get "/home" => "pages#home", as: :home
+    resource :dashboard, controller: :dashboard
 
-  root to: "pages#home"
+    root to: "pages#home"
+  end
 end

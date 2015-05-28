@@ -4,6 +4,7 @@
   float: left;
   list-style: none;
   width: 2*$bs9;
+  min-height: 70em;
 
   [dir="rtl"] & {
     float: right;
@@ -11,73 +12,47 @@
     border-left: 1px solid $border-grey;
   }
 
+  li {
+    @extend %clearfix;
+  }
+
   .nav-link {
     @include transition(all, .25s, ease-in-out);
     display: block;
-    text-align: right;
     text-decoration: none;
     text-transform: uppercase;
-    padding: $bs2;
-    border-bottom: 1px solid $border-grey;
+    padding: 0 $bs2 0 0;
+    line-height: 3 * $bs2;
+    border-bottom: 0;
     position: relative;
+    color: $basic-font;
+    font-weight: 100;
 
     [dir="rtl"] & {
-      text-align: left;
+      padding: 0 0 0 $bs2;
     }
 
     &.active {
-      color: white;
-      background-color: $nav-link;
+      background-color: $light-grey;
+      color: $nav-link;
+    } 
 
-      &:after {
-        display: none;
-      }
-    }
-
-    &:after {
-      @include transition(all, .25s, ease-in-out);
-      content: "";
-      width: 0;
-      height: calc(100% + 2px);
-      background-color: $nav-link;
-      position: absolute;
-      right: 0;
-      top: -1px;
-
-      [dir="rtl"] & {
-        left: 0;
-        right: auto;
-      } 
-    }
-
-    &:hover {
-      margin-right: $bs-2;
-
-      [dir="rtl"] & {
-        margin-left: $bs-2;
-      } 
-    }
-
-    &:hover:after, &:focus:after {
-      width: $bs-2;
-      right: -$bs-2;
-
-      [dir="rtl"] & {
-        left: -$bs-2;
-        right: auto;
-      }
+    &:hover, &.focus {
+      color: $nav-link;
     }
   }
 
   .icon {
-    font-size: $bs2;
+    @include transition(all, .25s, ease-in-out);
     display: inline-block;
-    float: right;
-    padding: $bs-5;
-    margin-top: -$bs-3;
+    font-size: $bs2;
+    line-height: 3 * $bs2;
+    padding: 0 $bs2;
+    float: left;
+    color: $nav-link;
 
     [dir="rtl"] & {
-      float: left;
+      float: right;
     }
   }
 }
