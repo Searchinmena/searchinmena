@@ -17,7 +17,7 @@
       = f.text_field :last_name
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
-      = f.email_field :email, autofocus: true
+      = f.email_field :email
       = error_message_for(user, :email)
     .field
       = f.label :password, t("devise.registrations.password")
