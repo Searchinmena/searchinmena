@@ -30,6 +30,7 @@
         = f.radio_button :category, cat
         = f.label User.category_name(cat), for: "user_category_" + cat,
           class: "inline-label"
+      = error_message_for(user, :category)
 
     %h3
       = t("sign_up.contant_info_header")

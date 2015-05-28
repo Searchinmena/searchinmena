@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
 
   has_one :business
 
-  validates :category, presence: true
-
   def self.category_name(type)
     I18n.t("user.types.#{type}")
   end

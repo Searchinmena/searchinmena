@@ -9,7 +9,7 @@ describe UserValidator do
   it { is_expected.to be_valid }
 
   describe "presence validation" do
-    [:email, :password, :password_confirmation].each do |field|
+    [:email, :password, :password_confirmation, :category].each do |field|
       let(:user_params) do
         valid_params.merge(field => '')
       end

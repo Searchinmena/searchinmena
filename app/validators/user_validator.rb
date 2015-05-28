@@ -1,11 +1,11 @@
 class UserValidator < BaseValidator
   def self.fields
-    [:id, :email, :password, :password_confirmation]
+    [:id, :email, :password, :password_confirmation, :category]
   end
 
   attr_accessor(*fields)
 
-  validates :email, :password, :password_confirmation, presence: true
+  validates :email, :password, :password_confirmation, :category, presence: true
   validates :email, :password, :password_confirmation, length:
     { maximum: A9n.validations[:max_text_field_size] }
   validates :email, format: { with: A9n.validations[:email_format] }
