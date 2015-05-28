@@ -1,7 +1,8 @@
 .container
   .sign-up-wrapper
     = render partial: "users/registrations/form",
-      locals: { business_presenter: @business_presenter }
+      locals: { user: user, business: business,
+                business_presenter: business_presenter }
 
     .form-additional-panel
       %h1.title= t("text.title")

@@ -1,6 +1,7 @@
 defaults: &defaults
   app_host: http://localhost:3000
   validations:
+    email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
     max_text_area_size: 2000
     max_text_field_size: 255
 

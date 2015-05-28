@@ -11,12 +11,12 @@ class StoringHandler
   def perform
     assign_attributes
     validate
-    success = if no_errors?
-                repository.save(record)
-                true
-              else
+    success = if errors?
                 copy_errors
                 false
+              else
+                repository.save(record)
+                true
               end
 
     Response.new(success: success, object: record)
@@ -30,14 +30,12 @@ class StoringHandler
     validator.valid?
   end
 
-  def no_errors?
-    validator.errors.empty?
+  def errors?
+    validator.errors?
   end
 
   def copy_errors
-    validator.errors.each do |key, error|
-      record.errors.add(validator.field(key), error)
-    end
+    validator.copy_errors(record)
   end
 end
 
