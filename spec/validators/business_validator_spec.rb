@@ -24,7 +24,8 @@ describe BusinessValidator do
         valid_params.merge(field => too_long_field)
       end
 
-      it "requires #{field} to be present" do
+      it "requires #{field} to be shorter than
+        #{A9n.validations[:max_text_field_size]}" do
         is_expected.to be_invalid
       end
     end
