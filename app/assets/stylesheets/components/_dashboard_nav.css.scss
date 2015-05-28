@@ -23,24 +23,22 @@
     text-transform: uppercase;
     padding: 0 $bs2 0 0;
     line-height: 3 * $bs2;
-    border-bottom: 1px solid $border-grey;
+    border-bottom: 0;
     position: relative;
+    color: $basic-font;
+    font-weight: 100;
 
     [dir="rtl"] & {
       padding: 0 0 0 $bs2;
     }
 
     &.active {
-      background-color: $nav-link;
-      color: white;
-
-      &:hover, &:focus {
-        background-color: $nav-link;
-      }
-    }
+      background-color: $light-grey;
+      color: $nav-link;
+    } 
 
     &:hover, &.focus {
-      background-color: $light-grey;
+      color: $nav-link;
     }
   }
 
@@ -50,15 +48,11 @@
     font-size: $bs2;
     line-height: 3 * $bs2;
     padding: 0 $bs2;
-    border-right: 1px solid $border-grey;
     float: left;
-    margin: 0 $bs1 0 0;
+    color: $nav-link;
 
     [dir="rtl"] & {
       float: right;
-      border-right: 0;
-      border-left: 1px solid $border-grey;
-      margin: 0 0 0 $bs1;
     }
   }
 }
