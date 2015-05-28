@@ -11,7 +11,8 @@
     url: registration_path(resource_name)) do |f|
     = devise_error_messages!
     .field
-      = f.label :first_name, t("devise.active_record.attributes.user.first_name")
+      = f.label :first_name,
+      t("devise.active_record.attributes.user.first_name")
       = f.text_field :first_name, autofocus: true
     .field
       = f.label :last_name, t("devise.active_record.attributes.user.last_name")
