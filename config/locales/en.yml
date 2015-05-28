@@ -36,7 +36,7 @@ en:
     types:
       manufacturer: "Manufacturer"
       trading_company: "Trading Company"
-      bying_office: "Buying Office"
+      buying_office: "Buying Office"
       agent: "Agent"
       distributer: "Distributer/Wholesalers"
       goverment_entity: "Government Entity"
