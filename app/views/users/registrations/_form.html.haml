@@ -12,25 +12,32 @@
       = f.label :first_name,
       t("devise.active_record.attributes.user.first_name")
       = f.text_field :first_name, autofocus: true
+      = error_message_for(user, :first_name)
+
     .field
       = f.label :last_name, t("devise.active_record.attributes.user.last_name")
       = f.text_field :last_name
+      = error_message_for(user, :last_name)
+
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
       = f.email_field :email
       = error_message_for(user, :email)
-    .field
-      = f.label :password, t("devise.registrations.password")
-      - if @validatable
-        .field-comment= t("devise.registrations.password_field_info",
-        number: @minimum_password_length)
-      = f.password_field :password, autocomplete: "off"
-      = error_message_for(user, :password)
-    .field
-      = f.label :password_confirmation,
-      t("devise.registrations.password_confirmation")
-      = f.password_field :password_confirmation, autocomplete: "off"
-      = error_message_for(user, :password_confirmation)
+
+    - unless user.password.present?
+      .field
+        = f.label :password, t("devise.registrations.password")
+        - if @validatable
+          .field-comment= t("devise.registrations.password_field_info",
+          number: @minimum_password_length)
+        = f.password_field :password, autocomplete: "off"
+        = error_message_for(user, :password)
+
+      .field
+        = f.label :password_confirmation,
+        t("devise.registrations.password_confirmation")
+        = f.password_field :password_confirmation, autocomplete: "off"
+        = error_message_for(user, :password_confirmation)
 
     .field
       %label= t("text.category_label")

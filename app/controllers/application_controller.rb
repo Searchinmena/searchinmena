@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :category
+    devise_parameter_sanitizer.for(:sign_up) << [:category, :first_name,
+                                                 :last_name]
   end
 end
