@@ -1,12 +1,4 @@
 ar:
-  hello: "مرحبا"
-
-  user:
-    types:
-      seller: "بائع"
-      buyer: "مشتري"
-      both: "بائع/مشتري"
-
   main_nav:
     browse: "تصفح"
     dashboard: "لوحة التحكم الرئيسية"
@@ -24,9 +16,11 @@ ar:
 
   text:
     title: "على ماذا تحصل"
-    description: "عن طريق إنشاء حساب سوف تكسب
+    description:
+      "عن طريق إنشاء حساب سوف تكسب
  حق الوصول الكامل إلى أفضل العروض في السوق.
  سوف تكون قادرا على العثور على العروض التي تتناسب مع توقعاتك."
+
     line: "التسجيل ك"
     subtitle_1: "بائع"
     subtitle_2: "مشتري"
@@ -37,3 +31,29 @@ ar:
     buyer_line_2: "العثور على أفضل العروض"
     buyer_line_3: "اجراء اتصالات مع البائعين."
     category_label: "أنا:"
+
+  business:
+    types:
+      manufacturer: "مصنع"
+      trading_company: "شركة تجارية"
+      buying_office: "مكتب مشتريات"
+      agent: "وكيل"
+      distributer:  "موزع / تجار الجملة"
+      goverment_entity: "هيئة حكومية"
+      association: "جمعية"
+      business_services: "خدمات"
+      other: "أخرى"
+
+  sign_up:
+    contant_info_header: "Your Contact Information"
+    location: "Location"
+    contact_number: "Contact Number"
+    business_type: "Business Type"
+    main_products: "Main Products"
+
+  user:
+    types:
+      seller: "بائع"
+      buyer: "مشتري"
+      both: "بائع/مشتري"
+
