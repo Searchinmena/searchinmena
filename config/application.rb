@@ -34,7 +34,7 @@ module Sim
     config.action_mailer.default_url_options = { host: A9n.app_host }
 
     # Override field error wrapper
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+    config.action_view.field_error_proc = proc { |html_tag|
       "<span class=\"field-with-errors\">#{html_tag}</span>".html_safe
     }
   end
