@@ -57,4 +57,15 @@ describe UserValidator do
 
     it { is_expected.not_to be_valid }
   end
+
+  describe "password length" do
+    let(:user_params) do
+      valid_params.merge(
+        password: 'test',
+        password_confirmation: 'test'
+      )
+    end
+
+    it { is_expected.not_to be_valid }
+  end
 end
