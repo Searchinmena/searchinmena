@@ -2,10 +2,10 @@ require "rails_helper"
 
 describe User do
   describe "validations" do
-    it { build(:user).should be_valid }
+    it { expect(build(:user)).to be_valid }
 
     describe "category" do
-      it { build(:user, category: nil).should_not be_valid }
+      it { expect(build(:user, category: nil)).not_to be_valid }
     end
   end
 
