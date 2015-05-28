@@ -1,12 +1,4 @@
 ar:
-  hello: "مرحبا"
-
-  user:
-    types:
-      seller: "بائع"
-      buyer: "مشتري"
-      both: "بائع/مشتري"
-
   main_nav:
     browse: "تصفح"
     dashboard: "لوحة التحكم الرئيسية"
@@ -39,3 +31,28 @@ ar:
     buyer_line_3: "اجراء اتصالات مع البائعين."
     category_label: "أنا:"
     fb_signup_link: "Sign up using Facebook"
+
+  business:
+    types:
+      manufacturer: "مصنع"
+      trading_company: "شركة تجارية"
+      buying_office: "مكتب مشتريات"
+      agent: "وكيل"
+      distributer:  "موزع / تجار الجملة"
+      goverment_entity: "هيئة حكومية"
+      association: "جمعية"
+      business_services: "خدمات"
+      other: "أخرى"
+
+  sign_up:
+    contant_info_header: "Your Contact Information"
+    location: "Location"
+    contact_number: "Contact Number"
+    business_type: "Business Type"
+    main_products: "Main Products"
+
+  user:
+    types:
+      seller: "بائع"
+      buyer: "مشتري"
+      both: "بائع/مشتري"

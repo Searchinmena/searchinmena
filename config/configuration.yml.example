@@ -2,6 +2,12 @@ defaults: &defaults
   app_host: http://localhost:3000
   fb_app_id: 838866496206335
   fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
+  validations:
+    email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
+    password_min_length: 8
+    password_max_length: 72
+    max_text_area_size: 2000
+    max_text_field_size: 255
 
 development:
   honeybadger_env: development

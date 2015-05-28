@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     }
 
     get "/home" => "pages#home", as: :home
-    get "/dashboard" => "dashboard#dashboard_home", as: :dashboard_home
+    resource :dashboard, controller: :dashboard
 
     root to: "pages#home"
   end

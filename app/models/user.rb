@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   enum category: [:seller, :buyer, :both]
 
-  validates :category, presence: true
+  has_one :business
 
   def self.category_name(type)
     I18n.t("user.types.#{type}")

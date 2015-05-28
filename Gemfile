@@ -7,6 +7,7 @@ gem 'honeybadger', '~> 2.0'
 gem 'dependor'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'country_select'
 
 # assets
 gem 'sass-rails', '~> 5.0'

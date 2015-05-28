@@ -7,9 +7,7 @@
 
     = link_to t("text.fb_signup_link"), user_omniauth_authorize_path(:facebook)
 
-  = form_for(resource, as: resource_name,
-    url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
+  = form_for user, url: registration_path(:user) do |f|
     .field
       = f.label :first_name,
       t("devise.active_record.attributes.user.first_name")
@@ -19,18 +17,21 @@
       = f.text_field :last_name
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
-      = f.email_field :email
-    - unless resource.password.present?
-      .field
-        = f.label :password, t("devise.registrations.password")
-        - if @validatable
-          .field-comment= t("devise.registrations.password_field_info",
-          number: @minimum_password_length)
-        = f.password_field :password, autocomplete: "off"
-      .field
-        = f.label :password_confirmation,
-        t("devise.registrations.password_confirmation")
-        = f.password_field :password_confirmation, autocomplete: "off"
+      = f.email_field :email, autofocus: true
+      = error_message_for(user, :email)
+    .field
+      = f.label :password, t("devise.registrations.password")
+      - if @validatable
+        .field-comment= t("devise.registrations.password_field_info",
+        number: @minimum_password_length)
+      = f.password_field :password, autocomplete: "off"
+      = error_message_for(user, :password)
+    .field
+      = f.label :password_confirmation,
+      t("devise.registrations.password_confirmation")
+      = f.password_field :password_confirmation, autocomplete: "off"
+      = error_message_for(user, :password_confirmation)
+
     .field
       %label= t("text.category_label")
       %br
@@ -38,5 +39,34 @@
         = f.radio_button :category, cat
         = f.label User.category_name(cat), for: "user_category_" + cat,
           class: "inline-label"
+      = error_message_for(user, :category)
+
+    %h3
+      = t("sign_up.contant_info_header")
+
+    = f.fields_for business do |b|
+      .field
+        = b.label :name, t("sign_up.company_name")
+        = b.text_field :name
+        = error_message_for(business, :name)
+
+      .field
+        = b.label :country, t("sign_up.location")
+        = country_select :"user[business]", :country
+
+      .field
+        = b.label :phone, t("sign_up.contact_number")
+        = b.text_field :phone
+        = error_message_for(business, :phone)
+
+      .field
+        = b.label :business_type, t("sign_up.business_type")
+        = b.select :business_type,
+          business_presenter.options_for_business_types_select
+
+      .field
+        = label_tag :main_products, t("sign_up.main_products")
+        = text_field_tag :main_products
+
     .actions
       = f.submit t("devise.registrations.submit")
