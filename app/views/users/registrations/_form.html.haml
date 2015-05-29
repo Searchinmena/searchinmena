@@ -31,36 +31,36 @@
           = f.label User.category_name(cat), for: "user_category_" + cat,
             class: "inline-label"
       = error_message_for(user, :category)
+    .fields-group
+      %h3.fields-group-title
+        = t("sign_up.contant_info_header")
 
-    %h3
-      = t("sign_up.contant_info_header")
+      = f.fields_for business do |b|
+        .field
+          = b.label :name, t("sign_up.company_name")
+          = b.text_field :name
+          = error_message_for(business, :name)
 
-    = f.fields_for business do |b|
-      .field
-        = b.label :name, t("sign_up.company_name")
-        = b.text_field :name
-        = error_message_for(business, :name)
+        .field
+          = b.label :country, t("sign_up.location")
+          .select-field
+            = country_select :"user[business]", :country
 
-      .field
-        = b.label :country, t("sign_up.location")
-        .select-field
-          = country_select :"user[business]", :country
+        .field
+          = b.label :phone, t("sign_up.contact_number")
+          = b.text_field :phone
+          = error_message_for(business, :phone)
 
-      .field
-        = b.label :phone, t("sign_up.contact_number")
-        = b.text_field :phone
-        = error_message_for(business, :phone)
+        .field
+          = b.label :business_type, t("sign_up.business_type")
+          .select-field
+            = b.select :business_type,
+              business_presenter.options_for_business_types_select
 
-      .field
-        = b.label :business_type, t("sign_up.business_type")
-        .select-field
-          = b.select :business_type,
-            business_presenter.options_for_business_types_select
+        .field
+          = label_tag :main_products, t("sign_up.main_products")
+          = text_field_tag :main_products
 
-      .field
-        = label_tag :main_products, t("sign_up.main_products")
-        = text_field_tag :main_products
-
-    .actions
-      = f.submit t("devise.registrations.submit")
+      .actions
+        = f.submit t("devise.registrations.submit")
 
