@@ -3,7 +3,7 @@ require "rails_helper"
 describe FacebookUserRepository do
   fake(:user_repository)
 
-  let(:facebook_attributes) {
+  let(:facebook_attributes) do
     {
       "info" => {
         "nickname" => 'jbloggs',
@@ -13,7 +13,7 @@ describe FacebookUserRepository do
         "last_name" => 'Bloggs'
       }
     }
-  }
+  end
 
   subject { FacebookUserRepository.new(user_repository) }
 
