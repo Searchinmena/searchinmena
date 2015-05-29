@@ -25,11 +25,11 @@
 
     .field
       %label= t("text.category_label")
-      %br
       - User.categories.keys.each do |cat|
-        = f.radio_button :category, cat
-        = f.label User.category_name(cat), for: "user_category_" + cat,
-          class: "inline-label"
+        .checkbox-field
+          = f.radio_button :category, cat
+          = f.label User.category_name(cat), for: "user_category_" + cat,
+            class: "inline-label"
       = error_message_for(user, :category)
 
     %h3
@@ -43,7 +43,8 @@
 
       .field
         = b.label :country, t("sign_up.location")
-        = country_select :"user[business]", :country
+        .select-field
+          = country_select :"user[business]", :country
 
       .field
         = b.label :phone, t("sign_up.contact_number")
@@ -52,8 +53,9 @@
 
       .field
         = b.label :business_type, t("sign_up.business_type")
-        = b.select :business_type,
-          business_presenter.options_for_business_types_select
+        .select-field
+          = b.select :business_type,
+            business_presenter.options_for_business_types_select
 
       .field
         = label_tag :main_products, t("sign_up.main_products")
