@@ -45,6 +45,8 @@ en:
       other: "Other"
 
   sign_up:
+    facebook: "Sign up with facebbok"
+    or: "or"
     contant_info_header: "Your Contact Information"
     location: "Location"
     location_select: "-- Select Country --"

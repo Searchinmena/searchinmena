@@ -45,6 +45,8 @@ ar:
       other: "أخرى"
 
   sign_up:
+    facebook: "Sign up with facebbok"
+    or: "or"
     contant_info_header: "معلومات الاتصال الخاصة بك"
     location: "الموقع"
     location_select: "-- Select Country --"

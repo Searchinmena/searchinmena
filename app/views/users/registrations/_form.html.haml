@@ -8,9 +8,9 @@
   = form_for user, url: registration_path(:user) do |f|
     = link_to("#", class: "facebook-sign-up") do
       .icon-facebook
-      Sign up with facebook
+      = t("sign_up.facebook")
     %p.line-behind
-      %span or
+      %span= t('sign_up.or')
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
       = f.email_field :email, autofocus: true
@@ -69,6 +69,6 @@
           = label_tag :main_products, t("sign_up.main_products")
           = text_field_tag :main_products
 
-      .actions
-        = f.submit t("devise.registrations.submit")
+    .actions
+      = f.submit t("devise.registrations.submit")
 
