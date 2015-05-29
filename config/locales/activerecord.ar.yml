@@ -1,10 +1,9 @@
 ar:
-  activerecord:
-    errors:
-      messages:
-        blank: "لا يمكن أن يكون فارغا"
-        too_short: " قصيرة جدا (الحد الأدنى هو  %{count} أحرف) "
-        too_long: "طويل جدا (الحد الأقصى هو %{count} أحرف)"
-        invalid: "غير صالح"
-        inclusion: " ليست موجودة في القائمة"
-        uniqueness: "مؤخوذ"
+  errors:
+    messages:
+      blank: "لا يمكن أن يكون فارغا"
+      too_short: " قصيرة جدا (الحد الأدنى هو  %{count} أحرف) "
+      too_long: "طويل جدا (الحد الأقصى هو %{count} أحرف)"
+      invalid: "غير صالح"
+      inclusion: " ليست موجودة في القائمة"
+      uniqueness: "مؤخوذ"
