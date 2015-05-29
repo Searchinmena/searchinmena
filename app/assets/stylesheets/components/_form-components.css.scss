@@ -6,6 +6,10 @@
   display: block;
   font-family: inherit;
 
+  .field-with-errors & {
+    border-color: $red;
+  }
+  
   &:focus {
     outline: 0;
     border: 1px solid $blue-basic;
@@ -117,4 +121,11 @@ input[type="text"], input[type="email"], input[type="password"] {
 
 .actions {
   margin: $bs3 0 0 0;
+}
+
+.error {
+  display: block;
+  color: $red;
+  font-weight: 100;
+  padding: $bs-3 0;
 }
