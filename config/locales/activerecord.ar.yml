@@ -2,9 +2,9 @@ ar:
   activerecord:
     errors:
       messages:
-        blank: "can't be blank"
-        too_short: "is too short (minimum is %{count} characters)"
-        too_long: "is too long (maximum is %{count} characters)"
-        invalid: "is invalid"
-        inclusion: "is not included in the list"
-        uniqueness: "is already taken"
+        blank: "لا يمكن أن يكون فارغا"
+        too_short: " قصيرة جدا (الحد الأدنى هو  %{count} أحرف) "
+        too_long: "طويل جدا (الحد الأقصى هو %{count} أحرف)"
+        invalid: "غير صالح"
+        inclusion: " ليست موجودة في القائمة"
+        uniqueness: "مؤخوذ"

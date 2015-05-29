@@ -45,11 +45,11 @@ ar:
       other: "أخرى"
 
   sign_up:
-    contant_info_header: "Your Contact Information"
-    location: "Location"
-    contact_number: "Contact Number"
-    business_type: "Business Type"
-    main_products: "Main Products"
+    contant_info_header: "معلومات الاتصال الخاصة بك"
+    location: "الموقع"
+    contact_number: "رقم الاتصال"
+    business_type: "نوع الشركة"
+    main_products: "المنتجات الرئيسية"
 
   user:
     types:
