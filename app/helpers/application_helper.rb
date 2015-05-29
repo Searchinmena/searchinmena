@@ -4,8 +4,10 @@ module ApplicationHelper
   end
 
   def error_message_for(object, attribute)
-    content_tag :span, class: 'error' do
-      object.errors.messages[attribute.to_sym].try(:first)
+    if object.errors.any?
+      content_tag :span, class: 'error' do
+        object.errors.messages[attribute.to_sym].try(:first)
+      end
     end
   end
 end
