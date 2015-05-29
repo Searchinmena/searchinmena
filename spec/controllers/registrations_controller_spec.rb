@@ -1,11 +1,25 @@
 require 'rails_helper'
 
 describe RegistrationsController do
+  let(:user) { build(:user) }
+  let(:business) { build(:business, user: nil) }
+
+  fake(:business_repository)
+  fake(:user_factory)
+
   before do
+    expect(controller).to receive(:business_repository)
+      .and_return(business_repository)
     @request.env["devise.mapping"] = Devise.mappings[:user]
   end
 
   describe "#new" do
+    before do
+      expect(controller).to receive(:user_factory).and_return(user_factory)
+      expect(user_factory).to receive(:build).and_return(user)
+      expect(business_repository).to receive(:new).and_return(business)
+    end
+
     it "is successful" do
       get :new
       expect(response).to be_successful
@@ -13,9 +27,6 @@ describe RegistrationsController do
   end
 
   describe "#create" do
-    let(:user) { build(:user) }
-    let(:business) { build(:business, user: nil) }
-
     let(:sign_up_params) do
       {
         "email" => user.email,
@@ -35,13 +46,10 @@ describe RegistrationsController do
 
     fake(:user_creator)
     fake(:user_repository)
-    fake(:business_repository)
 
     before do
       expect(controller).to receive(:user_repository)
         .and_return(user_repository)
-      expect(controller).to receive(:business_repository)
-        .and_return(business_repository)
 
       response = double(successful?: successful, user: user, business: business)
       expect(UserCreator).to receive(:new)
