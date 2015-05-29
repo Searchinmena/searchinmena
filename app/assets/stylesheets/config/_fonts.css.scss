@@ -47,11 +47,17 @@
 .icon-briefcase:before {
   content: "\e6b1";
 }
+.icon-chevron-down:before {
+  content: "\e6ab";
+}
 .icon-cog:before {
   content: "\e6a2";
 }
 .icon-envelope:before {
   content: "\e693";
+}
+.icon-facebook:before {
+  content: "\e68c";
 }
 .icon-home:before {
   content: "\e669";
@@ -479,9 +485,6 @@
 .icon-facetime-video:before {
   content: "\e68b";
 }
-.icon-facebook:before {
-  content: "\e68c";
-}
 .icon-eye-open:before {
   content: "\e68d";
 }
@@ -565,9 +568,6 @@
 }
 .icon-chevron-left:before {
   content: "\e6aa";
-}
-.icon-chevron-down:before {
-  content: "\e6ab";
 }
 .icon-check:before {
   content: "\e6ac";

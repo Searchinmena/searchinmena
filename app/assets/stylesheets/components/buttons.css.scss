@@ -30,3 +30,26 @@ input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
 }
+
+.facebook-sign-up {
+  @include transition(all, .25s, ease-in-out);
+  display: inline-block;
+  color: $facebook-blue;
+  background-color: white;
+  padding: $bs-2 $bs0 $bs-2 $bs-2;
+  border: 2px solid $facebook-blue;
+  border-radius: $bs-3;
+  
+  &:hover {
+    color: $facebook-blue;
+    background-color: white;
+    background-color: $facebook-blue;
+    color: white;
+  }
+
+  .icon-facebook {
+    display: inline-block;
+    font-size: $bs2;
+    vertical-align: sub;
+  }
+}

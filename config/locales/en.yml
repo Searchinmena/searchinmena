@@ -46,10 +46,14 @@ en:
       other: "Other"
 
   sign_up:
+    facebook: "Sign up with facebbok"
+    or: "or"
     contant_info_header: "Your Contact Information"
     location: "Location"
+    location_select: "-- Select Country --"
     contact_number: "Contact Number"
     business_type: "Business Type"
+    business_type_select: "-- Select Business Type --"
     main_products: "Main Products"
 
   user:
