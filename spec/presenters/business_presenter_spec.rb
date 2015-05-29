@@ -6,6 +6,6 @@ describe BusinessPresenter do
 
     subject { presenter.options_for_business_types_select }
 
-    it { expect(subject.first).to eq(["Manufacturer", 0]) }
+    it { expect(subject.first).to eq(%w{Manufacturer manufacturer}) }
   end
 end
