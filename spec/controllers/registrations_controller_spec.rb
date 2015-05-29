@@ -18,6 +18,7 @@ describe RegistrationsController do
       expect(controller).to receive(:user_factory).and_return(user_factory)
       expect(user_factory).to receive(:build).and_return(user)
       expect(business_repository).to receive(:new).and_return(business)
+      expect(session["devise.auth_data"]).to eq(nil)
     end
 
     it "is successful" do
