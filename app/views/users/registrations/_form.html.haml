@@ -6,6 +6,11 @@
       = link_to t("devise.sessions.submit"), user_session_path
 
   = form_for user, url: registration_path(:user) do |f|
+    = link_to("#", class: "facebook-sign-up") do
+      .icon-facebook
+      Sign up with facebook
+    %p.line-behind
+      %span or
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
       = f.email_field :email, autofocus: true
@@ -32,8 +37,8 @@
             class: "inline-label"
       = error_message_for(user, :category)
     .fields-group
-      %h3.fields-group-title
-        = t("sign_up.contant_info_header")
+      %h3.line-behind
+        %span= t("sign_up.contant_info_header")
 
       = f.fields_for business do |b|
         .field

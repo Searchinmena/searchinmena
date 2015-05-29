@@ -37,16 +37,6 @@
   }
 }
 
-.fields-group {
-  border-top: 1px solid $border-grey;
-}
-
-.fields-group-title {
-  @extend %basic-title;
-  color: $grey;
-  margin: $bs0 0 $bs2;
-}
-
 .form-links {
   padding: $bs2;
 }
