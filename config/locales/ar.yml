@@ -47,8 +47,10 @@ ar:
   sign_up:
     contant_info_header: "معلومات الاتصال الخاصة بك"
     location: "الموقع"
+    location_select: "-- Select Country --"
     contact_number: "رقم الاتصال"
     business_type: "نوع الشركة"
+    business_type_select: "-- Select Business Type --"
     main_products: "المنتجات الرئيسية"
 
   user:

@@ -44,7 +44,8 @@
         .field
           = b.label :country, t("sign_up.location")
           .select-field
-            = country_select :"user[business]", :country
+            = country_select :"user[business]", :country,
+            prompt: t("sign_up.location_select")
 
         .field
           = b.label :phone, t("sign_up.contact_number")
@@ -55,7 +56,9 @@
           = b.label :business_type, t("sign_up.business_type")
           .select-field
             = b.select :business_type,
-              business_presenter.options_for_business_types_select
+              business_presenter.options_for_business_types_select,
+              prompt: t("sign_up.business_type_select")
+
 
         .field
           = label_tag :main_products, t("sign_up.main_products")
