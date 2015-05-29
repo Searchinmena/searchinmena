@@ -8,9 +8,19 @@ class UserFactory
     }
   end
 
-  def build(user_type, attributes)
+  def build(attributes)
     attributes ||= {}
-    user_type ||= :user
-    hash[user_type.to_sym].new(attributes)
+    user_type = user_type(attributes["provider"])
+    hash[user_type].new(attributes)
+  end
+
+  private
+
+  def user_type(provider)
+    if provider == "facebook"
+      :facebook
+    else
+      :user
+    end
   end
 end

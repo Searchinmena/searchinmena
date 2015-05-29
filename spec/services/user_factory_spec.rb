@@ -13,22 +13,29 @@ describe UserFactory do
 
   describe "#build" do
     context "params not set" do
-      let(:user_type) { nil }
       let(:attributes) { nil }
 
       it "initializes user" do
         expect(user_repository).to receive(:new).with({})
-        subject.build(user_type, attributes)
+        subject.build(attributes)
       end
     end
 
-    context "facebook auth params set" do
-      let(:user_type) { :facebook }
-      let(:attributes) { { uid: "1234567" } }
+    context "facebook auth" do
+      let(:attributes) { { "provider" => "facebook", "uid" => "1234567" } }
 
       it "initializes facebook user" do
         expect(facebook_user_repository).to receive(:new).with(attributes)
-        subject.build(user_type, attributes)
+        subject.build(attributes)
+      end
+    end
+
+    context "any other provider" do
+      let(:attributes) { { "provider" => "asdf" } }
+
+      it "initializes user" do
+        expect(user_repository).to receive(:new).with(attributes)
+        subject.build(attributes)
       end
     end
   end

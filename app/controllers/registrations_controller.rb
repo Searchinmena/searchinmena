@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
          :user_factory
 
   def new
-    user = user_factory.build(params[:type], session["devise.auth_data"])
+    user = user_factory.build(session["devise.auth_data"])
     business = business_repository.new
     session["devise.auth_data"] = nil
     render_new(user, business)

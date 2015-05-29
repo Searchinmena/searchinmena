@@ -13,9 +13,8 @@ describe Users::OmniauthCallbacksController do
       expect(session["devise.auth_data"]).to eq(request.env["omniauth.auth"])
     end
 
-    it "redirects to signup page with type facebook" do
-      expect(response).to redirect_to(new_user_registration_url(type:
-        :facebook))
+    it "redirects to signup page" do
+      expect(response).to redirect_to(new_user_registration_url)
     end
   end
 end
