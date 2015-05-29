@@ -31,7 +31,6 @@ en:
     buyer_line_2: "find best offer"
     buyer_line_3: "make contact with sellers."
     category_label: "I am a:"
-    fb_signup_link: "Sign up using Facebook"
 
   business:
     types:
@@ -46,7 +45,7 @@ en:
       other: "Other"
 
   sign_up:
-    facebook: "Sign up with facebbok"
+    facebook: "Sign up with Facebook"
     or: "or"
     contant_info_header: "Your Contact Information"
     location: "Location"

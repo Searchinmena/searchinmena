@@ -5,10 +5,8 @@
       = t("devise.links.login_text")
       = link_to t("devise.sessions.submit"), user_session_path
 
-    = link_to t("text.fb_signup_link"), user_omniauth_authorize_path(:facebook)
-
   = form_for user, url: registration_path(:user) do |f|
-    = link_to("#", class: "facebook-sign-up") do
+    = link_to(user_omniauth_authorize_path(:facebook), class: "facebook-sign-up") do
       .icon-facebook
       = t("sign_up.facebook")
     %p.line-behind

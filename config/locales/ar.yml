@@ -30,7 +30,6 @@ ar:
     buyer_line_2: "العثور على أفضل العروض"
     buyer_line_3: "اجراء اتصالات مع البائعين."
     category_label: "أنا:"
-    fb_signup_link: "Sign up using Facebook"
 
   business:
     types:
@@ -45,7 +44,7 @@ ar:
       other: "أخرى"
 
   sign_up:
-    facebook: "Sign up with facebbok"
+    facebook: "Sign up with Facebook"
     or: "or"
     contant_info_header: "معلومات الاتصال الخاصة بك"
     location: "الموقع"
