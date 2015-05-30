@@ -33,7 +33,7 @@ en:
     category_label: "I am a:"
   
   business:
-    types:
+    business_types:
       manufacturer: "Manufacturer"
       trading_company: "Trading Company"
       buying_office: "Buying Office"
@@ -52,7 +52,7 @@ en:
     main_products: "Main Products"
 
   user:
-    types:
+    categories:
       seller: "seller"
       buyer: "buyer"
       both: "both"

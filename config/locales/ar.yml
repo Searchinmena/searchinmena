@@ -33,7 +33,7 @@ ar:
     category_label: "أنا:"
 
   business:
-    types:
+    business_types:
       manufacturer: "مصنع"
       trading_company: "شركة تجارية"
       buying_office: "مكتب مشتريات"
@@ -52,7 +52,7 @@ ar:
     main_products: "Main Products"
 
   user:
-    types:
+    categories:
       seller: "بائع"
       buyer: "مشتري"
       both: "بائع/مشتري"

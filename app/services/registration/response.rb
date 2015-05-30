@@ -1,4 +1,4 @@
-class UserCreatorResponse < Response
+class Registration::Response < ::Response
   attr_accessor :user, :business
 
   def initialize(success: true, user: nil, business: nil)
