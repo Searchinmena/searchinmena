@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|ar/ do
     devise_for :users, controllers: {
-      registrations: "registrations"
+      registrations: "registrations",
+      sessions: "sessions"
     }
     devise_scope :user do
       get "users", to: "registrations#new"
