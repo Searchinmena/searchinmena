@@ -1,5 +1,4 @@
 class SessionsController < Devise::SessionsController
-
   after_action :email_confirmed?
 
   protected
