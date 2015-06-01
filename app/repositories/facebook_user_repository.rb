@@ -6,7 +6,8 @@ class FacebookUserRepository
       first_name: facebook_attributes["info"]["first_name"],
       last_name: facebook_attributes["info"]["last_name"],
       email: facebook_attributes["info"]["email"],
-      password: Devise.friendly_token[0, 20]
+      password: Devise.friendly_token,
+      provider: facebook_attributes["provider"]
     }
     user_repository.new(attributes)
   end

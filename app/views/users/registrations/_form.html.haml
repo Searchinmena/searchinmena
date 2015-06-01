@@ -28,12 +28,11 @@
       = f.email_field :email
       = error_message_for(user, :email)
 
-    - unless user.password.present?
+    - unless user.provider.present?
       .field
         = f.label :password, t("devise.registrations.password")
-        - if @validatable
-          .field-comment= t("devise.registrations.password_field_info",
-          number: @minimum_password_length)
+        .field-comment= t("devise.registrations.password_field_info",
+        number: A9n.validations[:password_min_length])
         = f.password_field :password, autocomplete: "off"
         = error_message_for(user, :password)
 
