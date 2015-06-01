@@ -1,7 +1,5 @@
-defaults:
+defaults: &defaults
   email_from: 'no-reply@searchinmena.com'
-development:
-  app_host: 'localhost:3000'
 production:
   app_host: http://sim.demo.llp.pl
   honeybadger_env: demo
