@@ -45,12 +45,16 @@ ar:
       other: "أخرى"
 
   sign_up:
-    contant_info_header: "Your Contact Information"
+    facebook: "Sign up with facebbok"
+    or: "or"
+    contant_info_header: "معلومات الاتصال الخاصة بك"
     company_name: "Company Name"
-    location: "Location"
-    contact_number: "Contact Number"
-    business_type: "Business Type"
-    main_products: "Main Products"
+    location: "الموقع"
+    location_select: "-- Select Country --"
+    contact_number: "رقم الاتصال"
+    business_type: "نوع الشركة"
+    business_type_select: "-- Select Business Type --"
+    main_products: "المنتجات الرئيسية"
 
   user:
     categories:

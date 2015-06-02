@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     devise_for :users, controllers: {
       registrations: "registrations"
     }
-
+    devise_scope :user do
+      get "users", to: "registrations#new"
+    end
     get "/home" => "pages#home", as: :home
     resource :dashboard, controller: :dashboard
 

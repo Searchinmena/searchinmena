@@ -6,6 +6,11 @@
       = link_to t("devise.sessions.submit"), user_session_path
 
   = form_for user, url: registration_path(:user) do |f|
+    = link_to("#", class: "facebook-sign-up") do
+      .icon-facebook
+      = t("sign_up.facebook")
+    %p.line-behind
+      %span= t('sign_up.or')
     .field
       = f.label :email, t("devise.active_record.attributes.user.email")
       = f.email_field :email, autofocus: true
@@ -25,15 +30,15 @@
 
     .field
       %label= t("text.category_label")
-      %br
       - User.categories.keys.each do |cat|
-        = f.radio_button :category, cat, "ng-model": "category",
-          "ng-checked": user.category == cat
-        = f.label User.category_name(cat), for: "user_category_#{cat}",
-          class: "inline-label"
+        .checkbox-field
+          = f.radio_button :category, cat, "ng-model": "category",
+            "ng-checked": user.category == cat
+          = f.label User.category_name(cat), for: "user_category_#{cat}",
+            class: "inline-label"
       = error_message_for(user, :category)
 
-    .company-info{ "ng-show": "shouldShowCompanyInfo(category)" }
+    .fields-group.company-info{ "ng-show": "shouldShowCompanyInfo(category)" }
       = render partial: "company_info",
         locals: { f: f,
                   business: business,
