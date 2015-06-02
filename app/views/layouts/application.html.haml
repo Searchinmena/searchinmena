@@ -5,10 +5,8 @@
 
   %body{ 'ng-app' => 'sim', 'dir' => dir }
     - if user_signed_in?
-      - if @email_confirmed
-        = flash[:notice] = "Welcome"
-      - else
-        = flash[:notice] = "Please confirme your email"
+      - if !@email_confirmed
+        .alert.alert-warning= ("Please confirme your email")
     = render "components/header"
     = yield
     = render "components/footer"
