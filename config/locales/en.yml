@@ -46,6 +46,7 @@ en:
 
   sign_up:
     contant_info_header: "Your Contact Information"
+    company_name: "Company Name"
     location: "Location"
     contact_number: "Contact Number"
     business_type: "Business Type"
