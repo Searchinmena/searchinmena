@@ -1,0 +1,7 @@
+- if user_signed_in?
+  - unless @email_confirmed
+    .alert.alert-warning
+      = t("devise.confirmations.msg2")
+      = t("devise.confirmations.or")
+      = link_to(new_user_confirmation_path) do
+        = t("devise.confirmations.msg")

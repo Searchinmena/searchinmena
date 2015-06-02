@@ -4,9 +4,7 @@
     = render "/layouts/head"
 
   %body{ 'ng-app' => 'sim', 'dir' => dir }
-    - if user_signed_in?
-      - unless @email_confirmed
-        .alert.alert-warning= ("Please confirme your email")
+    = render "/layouts/flash"
     = render "components/header"
     = yield
     = render "components/footer"
