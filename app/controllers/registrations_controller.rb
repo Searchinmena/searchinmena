@@ -1,16 +1,17 @@
 class RegistrationsController < Devise::RegistrationsController
   inject :user_repository, :business_repository, :business_presenter,
-         :user_factory
+         :user_params_factory
 
   def new
-    user = user_factory.build(session["devise.auth_data"])
+    user_params = user_params_factory.build(session["devise.auth_data"])
+    user = user_repository.new(user_params)
     business = business_repository.new
     session["devise.auth_data"] = nil
     render_new(user, business)
   end
 
   def create
-    user_creator = Registration::Creator.new(user_params, business_params)
+    user_creator = Registration::Creator.new(sign_up_params, business_params)
     response = user_creator.perform
     if response.successful?
       sign_up(:user, response.user)
@@ -27,10 +28,6 @@ class RegistrationsController < Devise::RegistrationsController
       user: user, business: business,
       business_presenter: business_presenter
     }
-  end
-
-  def user_params
-    sign_up_params
   end
 
   def sign_up_params

@@ -12,6 +12,7 @@
       = t("sign_up.facebook")
     %p.line-behind
       %span= t('sign_up.or')
+
     .field
       = f.label :first_name,
       t("devise.active_record.attributes.user.first_name")
@@ -28,7 +29,13 @@
       = f.email_field :email
       = error_message_for(user, :email)
 
-    - unless user.provider.present?
+    = f.hidden_field :provider
+
+    - if user.provider.present?
+      = f.hidden_field :password
+      = f.hidden_field :password_confirmation
+
+    - else
       .field
         = f.label :password, t("devise.registrations.password")
         .field-comment= t("devise.registrations.password_field_info",
