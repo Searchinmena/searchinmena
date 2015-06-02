@@ -15,6 +15,5 @@
     ]
 
     $scope.loadTags = (query) ->
-      #$http.get('/tags?query=' + query)
-      return ['Ania']
+      $http.get("#{window.Sim.TAGS_URL}?query=#{query}")
 ]

@@ -13,4 +13,8 @@ FactoryGirl.define do
     business_type { Business.business_types[:agent] }
     association :user
   end
+
+  factory :tag do
+    sequence(:name) { |n| "Tag#{n}" }
+  end
 end
