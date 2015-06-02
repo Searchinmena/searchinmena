@@ -33,7 +33,7 @@ en:
     category_label: "I am a:"
   
   business:
-    types:
+    business_types:
       manufacturer: "Manufacturer"
       trading_company: "Trading Company"
       buying_office: "Buying Office"
@@ -48,6 +48,7 @@ en:
     facebook: "Sign up with facebbok"
     or: "or"
     contant_info_header: "Your Contact Information"
+    company_name: "Company Name"
     location: "Location"
     location_select: "-- Select Country --"
     contact_number: "Contact Number"
@@ -56,7 +57,7 @@ en:
     main_products: "Main Products"
 
   user:
-    types:
+    categories:
       seller: "seller"
       buyer: "buyer"
       both: "both"
