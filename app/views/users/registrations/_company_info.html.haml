@@ -27,5 +27,6 @@
 
   .field
     = label_tag :main_products, t("sign_up.main_products")
-    = text_field_tag :main_products
+    %tags-input{ "ng-model": "tags" }
+      %auto-complete{ source: "loadTags($query)" }
 

@@ -12,6 +12,7 @@
 //
 //= require angular
 //= require angular-ui-router
+//= require ng-tags-input
 //= require sim
 //= require router
 //= require_tree ./services

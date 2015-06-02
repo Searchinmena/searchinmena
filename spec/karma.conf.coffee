@@ -6,6 +6,7 @@ module.exports = (config) ->
       'vendor/assets/bower_components/angular/angular.js',
       'vendor/assets/bower_components/angular-mocks/angular-mocks.js',
       'vendor/assets/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'vendor/assets/bower_components/ng-tags-input/ng-tags-input.js',
       'app/assets/javascripts/sim.coffee',
       'app/assets/javascripts/**/*.coffee',
       'spec/javascripts/unit/**/*.coffee'

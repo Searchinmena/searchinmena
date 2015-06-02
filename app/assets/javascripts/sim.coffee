@@ -1,1 +1,1 @@
-@Sim = angular.module('sim', ['ui.router'])
+@Sim = angular.module('sim', ['ui.router', 'ngTagsInput'])
