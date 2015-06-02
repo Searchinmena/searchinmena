@@ -10,8 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    user_creator = UserCreator.new(user_repository, business_repository,
-                                   user_params, business_params)
+    user_creator = Registration::Creator.new(user_params, business_params)
     response = user_creator.perform
     if response.successful?
       sign_up(:user, response.user)

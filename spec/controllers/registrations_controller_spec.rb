@@ -4,19 +4,20 @@ describe RegistrationsController do
   let(:user) { build(:user) }
   let(:business) { build(:business, user: nil) }
 
-  fake(:business_repository)
   fake(:user_factory)
 
   before do
-    expect(controller).to receive(:business_repository)
-      .and_return(business_repository)
     @request.env["devise.mapping"] = Devise.mappings[:user]
   end
 
   describe "#new" do
+    fake(:business_repository)
+
     before do
       expect(controller).to receive(:user_factory).and_return(user_factory)
       expect(user_factory).to receive(:build).and_return(user)
+      expect(controller).to receive(:business_repository)
+      .and_return(business_repository)
       expect(business_repository).to receive(:new).and_return(business)
       expect(session["devise.auth_data"]).to eq(nil)
     end
@@ -44,20 +45,14 @@ describe RegistrationsController do
       }
     end
     let(:user_params) { sign_up_params.merge(business: business_params) }
-
-    fake(:user_creator)
-    fake(:user_repository)
+    let(:registration_creator) { double }
 
     before do
-      expect(controller).to receive(:user_repository)
-        .and_return(user_repository)
-
       response = double(successful?: successful, user: user, business: business)
-      expect(UserCreator).to receive(:new)
-        .with(user_repository, business_repository,
-              sign_up_params, business_params)
-        .and_return(user_creator)
-      expect(user_creator).to receive(:perform).and_return(response)
+      expect(Registration::Creator).to receive(:new)
+        .with(sign_up_params, business_params)
+        .and_return(registration_creator)
+      expect(registration_creator).to receive(:perform).and_return(response)
 
       post :create, user: user_params
     end

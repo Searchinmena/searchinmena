@@ -46,42 +46,17 @@
       %label= t("text.category_label")
       - User.categories.keys.each do |cat|
         .checkbox-field
-          = f.radio_button :category, cat
-          = f.label User.category_name(cat), for: "user_category_" + cat,
+          = f.radio_button :category, cat, "ng-model": "category",
+            "ng-checked": user.category == cat
+          = f.label User.category_name(cat), for: "user_category_#{cat}",
             class: "inline-label"
       = error_message_for(user, :category)
-    .fields-group
-      %h3.line-behind
-        %span= t("sign_up.contant_info_header")
 
-      = f.fields_for business do |b|
-        .field
-          = b.label :name, t("sign_up.company_name")
-          = b.text_field :name
-          = error_message_for(business, :name)
-
-        .field
-          = b.label :country, t("sign_up.location")
-          .select-field
-            = country_select :"user[business]", :country,
-            prompt: t("sign_up.location_select")
-
-        .field
-          = b.label :phone, t("sign_up.contact_number")
-          = b.text_field :phone
-          = error_message_for(business, :phone)
-
-        .field
-          = b.label :business_type, t("sign_up.business_type")
-          .select-field
-            = b.select :business_type,
-              business_presenter.options_for_business_types_select,
-              prompt: t("sign_up.business_type_select")
-
-
-        .field
-          = label_tag :main_products, t("sign_up.main_products")
-          = text_field_tag :main_products
+    .fields-group.company-info{ "ng-show": "shouldShowCompanyInfo(category)" }
+      = render partial: "company_info",
+        locals: { f: f,
+                  business: business,
+                  business_presenter: business_presenter }
 
     .actions
       = f.submit t("devise.registrations.submit")

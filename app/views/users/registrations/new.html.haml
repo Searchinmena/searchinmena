@@ -1,4 +1,5 @@
-.container
+.container{ "ng-controller": "RegistrationsCtrl",
+"ng-init": "init('#{user.category}')" }
   .sign-up-wrapper
     = render partial: "users/registrations/form",
       locals: { user: user, business: business,

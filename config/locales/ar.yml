@@ -32,7 +32,7 @@ ar:
     category_label: "أنا:"
 
   business:
-    types:
+    business_types:
       manufacturer: "مصنع"
       trading_company: "شركة تجارية"
       buying_office: "مكتب مشتريات"
@@ -47,6 +47,7 @@ ar:
     facebook: "Sign up with Facebook"
     or: "or"
     contant_info_header: "معلومات الاتصال الخاصة بك"
+    company_name: "Company Name"
     location: "الموقع"
     location_select: "-- Select Country --"
     contact_number: "رقم الاتصال"
@@ -55,7 +56,7 @@ ar:
     main_products: "المنتجات الرئيسية"
 
   user:
-    types:
+    categories:
       seller: "بائع"
       buyer: "مشتري"
       both: "بائع/مشتري"
