@@ -26,7 +26,6 @@ en:
       msg_line_1: "Someone has requested a link to change your password. You can do this through the link below."
       msg_line_2: "If you didn't request this, please ignore this email."
       msg_line_3: "Your password won't change until you access the link above and create a new one."
-      hello_msg: "Hello!"
       confirm_msg: "You can confirm your account email through the link below:"
       confirm_account: "Confirm my account"
       confirmation_instructions:
