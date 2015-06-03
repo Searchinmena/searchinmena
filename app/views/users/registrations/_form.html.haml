@@ -30,6 +30,7 @@
       = error_message_for(user, :email)
 
     = f.hidden_field :provider
+    = f.hidden_field :uid
 
     - if user.provider.present?
       = f.hidden_field :password

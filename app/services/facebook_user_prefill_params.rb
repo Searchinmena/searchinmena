@@ -10,7 +10,8 @@ class FacebookUserPrefillParams
       email: facebook_attributes["info"]["email"],
       password: password,
       password_confirmation: password,
-      provider: facebook_attributes["provider"]
+      provider: facebook_attributes["provider"],
+      uid: facebook_attributes["uid"]
     }
   end
 end
