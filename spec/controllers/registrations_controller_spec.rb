@@ -14,7 +14,7 @@ describe RegistrationsController do
   fake(:user_params_factory)
 
   before do
-    @request.env["devise.mapping"] = Devise.mappings[:user]
+    request.env["devise.mapping"] = Devise.mappings[:user]
   end
 
   describe "#new" do

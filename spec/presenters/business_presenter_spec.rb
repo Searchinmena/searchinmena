@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe BusinessPresenter do
   describe "#options_for_business_types_select" do

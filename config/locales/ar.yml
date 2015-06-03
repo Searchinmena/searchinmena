@@ -55,6 +55,9 @@ ar:
     business_type_select: "-- Select Business Type --"
     main_products: "المنتجات الرئيسية"
 
+  sign_in:
+    facebook: "Sign in with Facebook"
+
   user:
     categories:
       seller: "بائع"
