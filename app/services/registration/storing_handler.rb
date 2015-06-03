@@ -1,11 +1,5 @@
 class Registration::StoringHandler < BaseService
   attr_accessor :validator, :storing_handler
-
-  def valid?
-    validator.valid?
-  end
-
-  def perform
-    storing_handler.perform
-  end
+  delegate :valid?, to: :validator
+  delegate :perform, to: :storing_handler
 end
