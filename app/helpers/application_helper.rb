@@ -3,6 +3,10 @@ module ApplicationHelper
     :rtl if I18n.locale == :ar
   end
 
+  def email_confirmed?
+    current_user && current_user.confirmed_at.present?
+  end
+
   def error_message_for(object, attribute)
     if object.errors.any?
       content_tag :span, class: 'error' do
