@@ -3,7 +3,7 @@ class Api::TagPresenter
 
   def as_json(*)
     {
-      text: tag.name
+      name: tag.name
     }
   end
 end

@@ -7,6 +7,6 @@ describe Api::TagPresenter do
 
     subject { presenter.as_json }
 
-    it { is_expected.to eq(text: tag.name) }
+    it { is_expected.to eq(name: tag.name) }
   end
 end

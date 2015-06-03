@@ -5,40 +5,41 @@
       = t("devise.links.login_text")
       = link_to t("devise.sessions.submit"), user_session_path
 
-  = form_for user, url: registration_path(:user) do |f|
+  = form_for user, url: registration_path(:user),
+    html: { "ng-submit": "submit($event)" } do |f|
     = link_to("#", class: "facebook-sign-up") do
       .icon-facebook
       = t("sign_up.facebook")
     %p.line-behind
       %span= t('sign_up.or')
-    .field
+
+    = form_field("form.errors.user.email") do
       = f.label :email, t("devise.active_record.attributes.user.email")
-      = f.email_field :email, autofocus: true
-      = error_message_for(user, :email)
-    .field
+      = f.email_field :email, autofocus: true, "ng-model": "form.user.email"
+
+    = form_field("form.errors.user.password") do
       = f.label :password, t("devise.registrations.password")
       - if @validatable
         .field-comment= t("devise.registrations.password_field_info",
         number: @minimum_password_length)
-      = f.password_field :password, autocomplete: "off"
-      = error_message_for(user, :password)
-    .field
+      = f.password_field :password, autocomplete: "off",
+        "ng-model": "form.user.password"
+
+    = form_field("form.errors.user.password_confirmation") do
       = f.label :password_confirmation,
       t("devise.registrations.password_confirmation")
-      = f.password_field :password_confirmation, autocomplete: "off"
-      = error_message_for(user, :password_confirmation)
+      = f.password_field :password_confirmation, autocomplete: "off",
+        "ng-model": "form.user.password_confirmation"
 
-    .field
+    = form_field("form.errors.user.category") do
       %label= t("text.category_label")
       - User.categories.keys.each do |cat|
         .checkbox-field
-          = f.radio_button :category, cat, "ng-model": "category",
-            "ng-checked": user.category == cat
+          = f.radio_button :category, cat, "ng-model": "form.user.category"
           = f.label User.category_name(cat), for: "user_category_#{cat}",
             class: "inline-label"
-      = error_message_for(user, :category)
 
-    .fields-group.company-info{ "ng-show": "shouldShowCompanyInfo(category)" }
+    .fields-group.company-info{ "ng-show": "shouldShowCompanyInfo()" }
       = render partial: "company_info",
         locals: { f: f,
                   business: business,

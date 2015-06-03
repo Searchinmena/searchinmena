@@ -31,7 +31,12 @@ describe RegistrationsController do
         "business_type" => business.business_type.to_s
       }
     end
-    let(:user_params) { sign_up_params.merge(business: business_params) }
+    let(:registration_params) do
+      {
+        user: sign_up_params,
+        business: business_params
+      }
+    end
 
     let(:registration_creator) { double }
 
@@ -42,14 +47,14 @@ describe RegistrationsController do
         .and_return(registration_creator)
       expect(registration_creator).to receive(:perform).and_return(response)
 
-      post :create, user: user_params
+      post :create, registration_params
     end
 
     context "successful user creation" do
       let(:successful) { true }
 
       it "redirects to dashboard" do
-        expect(response).to redirect_to(dashboard_path)
+        expect(response).to be_successful
       end
     end
 
@@ -57,7 +62,7 @@ describe RegistrationsController do
       let(:successful) { false }
 
       it "renders new" do
-        expect(response).to render_template(:new)
+        expect(response.status).to eq(409)
       end
     end
   end

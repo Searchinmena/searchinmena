@@ -1,19 +1,32 @@
 @Sim.controller 'RegistrationsCtrl', ['$scope', '$http',
   ($scope, $http) ->
-    $scope.init = (userCategory) ->
-      $scope.userCategory = userCategory
-
-    $scope.shouldShowCompanyInfo = (category) ->
-      category ||= $scope.userCategory
+    $scope.shouldShowCompanyInfo = ->
+      category = $scope.form.user.category
       category == "seller" || category == "both"
 
-    $scope.tags = [
-      { text: 'just' },
-      { text: 'some' },
-      { text: 'cool' },
-      { text: 'tags' }
+    $scope.form = { user: {}, business: {}}
+    $scope.form.business.tags = [
+      { name: 'just' },
+      { name: 'some' },
+      { name: 'cool' },
+      { name: 'tags' }
     ]
 
     $scope.loadTags = (query) ->
-      $http.get("#{window.Sim.TAGS_URL}?query=#{query}")
+      $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
+
+    $scope.submit = (e) ->
+      e.preventDefault()
+
+      $http(
+        url: e.target.action,
+        data: $scope.form,
+        method: 'POST'
+      ).success(->
+        window.location = window.Sim.DASHBOARD_PATH
+      ).error((errors) ->
+        $scope.form.errors = errors
+      )
+      
+      false
 ]

@@ -14,7 +14,7 @@ class RegistrationPage
 
   companyNameField: ->
     companyNameInput = element(By.id(@companyNameCss))
-    companyNameInput.element(By.xpath("ancestor::span"))
+    companyNameInput.element(By.xpath(".."))
 
   chooseUserCategory: (label) ->
     radioButton = element(By.id(label))
