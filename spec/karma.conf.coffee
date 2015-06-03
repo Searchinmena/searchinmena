@@ -3,6 +3,7 @@ module.exports = (config) ->
     basePath : '../',
 
     files : [
+      'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'
       'vendor/assets/bower_components/angular/angular.js',
       'vendor/assets/bower_components/angular-mocks/angular-mocks.js',
       'vendor/assets/bower_components/angular-ui-router/release/angular-ui-router.js',
