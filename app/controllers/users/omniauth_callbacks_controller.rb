@@ -3,13 +3,12 @@ module Users
     inject :user_repository
 
     def facebook
+      set_omniauth_locale
       user = user_repository.find_by_omniauth(request.env["omniauth.auth"])
       if user_exists?(user)
-        sign_in(user, event: :authentication)
-        redirect_to dashboard_path
+        sign_in_and_redirect(user)
       else
-        session["devise.auth_data"] = request.env["omniauth.auth"]
-        redirect_to new_user_registration_url
+        store_hash_and_redirect(request.env["omniauth.auth"])
       end
     end
 
@@ -17,6 +16,20 @@ module Users
 
     def user_exists?(user)
       user && user.persisted?
+    end
+
+    def set_omniauth_locale
+      I18n.locale = session[:omniauth_locale] || I18n.default_locale
+    end
+
+    def sign_in_and_redirect(user)
+      sign_in(user, event: :authentication)
+      redirect_to dashboard_path
+    end
+
+    def store_hash_and_redirect(hash)
+      session["devise.auth_data"] = hash
+      redirect_to new_user_registration_url
     end
   end
 end

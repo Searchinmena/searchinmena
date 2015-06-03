@@ -10,7 +10,7 @@
 
       = form_for(resource, as: resource_name,
       url: session_path(resource_name)) do |f|
-        = link_to(user_omniauth_authorize_path(:facebook),
+        = link_to(localized_omniauth_path(:facebook),
                   class: "facebook-sign-up") do
           .icon-facebook
           = t("sign_in.facebook")
