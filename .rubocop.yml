@@ -1,5 +1,5 @@
 Documentation:
-    Enabled: false
+  Enabled: false
 
 # Indent private/protected/public as deep as method definitions
 Style/AccessModifierIndentation:
@@ -557,6 +557,7 @@ Metrics/LineLength:
     - db/migrate/*.rb
 
 Metrics/MethodLength:
+  Enabled: false
   CountComments: false  # count full line comments?
   Max: 10
   Exclude:
