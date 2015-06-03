@@ -3,10 +3,18 @@ require 'rails_helper'
 describe Registration::Creator do
   describe "#perform" do
     let(:service) do
-      Registration::Creator.new(user_params, business_params)
+      Registration::Creator.new(registration_params)
     end
 
     subject { service.perform }
+
+    let(:registration_params) do
+      {
+        user: user_params,
+        business: business_params,
+        tags: {}
+      }
+    end
 
     let(:user) { build(:user) }
     let(:business) { build(:business, user: nil) }

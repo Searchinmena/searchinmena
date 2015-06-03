@@ -2,31 +2,31 @@
   %span= t("sign_up.contant_info_header")
 
 = f.fields_for business do |b|
-  = form_field("form.errors.business.name") do
+  = form_field("business.name") do
     = b.label :name, t("sign_up.company_name")
-    = b.text_field :name, "ng-model": "form.business.business_name"
+    = b.text_field :name, "ng-model": "form.business.name"
 
-  .field
+  = form_field("business.country") do
     = b.label :country, t("sign_up.location")
     .select-field
       = country_select :"user[business]", :country,
-        prompt: t("sign_up.location_select"),
-        "ng-model": "form.business.country"
+        { prompt: t("sign_up.location_select") },
+        { "ng-model": "form.business.country" }
 
-  = form_field("form.errors.business.phone") do
+  = form_field("business.phone") do
     = b.label :phone, t("sign_up.contact_number")
     = b.text_field :phone, "ng-model": "form.business.phone"
 
-  .field
+  = form_field("business.business_type") do
     = b.label :business_type, t("sign_up.business_type")
     .select-field
       = b.select :business_type,
         business_presenter.options_for_business_types_select,
-        prompt: t("sign_up.business_type_select"),
-        "ng-model": "form.business.business_type"
+        { prompt: t("sign_up.business_type_select") },
+        { "ng-model": "form.business.business_type" }
 
   .field
     = label_tag :main_products, t("sign_up.main_products")
-    %tags-input{ "ng-model": "form.business.tags", "display-property": "name" }
+    %tags-input{ "ng-model": "form.tags", "display-property": "name" }
       %auto-complete{ source: "loadTags($query)" }
 

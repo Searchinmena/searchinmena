@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    user_creator = Registration::Creator.new(user_params, business_params)
+    user_creator = Registration::Creator.new(registration_params)
     response = user_creator.perform
     if response.successful?
       sign_up(:user, response.user)
@@ -30,12 +30,20 @@ class RegistrationsController < Devise::RegistrationsController
     }, status: :conflict
   end
 
-  def user_params
-    sign_up_params
+  def registration_params
+    {
+      user: sign_up_params,
+      business: business_params,
+      tags: tags_params
+    }
   end
 
   def business_params
     params[:business]
       .permit([:name, :country, :phone, :business_type])
+  end
+
+  def tags_params
+    params.permit(tags: :name)[:tags] || {}
   end
 end

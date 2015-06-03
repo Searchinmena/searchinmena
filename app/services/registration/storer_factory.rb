@@ -5,9 +5,9 @@ class Registration::StorerFactory
     both: Registration::SellerStorer
   }
 
-  def from_category(category, user, user_params, business, business_params)
+  def from_category(category, records, registration_params)
     category ||= :buyer
     klass = CATEGORIES[category.to_sym]
-    klass.new(user, user_params, business, business_params)
+    klass.new(records, registration_params)
   end
 end

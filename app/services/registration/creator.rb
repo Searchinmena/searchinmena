@@ -3,13 +3,14 @@ class Registration::Creator < BaseService
 
   attr_accessor :storer, :user, :business
 
-  def initialize(user_params, business_params)
-    self.business = business_repository.new(business_params)
-    self.user = user_repository.new(user_params)
+  def initialize(registration_params)
+    self.business = business_repository.new(registration_params[:business])
+    self.user = user_repository.new(registration_params[:user])
 
-    category = user_params[:category]
-    self.storer = storer_factory.from_category(
-      category, user, user_params, business, business_params)
+    category = registration_params[:user][:category]
+    records = { user: user, business: business }
+    self.storer = storer_factory.from_category(category, records,
+                                               registration_params)
   end
 
   def perform

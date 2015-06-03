@@ -34,16 +34,18 @@ describe RegistrationsController do
     let(:registration_params) do
       {
         user: sign_up_params,
-        business: business_params
+        business: business_params,
+        tags: tags_params
       }
     end
+    let(:tags_params) { [{ "name" => "ania" }] }
 
     let(:registration_creator) { double }
 
     before do
       response = double(successful?: successful, user: user, business: business)
       expect(Registration::Creator).to receive(:new)
-        .with(sign_up_params, business_params)
+        .with(registration_params)
         .and_return(registration_creator)
       expect(registration_creator).to receive(:perform).and_return(response)
 

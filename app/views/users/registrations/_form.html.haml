@@ -13,11 +13,11 @@
     %p.line-behind
       %span= t('sign_up.or')
 
-    = form_field("form.errors.user.email") do
+    = form_field("user.email") do
       = f.label :email, t("devise.active_record.attributes.user.email")
       = f.email_field :email, autofocus: true, "ng-model": "form.user.email"
 
-    = form_field("form.errors.user.password") do
+    = form_field("user.password") do
       = f.label :password, t("devise.registrations.password")
       - if @validatable
         .field-comment= t("devise.registrations.password_field_info",
@@ -25,13 +25,13 @@
       = f.password_field :password, autocomplete: "off",
         "ng-model": "form.user.password"
 
-    = form_field("form.errors.user.password_confirmation") do
+    = form_field("user.password_confirmation") do
       = f.label :password_confirmation,
       t("devise.registrations.password_confirmation")
       = f.password_field :password_confirmation, autocomplete: "off",
         "ng-model": "form.user.password_confirmation"
 
-    = form_field("form.errors.user.category") do
+    = form_field("user.category") do
       %label= t("text.category_label")
       - User.categories.keys.each do |cat|
         .checkbox-field
