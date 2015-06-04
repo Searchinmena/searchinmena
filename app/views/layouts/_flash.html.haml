@@ -1,7 +1,0 @@
-- if user_signed_in?
-  - unless email_confirmed?
-    .alert.alert-warning
-      = t("confirmations.msg2")
-      = t("confirmations.or")
-      = link_to(new_user_confirmation_path) do
-        = t("confirmations.msg")

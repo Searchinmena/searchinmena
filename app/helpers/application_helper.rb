@@ -4,7 +4,11 @@ module ApplicationHelper
   end
 
   def email_confirmed?
-    current_user && current_user.confirmed_at.present?
+    if current_user
+      return current_user.confirmed_at.present?
+    else
+      return true
+    end
   end
 
   def error_message_for(object, attribute)
