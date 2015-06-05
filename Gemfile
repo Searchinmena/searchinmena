@@ -16,6 +16,7 @@ gem 'country_select'
 
 gem 'a9n'
 gem 'honeybadger', '~> 2.0'
+gem 'mailcatcher'
 
 gem 'dependor'
 

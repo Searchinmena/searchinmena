@@ -4,17 +4,24 @@ module ApplicationHelper
   end
 
   def error_message_for(attribute)
-    content_tag :span, class: "error", "ng-show": "errors.#{attribute}" do
+    content_tag :span,
+      "class" => "error",
+      "ng-show" => "errors.#{attribute}" do
       "{{errors.#{attribute}}}"
     end
   end
 
   def form_field(attribute, &block)
+    ng_class = "(errors.#{attribute}) ? 'field-with-errors' : ''"
     content_tag :div,
-      class: "field",
-      "ng-class": "(errors.#{attribute}) ? 'field-with-errors' : ''" do
+      "class" => "field",
+      "ng-class" => ng_class do
       yield block
       concat(error_message_for(attribute))
     end
+  end
+
+  def email_confirmed?
+    current_user.blank? || current_user.confirmed_at.present?
   end
 end
