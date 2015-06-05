@@ -25,18 +25,19 @@ describe UserRepository do
   describe "#setup" do
     let(:user) { build(:user) }
 
-    after { subject.setup(user_params) }
+    before { subject.setup(user_params) }
 
     context "provider absent in params" do
       let(:user_params) { { "email" => user.email } }
 
-      it { expect(user_params).not_to receive(:merge!) }
+      it { expect(user_params).to eq user_params }
     end
 
     context "provider present in params" do
       let(:user_params) { { "email" => user.email, "provider" => "facebook" } }
 
-      it { expect(user_params).to receive(:merge!) }
+      it { expect(user_params).to include(user_params) }
+      it { expect(user_params).to include("password", "password_confirmation") }
     end
   end
 end
