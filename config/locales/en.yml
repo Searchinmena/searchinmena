@@ -65,7 +65,7 @@ en:
   confirmations: 
     or: "or"
     msg: "Resend confirmation instructions"
-    msg2: "Please confirme your email"
+    msg2: "Please confirm your email"
 
   mailer:
     hello_msg: "Hello!"
