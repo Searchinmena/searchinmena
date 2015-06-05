@@ -18,7 +18,6 @@ describe FacebookUserPrefillParams do
   subject { FacebookUserPrefillParams.new(facebook_attributes).attributes }
 
   it "includes facebook attributes" do
-    expect(subject).to include(:first_name, :last_name, :email, :password,
-                               :password_confirmation, :provider, :uid)
+    expect(subject).to include(:first_name, :last_name, :email, :provider, :uid)
   end
 end

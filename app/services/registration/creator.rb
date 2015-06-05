@@ -5,7 +5,7 @@ class Registration::Creator < BaseService
 
   def initialize(user_params, business_params)
     self.business = business_repository.new(business_params)
-    self.user = user_repository.new(user_params)
+    self.user = user_repository.setup(user_params)
 
     category = user_params[:category]
     self.storer = Registration::Storer.from_category(
