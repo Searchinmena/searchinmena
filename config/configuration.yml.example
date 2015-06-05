@@ -1,4 +1,5 @@
 defaults: &defaults
+  email_from: 'confirmation@searchinmena.com'
   app_host: http://localhost:3000
   validations:
     email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
