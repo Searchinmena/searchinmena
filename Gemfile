@@ -36,6 +36,7 @@ end
 group :development do
   gem 'rubocop'
   gem 'haml-lint', require: false
+  gem 'mailcatcher'
 end
 
 group :production do

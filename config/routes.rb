@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     get "omniauth/:provider" => "omniauth#localized", as: :localized_omniauth
 
     devise_for :users, skip: [:omniauth_callbacks], controllers: {
-      registrations: "registrations"
+      registrations: "registrations",
+      sessions: "sessions"
     }
 
     devise_scope :user do

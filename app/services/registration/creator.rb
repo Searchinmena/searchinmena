@@ -1,5 +1,5 @@
 class Registration::Creator < BaseService
-  inject :user_repository, :business_repository
+  inject :user_repository, :business_repository, :storer_factory
 
   attr_accessor :storer, :user, :business
 
@@ -8,7 +8,7 @@ class Registration::Creator < BaseService
     self.user = user_repository.setup(user_params)
 
     category = user_params[:category]
-    self.storer = Registration::Storer.from_category(
+    self.storer = storer_factory.from_category(
       category, user, user_params, business, business_params)
   end
 
