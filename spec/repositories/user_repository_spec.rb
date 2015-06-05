@@ -30,14 +30,15 @@ describe UserRepository do
     context "provider absent in params" do
       let(:user_params) { { "email" => user.email } }
 
-      it { expect(user_params).to eq user_params }
+      it { expect(user_params).to eq("email" => user.email) }
     end
 
     context "provider present in params" do
       let(:user_params) { { "email" => user.email, "provider" => "facebook" } }
 
-      it { expect(user_params).to include(user_params) }
       it { expect(user_params).to include("password", "password_confirmation") }
+      it { expect(user_params["password"]).not_to be_empty }
+      it { expect(user_params["password_confirmation"]).not_to be_empty }
     end
   end
 end
