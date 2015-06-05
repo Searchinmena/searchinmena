@@ -20,6 +20,8 @@ npm run update-webdriver
 
 bundle exec rake bower:install
 
+mailcatcher
+
 bundle exec rails s
 ```
 
