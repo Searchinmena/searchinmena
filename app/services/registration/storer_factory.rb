@@ -6,7 +6,7 @@ class Registration::StorerFactory
   }
 
   def from_category(category, records, registration_params)
-    category ||= :buyer
+    category = category.presence || :buyer
     klass = CATEGORIES[category.to_sym]
     klass.new(records, registration_params)
   end

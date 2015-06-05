@@ -42,3 +42,8 @@ describe RegistrationPage, ->
     expect(companyNameField.getAttribute("class"))
       .toContain("field-with-errors")
 
+  it "is possible to add tag", ->
+    page.chooseUserCategory(page.sellerCategory)
+
+    page.tagInput().sendKeys("Ania", protractor.Key.RETURN)
+    expect(element(By.cssContainingText("span", "Ania")).isDisplayed()).toBe(true)
