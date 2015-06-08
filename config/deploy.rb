@@ -38,7 +38,7 @@ set :linked_files, %w{config/database.yml config/unicorn.rb}
 set :linked_dirs, %w{pids log public/assets}
 
 after "deploy:updating", "configuration:copy"
-after "deploy:copy_configuration", "db:seed"
+after "configuration:copy", "db:seed"
 after "deploy:publishing", "unicorn:restart"
 after "deploy:finishing", "deploy:cleanup"
 
