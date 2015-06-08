@@ -42,6 +42,10 @@ label {
 .inline-label {
   display: inline;
   padding: 0 $bs1 0 $bs-5;
+
+  [dir="rtl"] & {
+    padding: 0 $bs-5 0 $bs1;
+  }
 }
 
 .field-comment {
