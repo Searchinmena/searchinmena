@@ -1,6 +1,7 @@
 defaults: &defaults
   email_from: 'confirmation@searchinmena.com'
-  app_host: http://localhost:3000
+  app_url: http://localhost:3000
+  app_host: localhost
   validations:
     email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
     password_min_length: 8
