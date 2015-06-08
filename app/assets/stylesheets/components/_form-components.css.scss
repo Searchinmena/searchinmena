@@ -136,17 +136,27 @@ tags-input .tags {
   .input {
     font: inherit;
     height: auto;
-    line-height: 2;
+    line-height: 2.5;
     width: auto;
     border: none;
     padding: 0;
+    margin: 0;
   }
 
   .tag-item {
     font: inherit;
+    font-weight: 100;
     background: none;
     background-color: $light-grey;
-    border: $border-grey;
+    border: 1px solid $border-grey;
+    border-radius: 0;
+    height: auto;
+    margin: 3px 5px 3px 0;
+
+    .remove-button {
+      font: inherit;
+      vertical-align: baseline;
+    }
   }
 }
 
