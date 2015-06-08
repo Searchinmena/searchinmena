@@ -123,6 +123,33 @@ input[type="text"], input[type="email"], input[type="password"] {
   }
 }
 
+tags-input .tags {
+  @extend %basic-input;
+  box-shadow: none;
+
+  &.focused {
+    outline: 0;
+    border: 1px solid $blue-basic;
+    box-shadow: none;
+  }
+
+  .input {
+    font: inherit;
+    height: auto;
+    line-height: 2;
+    width: auto;
+    border: none;
+    padding: 0;
+  }
+
+  .tag-item {
+    font: inherit;
+    background: none;
+    background-color: $light-grey;
+    border: $border-grey;
+  }
+}
+
 .actions {
   margin: $bs3 0 0 0;
 }

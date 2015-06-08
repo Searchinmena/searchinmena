@@ -158,13 +158,12 @@
 
 .company-info {
   @include transition(all, .5s, ease-in-out);
-  overflow: hidden;
   opacity: 1;
-  height: 3.5 * $bs9;
+  max-height: 999px;
 
   &.ng-hide:not(.ng-hide-animate) {
     display: block!important;
-    height: 0;
+    max-height: 0;
     opacity: 0;
   }
 }
