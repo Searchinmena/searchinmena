@@ -8,6 +8,7 @@ defaults: &defaults
     password_max_length: 72
     max_text_area_size: 2000
     max_text_field_size: 255
+  angular_flash_timeout: 5000
 
 development:
   honeybadger_env: development

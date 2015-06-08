@@ -14,6 +14,7 @@
 //= require angular-ui-router
 //= require angular-animate
 //= require ng-tags-input
+//= require angular-flash-alert
 //= require sim
 //= require router
 //= require_tree ./services

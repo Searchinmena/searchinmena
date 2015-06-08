@@ -1,0 +1,12 @@
+- if flash[:notice]
+  .alert.alert-success= flash[:notice]
+- if flash[:warning]
+  .alert.alert-warning= flash[:warning]
+- if flash[:error]
+  .alert.alert-danger= flash[:error]
+- if flash[:alert]
+  .alert.alert-danger= flash[:alert]
+
+%div{ "flash-message" => A9n.angular_flash_timeout }
+
+
