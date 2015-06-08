@@ -1,4 +1,4 @@
-class StoringHandler
+class StoringHandler < BaseService
   attr_reader :record, :record_params, :repository, :validator
 
   def initialize(record, record_params, repository, validator)

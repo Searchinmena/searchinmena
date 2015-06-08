@@ -14,11 +14,14 @@ class RegistrationPage
 
   companyNameField: ->
     companyNameInput = element(By.id(@companyNameCss))
-    companyNameInput.element(By.xpath("ancestor::span"))
+    companyNameInput.element(By.xpath(".."))
 
   chooseUserCategory: (label) ->
     radioButton = element(By.id(label))
     radioButton.click()
+
+  tagInput: ->
+    element(By.model("form.tags")).element(By.css("input[type=text]"))
 
   submitForm: ->
     submitButton = element(By.css("input[type=submit]"))

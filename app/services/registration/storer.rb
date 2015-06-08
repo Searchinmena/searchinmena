@@ -1,6 +1,19 @@
 class Registration::Storer
   attr_accessor :handlers
 
+  def perform(user, business)
+    success = if valid?
+                store
+              else
+                copy_errors
+              end
+
+    Registration::Response.new(
+      success: success, user: user, business: business)
+  end
+
+  private
+
   def valid?
     handlers.map(&:valid?).all?
   end

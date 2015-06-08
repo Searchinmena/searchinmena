@@ -1,4 +1,4 @@
-class Registration::UserStoringHandler < Registration::StoringHandler
+class Registration::UserCreator < Registration::BaseCreator
   inject :user_repository
   attr_accessor :user
 
