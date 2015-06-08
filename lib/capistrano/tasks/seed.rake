@@ -3,7 +3,7 @@ namespace :db do
   task :seed do
     on roles(:app) do
       within fetch(:release_path) do
-        execute "bundle exec rake db:seed RAILS_ENV=#{fetch(:rails_env)}"
+        execute :rake, "db:seed"
       end
     end
   end
