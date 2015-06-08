@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'pg'
+gem 'a9n'
+gem 'honeybadger', '~> 2.0'
+gem 'dependor'
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'country_select'
 
 # assets
 gem 'sass-rails', '~> 5.0'
@@ -10,15 +16,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer'
 gem 'bower-rails'
-
-gem 'devise'
-gem 'country_select'
-
-gem 'a9n'
-gem 'honeybadger', '~> 2.0'
-gem 'mailcatcher'
-
-gem 'dependor'
 
 group :development, :test do
   gem 'pry'
@@ -39,6 +36,7 @@ end
 group :development do
   gem 'rubocop'
   gem 'haml-lint', require: false
+  gem 'mailcatcher'
 end
 
 group :production do
@@ -52,4 +50,3 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
-

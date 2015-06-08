@@ -31,7 +31,7 @@ en:
     buyer_line_2: "find best offer"
     buyer_line_3: "make contact with sellers."
     category_label: "I am a:"
-  
+
   business:
     business_types:
       manufacturer: "Manufacturer"
@@ -45,7 +45,7 @@ en:
       other: "Other"
 
   sign_up:
-    facebook: "Sign up with facebbok"
+    facebook: "Sign up with Facebook"
     or: "or"
     contant_info_header: "Your Contact Information"
     company_name: "Company Name"
@@ -56,13 +56,16 @@ en:
     business_type_select: "-- Select Business Type --"
     main_products: "Main Products"
 
+  sign_in:
+    facebook: "Sign in with Facebook"
+
   user:
     categories:
       seller: "seller"
       buyer: "buyer"
       both: "both"
 
-  confirmations: 
+  confirmations:
     or: "or"
     msg: "Resend confirmation instructions"
     msg2: "Please confirm your email"

@@ -9,7 +9,8 @@ describe UserValidator do
   it { is_expected.to be_valid }
 
   describe "presence validation" do
-    [:email, :password, :password_confirmation, :category].each do |field|
+    [:fist_name, :last_name, :email, :password, :password_confirmation,
+     :category].each do |field|
       let(:user_params) do
         valid_params.merge(field => '')
       end
@@ -21,7 +22,8 @@ describe UserValidator do
   end
 
   describe "length validation" do
-    [:email, :password, :password_confirmation].each do |field|
+    [:first_name, :last_name, :email, :password,
+     :password_confirmation].each do|field|
       let(:user_params) do
         too_long_field = "a" * (A9n.validations[:max_text_field_size] + 1)
         valid_params.merge(field => too_long_field)

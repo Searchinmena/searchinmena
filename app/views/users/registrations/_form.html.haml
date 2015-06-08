@@ -7,29 +7,45 @@
 
   = form_for user, url: registration_path(:user),
     html: { "ng-submit": "submit($event)" } do |f|
-    = link_to("#", class: "facebook-sign-up") do
+    = link_to(localized_omniauth_path(:facebook),
+              class: "facebook-sign-up") do
       .icon-facebook
       = t("sign_up.facebook")
+
     %p.line-behind
       %span= t('sign_up.or')
 
+    = f.hidden_field :provider
+    = f.hidden_field :uid
+
+    = form_field("user.first_name") do
+      = f.label :first_name,
+      t("devise.active_record.attributes.user.first_name")
+      = f.text_field :first_name, autofocus: true,
+      "ng-model": "form.user.first_name"
+
+    = form_field("user.last_name") do
+      = f.label :last_name, t("devise.active_record.attributes.user.last_name")
+      = f.text_field :last_name, "ng-model": "form.user.last_name"
+
     = form_field("user.email") do
       = f.label :email, t("devise.active_record.attributes.user.email")
-      = f.email_field :email, autofocus: true, "ng-model": "form.user.email"
+      = f.email_field :email, "ng-model": "form.user.email"
 
-    = form_field("user.password") do
-      = f.label :password, t("devise.registrations.password")
-      - if @validatable
-        .field-comment= t("devise.registrations.password_field_info",
-        number: @minimum_password_length)
-      = f.password_field :password, autocomplete: "off",
-        "ng-model": "form.user.password"
+    - unless user.provider.present?
+      = form_field("user.password") do
+        = f.label :password, t("devise.registrations.password")
+        - if @validatable
+          .field-comment= t("devise.registrations.password_field_info",
+          number: @minimum_password_length)
+        = f.password_field :password, autocomplete: "off",
+          "ng-model": "form.user.password"
 
-    = form_field("user.password_confirmation") do
-      = f.label :password_confirmation,
-      t("devise.registrations.password_confirmation")
-      = f.password_field :password_confirmation, autocomplete: "off",
-        "ng-model": "form.user.password_confirmation"
+      = form_field("user.password_confirmation") do
+        = f.label :password_confirmation,
+        t("devise.registrations.password_confirmation")
+        = f.password_field :password_confirmation, autocomplete: "off",
+          "ng-model": "form.user.password_confirmation"
 
     = form_field("user.category") do
       %label= t("text.category_label")
@@ -47,4 +63,3 @@
 
     .actions
       = f.submit t("devise.registrations.submit")
-

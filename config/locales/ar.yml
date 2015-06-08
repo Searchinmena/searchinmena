@@ -6,7 +6,7 @@ ar:
     login: "تسجيل الدخول"
     signup: "حساب جديد"
 
-  dashboard_nav: 
+  dashboard_nav:
     home: "الصفحة الرئيسية"
     company: "الشركة"
     products: "المنتجات"
@@ -18,9 +18,8 @@ ar:
     title: "على ماذا تحصل"
     description:
       "عن طريق إنشاء حساب سوف تكسب
- حق الوصول الكامل إلى أفضل العروض في السوق.
- سوف تكون قادرا على العثور على العروض التي تتناسب مع توقعاتك."
-
+      حق الوصول الكامل إلى أفضل العروض في السوق.
+      سوف تكون قادرا على العثور على العروض التي تتناسب مع توقعاتك."
     line: "التسجيل ك"
     subtitle_1: "بائع"
     subtitle_2: "مشتري"
@@ -45,7 +44,7 @@ ar:
       other: "أخرى"
 
   sign_up:
-    facebook: "Sign up with facebbok"
+    facebook: "Sign up with Facebook"
     or: "or"
     contant_info_header: "معلومات الاتصال الخاصة بك"
     company_name: "Company Name"
@@ -55,6 +54,9 @@ ar:
     business_type: "نوع الشركة"
     business_type_select: "-- Select Business Type --"
     main_products: "المنتجات الرئيسية"
+
+  sign_in:
+    facebook: "Sign in with Facebook"
 
   user:
     categories:

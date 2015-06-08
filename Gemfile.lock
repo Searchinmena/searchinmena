@@ -95,6 +95,8 @@ GEM
     execjs (2.5.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.8)
     formatador (0.2.5)
     globalid (0.3.5)
@@ -122,6 +124,7 @@ GEM
       haml (~> 4.0)
       rubocop (>= 0.25.0)
       sysexits (~> 1.1)
+    hashie (3.4.1)
     hitimes (1.2.2)
     honeybadger (2.0.12)
     i18n (0.7.0)
@@ -133,6 +136,7 @@ GEM
       railties (>= 3.2.0)
       sprockets-rails
     json (1.8.2)
+    jwt (1.5.0)
     kgio (2.9.3)
     libv8 (3.16.14.7)
     listen (2.10.0)
@@ -156,6 +160,9 @@ GEM
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    multi_json (1.11.0)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -165,6 +172,20 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth2 (1.0.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-facebook (2.0.1)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-oauth2 (1.3.0)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     orm_adapter (0.5.0)
     parser (2.2.2.5)
       ast (>= 1.1, < 3.0)
@@ -328,6 +349,7 @@ DEPENDENCIES
   honeybadger (~> 2.0)
   jasmine-rails
   mailcatcher
+  omniauth-facebook
   pg
   pry
   rails (= 4.2.0)

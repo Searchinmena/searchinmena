@@ -1,9 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
-  inject :user_repository, :business_repository, :business_presenter
+  inject :user_repository, :business_repository, :business_presenter,
+         :user_params_factory
 
   def new
-    user = user_repository.new
+    user_params = user_params_factory.build(session["devise.auth_data"])
+    user = user_repository.new(user_params)
     business = business_repository.new
+    session["devise.auth_data"] = nil
     render :new, locals: {
       user: user, business: business,
       business_presenter: business_presenter
@@ -29,6 +32,12 @@ class RegistrationsController < Devise::RegistrationsController
       user: ErrorsPresenter.new(user),
       business: ErrorsPresenter.new(business)
     }, status: :conflict
+  end
+
+  def sign_up_params
+    params.require(:user).permit([:email, :password, :password_confirmation,
+                                  :first_name, :last_name, :category,
+                                  :provider, :uid])
   end
 
   def registration_params

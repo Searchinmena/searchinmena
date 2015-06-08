@@ -30,6 +30,9 @@ describe Registration::Creator do
       expect(service).to receive(:storer_factory)
         .and_return(storer_factory)
 
+      expect(user_repository).to receive(:setup)
+      .with(registration_params[:user]).and_return(user)
+
       expect(storer_factory).to receive(:from_category)
         .with(category, { user: user, business: business }, registration_params)
         .and_return(storer)

@@ -1,4 +1,5 @@
-.container{ "ng-controller": "RegistrationsCtrl" }
+.container{ "ng-controller": "RegistrationsCtrl",
+"ng-init": "init('#{Api::UserPresenter.new(user).to_json}')" }
   .sign-up-wrapper
     = render partial: "users/registrations/form",
       locals: { user: user, business: business,

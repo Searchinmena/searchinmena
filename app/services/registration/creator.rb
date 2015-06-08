@@ -5,7 +5,7 @@ class Registration::Creator < BaseService
 
   def perform
     business = business_repository.new(registration_params[:business])
-    user = user_repository.new(registration_params[:user])
+    user = user_repository.setup(registration_params[:user])
 
     category = registration_params[:user][:category]
     records = { user: user, business: business }

@@ -1,10 +1,13 @@
 @Sim.controller 'RegistrationsCtrl', ['$scope', '$http',
   ($scope, $http) ->
+    $scope.init = (user_attributes) ->
+      user_attributes = JSON.parse(user_attributes)
+
+      $scope.form = { user: user_attributes || {}, business: {} }
+
     $scope.shouldShowCompanyInfo = ->
       category = $scope.form.user.category
       category == "seller" || category == "both"
-
-    $scope.form = { user: {}, business: {}}
 
     $scope.loadTags = (query) ->
       $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
@@ -21,6 +24,6 @@
       ).error((errors) ->
         $scope.errors = errors
       )
-      
+
       false
 ]

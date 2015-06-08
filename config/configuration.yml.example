@@ -2,6 +2,8 @@ defaults: &defaults
   email_from: 'confirmation@searchinmena.com'
   app_url: http://localhost:3000
   app_host: localhost
+  fb_app_id: 838866496206335
+  fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
   validations:
     email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
     password_min_length: 8
