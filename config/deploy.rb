@@ -37,32 +37,9 @@ set :keep_releases, 5
 set :linked_files, %w{config/database.yml config/unicorn.rb}
 set :linked_dirs, %w{pids log public/assets}
 
-namespace :deploy do
-  desc "Copy configuration.yml"
-  task :copy_configuration do
-    on roles(:app) do
-      within fetch(:release_path) do
-        execute :cp, "config/configuration.yml.#{fetch(:stage)}",
-                     "config/configuration.yml"
-      end
-    end
-  end
-
-  task default: :notify
-
-  desc "bower install"
-  task :bower_install do
-    on roles(:app) do
-      within release_path do
-        execute :npm, 'install'
-        execute :rake, 'bower:install CI=true'
-      end
-    end
-  end
-end
-
-after "deploy:updating",   "deploy:copy_configuration"
+after "deploy:updating", "configuration:copy"
+after "configuration:copy", "db:seed"
 after "deploy:publishing", "unicorn:restart"
-after "deploy:finishing",  "deploy:cleanup"
+after "deploy:finishing", "deploy:cleanup"
 
-before "deploy:compile_assets", "deploy:bower_install"
+before "deploy:compile_assets", "bower:install"

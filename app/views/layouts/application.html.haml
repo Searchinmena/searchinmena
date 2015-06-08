@@ -4,6 +4,7 @@
     = render "/layouts/head"
 
   %body{ 'ng-app' => 'sim', 'dir' => dir }
+    = render '/layouts/flash'
     = render "/layouts/confirm_email_message"
     = render "components/header"
     = yield

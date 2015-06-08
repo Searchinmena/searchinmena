@@ -8,6 +8,7 @@
   border-radius: $bs-4;
   text-transform: uppercase;
   font-family: inherit;
+  white-space: normal;
 
   @media screen and (min-width: $tablet) {
     max-width: 2 * $bs9;

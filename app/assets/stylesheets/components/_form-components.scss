@@ -42,6 +42,10 @@ label {
 .inline-label {
   display: inline;
   padding: 0 $bs1 0 $bs-5;
+
+  [dir="rtl"] & {
+    padding: 0 $bs-5 0 $bs1;
+  }
 }
 
 .field-comment {
@@ -116,6 +120,52 @@ input[type="text"], input[type="email"], input[type="password"] {
 
   @media screen and (min-width: $tablet) {
     display: inline-block;
+  }
+}
+
+tags-input .tags {
+  @extend %basic-input;
+  box-shadow: none;
+
+  &.focused {
+    outline: 0;
+    border: 1px solid $blue-basic;
+    box-shadow: none;
+  }
+
+  .input {
+    font: inherit;
+    height: auto;
+    line-height: 2.5;
+    width: auto;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+  }
+
+  .tag-item {
+    font: inherit;
+    font-weight: 100;
+    background: none;
+    background-color: $light-grey;
+    border: 1px solid $border-grey;
+    border-radius: 0;
+    height: auto;
+    margin: 3px 5px 3px 0;
+
+    [dir="rtl"] & {
+      float: right;
+      margin: 3px 0px 3px 5px;
+    }
+
+    .remove-button {
+      font: inherit;
+      vertical-align: baseline;
+    }
   }
 }
 

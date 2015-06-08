@@ -18,6 +18,7 @@ class RegistrationsController < Devise::RegistrationsController
     response = user_creator.perform
     if response.successful?
       sign_up(:user, response.user)
+      flash[:notice] = t("devise.registrations.signed_up")
       head :ok
     else
       render_error(response.user, response.business)

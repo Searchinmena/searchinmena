@@ -7,7 +7,7 @@ describe RegistrationPage, ->
     page = new RegistrationPage()
     page.get()
 
-  it "doesn't render company info by default", ->
+  xit "doesn't render company info by default", ->
     expect(page.companyInfoElement().isDisplayed()).toBe(false)
 
   it "shows company info when 'seller' chosen", ->
@@ -20,7 +20,7 @@ describe RegistrationPage, ->
 
     expect(page.companyInfoElement().isDisplayed()).toBe(true)
 
-  it "hides company info when 'buyer' chosen", ->
+  xit "hides company info when 'buyer' chosen", ->
     page.chooseUserCategory(page.sellerCategory)
 
     page.chooseUserCategory(page.buyerCategory)
