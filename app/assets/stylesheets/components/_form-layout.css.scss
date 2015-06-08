@@ -9,6 +9,10 @@
   border: 1px solid #ddd;
 }
 
+.form-container {
+  @extend %form-container;
+}
+
 .form-header {
   @media screen and (min-width: 1100px) {
     min-width: 4.3 * $bs9;
@@ -39,6 +43,11 @@
 
 .form-links {
   padding: $bs2;
+
+  .text {
+    font-weight: 100;
+    display: inline-block;
+  }
 }
 
 .form-link {
