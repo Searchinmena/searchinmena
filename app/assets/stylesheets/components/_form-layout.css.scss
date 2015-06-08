@@ -156,14 +156,22 @@
   }
 }
 
-.company-info {
-  @include transition(all, .5s, ease-in-out);
+.animate-show {
+  line-height: 20px;
   opacity: 1;
-  max-height: 999px;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
 
-  &.ng-hide:not(.ng-hide-animate) {
-    display: block!important;
-    max-height: 0;
-    opacity: 0;
-  }
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
 }

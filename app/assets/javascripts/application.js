@@ -12,6 +12,7 @@
 //
 //= require angular
 //= require angular-ui-router
+//= require angular-animate
 //= require ng-tags-input
 //= require sim
 //= require router
