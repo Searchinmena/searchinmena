@@ -141,6 +141,10 @@ tags-input .tags {
     border: none;
     padding: 0;
     margin: 0;
+
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 
   .tag-item {
@@ -152,6 +156,11 @@ tags-input .tags {
     border-radius: 0;
     height: auto;
     margin: 3px 5px 3px 0;
+
+    [dir="rtl"] & {
+      float: right;
+      margin: 3px 0px 3px 5px;
+    }
 
     .remove-button {
       font: inherit;

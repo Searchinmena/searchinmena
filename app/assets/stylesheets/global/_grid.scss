@@ -9,7 +9,11 @@
 %max-width-container {
   max-width: 1380px;
   margin: $bs3 auto;
-  padding: 0 $bs2;
+  padding: 0 $bs-3;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 $bs2;  
+  }
 }
 
 .container {
