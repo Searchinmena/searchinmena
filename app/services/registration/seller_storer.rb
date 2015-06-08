@@ -1,8 +1,13 @@
 class Registration::SellerStorer < Registration::Storer
-  def initialize(user, user_params, business, business_params)
-    self.handlers = [
-      Registration::UserStoringHandler.new(user, user_params),
-      Registration::BusinessStoringHandler.new(business, business_params, user)
-    ]
+  def initialize(records, registration_params)
+    user = records[:user]
+    user_creator = Registration::UserCreator.new(user,
+                                                 registration_params[:user])
+    business_creator = Registration::BusinessCreator.new(records[:business],
+                                        registration_params[:business],
+                                        registration_params[:tags],
+                                        user)
+
+    self.handlers = [user_creator, business_creator]
   end
 end

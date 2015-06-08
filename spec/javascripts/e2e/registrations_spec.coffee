@@ -36,5 +36,14 @@ describe RegistrationPage, ->
     sellerButton = element(By.id(page.sellerCategory))
     expect(sellerButton.isSelected()).toBe(true)
     
-    expect(page.companyNameField().getAttribute("class")).toEqual("field-with-errors")
+    companyNameField = page.companyNameField()
+    expect(companyNameField.element(By.className("error"))
+      .isDisplayed()).toBe(true)
+    expect(companyNameField.getAttribute("class"))
+      .toContain("field-with-errors")
 
+  it "is possible to add tag", ->
+    page.chooseUserCategory(page.sellerCategory)
+
+    page.tagInput().sendKeys("Ania", protractor.Key.RETURN)
+    expect(element(By.cssContainingText("span", "Ania")).isDisplayed()).toBe(true)

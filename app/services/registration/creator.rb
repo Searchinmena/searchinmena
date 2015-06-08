@@ -1,25 +1,16 @@
 class Registration::Creator < BaseService
   inject :user_repository, :business_repository, :storer_factory
 
-  attr_accessor :storer, :user, :business
-
-  def initialize(user_params, business_params)
-    self.business = business_repository.new(business_params)
-    self.user = user_repository.setup(user_params)
-
-    category = user_params[:category]
-    self.storer = storer_factory.from_category(
-      category, user, user_params, business, business_params)
-  end
+  takes :registration_params
 
   def perform
-    success = if storer.valid?
-                storer.store
-              else
-                storer.copy_errors
-              end
+    business = business_repository.new(registration_params[:business])
+    user = user_repository.setup(registration_params[:user])
 
-    Registration::Response.new(
-      success: success, user: user, business: business)
+    category = registration_params[:user][:category]
+    records = { user: user, business: business }
+    storer = storer_factory.from_category(category, records,
+                                               registration_params)
+    storer.perform(user, business)
   end
 end

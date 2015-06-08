@@ -3,19 +3,25 @@ module ApplicationHelper
     :rtl if I18n.locale == :ar
   end
 
-  def email_confirmed?
-    if current_user
-      return current_user.confirmed_at.present?
-    else
-      return true
+  def error_message_for(attribute)
+    content_tag :span,
+      "class" => "error",
+      "ng-show" => "errors.#{attribute}" do
+      "{{errors.#{attribute}}}"
     end
   end
 
-  def error_message_for(object, attribute)
-    if object.errors.any?
-      content_tag :span, class: 'error' do
-        object.errors.messages[attribute.to_sym].try(:first)
-      end
+  def form_field(attribute, &block)
+    ng_class = "(errors.#{attribute}) ? 'field-with-errors' : ''"
+    content_tag :div,
+      "class" => "field",
+      "ng-class" => ng_class do
+      yield block
+      concat(error_message_for(attribute))
     end
+  end
+
+  def email_confirmed?
+    current_user.blank? || current_user.confirmed_at.present?
   end
 end

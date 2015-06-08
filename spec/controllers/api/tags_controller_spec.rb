@@ -1,0 +1,30 @@
+require 'rails_helper'
+
+describe Api::TagsController do
+  describe "#index" do
+    context "without query param" do
+      it "is success" do
+        get :index
+        expect(response).to be_successful
+      end
+    end
+
+    context "with query param" do
+      fake(:tag_repository)
+      let(:query) { "Ania" }
+      let(:tag) { double(name: 'Ania') }
+
+      it "is success" do
+        expect(controller).to receive(:tag_repository)
+          .and_return(tag_repository)
+        expect(tag_repository).to receive(:find_with_query)
+          .with(query)
+          .and_return([tag])
+
+        get :index, query: query
+
+        expect(response).to be_successful
+      end
+    end
+  end
+end

@@ -1,6 +1,7 @@
 defaults: &defaults
   email_from: 'confirmation@searchinmena.com'
 production:
+  app_url: http://sim.demo.llp.pl
   app_host: http://sim.demo.llp.pl
   honeybadger_env: demo
   fb_app_id: 838866496206335

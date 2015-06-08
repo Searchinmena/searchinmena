@@ -3,105 +3,42 @@ require 'rails_helper'
 describe Registration::Creator do
   describe "#perform" do
     let(:service) do
-      Registration::Creator.new(user_params, business_params)
+      Registration::Creator.new(registration_params)
+    end
+    fake(:storer_factory) { Registration::StorerFactory }
+    let(:user_repository) { double(new: user) }
+    let(:business_repository) { double(new: business) }
+    fake(:storer) { Registration::SellerStorer }
+
+    let(:registration_params) do
+      {
+        user: { category: category },
+        business: {},
+        tags: {}
+      }
     end
 
-    subject { service.perform }
+    let(:user) { double(:user) }
+    let(:business) { double(:business) }
+    let(:category) { 'seller' }
 
-    let(:user) { build(:user) }
-    let(:business) { build(:business, user: nil) }
-    let(:valid_user_params) { build_user_params(user) }
-    let(:valid_business_params) { build_params(business) }
+    it "performs storer with correct args" do
+      expect(service).to receive(:user_repository)
+        .and_return(user_repository)
+      expect(service).to receive(:business_repository)
+        .and_return(business_repository)
+      expect(service).to receive(:storer_factory)
+        .and_return(storer_factory)
 
-    shared_examples_for "any invalid params" do
-      it { is_expected.not_to be_successful }
+      expect(user_repository).to receive(:setup)
+      .with(registration_params[:user]).and_return(user)
 
-      it "doesn't create user" do
-        expect { subject }.not_to change { User.count }
-      end
+      expect(storer_factory).to receive(:from_category)
+        .with(category, { user: user, business: business }, registration_params)
+        .and_return(storer)
 
-      it "doesn't create business" do
-        expect { subject }.not_to change { Business.count }
-      end
-    end
-
-    context "user has chosen 'seller' or 'both' category" do
-      context "user params valid" do
-        let(:user_params) { valid_user_params }
-
-        context "business params valid" do
-          let(:business_params) { valid_business_params }
-
-          it { is_expected.to be_successful }
-
-          it "assigns business to user" do
-            subject
-            created_user = User.where(email: user.email).first
-            expect(created_user.business).not_to be_nil
-          end
-        end
-
-        context "business params invalid" do
-          let(:business_params) { {} }
-
-          it_behaves_like "any invalid params"
-
-          it "copies errors to business" do
-            expect(subject.business.errors).not_to be_empty
-          end
-        end
-      end
-
-      context "user params invalid" do
-        let(:user_params) { valid_user_params.merge(email: '') }
-
-        context "business params valid" do
-          let(:business_params) { valid_business_params }
-
-          it { is_expected.not_to be_successful }
-
-          it "doesn't create user" do
-            expect { subject }.not_to change { User.count }
-          end
-
-          it "doesn't create business" do
-            expect { subject }.not_to change { Business.count }
-          end
-
-          it "copies errors to user" do
-            expect(subject.user.errors).not_to be_empty
-          end
-        end
-
-        context "business params invalid" do
-          let(:business_params) { {} }
-
-          it_behaves_like "any invalid params"
-
-          it "copies errors to business" do
-            expect(subject.business.errors).not_to be_empty
-          end
-        end
-      end
-    end
-
-    context "user has chosen 'buyer' category" do
-      let(:valid_user_params) do
-        build_user_params(user, category: User.categories[:buyer])
-      end
-      let(:business_params) { {} }
-
-      context "user params valid" do
-        let(:user_params) { valid_user_params }
-
-        it { is_expected.to be_successful }
-      end
-
-      context "user params invalid" do
-        let(:user_params) { valid_user_params.merge(email: '') }
-
-        it { is_expected.not_to be_successful }
-      end
+      expect(storer).to receive(:perform).with(user, business)
+      service.perform
     end
   end
 end

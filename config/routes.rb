@@ -18,8 +18,13 @@ Rails.application.routes.draw do
     end
 
     get "/home" => "pages#home", as: :home
+
     resource :dashboard, controller: :dashboard
 
     root to: "pages#home"
+  end
+
+  namespace :api do
+    resources :tags, only: [:index]
   end
 end
