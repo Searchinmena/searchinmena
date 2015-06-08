@@ -40,6 +40,7 @@ p {
 
   span {
     @extend %basic-title;
+    color: $grey;
     background-color: white;
     padding: 0 $bs-3;
     position: relative;
