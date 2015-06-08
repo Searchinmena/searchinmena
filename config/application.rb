@@ -31,9 +31,8 @@ module Sim
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.action_mailer.default_url_options = { host: A9n.app_url }
+    config.action_mailer.default_url_options = { host: A9n.app_host }
     config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = { address: A9n.app_host, port: 1025 }
     config.action_mailer.perform_deliveries = true
 
     # Override field error wrapper

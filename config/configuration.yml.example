@@ -1,7 +1,6 @@
 defaults: &defaults
   email_from: 'confirmation@searchinmena.com'
-  app_url: http://localhost:3000
-  app_host: localhost
+  app_host: http://localhost:3000
   fb_app_id: 838866496206335
   fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
   validations:
@@ -11,6 +10,11 @@ defaults: &defaults
     max_text_area_size: 2000
     max_text_field_size: 255
   angular_flash_timeout: 5000
+  mandrill:
+    address:
+    port:
+    user_name: 
+    password: 
 
 development:
   honeybadger_env: development
