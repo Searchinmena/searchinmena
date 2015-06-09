@@ -9,6 +9,10 @@
       category = $scope.form.user.category
       category == "seller" || category == "both"
 
+    $scope.isFacebookSignup = ->
+      provider = $scope.form.user.provider
+      provider == "facebook"
+
     $scope.loadTags = (query) ->
       $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
 
