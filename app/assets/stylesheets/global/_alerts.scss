@@ -38,23 +38,27 @@ $alert-dark-green: #236900;
   border-radius: 4px;
   position: fixed;
   z-index: 999;
-  top: 5em;
+  top: 2 * $bs6;
   left: 5%;
   width: 90%;
   max-width: 3*$bs9;
   @include transition(background, .5s, ease-in);
   text-align: center;
+  
   @media screen and (min-width: $tablet){
     left: 50%;
     margin-left: -1.5*$bs9;
   }
+  
   h4 {
     margin-top: 0;
     color: inherit;
   }
+  
   .alert-link {
     font-weight: bold;
   }
+  
   > {
     p {
       margin-bottom: 0;
@@ -68,6 +72,18 @@ $alert-dark-green: #236900;
   }
 }
 
+.confirm-email {
+  top: 2 * $bs7;
+  left: auto;
+  right: $bs2;
+  margin-left: 0;
+
+  [dir="rtl"] & {
+    right: auto;
+    left: $bs2;
+  }
+}
+
 .alert-dismissable {
   padding-right: 35px;
   .close {
@@ -76,21 +92,39 @@ $alert-dark-green: #236900;
 }
 
 .alert-dismissible {
-  padding-right: 35px;
+  
   .close {
-    @extend %extend_1;
+    @include transition(all, .2s, ease-in-out);
+    color: inherit;
+    float: right;
+    background: none;
+    border: none;
+
+    &:focus, &:hover {
+      color: black;
+      outline: 0;
+    }
+
+    .sr-only {
+      display: none;
+    }
+  }
+
+  [dynamic = "flash.text"] {
+    float: left;
+    max-width: 90%;
   }
 }
 
 .alert-success {
-  background-color: $alert-light-green;
-  border-color: $alert-light-green;
+  background-color: $green-light;
+  border-color: $green-light;
   color: $alert-dark-green;
   hr {
-    border-top-color: $alert-dark-green;
+    border-top-color: $green-darker;
   }
   .alert-link {
-    color: $alert-dark-green;
+    color: $green-darker;
   }
 }
 
