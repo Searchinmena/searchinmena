@@ -17,10 +17,10 @@ en:
   text:
     title: "What you get"
     description:
-        "By creating an account you’re gaining full access
-        to best offers on the market.
-        You will be able to find exactly these offers
-        that match your expectations."
+      "By creating an account you’re gaining full access
+      to best offers on the market.
+      You will be able to find exactly these offers
+      that match your expectations."
     line: "As a"
     subtitle_1: "seller"
     subtitle_2: "buyer"
@@ -46,9 +46,9 @@ en:
 
   sign_up:
     facebook: "Sign up with Facebook"
-    facebook_explanation: "We prefilled your name and email with 
-        data from Facebook,
-        please complete the form to create your account."
+    facebook_explanation:
+      "We prefilled your name and email with data from Facebook,
+      please complete the form to create your account."
     or: "or"
     contant_info_header: "Your Contact Information"
     company_name: "Company Name"

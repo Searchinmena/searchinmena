@@ -46,9 +46,9 @@ ar:
   sign_up:
     facebook: "Sign up with Facebook"
     or: "or"
-    facebook_explanation: "We prefilled your name and email with 
-        data from Facebook,
-        please complete the form to create your account."
+    facebook_explanation:
+      "We prefilled your name and email with data from Facebook,
+      please complete the form to create your account."
     contant_info_header: "معلومات الاتصال الخاصة بك"
     company_name: "Company Name"
     location: "الموقع"
