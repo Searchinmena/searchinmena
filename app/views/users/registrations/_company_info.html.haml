@@ -29,4 +29,5 @@
     = label_tag :main_products, t("sign_up.main_products")
     %tags-input{ "ng-model": "form.tags", "display-property": "name",
       "replace-spaces-with-dashes": "false" }
-      %auto-complete{ source: "loadTags($query)" }
+      %auto-complete{ source: "loadTags($query)",
+        "select-first-match": "false" }
