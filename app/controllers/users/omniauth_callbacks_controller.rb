@@ -7,7 +7,8 @@ module Users
       user = user_repository.find_by_omniauth(request.env["omniauth.auth"])
       if user_exists?(user)
         sign_in_and_redirect(user)
-        set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+        set_flash_message(:notice, :success, kind: "Facebook") if
+        is_navigational_format?
       else
         store_hash_and_redirect(request.env["omniauth.auth"])
       end
