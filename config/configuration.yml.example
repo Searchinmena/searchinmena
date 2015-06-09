@@ -1,8 +1,8 @@
 defaults: &defaults
   email_from: 'confirmation@searchinmena.com'
   app_host: http://localhost:3000
-  fb_app_id: 838866496206335
-  fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
+  fb_app_id: 846825152077136
+  fb_app_secret: abdfcbbba0fc00ea4ecf83922c15d2ea
   validations:
     email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
     password_min_length: 8
@@ -13,8 +13,8 @@ defaults: &defaults
   mandrill:
     address:
     port:
-    user_name: 
-    password: 
+    user_name:
+    password:
 
 development:
   honeybadger_env: development
