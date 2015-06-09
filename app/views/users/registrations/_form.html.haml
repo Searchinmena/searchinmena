@@ -18,9 +18,9 @@
         %span= t('sign_up.or')
 
     .fb-notice{ "ng-show": "isFacebookSignup()" }
+      %span.icon-login
       %p
-        We prefilled your name and email with data from Facebook,
-        please complete the form to create your account. Thanks!
+        = t("sign_up.facebook_explanation")
 
     = f.hidden_field :provider
     = f.hidden_field :uid

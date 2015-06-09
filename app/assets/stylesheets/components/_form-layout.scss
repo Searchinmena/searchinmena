@@ -179,3 +179,25 @@
   opacity: 0;
   max-height: 0;
 }
+
+.fb-notice {
+  max-width: 4 * $bs9;
+  margin: 0 0 $bs3;
+  color: $blue-dark;
+  padding: $bs1;
+  border-radius: $bs-3;
+  background-color: $blue-light;
+  font-weight: 100;
+
+  p {
+    margin: 0;
+  }
+
+  .icon-login {
+    display: block;
+    float: left;
+    margin: 0 $bs1 0 0;
+    color: white;
+    font-size: $bs5;
+  }
+}
