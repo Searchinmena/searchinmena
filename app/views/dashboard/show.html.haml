@@ -1,3 +1,30 @@
 = render "/layouts/confirm_email_message"
 
-<ui-view></ui-view>
+.dashboard-container
+  %ul.dashboard-navigation{ role: "navigation" }
+    %li
+      %a{ "ui-sref": "dashboard", class: "nav-link active" }
+        = I18n.t('dashboard_nav.home')
+        %span.icon.icon-home
+    %li
+      %a{ href: "#", class: "nav-link" }
+        = I18n.t('dashboard_nav.company')
+        %span.icon.icon-briefcase
+    %li
+      %a{ "ui-sref": "products", class: "nav-link" }
+        = I18n.t('dashboard_nav.products')
+        %span.icon.icon-shopping-cart
+    %li
+      %a{ href: "#/", class: "nav-link" }
+        = I18n.t('dashboard_nav.services')
+        %span.icon.icon-user
+    %li
+      %a{ href: "#", class: "nav-link" }
+        = I18n.t('dashboard_nav.messages')
+        %span.icon.icon-envelope
+    %li
+      %a{ href: "#", class: "nav-link" }
+        = I18n.t('dashboard_nav.settings')
+        %span.icon.icon-cog
+  .dashboard-content
+    %ui-view
