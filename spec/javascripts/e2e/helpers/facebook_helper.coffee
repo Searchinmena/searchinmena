@@ -6,3 +6,9 @@ module.exports =
 
   fieldValue: (field_id) ->
     element(By.id(field_id)).getAttribute("value")
+
+  fbLinkElement: ->
+    element(By.css(".facebook-sign-up"))
+
+  fbNoticeElement: ->
+    element(By.css(".fb-notice"))
