@@ -1,41 +1,41 @@
-%h1.title New Product
+%h1.title= I18n.t('new_product.form_title')
 %form
   %h3.line-behind
-    %span Basic info
+    %span= I18n.t('new_product.basic_section')
   .field
-    %label Product name
+    %label= I18n.t('new_product.name')
     %input{ type: "text"}
   .field
-    %label Product category
-    %button.small-button Choose Category
+    %label= I18n.t('new_product.category')
+    %button.small-button= I18n.t('new_product.category_button')
   .field
-    %label Photos
-    %button.small-button Add Photos
-    %p.field-comment Max 10
+    %label= I18n.t('new_product.photos')
+    %button.small-button= I18n.t('new_product.photos_button')
+    %p.field-comment= I18n.t('new_product.photos_comment')
 
   %h3.line-behind
-    %span Product Details
+    %span= I18n.t('new_product.details_section')
   .field
-    %label Model number
+    %label= I18n.t('new_product.model')
     %input{ type: "text"}
   .field
-    %label Brand name
+    %label= I18n.t('new_product.brand')
     %input{ type: "text"}
   .field.compound-field
-    %label Characteristics
-    %span Attribute
-    %input{ type: "text", placeholder: "eg. material"}
-    %span Value
-    %input{ type: "text", placeholder: "eg. copper"}
+    %label= I18n.t('new_product.characteristics')
+    %span= I18n.t('new_product.attribute')
+    %input{ type: "text", :placeholder => I18n.t('new_product.attribute_placeholder')}
+    %span= I18n.t('new_product.value')
+    %input{ type: "text", :placeholder => I18n.t('new_product.value_placeholder')}
     %button.plus-button.icon-plus add more
   .field
-    %label Description
+    %label= I18n.t('new_product.desc')
     %textarea
 
   %h3.line-behind
-    %span Trade info
+    %span= I18n.t('new_product.trade_section')
   .field.compound-field
-    %label Min. order
+    %label= I18n.t('new_product.order')
     %input{ type: "text"}
     .select-field
       %select
@@ -44,49 +44,49 @@
         %option kg
         %option ton
         %option bottles
-    %p.field-comment eg. 10'000 bottles
+    %p.field-comment= I18n.t('new_product.order_comment')
   .field.compound-field
-    %label FOB price
+    %label= I18n.t('new_product.price')
     %input{ type: "text"}
     .select-field
       %select
         %option --Choose currency--
         %option BGP
         %option USD
-    %span per
+    %span= I18n.t('new_product.per')
     .select-field
       %select
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment eg. 100'000 USD per kg
+    %p.field-comment= I18n.t('new_product.price_comment')
   .field
-    %label Port
+    %label= I18n.t('new_product.port')
     %input{ type: "text"}
   .field.compound-field
-    %label Supply abbility
+    %label= I18n.t('new_product.supply')
     %input{ type: "text"}
     %input{ type: "text"}
-    %span per
+    %span= I18n.t('new_product.per')
     .select-field
       %select
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment eg. 1000 piece/pieces per Day
+    %p.field-comment= I18n.t('new_product.supply_comment')
   .field
-    %label Payment terms
+    %label= I18n.t('new_product.payment')
     .checkbox-field
-      %input{ type: "radio"}
+      %input{ type: "checkbox"}
       %label.inline-label Gold
     .checkbox-field
-      %input{ type: "radio"}
+      %input{ type: "checkbox"}
       %label.inline-label Mules
     .checkbox-field
-      %input{ type: "radio"}
+      %input{ type: "checkbox"}
       %label.inline-label Smiles
   .field
-    %label Packaging details
+    %label= I18n.t('new_product.packaging')
     %input{ type: "text"}
   .actions
-    %input{ type: "submit", value: "Add new product"}
+    %input{ type: "submit", :value => I18n.t('new_product.submit')}

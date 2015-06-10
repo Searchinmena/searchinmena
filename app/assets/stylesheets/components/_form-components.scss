@@ -36,6 +36,10 @@
 
 form {
   padding: $bs2;
+
+  .line-behind {
+    max-width: 5.3 * $bs9;
+  }
 }
 
 label {
