@@ -73,6 +73,7 @@ $alert-dark-green: #236900;
 }
 
 .confirm-email {
+  position: absolute;
   top: 2 * $bs7;
   left: auto;
   right: $bs2;
