@@ -6,6 +6,7 @@ class CreateProductPhotos < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-      add_index :product_photos, :product_id
+
+    add_index :product_photos, :product_id
   end
 end
