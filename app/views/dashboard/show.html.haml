@@ -3,7 +3,7 @@
 .dashboard-container
   %ul.dashboard-navigation{ role: "navigation" }
     %li
-      %a.nav-link.active{ "ui-sref": "dashboard" }
+      %a.nav-link{ "ui-sref": "dashboard", "ui-sref-active": "active" }
         = I18n.t('dashboard_nav.home')
         %span.icon.icon-home
     %li
@@ -11,7 +11,7 @@
         = I18n.t('dashboard_nav.company')
         %span.icon.icon-briefcase
     %li
-      %a.nav-link{ "ui-sref": "products" }
+      %a.nav-link{ "ui-sref": "products", "ui-sref-active": "active" }
         = I18n.t('dashboard_nav.products')
         %span.icon.icon-shopping-cart
     %li
