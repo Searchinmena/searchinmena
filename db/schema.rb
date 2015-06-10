@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20150610123118) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "attributes", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "value",      null: false
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "businesses", force: :cascade do |t|
     t.string   "name",          null: false
     t.string   "country",       null: false
@@ -54,12 +46,24 @@ ActiveRecord::Schema.define(version: 20150610123118) do
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
 
-  create_table "photos", force: :cascade do |t|
-    t.string   "url",        null: false
+  create_table "product_attributes", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "value",      null: false
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "product_attributes", ["product_id"], name: "index_product_attributes_on_product_id", using: :btree
+
+  create_table "product_photos", force: :cascade do |t|
+    t.string   "photo",      null: false
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name",                      null: false
