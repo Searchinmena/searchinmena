@@ -13,3 +13,39 @@
     %a{href: "#", class: "tab-link"}
       = I18n.t("company.tabs.certifications")
       .icon-chevron-down
+
+%form
+  .field
+    %label Company name
+    %input{ type: "text"}
+  .field
+    %label Contact number
+    %input{ type: "text"}
+  .field
+    %label City
+    %input{ type: "text"}
+  .field
+    %label Loaction
+    .select-field
+      %select
+        %option --Choose location--
+        %option Poland
+        %option Urugwai
+  .field
+    %label Main products
+    %input{ type: "text", placeholder: "add product"}
+  .field
+    %label Year Company Registered
+    %input{ type: "number" } 
+  .field
+    %label No. of employees
+    %input{ type: "number" } 
+  .field
+    %label Detailed introduction
+    %textarea
+  .field
+    %label Company photos
+    %button.small-button Add photos
+    %p.field-comment max 5 images
+  .actions
+    %input{ type: "submit", value: "Save changes"}

@@ -1,16 +1,15 @@
 .company-tabs {
   @extend %clearfix;
   list-style: none;
-  background-color: $snow-white;
-  border-bottom: $bs-5 solid $border-grey;
+  border-top: $bs-5 solid $border-grey;
 }
 
 .tab {
   display: inline-block;
   float: left;
-  border-bottom: $bs-5 solid $blue-basic;
+  border-top: $bs-5 solid $blue-basic;
   position: relative;
-  top: .18rem;
+  top: -.14rem;
 
   &:nth-of-type(1) {
     border-color: $blue-basic;
@@ -22,7 +21,6 @@
       }
 
       &.active {
-        background-color: $light-grey;
         color: $blue-basic;
       }
     }
@@ -38,7 +36,6 @@
       }
 
       &.active {
-        background-color: $light-grey;
         color: $purple-blue;
       }
     }
@@ -54,7 +51,6 @@
       }
 
       &.active {
-        background-color: $light-grey;
         color: $purple-basic;
       }
     }
