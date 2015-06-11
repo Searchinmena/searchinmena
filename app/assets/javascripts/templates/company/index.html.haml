@@ -1,9 +1,15 @@
-%h1= I18n.t("company.title")
+%h1.title= I18n.t("company.title")
 
 %ul.company-tabs
-  %li
-    %a{href: "#"}= I18n.t("company.tabs.basic_info")
-  %li
-    %a{href: "#"}= I18n.t("company.tabs.trade_details")
-  %li
-    %a{href: "#"}= I18n.t("company.tabs.certifications")
+  %li.tab
+    %a{href: "#", class: "tab-link active"}
+      = I18n.t("company.tabs.basic_info")
+      .icon-chevron-down
+  %li.tab
+    %a{href: "#", class: "tab-link"}
+      = I18n.t("company.tabs.trade_details")
+      .icon-chevron-down
+  %li.tab
+    %a{href: "#", class: "tab-link"}
+      = I18n.t("company.tabs.certifications")
+      .icon-chevron-down

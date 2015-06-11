@@ -1,0 +1,84 @@
+.company-tabs {
+  @extend %clearfix;
+  list-style: none;
+  background-color: $snow-white;
+  border-bottom: $bs-5 solid $border-grey;
+}
+
+.tab {
+  display: inline-block;
+  float: left;
+  border-bottom: $bs-5 solid $blue-basic;
+  position: relative;
+  top: .18rem;
+
+  &:nth-of-type(1) {
+    border-color: $blue-basic;
+
+    .tab-link {
+
+      &:hover, &:focus {
+        color: $blue-basic;
+      }
+
+      &.active {
+        background-color: $light-grey;
+        color: $blue-basic;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    border-color: $purple-blue;
+
+    .tab-link {
+
+      &:hover, &:focus {
+        color: $purple-blue;
+      }
+
+      &.active {
+        background-color: $light-grey;
+        color: $purple-blue;
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    border-color: $purple-basic;
+
+    .tab-link {
+
+      &:hover, &:focus {
+        color: $purple-basic;
+      }
+
+      &.active {
+        background-color: $light-grey;
+        color: $purple-basic;
+      }
+    }
+  }
+}
+
+.tab-link {
+  @include transition(all, .25s, ease-in-out);
+  color: $basic-font;
+  font-weight: 100;
+  display: block;
+  padding: $bs2 $bs5;
+  border: 0;
+
+  .icon-chevron-down {
+    position: absolute;
+    font-size: $bs1;
+    bottom: $bs-5;
+    left: 50%;
+    margin-left: -$bs-2;
+    display: none;
+  }
+
+  &.active .icon-chevron-down {
+    display: block;
+  }
+}
