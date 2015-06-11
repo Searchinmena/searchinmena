@@ -11,7 +11,7 @@
         templateUrl: '/assets/templates/products/index',
         controller: 'ProductsIndexCtrl'
       )
-      .state('products/new',
+      .state('new_product',
         url: '/products/new',
         templateUrl: '/assets/templates/products/new',
         controller: 'ProductsNewCtrl'
