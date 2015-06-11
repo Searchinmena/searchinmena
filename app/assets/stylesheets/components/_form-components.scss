@@ -87,6 +87,13 @@ label {
 
 input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
   @extend %basic-input;
+  
+  @media screen and (min-width: $tablet) {
+    &.size-specified {
+      width: auto;
+      display: inline-block;
+    }
+  }
 }
 
 textarea {
