@@ -22,7 +22,7 @@
         controller: 'CompanyCtrl'
       )
       .state('company.basic-info',
-        templateUrl: '/assets/templates/company/basic-info',
+        templateUrl: '/assets/templates/company/basic-info'
       )
       .state('company.trade-details',
         url: '/trade-details',

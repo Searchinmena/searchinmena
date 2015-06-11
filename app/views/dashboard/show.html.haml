@@ -7,7 +7,7 @@
         = I18n.t('dashboard_nav.home')
         %span.icon.icon-home
     %li
-      %a.nav-link{ "ui-sref": "company", "ui-sref-active": "active" }
+      %a.nav-link{ "ui-sref": "company", "ui-sref-active": "active", "ui-sref-opts": "{ reload: true }" }
         = I18n.t('dashboard_nav.company')
         %span.icon.icon-briefcase
     %li
