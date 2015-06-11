@@ -1,1 +1,38 @@
-%h2 Certifications will be here
+%form
+  .field
+    %label Certification Type
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Type 1
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Type 2
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Different
+  .field
+    %label Name
+    .select-field
+      %select
+        %option --Choose certificate--
+        %option Certificato Manifico
+        %option Awesome Paper
+  .field
+    %label Issued by
+    .select-field
+      %select
+        %option --Choose something--
+        %option House of Cert
+        %option Dumbledore
+  .field
+    %label Certificate image
+    %button.small-button Add image
+  .actions
+    %input{ type: "submit", value: "Add certificate"}
+
+%h2.title Your certificates
+%span AWESOME CERTIFICATE
+%span Issued by: Sauron
+.img
+%button.small-button edit
+%button.small-button delete
