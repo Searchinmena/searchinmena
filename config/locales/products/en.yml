@@ -1,4 +1,6 @@
 en:
+  your_products: "Your products"
+  add_new_product: "Add new product"
   new_product:
     form_title: "New product"
     basic_section: "Basic info"
@@ -17,7 +19,7 @@ en:
     value: "Value"
     value_placeholder: "eg. copper"
     more: "add more"
-    desc: "Description"
+    description: "Description"
     trade_section: "trade info"
     order: "Min order"
     order_comment: "eg. 10'000 bottles"
