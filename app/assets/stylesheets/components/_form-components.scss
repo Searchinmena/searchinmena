@@ -159,6 +159,16 @@ textarea {
   }
 }
 
+.company-logo {
+  width: 2 * $bs8;
+  height: 2 * $bs8;
+  border: 1px solid $border-grey;
+  margin: 0 0 $bs1 0;
+  background: image-url('icon-picture.png') center center no-repeat;
+  background-size: 70% auto;
+  background-color: $snow-white;
+}
+
 .compound-field {
   
   .select-field {
