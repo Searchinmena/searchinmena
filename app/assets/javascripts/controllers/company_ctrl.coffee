@@ -1,4 +1,4 @@
-@Sim.controller 'CompanyCtrl', ['$scope'
-  ($scope) ->
-
+@Sim.controller 'CompanyCtrl', ['$scope', '$state'
+  ($scope, $state) ->
+    $state.transitionTo('company.basic-info')
 ]

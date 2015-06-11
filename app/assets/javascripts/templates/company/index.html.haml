@@ -2,149 +2,16 @@
 
 %ul.company-tabs
   %li.tab
-    %a{href: "#", class: "tab-link active"}
+    %a{"ui-sref": "company.basic-info", "ui-sref-active": "active", class: "tab-link"}
       = I18n.t("company.tabs.basic_info")
       .icon-chevron-down
   %li.tab
-    %a{href: "#", class: "tab-link"}
+    %a{"ui-sref": "company.trade-details", "ui-sref-active": "active", class: "tab-link"}
       = I18n.t("company.tabs.trade_details")
       .icon-chevron-down
   %li.tab
-    %a{href: "#", class: "tab-link"}
+    %a{"ui-sref": "company.certifications", "ui-sref-active": "active", class: "tab-link"}
       = I18n.t("company.tabs.certifications")
       .icon-chevron-down
 
-%form
-  .field
-    %label Company name
-    %input{ type: "text"}
-  .field
-    .company-logo
-    %button.small-button Add logo
-  .field
-    %label Contact number
-    %input{ type: "text"}
-  .field
-    %label City
-    %input{ type: "text"}
-  .field
-    %label Loaction
-    .select-field
-      %select
-        %option --Choose location--
-        %option Poland
-        %option Urugwai
-  .field
-    %label Main products
-    %input{ type: "text", placeholder: "add product"}
-  .field
-    %label Year Company Registered
-    %input.size-specified{ type: "number"} 
-  .field
-    %label No. of employees
-    %input.size-specified{ type: "number" } 
-  .field
-    %label Detailed introduction
-    %textarea
-  .field
-    %label Company photos
-    %button.small-button Add photos
-    %p.field-comment max 5 images
-  .actions
-    %input{ type: "submit", value: "Save changes"}
-
-%form
-  .field
-    %label Annual Sales Value
-    %input{ type: "text"}
-  .field
-    %label Export
-    %input.size-specified{ type: "number", size: "4"}
-    %span %
-  .field
-    %label Main markets
-    %input{ type: "text", placeholder: "add region"}
-  .field
-    %label Customer list
-    %input{ type: "text", placeholder: "customer name"}
-    %button.plus-button.icon-plus add more
-  .field
-    %label Nearest port
-    %input{ type: "text", placeholder: "port name"}
-    %button.plus-button.icon-plus add more
-  .field
-    %label Average lead time
-    %input{ type: "text"}
-  .field
-    %label Offices Overseas
-    %input{ type: "text", placeholder: "Office"}
-    %button.plus-button.icon-plus add more
-  .field
-    %label Language spoken
-    %input{ type: "text", placeholder: "add language"}
-  .field
-    %label Accepted Delivery Terms
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Horse
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Mule
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Rocket
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Boat
-  .field
-    %label Accepted Payment Terms
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Gold
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Mules
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Smiles
-  .actions
-    %input{ type: "submit", value: "Save changes"}
-
-%form
-  .field
-    %label Certification Type
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Type 1
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Type 2
-    .checkbox-field
-      %input{ type: "checkbox"}
-      %label.inline-label Different
-  .field
-    %label Name
-    .select-field
-      %select
-        %option --Choose certificate--
-        %option Certificato Manifico
-        %option Awesome Paper
-  .field
-    %label Issued by
-    .select-field
-      %select
-        %option --Choose something--
-        %option House of Cert
-        %option Dumbledore
-  .field
-    %label Certificate image
-    %button.small-button Add image
-  .actions
-    %input{ type: "submit", value: "Add certificate"}
-
-%h2.title Your certificates
-%span AWESOME CERTIFICATE
-%span Issued by: Sauron
-.img
-%button.small-button edit
-%button.small-button delete
+%ui-view

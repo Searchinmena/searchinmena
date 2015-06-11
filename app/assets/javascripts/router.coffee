@@ -21,5 +21,16 @@
         templateUrl: '/assets/templates/company/index',
         controller: 'CompanyCtrl'
       )
+      .state('company.basic-info',
+        templateUrl: '/assets/templates/company/basic-info',
+      )
+      .state('company.trade-details',
+        url: '/trade-details',
+        templateUrl: '/assets/templates/company/trade-details'
+      )
+      .state('company.certifications',
+        url: '/certifications',
+        templateUrl: '/assets/templates/company/certifications'
+      )
     $urlRouterProvider.otherwise('/')
 ]
