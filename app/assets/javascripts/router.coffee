@@ -16,5 +16,10 @@
         templateUrl: '/assets/templates/products/new',
         controller: 'ProductsNewCtrl'
       )
+      .state('company',
+        url: '/company',
+        templateUrl: '/assets/templates/company/index',
+        controller: 'CompanyCtrl'
+      )
     $urlRouterProvider.otherwise('/')
 ]
