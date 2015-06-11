@@ -1,2 +1,3 @@
 %div{ "flash-message" => A9n.angular_flash_timeout,
-    "ng-controller": "FlashCtrl", "ng-init": "init('#{flash.to_h.to_json}')" }
+    "ng-controller": "FlashCtrl",
+    "ng-init": "init('#{escape_javascript(flash.to_h.to_json)}')" }
