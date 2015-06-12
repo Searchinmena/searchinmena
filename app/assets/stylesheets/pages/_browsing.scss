@@ -1,0 +1,25 @@
+.search-form {
+  background-color: white;
+  input[type="text"] {
+    font-size: $bs1;
+  }
+
+  select {
+    background-color: $snow-white;
+  }
+}
+
+.category-list {
+  @extend %clearfix;
+  list-style: none;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+}
+
+.category-name {
+  a {
+    padding: $bs-3 $bs1;
+    display: block;
+    border: none;
+  }
+}
