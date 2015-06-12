@@ -1,41 +1,41 @@
-%h1.title= I18n.t('products.new.form_title')
+%h1.title {{"products.new.form_title" | translate }}
 %form{ "ng-submit": "submiI18n.t($event)" }
   %h3.line-behind
-    %span= I18n.t('products.new.basic_section')
+    %span {{"products.new.basic_section" | translate }}
   .field
-    %label= I18n.t('products.new.name')
+    %label {{"products.new.name" | translate }}
     %input{ type: "text"}
   .field
-    %label= I18n.t('products.new.category')
-    %button.small-button= I18n.t('products.new.category_button')
+    %label {{"products.new.category" | translate }}
+    %button.small-button {{"products.new.category_button" | translate }}
   .field
-    %label= I18n.t('products.new.photos')
-    %button.small-button= I18n.t('products.new.photos_button')
-    %p.field-comment= I18n.t('products.new.photos_comment')
+    %label {{"products.new.photos" | translate }}
+    %button.small-button {{"products.new.photos_button" | translate }}
+    %p.field-comment {{"products.new.photos_comment" | translate }}
 
   %h3.line-behind
-    %span= I18n.t('products.new.details_section')
+    %span {{"products.new.details_section" | translate }}
   .field
-    %label= I18n.t('products.new.model')
+    %label {{"products.new.model" | translate }}
     %input{ type: "text"}
   .field
-    %label= I18n.t('products.new.brand')
+    %label {{"products.new.brand" | translate }}
     %input{ type: "text"}
   .field.compound-field
-    %label= I18n.t('products.characteristics')
-    %span= I18n.t('products.new.attribute')
-    %input{ type: "text", :placeholder => I18n.t('products.new.attribute_placeholder')}
-    %span= I18n.t('products.new.value')
-    %input{ type: "text", :placeholder => I18n.t('products.new.value_placeholder')}
+    %label {{"products.characteristics" | translate }}
+    %span {{"products.new.attribute" | translate }}
+    %input{ type: "text", placeholder: '{{"products.new.attribute_placeholder" | translate }}' }
+    %span {{"products.new.value" | translate }}
+    %input{ type: "text", placeholder: '{{"products.new.value_placeholder" | translate }}' }
     %button.plus-button.icon-plus add more
   .field
-    %label= I18n.t('products.new.description')
+    %label {{"products.new.description" | translate }}
     %textarea
 
   %h3.line-behind
-    %span= I18n.t('products.new.trade_section')
+    %span {{"products.new.trade_section" | translate }}
   .field.compound-field
-    %label= I18n.t('products.new.order')
+    %label {{"products.new.order" | translate }}
     %input{ type: "text"}
     .select-field
       %select
@@ -44,38 +44,38 @@
         %option kg
         %option ton
         %option bottles
-    %p.field-comment= I18n.t('products.new.order_comment')
+    %p.field-comment {{"products.new.order_comment" | translate }}
   .field.compound-field
-    %label= I18n.t('products.new.price')
+    %label {{"products.new.price" | translate }}
     %input{ type: "text"}
     .select-field
       %select
         %option --Choose currency--
         %option BGP
         %option USD
-    %span= I18n.t('products.new.per')
+    %span {{"products.new.per" | translate }}
     .select-field
       %select
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment= I18n.t('products.new.price_comment')
+    %p.field-comment {{"products.new.price_comment" | translate }}
   .field
-    %label= I18n.t('products.new.port')
+    %label {{"products.new.port" | translate }}
     %input{ type: "text"}
   .field.compound-field
-    %label= I18n.t('products.new.supply')
+    %label {{"products.new.supply" | translate }}
     %input{ type: "text"}
     %input{ type: "text"}
-    %span= I18n.t('products.new.per')
+    %span {{"products.new.per" | translate }}
     .select-field
       %select
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment= I18n.t('products.new.supply_comment')
+    %p.field-comment {{"products.new.supply_comment" | translate }}
   .field
-    %label= I18n.t('products.new.payment')
+    %label {{"products.new.payment" | translate }}
     .checkbox-field
       %input{ type: "checkbox"}
       %label.inline-label Gold
@@ -86,7 +86,7 @@
       %input{ type: "checkbox"}
       %label.inline-label Smiles
   .field
-    %label= I18n.t('products.new.packaging')
+    %label {{"products.new.packaging" | translate }}
     %input{ type: "text"}
   .actions
-    %input{ type: "submit", value: I18n.t('products.new.submit') }
+    %input{ type: "submit", value: '{{"products.new.submit" | translate }}' }

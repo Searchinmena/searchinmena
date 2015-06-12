@@ -12,6 +12,9 @@
 //
 //= require angular
 //= require angular-ui-router
+//= require angular-translate
+//= require angular-translate-loader-static-files
+//= require angular-sanitize
 //= require angular-animate
 //= require ng-tags-input
 //= require angular-flash-alert

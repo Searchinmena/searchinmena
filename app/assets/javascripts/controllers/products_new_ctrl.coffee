@@ -1,4 +1,4 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope'
+@Sim.controller 'ProductsNewCtrl', ['$scope',
   ($scope) ->
     $scope.submit = (e) ->
       e.preventDefault()
