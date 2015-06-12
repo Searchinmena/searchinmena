@@ -2,15 +2,18 @@
 
 %ul.company-tabs
   %li.tab
-    %a{"ui-sref": "company.basic-info", "ui-sref-active": "active", class: "tab-link"}
+    %a{ "ui-sref": "company.basic-info", "ui-sref-active": "active",
+        class: "tab-link" }
       = I18n.t("company.tabs.basic_info")
       .icon-chevron-down
   %li.tab
-    %a{"ui-sref": "company.trade-details", "ui-sref-active": "active", class: "tab-link"}
+    %a{ "ui-sref": "company.trade-details", "ui-sref-active": "active",
+        class: "tab-link" }
       = I18n.t("company.tabs.trade_details")
       .icon-chevron-down
   %li.tab
-    %a{"ui-sref": "company.certifications", "ui-sref-active": "active", class: "tab-link"}
+    %a{ "ui-sref": "company.certifications", "ui-sref-active": "active",
+        class: "tab-link" }
       = I18n.t("company.tabs.certifications")
       .icon-chevron-down
 
