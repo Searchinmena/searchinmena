@@ -1,7 +1,9 @@
 %header
-  .language-selection
-    = link_to 'english', url_for(locale: :en), class: "language-choice"
-    = link_to 'العربية', url_for(locale: :ar), class: "language-choice",
+  .language-selection{ "ng-controller": 'LanguageCtrl' }
+    = link_to 'english', '#/',
+      class: "language-choice", "ng-click": "changeLanguage($event, 'en')"
+    = link_to 'العربية', '#/',
+      class: "language-choice", "ng-click": "changeLanguage($event, 'ar')",
        lang: "ar"
 
   = link_to(root_path, class: "logo") do

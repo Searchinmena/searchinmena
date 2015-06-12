@@ -4,27 +4,27 @@
   %ul.dashboard-navigation{ role: "navigation" }
     %li
       %a.nav-link{ "ui-sref": "dashboard", "ui-sref-active": "active" }
-        = I18n.t('dashboard_nav.home')
+        = t('dashboard_nav.home')
         %span.icon.icon-home
     %li
       %a.nav-link{ href: "#" }
-        = I18n.t('dashboard_nav.company')
+        = t('dashboard_nav.company')
         %span.icon.icon-briefcase
     %li
       %a.nav-link{ "ui-sref": "products", "ui-sref-active": "active" }
-        = I18n.t('dashboard_nav.products')
+        = t('dashboard_nav.products')
         %span.icon.icon-shopping-cart
     %li
       %a.nav-link{ href: "#" }
-        = I18n.t('dashboard_nav.services')
+        = t('dashboard_nav.services')
         %span.icon.icon-user
     %li
       %a.nav-link{ href: "#" }
-        = I18n.t('dashboard_nav.messages')
+        = t('dashboard_nav.messages')
         %span.icon.icon-envelope
     %li
       %a.nav-link{ href: "#" }
-        = I18n.t('dashboard_nav.settings')
+        = t('dashboard_nav.settings')
         %span.icon.icon-cog
   .dashboard-content
     %ui-view

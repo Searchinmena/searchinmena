@@ -12,6 +12,7 @@
 //
 //= require angular
 //= require angular-ui-router
+//= require angular-cookies
 //= require angular-translate
 //= require angular-translate-loader-static-files
 //= require angular-sanitize

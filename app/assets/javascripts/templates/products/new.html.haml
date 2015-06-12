@@ -1,41 +1,41 @@
-%h1.form-title {{"products.new.form_title" | translate }}
-%form{ "ng-submit": "submiI18n.t($event)" }
+%h1.form-title {{ "products.new.form_title" | translate }}
+%form{ "ng-submit": "submit($event)" }
   %h3.line-behind
-    %span {{"products.new.basic_section" | translate }}
+    %span {{ "products.new.basic_section" | translate }}
   .field
-    %label {{"products.new.name" | translate }}
+    %label {{ "products.new.name" | translate }}
     %input{ type: "text"}
   .field
-    %label {{"products.new.category" | translate }}
-    %button.small-button {{"products.new.category_button" | translate }}
+    %label {{ "products.new.category" | translate }}
+    %button.small-button {{ "products.new.category_button" | translate }}
   .field
-    %label {{"products.new.photos" | translate }}
-    %button.small-button {{"products.new.photos_button" | translate }}
-    %p.field-comment {{"products.new.photos_comment" | translate }}
+    %label {{ "products.new.photos" | translate }}
+    %button.small-button {{ "products.new.photos_button" | translate }}
+    %p.field-comment {{ "products.new.photos_comment" | translate }}
 
   %h3.line-behind
-    %span {{"products.new.details_section" | translate }}
+    %span {{ "products.new.details_section" | translate }}
   .field
-    %label {{"products.new.model" | translate }}
+    %label {{ "products.new.model" | translate }}
     %input{ type: "text"}
   .field
-    %label {{"products.new.brand" | translate }}
+    %label {{ "products.new.brand" | translate }}
     %input{ type: "text"}
   .field.compound-field
-    %label {{"products.characteristics" | translate }}
-    %span {{"products.new.attribute" | translate }}
-    %input{ type: "text", placeholder: '{{"products.new.attribute_placeholder" | translate }}' }
-    %span {{"products.new.value" | translate }}
-    %input{ type: "text", placeholder: '{{"products.new.value_placeholder" | translate }}' }
+    %label {{ "products.characteristics" | translate }}
+    %span {{ "products.new.attribute" | translate }}
+    %input{ type: "text", placeholder: '{{ "products.new.attribute_placeholder" | translate }}' }
+    %span {{ "products.new.value" | translate }}
+    %input{ type: "text", placeholder: '{{ "products.new.value_placeholder" | translate }}' }
     %button.plus-button.icon-plus add more
   .field
-    %label {{"products.new.description" | translate }}
+    %label {{ "products.new.description" | translate }}
     %textarea
 
   %h3.line-behind
-    %span {{"products.new.trade_section" | translate }}
+    %span {{ "products.new.trade_section" | translate }}
   .field.compound-field
-    %label {{"products.new.order" | translate }}
+    %label {{ "products.new.order" | translate }}
     %input{ type: "text"}
     .select-field
       %select
@@ -44,38 +44,38 @@
         %option kg
         %option ton
         %option bottles
-    %p.field-comment {{"products.new.order_comment" | translate }}
+    %p.field-comment {{ "products.new.order_comment" | translate }}
   .field.compound-field
-    %label {{"products.new.price" | translate }}
+    %label {{ "products.new.price" | translate }}
     %input{ type: "text"}
     .select-field
       %select
         %option --Choose currency--
         %option BGP
         %option USD
-    %span {{"products.new.per" | translate }}
+    %span {{ "products.new.per" | translate }}
     .select-field
       %select
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment {{"products.new.price_comment" | translate }}
+    %p.field-comment {{ "products.new.price_comment" | translate }}
   .field
-    %label {{"products.new.port" | translate }}
+    %label {{ "products.new.port" | translate }}
     %input{ type: "text"}
   .field.compound-field
-    %label {{"products.new.supply" | translate }}
+    %label {{ "products.new.supply" | translate }}
     %input{ type: "text"}
     %input{ type: "text"}
-    %span {{"products.new.per" | translate }}
+    %span {{ "products.new.per" | translate }}
     .select-field
       %select
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment {{"products.new.supply_comment" | translate }}
+    %p.field-comment {{ "products.new.supply_comment" | translate }}
   .field
-    %label {{"products.new.payment" | translate }}
+    %label {{ "products.new.payment" | translate }}
     .checkbox-field
       %input{ type: "checkbox"}
       %label.inline-label Gold
@@ -86,7 +86,7 @@
       %input{ type: "checkbox"}
       %label.inline-label Smiles
   .field
-    %label {{"products.new.packaging" | translate }}
+    %label {{ "products.new.packaging" | translate }}
     %input{ type: "text"}
   .actions
-    %input{ type: "submit", value: '{{"products.new.submit" | translate }}' }
+    %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
