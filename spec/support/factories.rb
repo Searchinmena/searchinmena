@@ -1,3 +1,6 @@
+TEST_EMAIL = "test@example.org"
+TEST_PASSWORD = "testtest"
+
 FactoryGirl.define do
   factory :user do
     sequence(:first_name) { "Alicia" }
