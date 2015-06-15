@@ -19,7 +19,7 @@
       "attribute_placeholder": "eg. material",
       "value": "Value",
       "value_placeholder": "eg. copper",
-      "more": "add more",
+      "add_more": "Add more",
       "description": "Description",
       "trade_section": "trade info",
       "order": "Min order",

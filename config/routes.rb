@@ -25,5 +25,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :tags, only: [:index]
+    resources :products, only: [:create]
   end
 end

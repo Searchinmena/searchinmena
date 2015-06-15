@@ -1,10 +1,10 @@
 %h1.form-title {{ "products.new.form_title" | translate }}
-%form{ "ng-submit": "submit($event)" }
+%form{ action: "/api/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
   .field
     %label {{ "products.new.name" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.name" }
   .field
     %label {{ "products.new.category" | translate }}
     %button.small-button {{ "products.new.category_button" | translate }}
@@ -17,28 +17,39 @@
     %span {{ "products.new.details_section" | translate }}
   .field
     %label {{ "products.new.model" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.model_number" }
   .field
     %label {{ "products.new.brand" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.brand_name" }
   .field.compound-field
-    %label {{ "products.characteristics" | translate }}
-    %span {{ "products.new.attribute" | translate }}
-    %input{ type: "text", placeholder: '{{ "products.new.attribute_placeholder" | translate }}' }
-    %span {{ "products.new.value" | translate }}
-    %input{ type: "text", placeholder: '{{ "products.new.value_placeholder" | translate }}' }
-    %button.plus-button.icon-plus add more
+    %label {{ "products.new.characteristics" | translate }}
+
+    %ul
+      %li{ "ng-repeat": "attribute in form.attributes" }
+        %span {{ "products.new.attribute" | translate }}
+        %input{ type: "text",
+          placeholder: '{{ "products.new.attribute_placeholder" | translate }}',
+          "ng-model": "attribute.name" }
+        %span {{ "products.new.value" | translate }}
+        %input{ type: "text",
+          placeholder: '{{ "products.new.value_placeholder" | translate }}',
+          "ng-model": "attribute.value" }
+        %button{ type: "button", "ng-click": "removeAttribute(attribute)" }
+          x
+
+    %button.plus-button.icon-plus{ type: "button", "ng-click": "addAttribute()" }
+      {{ "products.new.add_more" | translate }}
   .field
     %label {{ "products.new.description" | translate }}
-    %textarea
+    %textarea{ "ng-model": "form.product.description" }
 
   %h3.line-behind
     %span {{ "products.new.trade_section" | translate }}
   .field.compound-field
     %label {{ "products.new.order" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
-      %select
+      %select{ "ng-model": "form.product.min_order_quantity_unit" }
         %option --Choose unit--
         %option Boxes
         %option kg
@@ -47,46 +58,46 @@
     %p.field-comment {{ "products.new.order_comment" | translate }}
   .field.compound-field
     %label {{ "products.new.price" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.fob_price" }
     .select-field
-      %select
+      %select{ "ng-model": "form.product.fob_price_currency" }
         %option --Choose currency--
         %option BGP
         %option USD
     %span {{ "products.new.per" | translate }}
     .select-field
-      %select
+      %select{ "ng-model": "form.product.fob_price_unit" }
         %option --Choose unit--
         %option ton
         %option kg
     %p.field-comment {{ "products.new.price_comment" | translate }}
   .field
     %label {{ "products.new.port" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.port" }
   .field.compound-field
     %label {{ "products.new.supply" | translate }}
-    %input{ type: "text"}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
+    %input{ type: "text", "ng-model": "form.product.supply_ability_unit" }
     %span {{ "products.new.per" | translate }}
     .select-field
-      %select
+      %select{ "ng-model": "form.product.supply_ability_frequency" }
         %option --Choose unit--
-        %option ton
-        %option kg
+        %option day
+        %option month
     %p.field-comment {{ "products.new.supply_comment" | translate }}
   .field
     %label {{ "products.new.payment" | translate }}
     .checkbox-field
-      %input{ type: "checkbox"}
+      %input{ type: "checkbox" }
       %label.inline-label Gold
     .checkbox-field
-      %input{ type: "checkbox"}
+      %input{ type: "checkbox" }
       %label.inline-label Mules
     .checkbox-field
-      %input{ type: "checkbox"}
+      %input{ type: "checkbox" }
       %label.inline-label Smiles
   .field
     %label {{ "products.new.packaging" | translate }}
-    %input{ type: "text"}
+    %input{ type: "text", "ng-model": "form.product.packaging_details" }
   .actions
     %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }

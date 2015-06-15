@@ -24,3 +24,5 @@
     )
     $translateProvider.useSanitizeValueStrategy('sanitize')
 ])
+
+window.SIM = {}
