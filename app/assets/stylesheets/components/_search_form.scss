@@ -1,0 +1,90 @@
+.search-form {
+  background-color: $purple-dark;
+  padding: $bs6 $bs2 $bs8;
+
+  .title {
+    text-align: center;
+    margin-bottom: $bs5;
+    color: white;
+  }
+
+  input[type="text"], .select-field, input[type="submit"] {
+    margin: 0 0 $bs2 0;
+    max-width: none;
+  }
+
+  input[type="submit"] {
+    height: 54px;
+  }
+
+  input[type="text"] {
+    font-size: $bs1;
+    height: 54px;
+
+    &:focus {
+      border-color: $green-darker;
+    }
+  }
+
+  .select-field {
+    
+    &:after {
+      top: $bs1;
+    }
+    
+    select {
+      height: 52px;
+    }
+  }
+
+  //combined styles for inline field
+
+  @media screen and (min-width: 940px) {
+    
+    input[type="text"], .select-field, input[type="submit"] {
+      display: inline-block;
+      float: left;
+      margin: 0;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
+
+    input[type="text"] {
+      max-width: 4 * $bs9;
+    }
+
+    .select-field {
+      border-width: 1px 0 1px 1px;
+      max-width: $bs9;
+
+      [dir="rtl"] & {
+        border-width: 1px 1px 1px 0;
+      }
+
+      select {
+        background-color: $snow-white;
+      }
+    }
+
+    input[type="submit"] {
+      border-bottom: none;
+      height: 54px;
+      max-width: $bs9;
+      border-radius: 0;
+    }
+
+    .search-field {
+      max-width: 6 * $bs9 + $bs-4;
+      margin: 0 auto;
+      border: 3px solid $green-basic;
+      border-radius: $bs-5;
+      overflow: hidden;
+    }
+  }
+}
+
+.search-filed {
+  @extend %clearfix;
+}
