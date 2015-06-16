@@ -2,23 +2,23 @@
 %form{ action: "/api/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
-  .field
+  %form-field{ "field-name": "product.name" }
     %label {{ "products.new.name" | translate }}
     %input{ type: "text", "ng-model": "form.product.name" }
-  .field
+  %form-field{ "field-name": "product.category" }
     %label {{ "products.new.category" | translate }}
     %button.small-button {{ "products.new.category_button" | translate }}
-  .field
+  %form-field{ "field-name": "product.photos" }
     %label {{ "products.new.photos" | translate }}
     %button.small-button {{ "products.new.photos_button" | translate }}
     %p.field-comment {{ "products.new.photos_comment" | translate }}
 
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
-  .field
+  %form-field{ "field-name": "product.model_number" }
     %label {{ "products.new.model" | translate }}
     %input{ type: "text", "ng-model": "form.product.model_number" }
-  .field
+  %form-field{ "field-name": "product.brand_name" }
     %label {{ "products.new.brand" | translate }}
     %input{ type: "text", "ng-model": "form.product.brand_name" }
   .field.compound-field
@@ -39,7 +39,7 @@
 
     %button.plus-button.icon-plus{ type: "button", "ng-click": "addAttribute()" }
       {{ "products.new.add_more" | translate }}
-  .field
+  %form-field{ "field-name": "product.description" }
     %label {{ "products.new.description" | translate }}
     %textarea{ "ng-model": "form.product.description" }
 
@@ -47,7 +47,8 @@
     %span {{ "products.new.trade_section" | translate }}
   .field.compound-field
     %label {{ "products.new.order" | translate }}
-    %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
+    %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
+      %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
       %select{ "ng-model": "form.product.min_order_quantity_unit" }
         %option --Choose unit--
@@ -58,7 +59,8 @@
     %p.field-comment {{ "products.new.order_comment" | translate }}
   .field.compound-field
     %label {{ "products.new.price" | translate }}
-    %input{ type: "text", "ng-model": "form.product.fob_price" }
+    %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
+      %input{ type: "text", "ng-model": "form.product.fob_price" }
     .select-field
       %select{ "ng-model": "form.product.fob_price_currency" }
         %option --Choose currency--
@@ -71,13 +73,18 @@
         %option ton
         %option kg
     %p.field-comment {{ "products.new.price_comment" | translate }}
-  .field
+  %form-field{ "field-name": "product.port" }
     %label {{ "products.new.port" | translate }}
     %input{ type: "text", "ng-model": "form.product.port" }
   .field.compound-field
     %label {{ "products.new.supply" | translate }}
-    %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
-    %input{ type: "text", "ng-model": "form.product.supply_ability_unit" }
+    %form-field{ "field-name": "product.supply_ability_capacity", class: 'inline-field' }
+      %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
+    .select-field
+      %select{ "ng-model": "form.product.supply_ability_unit" }
+        %option --Choose unit--
+        %option pieces
+        %option boxes
     %span {{ "products.new.per" | translate }}
     .select-field
       %select{ "ng-model": "form.product.supply_ability_frequency" }
@@ -96,7 +103,7 @@
     .checkbox-field
       %input{ type: "checkbox" }
       %label.inline-label Smiles
-  .field
+  %form-field{ "field-name": "product.packaging" }
     %label {{ "products.new.packaging" | translate }}
     %input{ type: "text", "ng-model": "form.product.packaging_details" }
   .actions

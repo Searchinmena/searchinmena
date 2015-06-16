@@ -9,7 +9,7 @@
   .field-with-errors & {
     border-color: $red;
   }
-  
+
   &:focus {
     outline: 0;
     border: 1px solid $blue-basic;
@@ -98,6 +98,12 @@ textarea {
 
 .field {
   margin: 0 0 $bs2 0;
+  display: block;
+}
+
+.inline-field {
+  @extend .field;
+  display: inline;
 }
 
 .select-field {
@@ -127,7 +133,7 @@ textarea {
       left: $bs-3;
     }
   }
-  
+
   select {
     font-family: inherit;
     padding: 0 $bs-3;
@@ -153,7 +159,7 @@ textarea {
 }
 
 .compound-field {
-  
+
   .select-field {
     max-width: 2 * $bs8;
     display: inline-block;
@@ -229,4 +235,10 @@ tags-input .tags {
   color: $red;
   font-weight: 100;
   padding: $bs-3 0;
+}
+
+.compound-field .error {
+  display: inline;
+  padding: inherit;
+  text-transform: none;
 }
