@@ -25,7 +25,7 @@
     %label {{ "products.new.characteristics" | translate }}
 
     %ul
-      %li{ "ng-repeat": "attribute in form.attributes" }
+      %li.field-item{ "ng-repeat": "attribute in form.attributes" }
         %span {{ "products.new.attribute" | translate }}
         %input{ type: "text",
           placeholder: '{{ "products.new.attribute_placeholder" | translate }}',
@@ -34,8 +34,8 @@
         %input{ type: "text",
           placeholder: '{{ "products.new.value_placeholder" | translate }}',
           "ng-model": "attribute.value" }
-        %button{ type: "button", "ng-click": "removeAttribute(attribute)" }
-          x
+        %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)" }
+          %span.icon-remove
 
     %button.plus-button.icon-plus{ type: "button", "ng-click": "addAttribute()" }
       {{ "products.new.add_more" | translate }}
@@ -47,6 +47,7 @@
     %span {{ "products.new.trade_section" | translate }}
   .field.compound-field
     %label {{ "products.new.order" | translate }}
+    %p.field-comment {{ "products.new.order_comment" | translate }}
     %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
@@ -56,9 +57,9 @@
         %option kg
         %option ton
         %option bottles
-    %p.field-comment {{ "products.new.order_comment" | translate }}
   .field.compound-field
     %label {{ "products.new.price" | translate }}
+    %p.field-comment {{ "products.new.price_comment" | translate }}
     %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.fob_price" }
     .select-field
@@ -72,12 +73,12 @@
         %option --Choose unit--
         %option ton
         %option kg
-    %p.field-comment {{ "products.new.price_comment" | translate }}
   %form-field{ "field-name": "product.port" }
     %label {{ "products.new.port" | translate }}
     %input{ type: "text", "ng-model": "form.product.port" }
   .field.compound-field
     %label {{ "products.new.supply" | translate }}
+    %p.field-comment {{ "products.new.supply_comment" | translate }}
     %form-field{ "field-name": "product.supply_ability_capacity", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
     .select-field
@@ -91,7 +92,6 @@
         %option --Choose unit--
         %option day
         %option month
-    %p.field-comment {{ "products.new.supply_comment" | translate }}
   .field
     %label {{ "products.new.payment" | translate }}
     .checkbox-field

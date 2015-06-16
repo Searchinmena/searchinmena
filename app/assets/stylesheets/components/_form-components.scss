@@ -74,6 +74,8 @@ label {
 }
 
 .compound-field {
+  @extend %clearfix;
+
   input[type="text"], input[type="email"], input[type="password"] {
     @extend %inline-input;
   }
@@ -83,6 +85,11 @@ label {
     text-transform: uppercase;
     padding: 0 $bs-3 0 0;
   }
+}
+
+.field-item {
+  list-style: none;
+  margin: 0 0 $bs1 0;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -103,7 +110,13 @@ textarea {
 
 .inline-field {
   @extend .field;
-  display: inline;
+  display: inline-block;
+  float: left;
+  margin: 0 $bs1 0 0;
+
+  @media screen and (min-width: $tablet) {
+    width: 2 * $bs8;
+  }
 }
 
 .select-field {
@@ -238,7 +251,8 @@ tags-input .tags {
 }
 
 .compound-field .error {
-  display: inline;
+  display: block;
+  margin: $bs-3 0;
   padding: inherit;
   text-transform: none;
 }
