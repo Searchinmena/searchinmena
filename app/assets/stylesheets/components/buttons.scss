@@ -40,6 +40,26 @@
   }
 }
 
+%tiny-button {
+  @include transition(all, .25s, ease-in-out);
+  font-size: $bs09;
+  display: block;
+  text-align: center;
+  background: none;
+  padding: $bs-3 $bs0;
+  border: 1px solid $blue-basic;
+  border-radius: $bs-4;
+  font-family: inherit;
+  white-space: normal;
+  color: $blue-basic;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $blue-basic;
+    color: white;
+  }
+}
+
 input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
@@ -61,6 +81,14 @@ input[type="submit"] {
   &:hover, &:focus {
     color: $red;
     outline: 0;
+  }
+}
+
+.plus-button {
+  @extend %tiny-button;
+
+  .icon-plus {
+    padding: 0;
   }
 }
 

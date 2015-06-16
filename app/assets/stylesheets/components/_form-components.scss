@@ -78,6 +78,10 @@ label {
 
   input[type="text"], input[type="email"], input[type="password"] {
     @extend %inline-input;
+
+    &.with-remove-button {
+      margin-right: 0;
+    }
   }
 
   span {
@@ -116,6 +120,11 @@ textarea {
 
   @media screen and (min-width: $tablet) {
     width: 2 * $bs8;
+  }
+
+  [dir="rtl"] & {
+    float: right;
+    margin: 0 0 0 $bs1;
   }
 }
 

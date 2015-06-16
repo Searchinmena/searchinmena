@@ -31,13 +31,14 @@
           placeholder: '{{ "products.new.attribute_placeholder" | translate }}',
           "ng-model": "attribute.name" }
         %span {{ "products.new.value" | translate }}
-        %input{ type: "text",
+        %input.with-remove-button{ type: "text",
           placeholder: '{{ "products.new.value_placeholder" | translate }}',
           "ng-model": "attribute.value" }
         %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)" }
           %span.icon-remove
 
-    %button.plus-button.icon-plus{ type: "button", "ng-click": "addAttribute()" }
+    %button.plus-button{ type: "button", "ng-click": "addAttribute()" }
+      %span.icon-plus
       {{ "products.new.add_more" | translate }}
   %form-field{ "field-name": "product.description" }
     %label {{ "products.new.description" | translate }}
