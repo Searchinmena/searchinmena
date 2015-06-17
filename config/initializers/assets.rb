@@ -12,4 +12,3 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.assets.register_engine '.haml', Tilt::HamlTemplate
-

@@ -1,0 +1,2 @@
+class Frequency < Translatable
+end

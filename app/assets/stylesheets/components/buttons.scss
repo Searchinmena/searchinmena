@@ -3,6 +3,7 @@
   display: block;
   width: 100%;
   text-align: center;
+  background: none;
   padding: $bs1 $bs2 $bs0;
   border: none;
   border-radius: $bs-4;
@@ -27,9 +28,68 @@
   }
 }
 
+%secondary-button {
+  @extend %basic-button;
+  color: $blue-basic;
+  border: 2px solid $blue-basic;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $blue-basic;
+    color: white;
+  }
+}
+
+%tiny-button {
+  @include transition(all, .25s, ease-in-out);
+  font-size: $bs09;
+  display: block;
+  text-align: center;
+  background: none;
+  padding: $bs-3 $bs0;
+  border: 1px solid $blue-basic;
+  border-radius: $bs-4;
+  font-family: inherit;
+  white-space: normal;
+  color: $blue-basic;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $blue-basic;
+    color: white;
+  }
+}
+
 input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
+}
+
+.small-button {
+  @extend %secondary-button;
+  padding: $bs-1;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 2 * $bs8;
+  }
+}
+
+.remove-button {
+  background: none;
+  border: 0;
+
+  &:hover, &:focus {
+    color: $red;
+    outline: 0;
+  }
+}
+
+.plus-button {
+  @extend %tiny-button;
+
+  .icon-plus {
+    padding: 0;
+  }
 }
 
 .facebook-sign-up {
@@ -39,7 +99,7 @@ input[type="submit"] {
   background-color: white;
   padding: $bs-2 $bs0 $bs-2 $bs-2;
   border: 2px solid $facebook-blue;
-  border-radius: $bs-3;
+  border-radius: $bs-4;
   
   &:hover {
     color: $facebook-blue;

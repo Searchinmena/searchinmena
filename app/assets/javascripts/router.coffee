@@ -2,9 +2,19 @@
   ($stateProvider, $urlRouterProvider) ->
     $stateProvider
       .state('dashboard',
-        url: '/dashboard',
+        url: '/',
         templateUrl: '/assets/templates/dashboard',
         controller: 'DashboardCtrl'
       )
-    $urlRouterProvider.otherwise('dashboard')
+      .state('products',
+        url: '/products',
+        templateUrl: '/assets/templates/products/index',
+        controller: 'ProductsIndexCtrl'
+      )
+      .state('new_product',
+        url: '/products/new',
+        templateUrl: '/assets/templates/products/new',
+        controller: 'ProductsNewCtrl'
+      )
+    $urlRouterProvider.otherwise('/')
 ]

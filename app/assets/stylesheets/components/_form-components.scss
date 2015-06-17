@@ -9,7 +9,7 @@
   .field-with-errors & {
     border-color: $red;
   }
-  
+
   &:focus {
     outline: 0;
     border: 1px solid $blue-basic;
@@ -20,8 +20,26 @@
   }
 }
 
+%inline-input {
+  @extend %basic-input;
+  display: inline;
+  margin: 0 $bs1 0 0;
+
+  [dir="rtl"] & {
+    margin: 0 0 0 $bs1;
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 2 * $bs8;
+  }
+}
+
 form {
   padding: $bs2;
+
+  .line-behind {
+    max-width: 5.3 * $bs9;
+  }
 }
 
 label {
@@ -31,7 +49,7 @@ label {
   width: 100%;
 
   @media screen and (min-width: $tablet) {
-    max-width: 2 * $bs9;
+    max-width: 2 * $bs8;
   }
 
   .checkbox & {
@@ -49,18 +67,65 @@ label {
 }
 
 .field-comment {
-  display: inline;
   color: $grey;
   font-weight: 100;
   font-size: $bs09;
+  margin: $bs-3 0;
+}
+
+.compound-field {
+  @extend %clearfix;
+
+  input[type="text"], input[type="email"], input[type="password"] {
+    @extend %inline-input;
+
+    &.with-remove-button {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    font-weight: 100;
+    text-transform: uppercase;
+    padding: 0 $bs-3 0 0;
+  }
+}
+
+.field-item {
+  list-style: none;
+  margin: 0 0 $bs1 0;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
   @extend %basic-input;
 }
 
+textarea {
+  @extend %basic-input;
+  line-height: 1.4;
+  height: $bs9;
+  padding: $bs-3;
+}
+
 .field {
   margin: 0 0 $bs2 0;
+  display: block;
+}
+
+.inline-field {
+  @extend .field;
+  display: inline-block;
+  float: left;
+  margin: 0 $bs1 0 0;
+
+  @media screen and (min-width: $tablet) {
+    width: 2 * $bs8;
+  }
+
+  [dir="rtl"] & {
+    float: right;
+    margin: 0 0 0 $bs1;
+  }
 }
 
 .select-field {
@@ -90,12 +155,12 @@ input[type="text"], input[type="email"], input[type="password"] {
       left: $bs-3;
     }
   }
-  
+
   select {
     font-family: inherit;
     padding: 0 $bs-3;
     line-height: 2;
-    height: 34px;
+    height: 32px;
     width: 130%;
     border: none;
     box-shadow: none;
@@ -111,6 +176,20 @@ input[type="text"], input[type="email"], input[type="password"] {
 
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+
+.compound-field {
+
+  .select-field {
+    max-width: 2 * $bs8;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 $bs1 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs1;
     }
   }
 }
@@ -178,4 +257,11 @@ tags-input .tags {
   color: $red;
   font-weight: 100;
   padding: $bs-3 0;
+}
+
+.compound-field .error {
+  display: block;
+  margin: $bs-3 0;
+  padding: inherit;
+  text-transform: none;
 }
