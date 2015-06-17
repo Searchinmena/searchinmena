@@ -24,6 +24,11 @@
       -moz-column-count: 3;
       -webkit-column-count: 3;
     }
+
+    @media screen and (min-width: $big-desktop) {
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+    }
   }
 
   .category-name {
@@ -40,6 +45,7 @@
 }
 
 .all-categories-list {
+  padding: $bs1 0;
   width: 2 * $bs9;
   border-right: 1px solid $border-grey;
   background-color: $snow-white;
@@ -198,7 +204,6 @@
   .img {
     width: 15em;
     height: 15em;
-    background-color: $snow-white;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 15em auto;

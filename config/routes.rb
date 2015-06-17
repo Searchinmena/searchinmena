@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get "/home" => "pages#home", as: :home
   get "/browse" => "pages#browse", as: :browse
+  get "/results" => "pages#results", as: :results
 
   resource :dashboard, controller: :dashboard
 
