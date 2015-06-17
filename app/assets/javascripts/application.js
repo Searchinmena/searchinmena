@@ -19,6 +19,8 @@
 //= require angular-animate
 //= require ng-tags-input
 //= require angular-flash-alert
+//= require jquery
+//= require jquery.cookie
 //= require sim
 //= require router
 //= require_tree ./services

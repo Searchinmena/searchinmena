@@ -20,11 +20,7 @@
     )
 
     $translateProvider.determinePreferredLanguage(->
-      $cookies = null
-      angular.injector(['ngCookies']).invoke((_$cookies_) ->
-        $cookies = _$cookies_
-      )
-      $cookies.get("locale")
+      $.cookie("locale")
     )
     $translateProvider.useSanitizeValueStrategy('sanitize')
 ])

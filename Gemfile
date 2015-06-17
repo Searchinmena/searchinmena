@@ -16,6 +16,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer'
 gem 'bower-rails'
+gem 'jquery-rails'
+gem 'jquery-cookie-rails'
 
 group :development, :test do
   gem 'pry'
