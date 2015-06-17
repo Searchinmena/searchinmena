@@ -1,0 +1,2 @@
+class Unit < Translatable
+end

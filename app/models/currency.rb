@@ -1,0 +1,2 @@
+class Currency < Translatable
+end

@@ -3,6 +3,10 @@
 
 @Sim.TAGS_PATH = "/api/tags"
 @Sim.DASHBOARD_PATH = "/dashboard"
+@Sim.UNITS_PATH = "/api/units"
+@Sim.CURRENCIES_PATH = "/api/currencies"
+@Sim.FREQUENCIES_PATH = "/api/frequencies"
+@Sim.PAYMENT_TERMS_PATH = "/api/payment_terms"
 
 @Sim.TRANSLATION_DIRS = ['products']
 

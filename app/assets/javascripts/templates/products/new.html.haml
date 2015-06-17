@@ -52,28 +52,20 @@
     %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
-      %select{ "ng-model": "form.product.min_order_quantity_unit" }
-        %option --Choose unit--
-        %option Boxes
-        %option kg
-        %option ton
-        %option bottles
+      %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.min_order_quantity_unit" }
+        %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
   .field.compound-field
     %label {{ "products.new.price" | translate }}
     %p.field-comment {{ "products.new.price_comment" | translate }}
     %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.fob_price" }
     .select-field
-      %select{ "ng-model": "form.product.fob_price_currency" }
-        %option --Choose currency--
-        %option BGP
-        %option USD
+      %select{ "ng-options": "currency.id as currency.label for currency in currencies", "ng-model": "form.product.fob_price_currency" }
+        %option{ value: "" } -- {{ "products.new.choose_currency" | translate }} --
     %span {{ "products.new.per" | translate }}
     .select-field
-      %select{ "ng-model": "form.product.fob_price_unit" }
-        %option --Choose unit--
-        %option ton
-        %option kg
+      %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.fob_price_unit" }
+        %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
   %form-field{ "field-name": "product.port" }
     %label {{ "products.new.port" | translate }}
     %input{ type: "text", "ng-model": "form.product.port" }
@@ -83,14 +75,12 @@
     %form-field{ "field-name": "product.supply_ability_capacity", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
     .select-field
-      %select{ "ng-model": "form.product.supply_ability_unit" }
-        %option --Choose unit--
-        %option pieces
-        %option boxes
+      %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.supply_ability_unit" }
+        %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
     %span {{ "products.new.per" | translate }}
     .select-field
-      %select{ "ng-model": "form.product.supply_ability_frequency" }
-        %option --Choose unit--
+      %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies", "ng-model": "form.product.supply_ability_frequency" }
+        %option{ value: "" } -- {{ "products.new.choose_frequency" | translate }} --
         %option day
         %option month
   .field

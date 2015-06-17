@@ -1,0 +1,2 @@
+class FrequencyRepository < TranslatableRepository
+end

@@ -3,26 +3,7 @@ require "rails_helper"
 describe TagRepository do
   let(:repository) { TagRepository.new }
 
-  describe "#find_or_create" do
-    let(:tag) { build(:tag) }
-    let(:name) { tag.name }
-
-    subject { repository.find_or_create(name: name) }
-
-    context "record already present" do
-      before do
-        tag.save
-      end
-
-      it { is_expected.to eq(tag) }
-      it { expect { subject }.not_to change { Tag.count } }
-    end
-
-    context "record not yet present" do
-      it { is_expected.to eq(Tag.where(name: name).first) }
-      it { expect { subject }.to change { Tag.count }.from(0).to(1) }
-    end
-  end
+  it_behaves_like "each Repository"
 
   describe "#find_with_query" do
     subject { repository.find_with_query(query) }

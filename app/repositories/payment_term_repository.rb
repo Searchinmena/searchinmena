@@ -1,0 +1,2 @@
+class PaymentTermRepository < TranslatableRepository
+end
