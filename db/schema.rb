@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610123118) do
+ActiveRecord::Schema.define(version: 20150617123346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,29 +70,22 @@ ActiveRecord::Schema.define(version: 20150610123118) do
     t.string   "model_number"
     t.string   "brand_name"
     t.string   "description"
+    t.integer  "category_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "min_order_quantity_number"
     t.string   "min_order_quantity_unit"
-    t.integer  "FOB_price"
-    t.string   "FOB_price_type"
-    t.string   "FOB_price_unit"
+    t.decimal  "fob_price"
+    t.string   "fob_currency"
+    t.string   "fob_price_unit"
     t.string   "port"
     t.string   "payment_terms"
-    t.integer  "supply_abbility_number"
-    t.string   "supply_abbility_type"
-    t.string   "supply_abbility_capacity"
+    t.integer  "supply_ability_capacity"
+    t.string   "supply_ability_unit"
+    t.string   "supply_ability_frequency"
     t.string   "packaging_details"
+    t.integer  "business_id",               null: false
   end
-
-  create_table "products_categories", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "products_categories", ["product_id", "category_id"], name: "index_products_categories_on_product_id_and_category_id", unique: true, using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name",       null: false
