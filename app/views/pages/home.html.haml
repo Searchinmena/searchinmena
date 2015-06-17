@@ -1,10 +1,21 @@
 %section.landing-header
-  .container
+  .landing-header-info
     %h1
-      Join Search in MENA marketplace and start getting
+      Join Search in MENA marketplace
+      %br
+      and start getting
       inquiries from buyers today.
-    %h2
-      We are a b2b marketplace for sellers and buyers in the
-      MENA region. Sellers create business profiles and buyers
-      browse sellers they want to source from
-
+    .landing-header-sub-info
+      %h2
+        We are a b2b marketplace for sellers and buyers in the
+        MENA region.
+        %br
+        Sellers create business profiles
+        and buyers browse sellers
+        %br
+        they want to source from.
+      = link_to("https://goo.gl/VJhhcl",
+        target: "_blank", class: "video-link") do
+        %span.icon-play-circle
+        watch video
+      = link_to("Join now", new_user_registration_path, class: "sign-up-btn")
