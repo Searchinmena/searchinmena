@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :business
-  has_and_belongs_to_many :categories
+  has_one :category
   has_many :product_photos
   has_many :product_attributes
 
