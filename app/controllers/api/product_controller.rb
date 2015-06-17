@@ -5,6 +5,14 @@ class Api::ProductController < Api::BaseController
   end
 
   def create
+    product_creator = Product::Creator.new(new_product_params)
+    response = product_creator.perform
+    if response.successful?
+      flash[:notice] = t("en.product.added")
+      head :ok
+    else
+      render_error(response.product)
+    end
   end
 
   private
