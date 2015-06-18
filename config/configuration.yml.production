@@ -1,9 +1,9 @@
 production:
   email_from: 'confirmation@searchinmena.com'
-  app_host: http://sim.demo.llp.pl
-  env: demo
-  fb_app_id: 838866496206335
-  fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
+  app_host: http://sim.pl
+  env: production
+  fb_app_id:
+  fb_app_secret:
   validations:
     email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
     password_min_length: 8
@@ -15,8 +15,8 @@ production:
     address: smtp.mandrillapp.com
     port: 587
     user_name: aiham@searchinmena.com
-    password: UqkQa7zmtEEbh0Kb0WRdMQ
+    password:
   aws:
-    bucket_name: sim-uploads-demo
-    access_key_id: AKIAJ4W5KE65VD6QDZFQ
-    secret_access_key: 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
+    bucket_name: sim-uploads-production
+    access_key_id: AKIAIDRXJKFHXQCSAVBA
+    secret_access_key: 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

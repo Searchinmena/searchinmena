@@ -1,12 +1,5 @@
 @Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
-  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash'])
-
-@Sim.TAGS_PATH = "/api/tags"
-@Sim.DASHBOARD_PATH = "/dashboard"
-@Sim.UNITS_PATH = "/api/units"
-@Sim.CURRENCIES_PATH = "/api/currencies"
-@Sim.FREQUENCIES_PATH = "/api/frequencies"
-@Sim.PAYMENT_TERMS_PATH = "/api/payment_terms"
+  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload'])
 
 @Sim.TRANSLATION_DIRS = ['products']
 

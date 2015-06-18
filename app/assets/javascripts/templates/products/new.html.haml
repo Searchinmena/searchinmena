@@ -8,10 +8,12 @@
   %form-field{ "field-name": "product.category" }
     %label {{ "products.new.category" | translate }}
     %button.small-button {{ "products.new.category_button" | translate }}
-  %form-field{ "field-name": "product.photos" }
+  .field
     %label {{ "products.new.photos" | translate }}
-    %button.small-button {{ "products.new.photos_button" | translate }}
+    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", multiple: "true" } {{ "products.new.photos_button" | translate }}
     %p.field-comment {{ "products.new.photos_comment" | translate }}
+
+    %error-message-for{ "field-name": "errors.photos" }
 
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
