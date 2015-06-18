@@ -6,6 +6,8 @@ module.exports = (config) ->
       'vendor/assets/bower_components/angular/angular.js',
       'vendor/assets/bower_components/angular-mocks/angular-mocks.js',
       'vendor/assets/bower_components/angular-cookies/angular-cookies.js',
+      'vendor/assets/bower_components/jquery/dist/jquery.js',
+      'vendor/assets/bower_components/jquery.cookie/jquery.cookie.js',
       'vendor/assets/bower_components/angular-animate/angular-animate.js',
       'vendor/assets/bower_components/angular-ui-router/release/angular-ui-router.js',
       'vendor/assets/bower_components/ng-tags-input/ng-tags-input.js',

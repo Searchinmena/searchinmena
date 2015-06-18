@@ -20,4 +20,3 @@
 /node_modules
 phantomjsdriver.log
 npm-debug.log
-vendor/assets/bower_components/
