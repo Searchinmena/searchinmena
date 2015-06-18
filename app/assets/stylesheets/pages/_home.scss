@@ -1,5 +1,5 @@
 .landing-header {
-  height: 50em;
+  height: 45em;
   background-image: image-url('warehouse-1.jpg');
   background-repeat: no-repeat;
   background-size: 100% auto;
@@ -19,7 +19,7 @@
   @media screen and (min-width: $tablet) {
     padding: $bs5 0;
     width: 60%;
-    height: 50em;
+    height: 45em;
     float: right;
     background-color: $blue-opaque;
   }
