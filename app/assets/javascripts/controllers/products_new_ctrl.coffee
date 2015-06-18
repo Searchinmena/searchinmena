@@ -1,24 +1,16 @@
 @Sim.controller 'ProductsNewCtrl', ['$scope', '$http', 'SelectsLoader',
-  'PhotosUploader', ($scope, $http, SelectsLoader, PhotosUploader) ->
+  'PhotosUploader', 'PhotosValidator',
+  ($scope, $http, SelectsLoader, PhotosUploader, PhotosValidator) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
 
     SelectsLoader.loadSelectsData($scope)
 
-    $scope.MAX_PHOTOS_COUNT = 2
-
-    $scope.validate = ->
-      if $scope.photos and $scope.photos.length > 0 and $scope.photos.length < $scope.MAX_PHOTOS_COUNT
-        true
-      else
-        $scope.errors["photos"] = "Error"
-        false
-
     $scope.$watch('photos', (prev, current) ->
       return unless $scope.photos
 
-      return unless $scope.validate()
+      return unless PhotosValidator.validate($scope)
 
       PhotosUploader.upload($scope.photos)
     )
@@ -34,7 +26,7 @@
       e.preventDefault()
 
       console.log($scope.form)
-      return unless $scope.validate()
+      return unless PhotosValidator.validate($scope)
 
       $http(
         url: e.target.action,
