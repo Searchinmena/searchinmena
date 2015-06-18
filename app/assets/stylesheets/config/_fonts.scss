@@ -89,6 +89,12 @@
 .icon-th-list:before {
   content: "\e618";
 }
+.icon-list:before {
+  content: "\e65e";
+}
+.icon-list-alt:before {
+  content: "\e65f";
+}
 .icon-user:before {
   content: "\e609";
 }
@@ -358,12 +364,6 @@
 }
 .icon-lock:before {
   content: "\e65d";
-}
-.icon-list:before {
-  content: "\e65e";
-}
-.icon-list-alt:before {
-  content: "\e65f";
 }
 .icon-link:before {
   content: "\e660";

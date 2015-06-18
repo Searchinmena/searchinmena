@@ -60,19 +60,6 @@
   }
 }
 
-%secondary-button {
-  color: $blue-basic;
-  border: 2px solid $blue-basic;
-  border-bottom: $bs-5 solid $blue-basic;
-  font-weight: 100;
-
-  &:hover, &:focus {
-    outline: 0;
-    background-color: $blue-basic;
-    color: white;
-  }
-}
-
 %purple-button {
   color: white;
   background-color: $purple-basic;

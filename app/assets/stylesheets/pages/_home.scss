@@ -1,11 +1,11 @@
 .landing-header {
-  height: 45em;
   background-image: image-url('warehouse-1.jpg');
   background-repeat: no-repeat;
   background-size: 100% auto;
   padding: $bs9 0 0 0;
 
   @media screen and (min-width: $tablet) {
+    height: 45em;
     background-size: cover;
     padding: 0;
   }
@@ -45,6 +45,11 @@
 
   h2 {
     line-height: 1.6;
+    font-size: $bs1;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 21px;
+    }
 
     @media screen and (min-width: $standard-desktop) {
       font-size: $bs2;
