@@ -19,3 +19,14 @@
         %span.icon-play-circle
         watch video
       = link_to("Join now", new_user_registration_path, class: "sign-up-btn")
+%form.search-form.landing-search-form
+  %h2.title Search for product, service or company
+  .field.search-field
+    .select-field
+      %select
+        %option all
+        %option product
+        %option service
+        %option company
+    %input{ type: "text", placeholder: "I'm looking for.." }
+    %input{ type: "submit", value: "Search" }
