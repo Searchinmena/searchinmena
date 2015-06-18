@@ -7,6 +7,8 @@ Search in MENA
 Make sure that you have java jdk. You can download it from here: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
 
 ```
+bundle install
+
 cp config/database.yml.example config/database.yml
 bundle exec rake db:create
 bundle exec rake db:migrate
