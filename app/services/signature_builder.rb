@@ -5,7 +5,7 @@ class SignatureBuilder
   def call(policy)
     secret = A9n.aws[:secret_access_key]
     signed_policy = OpenSSL::HMAC.digest(hash, secret, policy)
-    Base64.encode64(signed_policy).gsub("\n","")
+    Base64.encode64(signed_policy).gsub("\n", "")
   end
 
   def hash
