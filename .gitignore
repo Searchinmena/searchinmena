@@ -20,3 +20,4 @@
 /node_modules
 phantomjsdriver.log
 npm-debug.log
+public/uploads

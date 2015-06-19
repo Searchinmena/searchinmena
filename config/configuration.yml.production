@@ -16,7 +16,9 @@ production:
     port: 587
     user_name: aiham@searchinmena.com
     password:
+  thumbnail_size: 50
   aws:
     bucket_name: sim-uploads-production
     access_key_id: AKIAIDRXJKFHXQCSAVBA
     secret_access_key: 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
+    region: us-west-2

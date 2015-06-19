@@ -11,9 +11,11 @@
       return unless $scope.photos
 
       return unless PhotosValidator.validate($scope)
-
-      PhotosUploader.upload($scope.photos)
     )
+
+    $scope.removePhoto = (photo) ->
+      index = $scope.photos.indexOf(photo)
+      $scope.photos.splice(index, 1)
 
     $scope.addAttribute = ->
       $scope.form.attributes.push(new SIM.Attribute())
@@ -33,7 +35,6 @@
         data: $scope.form,
         method: 'POST'
       ).success(->
-        console.log("SUCCESS")
         $scope.errors = { product: {
           name: "can't be blank",
           category: "can't be blank",
@@ -46,6 +47,10 @@
           port: "too long",
           packaging: "too long"
         } }
+
+        # TOOD: take it from response
+        productId = 4
+        PhotosUploader.upload($scope.photos, productId)
       ).error((errors) ->
         console.log(errors)
         $scope.errors = errors

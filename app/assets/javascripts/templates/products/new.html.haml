@@ -10,7 +10,12 @@
     %button.small-button {{ "products.new.category_button" | translate }}
   .field
     %label {{ "products.new.photos" | translate }}
-    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", multiple: "true" } {{ "products.new.photos_button" | translate }}
+    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", "ngf-keep": "true", multiple: "true" } {{ "products.new.photos_button" | translate }}
+    %ul.photos-preview{ "ng-repeat": "photo in photos" }
+      %img{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
+      %button.remove-button{ type: "button", "ng-click": "removePhoto(photo)" }
+        %span.icon-remove
+
     %p.field-comment {{ "products.new.photos_comment" | translate }}
 
     %error-message-for{ "field-name": "errors.photos" }
