@@ -3,17 +3,17 @@
     $stateProvider
       .state('dashboard',
         url: '/',
-        templateUrl: '/assets/templates/dashboard',
+        templateUrl: "<%= asset_path('templates/dashboard') %>",
         controller: 'DashboardCtrl'
       )
       .state('products',
         url: '/products',
-        templateUrl: '/assets/templates/products/index',
+        templateUrl: "<%= asset_path('templates/products/index') %>",
         controller: 'ProductsIndexCtrl'
       )
       .state('new_product',
         url: '/products/new',
-        templateUrl: '/assets/templates/products/new',
+        templateUrl: "<%= asset_path('templates/products/new') %>",
         controller: 'ProductsNewCtrl'
       )
     $urlRouterProvider.otherwise('/')
