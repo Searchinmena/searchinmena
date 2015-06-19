@@ -5,7 +5,7 @@ class Product::Creator < BaseService
 
   def perform
     product = product_repository.new(new_product_params[:product])
-    storer = product_storer.new(product ,new_product_params[:product])
+    storer = product_storer.new(product, new_product_params[:product])
     storer.perform(product)
   end
 end
