@@ -1,4 +1,4 @@
-class Product::Response < ::Response
+class Product::ProductResponse < ::Response
   attr_accessor :product
 
   def initialize(success: true, product: nil)

@@ -32,7 +32,7 @@ class Api::ProductController < Api::BaseController
 
   def product_params
     params[:product]
-      .permit([:name, :model_number, :brand_name, :description, :category])
+      .permit([:name, :model_number, :brand_name, :description, :category_id])
   end
 
   def trade_info_params
