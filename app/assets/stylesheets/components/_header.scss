@@ -1,7 +1,10 @@
 header {
   @extend %clearfix;
   background-color: white;
-  padding: 0 $bs2;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 $bs2;
+  }
 }
 
 .gradient-decor {
@@ -13,9 +16,15 @@ header {
 
 .logo {
   float: left;
-  padding: $bs1 0 $bs-4;
+  padding: $bs1 0 $bs-4 $bs2;
   border-bottom: 0;
+  width: 60%;
   max-width: 240px;
+  height: 60px;
+
+  @media screen and (min-width: $tablet) {
+    padding: $bs1 0 $bs-4;
+  }
 
   img {
     width: 100%;
@@ -26,22 +35,45 @@ header {
   }
 }
 
-nav {
+.mobile-menu-btn {
+  border-left: 1px solid $border-grey;
+  font-size: $bs5;
+  padding: $bs-1 $bs0 0;
   float: right;
+  color: $purple-basic;
 
-  [dir="rtl"] & {
-    float: left;
+  @media screen and (min-width: $tablet) {
+    display: none;
   }
+}
+
+nav {
+  // display: none;
+  padding-top: 60px;
 
   li {
-    display: inline-block;
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
+    display: block;
   }
 
+  @media screen and (min-width: $tablet) {
+    display: block;
+    float: right;
+    padding-top: 0;
+    
+    [dir="rtl"] & {
+      float: left;
+    }
+
+    li {
+      display: inline-block;
+      float: left;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
+  }
+  
   .icon {
     font-size: $bs2;
     line-height: 1px;
