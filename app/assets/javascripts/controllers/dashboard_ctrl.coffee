@@ -1,4 +1,4 @@
-@Sim.controller 'DashboardCtrl', ['$scope'
+@Sim.controller 'DashboardCtrl', ['$scope',
   ($scope) ->
 
 ]

@@ -9,6 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
     session["devise.auth_data"] = nil
     render :new, locals: {
       user: user, business: business,
+      user_presenter: Api::UserPresenter.new(user),
       business_presenter: business_presenter
     }
   end

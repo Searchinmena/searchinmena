@@ -40,6 +40,38 @@
   }
 }
 
+%tiny-button {
+  @include transition(all, .25s, ease-in-out);
+  font-size: $bs09;
+  display: block;
+  text-align: center;
+  background: none;
+  padding: $bs-3 $bs0;
+  border: 1px solid $blue-basic;
+  border-radius: $bs-4;
+  font-family: inherit;
+  white-space: normal;
+  color: $blue-basic;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $blue-basic;
+    color: white;
+  }
+}
+
+%purple-button {
+  color: white;
+  background-color: $purple-basic;
+  border-bottom: $bs-5 solid $purple-dark;
+  font-weight: 100;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $purple-dark;
+  }
+}
+
 input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
@@ -54,6 +86,24 @@ input[type="submit"] {
   }
 }
 
+.remove-button {
+  background: none;
+  border: 0;
+
+  &:hover, &:focus {
+    color: $red;
+    outline: 0;
+  }
+}
+
+.plus-button {
+  @extend %tiny-button;
+
+  .icon-plus {
+    padding: 0;
+  }
+}
+
 .facebook-sign-up {
   @include transition(all, .25s, ease-in-out);
   display: inline-block;
@@ -62,7 +112,7 @@ input[type="submit"] {
   padding: $bs-2 $bs0 $bs-2 $bs-2;
   border: 2px solid $facebook-blue;
   border-radius: $bs-4;
-  
+
   &:hover {
     color: $facebook-blue;
     background-color: white;

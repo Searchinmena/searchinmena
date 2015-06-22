@@ -1,7 +1,8 @@
-= render "/layouts/confirm_email_message"
-
 .dashboard-container
-  %ul.dashboard-navigation{ role: "navigation" }
+  .dashboard-menu-btn{ "toggle-dashboard-nav": "true" }
+    %span.icon-chevron-down
+    Go to...
+  %ul.dashboard-navigation{ role: "navigation", "toggle-dashboard-nav": "true" }
     %li
       %a.nav-link{ "ui-sref": "dashboard", "ui-sref-active": "active" }
         = I18n.t('dashboard_nav.home')
@@ -27,5 +28,6 @@
       %a.nav-link{ href: "#" }
         = I18n.t('dashboard_nav.settings')
         %span.icon.icon-cog
+  = render "/layouts/confirm_email_message"
   .dashboard-content
     %ui-view

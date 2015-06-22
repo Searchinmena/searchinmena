@@ -1,0 +1,274 @@
+.category-selection-wrapper {
+  
+  .title {
+    text-align: center;
+    color: $grey-dark;
+    margin: $bs6 0;
+  }
+
+  .line-behind span {
+    background-color: $snow-white;
+  }
+
+  .category-list {
+    @extend %clearfix;
+    margin: 0 0 $bs8;
+    list-style: none;
+    
+    @media screen and (min-width: $big-phone) {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+    }
+    
+    @media screen and (min-width: $tablet) {
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+    }
+
+    @media screen and (min-width: $big-desktop) {
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+    }
+  }
+
+  .category-name {
+    a {
+      padding: $bs-3 $bs1;
+      display: block;
+      border: none;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.categories-list-button {
+  text-transform: uppercase;
+  background-color: $snow-white;
+  border-bottom: 1px solid $border-grey;
+  color: $blue-basic;
+  padding: $bs0 $bs2;
+
+  @media screen and (min-width: 1050px) {
+    display: none;
+  }
+
+  .icon-list {
+    font-size: $bs2;
+    vertical-align: middle;
+    padding: 0 $bs-2 0 0;
+  }
+}
+
+.all-categories-list {
+  @include transition(all, .7s, ease-in-out);
+  padding: $bs1 0;
+  border-right: 1px solid $border-grey;
+  background-color: $snow-white;
+  font-size: $bs09;
+  position: absolute;
+  width: 90%;
+  left: -999px;
+  height: 100%;
+
+  &.show {
+    left: 0;
+  }
+
+  @media screen and (min-width: 1050px) {
+    width: 2 * $bs9;
+    left: 0;
+  }
+
+  .main-category-link {
+    text-transform: uppercase;
+    padding: $bs-3;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a {
+    display: block;
+    border: 0;
+    color: $basic-font;
+  }
+
+  .subcategory-name a{
+    padding: $bs-3 $bs-3 $bs-3 $bs2;
+
+    &.open:after {
+      font-family: "flatline";
+      content: "\e6a1";
+      font-size: $bs2; 
+      vertical-align: middle;
+    }
+  }
+  .sub-subcategory-name a{
+    padding: $bs-3 $bs-3 $bs-3 $bs5;
+
+    &:after {
+      font-family: "flatline";
+      content: "\e690";
+      font-size: $bs2;
+      vertical-align: middle;
+    }
+
+    &.open {
+      color: $blue-basic;
+    }
+
+    &:after {
+      content: "\e6a1";
+    }
+  }
+
+  .sub-sub-subcategory-name a {
+    padding: $bs-3 $bs-3 $bs-3 $bs6;
+    color: $blue-basic;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.search-results-container {
+  background-color: white;
+  padding: $bs2 0;
+
+  @media screen and (min-width: 1050px) {
+    padding: $bs2 0 $bs2 2 * $bs9;
+  }
+
+  .title {
+    padding: 0 $bs2;
+  }
+}
+
+.search-filters {
+  @extend %clearfix;
+  padding: $bs0 $bs2;
+  border-bottom: 1px solid $border-grey;
+  font-size: $bs09;
+
+  .filter-label {
+    color: $grey;
+    font-weight: 100;
+  }
+}
+
+.sorting {
+  float: left;  
+  padding: $bs-1 0 0;
+
+  a {
+    padding: 0 $bs1;
+    border: 0;
+    color: $basic-font;
+
+    &.active {
+      color: $purple-basic;
+    }
+  }
+}
+
+.view-options {
+  float: right;
+  
+  .icon {
+    font-size: $bs5;
+    color: $grey; 
+    vertical-align: middle;
+
+    &.active {
+      color: $purple-basic;
+    }
+  }
+}
+
+.breadcrumbs {
+  font-size: $bs09;
+  margin: $bs0 0 0;
+  padding: 0 $bs2 $bs1;
+  border-bottom: 1px solid $border-grey;
+
+  a {
+    border: 0;
+  }
+}
+
+.search-results {
+  @extend %clearfix;
+  padding: $bs2;
+  list-style: none;
+}
+
+.result-item {
+  display: block;
+  padding: $bs3;
+
+  .vase-1{
+    background-image: image-url("vase-1.jpeg");
+  }
+  .vase-2{
+    background-image: image-url("vase-2.jpeg");
+  }
+  .vase-3{
+    background-image: image-url("vase-3.jpg");
+  }
+  .vase-4{
+    background-image: image-url("vase-4.jpg");
+  }
+  .vase-5{
+    background-image: image-url("vase-5.jpg");
+  }
+  .vase-6{
+    background-image: image-url("vase-6.png");
+  }
+  .vase-7{
+    background-image: image-url("vase-7.jpeg");
+  }
+
+  .img {
+    width: 15em;
+    height: 15em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15em auto;
+  }
+
+  .result-title {
+    color: $blue-basic;
+    padding: $bs-3 0;
+  }
+
+  .from {
+    font-size: $bs09;
+    color: $grey;
+  }
+}
+
+.net-view {
+  .result-item {
+    float: left;
+    width: 20em;
+    border-right: 1px solid $border-grey;
+    border-bottom: 1px solid $border-grey;
+  }
+}
+.list-view {
+  .result-item {
+    @extend %clearfix;
+    border-bottom: 1px solid $border-grey;
+  }
+
+  .img {
+    float: left;
+    background-position: top center;
+    margin: 0 $bs2 0 0;
+  }
+}

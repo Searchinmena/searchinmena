@@ -1,0 +1,2 @@
+class PaymentTerm < Translatable
+end

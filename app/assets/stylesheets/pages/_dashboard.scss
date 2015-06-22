@@ -1,12 +1,26 @@
 .dashboard-container {
   @extend %clearfix;
+  position: relative;
   background-color: white;
+
+  @media screen and (min-width: $medium-desktop) { 
+    padding-left: 2 * $bs9;
+
+    [dir="rtl"] & {
+      padding-left: 0;
+      padding-right: 2 * $bs9;
+    }
+  }
 }
 
 .dashboard-content {
   overflow: hidden;
-  padding: $bs4 $bs2 $bs3;
+  padding: $bs4 0 $bs3;
 
+  @media screen and (min-width: $desktop) { 
+    padding: $bs4 $bs2 $bs3;
+  }
+  
   .title, .subtitle {
     @extend %basic-title;
   }

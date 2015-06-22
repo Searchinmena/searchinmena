@@ -7,6 +7,8 @@ Search in MENA
 Make sure that you have java jdk. You can download it from here: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
 
 ```
+bundle install
+
 cp config/database.yml.example config/database.yml
 bundle exec rake db:create
 bundle exec rake db:migrate
@@ -71,6 +73,11 @@ And run tests with:
 npm run protractor
 ```
 
+To run only one specific test file use:
+```
+npm run protractor-specs spec/javascripts/path/to/your/file_spec.coffee
+```
+
 *Note: you need to have rails appliction running.*
 
 Tests located in `spec/javascripts/e2e`.
@@ -102,7 +109,7 @@ Example:
 ```ruby
 class SampleService
   attr_accessor :another_sample_service, :user_repository
-  
+
   def initialize(another_sample_service, user_repository)
     self.another_sample_service = another_sample_service
     self.user_repository = user_repository
@@ -281,11 +288,11 @@ E .g.:
 ```ruby
   class UserPresenter
     attr_accessor :user
-    
+
     def initialize(user)
       self.user = user
     end
-    
+
     def full_name
       "#{user.name} #{user.surname}"
     end
@@ -329,7 +336,7 @@ describe "sampleService", ->
 ```
 
 - `router.coffee` - routing for the js part of the app
-- `sim.coffee` - definition of the `@Sim` app and all modules it needs 
+- `sim.coffee` - definition of the `@Sim` app and all modules it needs
 - `services` - directory with controllers, sample service:
 
 ```coffee

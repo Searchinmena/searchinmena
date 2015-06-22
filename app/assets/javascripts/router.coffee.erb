@@ -1,0 +1,36 @@
+@Sim.config ['$stateProvider', '$urlRouterProvider',
+  ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
+      .state('dashboard',
+        url: '/',
+        templateUrl: "<%= asset_path('templates/dashboard') %>",
+        controller: 'DashboardCtrl'
+      )
+      .state('products',
+        url: '/products',
+        templateUrl: "<%= asset_path('templates/products/index') %>",
+        controller: 'ProductsIndexCtrl'
+      )
+      .state('new_product',
+        url: '/products/new',
+        templateUrl: "<%= asset_path('templates/products/new') %>",
+        controller: 'ProductsNewCtrl'
+      )
+      .state('company',
+        url: '/company',
+        templateUrl: "<%= asset_path('templates/company/index') %>",
+        controller: 'CompanyCtrl'
+      )
+      .state('company.basic-info',
+        templateUrl: "<%= asset_path('templates/company/basic-info') %>"
+      )
+      .state('company.trade-details',
+        url: '/trade-details',
+        templateUrl: "<%= asset_path('templates/company/trade-details') %>"
+      )
+      .state('company.certifications',
+        url: '/certifications',
+        templateUrl: "<%= asset_path('templates/company/certifications') %>"
+      )
+    $urlRouterProvider.otherwise('/')
+]
