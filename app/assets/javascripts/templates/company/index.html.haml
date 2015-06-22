@@ -1,20 +1,20 @@
-%h1.title= I18n.t("company.title")
+%h1.title {{ "company.title" | translate }}
 
 %ul.company-tabs
   %li.tab
     %a{ "ui-sref": "company.basic-info", "ui-sref-active": "active",
         class: "tab-link" }
-      = I18n.t("company.tabs.basic_info")
+      {{ "company.tabs.basic_info" | translate }}
       .icon-chevron-down
   %li.tab
     %a{ "ui-sref": "company.trade-details", "ui-sref-active": "active",
         class: "tab-link" }
-      = I18n.t("company.tabs.trade_details")
+      {{ "company.tabs.trade_details" | translate }}
       .icon-chevron-down
   %li.tab
     %a{ "ui-sref": "company.certifications", "ui-sref-active": "active",
         class: "tab-link" }
-      = I18n.t("company.tabs.certifications")
+      {{ "company.tabs.certifications" | translate }}
       .icon-chevron-down
 
 %ui-view

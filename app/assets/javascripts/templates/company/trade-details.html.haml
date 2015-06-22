@@ -1,34 +1,34 @@
 %form
   .field
-    %label Annual Sales Value
+    %label {{ "company.trade_details.annual_sales_value" | translate }}
     %input{ type: "text"}
   .field
-    %label Export
+    %label {{ "company.trade_details.export" | translate }}
     %input.size-specified{ type: "number", size: "4"}
     %span %
   .field
-    %label Main markets
-    %input{ type: "text", placeholder: "add region"}
+    %label {{ "company.trade_details.main_markets" | translate }}
+    %input{ type: "text", placeholder: '{{ "company.trade_details.add_region" | translate }}'}
   .field
-    %label Customer list
-    %input{ type: "text", placeholder: "customer name"}
-    %button.plus-button.icon-plus add more
+    %label {{ "company.trade_details.customer_list" | translate }}
+    %input{ type: "text", placeholder: '{{ "company.trade_details.customer_name" | translate }}'}
+    %button.plus-button.icon-plus {{ "company.trade_details.add_more" | translate }}
   .field
-    %label Nearest port
-    %input{ type: "text", placeholder: "port name"}
-    %button.plus-button.icon-plus add more
+    %label {{ "company.trade_details.nearest_port" | translate }}
+    %input{ type: "text", placeholder: '{{ "company.trade_details.port_name" | translate }}'}
+    %button.plus-button.icon-plus {{ "company.trade_details.add_more" | translate }}
   .field
-    %label Average lead time
+    %label {{ "company.trade_details.average_lead_time" | translate }}
     %input{ type: "text"}
   .field
-    %label Offices Overseas
-    %input{ type: "text", placeholder: "Office"}
-    %button.plus-button.icon-plus add more
+    %label {{ "company.trade_details.offices_overseas" | translate }}
+    %input{ type: "text", placeholder: '{{ "company.trade_details.office" | translate }}'}
+    %button.plus-button.icon-plus {{ "company.trade_details.add_more" | translate }}
   .field
-    %label Language spoken
-    %input{ type: "text", placeholder: "add language"}
+    %label {{ "company.trade_details.language_spoken" | translate }}
+    %input{ type: "text", placeholder: '{{ "company.trade_details.add_language" | translate }}'}
   .field
-    %label Accepted Delivery Terms
+    %label {{ "company.trade_details.accepted_delivery_terms" | translate }}
     .checkbox-field
       %input{ type: "checkbox"}
       %label.inline-label Horse
@@ -42,7 +42,7 @@
       %input{ type: "checkbox"}
       %label.inline-label Boat
   .field
-    %label Accepted Payment Terms
+    %label {{ "company.trade_details.accepted_payment_terms" | translate }}
     .checkbox-field
       %input{ type: "checkbox"}
       %label.inline-label Gold
@@ -53,4 +53,4 @@
       %input{ type: "checkbox"}
       %label.inline-label Smiles
   .actions
-    %input{ type: "submit", value: "Save changes"}
+    %input{ type: "submit", value: '{{ "company.trade_details.submit" | translate }}'}

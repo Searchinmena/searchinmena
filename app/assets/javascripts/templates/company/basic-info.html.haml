@@ -1,38 +1,38 @@
 %form
   .field
-    %label Company name
+    %label {{ "company.basic_info.company_name" | translate }}
     %input{ type: "text"}
   .field
     .company-logo
-    %button.small-button Add logo
+    %button.small-button {{ "company.basic_info.add_logo" | translate }}
   .field
-    %label Contact number
+    %label {{ "company.basic_info.contact_number" | translate }}
     %input{ type: "text"}
   .field
-    %label City
+    %label {{ "company.basic_info.city" | translate }}
     %input{ type: "text"}
   .field
-    %label Loaction
+    %label {{ "company.basic_info.location" | translate }}
     .select-field
       %select
         %option --Choose location--
         %option Poland
         %option Urugwai
   .field
-    %label Main products
-    %input{ type: "text", placeholder: "add product"}
+    %label {{ "company.basic_info.main_products" | translate }}
+    %input{ type: "text", placeholder: "add product" }
   .field
-    %label Year Company Registered
-    %input.size-specified{ type: "number"}
-  .field
-    %label No. of employees
+    %label {{ "company.basic_info.year_registered" | translate }}
     %input.size-specified{ type: "number" }
   .field
-    %label Detailed introduction
+    %label {{ "company.basic_info.no_of_employees" | translate }}
+    %input.size-specified{ type: "number" }
+  .field
+    %label {{ "company.basic_info.detailed_introduction" | translate }}
     %textarea
   .field
-    %label Company photos
-    %button.small-button Add photos
-    %p.field-comment max 5 images
+    %label {{ "company.basic_info.company_photos" | translate }}
+    %button.small-button {{ "company.basic_info.add_photos" | translate }}
+    %p.field-comment {{ "company.basic_info.max_images" | translate }}
   .actions
-    %input{ type: "submit", value: "Save changes"}
+    %input{ type: "submit", value: '{{ "company.basic_info.submit" | translate }}' }

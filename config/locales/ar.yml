@@ -74,10 +74,3 @@ ar:
 
   mailer:
     hello_msg: "مرحبا!"
-
-  company:
-    title: "Company Profile"
-    tabs:
-      basic_info: "Basic Information"
-      trade_details: "Trade Details"
-      certifications: "Certifications"

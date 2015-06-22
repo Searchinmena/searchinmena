@@ -75,10 +75,3 @@ en:
 
   mailer:
     hello_msg: "Hello!"
-
-  company:
-    title: "Company Profile"
-    tabs:
-      basic_info: "Basic Information"
-      trade_details: "Trade Details"
-      certifications: "Certifications"
