@@ -31,7 +31,7 @@ seeds.each do |seed, repository|
 end
 
 # user for e2e tests
-if Rails.env.test?
+if Rails.env.test? || Rails.env.development?
   require 'factory_girl'
   require './spec/support/factories'
   unless User.where(email: TEST_EMAIL).count > 0
