@@ -116,10 +116,6 @@
 
     &.centered {
       text-align: center;
-
-      @media screen and (min-width: 1150px) {
-        margin-top: 50%;
-      }
     }
   }
 
@@ -162,6 +158,21 @@
         right: 0;
       }
     }
+  }
+}
+
+.greeting-image {
+  position: relative;
+  top: $bs2;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: image-url("icon-waving-hand.png");
+  background-size: 100%;
+
+  @media screen and (min-width: 1150px) {
+    margin: 30% auto 0;
+    top: 0;
   }
 }
 
