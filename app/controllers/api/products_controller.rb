@@ -16,7 +16,7 @@ class Api::ProductsController < Api::BaseController
         render_error(response.product)
       end
     end
-    render json: {status: "not loged in"}
+    render json: { status: "not loged in" }
   end
 
   private
