@@ -1,22 +1,51 @@
-.dashboard-navigation {
-  position: absolute;
-  left: 0;
-  height: 100%;
+.dashboard-menu-btn {
+  text-transform: uppercase;
   background-color: $snow-white;
-  border-right: 1px solid $border-grey;
-  list-style: none;
-  width: 2*$bs9;
-  min-height: 70em;
-  display: none;
+  border-bottom: 1px solid $border-grey;
+  color: $blue-basic;
+  padding: $bs0 $bs2;
 
-  [dir="rtl"] & {
-    float: right;
-    border-right: 0;
-    border-left: 1px solid $border-grey;
+  @media screen and (min-width: $medium-desktop) {
+    display: none;
   }
 
+  .icon-chevron-down {
+    font-size: $bs2;
+    vertical-align: middle;
+    padding: 0 $bs-2 0 0;
+  }
+}
+
+.dashboard-navigation {
+  @include transition(all, .7s, ease-in-out);
+  background-color: $snow-white;
+  border-bottom: 1px solid $border-grey;
+  list-style: none;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+
+  &.show {
+    max-height: 999px;
+  }
+
+  
+
   @media screen and (min-width: $medium-desktop) { 
+    max-height: none;
     display: block;
+    border-right: 1px solid $border-grey;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    min-height: 70em;
+    width: 2 * $bs9;
+
+    [dir="rtl"] & {
+      right: 0;
+      border-right: 0;
+      border-left: 1px solid $border-grey;
+    }
   }
 
   li {

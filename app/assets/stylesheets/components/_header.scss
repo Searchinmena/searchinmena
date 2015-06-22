@@ -48,8 +48,15 @@ header {
 }
 
 nav {
-  // display: none;
-  padding-top: 60px;
+  @include transition(all, .7s, linear);
+  max-height: 0px;
+  overflow: hidden;
+  width: 100%;
+
+  &.open {
+    display: block;
+    max-height: 999px;
+  }
 
   li {
     display: block;
@@ -59,6 +66,9 @@ nav {
     display: block;
     float: right;
     padding-top: 0;
+    width: auto;
+    overflow: auto;
+    max-height: initial;
     
     [dir="rtl"] & {
       float: left;

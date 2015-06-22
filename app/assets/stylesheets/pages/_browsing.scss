@@ -63,6 +63,7 @@
 }
 
 .all-categories-list {
+  @include transition(all, .7s, ease-in-out);
   padding: $bs1 0;
   border-right: 1px solid $border-grey;
   background-color: $snow-white;
@@ -71,7 +72,6 @@
   width: 90%;
   left: -999px;
   height: 100%;
-  @include transition(position, .25s, ease-in-out);
 
   &.show {
     left: 0;

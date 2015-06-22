@@ -73,15 +73,20 @@ $alert-dark-green: #236900;
 }
 
 .confirm-email {
-  position: absolute;
-  top: 2 * $bs7;
-  left: auto;
-  right: $bs2;
-  margin-left: 0;
+  position: relative;
+  top: $bs1;
 
-  [dir="rtl"] & {
-    right: auto;
-    left: $bs2;
+  @media screen and (min-width: $medium-desktop) { 
+    position: absolute;
+    top: $bs6;
+    left: auto;
+    right: $bs2;
+    margin-left: 0;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: $bs2;
+    }
   }
 }
 

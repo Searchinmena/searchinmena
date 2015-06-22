@@ -5,6 +5,11 @@
 
   @media screen and (min-width: $medium-desktop) { 
     padding-left: 2 * $bs9;
+
+    [dir="rtl"] & {
+      padding-left: 0;
+      padding-right: 2 * $bs9;
+    }
   }
 }
 
@@ -15,6 +20,7 @@
   @media screen and (min-width: $desktop) { 
     padding: $bs4 $bs2 $bs3;
   }
+  
   .title, .subtitle {
     @extend %basic-title;
   }
