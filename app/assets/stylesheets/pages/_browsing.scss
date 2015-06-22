@@ -162,8 +162,15 @@
 }
 
 .sorting {
-  float: left;  
   padding: $bs-1 0 0;
+
+  @media screen and (min-width: $tablet) {
+    float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+  }
 
   a {
     padding: 0 $bs1;
@@ -177,7 +184,16 @@
 }
 
 .view-options {
-  float: right;
+  margin: $bs0 0 0;
+  
+  @media screen and (min-width: $tablet) {
+    float: right;
+    margin: 0;
+
+    [dir="rtl"] & {
+      float: left;
+    }
+  }
   
   .icon {
     font-size: $bs5;
@@ -203,13 +219,21 @@
 
 .search-results {
   @extend %clearfix;
-  padding: $bs2;
+  padding: $bs2 $bs1;
   list-style: none;
+  
+  @media screen and (min-width: $tablet) {
+    padding: $bs2;
+  }
 }
 
 .result-item {
   display: block;
-  padding: $bs3;
+  padding: $bs1 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: $bs3;
+  }
 
   .vase-1{
     background-image: image-url("vase-1.jpeg");
@@ -239,6 +263,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 15em auto;
+    background-size: contain;
   }
 
   .result-title {
@@ -267,8 +292,29 @@
   }
 
   .img {
-    float: left;
+    width: 40%;
+    height: $bs9;
     background-position: top center;
-    margin: 0 $bs2 0 0;
+    background-size: auto 100%;
+    background-size: contain;
+    float: left;
+    margin: 0 $bs1 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs1;
+      float: right;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 15em;
+      height: 15em;
+      background-size: 15em auto;
+      background-size: contain;
+      margin: 0 $bs2 0 0;
+
+      [dir="rtl"] & {
+        margin: 0 0 0 $bs2;
+      }
+    }
   }
 }

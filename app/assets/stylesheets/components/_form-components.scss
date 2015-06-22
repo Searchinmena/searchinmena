@@ -156,7 +156,6 @@ textarea {
     top: $bs-2;
     color: $blue-basic;
     cursor: pointer;
-    pointer-events: none;
 
     [dir="rtl"] & {
       right: auto;

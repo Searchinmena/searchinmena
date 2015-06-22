@@ -22,16 +22,17 @@ header {
   max-width: 240px;
   height: 60px;
 
+  [dir="rtl"] & {
+    float: right;
+    padding: $bs1 $bs2 $bs-4 0;
+  }
+
   @media screen and (min-width: $tablet) {
     padding: $bs1 0 $bs-4;
   }
 
   img {
     width: 100%;
-  }
-
-  [dir="rtl"] & {
-    float: right;
   }
 }
 
@@ -41,6 +42,14 @@ header {
   padding: $bs-1 $bs0 0;
   float: right;
   color: $purple-basic;
+
+  [dir=rtl] & {
+    float: left;
+    border-left: 0;
+    border-right: 1px solid $border-grey;
+    line-height: 1;
+    overflow: hidden;
+  }
 
   @media screen and (min-width: $tablet) {
     display: none;

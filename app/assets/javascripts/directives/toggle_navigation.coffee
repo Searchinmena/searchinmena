@@ -14,4 +14,4 @@
   restrict: 'A'
   link: (scope, element, attrs) ->
     element.bind 'click', ->
-      $(".dashboard-navigation").toggleClass "show"
+      $(".all-categories-list").toggleClass "show"
