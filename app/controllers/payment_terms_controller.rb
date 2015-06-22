@@ -1,4 +1,4 @@
-class Api::PaymentTermsController < Api::TranslatableController
+class PaymentTermsController < TranslatableController
   inject :payment_term_repository
 
   def repository

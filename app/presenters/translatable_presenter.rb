@@ -1,4 +1,4 @@
-class Api::TranslatablePresenter
+class TranslatablePresenter
   takes :translatable
 
   def as_json(*)

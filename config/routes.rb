@@ -25,13 +25,14 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   namespace :api do
-    resources :tags, only: [:index]
-    resources :units, only: [:index]
-    resources :currencies, only: [:index]
-    resources :frequencies, only: [:index]
-    resources :payment_terms, only: [:index]
     resources :products, only: [:create]
   end
+
+  resources :tags, only: [:index]
+  resources :units, only: [:index]
+  resources :currencies, only: [:index]
+  resources :frequencies, only: [:index]
+  resources :payment_terms, only: [:index]
 
   resources :product_photos, only: [:create]
 end

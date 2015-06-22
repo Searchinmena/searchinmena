@@ -1,4 +1,4 @@
-class Api::CurrenciesController < Api::TranslatableController
+class CurrenciesController < TranslatableController
   inject :currency_repository
 
   def repository
