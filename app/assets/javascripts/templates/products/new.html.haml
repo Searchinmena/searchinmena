@@ -77,23 +77,20 @@
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.supply_ability_unit" }
         %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
+
     %span {{ "products.new.per" | translate }}
+
     .select-field
       %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies", "ng-model": "form.product.supply_ability_frequency" }
         %option{ value: "" } -- {{ "products.new.choose_frequency" | translate }} --
-        %option day
-        %option month
+
   .field
     %label {{ "products.new.payment" | translate }}
-    .checkbox-field
-      %input{ type: "checkbox" }
-      %label.inline-label Gold
-    .checkbox-field
-      %input{ type: "checkbox" }
-      %label.inline-label Mules
-    .checkbox-field
-      %input{ type: "checkbox" }
-      %label.inline-label Smiles
+    .checkbox-field{ "ng-repeat": "term in payment_terms track by term.id" }
+      %input{ type: "checkbox", val: "{{term.id}}",
+      "ng-model": "form.payment_terms[term.id]" }
+      %label.inline-label {{ term.label }}
+
   %form-field{ "field-name": "product.packaging" }
     %label {{ "products.new.packaging" | translate }}
     %input{ type: "text", "ng-model": "form.product.packaging_details" }
