@@ -1,17 +1,20 @@
-@Sim.service 'PhotosUploader', ['Upload',
-  (Upload) ->
+@Sim.service 'PhotosUploader', ['Upload', '$q',
+  (Upload, $q) ->
     PRODUCT_PHOTOS_PATH = '/product_photos'
 
-    upload: (photos, productId) ->
-      for photo in photos
+    upload: (photos, productId, success, error) ->
+      @errors = {}
+
+      promises = for photo in photos
         Upload.upload(
           url: PRODUCT_PHOTOS_PATH,
           fields: { 'product_id': productId },
           file: photo
-        ).progress((evt) ->
-          progressPercentage = parseInt(100.0 * evt.loaded / evt.total)
-          console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name)
-        ).success((data, status, headers, config) ->
-          console.log('file ' + config.file.name + 'uploaded. Response: ' + data)
-        )
+        ).error((data) =>
+          @errors[data.file_name] = data.errors
+        ).then()
+
+      $q.all(promises).then(success, =>
+        error(@errors)
+      )
 ]

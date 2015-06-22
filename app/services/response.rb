@@ -9,4 +9,10 @@ class Response
   def successful?
     success
   end
+
+  def errors
+    return {} unless object
+
+    object.errors
+  end
 end

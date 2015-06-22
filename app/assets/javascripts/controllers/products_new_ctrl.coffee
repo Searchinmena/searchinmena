@@ -1,17 +1,11 @@
 @Sim.controller 'ProductsNewCtrl', ['$scope', '$http', 'SelectsLoader',
-  'PhotosUploader', 'PhotosValidator',
-  ($scope, $http, SelectsLoader, PhotosUploader, PhotosValidator) ->
+  'PhotosValidator', 'PhotosUploader',
+  ($scope, $http, SelectsLoader, PhotosValidator, PhotosUploader) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
 
     SelectsLoader.loadSelectsData($scope)
-
-    $scope.$watch('photos', (prev, current) ->
-      return unless $scope.photos
-
-      return unless PhotosValidator.validate($scope)
-    )
 
     $scope.removePhoto = (photo) ->
       index = $scope.photos.indexOf(photo)
@@ -26,6 +20,7 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
+      $scope.errors = {}
 
       console.log($scope.form)
       return unless PhotosValidator.validate($scope)
@@ -35,6 +30,8 @@
         data: $scope.form,
         method: 'POST'
       ).success(->
+        console.log("Successful product creation")
+
         $scope.errors = { product: {
           name: "can't be blank",
           category: "can't be blank",
@@ -50,8 +47,16 @@
 
         # TOOD: take it from response
         productId = 4
-        PhotosUploader.upload($scope.photos, productId)
+        PhotosUploader.upload($scope.photos, productId,
+          ->
+            console.log("Successful upload")
+          ,
+          (errors) ->
+            console.log("Upload failed")
+            $scope.errors.photos = errors
+        )
       ).error((errors) ->
+        console.log("Product creation failed")
         console.log(errors)
         $scope.errors = errors
       )

@@ -2,7 +2,8 @@
   "products": {
     "your_products": "Your products",
     "add_new_product": "Add new product",
-    "at_least_one_photo": "At least one photo required",
+    "at_least_one_photo": "At least {{min_count}} photo required",
+    "max_photos_exceeded": "You can upload at most {{max_count}} photos",
     "new": {
       "form_title": "New product",
       "basic_section": "Basic info",

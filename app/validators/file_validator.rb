@@ -1,0 +1,37 @@
+class FileValidator < BaseValidator
+  MAX_FILE_SIZE_IN_MB = 5
+  validate :check_content_type, :file_size
+
+  attr_accessor :file
+
+  def valid_content_types
+    fail NotImplementedError
+  end
+
+  def check_content_type
+    if file.present? && !valid_content_type?(file)
+      errors.add(
+        :file,
+        I18n.t('errors.messages.invalid_content_type',
+              types: valid_extensions.join(", "))
+      )
+    end
+  end
+
+  def valid_content_type?(file)
+    return unless file
+
+    valid_content_types.include?(file.content_type)
+  end
+
+  def file_size
+    if file.present? && file.size.to_f > MAX_FILE_SIZE_IN_MB.megabytes
+      errors.add(:file,
+                 I18n.t('errors.messages.file_too_large',
+                        max_file_size_in_mb: MAX_FILE_SIZE_IN_MB))
+    end
+  end
+
+  class NotImplementedError
+  end
+end

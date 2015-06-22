@@ -1,4 +1,4 @@
-class ProductPhotoValidator < BaseValidator
+class ProductPhotoValidator < PhotoValidator
   def self.fields
     []
   end

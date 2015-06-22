@@ -1,9 +1,9 @@
 @Sim.service "SelectsLoader", ['$http', 'language',
   ($http, language) ->
-    UNITS_PATH = "/api/units"
-    CURRENCIES_PATH = "/api/currencies"
-    FREQUENCIES_PATH = "/api/frequencies"
-    PAYMENT_TERMS_PATH = "/api/payment_terms"
+    UNITS_PATH = "/units"
+    CURRENCIES_PATH = "/currencies"
+    FREQUENCIES_PATH = "/frequencies"
+    PAYMENT_TERMS_PATH = "/payment_terms"
 
     CONFIG = {
       units: UNITS_PATH,

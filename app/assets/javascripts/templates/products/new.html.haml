@@ -1,5 +1,5 @@
 %h1.form-title {{ "products.new.form_title" | translate }}
-%form{ action: "/api/products", "ng-submit": "submit($event)" }
+%form{ action: "/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
   %form-field{ "field-name": "product.name" }
@@ -18,7 +18,11 @@
 
     %p.field-comment {{ "products.new.photos_comment" | translate }}
 
-    %error-message-for{ "field-name": "errors.photos" }
+    %error-message-for{ "field-name": "errors.photos_general" }
+    .error{ "ng-repeat": "(fileName, errors) in errors.photos" }
+      {{fileName}}:
+      %div{ "ng-repeat": "error in errors.photo" }
+        {{error}}
 
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
