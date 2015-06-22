@@ -30,6 +30,6 @@ Rails.application.routes.draw do
     resources :currencies, only: [:index]
     resources :frequencies, only: [:index]
     resources :payment_terms, only: [:index]
-    resources :product, except: [:new]
+    resources :products, except: [:new]
   end
 end
