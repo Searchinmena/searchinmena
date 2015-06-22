@@ -29,19 +29,14 @@ class Api::ProductsController < Api::BaseController
 
   def new_product_params
     {
-      product: product_params,
-      trade_info: trade_info_params
+      product: product_params
     }
   end
 
   def product_params
     params[:product]
-      .permit([:name, :model_number, :brand_name, :description, :category_id])
-  end
-
-  def trade_info_params
-    params[:product]
-      .permit([:min_order_quantity_number, :min_order_quantity_unit,
+      .permit([:name, :model_number, :brand_name, :description, :category_id,
+               :min_order_quantity_number, :min_order_quantity_unit,
                :fob_price, :fob_price_currency, :fob_price_unit, :port,
                :payment_terms, :supply_abbility_capacity,
                :supply_abbility_unit, :upply_abbility_frequency,
