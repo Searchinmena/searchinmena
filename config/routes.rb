@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     resources :frequencies, only: [:index]
     resources :payment_terms, only: [:index]
     resources :products, only: [:create]
+    resources :company, only: [:create]
   end
 end

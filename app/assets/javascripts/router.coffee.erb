@@ -22,7 +22,8 @@
         controller: 'CompanyCtrl'
       )
       .state('company.basic-info',
-        templateUrl: "<%= asset_path('templates/company/basic-info') %>"
+        templateUrl: "<%= asset_path('templates/company/basic-info') %>",
+        controller: 'CompanyBasicInfoCtrl'
       )
       .state('company.trade-details',
         url: '/trade-details',
