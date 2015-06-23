@@ -22,42 +22,26 @@
       e.preventDefault()
       $scope.errors = {}
 
-      console.log($scope.form)
       return unless PhotosValidator.validate($scope)
+
+      # TODO: remove this after adding categories
+      $scope.form.product.category_id = 7
 
       $http(
         url: e.target.action,
         data: $scope.form,
         method: 'POST'
-      ).success(->
-        console.log("Successful product creation")
-
-        $scope.errors = { product: {
-          name: "can't be blank",
-          category: "can't be blank",
-          description: "too long",
-          model_number: "too long",
-          brand_name: "too long",
-          min_order_quantity_number: "not a number",
-          fob_price: "not a number",
-          supply_ability_capacity: "not a number",
-          port: "too long",
-          packaging: "too long"
-        } }
-
-        # TOOD: take it from response
-        productId = 4
+      ).success((data) ->
+        productId = data.id
         PhotosUploader.upload($scope.photos, productId,
           ->
+            # TODO: add flash or redirect of whatever here instead
             console.log("Successful upload")
           ,
           (errors) ->
-            console.log("Upload failed")
             $scope.errors.photos = errors
         )
       ).error((errors) ->
-        console.log("Product creation failed")
-        console.log(errors)
         $scope.errors = errors
       )
 

@@ -4,7 +4,7 @@ class BusinessRepository < AbstractRepository
   end
 
   def find_by_user_id(user_id)
-    klass.where(user_id: user_id)
+    klass.where(user_id: user_id).first
   end
 end
 

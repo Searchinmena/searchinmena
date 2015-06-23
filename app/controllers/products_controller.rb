@@ -2,16 +2,20 @@ class ProductsController < ApplicationController
   inject :product_repository
 
   def create
-    product_creator = Product::Creator.new(new_product_params, user)
+    product_creator = Product::Creator.new(new_product_params, current_user)
     response = product_creator.perform
     if response.successful?
-      head :ok
+      render_success(response.object)
     else
-      render_error(response.product)
+      render_error(response.object)
     end
   end
 
   private
+
+  def render_success(product)
+    render json: ProductPresenter.new(product)
+  end
 
   def render_error(product)
     render json: {
