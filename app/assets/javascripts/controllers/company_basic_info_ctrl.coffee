@@ -1,7 +1,12 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http',
   ($scope, $http) ->
     $scope.form = {}
-    $scope.errors = {}
+    $scope.errors = { business: {
+        name: "can't be blank",
+        phone: "can't be blank",
+        country: "can't be blank"
+      }
+    }
 
     $scope.loadTags = (query) ->
       $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
