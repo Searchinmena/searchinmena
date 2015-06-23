@@ -2,10 +2,9 @@ class ProductsController < ApplicationController
   inject :product_repository
 
   def create
-    product_creator = Product::Creator.new(new_product_params)
+    product_creator = Product::Creator.new(new_product_params, user)
     response = product_creator.perform
     if response.successful?
-      flash[:notice] = t("en.product.added")
       head :ok
     else
       render_error(response.product)
@@ -22,22 +21,17 @@ class ProductsController < ApplicationController
 
   def new_product_params
     {
-      product: product_params,
-      trade_info: trade_info_params
+      product: product_params
     }
   end
 
   def product_params
     params[:product]
-      .permit([:name, :model_number, :brand_name, :description, :category])
-  end
-
-  def trade_info_params
-    params[:product]
-      .permit([:min_order_quantity_number, :min_order_quantity_unit,
-               :fob_price, :fob_price_type, :fob_price_unit, :port,
-               :payment_terms, :supply_abbility_number,
-               :supply_abbility_type, :upply_abbility_capacity,
+      .permit([:name, :model_number, :brand_name, :description, :category_id,
+               :min_order_quantity_number, :min_order_quantity_unit,
+               :fob_price, :fob_price_currency, :fob_price_unit, :port,
+               :payment_terms, :supply_abbility_capacity,
+               :supply_abbility_unit, :upply_abbility_frequency,
                :packaging_details])
   end
 end
