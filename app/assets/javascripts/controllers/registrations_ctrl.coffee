@@ -16,7 +16,7 @@
       provider == "facebook"
 
     $scope.loadTags = (query) ->
-      $http.get("#{TAGS_PATH}?query=#{query}")
+      $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
 
     $scope.submit = (e) ->
       e.preventDefault()
