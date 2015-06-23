@@ -8,7 +8,7 @@ class Product::Storer
                 copy_errors
               end
 
-    Product::Response.new(
+    Product::ProductResponse.new(
       success: success, product: product)
   end
 

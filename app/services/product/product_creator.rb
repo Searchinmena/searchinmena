@@ -1,5 +1,5 @@
 class Product::ProductCreator < Product::BaseCreator
-  attr_accessor :Product
+  attr_accessor :product
 
   def initialize(product, product_params)
     self.product = product
