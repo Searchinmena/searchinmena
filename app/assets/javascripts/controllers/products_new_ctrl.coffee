@@ -25,6 +25,8 @@
       return unless PhotosValidator.validate($scope)
 
       # TODO: remove this after adding categories
+      $scope.form ||= {}
+      $scope.form.product ||= {}
       $scope.form.product.category_id = 7
 
       $http(

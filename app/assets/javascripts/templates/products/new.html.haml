@@ -13,7 +13,7 @@
     %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
     %ul.photos-preview{ "ng-repeat": "photo in photos" }
       %li
-        %img{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
+        %img{ "ngf-src": "photo", "ngf-default-src": "default-photo.jpg", "ngf-accept": "'image/*'" }
         %button.remove-button{ type: "button", "ng-click": "removePhoto(photo)", id: "remove-photo" }
           %span.icon-remove
 
