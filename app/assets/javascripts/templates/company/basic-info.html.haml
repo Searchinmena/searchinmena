@@ -1,20 +1,20 @@
 %form{ action: "/api/company", "ng-submit": "submit($event)" }
   .field
     %label {{ "company.basic_info.company_name" | translate }}
-    %input{ type: "text", "ng-model": "form.company.name" }
+    %input{ type: "text", "ng-model": "form.business.name" }
   .field
     .company-logo
     %button.small-button {{ "company.basic_info.add_logo" | translate }}
   .field
     %label {{ "company.basic_info.contact_number" | translate }}
-    %input{ type: "text", "ng-model": "form.company.contact_number" }
+    %input{ type: "text", "ng-model": "form.business.contact_number" }
   .field
     %label {{ "company.basic_info.city" | translate }}
-    %input{ type: "text", "ng-model": "form.company.city" }
+    %input{ type: "text", "ng-model": "form.business.city" }
   .field
     %label {{ "company.basic_info.location" | translate }}
     .select-field
-      %select{ "ng-model": "form.company.location" }
+      %select{ "ng-model": "form.business.location" }
         %option --Choose location--
         %option Poland
         %option Urugwai
@@ -26,13 +26,13 @@
         "select-first-match": "false" }
   .field
     %label {{ "company.basic_info.year_registered" | translate }}
-    %input.size-specified{ type: "number", "ng-model": "form.company.year_registered" }
+    %input.size-specified{ type: "number", "ng-model": "form.business.year_registered" }
   .field
     %label {{ "company.basic_info.no_of_employees" | translate }}
-    %input.size-specified{ type: "number", "ng-model": "form.company.no_of_employees" }
+    %input.size-specified{ type: "number", "ng-model": "form.business.no_of_employees" }
   .field
     %label {{ "company.basic_info.detailed_introduction" | translate }}
-    %textarea{{ "ng-model": "form.company.detailed_introduction" }}
+    %textarea{{ "ng-model": "form.business.detailed_introduction" }}
   .field
     %label {{ "company.basic_info.company_photos" | translate }}
     %button.small-button {{ "company.basic_info.add_photos" | translate }}
