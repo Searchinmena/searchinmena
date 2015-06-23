@@ -8,7 +8,13 @@ FactoryGirl.define do
     sequence(:email) { |n| "aliciaflorrick#{n}@gmail.com" }
     password { "voteforalicia" }
     password_confirmation { "voteforalicia" }
-    category { User.categories[:seller] }
+    category { User.categories[:buyer] }
+
+    factory :seller, parent: :user do
+      category { User.categories[:buyer] }
+
+      association :business
+    end
   end
 
   factory :business do
@@ -17,6 +23,16 @@ FactoryGirl.define do
     phone { "777-777-777" }
     business_type { Business.business_types[:agent] }
     association :user
+  end
+
+  factory :product do
+    sequence(:name) { |n| "Product#{n}" }
+    association :business
+  end
+
+  factory :product_photo do
+    photo { test_image }
+    association :product
   end
 
   factory :tag do

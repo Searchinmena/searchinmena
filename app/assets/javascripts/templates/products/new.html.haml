@@ -10,11 +10,12 @@
     %button.small-button {{ "products.new.category_button" | translate }}
   .field
     %label {{ "products.new.photos" | translate }}
-    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", "ngf-keep": "true", multiple: "true" } {{ "products.new.photos_button" | translate }}
+    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
     %ul.photos-preview{ "ng-repeat": "photo in photos" }
-      %img{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
-      %button.remove-button{ type: "button", "ng-click": "removePhoto(photo)" }
-        %span.icon-remove
+      %li
+        %img{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
+        %button.remove-button{ type: "button", "ng-click": "removePhoto(photo)", id: "remove-photo" }
+          %span.icon-remove
 
     %p.field-comment {{ "products.new.photos_comment" | translate }}
 
@@ -45,10 +46,10 @@
         %input.with-remove-button{ type: "text",
           placeholder: '{{ "products.new.value_placeholder" | translate }}',
           "ng-model": "attribute.value" }
-        %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)" }
+        %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)", id: "remove-attribute" }
           %span.icon-remove
 
-    %button.plus-button{ type: "button", "ng-click": "addAttribute()" }
+    %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
       %span.icon-plus
       {{ "products.new.add_more" | translate }}
   %form-field{ "field-name": "product.description" }

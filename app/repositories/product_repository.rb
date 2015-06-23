@@ -7,6 +7,6 @@ class ProductRepository < AbstractRepository
     business = user.business
     return unless business
 
-    business.products.find(id)
+    business.products.find_by_id(id)
   end
 end

@@ -48,7 +48,7 @@ shared_examples "each Repository" do
   end
 
   describe "#find_or_create" do
-    let(:attributes) { attributes_for(factory_name) }
+    let(:attributes) { build_params(build(factory_name)) }
 
     subject { repository.find_or_create(attributes) }
 

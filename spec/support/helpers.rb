@@ -1,6 +1,6 @@
 def build_params(model, params = {})
   params = model.attributes.symbolize_keys.merge(params)
-  params.delete(:id)
+  [:id, :created_at, :updated_at].each { |attr| params.delete(attr) }
   params
 end
 
@@ -12,4 +12,10 @@ def build_user_params(user, params = {})
     password_confirmation: user.password_confirmation,
     category: category
   )
+end
+
+def test_image(content_type = nil)
+  content_type ||= PhotoValidator::VALID_CONTENT_TYPES.first
+  path = File.join(Rails.root, 'spec', 'support', 'fixtures', 'test-image.png')
+  Rack::Test::UploadedFile.new(path, content_type)
 end

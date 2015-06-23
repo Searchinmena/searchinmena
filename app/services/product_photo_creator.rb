@@ -1,5 +1,5 @@
 class ProductPhotoCreator < BaseService
-  inject :product_photo_repository
+  takes :product_photo_repository
 
   def perform(product, photo)
     product_photo = product_photo_repository.new
