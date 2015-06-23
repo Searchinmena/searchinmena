@@ -1,7 +1,7 @@
 @Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
   'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload'])
 
-@Sim.TRANSLATION_DIRS = ['products']
+@Sim.TRANSLATION_DIRS = ['products', 'company']
 
 @Sim.config(['$translateProvider',
   ($translateProvider) ->
