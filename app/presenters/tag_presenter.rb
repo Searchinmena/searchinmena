@@ -1,4 +1,4 @@
-class Api::TagPresenter
+class TagPresenter
   takes :tag
 
   def as_json(*)

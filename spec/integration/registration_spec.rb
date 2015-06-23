@@ -16,7 +16,7 @@ describe Registration::Creator do
       }
     end
 
-    let(:user) { build(:user) }
+    let(:user) { build(:user, category: User.categories[:seller]) }
     let(:business) { build(:business, user: nil) }
     let(:valid_user_params) { build_user_params(user) }
     let(:valid_business_params) { build_params(business) }

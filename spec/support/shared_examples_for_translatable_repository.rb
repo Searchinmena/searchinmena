@@ -1,5 +1,5 @@
 shared_examples "TranslatableRepository" do
-  it_behaves_like "each Repository"
+  it_behaves_like "any repository"
 
   describe "#all_with_translations" do
     let(:klass) { described_class.name.sub('Repository', '').constantize }

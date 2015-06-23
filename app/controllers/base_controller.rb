@@ -3,6 +3,8 @@ class Api::BaseController < ActionController::Base
 
   extend Dependor::Injectable
 
+  before_filter :authenticate_user!
+
   inject :user_repository, :error_presenter
 
   def injector

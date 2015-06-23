@@ -18,6 +18,10 @@ gem 'therubyracer'
 gem 'bower-rails'
 gem 'non-stupid-digest-assets'
 
+gem 'mini_magick'
+gem 'fog'
+gem 'carrierwave'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'

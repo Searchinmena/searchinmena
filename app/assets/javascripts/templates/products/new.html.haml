@@ -1,5 +1,5 @@
 %h1.form-title {{ "products.new.form_title" | translate }}
-%form{ action: "/api/products", "ng-submit": "submit($event)" }
+%form{ action: "/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
   %form-field{ "field-name": "product.name" }
@@ -8,10 +8,22 @@
   %form-field{ "field-name": "product.category" }
     %label {{ "products.new.category" | translate }}
     %button.small-button {{ "products.new.category_button" | translate }}
-  %form-field{ "field-name": "product.photos" }
+  .field
     %label {{ "products.new.photos" | translate }}
-    %button.small-button {{ "products.new.photos_button" | translate }}
+    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
+    %ul.photos-preview{ "ng-repeat": "photo in photos" }
+      %li
+        %img{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
+        %button.remove-button{ type: "button", "ng-click": "removePhoto(photo)", id: "remove-photo" }
+          %span.icon-remove
+
     %p.field-comment {{ "products.new.photos_comment" | translate }}
+
+    %error-message-for{ "field-name": "errors.photos_general" }
+    .error{ "ng-repeat": "(fileName, errors) in errors.photos" }
+      {{fileName}}:
+      %div{ "ng-repeat": "error in errors.photo" }
+        {{error}}
 
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
@@ -34,10 +46,10 @@
         %input.with-remove-button{ type: "text",
           placeholder: '{{ "products.new.value_placeholder" | translate }}',
           "ng-model": "attribute.value" }
-        %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)" }
+        %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)", id: "remove-attribute" }
           %span.icon-remove
 
-    %button.plus-button{ type: "button", "ng-click": "addAttribute()" }
+    %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
       %span.icon-plus
       {{ "products.new.add_more" | translate }}
   %form-field{ "field-name": "product.description" }
@@ -88,8 +100,8 @@
     %label {{ "products.new.payment" | translate }}
     .checkbox-field{ "ng-repeat": "term in payment_terms track by term.id" }
       %input{ type: "checkbox", val: "{{term.id}}",
-      "ng-model": "form.payment_terms[term.id]" }
-      %label.inline-label {{ term.label }}
+      "ng-model": "form.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
+        %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
   %form-field{ "field-name": "product.packaging" }
     %label {{ "products.new.packaging" | translate }}

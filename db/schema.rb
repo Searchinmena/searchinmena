@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616093118) do
+ActiveRecord::Schema.define(version: 20150617123346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,56 @@ ActiveRecord::Schema.define(version: 20150616093118) do
   end
 
   add_index "businesses_tags", ["business_id", "tag_id"], name: "index_businesses_tags_on_business_id_and_tag_id", unique: true, using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.integer  "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+
+  create_table "product_attributes", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "value",      null: false
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_attributes", ["product_id"], name: "index_product_attributes_on_product_id", using: :btree
+
+  create_table "product_photos", force: :cascade do |t|
+    t.string   "photo",      null: false
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",                      null: false
+    t.string   "model_number"
+    t.string   "brand_name"
+    t.string   "description"
+    t.integer  "category_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "min_order_quantity_number"
+    t.string   "min_order_quantity_unit"
+    t.decimal  "fob_price"
+    t.string   "fob_currency"
+    t.string   "fob_price_unit"
+    t.string   "port"
+    t.string   "payment_terms"
+    t.integer  "supply_ability_capacity"
+    t.string   "supply_ability_unit"
+    t.string   "supply_ability_frequency"
+    t.string   "packaging_details"
+    t.integer  "business_id",               null: false
+  end
 
   create_table "tags", force: :cascade do |t|
     t.string   "name",       null: false
@@ -74,14 +124,14 @@ ActiveRecord::Schema.define(version: 20150616093118) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "first_name",                          null: false
-    t.string   "last_name",                           null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "first_name",                          null: false
+    t.string   "last_name",                           null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

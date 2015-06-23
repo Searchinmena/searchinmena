@@ -15,6 +15,7 @@ bundle exec rake db:migrate
 
 cp config/pre-push .git/hooks/pre-push
 
+brew install imagemagick
 brew install node
 npm install
 

@@ -1,7 +1,7 @@
 production:
   email_from: 'confirmation@searchinmena.com'
   app_host: http://sim.demo.llp.pl
-  honeybadger_env: demo
+  env: demo
   fb_app_id: 838866496206335
   fb_app_secret: e9dbfeac4d69b1c052c877f595d77b41
   validations:
@@ -16,3 +16,9 @@ production:
     port: 587
     user_name: aiham@searchinmena.com
     password: UqkQa7zmtEEbh0Kb0WRdMQ
+  thumbnail_size: 50
+  aws:
+    bucket_name: sim-uploads-demo
+    access_key_id: AKIAJ4W5KE65VD6QDZFQ
+    secret_access_key: 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
+    region: us-west-2

@@ -1,4 +1,5 @@
 helper = require('./helpers/locale_helper.coffee')
+loginHelper = require('./helpers/login_helper.coffee')
 
 describe "Locale switching", ->
   it "it switches language and dir", ->
@@ -10,7 +11,7 @@ describe "Locale switching", ->
 
     expect(helper.dirAttribute()).toEqual("rtl")
 
-    helper.login()
+    loginHelper.login()
 
     expect(helper.activeLink().getText()).toEqual("الصفحة الرئيسية")
 
@@ -22,4 +23,4 @@ describe "Locale switching", ->
 
     expect(helper.dirAttribute()).not.toEqual("rtl")
 
-    helper.logout()
+    loginHelper.logout()

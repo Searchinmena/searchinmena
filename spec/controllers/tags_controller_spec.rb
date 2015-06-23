@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Api::TagsController do
+describe TagsController do
   describe "#index" do
     context "without query param" do
       it "is success" do
