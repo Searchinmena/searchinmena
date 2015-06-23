@@ -1,4 +1,4 @@
-shared_examples "each Repository" do
+shared_examples "any repository" do
   let(:klass) { described_class.name.sub('Repository', '').constantize }
   let(:factory_name) { klass.to_s.underscore.downcase.to_sym }
 

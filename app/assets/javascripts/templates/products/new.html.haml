@@ -100,8 +100,8 @@
     %label {{ "products.new.payment" | translate }}
     .checkbox-field{ "ng-repeat": "term in payment_terms track by term.id" }
       %input{ type: "checkbox", val: "{{term.id}}",
-      "ng-model": "form.payment_terms[term.id]" }
-      %label.inline-label {{ term.label }}
+      "ng-model": "form.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
+        %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
   %form-field{ "field-name": "product.packaging" }
     %label {{ "products.new.packaging" | translate }}

@@ -11,7 +11,7 @@ FactoryGirl.define do
     category { User.categories[:buyer] }
 
     factory :seller, parent: :user do
-      category { User.categories[:buyer] }
+      category { User.categories[:seller] }
 
       association :business
     end

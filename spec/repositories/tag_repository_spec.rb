@@ -3,7 +3,7 @@ require "rails_helper"
 describe TagRepository do
   let(:repository) { TagRepository.new }
 
-  it_behaves_like "each Repository"
+  it_behaves_like "any repository"
 
   describe "#find_with_query" do
     subject { repository.find_with_query(query) }

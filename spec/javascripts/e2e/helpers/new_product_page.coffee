@@ -27,7 +27,6 @@ class NewProductPage
   photos: ->
     element.all(By.css(@photoCss))
 
-
   uploadFile: ->
     absolutePath = path.resolve(__dirname, @filePath)
     fileElement = element(By.css(@fileInputCss))

@@ -3,7 +3,7 @@ require "rails_helper"
 describe ProductRepository do
   let(:repository) { ProductRepository.new }
 
-  it_behaves_like "each Repository"
+  it_behaves_like "any repository"
 
   describe "#find_for_user" do
     subject { repository.find_for_user(user, id) }
