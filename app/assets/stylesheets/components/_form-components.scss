@@ -1,10 +1,12 @@
 %basic-input {
+  -webkit-appearance: none;
   line-height: 2;
   padding: 0 $bs-3;
   width: 100%;
   border: 1px solid $border-grey;
   display: block;
   font-family: inherit;
+  border-radius: 0;
 
   .field-with-errors & {
     border-color: $red;
@@ -137,6 +139,10 @@ textarea {
   background-color: white;
   position: relative;
 
+  .field-with-errors & {
+    border-color: $red;
+  }
+
   @media screen and (min-width: $tablet) {
     max-width: 4 * $bs9;
   }
@@ -244,6 +250,16 @@ tags-input .tags {
     .remove-button {
       font: inherit;
       vertical-align: baseline;
+    }
+
+    &.selected {
+      background: none;
+      background-color: $light-grey;;
+      color: $red;
+
+      .remove-button {
+        color: $red;
+      }
     }
   }
 }
