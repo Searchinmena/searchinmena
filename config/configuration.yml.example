@@ -15,11 +15,17 @@ defaults: &defaults
     port:
     user_name:
     password:
+  thumbnail_size: 50
+  aws:
+    bucket_name: sim-uploads-development
+    access_key_id: AKIAI3456PKJOR6S4P6Q
+    secret_access_key: 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
+    region: us-west-2
 
 development:
-  honeybadger_env: development
+  env: development
   <<: *defaults
 
 test:
-  honeybadger_env: test
+  env: test
   <<: *defaults

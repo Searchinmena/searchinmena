@@ -1,4 +1,4 @@
-class Api::UnitsController < Api::TranslatableController
+class UnitsController < TranslatableController
   inject :unit_repository
 
   def repository

@@ -21,6 +21,7 @@
 //= require angular-flash-alert
 //= require jquery
 //= require jquery.cookie
+//= require ng-file-upload
 //= require sim
 //= require router
 //= require_tree ./services

@@ -1,4 +1,4 @@
-class Api::FrequenciesController < Api::TranslatableController
+class FrequenciesController < TranslatableController
   inject :frequency_repository
 
   def repository

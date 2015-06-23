@@ -1,8 +1,8 @@
 require "rails_helper"
 
-describe Api::TranslatablePresenter do
+describe TranslatablePresenter do
   describe "#as_json" do
-    let(:presenter) { Api::TranslatablePresenter.new(unit) }
+    let(:presenter) { TranslatablePresenter.new(unit) }
     let(:unit) { create(:unit) }
     let!(:translation) { create(:translation, key: unit.key) }
 

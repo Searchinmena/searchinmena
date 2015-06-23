@@ -1,4 +1,4 @@
-shared_examples "each Repository" do
+shared_examples "any repository" do
   let(:klass) { described_class.name.sub('Repository', '').constantize }
   let(:factory_name) { klass.to_s.underscore.downcase.to_sym }
 
@@ -48,7 +48,7 @@ shared_examples "each Repository" do
   end
 
   describe "#find_or_create" do
-    let(:attributes) { attributes_for(factory_name) }
+    let(:attributes) { build_params(build(factory_name)) }
 
     subject { repository.find_or_create(attributes) }
 

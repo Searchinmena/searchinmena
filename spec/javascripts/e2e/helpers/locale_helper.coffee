@@ -10,15 +10,6 @@ module.exports =
   signInHeader: ->
     element(By.css(".form-header h1.form-title"))
 
-  login: ->
-    emailField = element(By.id("user_email"))
-    passwordField = element(By.id("user_password"))
-    emailField.sendKeys("test@example.org")
-    passwordField.sendKeys("testtest")
-
-    submitButton = element(By.css("input[type=submit]"))
-    submitButton.click()
-
   activeLink: ->
     element(By.css("a.nav-link.active"))
 
@@ -26,6 +17,3 @@ module.exports =
     productsLink = element(By.css("a[href='#/products']"))
     productsLink.click()
 
-  logout: ->
-    logoutLink = element(By.css("a[href='/users/sign_out']"))
-    logoutLink.click()
