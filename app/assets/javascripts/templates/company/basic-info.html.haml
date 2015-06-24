@@ -2,15 +2,19 @@
   %form-field{ "field-name": "business.name" }
     %label {{ "company.basic_info.company_name" | translate }}
     %input{ type: "text", "ng-model": "form.business.name" }
+
   %form-field{ "field-name": "business.logo" }
     .company-logo
     %button.small-button {{ "company.basic_info.add_logo" | translate }}
+
   %form-field{ "field-name": "business.phone" }
     %label {{ "company.basic_info.contact_number" | translate }}
     %input{ type: "text", "ng-model": "form.business.phone" }
+
   %form-field{ "field-name": "business.city" }
     %label {{ "company.basic_info.city" | translate }}
     %input{ type: "text", "ng-model": "form.business.city" }
+
   %form-field{ "field-name": "business.country" }
     %label {{ "company.basic_info.location" | translate }}
     .select-field
@@ -18,24 +22,35 @@
         %option --Choose location--
         %option Poland
         %option Urugwai
+
+  %form-field{ "field-name": "business.business_type" }
+    %label {{ "company.basic_info.business_type" | translate }}
+    .select-field
+      %select{ "ng-model": "form.business.business_type" }
+
   .field
     %label {{ "company.basic_info.main_products" | translate }}
     %tags-input{ "ng-model": "form.tags", "display-property": "name",
       "replace-spaces-with-dashes": "false" }
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }
+
   %form-field{ "field-name": "business.year_registered" }
     %label {{ "company.basic_info.year_registered" | translate }}
     %input.size-specified{ type: "number", "ng-model": "form.business.year_registered" }
+
   %form-field{ "field-name": "business.no_of_employees" }
     %label {{ "company.basic_info.no_of_employees" | translate }}
     %input.size-specified{ type: "number", "ng-model": "form.business.no_of_employees" }
+
   %form-field{ "field-name": "business.detailed_introduction" }
     %label {{ "company.basic_info.detailed_introduction" | translate }}
     %textarea{{ "ng-model": "form.business.detailed_introduction" }}
+
   %form-field{ "field-name": "business.company_photos" }
     %label {{ "company.basic_info.company_photos" | translate }}
     %button.small-button {{ "company.basic_info.add_photos" | translate }}
     %p.field-comment {{ "company.basic_info.max_images" | translate }}
+
   .actions
     %input{ type: "submit", value: '{{ "company.basic_info.submit" | translate }}' }

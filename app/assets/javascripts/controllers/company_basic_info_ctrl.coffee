@@ -4,7 +4,8 @@
     $scope.errors = { business: {
         name: "can't be blank",
         phone: "can't be blank",
-        country: "can't be blank"
+        country: "can't be blank",
+        business_type: "can't be blank"
       }
     }
 
