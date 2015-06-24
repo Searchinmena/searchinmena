@@ -1,9 +1,12 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', '$state', 'TranslatedFlash', 'SelectsLoader',
-  'PhotosValidator', 'PhotosUploader',
-  ($scope, $http, $state, TranslatedFlash, SelectsLoader, PhotosValidator, PhotosUploader) ->
+@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', '$state', 'TranslatedFlash',
+  'SelectsLoader', 'PhotosValidator', 'PhotosUploader', 'CategoriesModal',
+  ($scope, $http, $state, TranslatedFlash, SelectsLoader,
+    PhotosValidator, PhotosUploader, CategoriesModal) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
+
+    $scope.showCategories = CategoriesModal.activate
 
     SelectsLoader.loadSelectsData($scope)
 
