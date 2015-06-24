@@ -1,4 +1,40 @@
-@Sim.controller 'CategoriesCtrl', ['CategoriesModal',
-  (CategoriesModal) ->
-    this.closeMe = CategoriesModal.deactivate
+@Sim.controller 'CategoriesCtrl', ['$scope', 'CategoriesModal',
+  ($scope, CategoriesModal) ->
+    $scope.close = CategoriesModal.deactivate
+    
+    $scope.categories = [
+      "Agriculture"
+      "Apparel"
+      "Automobiles & Motorcycles"
+      "Beauty & Personal Care"
+      "Business Services"
+      "Chemicals"
+      "Construction & Real Estate"
+      "Consumer Electronics"
+      "Electrical Equipment & Supplies"
+      "Electronic Components & Supplies"
+      "Energy"
+      "Fashion Accessories"
+      "Food & Beverage"
+      "Furniture"
+      "Gifts & Crafts"
+      "Hardware"
+      "Health & Medical"
+      "Home & Garden"
+      "Home Appliances"
+      "Lights & Lighting"
+      "Luggage, Bags & Cases"
+      "Machinery"
+      "Measurement & Analysis Instrument"
+      "Mechanical Parts & Fabrication Services"
+      "Minerals & Metallurgy"
+      "Office & School Supplies"
+      "Packaging & Printing"
+      "Rubber & Plastics"
+      "Security Protection"
+      "Service Equipment"
+      "Shoes & Accessories"
+      "Sports & Entertainment"
+      "Textile & Leather Products"
+    ]
 ]
