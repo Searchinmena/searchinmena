@@ -241,6 +241,8 @@ tags-input .tags {
     border-radius: 0;
     height: auto;
     margin: 3px 5px 3px 0;
+    max-width: 100%;
+    word-wrap: break-word;
 
     [dir="rtl"] & {
       float: right;
