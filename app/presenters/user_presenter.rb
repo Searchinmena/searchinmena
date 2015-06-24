@@ -1,4 +1,4 @@
-class Api::UserPresenter
+class UserPresenter
   takes :user
 
   def as_json(*)

@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe Api::PaymentTermsController do
+describe PaymentTermsController do
   it_behaves_like "TranslatableController"
 end
