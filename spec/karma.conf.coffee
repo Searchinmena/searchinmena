@@ -15,7 +15,8 @@ module.exports = (config) ->
       'vendor/assets/bower_components/angular-translate/angular-translate.js',
       'vendor/assets/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
       'vendor/assets/bower_components/angular-sanitize/angular-sanitize.js',
-      'vendor/assets/bower_components/ng-file-upload/ng-file-upload.js'
+      'vendor/assets/bower_components/ng-file-upload/ng-file-upload.js',
+      'vendor/assets/bower_components/angular-modal/modal.js'
       'app/assets/javascripts/sim.coffee',
       'app/assets/javascripts/**/*.coffee',
       'spec/javascripts/unit/**/*.coffee'
