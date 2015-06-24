@@ -13,6 +13,7 @@
       "photos": "Photos",
       "photos_button": "Add photos",
       "photos_comment": "Max 10 images",
+      "photos_comment_thumbnail": "The first image is the main photo of the product. For best presentation will be a squre image at least 500 x 500px",
       "details_section": "Product details",
       "model": "Model number",
       "brand": "Brand name",
