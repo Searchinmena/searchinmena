@@ -18,10 +18,8 @@
   %form-field{ "field-name": "business.country" }
     %label {{ "company.basic_info.location" | translate }}
     .select-field
-      %select{ "ng-model": "form.business.country" }
-        %option --Choose location--
-        %option Poland
-        %option Urugwai
+      %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country" }
+        %option{ value: "" } -- {{ "company.basic_info.select_country" | translate }} --
 
   %form-field{ "field-name": "business.business_type" }
     %label {{ "company.basic_info.business_type" | translate }}

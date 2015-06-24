@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   resources :currencies, only: [:index]
   resources :frequencies, only: [:index]
   resources :payment_terms, only: [:index]
+  resources :countries, only: [:index]
 
   resources :company, only: [:create]
   resources :products, only: [:create]

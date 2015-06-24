@@ -23,7 +23,8 @@ seeds = {
   units: UnitRepository.new,
   currencies: CurrencyRepository.new,
   frequencies: FrequencyRepository.new,
-  payment_terms: PaymentTermRepository.new
+  payment_terms: PaymentTermRepository.new,
+  countries: CountryRepository.new
 }
 
 seeds.each do |seed, repository|

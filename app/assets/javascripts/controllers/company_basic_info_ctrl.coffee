@@ -1,5 +1,5 @@
-@Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http',
-  ($scope, $http) ->
+@Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', 'selectsLoader',
+  ($scope, $http, selectsLoader) ->
     $scope.form = {}
     $scope.errors = { business: {
         name: "can't be blank",
@@ -8,6 +8,12 @@
         business_type: "can't be blank"
       }
     }
+
+    config = {
+      countries: "/countries"
+    }
+
+    selectsLoader.loadSelectsData($scope, config)
 
     $scope.loadTags = (query) ->
       $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")

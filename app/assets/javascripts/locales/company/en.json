@@ -12,6 +12,7 @@
       "contact_number": "Contact number",
       "city": "City",
       "location": "Location",
+      "select_country": "Select country",
       "business_type": "Business type",
       "main_products": "Main products",
       "year_registered": "Year company registered",
