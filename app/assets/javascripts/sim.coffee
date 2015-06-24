@@ -19,10 +19,13 @@
     $translateProvider.useSanitizeValueStrategy('sanitize')
 ])
 
-@Sim.run(['$rootScope', ($rootScope) ->
+@Sim.run(['$rootScope', '$http', ($rootScope, $http) ->
   $rootScope.$on('$viewContentLoaded', ->
     $('html, body').animate({ scrollTop: 0 }, @Sim.SCROLL_TO_TOP_SPEED)
   )
+
+  $http.defaults.headers.common['Accept'] = 'application/json'
+  $http.defaults.headers.common['Content-Type'] = 'application/json'
 ])
 
 window.SIM = {}
