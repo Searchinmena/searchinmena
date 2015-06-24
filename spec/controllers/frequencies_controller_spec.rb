@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe Api::FrequenciesController do
+describe FrequenciesController do
   it_behaves_like "TranslatableController"
 end

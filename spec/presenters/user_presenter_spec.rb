@@ -1,8 +1,8 @@
 require "rails_helper"
 
-describe Api::UserPresenter do
+describe UserPresenter do
   describe "#as_json" do
-    let(:presenter) { Api::UserPresenter.new(user) }
+    let(:presenter) { UserPresenter.new(user) }
     let(:user) { build(:user, provider: "facebook", uid: "1234567") }
 
     subject { presenter.as_json }
