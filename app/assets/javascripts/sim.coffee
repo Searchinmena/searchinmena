@@ -2,6 +2,7 @@
   'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload'])
 
 @Sim.TRANSLATION_DIRS = ['products']
+@Sim.SCROLL_TO_TOP_SPEED = 300
 
 @Sim.config(['$translateProvider',
   ($translateProvider) ->
@@ -16,6 +17,12 @@
       $.cookie("locale")
     )
     $translateProvider.useSanitizeValueStrategy('sanitize')
+])
+
+@Sim.run(['$rootScope', ($rootScope) ->
+  $rootScope.$on('$viewContentLoaded', ->
+    $('html, body').animate({ scrollTop: 0 }, @Sim.SCROLL_TO_TOP_SPEED)
+  )
 ])
 
 window.SIM = {}

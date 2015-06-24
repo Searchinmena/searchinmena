@@ -1,6 +1,6 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', 'SelectsLoader',
+@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', '$state', 'TranslatedFlash', 'SelectsLoader',
   'PhotosValidator', 'PhotosUploader',
-  ($scope, $http, SelectsLoader, PhotosValidator, PhotosUploader) ->
+  ($scope, $http, $state, TranslatedFlash, SelectsLoader, PhotosValidator, PhotosUploader) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
@@ -22,7 +22,9 @@
       e.preventDefault()
       $scope.errors = {}
 
-      return unless PhotosValidator.validate($scope)
+      unless PhotosValidator.validate($scope)
+        TranslatedFlash.error("products.adding_failed")
+        return
 
       # TODO: remove this after adding categories
       $scope.form ||= {}
@@ -37,14 +39,16 @@
         productId = data.id
         PhotosUploader.upload($scope.photos, productId,
           ->
-            # TODO: add flash or redirect of whatever here instead
-            console.log("Successful upload")
+            TranslatedFlash.success("products.successfully_added")
+            $state.go("products")
           ,
           (errors) ->
             $scope.errors.photos = errors
+            TranslatedFlash.error("products.adding_failed")
         )
       ).error((errors) ->
         $scope.errors = errors
+        TranslatedFlash.error("products.adding_failed")
       )
 
       false
