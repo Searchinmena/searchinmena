@@ -10,11 +10,12 @@
     %button.small-button {{ "products.new.category_button" | translate }}
   .field
     %label {{ "products.new.photos" | translate }}
-    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos", "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
+    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
+      "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
     %ul.photos-preview{ "ng-repeat": "photo in photos" }
       %li
         %img{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
-        %button.remove-button{ type: "button", "ng-click": "removePhoto(photo)", id: "remove-photo" }
+        %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
           %span.icon-remove
 
     %p.field-comment {{ "products.new.photos_comment" | translate }}
@@ -46,8 +47,8 @@
         %input.with-remove-button{ type: "text",
           placeholder: '{{ "products.new.value_placeholder" | translate }}',
           "ng-model": "attribute.value" }
-        %button.remove-button{ type: "button", "ng-click": "removeAttribute(attribute)", id: "remove-attribute" }
-          %span.icon-remove
+          %button.remove-button.remove-attribute{ type: "button", "ng-click": "removeAttribute(attribute)" }
+            %span.icon-remove
 
     %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
       %span.icon-plus
@@ -64,7 +65,8 @@
     %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.min_order_quantity_unit" }
+      %select{ "ng-options": "unit.id as unit.label for unit in units",
+      "ng-model": "form.product.min_order_quantity_unit" }
         %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
   .field.compound-field
     %label {{ "products.new.price" | translate }}
@@ -72,11 +74,13 @@
     %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.fob_price" }
     .select-field
-      %select{ "ng-options": "currency.id as currency.label for currency in currencies", "ng-model": "form.product.fob_price_currency" }
+      %select{ "ng-options": "currency.id as currency.label for currency in currencies",
+      "ng-model": "form.product.fob_price_currency" }
         %option{ value: "" } -- {{ "products.new.choose_currency" | translate }} --
     %span {{ "products.new.per" | translate }}
     .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.fob_price_unit" }
+      %select{ "ng-options": "unit.id as unit.label for unit in units",
+      "ng-model": "form.product.fob_price_unit" }
         %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
   %form-field{ "field-name": "product.port" }
     %label {{ "products.new.port" | translate }}
@@ -87,13 +91,15 @@
     %form-field{ "field-name": "product.supply_ability_capacity", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
     .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in units", "ng-model": "form.product.supply_ability_unit" }
+      %select{ "ng-options": "unit.id as unit.label for unit in units",
+      "ng-model": "form.product.supply_ability_unit" }
         %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
 
     %span {{ "products.new.per" | translate }}
 
     .select-field
-      %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies", "ng-model": "form.product.supply_ability_frequency" }
+      %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies",
+      "ng-model": "form.product.supply_ability_frequency" }
         %option{ value: "" } -- {{ "products.new.choose_frequency" | translate }} --
 
   .field
