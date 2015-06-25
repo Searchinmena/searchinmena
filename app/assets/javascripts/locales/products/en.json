@@ -40,6 +40,10 @@
       "payment": "Payment terms",
       "packaging": "Packaging details",
       "submit": "Add new product"
+    },
+    "categories": {
+      "choose": "Choose Category",
+      "ok": "OK"
     }
   }
 }

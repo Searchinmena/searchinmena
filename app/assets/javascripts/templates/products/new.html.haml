@@ -5,9 +5,10 @@
   %form-field{ "field-name": "product.name" }
     %label {{ "products.new.name" | translate }}
     %input{ type: "text", "ng-model": "form.product.name" }
-  %form-field{ "field-name": "product.category" }
+  .field
     %label {{ "products.new.category" | translate }}
     %button.small-button{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+
   .field
     %label {{ "products.new.photos" | translate }}
     %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",

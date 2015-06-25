@@ -1,5 +1,5 @@
 @Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
-  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'btford.modal'])
+  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'ui.bootstrap'])
 
 @Sim.TRANSLATION_DIRS = ['products']
 @Sim.SCROLL_TO_TOP_SPEED = 300

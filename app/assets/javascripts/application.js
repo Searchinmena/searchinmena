@@ -22,7 +22,7 @@
 //= require jquery
 //= require jquery.cookie
 //= require ng-file-upload
-//= require angular-modal
+//= require angular-bootstrap
 //= require sim
 //= require router
 //= require_tree ./services

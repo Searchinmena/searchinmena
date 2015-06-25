@@ -1,14 +1,27 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', '$state', 'TranslatedFlash',
-  'SelectsLoader', 'PhotosValidator', 'PhotosUploader', 'CategoriesModal',
-  ($scope, $http, $state, TranslatedFlash, SelectsLoader,
-    PhotosValidator, PhotosUploader, CategoriesModal) ->
+@Sim.controller 'ProductsNewCtrl', ['$scope', '$rootScope', '$http', '$state', '$modal',
+  'TranslatedFlash', 'SelectsLoader', 'PhotosValidator', 'PhotosUploader',
+  ($scope, $rootScope, $http, $state, $modal, TranslatedFlash, SelectsLoader,
+    PhotosValidator, PhotosUploader) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
 
-    $scope.showCategories = CategoriesModal.activate
+    $scope.showCategories = ->
+      modalInstance = $modal.open(
+        templateUrl: '/assets/templates/categories',
+        controller: 'CategoriesCtrl',
+        backdrop: true,
+        size: 'lg'
+      )
+
+      modalInstance.result.then($scope.setCategoryId)
 
     SelectsLoader.loadSelectsData($scope)
+
+    $scope.setCategoryId = (category) ->
+      $scope.form ||= {}
+      $scope.form.product ||= {}
+      $scope.form.product.category_id = category.id
 
     $scope.removePhoto = (photo) ->
       index = $scope.photos.indexOf(photo)
@@ -28,11 +41,6 @@
       unless PhotosValidator.validate($scope)
         TranslatedFlash.error("products.adding_failed")
         return
-
-      # TODO: remove this after adding categories
-      $scope.form ||= {}
-      $scope.form.product ||= {}
-      $scope.form.product.category_id = 7
 
       $http(
         url: e.target.action,
