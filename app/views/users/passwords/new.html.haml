@@ -5,7 +5,6 @@
 
     = form_for(resource, as: resource_name,
     url: password_path(resource_name), html: { method: :post }) do |f|
-      = devise_error_messages!
       .field
         = f.label :email, t("devise.active_record.attributes.user.email")
         = f.email_field :email, autofocus: true

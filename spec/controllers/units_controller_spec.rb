@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-describe Api::UnitsController do
+describe UnitsController do
   it_behaves_like "TranslatableController"
 end

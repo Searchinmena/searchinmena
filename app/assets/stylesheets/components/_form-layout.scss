@@ -212,3 +212,34 @@
     font-size: $bs5;
   }
 }
+
+.photos-preview {
+  @extend %clearfix;
+  list-style: none;
+
+  li {
+    @extend %clearfix;
+    width: 46%;
+    height: 15em;
+    display: inline-block;
+    float: left;
+    margin: 0 2% $bs0 0;
+    
+    @media screen and (min-width: $tablet) {
+      width: auto;
+      max-width: 2 * $bs9;
+      height: 2 * $bs9;
+    }
+  }
+
+  .preview-image {
+    float: left;
+    width: 100%;
+    max-width: 2 * $bs8;
+    max-height: 100%;
+    border: 1px solid $border-grey;
+    
+    @media screen and (min-width: $tablet) {
+    }
+  }
+}

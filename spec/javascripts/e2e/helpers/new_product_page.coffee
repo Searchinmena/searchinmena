@@ -5,12 +5,12 @@ class NewProductPage
   constructor: ->
     @attributeModel = "attribute.name"
     @addAttributeId = "add-attribute"
-    @removeAttributeId = "remove-attribute"
+    @removeAttributeCss = ".remove-attribute"
 
     @fileInputCss = "input[type='file']"
     @photoCss = ".photos-preview img"
     @filePath = "../../../support/fixtures/test-image.png"
-    @removePhotoId = "remove-photo"
+    @removePhotoCss = ".remove-photo"
 
   get: ->
     browser.get("/dashboard#/products/new")
@@ -22,7 +22,7 @@ class NewProductPage
     element(By.id(@addAttributeId))
 
   removeAttributeButton: ->
-    element(By.id(@removeAttributeId))
+    element.all(By.css(@removeAttributeCss)).get(0)
 
   photos: ->
     element.all(By.css(@photoCss))
@@ -37,6 +37,6 @@ class NewProductPage
     fileElement.sendKeys(absolutePath)
 
   removePhotoButton: ->
-    element(By.id(@removePhotoId))
+    element.all(By.css(@removePhotoCss)).get(0)
 
 module.exports = NewProductPage
