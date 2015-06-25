@@ -14,6 +14,7 @@
       "location": "Location",
       "select_country": "Select country",
       "business_type": "Business type",
+      "select_business_type": "Select business type",
       "main_products": "Main products",
       "year_registered": "Year company registered",
       "no_of_employees": "No. of employees",

@@ -1,0 +1,2 @@
+class BusinessTypeRepository < TranslatableRepository
+end

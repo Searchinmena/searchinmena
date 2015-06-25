@@ -52,6 +52,8 @@ FactoryGirl.define do
     end
     factory :country, parent: :translatable, class: "Country" do
     end
+    factory :business_type, parent: :translatable, class: "BusinessType" do
+    end
   end
 
   factory :translation do

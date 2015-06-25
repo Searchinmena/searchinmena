@@ -10,7 +10,8 @@
     }
 
     config = {
-      countries: "/countries"
+      countries: "/countries",
+      business_types: "/business_types"
     }
 
     selectsLoader.loadSelectsData($scope, config)

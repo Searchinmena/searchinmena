@@ -24,7 +24,8 @@
   %form-field{ "field-name": "business.business_type" }
     %label {{ "company.basic_info.business_type" | translate }}
     .select-field
-      %select{ "ng-model": "form.business.business_type" }
+      %select{ "ng-options": "business_type.id as business_type.label for business_type in business_types", "ng-model": "form.business.business_type" }
+        %option{ value: "" } -- {{ "company.basic_info.select_business_type" | translate }} --
 
   .field
     %label {{ "company.basic_info.main_products" | translate }}
