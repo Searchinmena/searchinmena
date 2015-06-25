@@ -1,0 +1,67 @@
+multiselect {
+  position: relative;
+
+  a {
+    border-bottom: none;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    padding: $bs-4 $bs-2;
+    display: block;
+  }
+
+  i {
+    line-height: 32px;
+  }
+
+  .select-field {
+    overflow: visible;
+    display: block;
+    font-family: inherit;
+    padding: 0 $bs-3;
+    line-height: 2;
+    height: 32px;
+
+    &:after {
+      top: 0;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: $bs-5;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+
+    [dir="rtl"] & {
+      right: 0;
+    }
+
+    li {
+      line-height: 1.4rem;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 9px 1px;
+      overflow: hidden;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 4 * $bs9;
+    }
+  }
+}

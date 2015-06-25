@@ -21,11 +21,9 @@
       %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country" }
         %option{ value: "" } -- {{ "company.basic_info.select_country" | translate }} --
 
-  %form-field{ "field-name": "business.business_type" }
-    %label {{ "company.basic_info.business_type" | translate }}
-    .select-field
-      %select{ "ng-options": "business_type.id as business_type.label for business_type in business_types", "ng-model": "form.business.business_type" }
-        %option{ value: "" } -- {{ "company.basic_info.select_business_type" | translate }} --
+  .field{ "field-name": "business.business_types" }
+    %label {{ "company.basic_info.business_types" | translate }}
+    %multiselect{ "pre-selected": "preselected_business_types", "model": "form.business.business_types", "options": "business_types", "select-button-text": "select_button_text" }
 
   .field
     %label {{ "company.basic_info.main_products" | translate }}

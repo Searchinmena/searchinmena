@@ -13,8 +13,8 @@
       "city": "City",
       "location": "Location",
       "select_country": "Select country",
-      "business_type": "Business type",
-      "select_business_type": "Select business type",
+      "business_types": "Business types",
+      "select_business_types": "Select business types",
       "main_products": "Main products",
       "year_registered": "Year company registered",
       "no_of_employees": "No. of employees",
@@ -96,5 +96,9 @@
       "packaging": "Packaging details",
       "submit": "Add new product"
     }
+  },
+  "other": {
+    "check_all": "Check all",
+    "uncheck_all": "Uncheck all"
   }
 }

@@ -1,11 +1,14 @@
-@Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', 'selectsLoader',
-  ($scope, $http, selectsLoader) ->
-    $scope.form = {}
+@Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
+  'selectsLoader',
+  ($scope, $http, $translate, selectsLoader) ->
+    $scope.form = { business:
+      business_types: []
+    }
     $scope.errors = { business: {
         name: "can't be blank",
         phone: "can't be blank",
         country: "can't be blank",
-        business_type: "can't be blank"
+        business_types: "can't be blank"
       }
     }
 
@@ -15,6 +18,12 @@
     }
 
     selectsLoader.loadSelectsData($scope, config)
+
+    $scope.preselected_business_types = {}
+
+    $translate('company.basic_info.select_business_types').then((translation) ->
+      $scope.select_button_text = translation
+    )
 
     $scope.loadTags = (query) ->
       $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
