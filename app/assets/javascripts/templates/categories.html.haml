@@ -1,4 +1,4 @@
-%div
+.categories-modal
   .remove-button
     %span.icon-remove{ "ng-click": "cancel()" }
   %h2.modal-header
@@ -13,4 +13,5 @@
           {{category.name}}
 
   .modal-action
-    %input{ type: "submit", value: "OK", "ng-click": "ok()" }
+    %input{ type: "submit", value: "OK", "ng-click": "ok()",
+    "ng-disabled": "'categoryChosen'" }
