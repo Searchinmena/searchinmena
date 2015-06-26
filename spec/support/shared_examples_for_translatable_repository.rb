@@ -10,8 +10,9 @@ shared_examples "TranslatableRepository" do
 
     before do
       [object1, object2].each do |o|
-        create(:translation, key: o.key, locale: "ar")
-        create(:translation, key: o.key, locale: "en")
+        %w{en ar}.each do |locale|
+          create(:translation, key: o.key, locale: locale)
+        end
       end
     end
 

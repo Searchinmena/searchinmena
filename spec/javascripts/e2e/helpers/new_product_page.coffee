@@ -12,6 +12,13 @@ class NewProductPage
     @filePath = "../../../support/fixtures/test-image.png"
     @removePhotoCss = ".remove-photo"
 
+    @chooseCategoryId = "choose-category"
+    @categoryTitleCss = ".breadcrumbs-title"
+    @submitCategoryCss = ".modal-action input"
+    @categoryCss = "li.category-name a"
+    @breadcrumbCss = ".breadcrumbs-item"
+    @previousCategoryId = "previous-category"
+
   get: ->
     browser.get("/dashboard#/products/new")
 
@@ -38,5 +45,26 @@ class NewProductPage
 
   removePhotoButton: ->
     element.all(By.css(@removePhotoCss)).get(0)
+
+  categoryButton: ->
+    element(By.id(@chooseCategoryId))
+
+  categoryTitle: ->
+    element(By.css(@categoryTitleCss)).getText()
+
+  submitCategoryButton: ->
+    element(By.css(@submitCategoryCss))
+
+  chooseCategory: (category) ->
+    element(By.cssContainingText(@categoryCss, category)).click()
+
+  breadcrumb: (category) ->
+    element(By.cssContainingText(@breadcrumbCss, category))
+
+  breadcrumbs: (callback) ->
+    element.all(By.css(@breadcrumbCss)).then(callback)
+
+  previousCategoryButton: ->
+    element(By.id(@previousCategoryId))
 
 module.exports = NewProductPage

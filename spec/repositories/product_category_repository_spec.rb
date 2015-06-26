@@ -31,4 +31,24 @@ describe ProductCategoryRepository do
 
     it { expect(category.reload.parent).to eq(parent) }
   end
+
+  describe "#for_parent_id" do
+    let!(:parent) { create(:product_category) }
+    let!(:category) { create(:product_category, parent: parent) }
+
+    before do
+      [parent, category].each do |o|
+        %w{en ar}.each do |locale|
+          create(:translation, key: o.key, locale: locale)
+        end
+      end
+    end
+
+    subject do
+      repository.for_parent_id(parent.id, "en").first.translations.first
+    end
+
+    it { expect(subject.key).to eq(category.key) }
+    it { expect(subject.locale).to eq("en") }
+  end
 end

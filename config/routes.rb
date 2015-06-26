@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :tags, only: [:index]
+  resources :product_categories, only: [:index]
   resources :units, only: [:index]
   resources :currencies, only: [:index]
   resources :frequencies, only: [:index]

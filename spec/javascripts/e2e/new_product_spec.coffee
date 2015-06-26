@@ -29,3 +29,38 @@ describe NewProductPage, ->
 
     page.removePhotoButton().click()
     expect(page.photos().count()).toBe(0)
+
+  it "is possible to choose category", ->
+    page.categoryButton().click()
+
+    expect(page.categoryTitle()).toEqual("Choose Category")
+    expect(page.submitCategoryButton().getAttribute("disabled")).toEqual("true")
+
+    categories = [
+      "Machinery",
+      "Apparel & Textile Machinery",
+      "Apparel Machinery",
+      "Zipper Making Machinery"
+    ]
+    for category in categories
+      page.chooseCategory(category)
+      expect(page.categoryTitle()).toEqual("")
+      expect(page.breadcrumb(category).isDisplayed()).toBe(true)
+
+    expect(page.submitCategoryButton().getAttribute("disabled")).toBe(null)
+
+    page.chooseCategory("Zipper Making Machinery")
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(4)
+    )
+
+    count = 4
+    for category in categories.reverse()
+      page.previousCategoryButton().click()
+      page.breadcrumbs((elements) ->
+        count -= 1
+        expect(elements.length).toEqual(count)
+      )
+
+    expect(page.categoryTitle()).toEqual("Choose Category")
+

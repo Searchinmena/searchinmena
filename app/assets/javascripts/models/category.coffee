@@ -1,5 +1,6 @@
 class SIM.Category
-  constructor: (id, name, parentId) ->
-    @id = id
-    @name = name
-    @parentId = parentId
+  constructor: (attributes) ->
+    @id = attributes.id
+    @name = attributes.name
+    @parentId = attributes.parent_id
+    @selected = false
