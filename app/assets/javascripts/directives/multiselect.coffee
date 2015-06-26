@@ -9,7 +9,7 @@
     select_button_text: "=selectButtonText"
 
   template: "<div ng-class='{open: open}'>" +
-    "<a class='select-field' ng-click='toggleSelect();openDropdown()'>-- {{ select_button_text }} --</a>" +
+    "<a class='select-field' ng-click='toggleSelect()'>-- {{ select_button_text }} --</a>" +
     "<ul class='dropdown-menu' ng-show='isDropdownVisible'>" +
       "<li><a ng-click='selectAll()'><i class='icon-ok-sign'></i> {{ 'other.check_all' | translate }}</a></li>" +
       "<li><a ng-click='deselectAll();'><i class='icon-remove-sign'></i> {{ 'other.uncheck_all' | translate }}</a></li>" +
@@ -24,14 +24,8 @@
   controller: ($scope) ->
     $scope.isDropdownVisible = false
 
-    $scope.openDropdown = ->
-      window.options = $scope.options
-      $scope.selected_items = []
-      i = 0
-
-      while i < $scope.pre_selected.length
-        $scope.selected_items.push $scope.pre_selected[i].id
-        i++
+    $scope.toggleSelect = () ->
+      $scope.isDropdownVisible = !$scope.isDropdownVisible
 
     $scope.selectAll = ->
       $scope.model = _.pluck($scope.options, "id")
@@ -53,6 +47,3 @@
     $scope.isChecked = (id) ->
       return "icon-ok"  if _.contains($scope.model, id)
       false
-
-    $scope.toggleSelect = () ->
-      $scope.isDropdownVisible = !$scope.isDropdownVisible

@@ -2,7 +2,7 @@
   'selectsLoader',
   ($scope, $http, $translate, selectsLoader) ->
     $scope.form = { business:
-      business_types: []
+      business_types: [381, 375, 378]
     }
     $scope.errors = { business: {
         name: "can't be blank",
@@ -19,8 +19,8 @@
 
     selectsLoader.loadSelectsData($scope, config)
 
-    $scope.preselected_business_types = {}
-
+    # Settings for business type multiselect
+    $scope.selected_items = $scope.form.business.business_types
     $translate('company.basic_info.select_business_types').then((translation) ->
       $scope.select_button_text = translation
     )

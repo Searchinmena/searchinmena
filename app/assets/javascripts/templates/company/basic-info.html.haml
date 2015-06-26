@@ -23,7 +23,7 @@
 
   .field{ "field-name": "business.business_types" }
     %label {{ "company.basic_info.business_types" | translate }}
-    %multiselect{ "pre-selected": "preselected_business_types", "model": "form.business.business_types", "options": "business_types", "select-button-text": "select_button_text" }
+    %multiselect{ "model": "selected_items", "options": "business_types", "select-button-text": "select_button_text" }
 
   .field
     %label {{ "company.basic_info.main_products" | translate }}
