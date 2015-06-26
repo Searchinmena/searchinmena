@@ -23,6 +23,8 @@ module Sim
     # Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
+    config.autoload_paths << Rails.root.join('lib', 'seeders')
+
     # The default locale is :en and all translations from
     # config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**',

@@ -57,4 +57,8 @@ FactoryGirl.define do
     sequence(:key) { |n| "Key#{n}" }
     sequence(:value) { |n| "Value#{n}" }
   end
+
+  factory :category do
+    sequence(:key) { |n| "Category#{n}" }
+  end
 end
