@@ -9,10 +9,10 @@
     select_button_text: "=selectButtonText"
 
   template: "<div ng-class='{open: open}'>" +
-    "<a class='select-field' ng-click='toggleSelect()'>-- {{ select_button_text }} --</a>" +
+    "<a class='select-field' ng-click='toggleSelect()' ng-bind='displayButtonText()'></a>" +
     "<ul class='dropdown-menu' ng-show='isDropdownVisible'>" +
       "<li><a ng-click='selectAll()'><i class='icon-ok-sign'></i> {{ 'other.check_all' | translate }}</a></li>" +
-      "<li><a ng-click='deselectAll();'><i class='icon-remove-sign'></i> {{ 'other.uncheck_all' | translate }}</a></li>" +
+      "<li><a ng-click='deselectAll()'><i class='icon-remove-sign'></i> {{ 'other.uncheck_all' | translate }}</a></li>" +
       "<li class='divider'></li>" +
       "<li ng-repeat='option in options'>
         <a ng-click='setSelectedItem()'>{{option.label}}
@@ -23,6 +23,7 @@
   "</div>"
   controller: ($scope) ->
     $scope.isDropdownVisible = false
+    $scope.options = {}
 
     $scope.toggleSelect = () ->
       $scope.isDropdownVisible = !$scope.isDropdownVisible
@@ -47,3 +48,13 @@
     $scope.isChecked = (id) ->
       return "icon-ok"  if _.contains($scope.model, id)
       false
+
+    $scope.displayButtonText = () ->
+      options = $scope.options
+      ids = $scope.model
+      names = (option.label for option in options when option.id in ids)
+
+      if names.length == 0
+        "-- " + $scope.select_button_text + " --"
+      else
+        names.join(", ")

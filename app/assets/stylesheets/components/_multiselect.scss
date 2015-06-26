@@ -15,12 +15,14 @@ multiselect {
   }
 
   .select-field {
-    overflow: visible;
     display: block;
     font-family: inherit;
-    padding: 0 $bs-3;
+    padding: 0 2em 0 $bs-3;
     line-height: 2;
     height: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:after {
       top: 0;
