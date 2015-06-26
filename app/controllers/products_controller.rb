@@ -25,7 +25,8 @@ class ProductsController < ApplicationController
 
   def new_product_params
     {
-      product: product_params
+      product: product_params,
+      attributes: attributes_params
     }
   end
 
@@ -37,5 +38,9 @@ class ProductsController < ApplicationController
                :payment_terms, :supply_abbility_capacity,
                :supply_abbility_unit, :upply_abbility_frequency,
                :packaging_details])
+  end
+
+  def attributes_params
+    params[:attributes]
   end
 end
