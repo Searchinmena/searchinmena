@@ -1,14 +1,14 @@
 require "rails_helper"
 
-describe CategoryRepository do
-  let(:repository) { CategoryRepository.new }
+describe ProductCategoryRepository do
+  let(:repository) { ProductCategoryRepository.new }
 
   it_behaves_like "any repository"
 
   describe "#find_by_key" do
     subject { repository.find_by_key(key) }
 
-    let!(:category) { create(:category) }
+    let!(:category) { create(:product_category) }
 
     context "category found" do
       let(:key) { category.key }
@@ -24,8 +24,8 @@ describe CategoryRepository do
   end
 
   describe "#update_parent" do
-    let(:category) { build(:category) }
-    let(:parent) { create(:category) }
+    let(:category) { build(:product_category) }
+    let(:parent) { create(:product_category) }
 
     before { repository.update_parent(category, parent) }
 

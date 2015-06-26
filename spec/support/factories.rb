@@ -60,5 +60,8 @@ FactoryGirl.define do
 
   factory :category do
     sequence(:key) { |n| "Category#{n}" }
+
+    factory :product_category, parent: :category, class: 'ProductCategory' do
+    end
   end
 end
