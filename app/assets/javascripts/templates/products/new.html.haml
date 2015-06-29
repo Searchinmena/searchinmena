@@ -13,13 +13,15 @@
     %label {{ "products.new.photos" | translate }}
     %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
       "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
-    %ul.photos-preview{ "ng-repeat": "photo in photos" }
-      %li
-        %img{ "ngf-src": "photo", "ngf-default-src": "default-photo.jpg", "ngf-accept": "'image/*'" }
+    %p.field-comment {{ "products.new.photos_comment" | translate }}
+    %p.field-comment {{ "products.new.photos_comment_thumbnail" | translate }}
+    %ul.photos-preview
+      %li{ "ng-repeat": "photo in photos" }
+        %img.preview-image{ "ngf-src": "photo",
+        "ngf-default-src": "#{asset_path('default-image')}", "ngf-accept": "'image/*'" }
         %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
           %span.icon-remove
 
-    %p.field-comment {{ "products.new.photos_comment" | translate }}
 
     %error-message-for{ "field-name": "errors.photos_general" }
     .error{ "ng-repeat": "(fileName, errors) in errors.photos" }

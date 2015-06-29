@@ -228,11 +228,41 @@
 }
 
 .result-item {
+  @extend %clearfix;
+  border-bottom: 1px solid $border-grey;
   display: block;
   padding: $bs1 0;
 
   @media screen and (min-width: $tablet) {
     padding: $bs3;
+  }
+
+  .item-main-img {
+    width: 40%;
+    height: $bs9;
+    background-position: top center;
+    background-size: auto 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    margin: 0 $bs1 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs1;
+      float: right;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 15em;
+      height: 15em;
+      background-size: 15em auto;
+      background-size: contain;
+      margin: 0 $bs2 0 0;
+
+      [dir="rtl"] & {
+        margin: 0 0 0 $bs2;
+      }
+    }
   }
 
   .vase-1{
@@ -257,64 +287,71 @@
     background-image: image-url("vase-7.jpeg");
   }
 
-  .img {
-    width: 15em;
-    height: 15em;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 15em auto;
-    background-size: contain;
-  }
+  .result-item-title {
+    border-color: white;
+    display: inline;
+    line-height: 1.4;
 
-  .result-title {
-    color: $blue-basic;
-    padding: $bs-3 0;
+    @media screen and (min-width: $tablet) {
+      font-size: $bs2;
+    }
+
+    &:hover, &:focus {
+      border-color: $blue-basic;
+    }
   }
 
   .from {
     font-size: $bs09;
     color: $grey;
+    margin: $bs-3 0;
+  }
+
+  .result-item-description {
+    width: 55%;
+    max-width: 4 * $bs9;
+    float: left;
+    color: $grey;
   }
 }
 
 .net-view {
-  .result-item {
-    float: left;
-    width: 20em;
-    border-right: 1px solid $border-grey;
-    border-bottom: 1px solid $border-grey;
-  }
-}
-.list-view {
-  .result-item {
-    @extend %clearfix;
-    border-bottom: 1px solid $border-grey;
-  }
-
-  .img {
-    width: 40%;
-    height: $bs9;
-    background-position: top center;
-    background-size: auto 100%;
-    background-size: contain;
-    float: left;
-    margin: 0 $bs1 0 0;
-
-    [dir="rtl"] & {
-      margin: 0 0 0 $bs1;
-      float: right;
-    }
+  
+  .result-item-title {
+    margin: $bs0 0 $bs-3;
 
     @media screen and (min-width: $tablet) {
-      width: 15em;
-      height: 15em;
-      background-size: 15em auto;
-      background-size: contain;
-      margin: 0 $bs2 0 0;
+      font-size: $bs1;
+    }
+  }
+  .item-main-img {
+    width: 100%;
+    height: 15em;
 
-      [dir="rtl"] & {
-        margin: 0 0 0 $bs2;
-      }
+    @media screen and (min-width: $tablet) {
+      border: 1px solid $border-grey;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 15em;
+    }
+  }
+
+  .result-item {
+    width: 100%;
+    height: 23em;
+
+    @media screen and (min-width: $tablet) {
+      border-bottom: 0;
+      width: 33%;
+      float: left;
+      height: 25em;
+    }
+    
+    @media screen and (min-width: $desktop) {
+      width: 20em;
+      float: left;
+      height: 23em;
     }
   }
 }

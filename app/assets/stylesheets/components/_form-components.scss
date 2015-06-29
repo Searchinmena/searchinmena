@@ -1,10 +1,12 @@
 %basic-input {
+  -webkit-appearance: none;
   line-height: 2;
   padding: 0 $bs-3;
   width: 100%;
   border: 1px solid $border-grey;
   display: block;
   font-family: inherit;
+  border-radius: 0;
 
   .field-with-errors & {
     border-color: $red;
@@ -137,6 +139,10 @@ textarea {
   background-color: white;
   position: relative;
 
+  .field-with-errors & {
+    border-color: $red;
+  }
+
   @media screen and (min-width: $tablet) {
     max-width: 4 * $bs9;
   }
@@ -235,6 +241,8 @@ tags-input .tags {
     border-radius: 0;
     height: auto;
     margin: 3px 5px 3px 0;
+    max-width: 100%;
+    word-wrap: break-word;
 
     [dir="rtl"] & {
       float: right;
@@ -244,6 +252,16 @@ tags-input .tags {
     .remove-button {
       font: inherit;
       vertical-align: baseline;
+    }
+
+    &.selected {
+      background: none;
+      background-color: $light-grey;;
+      color: $red;
+
+      .remove-button {
+        color: $red;
+      }
     }
   }
 }
@@ -264,9 +282,4 @@ tags-input .tags {
   margin: $bs-3 0;
   padding: inherit;
   text-transform: none;
-}
-
-.photos-preview img {
-  width: 25%;
-  height: 25%;
 }
