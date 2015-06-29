@@ -25,14 +25,14 @@
 %inline-input {
   @extend %basic-input;
   display: inline;
-  margin: 0 $bs1 0 0;
-
-  [dir="rtl"] & {
-    margin: 0 0 0 $bs1;
-  }
 
   @media screen and (min-width: $tablet) {
     max-width: 2 * $bs8;
+    margin: 0 $bs1 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs1;
+    }
   }
 }
 
@@ -116,17 +116,17 @@ textarea {
 
 .inline-field {
   @extend .field;
-  display: inline-block;
-  float: left;
-  margin: 0 $bs1 0 0;
 
   @media screen and (min-width: $tablet) {
     width: 2 * $bs8;
-  }
+    display: inline-block;
+    float: left;
+    margin: 0 $bs1 0 0;
 
-  [dir="rtl"] & {
-    float: right;
-    margin: 0 0 0 $bs1;
+    [dir="rtl"] & {
+      float: right;
+      margin: 0 0 0 $bs1;
+    }
   }
 }
 
@@ -189,13 +189,21 @@ textarea {
 .compound-field {
 
   .select-field {
-    max-width: 2 * $bs8;
-    display: inline-block;
     vertical-align: middle;
-    margin: 0 $bs1 0 0;
+    margin: 0 $bs1 $bs1 0;
 
     [dir="rtl"] & {
-      margin: 0 0 0 $bs1;
+      margin: 0 0 $bs1 $bs1;
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: inline-block;
+      max-width: 2 * $bs8;
+      margin: 0 $bs1 0 0;
+
+      [dir="rtl"] & {
+        margin: 0 0 0 $bs1;
+      }
     }
   }
 }
