@@ -35,6 +35,7 @@ ar:
         subject: "تعليمات تأكيد الحساب"
       reset_password_instructions:
         subject: "تعليمات إعادة تعيين كلمة المرور"
+      reset_password: "إعادة تعيين كلمة المرور"
       unlock_instructions:
         subject: "تعليمات إعادة تفعيل الحساب"
       unlock_text: 'إعادة تفعيل الحساب'

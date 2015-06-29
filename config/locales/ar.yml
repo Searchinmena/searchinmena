@@ -37,7 +37,7 @@ ar:
       trading_company: "شركة تجارية"
       buying_office: "مكتب مشتريات"
       agent: "وكيل"
-      distributer:  "موزع / تجار الجملة"
+      distributor:  "موزع / تجار الجملة"
       goverment_entity: "هيئة حكومية"
       association: "جمعية"
       business_services: "خدمات"

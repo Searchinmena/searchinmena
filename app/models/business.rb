@@ -4,6 +4,6 @@ class Business < ActiveRecord::Base
   has_many :products
 
   enum business_type: [:manufacturer, :trading_company, :buying_office,
-                       :agent, :distributer, :goverment_entity, :association,
+                       :agent, :distributor, :goverment_entity, :association,
                        :business_services, :other]
 end

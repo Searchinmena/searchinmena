@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe RegistrationsController do
+describe Users::RegistrationsController do
   let(:user) { build(:user) }
   let(:business) { build(:business, user: nil) }
   let(:sign_up_params) do

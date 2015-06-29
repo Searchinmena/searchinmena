@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     cookies[:locale] = I18n.locale
   end
 
+  def full_error_message_for(object)
+    return unless object && object.errors.present?
+
+    object.errors.full_messages.first
+  end
+
   extend Dependor::Injectable
 
   def injector
