@@ -10,7 +10,6 @@
       modalInstance = $modal.open(
         templateUrl: '/assets/templates/categories',
         controller: 'CategoriesCtrl',
-        backdrop: true,
         animation: false,
         size: 'lg'
       )
