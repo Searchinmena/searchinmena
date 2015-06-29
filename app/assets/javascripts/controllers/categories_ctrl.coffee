@@ -7,6 +7,8 @@
         $scope.breadcrumbs = new SIM.Breadcrumbs(translation)
       )
 
+    $scope.level = 1
+
     $scope.loadCategoriesForParentId = (parentId, callback) ->
       params = { parent_id: parentId, locale: language.get() }
       $http.get(CATEGORIES_PATH, { params: params })
@@ -25,10 +27,11 @@
 
     $scope.previous = () ->
       $scope.deselectCategory()
-      $scope.breadcrumbs.pop()
       currentCategory = $scope.breadcrumbs.current()
+      $scope.breadcrumbs.pop()
       $scope.loadCategoriesForParentId(currentCategory?.parentId, (categories) ->
-        $scope.categories = categories
+        $scope.level -= 1
+        $scope.updateCategories(categories)
       )
 
     $scope.next = (category) ->
@@ -36,10 +39,17 @@
 
       $scope.loadCategoriesForParentId(category.id, (categories) ->
         if categories.length > 0
-          $scope.categories = categories
+          $scope.level += 1
+          $scope.updateCategories(categories)
         else
           $scope.selectCategory(category)
       )
+
+    $scope.updateCategories = (categories) ->
+      for category in categories
+        category.level = $scope.level
+
+      $scope.categories = categories
 
     $scope.selectCategory = (category) ->
       category.selected = true

@@ -4,12 +4,13 @@ describe SIM.Breadcrumbs, ->
     @breadcrumbs = new SIM.Breadcrumbs(@defaultTitle)
 
   class Item
-    constructor: (id) ->
+    constructor: (id, level) ->
       @id = id
+      @level = level
 
   describe "push", ->
     beforeEach ->
-      @item = new Item(1)
+      @item = new Item(1, 1)
       @breadcrumbs.push(@item)
 
     it "nulls title", ->
@@ -19,19 +20,21 @@ describe SIM.Breadcrumbs, ->
       it "pushes item to items", ->
         expect(@breadcrumbs.items).toEqual([@item])
 
-    describe "item is already current one", ->
+    describe "item with the same level is already chosen", ->
       it "doesn't duplicate item", ->
-        @breadcrumbs.push(@item)
+        @item.level = 7
+        item = new Item(2, 7)
+        @breadcrumbs.push(item)
         
         expect(@breadcrumbs.items).toEqual([@item])
 
-  describe "push", ->
+  describe "pop", ->
     beforeEach ->
-      @item = new Item(1)
+      @item = new Item(1, 1)
       @breadcrumbs.push(@item)
 
     it "removes item from items", ->
-      @breadcrumbs.push(new Item(2))
+      @breadcrumbs.push(new Item(2, 2))
       @breadcrumbs.pop()
 
       expect(@breadcrumbs.items).toEqual([@item])
@@ -51,8 +54,8 @@ describe SIM.Breadcrumbs, ->
 
   describe "current", ->
     it "returns last item", ->
-      @breadcrumbs.push(new Item(1))
-      current = new Item(2)
+      @breadcrumbs.push(new Item(1, 1))
+      current = new Item(2, 2)
       @breadcrumbs.push(current)
       expect(@breadcrumbs.current()).toEqual(current)
 

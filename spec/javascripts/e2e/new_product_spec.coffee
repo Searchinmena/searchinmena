@@ -54,6 +54,11 @@ describe NewProductPage, ->
       expect(elements.length).toEqual(4)
     )
 
+    page.chooseCategory("Sewing Machinery")
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(4)
+    )
+
     count = 4
     for category in categories.reverse()
       page.previousCategoryButton().click()

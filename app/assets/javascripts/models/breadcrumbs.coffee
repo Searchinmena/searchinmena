@@ -6,7 +6,7 @@ class SIM.Breadcrumbs
 
   push: (item) ->
     currentItem = @current()
-    if currentItem && currentItem.id == item.id
+    if currentItem && currentItem.level == item.level
       return
 
     @title = null

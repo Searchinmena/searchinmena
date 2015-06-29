@@ -4,3 +4,4 @@ class SIM.Category
     @name = attributes.name
     @parentId = attributes.parent_id
     @selected = false
+    @level = 1
