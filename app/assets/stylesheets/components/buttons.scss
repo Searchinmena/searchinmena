@@ -75,6 +75,12 @@
 input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
+
+  &:disabled {
+    color: $grey;
+    border-color: $grey;
+    background-color: $border-grey;
+  }
 }
 
 .small-button {

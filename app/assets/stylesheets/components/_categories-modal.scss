@@ -1,9 +1,5 @@
-.mist {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1000;
+.categories-modal {
+  z-index: 1001;
 }
 
 .remove-button {
@@ -51,6 +47,8 @@
   .category-name {
     color: $blue-basic;
     padding: $bs-3 0;
+    border: none;
+    display: block;
 
     &:hover {
       cursor: pointer;
@@ -68,14 +66,3 @@
     float: right;
   }
 }
-
-.categories-container {
-  position: relative;
-  height: 440px;
-  overflow: hidden;
-}
-
-.categories-modal .modal-action input:disabled {
-  background-color: gray;
-}
-

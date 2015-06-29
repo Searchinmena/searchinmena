@@ -15,7 +15,7 @@ class NewProductPage
     @chooseCategoryId = "choose-category"
     @categoryTitleCss = ".breadcrumbs-title"
     @submitCategoryCss = ".modal-action input"
-    @categoryCss = "li.category-name a"
+    @categoryCss = "li a.category-name"
     @breadcrumbCss = ".breadcrumbs-item"
     @previousCategoryId = "previous-category"
 
