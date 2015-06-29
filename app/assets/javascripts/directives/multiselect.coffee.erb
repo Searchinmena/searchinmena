@@ -2,7 +2,7 @@
 
 @Sim.directive "multiselect", ->
   restrict: "E"
-  templateUrl: "/assets/templates/multiselect"
+  templateUrl: "<%= asset_path('templates/multiselect') %>"
   scope:
     model: "="
     options: "="
