@@ -1,16 +1,16 @@
-%div{"ng-class" => "{open: open}"}
-  %a.select-field{"ng-bind" => "displayButtonText()", "ng-click" => "toggleSelect()"}
-  %ul.dropdown-menu{"ng-show" => "isDropdownVisible"}
+%div{"ng-class": "{open: open}"}
+  %a#select-toggle.select-field{"ng-bind": "displayButtonText()", "ng-click": "toggleSelect()"}
+  %ul.dropdown-menu{"ng-show": "isDropdownVisible", "off-click": "hideDropdown()", "off-click-filter": "'#select-toggle'"}
     %li
-      %a{"ng-click" => "selectAll()"}
+      %a{"ng-click": "selectAll()"}
         %i.icon-ok-sign
         {{ 'other.check_all' | translate }}
     %li
-      %a{"ng-click" => "deselectAll()"}
+      %a{"ng-click": "deselectAll()"}
         %i.icon-remove-sign
         {{ 'other.uncheck_all' | translate }}
     %li.divider
-    %li{"ng-repeat" => "option in options"}
-      %a{"ng-click" => "setSelectedItem()"}
+    %li{"ng-repeat": "option in options"}
+      %a{"ng-click": "setSelectedItem()"}
         {{option.label}}
-        %span{"ng-class" => "isChecked(option.id)"}
+        %span{"ng-class": "isChecked(option.id)"}

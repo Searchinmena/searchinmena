@@ -13,6 +13,7 @@
     "angular-translate-loader-static-files": "2.7.2",
     "angular-sanitize": "1.4.0",
     "ng-file-upload ": "5.0.7",
-    "underscore": "latest"
+    "underscore": "latest",
+    "angular-off-click": "0.0.7"
   }
 }

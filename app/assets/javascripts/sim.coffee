@@ -1,5 +1,5 @@
 @Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
-  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload'])
+  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'offClick'])
 
 @Sim.config(['$translateProvider',
   ($translateProvider) ->

@@ -23,6 +23,7 @@
 //= require jquery.cookie
 //= require underscore
 //= require ng-file-upload
+//= require angular-off-click
 //= require sim
 //= require router
 //= require_tree ./services
