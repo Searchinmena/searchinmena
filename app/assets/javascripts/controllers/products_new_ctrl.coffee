@@ -14,11 +14,12 @@
         size: 'lg'
       )
 
-      modalInstance.result.then($scope.setCategoryId)
+      modalInstance.result.then($scope.setCategory)
 
     SelectsLoader.loadSelectsData($scope)
 
-    $scope.setCategoryId = (category) ->
+    $scope.setCategory = (category) ->
+      $scope.category = category
       $scope.form ||= {}
       $scope.form.product ||= {}
       $scope.form.product.category_id = category.id

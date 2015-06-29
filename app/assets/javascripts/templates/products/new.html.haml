@@ -8,6 +8,7 @@
   .field
     %label {{ "products.new.category" | translate }}
     %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+    {{category.name}}
 
   .field
     %label {{ "products.new.photos" | translate }}
