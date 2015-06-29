@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617123346) do
+ActiveRecord::Schema.define(version: 20150626073733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,13 +38,15 @@ ActiveRecord::Schema.define(version: 20150617123346) do
   add_index "businesses_tags", ["business_id", "tag_id"], name: "index_businesses_tags_on_business_id_and_tag_id", unique: true, using: :btree
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",       null: false
+    t.string   "key",        null: false
     t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "type",       null: false
   end
 
-  add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
+  add_index "categories", ["key"], name: "index_categories_on_key", unique: true, using: :btree
+  add_index "categories", ["type"], name: "index_categories_on_type", using: :btree
 
   create_table "product_attributes", force: :cascade do |t|
     t.string   "name",       null: false
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 20150617123346) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "translatable", ["type"], name: "index_translatable_on_type", using: :btree
 
   create_table "translations", force: :cascade do |t|
     t.string   "locale"
