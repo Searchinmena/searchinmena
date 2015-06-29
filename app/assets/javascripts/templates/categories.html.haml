@@ -3,12 +3,18 @@
     %span.icon-remove
   %h2.modal-header
     %span.icon-circle-arrow-left#previous-category{ "ng-click": "previous()" }
+
     %span.breadcrumbs-title{ "ng-show": "breadcrumbs.title" }
       {{breadcrumbs.title}}
       %span.icon-chevron-right
-    %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.items" }
-      {{item.name}}
-      %span.icon-chevron-right
+
+    %span{ "ng-show": "!breadcrumbs.title" }
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbsWithoutLast()" }
+        {{item.name}}
+        %span.icon-chevron-right
+      %span.breadcrumbs-item
+        {{lastBreadcrumb().name}}
+
   .categories-container
     %ul.choose-category-list
       %li{ "ng-repeat": "category in categories",

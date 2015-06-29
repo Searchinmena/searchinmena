@@ -62,7 +62,11 @@ class NewProductPage
     element(By.cssContainingText(@breadcrumbCss, category))
 
   breadcrumbs: (callback) ->
-    element.all(By.css(@breadcrumbCss)).then(callback)
+    element.all(By.css(@breadcrumbCss)).filter((elem) ->
+      elem.isDisplayed().then((isDisplayed) ->
+        isDisplayed == true
+      )
+    ).then(callback)
 
   previousCategoryButton: ->
     element(By.id(@previousCategoryId))

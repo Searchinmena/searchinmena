@@ -61,6 +61,12 @@
       $scope.selectedCategory.selected = false
       $scope.selectedCategory = null
 
+    $scope.breadcrumbsWithoutLast = ->
+      $scope.breadcrumbs.withoutLast()
+
+    $scope.lastBreadcrumb = ->
+      $scope.breadcrumbs.current()
+
     $scope.ok = ->
       $modalInstance.close($scope.selectedCategory)
 

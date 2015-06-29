@@ -20,3 +20,6 @@ class SIM.Breadcrumbs
 
   current: ->
     @items[@items.length - 1]
+
+  withoutLast: ->
+    @items.slice(0, -1)
