@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: [:omniauth_callbacks], controllers: {
     registrations: "registrations",
-    sessions: "sessions"
+    sessions: "sessions",
+    confirmations: "confirmations"
   }
 
   devise_scope :user do
