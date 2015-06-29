@@ -5,10 +5,6 @@ class SIM.Breadcrumbs
     @title = @defaultTitle
 
   push: (item) ->
-    currentItem = @current()
-    if currentItem && currentItem.level == item.level
-      return
-
     @title = null
     @items.push(item)
 

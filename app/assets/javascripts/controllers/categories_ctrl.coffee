@@ -26,15 +26,23 @@
     )
 
     $scope.previous = () ->
-      $scope.deselectCategory()
       currentCategory = $scope.breadcrumbs.current()
       $scope.breadcrumbs.pop()
+
+      if $scope.selectedCategory
+        $scope.deselectCategory()
+        return
+
       $scope.loadCategoriesForParentId(currentCategory?.parentId, (categories) ->
         $scope.level -= 1
         $scope.updateCategories(categories)
       )
 
     $scope.next = (category) ->
+      currentCategory = $scope.breadcrumbs.current()
+      if currentCategory && currentCategory.level == category.level
+        return
+
       $scope.breadcrumbs.push(category)
 
       $scope.loadCategoriesForParentId(category.id, (categories) ->

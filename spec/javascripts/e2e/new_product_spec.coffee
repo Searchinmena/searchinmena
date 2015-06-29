@@ -69,3 +69,25 @@ describe NewProductPage, ->
 
     expect(page.categoryTitle()).toEqual("Choose Category")
 
+  it "is possible to choose category, go back and choose different one from the same level", ->
+    page.categoryButton().click()
+
+    categories = ["Energy", "Coal"]
+    page.chooseCategory(category) for category in categories
+
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(2)
+    )
+    expect(page.submitCategoryButton().getAttribute("disabled")).toBe(null)
+
+    page.chooseCategory("Petrochemical Products")
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(2)
+    )
+
+    page.previousCategoryButton().click()
+    page.chooseCategory("Petrochemical Products")
+    expect(page.breadcrumb("Petrochemical Products").isDisplayed()).toBe(true)
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(2)
+    )

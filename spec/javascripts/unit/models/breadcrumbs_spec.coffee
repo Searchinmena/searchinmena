@@ -20,14 +20,6 @@ describe SIM.Breadcrumbs, ->
       it "pushes item to items", ->
         expect(@breadcrumbs.items).toEqual([@item])
 
-    describe "item with the same level is already chosen", ->
-      it "doesn't duplicate item", ->
-        @item.level = 7
-        item = new Item(2, 7)
-        @breadcrumbs.push(item)
-        
-        expect(@breadcrumbs.items).toEqual([@item])
-
   describe "pop", ->
     beforeEach ->
       @item = new Item(1, 1)
