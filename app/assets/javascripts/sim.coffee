@@ -1,15 +1,11 @@
 @Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
-  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload'])
-
-@Sim.TRANSLATION_DIRS = ['products']
+  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'offClick'])
 
 @Sim.config(['$translateProvider',
   ($translateProvider) ->
-    angular.forEach(@Sim.TRANSLATION_DIRS, (dir) ->
-      $translateProvider.useStaticFilesLoader(
-        prefix: "/assets/locales/#{dir}/",
-        suffix: '.json'
-      )
+    $translateProvider.useStaticFilesLoader(
+      prefix: "/assets/locales/",
+      suffix: '.json'
     )
 
     $translateProvider.determinePreferredLanguage(->

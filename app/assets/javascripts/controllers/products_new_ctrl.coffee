@@ -1,11 +1,18 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', 'SelectsLoader',
+@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', 'selectsLoader',
   'PhotosValidator', 'PhotosUploader',
-  ($scope, $http, SelectsLoader, PhotosValidator, PhotosUploader) ->
+  ($scope, $http, selectsLoader, PhotosValidator, PhotosUploader) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
 
-    SelectsLoader.loadSelectsData($scope)
+    config = {
+      units: "/units",
+      currencies: "/currencies",
+      frequencies: "/frequencies",
+      payment_terms: "/payment_terms"
+    }
+
+    selectsLoader.loadSelectsData($scope, config)
 
     $scope.removePhoto = (photo) ->
       index = $scope.photos.indexOf(photo)

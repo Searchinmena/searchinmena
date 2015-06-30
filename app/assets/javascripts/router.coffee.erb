@@ -16,7 +16,25 @@
         templateUrl: "<%= asset_path('templates/products/new') %>",
         controller: 'ProductsNewCtrl'
       )
+      .state('company',
+        url: '/company',
+        templateUrl: "<%= asset_path('templates/company/index') %>",
+        controller: 'CompanyCtrl'
+      )
+      .state('company.basic_info',
+        templateUrl: "<%= asset_path('templates/company/basic_info') %>",
+        controller: 'CompanyBasicInfoCtrl'
+      )
+      .state('company.trade_details',
+        url: '/trade_details',
+        templateUrl: "<%= asset_path('templates/company/trade_details') %>"
+      )
+      .state('company.certifications',
+        url: '/certifications',
+        templateUrl: "<%= asset_path('templates/company/certifications') %>"
+      )
     $urlRouterProvider.otherwise('/')
 ]
 
 @Sim.DASHBOARD_PATH = "/dashboard"
+@Sim.TAGS_PATH = "/tags"

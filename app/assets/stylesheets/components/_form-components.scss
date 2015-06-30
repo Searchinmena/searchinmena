@@ -98,8 +98,15 @@ label {
   margin: 0 0 $bs1 0;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
   @extend %basic-input;
+
+  @media screen and (min-width: $tablet) {
+    &.size-specified {
+      width: auto;
+      display: inline-block;
+    }
+  }
 }
 
 textarea {
@@ -186,8 +193,17 @@ textarea {
   }
 }
 
-.compound-field {
+.company-logo {
+  width: 2 * $bs8;
+  height: 2 * $bs8;
+  border: 1px solid $border-grey;
+  margin: 0 0 $bs1 0;
+  background: image-url('icon-picture.png') center center no-repeat;
+  background-size: 70% auto;
+  background-color: $snow-white;
+}
 
+.compound-field {
   .select-field {
     vertical-align: middle;
     margin: 0 $bs1 $bs1 0;

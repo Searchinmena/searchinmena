@@ -1,0 +1,54 @@
+%form{ action: "/company", "ng-submit": "submit($event)" }
+  %form-field{ "error": "errors.business.name" }
+    %label {{ "company.basic_info.company_name" | translate }}
+    %input{ type: "text", "ng-model": "form.business.name" }
+
+  %form-field{ "error": "errors.business.logo" }
+    .company-logo
+    %button.small-button {{ "company.basic_info.add_logo" | translate }}
+
+  %form-field{ "error": "errors.business.phone" }
+    %label {{ "company.basic_info.contact_number" | translate }}
+    %input{ type: "text", "ng-model": "form.business.phone" }
+
+  %form-field{ "error": "errors.business.city" }
+    %label {{ "company.basic_info.city" | translate }}
+    %input{ type: "text", "ng-model": "form.business.city" }
+
+  %form-field{ "error": "errors.business.country" }
+    %label {{ "company.basic_info.location" | translate }}
+    .select-field
+      %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country" }
+        %option{ value: "" } -- {{ "company.basic_info.select_country" | translate }} --
+
+  .field{ "field-name": "business.business_types", "ng-class": "{'field-with-errors': errors.business.business_types}" }
+    %label {{ "company.basic_info.business_types" | translate }}
+    %multiselect{ "model": "selectedItems", "options": "business_types", "select-button-text": "selectButtonText" }
+    %error-message-for{ "error": "errors.business.business_types" }
+
+  .field
+    %label {{ "company.basic_info.main_products" | translate }}
+    %tags-input{ "ng-model": "form.tags", "display-property": "name",
+      "replace-spaces-with-dashes": "false" }
+      %auto-complete{ source: "loadTags($query)",
+        "select-first-match": "false" }
+
+  %form-field{ "error": "errors.business.year_registered" }
+    %label {{ "company.basic_info.year_registered" | translate }}
+    %input.size-specified{ type: "number", "ng-model": "form.business.year_registered" }
+
+  %form-field{ "error": "errors.business.no_of_employees" }
+    %label {{ "company.basic_info.no_of_employees" | translate }}
+    %input.size-specified{ type: "number", "ng-model": "form.business.no_of_employees" }
+
+  %form-field{ "error": "errors.business.detailed_introduction" }
+    %label {{ "company.basic_info.detailed_introduction" | translate }}
+    %textarea{{ "ng-model": "form.business.detailed_introduction" }}
+
+  %form-field{ "error": "errors.business.company_photos" }
+    %label {{ "company.basic_info.company_photos" | translate }}
+    %button.small-button {{ "company.basic_info.add_photos" | translate }}
+    %p.field-comment {{ "company.basic_info.max_images" | translate }}
+
+  .actions
+    %input{ type: "submit", value: '{{ "company.basic_info.submit" | translate }}' }

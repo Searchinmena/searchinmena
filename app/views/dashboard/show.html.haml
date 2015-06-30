@@ -8,7 +8,8 @@
         = t('dashboard_nav.home')
         %span.icon.icon-home
     %li
-      %a.nav-link{ href: "#" }
+      %a.nav-link{ "ui-sref": "company", "ui-sref-active": "active",
+                   "ui-sref-opts": "{ reload: true }" }
         = t('dashboard_nav.company')
         %span.icon.icon-briefcase
     %li

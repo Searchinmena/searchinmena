@@ -1,0 +1,38 @@
+%form
+  .field
+    %label {{ "company.certifications.certification_type" | translate }}
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Type 1
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Type 2
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Different
+  .field
+    %label {{ "company.certifications.name" | translate }}
+    .select-field
+      %select
+        %option --Choose certificate--
+        %option Certificato Manifico
+        %option Awesome Paper
+  .field
+    %label {{ "company.certifications.issued_by" | translate }}
+    .select-field
+      %select
+        %option --Choose something--
+        %option House of Cert
+        %option Dumbledore
+  .field
+    %label {{ "company.certifications.certificate_image" | translate }}
+    %button.small-button {{ "company.certifications.add_image" | translate }}
+  .actions
+    %input{ type: "submit", value: '{{ "company.certifications.submit" | translate }}'}
+
+%h2.title {{ "company.certifications.your_certificates" | translate }}
+%span AWESOME CERTIFICATE
+%span Issued by: Sauron
+.img
+%button.small-button {{ "company.certifications.edit" | translate }}
+%button.small-button {{ "company.certifications.delete" | translate }}

@@ -113,10 +113,11 @@ input[type="submit"] {
   border: 2px solid $facebook-blue;
   border-radius: $bs-4;
   width: 100%;
-  
+
   @media screen and (min-width: $tablet) {
     width: auto;
   }
+
   &:hover {
     color: $facebook-blue;
     background-color: white;
