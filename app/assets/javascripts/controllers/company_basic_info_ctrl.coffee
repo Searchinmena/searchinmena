@@ -20,7 +20,7 @@
     )
 
     $scope.loadTags = (query) ->
-      $http.get(window.Sim.TAGS_PATH, { params: { query: query } })
+      $http.get(window.Sim.TAGS_PATH, params: { query: query })
 
     $scope.submit = (e) ->
       e.preventDefault()
