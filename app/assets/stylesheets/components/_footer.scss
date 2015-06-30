@@ -23,19 +23,30 @@ footer {
 
       @media screen and (min-width: $desktop) { 
         width: 45%;
+        margin: 0 5% 0 0;
+
+        [dir="rtl"] & {
+          margin: 0 0 0 5%;
+        }
       }
 
       @media screen and (min-width: $medium-desktop) { 
         width: 30%;
+
+        margin: 0 3% 0 0;
+
+        [dir="rtl"] & {
+          margin: 0 0 0 3%;
+        }
       }  
     }
   }
 
   .companies-list-link {
     color: white;
-    border-bottom: none;
     padding: $bs-3 $bs-3 $bs-2 0;
     display: block;
+    border-bottom: 0;
   }
 }
 
@@ -114,17 +125,58 @@ address {
 }
 
 .sitemap {
-  background-color: $purple-basic;
+  @extend %clearfix;
+  background-color: $purple-super-dark;
   padding: $bs5;
   clear: both;
 }
 
 .sitemap-links {
+  @extend %clearfix;
   list-style: none;
+
+  @media screen and (min-width: $desktop) {
+    float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+  }
   
   li {
-    text-transform: uppercase;
     display: inline-block;
-    padding: 0 $bs1 0 0;
+    margin: 0 $bs0 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs0;
+    }
+  }
+}
+
+.sitemap-link {
+  @include transition(border, .25s, ease-in-out);
+  display: block;
+  color: white;
+  border-bottom: 1px solid $purple-super-dark;;
+  text-transform: uppercase;
+  padding: $bs-1 0;
+
+  &:hover, &:focus {
+    border-bottom: 1px solid white;
+  }
+}
+
+.copyright {
+  font-size: $bs09;
+  margin: $bs1 0 0;
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    float: right;
+    text-align: auto;
+
+    [dir="rtl"] & {
+      float: left;
+    }
   }
 }

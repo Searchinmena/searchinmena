@@ -52,14 +52,23 @@
   %section.sitemap
     %ul.sitemap-links
       %li
-        About Us
-      %li 
-        Contact Us
+        = link_to("#", class: "sitemap-link") do
+          = t("main_nav.browse")
       %li
-        Browse
+        = link_to("#", class: "sitemap-link") do
+          = t("main_nav.terms")
       %li
-        Terms of Use
+        = link_to("#", class: "sitemap-link") do
+          = t("main_nav.privacy")
       %li
-        Privacy Policy
+        = link_to("#", class: "sitemap-link") do
+          = t("main_nav.contact_us")
       %li
-        Login/Sign up
+        = link_to("#", class: "sitemap-link") do
+          = t("main_nav.signup")
+      %li
+        = link_to("#", class: "sitemap-link") do
+          = t("main_nav.login")
+    %p.copyright
+      © #{current_year}
+      = t("footer.copyright")

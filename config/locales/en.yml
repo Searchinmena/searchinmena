@@ -5,6 +5,9 @@ en:
     logout: "Logout"
     login: "Log in"
     signup: "Sign Up"
+    contact_us: "Contact Us"
+    terms: "Terms of use"
+    privacy: "Privacy Policy"
 
   dashboard_nav:
     home: "Home"
@@ -88,3 +91,4 @@ en:
     address_line_1: "UAE, Dubai Silicon Oasis, Techno Hub Building,"
     address_line_2: "Block A, Office G029"
     address_line_3: "Office Number: 0097143311050"
+    copyright: "MENA Network LTD, All rights reserved."
