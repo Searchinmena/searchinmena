@@ -1,20 +1,10 @@
 %h1.title {{ "company.title" | translate }}
 
 %ul.company-tabs
-  %li.tab
-    %a{ "ui-sref": "company.basic-info", "ui-sref-active": "active",
+  %li.tab{ "ng-repeat": "tab in tabs"}
+    %a{ "ui-sref": "{{tab.href}}", "ui-sref-active": "active",
         class: "tab-link" }
-      {{ "company.tabs.basic_info" | translate }}
-      .icon-chevron-down
-  %li.tab
-    %a{ "ui-sref": "company.trade-details", "ui-sref-active": "active",
-        class: "tab-link" }
-      {{ "company.tabs.trade_details" | translate }}
-      .icon-chevron-down
-  %li.tab
-    %a{ "ui-sref": "company.certifications", "ui-sref-active": "active",
-        class: "tab-link" }
-      {{ "company.tabs.certifications" | translate }}
+      {{ tab.name | translate }}
       .icon-chevron-down
 
 %ui-view
