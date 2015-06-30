@@ -72,7 +72,7 @@ describe NewProductPage, ->
   it "is possible to choose category, go back and choose different one from the same level", ->
     page.categoryButton().click()
 
-    categories = ["Energy", "Coal"]
+    categories = ["Energy", "Crude Oil"]
     page.chooseCategory(category) for category in categories
 
     page.breadcrumbs((elements) ->

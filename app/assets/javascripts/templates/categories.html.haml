@@ -8,12 +8,12 @@
       {{breadcrumbs.title}}
       %span.icon-chevron-right
 
-    %span{ "ng-show": "!breadcrumbs.title" }
-      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbsWithoutLast()" }
+    %span#modal-breadcrumbs{ "ng-show": "!breadcrumbs.title" }
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
         {{item.name}}
         %span.icon-chevron-right
       %span.breadcrumbs-item
-        {{lastBreadcrumb().name}}
+        {{breadcrumbs.current().name}}
 
   .categories-container
     %ul.choose-category-list

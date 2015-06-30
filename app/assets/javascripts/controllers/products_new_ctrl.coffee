@@ -18,11 +18,11 @@
 
     SelectsLoader.loadSelectsData($scope)
 
-    $scope.setCategory = (category) ->
-      $scope.category = category
+    $scope.setCategory = (breadcrumbs) ->
+      $scope.breadcrumbs = breadcrumbs
       $scope.form ||= {}
       $scope.form.product ||= {}
-      $scope.form.product.category_id = category.id
+      $scope.form.product.category_id = breadcrumbs.current().id
 
     $scope.removePhoto = (photo) ->
       index = $scope.photos.indexOf(photo)

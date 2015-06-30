@@ -8,7 +8,12 @@
   .field
     %label {{ "products.new.category" | translate }}
     %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
-    {{category.name}}
+    #category
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
+        {{item.name}}
+        %span.icon-chevron-right
+      %span.breadcrumbs-item
+        {{breadcrumbs.current().name}}
 
   .field
     %label {{ "products.new.photos" | translate }}
