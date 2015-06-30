@@ -90,7 +90,7 @@
 }
 
 .search-results-form {
-  padding: 0 $bs2;
+  padding: $bs1 $bs2 0;
   
   input[type="submit"] {
     margin: $bs1 0 0;
