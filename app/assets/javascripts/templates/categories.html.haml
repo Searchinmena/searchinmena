@@ -1,0 +1,27 @@
+.categories-modal
+  .remove-button{ "ng-click": "cancel()" }
+    %span.icon-remove
+  %h2.modal-header
+    %span.icon-circle-arrow-left#previous-category{ "ng-click": "previous()" }
+
+    %span.breadcrumbs-title{ "ng-show": "breadcrumbs.title" }
+      {{breadcrumbs.title}}
+      %span.icon-chevron-right
+
+    %span#modal-breadcrumbs{ "ng-show": "!breadcrumbs.title" }
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
+        {{item.name}}
+        %span.icon-chevron-right
+      %span.breadcrumbs-item
+        {{breadcrumbs.current().name}}
+
+  .categories-container
+    %ul.choose-category-list
+      %li{ "ng-repeat": "category in categories",
+        "ng-class": "{selected: category.selected}" }
+        %a.category-name{ "ng-click": "next(category)" }
+          {{category.name}}
+
+  .modal-action
+    %input{ type: "submit", value: "OK", "ng-click": "ok()",
+    "ng-disabled": "!selectedCategory" }

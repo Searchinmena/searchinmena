@@ -5,9 +5,16 @@
   %form-field{ "error": "errors.product.name" }
     %label {{ "products.new.name" | translate }}
     %input{ type: "text", "ng-model": "form.product.name" }
-  %form-field{ "error": "errors.product.category" }
+  .field
     %label {{ "products.new.category" | translate }}
-    %button.small-button {{ "products.new.category_button" | translate }}
+    %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+    #category
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
+        {{item.name}}
+        %span.icon-chevron-right
+      %span.breadcrumbs-item
+        {{breadcrumbs.current().name}}
+
   .field
     %label {{ "products.new.photos" | translate }}
     %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
@@ -16,7 +23,8 @@
     %p.field-comment {{ "products.new.photos_comment_thumbnail" | translate }}
     %ul.photos-preview
       %li{ "ng-repeat": "photo in photos" }
-        %img.preview-image{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
+        %img.preview-image{ "ngf-src": "photo",
+        "ngf-default-src": "#{asset_path('default-image')}", "ngf-accept": "'image/*'" }
         %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
           %span.icon-remove
 

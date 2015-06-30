@@ -227,7 +227,8 @@
     
     @media screen and (min-width: $tablet) {
       width: auto;
-      height: 2 * $bs8;
+      max-width: 2 * $bs9;
+      height: 2 * $bs9;
     }
   }
 
@@ -237,10 +238,5 @@
     max-width: 2 * $bs8;
     max-height: 100%;
     border: 1px solid $border-grey;
-    
-    @media screen and (min-width: $tablet) {
-      width: auto;
-      max-width: none;
-    }
   }
 }
