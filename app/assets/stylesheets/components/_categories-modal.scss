@@ -17,6 +17,13 @@
 
   .icon-chevron-right {
     vertical-align: middle;
+    display: inline-block;
+
+    [dir="rtl"] & {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
   }
 
   .icon-circle-arrow-left {
@@ -24,9 +31,20 @@
     font-size: $bs4;
     color: $blue-basic;
 
+    [dir="rtl"] & {
+      display: inline-block;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .breadcrumbs-item {
+    display: inline-block;
   }
 }
 
@@ -64,5 +82,20 @@
 
   input {
     float: right;
+  }
+}
+
+#category {
+  margin: $bs0 0 0;
+  .breadcrumbs-item, .icon-chevron-right {
+    display: inline-block;
+  }
+
+  .icon-chevron-right {
+    [dir="rtl"] & {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
   }
 }
