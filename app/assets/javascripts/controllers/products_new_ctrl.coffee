@@ -1,10 +1,19 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', '$rootScope', '$http', '$state', '$modal',
-  'TranslatedFlash', 'SelectsLoader', 'PhotosValidator', 'PhotosUploader',
-  ($scope, $rootScope, $http, $state, $modal, TranslatedFlash, SelectsLoader,
+@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', '$state', '$modal',
+  'TranslatedFlash', 'selectsLoader', 'PhotosValidator', 'PhotosUploader',
+  ($scope, $http, $state, $modal, TranslatedFlash, selectsLoader,
     PhotosValidator, PhotosUploader) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
+
+    config = {
+      units: "/units",
+      currencies: "/currencies",
+      frequencies: "/frequencies",
+      payment_terms: "/payment_terms"
+    }
+
+    selectsLoader.loadSelectsData($scope, config)
 
     $scope.showCategories = ->
       modalInstance = $modal.open(
@@ -15,8 +24,6 @@
       )
 
       modalInstance.result.then($scope.setCategory)
-
-    SelectsLoader.loadSelectsData($scope)
 
     $scope.setCategory = (breadcrumbs) ->
       $scope.breadcrumbs = breadcrumbs

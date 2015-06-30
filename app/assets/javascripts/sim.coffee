@@ -1,16 +1,13 @@
 @Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
-  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'ui.bootstrap'])
+  'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'ui.bootstrap', 'offClick'])
 
-@Sim.TRANSLATION_DIRS = ['products']
 @Sim.SCROLL_TO_TOP_SPEED = 300
 
 @Sim.config(['$translateProvider',
   ($translateProvider) ->
-    angular.forEach(@Sim.TRANSLATION_DIRS, (dir) ->
-      $translateProvider.useStaticFilesLoader(
-        prefix: "/assets/locales/#{dir}/",
-        suffix: '.json'
-      )
+    $translateProvider.useStaticFilesLoader(
+      prefix: "/assets/locales/",
+      suffix: '.json'
     )
 
     $translateProvider.determinePreferredLanguage(->

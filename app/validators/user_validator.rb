@@ -23,7 +23,7 @@ class UserValidator < BaseValidator
 
     if existing_count > 0
       error_message = I18n.t(
-        "activerecord.errors.messages.uniqueness")
+        "errors.messages.uniqueness")
       errors[:email] << error_message
     end
   end

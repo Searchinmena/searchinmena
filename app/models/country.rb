@@ -1,0 +1,2 @@
+class Country < Translatable
+end

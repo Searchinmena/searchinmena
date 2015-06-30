@@ -24,4 +24,8 @@ module ApplicationHelper
   def email_confirmed?
     current_user.blank? || current_user.confirmed_at.present?
   end
+
+  def current_year
+    Time.now.year
+  end
 end

@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 
   devise_for :users,
-    skip: [:session, :password, :registration, :confirmation],
-    controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+    controllers: {
+      registrations: "users/registrations",
+      sessions: "users/sessions",
+      passwords: "users/passwords",
+      confirmations: "users/confirmations",
+      omniauth_callbacks: "users/omniauth_callbacks"
+    }
 
   get "omniauth/:provider" => "omniauth#localized", as: :localized_omniauth
-
-  devise_for :users, skip: [:omniauth_callbacks], controllers: {
-    registrations: "registrations",
-    sessions: "sessions"
-  }
 
   devise_scope :user do
     get "users", to: "registrations#new"
@@ -31,7 +31,10 @@ Rails.application.routes.draw do
   resources :currencies, only: [:index]
   resources :frequencies, only: [:index]
   resources :payment_terms, only: [:index]
+  resources :countries, only: [:index]
+  resources :business_types, only: [:index]
 
+  resource :company, only: [:create]
   resources :products, only: [:create]
   resources :product_photos, only: [:create]
 end

@@ -1,7 +1,5 @@
 @Sim.controller 'RegistrationsCtrl', ['$scope', '$http',
   ($scope, $http) ->
-    TAGS_PATH = "/tags"
-
     $scope.init = (user_attributes) ->
       user_attributes = JSON.parse(user_attributes)
 
@@ -16,7 +14,7 @@
       provider == "facebook"
 
     $scope.loadTags = (query) ->
-      $http.get("#{TAGS_PATH}?query=#{query}")
+      $http.get(window.Sim.TAGS_PATH, params: { query: query })
 
     $scope.submit = (e) ->
       e.preventDefault()

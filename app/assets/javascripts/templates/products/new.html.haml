@@ -2,7 +2,7 @@
 %form{ action: "/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
-  %form-field{ "field-name": "product.name" }
+  %form-field{ "error": "errors.product.name" }
     %label {{ "products.new.name" | translate }}
     %input{ type: "text", "ng-model": "form.product.name" }
   .field
@@ -29,7 +29,7 @@
           %span.icon-remove
 
 
-    %error-message-for{ "field-name": "errors.photos_general" }
+    %error-message-for{ "error": "errors.photos_general" }
     .error{ "ng-repeat": "(fileName, errors) in errors.photos" }
       {{fileName}}:
       %div{ "ng-repeat": "error in errors.photo" }
@@ -37,10 +37,10 @@
 
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
-  %form-field{ "field-name": "product.model_number" }
+  %form-field{ "error": "errors.product.model_number" }
     %label {{ "products.new.model" | translate }}
     %input{ type: "text", "ng-model": "form.product.model_number" }
-  %form-field{ "field-name": "product.brand_name" }
+  %form-field{ "error": "errors.product.brand_name" }
     %label {{ "products.new.brand" | translate }}
     %input{ type: "text", "ng-model": "form.product.brand_name" }
   .field.compound-field
@@ -62,7 +62,7 @@
     %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
       %span.icon-plus
       {{ "products.new.add_more" | translate }}
-  %form-field{ "field-name": "product.description" }
+  %form-field{ "error": "errors.product.description" }
     %label {{ "products.new.description" | translate }}
     %textarea{ "ng-model": "form.product.description" }
 
@@ -71,7 +71,7 @@
   .field.compound-field
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
-    %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
+    %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
@@ -80,7 +80,7 @@
   .field.compound-field
     %label {{ "products.new.price" | translate }}
     %p.field-comment {{ "products.new.price_comment" | translate }}
-    %form-field{ "field-name": "product.min_order_quantity_number", class: 'inline-field' }
+    %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.fob_price" }
     .select-field
       %select{ "ng-options": "currency.id as currency.label for currency in currencies",
@@ -91,13 +91,13 @@
       %select{ "ng-options": "unit.id as unit.label for unit in units",
       "ng-model": "form.product.fob_price_unit" }
         %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
-  %form-field{ "field-name": "product.port" }
+  %form-field{ "error": "errors.product.port" }
     %label {{ "products.new.port" | translate }}
     %input{ type: "text", "ng-model": "form.product.port" }
   .field.compound-field
     %label {{ "products.new.supply" | translate }}
     %p.field-comment {{ "products.new.supply_comment" | translate }}
-    %form-field{ "field-name": "product.supply_ability_capacity", class: 'inline-field' }
+    %form-field{ "error": "errors.product.supply_ability_capacity", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
@@ -118,7 +118,7 @@
       "ng-model": "form.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
         %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
-  %form-field{ "field-name": "product.packaging" }
+  %form-field{ "error": "errors.product.packaging" }
     %label {{ "products.new.packaging" | translate }}
     %input{ type: "text", "ng-model": "form.product.packaging_details" }
   .actions

@@ -2,7 +2,13 @@
   @extend %clearfix;
   position: relative;
   background-color: white;
-
+  min-height: 100vh;
+  min-height: calc(100vh - 106px);
+  
+  @media screen and (min-width: $tablet) { 
+    padding-bottom: $bs5;
+  } 
+  
   @media screen and (min-width: $medium-desktop) { 
     padding-left: 2 * $bs9;
 

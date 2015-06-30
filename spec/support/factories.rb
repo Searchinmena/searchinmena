@@ -42,13 +42,17 @@ FactoryGirl.define do
   factory :translatable do
     sequence(:key) { |n| "Key#{n}" }
 
-    factory :unit, parent: :translatable, class: 'Unit' do
+    factory :unit, parent: :translatable, class: "Unit" do
     end
-    factory :currency, parent: :translatable, class: 'Currency' do
+    factory :currency, parent: :translatable, class: "Currency" do
     end
-    factory :frequency, parent: :translatable, class: 'Frequency' do
+    factory :frequency, parent: :translatable, class: "Frequency" do
     end
-    factory :payment_term, parent: :translatable, class: 'PaymentTerm' do
+    factory :payment_term, parent: :translatable, class: "PaymentTerm" do
+    end
+    factory :country, parent: :translatable, class: "Country" do
+    end
+    factory :business_type, parent: :translatable, class: "BusinessType" do
     end
   end
 

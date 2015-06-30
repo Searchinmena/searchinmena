@@ -34,6 +34,7 @@ en:
         subject: "Confirmation instructions"
       reset_password_instructions:
         subject: "Reset password instructions"
+      reset_password: "Reset password"
       unlock_text: 'Unlock my account'
       unlock_instructions:
         subject: "Unlock instructions"
