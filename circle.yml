@@ -23,4 +23,4 @@ test:
     - bundle exec rake db:seed
     - npm run protractor
     - bundle exec rubocop
-    - bundle exec haml-lint app/views/ -e app/views/layouts/_head.html.haml
+    - bundle exec haml-lint app/views/
