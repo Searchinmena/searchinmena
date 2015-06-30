@@ -1,7 +1,6 @@
 AD,Andorra,أندورا
 AE,United Arab Emirates,الإمارات العربية المتحدة
 AF,Afghanistan,أفغانستان
-AG,Antigua and Barbuda,أنتيغوا وبربودا
 AI,Anguilla,أنغويلا
 AL,Albania,ألبانيا
 AM,Armenia,أرمينيا
@@ -23,21 +22,16 @@ BG,Bulgaria,بلغاريا
 BH,Bahrain,البحرين
 BI,Burundi,بوروندي
 BJ,Benin,بنين
-BL,Saint Barthélemy,سانت بارتيليمي
 BM,Bermuda,جزر برمود
 BN,Brunei Darussalam,بروناي
 BO,Bolivia,بوليفيا
-BQ,Caribbean Netherlands,الجزر الكاريبية الهولندية
 BR,Brazil,البرازيل
 BS,Bahamas,الباهاماس
 BT,Bhutan,بوتان
-BV,Bouvet Island,جزيرة بوفيت
 BW,Botswana,بوتسوانا
 BY,Belarus,روسيا البيضاء
 BZ,Belize,بيليز
 CA,Canada,كندا
-CC,Cocos (Keeling) Islands,(جزر كوكوس ( كيلينغ
-CD,"Congo, Democratic Republic of",جمهورية الكونغو الديمقراطية
 CF,Central African Republic,جمهورية أفريقيا الوسطى
 CG,Congo,جمهورية الكونغو
 CH,Switzerland,سويسرا
@@ -51,14 +45,12 @@ CR,Costa Rica,كوستاريكا
 CU,Cuba,كوبا
 CV,Cape Verde,الرأس الأخضر
 CW,Curaçao,كوراساو
-CX,Christmas Island,جزيرة الكريسماس
 CY,Cyprus,قبرص
 CZ,Czech Republic,الجمهورية التشيكية
 DE,Germany,ألمانيا
 DJ,Djibouti,جيبوتي
 DK,Denmark,الدانمارك
 DM,Dominica,دومينيكا
-DO,Dominican Republic,الجمهورية الدومينيكية
 DZ,Algeria,الجزائر
 EC,Ecuador,إكوادور
 EE,Estonia,استونيا
@@ -68,8 +60,6 @@ ES,Spain,إسبانيا
 ET,Ethiopia,أثيوبيا
 FI,Finland,فنلندا
 FJ,Fiji,فيجي
-FK,Falkland Islands,جزر فوكلاند
-FM,"Micronesia, Federated States of",ولايات ميكرونيسيا المتحدة
 FO,Faroe Islands,جزر فارو
 FR,France,فرنسا
 GA,Gabon,الغابون
@@ -97,9 +87,7 @@ HT,Haiti,هايتي
 HU,Hungary,المجر
 ID,Indonesia,أندونيسيا
 IE,Ireland,جمهورية أيرلندا
-IM,Isle of Man,جزيرة مان
 IN,India,الهند
-IO,British Indian Ocean Territory,إقليم المحيط الهندي البريطاني
 IQ,Iraq,العراق
 IR,Iran,إيران
 IS,Iceland,آيسلندا
@@ -113,7 +101,6 @@ KG,Kyrgyzstan,قيرغيزستان
 KH,Cambodia,كمبوديا
 KI,Kiribati,كيريباتي
 KM,Comoros,جزر القمر
-KN,Saint Kitts and Nevis,سانت كيتس ونيفس
 KR,South Korea,كوريا الجنوبية
 KW,Kuwait,الكويت
 KY,Cayman Islands,جزر كايمان
@@ -152,7 +139,6 @@ MX,Mexico,المكسيك
 MY,Malaysia,ماليزيا
 MZ,Mozambique,موزمبيق
 NA,Namibia,ناميبيا
-NC,New Caledonia,كاليدونيا الجديدة
 NE,Niger,النيجر
 NF,Norfolk Island,جزيرة نورفولك
 NG,Nigeria,نيجيريا
@@ -166,13 +152,10 @@ NZ,New Zealand,نيوزيلندا
 OM,Oman,عُمان
 PA,Panama,بنما
 PE,Peru,بيرو
-PF,French Polynesia,بولينيزيا الفرنسية
 PG,Papua New Guinea,بابوا غينيا الجديدة
 PH,Philippines,الفليبين
 PK,Pakistan,باكستان
 PL,Poland,بولندا
-PM,St. Pierre and Miquelon,سانت بيير و ميكلون
-PN,Pitcairn,بيتكيرن
 PR,Puerto Rico,بورتوريكو
 PS,"Palestine, State of",فلسطين
 PT,Portugal,البرتغال
@@ -197,9 +180,7 @@ SM,San Marino,سان مارينو
 SN,Senegal,السنغال
 SO,Somalia,الصومال
 SR,Suriname,سورينام
-ST,Sao Tome and Principe,ساو تومي وبرينسيبي
 SV,El Salvador,إلسلفادور
-SX,Sint Maarten (Dutch part),سانت مارتن
 SY,Syria,سوريا
 SZ,Swaziland,سوازيلند
 TD,Chad,تشاد
