@@ -9,9 +9,8 @@
   = form_field("business.country") do
     = b.label :country, t("sign_up.location")
     .select-field
-      = country_select :"user[business]", :country,
-        { prompt: t("sign_up.location_select") },
-        { "ng-model": "form.business.country" }
+      %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country" }
+        %option{ value: "" }= t("sign_up.location_select")
 
   = form_field("business.phone") do
     = b.label :phone, t("sign_up.contact_number")

@@ -1,5 +1,13 @@
-@Sim.controller 'RegistrationsCtrl', ['$scope', '$http',
-  ($scope, $http) ->
+@Sim.controller 'RegistrationsCtrl', ['$scope', '$http', 'selectsLoader',
+  ($scope, $http, selectsLoader) ->
+    config = {
+      countries: "/countries"
+    }
+
+    selectsLoader.loadSelectsData($scope, config)
+
+    window.scope = $scope
+
     $scope.init = (user_attributes) ->
       user_attributes = JSON.parse(user_attributes)
 
