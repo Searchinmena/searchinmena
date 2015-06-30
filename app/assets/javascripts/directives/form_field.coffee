@@ -1,14 +1,11 @@
-@Sim.directive 'formField', ['$compile', ($compile) ->
+@Sim.directive 'formField', ->
   restrict: 'E',
   replace: true,
   transclude: true,
-  template: "<div ng-transclude></div>",
+  templateUrl: '/assets/templates/form_field',
+  scope: {
+    error: '='
+  }
   link: (scope, el, attrs) ->
     attrs.$set("class", attrs.class || "field")
 
-    error = scope.$eval("errors.#{attrs.fieldName}")
-    el.addClass('field-with-errors') if error
-
-    el.append("<error-message-for field-name='errors.#{attrs.fieldName}'></error-message-for>")
-    $compile(el.contents())(scope)
-]
