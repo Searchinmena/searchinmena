@@ -1,8 +1,7 @@
 @Sim.directive 'errorMessageFor', ->
   restrict: 'E',
-  template: "<span class='error' ng-show='fieldName'>{{fieldName}}</span>",
+  template: "<span class='error' ng-show='error'>{{error}}</span>",
   replace: true,
-  transclude: false,
   scope: {
-    fieldName: '='
+    error: '='
   }
