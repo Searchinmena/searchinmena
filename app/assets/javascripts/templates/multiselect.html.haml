@@ -13,4 +13,4 @@
     %li{"ng-repeat": "option in options"}
       %a{"ng-click": "setSelectedItem()"}
         {{option.label}}
-        %span{"ng-class": "isChecked(option.id)"}
+        %span{"ng-class": "{'icon-ok': isChecked(option.id)}"}

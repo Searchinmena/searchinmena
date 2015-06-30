@@ -33,7 +33,7 @@
       false
 
     $scope.isChecked = (id) ->
-      return "icon-ok"  if _.contains($scope.model, id)
+      return true if _.contains($scope.model, id)
       false
 
     $scope.displayButtonText = () ->
