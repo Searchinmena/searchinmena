@@ -4,13 +4,7 @@
     $scope.form = { business:
       business_types: [381, 375, 378]
     }
-    $scope.errors = { business: {
-        name: "can't be blank",
-        phone: "can't be blank",
-        country: "can't be blank",
-        business_types: "can't be blank"
-      }
-    }
+    $scope.errors = {}
 
     config = {
       countries: "/countries",
@@ -30,6 +24,13 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
+      $scope.errors = { business: {
+          name: "can't be blank",
+          phone: "can't be blank",
+          country: "can't be blank",
+          business_types: "can't be blank"
+        }
+      }
 
       console.log($scope.form)
 
