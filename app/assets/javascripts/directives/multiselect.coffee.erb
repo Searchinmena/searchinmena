@@ -6,8 +6,7 @@
   scope:
     model: "="
     options: "="
-    pre_selected: "=preSelected"
-    select_button_text: "=selectButtonText"
+    selectButtonText: "=selectButtonText"
 
   controller: ($scope) ->
     $scope.isDropdownVisible = false
@@ -21,11 +20,9 @@
 
     $scope.selectAll = ->
       $scope.model = _.pluck($scope.options, "id")
-      console.log $scope.model
 
     $scope.deselectAll = ->
       $scope.model = []
-      console.log $scope.model
 
     $scope.setSelectedItem = ->
       id = @option.id
@@ -33,7 +30,6 @@
         $scope.model = _.without($scope.model, id)
       else
         $scope.model.push id
-      console.log $scope.model
       false
 
     $scope.isChecked = (id) ->
@@ -46,6 +42,6 @@
       names = (option.label for option in options when option.id in ids)
 
       if names.length == 0
-        "-- " + $scope.select_button_text + " --"
+        "-- " + $scope.selectButtonText + " --"
       else
         names.join(", ")

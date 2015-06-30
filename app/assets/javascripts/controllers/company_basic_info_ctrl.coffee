@@ -20,13 +20,13 @@
     selectsLoader.loadSelectsData($scope, config)
 
     # Settings for business type multiselect
-    $scope.selected_items = $scope.form.business.business_types
+    $scope.selectedItems = $scope.form.business.business_types
     $translate('company.basic_info.select_business_types').then((translation) ->
-      $scope.select_button_text = translation
+      $scope.selectButtonText = translation
     )
 
     $scope.loadTags = (query) ->
-      $http.get("#{window.Sim.TAGS_PATH}?query=#{query}")
+      $http.get(window.Sim.TAGS_PATH, { params: { query: query } })
 
     $scope.submit = (e) ->
       e.preventDefault()
