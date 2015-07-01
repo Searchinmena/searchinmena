@@ -77,6 +77,11 @@
 
    @media screen and (min-width: $tablet) {
     margin-right: $bs0;
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: $bs0;
+    }
   }
 
   @media screen and (min-width: $desktop) {
