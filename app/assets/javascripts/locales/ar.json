@@ -1,4 +1,7 @@
 {
+  "dashboard": {
+    "greeting": "Welcome to your dashboard,"
+  },
   "company": {
     "title": "Company Profile AR",
     "tabs": {
