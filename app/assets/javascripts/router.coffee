@@ -27,11 +27,13 @@
       )
       .state('company.trade_details',
         url: '/trade_details',
-        templateUrl: "company/trade_detail.html"
+        templateUrl: "company/trade_details.html",
+        controller: "CompanyTradeDetailsCtrl"
       )
       .state('company.certifications',
         url: '/certifications',
-        templateUrl: "company/certification.html"
+        templateUrl: "company/certifications.html",
+        controller: "CompanyCertificationsCtrl"
       )
     $urlRouterProvider.otherwise('/')
 ]
