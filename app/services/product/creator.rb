@@ -4,12 +4,14 @@ class Product::Creator < BaseService
   takes :params, :user
 
   def perform
-    response = product_creator
-    product_attribute_creator(response)
-    response
+    response = save_product
+    return response unless response.successful?
+
+    product = response.object
+    save_attributes_for(product)
   end
 
-  def product_creator
+  def save_product
     business = business_repository.find_by_user_id(user.id)
     return Response.new(success: false) unless business.present?
 
@@ -21,10 +23,12 @@ class Product::Creator < BaseService
     storing_handler.perform
   end
 
-  def product_attribute_creator(response)
-    attribute = Product::ProductAttributeCreator.new(params[:attributes],
-                                                     response.object)
-    attribute.perform
+  def product_attribute_creator(product)
+    attributes_creator = Product::ProductAttributeCreator.new(
+      params[:attributes],
+      product
+    )
+    attributes_creator.perform
   end
 end
 

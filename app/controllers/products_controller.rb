@@ -41,6 +41,6 @@ class ProductsController < ApplicationController
   end
 
   def attributes_params
-    params[:attributes]
+    params.permit(attributes: [:name, :value])[:attributes] || {}
   end
 end
