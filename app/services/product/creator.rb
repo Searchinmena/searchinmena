@@ -23,7 +23,7 @@ class Product::Creator < BaseService
     storing_handler.perform
   end
 
-  def product_attribute_creator(product)
+  def save_attributes_for(product)
     attributes_creator = Product::ProductAttributeCreator.new(
       params[:attributes],
       product

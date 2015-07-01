@@ -4,7 +4,7 @@ class Product::ProductAttributeCreator < BaseService
   takes :params, :product
 
   def perform
-    params.each do |attribute_params|
+    responses = params.map do |attribute_params|
       attribute_params = attribute_params.merge(product: product)
       product_attribute = product_attribute_repository.new(attribute_params)
       validator = ProductAttributeValidator.new(attribute_params)
@@ -13,5 +13,6 @@ class Product::ProductAttributeCreator < BaseService
                                            validator)
       storing_handler.perform
     end
+    Response.new(success: responses.all?(&:successful?), object: product)
   end
 end
