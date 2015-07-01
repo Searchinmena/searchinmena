@@ -1,31 +1,31 @@
 {
   "dashboard": {
-    "greeting": "Welcome to your dashboard,"
+    "greeting": "مرحبا بك"
   },
   "company": {
-    "title": "Company Profile AR",
+    "title": "ملف الشركة - اللغة العربية",
     "tabs": {
-      "basic_info": "Basic Information",
-      "trade_details": "Trade Details",
-      "certifications": "Certifications"
+      "basic_info": "المعلومات الأساسية",
+      "trade_details": "المعلومات التجارية",
+      "certifications": "الشهادات"
     },
     "basic_info": {
-      "company_name": "Company name",
-      "add_logo": "Add logo",
-      "contact_number": "Contact number",
-      "city": "City",
+      "company_name": "أسم الشركة",
+      "add_logo": "أضف لوجو",
+      "contact_number": "رقم الإتصال",
+      "city": "المدينة",
       "location": "Location",
-      "select_country": "Select country",
-      "business_types": "Business types",
-      "select_business_types": "Select business types",
-      "main_products": "Main products",
-      "year_registered": "Year company registered",
-      "no_of_employees": "No. of employees",
-      "detailed_introduction": "Detailed introduction",
-      "company_photos": "Company photos",
-      "add_photos": "Add photos",
-      "max_images": "max 5 images",
-      "submit": "Save changes"
+      "select_country": "إختر بلد",
+      "business_types": "نوع العمل",
+      "select_business_types": "إختر نوع العمل",
+      "main_products": "المنتجات الرئيسية",
+      "year_registered": "سنة تسجيل الشركة",
+      "no_of_employees": "عدد الموظفين",
+      "detailed_introduction": "مقدمة مختصرة عن الشركة",
+      "company_photos": "صور الشركة",
+      "add_photos": "أضف صور",
+      "max_images": " 5 صور حد أقصى",
+      "submit": "حفظ"
     },
     "trade_details": {
       "annual_sales_value": "Annual sales value",
