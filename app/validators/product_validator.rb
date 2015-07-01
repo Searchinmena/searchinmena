@@ -1,6 +1,10 @@
 class ProductValidator < BaseValidator
   def self.fields
-    [:name, :model_number, :brand_name, :description, :category_id]
+    [:name, :model_number, :brand_name, :min_order_quantity_number,
+     :min_order_quantity_unit, :fob_price, :fob_price_currency, :fob_price_unit,
+     :port, :payment_terms, :supply_abbility_capacity, :supply_abbility_unit,
+     :supply_abbility_frequency, :supply_abbility_unit, :supply_abbility_frequency,
+     :packaging_details, :description, :category_id]
   end
 
   attr_accessor(*fields)
