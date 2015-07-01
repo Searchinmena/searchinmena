@@ -227,6 +227,10 @@ textarea {
 .checkbox-field {
   padding: $bs-3 0;
 
+  input:hover ,label:hover {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: $tablet) {
     display: inline-block;
   }
