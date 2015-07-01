@@ -35,8 +35,8 @@ class ProductsController < ApplicationController
       .permit([:name, :model_number, :brand_name, :description, :category_id,
                :min_order_quantity_number, :min_order_quantity_unit,
                :fob_price, :fob_price_currency, :fob_price_unit, :port,
-               :payment_terms, :supply_abbility_capacity,
-               :supply_abbility_unit, :upply_abbility_frequency,
+               :payment_terms, :supply_ability_capacity,
+               :supply_ability_unit, :upply_ability_frequency,
                :packaging_details])
   end
 

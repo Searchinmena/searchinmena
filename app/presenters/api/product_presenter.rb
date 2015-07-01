@@ -17,9 +17,9 @@ class Api::ProductPresenter
       fob: fob_json,
       port: product.port,
       payment_terms: product.payment_terms,
-      supply_abbility_number: product.supply_abbility_number,
-      supply_abbility_type: product.supply_abbility_type,
-      upply_abbility_capacity: product.upply_abbility_capacity,
+      supply_ability_number: product.supply_ability_number,
+      supply_ability_type: product.supply_ability_type,
+      upply_ability_capacity: product.upply_ability_capacity,
       packaging_details: product.packaging_details
     }
   end
