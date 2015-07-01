@@ -8,6 +8,8 @@
   .field
     %label {{ "products.new.category" | translate }}
     %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+
+    %error-message-for{ "error": "errors.product.category_id" }
     #category
       %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
         {{item.name}}
