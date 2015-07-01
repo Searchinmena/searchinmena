@@ -19,7 +19,7 @@ test:
     - sleep 5
   override:
     - bundle exec rspec --color --require spec_helper spec --format progress
-    - npm run karma
+    - RAILS_ENV=test RACK_ENV=test bundle exec rake spec:javascript
     - bundle exec rake db:seed
     - npm run protractor
     - bundle exec rubocop

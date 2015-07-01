@@ -3,35 +3,35 @@
     $stateProvider
       .state('dashboard',
         url: '/',
-        templateUrl: "<%= asset_path('templates/dashboard') %>",
+        templateUrl: "dashboard.html",
         controller: 'DashboardCtrl'
       )
       .state('products',
         url: '/products',
-        templateUrl: "<%= asset_path('templates/products/index') %>",
+        templateUrl: "products/index.html",
         controller: 'ProductsIndexCtrl'
       )
       .state('new_product',
         url: '/products/new',
-        templateUrl: "<%= asset_path('templates/products/new') %>",
+        templateUrl: "products/new.html",
         controller: 'ProductsNewCtrl'
       )
       .state('company',
         url: '/company',
-        templateUrl: "<%= asset_path('templates/company/index') %>",
+        templateUrl: "company/index.html",
         controller: 'CompanyCtrl'
       )
       .state('company.basic_info',
-        templateUrl: "<%= asset_path('templates/company/basic_info') %>",
+        templateUrl: "company/basic_info.html",
         controller: 'CompanyBasicInfoCtrl'
       )
       .state('company.trade_details',
         url: '/trade_details',
-        templateUrl: "<%= asset_path('templates/company/trade_details') %>"
+        templateUrl: "company/trade_detail.html"
       )
       .state('company.certifications',
         url: '/certifications',
-        templateUrl: "<%= asset_path('templates/company/certifications') %>"
+        templateUrl: "company/certification.html"
       )
     $urlRouterProvider.otherwise('/')
 ]

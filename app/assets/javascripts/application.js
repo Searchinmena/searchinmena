@@ -17,6 +17,7 @@
 //= require angular-translate-loader-static-files
 //= require angular-sanitize
 //= require angular-animate
+//= require angular-rails-templates
 //= require ng-tags-input
 //= require angular-flash-alert
 //= require jquery

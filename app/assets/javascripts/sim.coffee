@@ -1,4 +1,4 @@
-@Sim = angular.module('sim', ['ui.router', 'pascalprecht.translate', 'ngSanitize',
+@Sim = angular.module('sim', ['ui.router', 'templates', 'pascalprecht.translate', 'ngSanitize',
   'ngTagsInput', 'ngAnimate', 'ngCookies', 'flash', 'ngFileUpload', 'ui.bootstrap', 'offClick'])
 
 @Sim.SCROLL_TO_TOP_SPEED = 300

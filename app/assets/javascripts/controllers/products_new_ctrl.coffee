@@ -17,7 +17,7 @@
 
     $scope.showCategories = ->
       modalInstance = $modal.open(
-        templateUrl: '/assets/templates/categories',
+        templateUrl: 'categories.html',
         controller: 'CategoriesCtrl',
         animation: false,
         size: 'lg'

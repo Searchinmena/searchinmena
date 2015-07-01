@@ -5,16 +5,9 @@
   "devDependencies": {
     "coffee-script": "^1.9.2",
     "protractor": "^2.1.0",
-    "karma":"^0.12.32",
-    "karma-jasmine": "~0.1.0",
-    "karma-firefox-launcher": "~0.1",
-    "karma-coffee-preprocessor": "~0.1",
     "bower": "^1.4.1"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start spec/karma.conf.coffee",
-    "karma": "./node_modules/karma/bin/karma start spec/karma.conf.coffee  --single-run",
-
     "update-webdriver": "./node_modules/protractor/bin/webdriver-manager update",
     "start-webdriver": "./node_modules/protractor/bin/webdriver-manager start",
 

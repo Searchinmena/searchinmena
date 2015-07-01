@@ -41,5 +41,8 @@ module Sim
     config.action_view.field_error_proc = proc { |html_tag|
       "<span class=\"field-with-errors\">#{html_tag}</span>".html_safe
     }
+
+    config.angular_templates.ignore_prefix  = %w(templates/)
+    config.angular_templates.markups        = %w(haml)
   end
 end

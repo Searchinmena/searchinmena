@@ -44,8 +44,12 @@ bundle exec rspec spec
 
 ##### Jasmine (javascript tests)
 
+Visit `http://localhost:3000/specs`
+
+Or run:
+
 ```
-npm run karma
+RAILS_ENV=test RACK_ENV=test bundle exec rake spec:javascript
 ```
 
 Or if you prefer browser view go to: http://localhost:3000/specs
@@ -96,7 +100,7 @@ To run it just type:
 bundle exec guard start
 ```
 
-It works only for ruby tests (yet). There is no way for running protractor tests like that yet, but you can use `npm run test` for karma tests.
+It works only for ruby tests (yet).
 
 #### Services
 
