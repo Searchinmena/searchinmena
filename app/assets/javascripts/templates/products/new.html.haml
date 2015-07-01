@@ -26,7 +26,7 @@
     %ul.photos-preview
       %li{ "ng-repeat": "photo in photos" }
         %img.preview-image{ "ngf-src": "photo",
-        "ngf-default-src": "#{asset_path('default-image')}", "ngf-accept": "'image/*'" }
+        "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
         %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
           %span.icon-remove
 
