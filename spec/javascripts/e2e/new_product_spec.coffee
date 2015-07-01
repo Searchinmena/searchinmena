@@ -91,3 +91,9 @@ describe NewProductPage, ->
     page.breadcrumbs((elements) ->
       expect(elements.length).toEqual(2)
     )
+
+    page.chooseCategory("Paraffin")
+    page.submitCategoryButton().click()
+
+    expect(element(By.css(page.categoriesModalCss)).isElementPresent()).toBe(false)
+    expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)

@@ -12,12 +12,15 @@ class NewProductPage
     @filePath = "../../../support/fixtures/test-image.png"
     @removePhotoCss = ".remove-photo"
 
+    @categoriesModalCss = ".categories-modal"
     @chooseCategoryId = "choose-category"
     @categoryTitleCss = ".breadcrumbs-title"
     @submitCategoryCss = ".modal-action input"
     @categoryCss = "a.category-name"
     @breadcrumbCss = "#modal-breadcrumbs .breadcrumbs-item"
     @previousCategoryId = "previous-category"
+
+    @breadcrumbInFormCss = "#category .breadcrumbs-item"
 
   get: ->
     browser.get("/dashboard#/products/new")
@@ -70,5 +73,8 @@ class NewProductPage
 
   previousCategoryButton: ->
     element(By.id(@previousCategoryId))
+
+  breadcrumbInForm: (category) ->
+    element(By.cssContainingText(@breadcrumbInFormCss, category))
 
 module.exports = NewProductPage
