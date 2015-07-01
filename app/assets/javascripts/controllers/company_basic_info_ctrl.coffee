@@ -14,7 +14,7 @@
     selectsLoader.loadSelectsData($scope, config)
 
     # Settings for business type multiselect
-    $scope.selectedItems = $scope.form.business.business_types
+    $scope.selectedBusinessTypes = $scope.form.business.business_types || []
     $translate('company.basic_info.select_business_types').then((translation) ->
       $scope.selectButtonText = translation
     )
