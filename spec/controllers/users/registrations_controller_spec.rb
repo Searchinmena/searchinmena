@@ -46,8 +46,7 @@ describe Users::RegistrationsController do
       {
         "name" => business.name,
         "country" => business.country,
-        "phone" => business.phone,
-        "business_type" => business.business_type.to_s
+        "phone" => business.phone
       }
     end
     let(:registration_params) do

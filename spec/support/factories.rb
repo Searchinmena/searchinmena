@@ -21,7 +21,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "Business#{n}" }
     country { "ARE" }
     phone { "777-777-777" }
-    business_type { Business.business_types[:agent] }
     association :user
   end
 

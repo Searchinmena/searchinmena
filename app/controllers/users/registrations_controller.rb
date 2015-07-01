@@ -1,7 +1,6 @@
 module Users
   class RegistrationsController < Devise::RegistrationsController
-    inject :user_repository, :business_repository, :business_presenter,
-          :user_params_factory
+    inject :user_repository, :business_repository, :user_params_factory
 
     def new
       user_params = user_params_factory.build(session["devise.auth_data"])
@@ -10,8 +9,7 @@ module Users
       session["devise.auth_data"] = nil
       render :new, locals: {
         user: user, business: business,
-        user_presenter: UserPresenter.new(user),
-        business_presenter: business_presenter
+        user_presenter: UserPresenter.new(user)
       }
     end
 
@@ -52,7 +50,7 @@ module Users
 
     def business_params
       params[:business]
-        .permit([:name, :country, :phone, :business_type])
+        .permit([:name, :country, :phone])
     end
 
     def tags_params

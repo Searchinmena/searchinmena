@@ -57,8 +57,6 @@ ar:
     location: "الموقع"
     location_select: "-- Select Country --"
     contact_number: "رقم الاتصال"
-    business_type: "نوع الشركة"
-    business_type_select: "-- Select Business Type --"
     main_products: "المنتجات الرئيسية"
 
   sign_in:

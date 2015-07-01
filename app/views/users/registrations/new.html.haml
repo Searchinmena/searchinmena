@@ -2,8 +2,7 @@
   "ng-init": "init('#{escape_javascript(user_presenter.to_json)}')" }
   .sign-up-wrapper
     = render partial: "users/registrations/form",
-      locals: { user: user, business: business,
-                business_presenter: business_presenter }
+    locals: { user: user, business: business }
 
     .form-additional-panel
       %h1.title= t("text.title")

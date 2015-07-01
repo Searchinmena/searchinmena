@@ -6,7 +6,7 @@ describe BusinessValidator do
   let(:valid_params) { build_params(build(:business)) }
 
   describe "presence validation" do
-    [:name, :country, :phone, :business_type].each do |field|
+    [:name, :country, :phone].each do |field|
       let(:business_params) do
         valid_params.merge(field => '')
       end
