@@ -23,7 +23,7 @@
 
 .dashboard-navigation {
   @include transition(all, 1s, ease-in-out);
-  background-color: $snow-white;
+  background-color: $medium-grey;
   border-bottom: 1px solid $border-grey;
   list-style: none;
   width: 100%;
@@ -60,22 +60,27 @@
     text-decoration: none;
     text-transform: uppercase;
     padding: 0 $bs2 0 0;
-    line-height: 3 * $bs2;
+    line-height: 3 * $bs1;
     border-bottom: 0;
     position: relative;
     color: $basic-font;
     font-weight: 100;
+    border-bottom: 1px solid $border-grey;
 
     [dir="rtl"] & {
       padding: 0 0 0 $bs2;
     }
 
     &.active {
-      background-color: $light-grey;
+      background-color: white;
       color: $nav-link;
+
+      .icon {
+        color: $nav-link;
+      }
     }
 
-    &:hover, &.focus {
+    &:hover, &:focus {
       color: $nav-link;
     }
   }
@@ -84,10 +89,10 @@
     @include transition(all, .25s, ease-in-out);
     display: inline-block;
     font-size: $bs2;
-    line-height: 3 * $bs2;
+    line-height: 3 * $bs1;
     padding: 0 $bs2;
     float: left;
-    color: $nav-link;
+    color: $grey;
 
     [dir="rtl"] & {
       float: right;

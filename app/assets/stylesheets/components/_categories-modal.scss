@@ -1,12 +1,12 @@
 .categories-modal {
   z-index: 1001;
-}
 
-.remove-button {
-  float: right;
-  margin: $bs0;
-  padding: $bs-3;
-  cursor: pointer;
+  .remove-button {
+    float: right;
+    margin: $bs0;
+    padding: $bs-3;
+    cursor: pointer;
+  }
 }
 
 .modal-header {
