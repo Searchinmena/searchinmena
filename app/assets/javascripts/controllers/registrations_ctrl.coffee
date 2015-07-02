@@ -2,8 +2,8 @@
 'selectsLoader',
   ($scope, $http, $translate, selectsLoader) ->
     config = {
-      countries: "/countries",
-      business_types: "/business_types"
+      countries: '/countries',
+      business_types: '/business_types'
     }
 
     selectsLoader.loadSelectsData($scope, config)
@@ -23,11 +23,11 @@
 
     $scope.shouldShowCompanyInfo = ->
       category = $scope.form.user.category
-      category == "seller" || category == "both"
+      category == 'seller' || category == 'both'
 
     $scope.isFacebookSignup = ->
       provider = $scope.form.user.provider
-      provider == "facebook"
+      provider == 'facebook'
 
     $scope.loadTags = (query) ->
       $http.get(window.Sim.TAGS_PATH, params: { query: query })

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe ProductPhotoValidator do
   subject { ProductPhotoValidator.new(product_photo_params) }

@@ -16,10 +16,10 @@
     = b.label :phone, t("sign_up.contact_number")
     = b.text_field :phone, "ng-model": "form.business.phone"
 
-  .field{ "field-name": "business.business_types", "ng-class": "{'field-with-errors': errors.business.business_types}" }
+  .field{ "ng-class": "{'field-with-errors': errors.business.business_type_ids}" }
     %label {{ "company.basic_info.business_types" | translate }}
     %multiselect{ "model": "form.business_types", "options": "business_types", "select-button-text": "selectButtonText" }
-    %error-message-for{ "error": "errors.business.business_types" }
+    %error-message-for{ "error": "errors.business.business_type_ids" }
 
   .field
     = label_tag :main_products, t("sign_up.main_products")

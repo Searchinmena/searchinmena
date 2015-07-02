@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe BusinessValidator do
   subject { BusinessValidator.new(business_params) }
@@ -6,9 +6,9 @@ describe BusinessValidator do
   let(:valid_params) { build_params(build(:business)) }
 
   describe "presence validation" do
-    [:name, :country, :phone].each do |field|
+    [:name, :country, :phone, :business_type_ids].each do |field|
       let(:business_params) do
-        valid_params.merge(field => '')
+        valid_params.merge(field => "")
       end
 
       it "requires #{field} to be present" do
