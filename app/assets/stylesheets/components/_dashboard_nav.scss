@@ -1,9 +1,9 @@
 .dashboard-menu-btn {
   text-transform: uppercase;
-  background-color: $snow-white;
+  background-color: white;
   border-bottom: 1px solid $border-grey;
   color: $blue-basic;
-  padding: $bs0 $bs2;
+  line-height: 3 * $bs2;
 
   @media screen and (min-width: $medium-desktop) {
     display: none;
@@ -11,13 +11,23 @@
 
   &:hover, &:focus {
     cursor: pointer;
-    background-color: $light-grey;
   }
 
   .icon-chevron-down {
+    display: inline-block;
     font-size: $bs2;
+    line-height: 3 * $bs2;
+    padding: 0 $bs2;
     vertical-align: middle;
-    padding: 0 $bs-2 0 0;
+    border-right: 1px solid $border-grey;
+    margin-right: $bs0;
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: $bs0;
+      border-right: 0;
+      border-left: 1px solid $border-grey;
+    }
   }
 }
 
