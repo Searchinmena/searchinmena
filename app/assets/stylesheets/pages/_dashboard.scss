@@ -1,7 +1,17 @@
+%dashboard-content-padding {
+  padding-left: $bs0;
+  padding-right: $bs0;
+
+  @media screen and (min-width: $tablet) { 
+    padding-left: $bs6;
+    padding-right: $bs6;
+  }
+}
+
 .dashboard-container {
   @extend %clearfix;
   position: relative;
-  background-color: white;
+  background-color: $medium-grey;
   min-height: 100vh;
   min-height: calc(100vh - 106px);
   
@@ -20,18 +30,40 @@
 }
 
 .dashboard-content {
+  background-color: white;
   overflow: hidden;
-  padding: $bs4 0 $bs3;
+  border: 1px solid $border-grey;
+  margin: 0 $bs-1;
 
   @media screen and (min-width: $desktop) { 
-    padding: $bs4 $bs2 $bs3;
   }
   
-  .title, .subtitle {
+  .header-title, .title, .subtitle {
     @extend %basic-title;
+  }
+
+  .header-title {
+    @extend %dashboard-content-padding;
+    border-bottom: 1px solid $border-grey;
+    margin: 0 0 $bs2 0;
+    line-height: 3 * $bs2;
+  }
+
+  .title {
+    @extend %dashboard-content-padding;
   }
 
   .subtitle {
     color: $grey;
   }
+
+  form {
+    @extend %dashboard-content-padding;
+  }
+}
+
+.dashboard-section {
+  @extend %dashboard-content-padding;
+  padding-top: $bs0;
+  padding-bottom: $bs5;
 }

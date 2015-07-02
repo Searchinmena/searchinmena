@@ -23,7 +23,7 @@
 
 .dashboard-navigation {
   @include transition(all, 1s, ease-in-out);
-  background-color: $medium-grey;
+  background-color: white;
   border-bottom: 1px solid $border-grey;
   list-style: none;
   width: 100%;
@@ -37,7 +37,9 @@
   @media screen and (min-width: $medium-desktop) { 
     max-height: none;
     display: block;
+    border-top: 1px solid $border-grey;
     border-right: 1px solid $border-grey;
+    border-bottom: 0;
     position: absolute;
     left: 0;
     height: 100%;
@@ -57,10 +59,11 @@
   .nav-link {
     @include transition(all, .25s, ease-in-out);
     display: block;
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     padding: 0 $bs2 0 0;
-    line-height: 3 * $bs1;
+    line-height: 3 * $bs2;
     border-bottom: 0;
     position: relative;
     color: $basic-font;
@@ -77,11 +80,29 @@
 
       .icon {
         color: $nav-link;
+      } 
+      
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        height: calc(100% + 2px);
+        top: -1px;
+        right: 0;
+        background-color: $nav-link;
+
+        [dir="rtl"] & {
+          right: auto;
+          left: 0;
+        }
       }
     }
 
     &:hover, &:focus {
       color: $nav-link;
+      background-color: white;
     }
   }
 
@@ -89,13 +110,19 @@
     @include transition(all, .25s, ease-in-out);
     display: inline-block;
     font-size: $bs2;
-    line-height: 3 * $bs1;
+    line-height: 3 * $bs2;
     padding: 0 $bs2;
     float: left;
     color: $grey;
+    border-right: 1px solid $border-grey;
+    margin-right: $bs0;
 
     [dir="rtl"] & {
       float: right;
+      border-right: 0;
+      border-left: 1px solid $border-grey;
+      margin-right: 0;
+      margin-left: $bs0;
     }
   }
 }
