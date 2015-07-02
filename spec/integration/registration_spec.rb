@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::Creator do
   describe "#perform" do
@@ -12,7 +12,8 @@ describe Registration::Creator do
       {
         user: user_params,
         business: business_params,
-        tags: [{ name: "Ania" }]
+        tags: [{ name: "Ania" }],
+        business_types: [381]
       }
     end
 
@@ -38,6 +39,8 @@ describe Registration::Creator do
         let(:user_params) { valid_user_params }
 
         context "business params valid" do
+          before { create(:business_type, id: 381) }
+
           let(:created_user) { User.where(email: user.email).first }
           let(:business_params) { valid_business_params }
 
@@ -52,6 +55,11 @@ describe Registration::Creator do
             subject
             created_business = created_user.business
             expect(created_business.tags).not_to be_empty
+          end
+
+          it "creates business types" do
+            subject
+            expect(created_user.business.business_types).not_to be_empty
           end
         end
 
@@ -112,7 +120,7 @@ describe Registration::Creator do
       end
 
       context "user params invalid" do
-        let(:user_params) { valid_user_params.merge(email: '') }
+        let(:user_params) { valid_user_params.merge(email: "") }
 
         it { is_expected.not_to be_successful }
       end

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::SellerStorer do
   describe "initialize" do
@@ -7,12 +7,14 @@ describe Registration::SellerStorer do
     let(:business) { double(:business) }
     let(:business_params) { double(:business_params) }
     let(:tags_params) { double(:tags_params) }
+    let(:business_types_params) { double(:business_types_params) }
     let(:records) { { user: user, business: business } }
     let(:registration_params) do
       {
         user: user_params,
         business: business_params,
-        tags: tags_params
+        tags: tags_params,
+        business_types: business_types_params
       }
     end
 
@@ -23,7 +25,8 @@ describe Registration::SellerStorer do
       expect(Registration::UserCreator).to receive(:new)
         .with(user, user_params).and_return(user_handler)
       expect(Registration::BusinessCreator).to receive(:new)
-        .with(business, business_params, tags_params, user)
+        .with(business, business_params, tags_params, business_types_params,
+          user)
         .and_return(business_handler)
     end
 

@@ -19,7 +19,7 @@ FactoryGirl.define do
 
   factory :business do
     sequence(:name) { |n| "Business#{n}" }
-    country { "ARE" }
+    country { "AR" }
     phone { "777-777-777" }
     association :user
   end

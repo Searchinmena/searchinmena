@@ -18,7 +18,7 @@
 
   .field{ "field-name": "business.business_types", "ng-class": "{'field-with-errors': errors.business.business_types}" }
     %label {{ "company.basic_info.business_types" | translate }}
-    %multiselect{ "model": "selectedBusinessTypes", "options": "business_types", "select-button-text": "selectButtonText" }
+    %multiselect{ "model": "form.business_types", "options": "business_types", "select-button-text": "selectButtonText" }
     %error-message-for{ "error": "errors.business.business_types" }
 
   .field

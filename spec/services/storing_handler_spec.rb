@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe StoringHandler do
   describe "#perform" do
@@ -20,7 +20,7 @@ describe StoringHandler do
       it { is_expected.to be_successful }
 
       it "assigns attributes" do
-        expect(record.reload.name).to eq('new name')
+        expect(record.reload.name).to eq("new name")
       end
     end
 
@@ -30,7 +30,7 @@ describe StoringHandler do
       it { is_expected.not_to be_successful }
 
       it "doesn't assign attributes" do
-        expect(record.reload.name).not_to eq('new name')
+        expect(record.reload.name).not_to eq("new name")
       end
 
       it "copies error to model" do

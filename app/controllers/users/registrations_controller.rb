@@ -44,7 +44,8 @@ module Users
       {
         user: sign_up_params,
         business: business_params,
-        tags: tags_params
+        tags: tags_params,
+        business_types: business_types_params
       }
     end
 
@@ -55,6 +56,10 @@ module Users
 
     def tags_params
       params.permit(tags: :name)[:tags] || {}
+    end
+
+    def business_types_params
+      params[:business_types]
     end
   end
 end

@@ -15,9 +15,11 @@
     $scope.init = (user_attributes) ->
       user_attributes = JSON.parse(user_attributes)
 
-      $scope.form = { user: user_attributes || {}, business: {} }
-
-      $scope.selectedBusinessTypes = $scope.form.business.business_types || []
+      $scope.form = {
+        user: user_attributes || {},
+        business: {},
+        business_types: []
+      }
 
     $scope.shouldShowCompanyInfo = ->
       category = $scope.form.user.category

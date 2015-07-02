@@ -1,10 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::BusinessStoringHandler do
   let(:handler) do
     described_class.new(business,
                         business_params,
                         tags_params,
+                        business_types_params,
                         business_validator)
   end
 
@@ -13,10 +14,12 @@ describe Registration::BusinessStoringHandler do
   let(:business) { double(:business) }
   let(:business_params) { double(:business_params) }
   let(:tags_params) { double(:tags_params) }
+  let(:business_types_params) { double(:business_types_params) }
 
   fake(:business_validator)
   fake(:storing_handler)
   fake(:tags_storing_handler)
+  fake(:business_types_storing_handler)
   fake(:business_repository)
 
   before do
@@ -28,13 +31,18 @@ describe Registration::BusinessStoringHandler do
     expect(TagsStoringHandler).to receive(:new)
       .with(business, tags_params)
       .and_return(tags_storing_handler)
+    expect(BusinessTypesStoringHandler).to receive(:new)
+      .with(business, business_types_params)
+      .and_return(business_types_storing_handler)
   end
 
   describe "#perform" do
     it "performs storing handler and tags storing handler" do
-      [storing_handler, tags_storing_handler].each do |handler|
-        expect(handler).to receive(:perform).and_return(true)
-      end
+      [storing_handler,
+       tags_storing_handler,
+       business_types_storing_handler].each do |handler|
+         expect(handler).to receive(:perform).and_return(true)
+       end
 
       is_expected.to be_successful
     end

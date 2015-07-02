@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::StorerFactory do
   describe "#from_category" do
@@ -11,7 +11,7 @@ describe Registration::StorerFactory do
     after { subject }
 
     context "seller category" do
-      let(:category) { 'seller' }
+      let(:category) { "seller" }
 
       it "creates SellerStorer" do
         expect(Registration::SellerStorer).to receive(:new)
@@ -20,7 +20,7 @@ describe Registration::StorerFactory do
     end
 
     context "buyer category" do
-      let(:category) { 'buyer' }
+      let(:category) { "buyer" }
 
       it "creates SellerStorer" do
         expect(Registration::BuyerStorer).to receive(:new)
@@ -29,7 +29,7 @@ describe Registration::StorerFactory do
     end
 
     context "no category" do
-      let(:category) { '' }
+      let(:category) { "" }
 
       it "creates SellerStorer" do
         expect(Registration::BuyerStorer).to receive(:new)

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::Creator do
   describe "#perform" do
@@ -14,13 +14,14 @@ describe Registration::Creator do
       {
         user: { category: category },
         business: {},
-        tags: {}
+        tags: {},
+        business_types: {}
       }
     end
 
     let(:user) { double(:user) }
     let(:business) { double(:business) }
-    let(:category) { 'seller' }
+    let(:category) { "seller" }
 
     it "performs storer with correct args" do
       expect(service).to receive(:user_repository)

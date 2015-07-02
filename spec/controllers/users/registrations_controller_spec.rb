@@ -53,10 +53,12 @@ describe Users::RegistrationsController do
       {
         user: sign_up_params,
         business: business_params,
-        tags: tags_params
+        tags: tags_params,
+        business_types: business_types_params
       }
     end
     let(:tags_params) { [{ "name" => "ania" }] }
+    let(:business_types_params) { %w(381, 375, 378) }
 
     let(:registration_creator) { double }
 
