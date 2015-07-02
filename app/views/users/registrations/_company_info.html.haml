@@ -9,7 +9,7 @@
   = form_field("business.country") do
     = b.label :country, t("sign_up.location")
     .select-field
-      %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country" }
+      %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country_id" }
         %option{ value: "" }= t("sign_up.location_select")
 
   = form_field("business.phone") do
@@ -26,7 +26,7 @@
 
   .field
     = label_tag :main_products, t("sign_up.main_products")
-    %tags-input{ "ng-model": "form.tags", "display-property": "name",
+    %tags-input{ "ng-model": "form.tags", "display-property": "label",
       "replace-spaces-with-dashes": "false" }
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }

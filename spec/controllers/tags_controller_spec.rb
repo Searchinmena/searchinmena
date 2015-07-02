@@ -12,13 +12,15 @@ describe TagsController do
     context "with query param" do
       fake(:tag_repository)
       let(:query) { "Ania" }
-      let(:tag) { double(name: 'Ania') }
+      let(:locale) { "en" }
+      let(:tag) { create(:tag_with_translation) }
 
       it "is success" do
         expect(controller).to receive(:tag_repository)
           .and_return(tag_repository)
+        expect(controller).to receive(:locale).and_return(locale)
         expect(tag_repository).to receive(:find_with_query)
-          .with(query)
+          .with(query, locale)
           .and_return([tag])
 
         get :index, query: query

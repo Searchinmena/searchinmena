@@ -1,5 +1,5 @@
 class AbstractRepository
-  delegate :new, :find_by_id, :all, :first, :last, to: :klass
+  delegate :new, :find_by_id, :all, :first, :last, :count, to: :klass
 
   def save(object)
     object.save
