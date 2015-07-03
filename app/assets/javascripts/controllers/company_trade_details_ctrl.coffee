@@ -1,3 +1,3 @@
-@Sim.controller 'CompanyTradeDetailsCtrl', ['$scope', '$state'
+@Sim.controller 'CompanyTradeDetailsCtrl', ['$scope', '$state',
   ($scope, $state) ->
 ]
