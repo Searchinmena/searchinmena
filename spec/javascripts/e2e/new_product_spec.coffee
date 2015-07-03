@@ -1,4 +1,5 @@
 loginHelper = require('./helpers/login_helper.coffee')
+helpers = require('./helpers/helpers.coffee')
 NewProductPage = require('./helpers/new_product_page.coffee')
 
 describe NewProductPage, ->
@@ -97,3 +98,21 @@ describe NewProductPage, ->
 
     expect(element(By.css(page.categoriesModalCss)).isElementPresent()).toBe(false)
     expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)
+
+  it "is possible to add product", ->
+    page.nameInput().sendKeys("New Product")
+
+    page.categoryButton().click()
+    categories = ["Energy", "Crude Oil"]
+    page.chooseCategory(category) for category in categories
+    page.submitCategoryButton().click()
+
+    page.uploadFile()
+
+    page.modelNumberInput().sendKeys("123123")
+    page.minOrderInput().sendKeys("123123")
+    page.fobPriceInput().sendKeys("123123")
+    page.supplyAbilityInput().sendKeys("123123")
+
+    page.submitForm()
+    helpers.expectUrlChanged("/products")
