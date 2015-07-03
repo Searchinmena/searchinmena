@@ -58,52 +58,76 @@
       "delete": "Delete"
     }
   },
+  "category": {
+    "title": "Category",
+    "button": "Choose category"
+  },
+  "photos": {
+    "title": "Photos",
+    "at_least_one_photo": "At least {{min_count}} photo required",
+    "max_photos_exceeded": "You can upload at most {{max_count}} photos",
+    "button": "Add photos",
+    "comment": "Max 10 images",
+    "comment_thumbnail": "The first image is the main photo of the product. For best presentation will be a squre image at least 500 x 500px"
+  },
+  "attributes": {
+    "title": "Characteristics",
+    "attribute": "Attribute",
+    "attribute_placeholder": "eg. material",
+    "value": "Value",
+    "value_placeholder": "eg. copper",
+    "add_more": "Add more"
+  },
+  "trade_info": {
+    "title": "trade info",
+    "fob_price": "FOB price",
+    "fob_price_comment": "eg. 100'000 USD per kg",
+    "per": "per",
+    "port": "Port",
+    "supply": "Supply ability",
+    "supply_comment": "eg. 1000 piece/pieces per day",
+    "choose_currency": "Choose currency",
+    "choose_unit": "Choose unit",
+    "choose_frequency": "Choose frequency",
+    "payment_terms": "Payment terms",
+    "packaging": "Packaging details"
+  },
   "products": {
     "your_products": "Your products",
     "add_new_product": "Add new product",
-    "at_least_one_photo": "At least {{min_count}} photo required",
-    "max_photos_exceeded": "You can upload at most {{max_count}} photos",
     "successfully_added": "Product was successfully added",
     "adding_failed": "Error occurred while adding product, please check the form",
     "new": {
       "form_title": "New product",
       "basic_section": "Basic info",
       "name": "Product name",
-      "category": "Product category",
-      "category_button": "Choose category",
-      "photos": "Photos",
-      "photos_button": "Add photos",
-      "photos_comment": "Max 10 images",
-      "photos_comment_thumbnail": "The first image is the main photo of the product. For best presentation will be a squre image at least 500 x 500px",
       "details_section": "Product details",
       "model": "Model number",
       "brand": "Brand name",
-      "characteristics": "Characteristics",
-      "attribute": "Attribute",
-      "attribute_placeholder": "eg. material",
-      "value": "Value",
-      "value_placeholder": "eg. copper",
-      "add_more": "Add more",
       "description": "Description",
-      "trade_section": "trade info",
       "order": "Min order",
-      "choose_unit": "Choose unit",
-      "choose_currency": "Choose currency",
-      "choose_frequency": "Choose frequency",
       "order_comment": "eg. 10'000 bottles",
-      "price": "FOB price",
-      "price_comment": "eg. 100'000 USD per kg",
-      "per": "per",
-      "port": "Port",
-      "supply": "Supply ability",
-      "supply_comment": "eg. 1000 piece/pieces per day",
-      "payment": "Payment terms",
-      "packaging": "Packaging details",
       "submit": "Add new product"
     },
     "categories": {
       "choose": "Choose Category",
       "ok": "OK"
+    }
+  },
+  "services": {
+    "your_services": "Your services",
+    "add_new_service": "Add new service",
+    "new": {
+      "form_title": "New service",
+      "basic_section": "Basic info",
+      "name": "Service name",
+      "details_section": "Service details",
+      "place_of_origin": "Place of origin",
+      "scope_of_work": "Scope of work",
+      "description": "Description",
+      "average_completion_time": "Average completion time",
+      "average_completion_time_comment": "eg. 100 hours",
+      "submit": "Add new service"
     }
   },
   "other": {
