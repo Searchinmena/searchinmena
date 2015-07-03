@@ -11,6 +11,7 @@
   controller: ($scope) ->
     $scope.isDropdownVisible = false
     $scope.options = {}
+    $scope.model = []
 
     $scope.toggleSelect = () ->
       $scope.isDropdownVisible = !$scope.isDropdownVisible

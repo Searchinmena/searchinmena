@@ -47,3 +47,16 @@ describe RegistrationPage, ->
 
     page.tagInput().sendKeys("Ania", protractor.Key.RETURN)
     expect(element(By.cssContainingText("span", "Ania")).isDisplayed()).toBe(true)
+
+  it "is possible to add business types", ->
+    page.chooseUserCategory(page.sellerCategory)
+
+    EC = protractor.ExpectedConditions
+    selectButton = page.selectBusinessTypesInput()
+
+    selectButton.click()
+
+    element(By.linkText("Manufacturer")).click()
+    element(By.linkText("Agent")).click()
+
+    expect(selectButton.getText()).toEqual("Manufacturer, Agent")
