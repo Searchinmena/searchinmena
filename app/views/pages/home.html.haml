@@ -17,8 +17,8 @@
         %span.icon-play-circle
         watch video
       - if user_signed_in?
-        = link_to("Browse", new_user_registration_path, class: "browse-btn")
-        = link_to("See dashboard", new_user_registration_path, class: "dashboard-btn")
+        = link_to("Browse", browse_path, class: "browse-btn")
+        = link_to("See dashboard", dashboard_path, class: "dashboard-btn")
       - else
         = link_to("Join now", new_user_registration_path, class: "sign-up-btn")
 %form.search-form.landing-search-form

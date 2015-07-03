@@ -1,4 +1,4 @@
-%h1.form-title {{ "products.new.form_title" | translate }}
+%h2.header-title {{ "products.new.form_title" | translate }}
 %form{ action: "/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
@@ -8,6 +8,8 @@
   .field
     %label {{ "products.new.category" | translate }}
     %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+
+    %error-message-for{ "error": "errors.product.category_id" }
     #category
       %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
         {{item.name}}
@@ -24,7 +26,7 @@
     %ul.photos-preview
       %li{ "ng-repeat": "photo in photos" }
         %img.preview-image{ "ngf-src": "photo",
-        "ngf-default-src": "#{asset_path('default-image')}", "ngf-accept": "'image/*'" }
+        "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
         %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
           %span.icon-remove
 
@@ -121,5 +123,6 @@
   %form-field{ "error": "errors.product.packaging" }
     %label {{ "products.new.packaging" | translate }}
     %input{ type: "text", "ng-model": "form.product.packaging_details" }
-  .actions
+  .actions.with-spinner
     %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
+    .spinner

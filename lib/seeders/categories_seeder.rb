@@ -10,21 +10,28 @@ class CategoriesSeeder
   end
 
   def seed
+    # there is too many categories to seed it every time
+    return if Category.count > 0
+
     CSV.foreach(path) do |row|
-      row.each_with_index do |name, i|
-        next unless name
+      seed_row(row)
+    end
+  end
 
-        parent_category = parent(i, row)
-        category_key = key(name)
+  def seed_row(row)
+    row.each_with_index do |name, i|
+      next unless name
 
-        category = repository.find_or_create(key: category_key)
-        repository.update_parent(category, parent_category)
+      parent_category = parent(i, row)
+      category_key = key(name)
 
-        locales.each do |locale|
-          translation_repository.find_or_create(key: key(name),
-                                                locale: locale,
-                                                value: name)
-        end
+      category = repository.find_or_create(key: category_key)
+      repository.update_parent(category, parent_category)
+
+      locales.each do |locale|
+        translation_repository.find_or_create(key: key(name),
+                                              locale: locale,
+                                              value: name)
       end
     end
   end

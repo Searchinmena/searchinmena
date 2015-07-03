@@ -1,8 +1,45 @@
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
 @mixin transition($transition-property, $transition-time, $method) {
   -webkit-transition: $transition-property $transition-time $method;
   -moz-transition: $transition-property $transition-time $method;
   -ms-transition: $transition-property $transition-time $method;
   -o-transition: $transition-property $transition-time $method;
   transition: $transition-property $transition-time $method;
+}
+
+@mixin animation ($animation, $duration, $iteration, $timing) {
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  animation-iteration-count: $iteration;
+  animation-timing-function: $timing;
+
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  animation-iteration-count: $iteration;
+  animation-timing-function: $timing;
+
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  animation-iteration-count: $iteration;
+  animation-timing-function: $timing;
+
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-iteration-count: $iteration;
+  animation-timing-function: $timing;
 }
 
