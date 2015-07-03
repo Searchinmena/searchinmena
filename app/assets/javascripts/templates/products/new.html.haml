@@ -123,5 +123,6 @@
   %form-field{ "error": "errors.product.packaging" }
     %label {{ "products.new.packaging" | translate }}
     %input{ type: "text", "ng-model": "form.product.packaging_details" }
-  .actions
+  .actions.with-spinner
     %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
+    .spinner

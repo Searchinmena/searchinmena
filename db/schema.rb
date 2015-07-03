@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150626073733) do
     t.integer  "min_order_quantity_number"
     t.string   "min_order_quantity_unit"
     t.decimal  "fob_price"
-    t.string   "fob_currency"
+    t.string   "fob_price_currency"
     t.string   "fob_price_unit"
     t.string   "port"
     t.string   "payment_terms"
@@ -128,14 +128,14 @@ ActiveRecord::Schema.define(version: 20150626073733) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "first_name",                          null: false
-    t.string   "last_name",                           null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "first_name",                          null: false
+    t.string   "last_name",                           null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
