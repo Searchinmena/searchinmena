@@ -3,12 +3,11 @@ require "rails_helper"
 describe Registration::BusinessCreator do
   let(:creator) do
     Registration::BusinessCreator.new(business, business_params, tags_params,
-                                      business_types_params, user)
+                                      user)
   end
   let(:business) { double(:business) }
   let(:business_params) { {} }
   let(:tags_params) { double(:tags_params) }
-  let(:business_types_params) { double(:business_types_params) }
   let(:user) { double(:user) }
 
   fake(:business_validator)
@@ -34,8 +33,7 @@ describe Registration::BusinessCreator do
 
     before do
       expect(BusinessStoringHandler).to receive(:new)
-      .with(business, { user: user }, tags_params, business_types_params,
-        business_validator)
+      .with(business, { user: user }, tags_params, business_validator)
       .and_return(business_storing_handler)
     end
 

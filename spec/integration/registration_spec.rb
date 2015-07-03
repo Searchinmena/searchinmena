@@ -12,15 +12,17 @@ describe Registration::Creator do
       {
         user: user_params,
         business: business_params,
-        tags: [{ name: "Ania" }],
-        business_types: [381]
+        tags: [{ name: "Ania" }]
       }
     end
 
+    let(:business_type) { create(:business_type) }
     let(:user) { build(:user, category: User.categories[:seller]) }
-    let(:business) { build(:business, user: nil) }
+    let(:business) { build(:business, user: nil, business_types: []) }
     let(:valid_user_params) { build_user_params(user) }
-    let(:valid_business_params) { build_params(business) }
+    let(:valid_business_params) do
+      build_business_params(business, [business_type.id])
+    end
 
     shared_examples_for "any invalid params" do
       it { is_expected.not_to be_successful }
@@ -39,8 +41,6 @@ describe Registration::Creator do
         let(:user_params) { valid_user_params }
 
         context "business params valid" do
-          before { create(:business_type, id: 381) }
-
           let(:created_user) { User.where(email: user.email).first }
           let(:business_params) { valid_business_params }
 

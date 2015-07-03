@@ -44,22 +44,16 @@ module Users
       {
         user: sign_up_params,
         business: business_params,
-        tags: tags_params,
-        business_types: business_types_params
+        tags: tags_params
       }
     end
 
     def business_params
-      params[:business]
-        .permit([:name, :country, :phone])
+      params[:business].permit([:name, :country, :phone, business_type_ids: []])
     end
 
     def tags_params
       params.permit(tags: :name)[:tags] || {}
-    end
-
-    def business_types_params
-      params[:business_types]
     end
   end
 end

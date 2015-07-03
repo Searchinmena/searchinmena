@@ -22,6 +22,14 @@ FactoryGirl.define do
     country { "AR" }
     phone { "777-777-777" }
     association :user
+
+    transient do
+      business_types { [create(:business_type)] }
+    end
+
+    after(:build) do |business, evaluator|
+      business.business_types += evaluator.business_types
+    end
   end
 
   factory :product do

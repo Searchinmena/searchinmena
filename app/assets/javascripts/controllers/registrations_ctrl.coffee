@@ -17,8 +17,7 @@
 
       $scope.form = {
         user: user_attributes || {},
-        business: {},
-        business_types: []
+        business: {}
       }
 
     $scope.shouldShowCompanyInfo = ->

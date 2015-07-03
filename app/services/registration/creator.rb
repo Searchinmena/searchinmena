@@ -10,7 +10,7 @@ class Registration::Creator < BaseService
     category = registration_params[:user][:category]
     records = { user: user, business: business }
     storer = storer_factory.from_category(category, records,
-                                               registration_params)
+                                          registration_params)
     storer.perform(user, business)
   end
 end

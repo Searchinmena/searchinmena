@@ -6,7 +6,8 @@ describe StoringHandler do
       StoringHandler.new(record, record_params, repository, validator)
     end
     let(:record) { create(:business) }
-    let(:valid_params) { build_params(record) }
+    let(:business_type) { create(:business_type) }
+    let(:valid_params) { build_business_params(record, [business_type.id]) }
     let(:repository) { BusinessRepository.new }
     let(:validator) { BusinessValidator.new(record_params) }
 
