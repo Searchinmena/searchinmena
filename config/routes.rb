@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   resources :countries, only: [:index]
   resources :business_types, only: [:index]
 
-  resource :company, only: [:create]
+  resource :businesses, only: [:create]
   resources :products, only: [:create]
   resources :product_photos, only: [:create]
 end
