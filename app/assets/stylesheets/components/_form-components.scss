@@ -57,6 +57,13 @@ label {
   .checkbox & {
     display: inline;
   }
+
+  &.required:after {
+    font-family: 'flatline';
+    content: "\e6b9";
+    color: $red;
+    font-size: $bs09;
+  }
 }
 
 .inline-label {
