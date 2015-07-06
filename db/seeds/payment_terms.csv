@@ -1,11 +1,11 @@
-T/T,T/T,T/T AR
-L/C,L/C,L/C AR
-D/P,D/P,D/P AR
-D/A,D/A,D/A AR
-credit_card,Credit Card,Credit Card AR
-pay_pal,PayPal,PayPal AR
-western_union,Western Union,Western Union AR
-cash,Cash,Cash AR
-escrow,Escrow,Escrow AR
-wire Transfer,Wire Transfer,Wire Transfer AR
-others,Others,Others AR
+T/T,T/T AR
+L/C,L/C AR
+D/P,D/P AR
+D/A,D/A AR
+Credit Card,Credit Card AR
+PayPal,PayPal AR
+Western Union,Western Union AR
+Cash,Cash AR
+Escrow,Escrow AR
+Wire Transfer,Wire Transfer AR
+Others,Others AR

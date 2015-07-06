@@ -1,6 +1,8 @@
 require "rails_helper"
 
 describe UserRepository do
+  let(:repository) { UserRepository.new }
+
   let(:auth) do
     {
       "provider" => "facebook",
@@ -9,7 +11,7 @@ describe UserRepository do
   end
 
   describe "#find_by_omniauth" do
-    subject { UserRepository.new.find_by_omniauth(auth) }
+    subject { repository.find_by_omniauth(auth) }
 
     context "when user doesn't exist" do
       it { expect(subject).to be_nil }

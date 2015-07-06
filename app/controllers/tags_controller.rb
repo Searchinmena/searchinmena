@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   inject :tag_repository
 
   def index
-    tags = tag_repository.find_with_query(params[:query])
-    render json: tags.map { |t| TagPresenter.new(t) }
+    tags = tag_repository.find_with_query(params[:query], locale)
+    render json: tags.map { |t| TranslatablePresenter.new(t) }
   end
 end

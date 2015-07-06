@@ -4,7 +4,7 @@ describe CategoryPresenter do
   describe "#as_json" do
     let(:presenter) { CategoryPresenter.new(category) }
     let(:category) { create(:product_category) }
-    let!(:translation) { create(:translation, key: category.key) }
+    let!(:translation) { create(:category_translation, category: category) }
 
     subject { presenter.as_json }
 

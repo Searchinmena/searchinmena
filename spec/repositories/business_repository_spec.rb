@@ -3,6 +3,8 @@ require "rails_helper"
 describe BusinessRepository do
   let(:repository) { BusinessRepository.new }
 
+  it_behaves_like "any repository"
+
   describe "#add_tag" do
     let(:business) { create(:business) }
     let(:tag) { create(:tag) }

@@ -4,7 +4,7 @@ describe TranslatablePresenter do
   describe "#as_json" do
     let(:presenter) { TranslatablePresenter.new(unit) }
     let(:unit) { create(:unit) }
-    let!(:translation) { create(:translation, key: unit.key) }
+    let!(:translation) { create(:translation, translatable: unit) }
 
     subject { presenter.as_json }
 

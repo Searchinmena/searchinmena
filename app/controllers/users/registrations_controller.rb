@@ -46,17 +46,18 @@ module Users
       {
         user: sign_up_params,
         business: business_params,
-        tags: tags_params
+        tags: tags_params,
+        locale: locale
       }
     end
 
     def business_params
       params[:business]
-        .permit([:name, :country, :phone, :business_type])
+        .permit([:name, :country_id, :phone, :business_type])
     end
 
     def tags_params
-      params.permit(tags: :name)[:tags] || {}
+      params.permit(tags: [:id, :label])[:tags] || {}
     end
   end
 end

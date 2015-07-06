@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626073733) do
+ActiveRecord::Schema.define(version: 20150702115737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "businesses", force: :cascade do |t|
     t.string   "name",          null: false
-    t.string   "country",       null: false
     t.string   "phone",         null: false
     t.integer  "business_type", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",       null: false
+    t.integer  "country_id",    null: false
   end
 
   add_index "businesses", ["user_id"], name: "index_businesses_on_user_id", unique: true, using: :btree
@@ -38,15 +38,21 @@ ActiveRecord::Schema.define(version: 20150626073733) do
   add_index "businesses_tags", ["business_id", "tag_id"], name: "index_businesses_tags_on_business_id_and_tag_id", unique: true, using: :btree
 
   create_table "categories", force: :cascade do |t|
-    t.string   "key",        null: false
     t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "type",       null: false
   end
 
-  add_index "categories", ["key"], name: "index_categories_on_key", unique: true, using: :btree
   add_index "categories", ["type"], name: "index_categories_on_type", using: :btree
+
+  create_table "category_translations", force: :cascade do |t|
+    t.string   "locale",      null: false
+    t.text     "value",       null: false
+    t.integer  "category_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "product_attributes", force: :cascade do |t|
     t.string   "name",       null: false
@@ -90,15 +96,11 @@ ActiveRecord::Schema.define(version: 20150626073733) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
-
   create_table "translatable", force: :cascade do |t|
-    t.string   "key"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -108,11 +110,13 @@ ActiveRecord::Schema.define(version: 20150626073733) do
 
   create_table "translations", force: :cascade do |t|
     t.string   "locale"
-    t.string   "key"
     t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "translatable_id"
   end
+
+  add_index "translations", ["translatable_id"], name: "index_translations_on_translatable_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

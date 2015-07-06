@@ -6,6 +6,7 @@ class Registration::SellerStorer < Registration::Storer
     business_creator = Registration::BusinessCreator.new(records[:business],
                                         registration_params[:business],
                                         registration_params[:tags],
+                                        registration_params[:locale],
                                         user)
 
     self.handlers = [user_creator, business_creator]
