@@ -238,8 +238,27 @@ textarea {
     cursor: pointer;
   }
 
+  .inline-label {
+    display: block;
+
+    @media screen and (min-width: $tablet) {
+      display: inline;
+    }
+  }
+
   @media screen and (min-width: $tablet) {
     display: inline-block;
+  }
+
+}
+
+input[type="checkbox"] {
+  float: left;
+  margin: 3px $bs-5 0 0;
+
+  [dir="rtl"] & {
+    float: right;
+    margin: 3px 0 0 $bs-5;
   }
 }
 
