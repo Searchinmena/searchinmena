@@ -6,7 +6,7 @@
     = b.label :name, t("sign_up.company_name")
     = b.text_field :name, "ng-model": "form.business.name"
 
-  = form_field("business.country") do
+  = form_field("business.country_id") do
     = b.label :country, t("sign_up.location")
     .select-field
       %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country_id" }
