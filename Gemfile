@@ -7,7 +7,6 @@ gem 'honeybadger', '~> 2.0'
 gem 'dependor'
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'country_select'
 
 # assets
 gem 'sass-rails', '~> 5.0'
@@ -16,7 +15,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer'
 gem 'bower-rails'
+gem 'jquery-rails'
+gem 'jquery-cookie-rails'
 gem 'non-stupid-digest-assets'
+gem 'angular-rails-templates', '~> 0.2.0'
 
 gem 'mini_magick'
 gem 'fog'

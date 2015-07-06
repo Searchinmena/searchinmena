@@ -1,0 +1,2 @@
+class ProductAttributeRepository < AbstractRepository
+end

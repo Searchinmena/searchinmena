@@ -1,24 +1,39 @@
 .dashboard-menu-btn {
   text-transform: uppercase;
-  background-color: $snow-white;
+  background-color: white;
   border-bottom: 1px solid $border-grey;
   color: $blue-basic;
-  padding: $bs0 $bs2;
+  line-height: 3 * $bs2;
 
   @media screen and (min-width: $medium-desktop) {
     display: none;
   }
 
+  &:hover, &:focus {
+    cursor: pointer;
+  }
+
   .icon-chevron-down {
+    display: inline-block;
     font-size: $bs2;
+    line-height: 3 * $bs2;
+    padding: 0 $bs2;
     vertical-align: middle;
-    padding: 0 $bs-2 0 0;
+    border-right: 1px solid $border-grey;
+    margin-right: $bs0;
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: $bs0;
+      border-right: 0;
+      border-left: 1px solid $border-grey;
+    }
   }
 }
 
 .dashboard-navigation {
-  @include transition(all, .7s, ease-in-out);
-  background-color: $snow-white;
+  @include transition(all, 1s, ease-in-out);
+  background-color: white;
   border-bottom: 1px solid $border-grey;
   list-style: none;
   width: 100%;
@@ -26,19 +41,18 @@
   overflow: hidden;
 
   &.show {
-    max-height: 999px;
+    max-height: 9999px;
   }
-
-  
 
   @media screen and (min-width: $medium-desktop) { 
     max-height: none;
     display: block;
+    border-top: 1px solid $border-grey;
     border-right: 1px solid $border-grey;
+    border-bottom: 0;
     position: absolute;
     left: 0;
     height: 100%;
-    min-height: 70em;
     width: 2 * $bs9;
 
     [dir="rtl"] & {
@@ -55,6 +69,7 @@
   .nav-link {
     @include transition(all, .25s, ease-in-out);
     display: block;
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     padding: 0 $bs2 0 0;
@@ -63,18 +78,41 @@
     position: relative;
     color: $basic-font;
     font-weight: 100;
+    border-bottom: 1px solid $border-grey;
 
     [dir="rtl"] & {
       padding: 0 0 0 $bs2;
     }
 
     &.active {
-      background-color: $light-grey;
+      background-color: white;
       color: $nav-link;
+
+      .icon {
+        color: $nav-link;
+      } 
+      
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 6px;
+        height: 100%;
+        height: calc(100% + 2px);
+        top: -1px;
+        right: 0;
+        background-color: $nav-link;
+
+        [dir="rtl"] & {
+          right: auto;
+          left: 0;
+        }
+      }
     }
 
-    &:hover, &.focus {
+    &:hover, &:focus {
       color: $nav-link;
+      background-color: white;
     }
   }
 
@@ -85,10 +123,16 @@
     line-height: 3 * $bs2;
     padding: 0 $bs2;
     float: left;
-    color: $nav-link;
+    color: $grey;
+    border-right: 1px solid $border-grey;
+    margin-right: $bs0;
 
     [dir="rtl"] & {
       float: right;
+      border-right: 0;
+      border-left: 1px solid $border-grey;
+      margin-right: 0;
+      margin-left: $bs0;
     }
   }
 }

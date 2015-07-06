@@ -72,14 +72,31 @@
   }
 }
 
+%ghost-button {
+  color: white;
+  border: 2px solid white;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $white-opaque;
+  }
+}
+
 input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
+
+  &:disabled {
+    color: $grey;
+    border-color: $grey;
+    background-color: $border-grey;
+  }
 }
 
 .small-button {
   @extend %secondary-button;
   padding: $bs-1;
+  margin: $bs-1 0;
 
   @media screen and (min-width: $tablet) {
     max-width: 2 * $bs8;
@@ -98,7 +115,11 @@ input[type="submit"] {
 
 .plus-button {
   @extend %tiny-button;
+  margin: $bs-1 0;
 
+  .compound-field & {
+    margin: 0;
+  }
   .icon-plus {
     padding: 0;
   }

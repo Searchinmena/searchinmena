@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe UserValidator do
   subject { UserValidator.new(user_params) }
@@ -12,7 +12,7 @@ describe UserValidator do
     [:fist_name, :last_name, :email, :password, :password_confirmation,
      :category].each do |field|
       let(:user_params) do
-        valid_params.merge(field => '')
+        valid_params.merge(field => "")
       end
 
       it "requires #{field} to be present" do
@@ -37,7 +37,7 @@ describe UserValidator do
   end
 
   describe "email format" do
-    let(:user_params) { valid_params.merge(email: 'not an email') }
+    let(:user_params) { valid_params.merge(email: "not an email") }
 
     it { is_expected.not_to be_valid }
   end
@@ -52,8 +52,8 @@ describe UserValidator do
   describe "password confirmation" do
     let(:user_params) do
       valid_params.merge(
-        password: 'testtest',
-        password_confirmation: 'testtest2'
+        password: "testtest",
+        password_confirmation: "testtest2"
       )
     end
 
@@ -63,8 +63,8 @@ describe UserValidator do
   describe "password length" do
     let(:user_params) do
       valid_params.merge(
-        password: 'test',
-        password_confirmation: 'test'
+        password: "test",
+        password_confirmation: "test"
       )
     end
 

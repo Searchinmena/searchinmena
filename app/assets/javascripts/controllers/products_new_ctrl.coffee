@@ -1,6 +1,7 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', 'selectsLoader',
-  'PhotosValidator', 'PhotosUploader',
-  ($scope, $http, selectsLoader, PhotosValidator, PhotosUploader) ->
+@Sim.controller 'ProductsNewCtrl', ['$scope', '$http', '$state', '$modal',
+  'TranslatedFlash', 'selectsLoader', 'PhotosValidator', 'PhotosUploader',
+  ($scope, $http, $state, $modal, TranslatedFlash, selectsLoader,
+    PhotosValidator, PhotosUploader) ->
     $scope.form = {}
     $scope.errors = {}
     $scope.form.attributes = [new SIM.Attribute()]
@@ -13,6 +14,22 @@
     }
 
     selectsLoader.loadSelectsData($scope, config)
+
+    $scope.showCategories = ->
+      modalInstance = $modal.open(
+        templateUrl: 'categories.html',
+        controller: 'CategoriesCtrl',
+        animation: false,
+        size: 'lg'
+      )
+
+      modalInstance.result.then($scope.setCategory)
+
+    $scope.setCategory = (breadcrumbs) ->
+      $scope.breadcrumbs = breadcrumbs
+      $scope.form ||= {}
+      $scope.form.product ||= {}
+      $scope.form.product.category_id = breadcrumbs.current().id
 
     $scope.removePhoto = (photo) ->
       index = $scope.photos.indexOf(photo)
@@ -29,43 +46,28 @@
       e.preventDefault()
       $scope.errors = {}
 
-      console.log($scope.form)
-      return unless PhotosValidator.validate($scope)
+      unless PhotosValidator.validate($scope)
+        TranslatedFlash.error("products.adding_failed")
+        return
 
       $http(
         url: e.target.action,
         data: $scope.form,
         method: 'POST'
-      ).success(->
-        console.log("Successful product creation")
-
-        $scope.errors = { product: {
-          name: "can't be blank",
-          category: "can't be blank",
-          description: "too long",
-          model_number: "too long",
-          brand_name: "too long",
-          min_order_quantity_number: "not a number",
-          fob_price: "not a number",
-          supply_ability_capacity: "not a number",
-          port: "too long",
-          packaging: "too long"
-        } }
-
-        # TOOD: take it from response
-        productId = 4
+      ).success((data) ->
+        productId = data.id
         PhotosUploader.upload($scope.photos, productId,
           ->
-            console.log("Successful upload")
+            TranslatedFlash.success("products.successfully_added")
+            $state.go("products")
           ,
           (errors) ->
-            console.log("Upload failed")
             $scope.errors.photos = errors
+            TranslatedFlash.error("products.adding_failed")
         )
       ).error((errors) ->
-        console.log("Product creation failed")
-        console.log(errors)
         $scope.errors = errors
+        TranslatedFlash.error("products.adding_failed")
       )
 
       false

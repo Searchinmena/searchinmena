@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     cookies[:locale] = I18n.locale
   end
 
+  def locale
+    cookies[:locale]
+  end
+
   def full_error_message_for(object)
     return unless object && object.errors.present?
 

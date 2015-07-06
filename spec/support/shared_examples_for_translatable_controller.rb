@@ -1,28 +1,18 @@
 shared_examples "TranslatableController" do
   describe "#index" do
-    it_behaves_like "redirects to signin if user not logged in" do
-      before { get :index }
-    end
+    let(:repository) { double }
+    let(:translatable) { double }
 
-    context "user is logged in" do
-      let(:user) { create(:user) }
+    it "is successful" do
+      expect(controller).to receive(:repository).and_return(repository)
+      expect(repository).to receive(:all_with_translations).with("en")
+        .and_return([translatable])
+      expect(TranslatablePresenter).to receive(:new).with(translatable)
+        .and_return({})
 
-      before { sign_in(user) }
+      get :index, locale: 'en'
 
-      let(:repository) { double }
-      let(:translatable) { double }
-
-      it "is successful" do
-        expect(controller).to receive(:repository).and_return(repository)
-        expect(repository).to receive(:all_with_translations).with("en")
-          .and_return([translatable])
-        expect(TranslatablePresenter).to receive(:new).with(translatable)
-          .and_return({})
-
-        get :index, locale: 'en'
-
-        expect(response).to be_successful
-      end
+      expect(response).to be_successful
     end
   end
 end

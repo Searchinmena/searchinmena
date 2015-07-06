@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::UserCreator do
   let(:creator) { Registration::UserCreator.new(user, user_params) }

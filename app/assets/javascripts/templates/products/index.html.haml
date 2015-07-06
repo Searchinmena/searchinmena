@@ -1,4 +1,6 @@
-%button.small-button{ "ui-sref": "new_product" }
-  {{ "products.add_new_product" | translate }}
-
-%h1.title {{ "products.your_products" | translate }}
+%h2.header-title 
+  {{ "products.your_products" | translate }}
+%section.dashboard-section
+  %button.small-button{ "ui-sref": "new_product" }
+    %span.icon-plus
+    {{ "products.add_new_product" | translate }}

@@ -5,6 +5,9 @@ en:
     logout: "Logout"
     login: "Log in"
     signup: "Sign Up"
+    contact_us: "Contact Us"
+    terms: "Terms of use"
+    privacy: "Privacy Policy"
 
   dashboard_nav:
     home: "Home"
@@ -55,8 +58,6 @@ en:
     location: "Location"
     location_select: "-- Select Country --"
     contact_number: "Contact Number"
-    business_type: "Business Type"
-    business_type_select: "-- Select Business Type --"
     main_products: "Main Products"
 
   sign_in:
@@ -75,3 +76,17 @@ en:
 
   mailer:
     hello_msg: "Hello!"
+
+  footer:
+    about_us: "About Us"
+    about_description: "MENA Network LTD manages an online B2B advertising directory,
+      HQ in Dubai Silicon Oasis - UAE, owned by Salim Akil, Silicon Oasis Founders a wholly
+      owned entity of DSOA (Government of Dubai) and other 23 shareholders. MENA Network has
+      offices in Dubai, Riyadh and San Francisco."
+    find_us: "Find Us"
+    companies: "Companies"
+    address_title: "Address:"
+    address_line_1: "UAE, Dubai Silicon Oasis, Techno Hub Building,"
+    address_line_2: "Block A, Office G029"
+    address_line_3: "Office Number: 0097143311050"
+    copyright: "MENA Network LTD, All rights reserved."

@@ -1,8 +1,182 @@
 footer {
+  @extend %clearfix;
   font-weight: 100;
   color: white;
+  background-color: $purple-dark;
+
+  .title {
+    text-transform: none;
+  }
+  
+  .companies-list {
+    @extend %clearfix;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      float: left;
+      width: 100%;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+
+      @media screen and (min-width: $desktop) { 
+        width: 45%;
+        margin: 0 5% 0 0;
+
+        [dir="rtl"] & {
+          margin: 0 0 0 5%;
+        }
+      }
+
+      @media screen and (min-width: $medium-desktop) { 
+        width: 30%;
+
+        margin: 0 3% 0 0;
+
+        [dir="rtl"] & {
+          margin: 0 0 0 3%;
+        }
+      }  
+    }
+  }
+
+  .companies-list-link {
+    color: white;
+    padding: $bs-3 $bs-3 $bs-2 0;
+    display: block;
+    border-bottom: 0;
+  }
+}
+
+.address-title {
+  margin: $bs5 0 $bs-3;
+  font-weight: 100;
+}
+
+address {
+  line-height: 1.6;
+}
+
+.about-desc {
+  max-width: 5 * $bs9;
+}
+
+.footer-column {
   padding: $bs5;
-  margin: $bs5 0 0;
-  height: 400px;
-  background-size: auto 100%;
+  
+  @media screen and (min-width: $tablet) { 
+    width: 50%;
+    float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+  } 
+}
+
+.social-link {
+  @include transition(all, .25s, ease-in-out);
+  width: $bs5;
+  height: $bs5;
+  display: inline-block;
+  border: none;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0 $bs-3 0 0;
+}
+
+.facebook-link {
+  background-image: image-url("icon-facebook.png");
+  background-color: #3B5998;
+  
+  &:hover, &:focus {
+    outline: 3px solid #3B5998;
+  }
+}
+
+.twitter-link {
+  background-image: image-url("icon-twitter.png");
+  background-color: #00aced;
+
+  &:hover, &:focus {
+    outline: 3px solid #00aced;
+  }
+}
+
+.google-plus-link {
+  background-image: image-url("icon-google-plus.png");
+  background-color: #dd4b39;
+
+  &:hover, &:focus {
+    outline: 3px solid #dd4b39;
+  }
+}
+
+.linkedin-link {
+  background-image: image-url("icon-linkedin.png");
+  background-color: #007bb6;
+
+  &:hover, &:focus {
+    outline: 3px solid #007bb6;
+  }
+}
+
+.sitemap {
+  @extend %clearfix;
+  background-color: $purple-super-dark;
+  padding: $bs5;
+  clear: both;
+}
+
+.sitemap-links {
+  @extend %clearfix;
+  list-style: none;
+
+  @media screen and (min-width: $desktop) {
+    float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+  }
+  
+  li {
+    display: inline-block;
+    margin: 0 $bs0 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs0;
+    }
+  }
+}
+
+.sitemap-link {
+  @include transition(border, .25s, ease-in-out);
+  display: block;
+  color: white;
+  border-bottom: 1px solid $purple-super-dark;;
+  text-transform: uppercase;
+  padding: $bs-1 0;
+
+  &:hover, &:focus {
+    border-bottom: 1px solid white;
+  }
+}
+
+.copyright {
+  font-size: $bs09;
+  margin: $bs1 0 0;
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    float: right;
+    text-align: auto;
+
+    [dir="rtl"] & {
+      float: left;
+    }
+  }
 }

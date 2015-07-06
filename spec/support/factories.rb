@@ -19,10 +19,17 @@ FactoryGirl.define do
 
   factory :business do
     sequence(:name) { |n| "Business#{n}" }
-    country { "ARE" }
     phone { "777-777-777" }
-    business_type { Business.business_types[:agent] }
+    association :country
     association :user
+
+    transient do
+      business_types { [create(:business_type)] }
+    end
+
+    after(:build) do |business, evaluator|
+      business.business_types += evaluator.business_types
+    end
   end
 
   factory :product do
@@ -35,13 +42,7 @@ FactoryGirl.define do
     association :product
   end
 
-  factory :tag do
-    sequence(:name) { |n| "Tag#{n}" }
-  end
-
   factory :translatable do
-    sequence(:key) { |n| "Key#{n}" }
-
     factory :unit, parent: :translatable, class: "Unit" do
     end
     factory :currency, parent: :translatable, class: "Currency" do
@@ -54,11 +55,35 @@ FactoryGirl.define do
     end
     factory :business_type, parent: :translatable, class: "BusinessType" do
     end
+    factory :tag, parent: :translatable, class: "Tag" do
+      factory :tag_with_translation do
+        transient do
+          translation { create(:translation) }
+        end
+
+        after :create do |tag, evaluator|
+          translation = evaluator.translation
+          tag.translations << translation
+          tag.save
+        end
+      end
+    end
   end
 
   factory :translation do
+    association :translatable
     locale { "en" }
-    sequence(:key) { |n| "Key#{n}" }
     sequence(:value) { |n| "Value#{n}" }
+  end
+
+  factory :category_translation do
+    association :category, factory: :product_category
+    locale { "en" }
+    sequence(:value) { |n| "Value#{n}" }
+  end
+
+  factory :category do
+    factory :product_category, parent: :category, class: 'ProductCategory' do
+    end
   end
 end

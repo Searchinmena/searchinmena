@@ -1,4 +1,5 @@
 loginHelper = require('./helpers/login_helper.coffee')
+helpers = require('./helpers/helpers.coffee')
 NewProductPage = require('./helpers/new_product_page.coffee')
 
 describe NewProductPage, ->
@@ -29,3 +30,89 @@ describe NewProductPage, ->
 
     page.removePhotoButton().click()
     expect(page.photos().count()).toBe(0)
+
+  it "is possible to choose category", ->
+    page.categoryButton().click()
+
+    expect(page.categoryTitle()).toEqual("Choose Category")
+    expect(page.submitCategoryButton().getAttribute("disabled")).toEqual("true")
+
+    categories = [
+      "Machinery",
+      "Apparel & Textile Machinery",
+      "Apparel Machinery",
+      "Zipper Making Machinery"
+    ]
+    for category in categories
+      page.chooseCategory(category)
+      expect(page.categoryTitle()).toEqual("")
+      expect(page.breadcrumb(category).isDisplayed()).toBe(true)
+
+    expect(page.submitCategoryButton().getAttribute("disabled")).toBe(null)
+
+    page.chooseCategory("Zipper Making Machinery")
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(4)
+    )
+
+    page.chooseCategory("Sewing Machinery")
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(4)
+    )
+
+    count = 4
+    for category in categories.reverse()
+      page.previousCategoryButton().click()
+      page.breadcrumbs((elements) ->
+        count -= 1
+        expect(elements.length).toEqual(count)
+      )
+
+    expect(page.categoryTitle()).toEqual("Choose Category")
+
+  it "is possible to choose category, go back and choose different one from the same level", ->
+    page.categoryButton().click()
+
+    categories = ["Energy", "Crude Oil"]
+    page.chooseCategory(category) for category in categories
+
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(2)
+    )
+    expect(page.submitCategoryButton().getAttribute("disabled")).toBe(null)
+
+    page.chooseCategory("Petrochemical Products")
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(2)
+    )
+
+    page.previousCategoryButton().click()
+    page.chooseCategory("Petrochemical Products")
+    expect(page.breadcrumb("Petrochemical Products").isDisplayed()).toBe(true)
+    page.breadcrumbs((elements) ->
+      expect(elements.length).toEqual(2)
+    )
+
+    page.chooseCategory("Paraffin")
+    page.submitCategoryButton().click()
+
+    expect(element(By.css(page.categoriesModalCss)).isElementPresent()).toBe(false)
+    expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)
+
+  it "is possible to add product", ->
+    page.nameInput().sendKeys("New Product")
+
+    page.categoryButton().click()
+    categories = ["Energy", "Crude Oil"]
+    page.chooseCategory(category) for category in categories
+    page.submitCategoryButton().click()
+
+    page.uploadFile()
+
+    page.modelNumberInput().sendKeys("123123")
+    page.minOrderInput().sendKeys("123123")
+    page.fobPriceInput().sendKeys("123123")
+    page.supplyAbilityInput().sendKeys("123123")
+
+    page.submitForm()
+    helpers.expectUrlChanged("/products")

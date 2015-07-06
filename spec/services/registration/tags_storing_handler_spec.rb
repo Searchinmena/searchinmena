@@ -1,13 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe Registration::TagsStoringHandler do
+describe TagsStoringHandler do
   let(:handler) do
-    described_class.new(business, tags_params)
+    described_class.new(business, tags_params, locale)
   end
   let(:business) { double(:business) }
   let(:tags_params) { [attributes] }
+  let(:locale) { "en" }
 
-  let(:attributes) { { name: "Ania" } }
+  let(:attributes) { { label: "Ania" } }
   let(:tag) { double(:tag) }
 
   describe "#perform" do
@@ -24,12 +25,25 @@ describe Registration::TagsStoringHandler do
     end
 
     it "adds tag" do
-      expect(tag_repository).to receive(:find_or_create)
-        .with(attributes).and_return(tag)
+      expect(tag_repository).to receive(:find_or_create_by_translation)
+        .with("Ania", "en").and_return(tag)
       expect(business_repository).to receive(:add_tag)
         .with(business, tag).and_return(true)
 
       is_expected.to be_successful
+    end
+
+    context "tag id is passed (tag is already saved)" do
+      let(:attributes) { { label: "Ania", id: 7 } }
+
+      it "finds tag by id" do
+        expect(tag_repository).to receive(:find_by_id)
+          .with(7).and_return(tag)
+        expect(business_repository).to receive(:add_tag)
+          .with(business, tag).and_return(true)
+
+        is_expected.to be_successful
+      end
     end
   end
 end

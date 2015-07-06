@@ -80,6 +80,7 @@
   @media screen and (min-width: 1050px) {
     width: 2 * $bs9;
     left: 0;
+    top: 0;
   }
 
   .main-category-link {
@@ -137,11 +138,12 @@
 }
 
 .search-results-container {
+  position: relative; 
   background-color: white;
-  padding: $bs2 0;
+  padding: 0;
 
   @media screen and (min-width: 1050px) {
-    padding: $bs2 0 $bs2 2 * $bs9;
+    padding: 0 0 $bs2 2 * $bs9;
   }
 
   .title {

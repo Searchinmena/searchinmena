@@ -2,6 +2,7 @@
   @extend %clearfix;
   list-style: none;
   border-top: $bs-5 solid $border-grey;
+  margin-top: -1.7rem;
 }
 
 .tab {
@@ -10,6 +11,10 @@
   border-top: $bs-5 solid $blue-basic;
   position: relative;
   top: -.14rem;
+  width: 33%;
+  text-align: center;
+  font-size: $bs09;
+  height: $bs7;
 
   &:nth-of-type(1) {
     border-color: $blue-basic;
@@ -55,6 +60,13 @@
       }
     }
   }
+
+  @media screen and (min-width: $tablet) {
+    width: auto;
+    height: auto;
+    text-align: initial;
+    font-size: $bs0;
+  }
 }
 
 .tab-link {
@@ -63,6 +75,7 @@
   font-weight: 100;
   display: block;
   padding: $bs2 $bs5;
+  @extend %dashboard-content-padding;
   border: 0;
 
   .icon-chevron-down {

@@ -17,12 +17,14 @@
 //= require angular-translate-loader-static-files
 //= require angular-sanitize
 //= require angular-animate
+//= require angular-rails-templates
 //= require ng-tags-input
 //= require angular-flash-alert
 //= require jquery
 //= require jquery.cookie
 //= require underscore
 //= require ng-file-upload
+//= require angular-bootstrap
 //= require angular-off-click
 //= require sim
 //= require router

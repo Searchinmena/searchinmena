@@ -12,6 +12,18 @@ class NewProductPage
     @filePath = "../../../support/fixtures/test-image.png"
     @removePhotoCss = ".remove-photo"
 
+    @categoriesModalCss = ".categories-modal"
+    @chooseCategoryId = "choose-category"
+    @categoryTitleCss = ".breadcrumbs-title"
+    @submitCategoryCss = ".modal-action input"
+    @categoryCss = "a.category-name"
+    @breadcrumbCss = "#modal-breadcrumbs .breadcrumbs-item"
+    @previousCategoryId = "previous-category"
+
+    @breadcrumbInFormCss = "#category .breadcrumbs-item"
+
+    @submitCss = ".actions input"
+
   get: ->
     browser.get("/dashboard#/products/new")
 
@@ -38,5 +50,53 @@ class NewProductPage
 
   removePhotoButton: ->
     element.all(By.css(@removePhotoCss)).get(0)
+
+  categoryButton: ->
+    element(By.id(@chooseCategoryId))
+
+  categoryTitle: ->
+    element(By.css(@categoryTitleCss)).getText()
+
+  submitCategoryButton: ->
+    element(By.css(@submitCategoryCss))
+
+  chooseCategory: (category) ->
+    element(By.cssContainingText(@categoryCss, category)).click()
+
+  breadcrumb: (category) ->
+    element(By.cssContainingText(@breadcrumbCss, category))
+
+  breadcrumbs: (callback) ->
+    element.all(By.css(@breadcrumbCss)).filter((elem) ->
+      elem.isDisplayed().then((isDisplayed) ->
+        isDisplayed == true
+      )
+    ).then(callback)
+
+  previousCategoryButton: ->
+    element(By.id(@previousCategoryId))
+
+  breadcrumbInForm: (category) ->
+    element(By.cssContainingText(@breadcrumbInFormCss, category))
+  
+  nameInput: ->
+    element(By.model("form.product.name"))
+
+  modelNumberInput: ->
+    element(By.model("form.product.model_number"))
+
+  minOrderInput: ->
+    element(By.model("form.product.min_order_quantity_number"))
+
+  fobPriceInput: ->
+    element(By.model("form.product.fob_price"))
+
+  supplyAbilityInput: ->
+    element(By.model("form.product.supply_ability_capacity"))
+
+  submitForm: ->
+    submitButton = element(By.css(@submitCss))
+    submitButton.click()
+
 
 module.exports = NewProductPage

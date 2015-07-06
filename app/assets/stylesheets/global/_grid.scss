@@ -18,4 +18,9 @@
 
 .container {
   @extend %max-width-container;
+  
+  @media screen and (min-width: $medium-desktop) {
+    min-height: 100vh;
+    min-height: calc(100vh - 106px);
+  }
 }

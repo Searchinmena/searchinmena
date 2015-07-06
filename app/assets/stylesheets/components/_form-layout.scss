@@ -238,8 +238,50 @@
     max-width: 2 * $bs8;
     max-height: 100%;
     border: 1px solid $border-grey;
-    
+  }
+}
+
+.with-spinner {
+  @extend %clearfix;
+
+  input[type="submit"] {
     @media screen and (min-width: $tablet) {
+      display: inline-block;
+      float: left;
+
+      [dir="rtl"] & {
+        float: right;
+      }
     }
+  }
+}
+
+.spinner {
+  @include animation(spinning, 1.5s, infinite, linear);
+  width: $bs5;
+  height: $bs5;
+  background-image: image-url("spinner.png");
+  background-size: 100%;
+  margin: $bs0 auto;
+
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+    margin: $bs-3 $bs0;
+  }
+}
+
+
+@include keyframes(spinning) {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

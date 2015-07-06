@@ -23,6 +23,8 @@ module Sim
     # Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
+    config.autoload_paths << Rails.root.join('lib', 'seeders')
+
     # The default locale is :en and all translations from
     # config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**',
@@ -39,5 +41,8 @@ module Sim
     config.action_view.field_error_proc = proc { |html_tag|
       "<span class=\"field-with-errors\">#{html_tag}</span>".html_safe
     }
+
+    config.angular_templates.ignore_prefix  = %w(templates/)
+    config.angular_templates.markups        = %w(haml)
   end
 end

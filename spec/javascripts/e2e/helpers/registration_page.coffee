@@ -23,6 +23,9 @@ class RegistrationPage
   tagInput: ->
     element(By.model("form.tags")).element(By.css("input[type=text]"))
 
+  selectBusinessTypesInput: ->
+    element(By.id("select-toggle"))
+
   submitForm: ->
     submitButton = element(By.css("input[type=submit]"))
     submitButton.click()

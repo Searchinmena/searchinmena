@@ -1,22 +1,35 @@
-%h1.form-title {{ "products.new.form_title" | translate }}
+%h2.header-title {{ "products.new.form_title" | translate }}
 %form{ action: "/products", "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
   %form-field{ "error": "errors.product.name" }
-    %label {{ "products.new.name" | translate }}
+    %label.required
+      {{ "products.new.name" | translate }}
     %input{ type: "text", "ng-model": "form.product.name" }
-  %form-field{ "error": "errors.product.category" }
-    %label {{ "products.new.category" | translate }}
-    %button.small-button {{ "products.new.category_button" | translate }}
   .field
-    %label {{ "products.new.photos" | translate }}
+    %label.required
+      {{ "products.new.category" | translate }}
+    %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+
+    %error-message-for{ "error": "errors.product.category_id" }
+    #category{ "ng-show": "breadcrumbs" }
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
+        {{item.name}}
+        %span.icon-chevron-right
+      %span.breadcrumbs-item
+        {{breadcrumbs.current().name}}
+
+  .field
+    %label.required
+      {{ "products.new.photos" | translate }}
     %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
       "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
     %p.field-comment {{ "products.new.photos_comment" | translate }}
     %p.field-comment {{ "products.new.photos_comment_thumbnail" | translate }}
     %ul.photos-preview
       %li{ "ng-repeat": "photo in photos" }
-        %img.preview-image{ "ngf-src": "photo", "ngf-default-src": "photos", "ngf-accept": "'image/*'" }
+        %img.preview-image{ "ngf-src": "photo",
+        "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
         %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
           %span.icon-remove
 
@@ -113,5 +126,6 @@
   %form-field{ "error": "errors.product.packaging" }
     %label {{ "products.new.packaging" | translate }}
     %input{ type: "text", "ng-model": "form.product.packaging_details" }
-  .actions
+  .actions.with-spinner
     %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
+    .spinner

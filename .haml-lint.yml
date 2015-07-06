@@ -1,3 +1,6 @@
 linters:
   UnnecessaryStringOutput:
     enabled: false
+
+  LineLength:
+    enabled: false

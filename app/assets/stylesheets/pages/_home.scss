@@ -25,6 +25,10 @@
   }
 
   @media screen and (min-width: $standard-desktop) {
+    width: 60%;
+  }
+
+  @media screen and (min-width: $big-desktop) {
     width: 50%;
   }
 
@@ -49,6 +53,7 @@
 
     @media screen and (min-width: $tablet) {
       font-size: 21px;
+      max-width: 31em;
     }
 
     @media screen and (min-width: $standard-desktop) {
@@ -61,16 +66,40 @@
   padding: 0 $bs2;
 }
 
-.sign-up-btn {
+.browse-btn, .dashboard-btn, .sign-up-btn {
   @extend %basic-button;
+}
+
+.browse-btn, .dashboard-btn {
+  @extend %ghost-button;
+  display: inline-block;
+  margin-top: $bs2;
+
+   @media screen and (min-width: $tablet) {
+    margin-right: $bs0;
+
+    [dir="rtl"] & {
+      margin-right: 0;
+      margin-left: $bs0;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: $bs5;
+  }
+}
+
+
+.sign-up-btn {
+  margin: $bs5 0;
   @extend %purple-button;
-  margin:  $bs5 0;
 }
 
 .video-link {
   text-transform: uppercase;
   color: white;
   border: 0;
+  display: block;
 
   .icon-play-circle {
     font-size: $bs5;

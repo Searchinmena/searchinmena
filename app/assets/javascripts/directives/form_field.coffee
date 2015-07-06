@@ -2,7 +2,7 @@
   restrict: 'E',
   replace: true,
   transclude: true,
-  templateUrl: '/assets/templates/form_field',
+  templateUrl: 'form_field.html',
   scope: {
     error: '='
   }
