@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   enum category: [:seller, :buyer, :both]
 
-  has_one :business
+  has_one :business, dependent: :delete
 
   def self.category_name(type)
     I18n.t("user.types.#{type}")

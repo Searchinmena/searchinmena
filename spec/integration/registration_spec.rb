@@ -12,7 +12,7 @@ describe Registration::Creator do
       {
         user: user_params,
         business: business_params,
-        tags: [{ name: "Ania" }]
+        tags: [{ name: "Ania", locale: "en" }]
       }
     end
 

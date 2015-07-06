@@ -45,7 +45,7 @@ describe Users::RegistrationsController do
     let(:business_params) do
       {
         "name" => business.name,
-        "country" => business.country,
+        "country_id" => business.country_id.to_s,
         "phone" => business.phone
       }
     end
@@ -56,14 +56,14 @@ describe Users::RegistrationsController do
         tags: tags_params
       }
     end
-    let(:tags_params) { [{ "name" => "ania" }] }
+    let(:tags_params) { [{ "label" => "ania" }] }
 
     let(:registration_creator) { double }
 
     before do
       response = double(successful?: successful, user: user, business: business)
       expect(Registration::Creator).to receive(:new)
-        .with(registration_params)
+        .with(registration_params.merge(locale: :en))
         .and_return(registration_creator)
       expect(registration_creator).to receive(:perform).and_return(response)
 

@@ -3,15 +3,24 @@ require "rails_helper"
 describe TagRepository do
   let(:repository) { TagRepository.new }
 
-  it_behaves_like "any repository"
+  it_behaves_like "TranslatableRepository"
 
   describe "#find_with_query" do
-    subject { repository.find_with_query(query) }
+    let(:locale) { 'en' }
+    subject { repository.find_with_query(query, locale) }
 
-    let!(:tag) { create(:tag) }
-    let!(:matching_tag1) { create(:tag, name: "AniasomethingB") }
-    let!(:matching_tag2) { create(:tag, name: "AniasomethingA") }
-    let!(:not_matching_tag) { create(:tag, name: "somethingAnia") }
+    def tag_with_translation(value, locale)
+      translation = create(:translation, value: value, locale: locale)
+      create(:tag_with_translation, translation: translation)
+    end
+
+    let!(:tag) do
+      create(:tag_with_translation,
+             translation: create(:translation, locale: locale))
+    end
+    let!(:matching_tag1) { tag_with_translation("AniasomethingB", locale) }
+    let!(:matching_tag2) { tag_with_translation("AniasomethingA", locale) }
+    let!(:not_matching_tag) { tag_with_translation("somethingAnia", locale) }
 
     context "query is blank" do
       let(:query) { "" }

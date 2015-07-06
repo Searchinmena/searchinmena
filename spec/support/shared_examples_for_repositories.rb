@@ -29,6 +29,12 @@ shared_examples "any repository" do
     it { expect(subject.last).to eq(klass.last)  }
   end
 
+  describe "#count" do
+    let!(:object_1) { create(factory_name) }
+    let!(:object_2) { create(factory_name) }
+    it { expect(subject.count).to eq(2)  }
+  end
+
   describe "#save" do
     let(:object) { build(factory_name) }
     it { expect { subject.save(object) }.to change { subject.all.size } }

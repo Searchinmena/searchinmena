@@ -3,22 +3,25 @@
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
   %form-field{ "error": "errors.product.name" }
-    %label {{ "products.new.name" | translate }}
+    %label.required
+      {{ "products.new.name" | translate }}
     %input{ type: "text", "ng-model": "form.product.name" }
   .field
-    %label {{ "products.new.category" | translate }}
+    %label.required
+      {{ "products.new.category" | translate }}
     %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
 
     %error-message-for{ "error": "errors.product.category_id" }
-    #category
-      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
+    #category{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
+      %span.breadcrumbs-item
         {{item.name}}
         %span.icon-chevron-right
-      %span.breadcrumbs-item
-        {{breadcrumbs.current().name}}
+    %span.breadcrumbs-item
+      {{breadcrumbs.current().name}}
 
   .field
-    %label {{ "products.new.photos" | translate }}
+    %label.required
+      {{ "products.new.photos" | translate }}
     %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
       "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
     %p.field-comment {{ "products.new.photos_comment" | translate }}

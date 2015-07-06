@@ -1,4 +1,4 @@
-@Sim.controller 'ProductsIndexCtrl', ['$scope'
+@Sim.controller 'ProductsIndexCtrl', ['$scope',
   ($scope) ->
-    
+
 ]

@@ -22,6 +22,8 @@ class NewProductPage
 
     @breadcrumbInFormCss = "#category .breadcrumbs-item"
 
+    @submitCss = ".actions input"
+
   get: ->
     browser.get("/dashboard#/products/new")
 
@@ -76,5 +78,25 @@ class NewProductPage
 
   breadcrumbInForm: (category) ->
     element(By.cssContainingText(@breadcrumbInFormCss, category))
+  
+  nameInput: ->
+    element(By.model("form.product.name"))
+
+  modelNumberInput: ->
+    element(By.model("form.product.model_number"))
+
+  minOrderInput: ->
+    element(By.model("form.product.min_order_quantity_number"))
+
+  fobPriceInput: ->
+    element(By.model("form.product.fob_price"))
+
+  supplyAbilityInput: ->
+    element(By.model("form.product.supply_ability_capacity"))
+
+  submitForm: ->
+    submitButton = element(By.css(@submitCss))
+    submitButton.click()
+
 
 module.exports = NewProductPage

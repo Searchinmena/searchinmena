@@ -96,6 +96,7 @@ input[type="submit"] {
 .small-button {
   @extend %secondary-button;
   padding: $bs-1;
+  margin: $bs-1 0;
 
   @media screen and (min-width: $tablet) {
     max-width: 2 * $bs8;
@@ -114,7 +115,11 @@ input[type="submit"] {
 
 .plus-button {
   @extend %tiny-button;
+  margin: $bs-1 0;
 
+  .compound-field & {
+    margin: 0;
+  }
   .icon-plus {
     padding: 0;
   }
