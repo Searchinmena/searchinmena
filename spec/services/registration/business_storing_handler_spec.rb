@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Registration::BusinessStoringHandler do
+describe BusinessStoringHandler do
   let(:handler) do
     described_class.new(business,
                         business_params,
@@ -14,7 +14,7 @@ describe Registration::BusinessStoringHandler do
   let(:business) { double(:business) }
   let(:business_params) { double(:business_params) }
   let(:tags_params) { double(:tags_params) }
-  let(:locale) { 'en' }
+  let(:locale) { "en" }
 
   fake(:business_validator)
   fake(:storing_handler)
