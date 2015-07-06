@@ -51,9 +51,7 @@ describe RegistrationPage, ->
   it "is possible to add business types", ->
     page.chooseUserCategory(page.sellerCategory)
 
-    EC = protractor.ExpectedConditions
     selectButton = page.selectBusinessTypesInput()
-
     selectButton.click()
 
     element(By.linkText("Manufacturer")).click()
