@@ -115,7 +115,11 @@ input[type="submit"] {
 
 .plus-button {
   @extend %tiny-button;
+  margin: $bs-1 0;
 
+  .compound-field & {
+    margin: 0;
+  }
   .icon-plus {
     padding: 0;
   }
