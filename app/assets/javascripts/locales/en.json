@@ -16,6 +16,7 @@
       "city": "City",
       "location": "Location",
       "select_country": "Select country",
+      "address": "Address",
       "business_types": "Business types",
       "select_business_types": "Select business types",
       "main_products": "Main products",

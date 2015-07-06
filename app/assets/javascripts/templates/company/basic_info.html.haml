@@ -21,6 +21,13 @@
       %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country" }
         %option{ value: "" } -- {{ "company.basic_info.select_country" | translate }} --
 
+  %form-field{ "error": "errors.business.address_line_1"}
+    %label {{ "company.basic_info.address" | translate }}
+    %input{ type: "text", "ng-model": "form.business.address_line_1" }
+
+  %form-field{ "error": "errors.business.address_line_2" }
+    %input{ type: "text", "ng-model": "form.business.address_line_2" }
+
   .field{ "field-name": "business.business_types", "ng-class": "{'field-with-errors': errors.business.business_types}" }
     %label {{ "company.basic_info.business_types" | translate }}
     %multiselect{ "model": "selectedBusinessTypes", "options": "business_types", "select-button-text": "selectButtonText" }
