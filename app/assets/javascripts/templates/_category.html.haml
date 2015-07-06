@@ -1,4 +1,5 @@
-%label {{ "category.title" | translate }}
+%label.required
+  {{ "category.title" | translate }}
 %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "category.button" | translate }}
 
 %error-message-for{ "error": "errors.product.category_id" }
@@ -8,3 +9,4 @@
     %span.icon-chevron-right
   %span.breadcrumbs-item
     {{breadcrumbs.current().name}}
+

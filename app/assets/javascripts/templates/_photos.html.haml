@@ -1,4 +1,5 @@
-%label {{ "photos.title" | translate }}
+%label.required
+  {{ "photos.title" | translate }}
 %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
   "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "photos.button" | translate }}
 %p.field-comment {{ "photos.comment" | translate }}
@@ -16,3 +17,4 @@
   {{fileName}}:
   %div{ "ng-repeat": "error in errors.photo" }
     {{error}}
+

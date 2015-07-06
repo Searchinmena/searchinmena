@@ -5,8 +5,7 @@ class CategoryRepository < TranslatableRepository
   end
 
   def for_parent_id(parent_id, locale)
-    with_translations(locale)
-      .where(parent_id: parent_id).order(:id)
+    with_translations(locale).where(parent_id: parent_id).order(:id)
   end
 
   def translation_repository
