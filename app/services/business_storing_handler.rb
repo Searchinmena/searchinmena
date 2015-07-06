@@ -6,8 +6,8 @@ class BusinessStoringHandler < BaseService
   def initialize(business, business_params, tags_params, locale, validator)
     self.storing_handler = StoringHandler.new(business, business_params,
                                               business_repository, validator)
-    self.tags_storing_handler = TagsStoringHandler.new(business,
-                                                       tags_params, locale)
+    self.tags_storing_handler = TagsStoringHandler.new(business, tags_params,
+                                                       locale)
   end
 
   def perform

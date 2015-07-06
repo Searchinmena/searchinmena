@@ -4,7 +4,7 @@ class TagRepository < TranslatableRepository
 
     collection = klass.joins(:translations).includes(:translations)
       .where("translations.locale": locale)
-        .where("LOWER(value) LIKE LOWER(?)", "#{query}%")
+      .where("LOWER(value) LIKE LOWER(?)", "#{query}%")
     ordered(collection)
   end
 
