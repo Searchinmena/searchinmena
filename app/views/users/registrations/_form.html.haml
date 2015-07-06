@@ -63,10 +63,7 @@
             class: "inline-label"
 
     .fields-group.company-info{ "ng-show": "shouldShowCompanyInfo()" }
-      = render partial: "company_info",
-        locals: { f: f,
-                  business: business,
-                  business_presenter: business_presenter }
+      = render partial: "company_info", locals: { f: f, business: business }
 
     .actions
       = f.submit t("devise.registrations.submit")

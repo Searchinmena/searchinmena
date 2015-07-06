@@ -6,7 +6,7 @@
     = b.label :name, t("sign_up.company_name")
     = b.text_field :name, "ng-model": "form.business.name"
 
-  = form_field("business.country") do
+  = form_field("business.country_id") do
     = b.label :country, t("sign_up.location")
     .select-field
       %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country_id" }
@@ -16,13 +16,10 @@
     = b.label :phone, t("sign_up.contact_number")
     = b.text_field :phone, "ng-model": "form.business.phone"
 
-  = form_field("business.business_type") do
-    = b.label :business_type, t("sign_up.business_type")
-    .select-field
-      = b.select :business_type,
-        business_presenter.options_for_business_types_select,
-        { prompt: t("sign_up.business_type_select") },
-        { "ng-model": "form.business.business_type" }
+  .field{ "ng-class": "{'field-with-errors': errors.business.business_type_ids}" }
+    %label {{ "company.basic_info.business_types" | translate }}
+    %multiselect{ "model": "form.business.business_type_ids", "options": "business_types", "select-button-text": "selectButtonText" }
+    %error-message-for{ "error": "errors.business.business_type_ids" }
 
   .field
     = label_tag :main_products, t("sign_up.main_products")

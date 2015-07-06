@@ -58,8 +58,6 @@ en:
     location: "Location"
     location_select: "-- Select Country --"
     contact_number: "Contact Number"
-    business_type: "Business Type"
-    business_type_select: "-- Select Business Type --"
     main_products: "Main Products"
 
   sign_in:
