@@ -64,7 +64,7 @@
     "at_least_one_photo": "صور مطلوبة {{min_count}} حد أدنى",
     "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
     "successfully_added": "تمت إضافة المنتج بنجاح",
-    "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا
+    "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "new": {
       "form_title": "منتج جديد",
       "basic_section": "المعلومات الأساسية",
@@ -87,7 +87,7 @@
       "description": "شرح عن المنتج",
       "trade_section": "معلومات المنتج التجارية",
       "order": "حد الطلب الأدنى",
-      "choose_unit": "إختر وحدة,
+      "choose_unit": "إختر وحدة",
       "choose_currency": "إختر عملة",
       "choose_frequency": "التكرار",
       "order_comment": "مثال: 10,000 عبوة",
