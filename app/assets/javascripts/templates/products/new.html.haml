@@ -12,12 +12,12 @@
     %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
 
     %error-message-for{ "error": "errors.product.category_id" }
-    #category{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
-      %span.breadcrumbs-item
+    #category{ "ng-show": "breadcrumbs" }
+      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
         {{item.name}}
         %span.icon-chevron-right
-    %span.breadcrumbs-item
-      {{breadcrumbs.current().name}}
+      %span.breadcrumbs-item
+        {{breadcrumbs.current().name}}
 
   .field
     %label.required
