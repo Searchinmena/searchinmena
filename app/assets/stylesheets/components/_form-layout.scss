@@ -245,19 +245,29 @@
   @extend %clearfix;
 
   input[type="submit"] {
-    display: inline-block;
-    float: left;
+    @media screen and (min-width: $tablet) {
+      display: inline-block;
+      float: left;
+
+      [dir="rtl"] & {
+        float: right;
+      }
+    }
   }
 }
 
 .spinner {
   @include animation(spinning, 1.5s, infinite, linear);
-  display: inline-block;
   width: $bs5;
   height: $bs5;
   background-image: image-url("spinner.png");
   background-size: 100%;
-  margin: $bs-3 $bs0;
+  margin: $bs0 auto;
+
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+    margin: $bs-3 $bs0;
+  }
 }
 
 
