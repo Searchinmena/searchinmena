@@ -77,7 +77,7 @@
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
     %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
+      %input{ type: "number", "ng-model": "form.product.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
       "ng-model": "form.product.min_order_quantity_unit" }
@@ -86,7 +86,7 @@
     %label {{ "products.new.price" | translate }}
     %p.field-comment {{ "products.new.price_comment" | translate }}
     %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.fob_price" }
+      %input{ type: "number", "ng-model": "form.product.fob_price" }
     .select-field
       %select{ "ng-options": "currency.id as currency.label for currency in currencies",
       "ng-model": "form.product.fob_price_currency" }
@@ -103,7 +103,7 @@
     %label {{ "products.new.supply" | translate }}
     %p.field-comment {{ "products.new.supply_comment" | translate }}
     %form-field{ "error": "errors.product.supply_ability_capacity", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
+      %input{ type: "number", "ng-model": "form.product.supply_ability_capacity" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
       "ng-model": "form.product.supply_ability_unit" }
