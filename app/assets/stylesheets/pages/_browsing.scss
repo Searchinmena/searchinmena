@@ -47,7 +47,7 @@
 .categories-list-button {
   text-transform: uppercase;
   background-color: $snow-white;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
   color: $blue-basic;
   padding: $bs0 $bs2;
 
@@ -65,7 +65,7 @@
 .all-categories-list {
   @include transition(all, .7s, ease-in-out);
   padding: $bs1 0;
-  border-right: 1px solid $border-grey;
+  border-right: $default-border;
   background-color: white;
   font-size: $bs09;
   position: absolute;
@@ -154,8 +154,8 @@
 
   @media screen and (min-width: 1050px) {
     margin: 0 $bs-1;
-    border-left: 1px solid $border-grey;
-    border-right: 1px solid $border-grey;
+    border-left: $default-border;
+    border-right: $default-border;
   }
   
   .title {
@@ -166,7 +166,7 @@
 .search-filters {
   @extend %clearfix;
   padding: $bs0 $bs2;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
   font-size: $bs09;
 
   .filter-label {
@@ -224,7 +224,7 @@
   font-size: $bs09;
   margin: $bs0 0 0;
   padding: 0 $bs2 $bs1;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
 
   a {
     border: 0;
@@ -243,7 +243,7 @@
 
 .result-item {
   @extend %clearfix;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
   display: block;
   padding: $bs1 0;
 
@@ -343,7 +343,7 @@
     height: 15em;
 
     @media screen and (min-width: $tablet) {
-      border: 1px solid $border-grey;
+      border: $default-border;
     }
 
     @media screen and (min-width: $desktop) {

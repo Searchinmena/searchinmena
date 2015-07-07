@@ -37,7 +37,7 @@ header {
 }
 
 .mobile-menu-btn {
-  border-left: 1px solid $border-grey;
+  border-left: $default-border;
   font-size: $bs5;
   padding: $bs-1 $bs0 0;
   float: right;
@@ -46,7 +46,7 @@ header {
   [dir=rtl] & {
     float: left;
     border-left: 0;
-    border-right: 1px solid $border-grey;
+    border-right: $default-border;
     line-height: 1;
     overflow: hidden;
   }
@@ -127,7 +127,7 @@ nav {
 .language-selection {
   @extend %clearfix;
   padding: 0 $bs1;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
 }
 
 .language-choice {
