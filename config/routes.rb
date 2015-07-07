@@ -36,5 +36,7 @@ Rails.application.routes.draw do
 
   resource :company, only: [:create]
   resources :products, only: [:create]
+  resources :services, only: [:create]
   resources :product_photos, only: [:create]
+  resources :service_photos, only: [:create]
 end

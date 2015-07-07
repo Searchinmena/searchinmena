@@ -1,4 +1,4 @@
-class ProductPhotosErrorPresenter
+class PhotosErrorPresenter
   takes :file, :response
 
   def as_json(*)

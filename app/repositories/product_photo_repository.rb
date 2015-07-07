@@ -1,2 +1,2 @@
-class ProductPhotoRepository < AbstractRepository
+class ProductPhotoRepository < ProductResourceRepository
 end

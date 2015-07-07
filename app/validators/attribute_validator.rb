@@ -1,4 +1,4 @@
-class ProductAttributeValidator < BaseValidator
+class AttributeValidator < BaseValidator
   def self.fields
     [:name, :value]
   end

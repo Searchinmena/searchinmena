@@ -1,35 +1,35 @@
 .field.compound-field
   %label {{ "trade_info.fob_price" | translate }}
   %p.field-comment {{ "trade_info.fob_price_comment" | translate }}
-  %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
-    %input{ type: "text", "ng-model": "form.product.fob_price" }
+  %form-field{ "error": "errors.business_item.min_order_quantity_number", class: 'inline-field' }
+    %input{ type: "text", "ng-model": "form.business_item.fob_price" }
   .select-field
     %select{ "ng-options": "currency.id as currency.label for currency in currencies",
-    "ng-model": "form.product.fob_price_currency" }
+    "ng-model": "form.business_item.fob_price_currency_id" }
       %option{ value: "" } -- {{ "trade_info.choose_currency" | translate }} --
   %span {{ "trade_info.per" | translate }}
   .select-field
     %select{ "ng-options": "unit.id as unit.label for unit in units",
-    "ng-model": "form.product.fob_price_unit" }
+    "ng-model": "form.business_item.fob_price_unit_id" }
       %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
-%form-field{ "error": "errors.product.port" }
+%form-field{ "error": "errors.business_item.port" }
   %label {{ "trade_info.port" | translate }}
-  %input{ type: "text", "ng-model": "form.product.port" }
+  %input{ type: "text", "ng-model": "form.business_item.port" }
 
 .field.compound-field
   %label {{ "trade_info.supply" | translate }}
   %p.field-comment {{ "trade_info.supply_comment" | translate }}
-  %form-field{ "error": "errors.product.supply_ability_capacity", class: 'inline-field' }
-    %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
+  %form-field{ "error": "errors.business_item.supply_ability_capacity", class: 'inline-field' }
+    %input{ type: "text", "ng-model": "form.business_item.supply_ability_capacity" }
   .select-field
     %select{ "ng-options": "unit.id as unit.label for unit in units",
-    "ng-model": "form.product.supply_ability_unit" }
+    "ng-model": "form.business_item.supply_ability_unit_id" }
       %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
   %span {{ "trade_info.per" | translate }}
   .select-field
     %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies",
-    "ng-model": "form.product.supply_ability_frequency" }
+    "ng-model": "form.business_item.supply_ability_frequency_id" }
       %option{ value: "" } -- {{ "trade_info.choose_frequency" | translate }} --
 
 .field
@@ -39,6 +39,6 @@
     "ng-model": "form.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
       %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
-%form-field{ "error": "errors.product.packaging" }
+%form-field{ "error": "errors.business_item.packaging" }
   %label {{ "trade_info.packaging" | translate }}
-  %input{ type: "text", "ng-model": "form.product.packaging_details" }
+  %input{ type: "text", "ng-model": "form.business_item.packaging_details" }

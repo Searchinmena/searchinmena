@@ -28,11 +28,23 @@ FactoryGirl.define do
   factory :product do
     sequence(:name) { |n| "Product#{n}" }
     association :business
+    association :category, factory: :product_category
+  end
+
+  factory :service do
+    sequence(:name) { |n| "Service#{n}" }
+    association :business
+    association :category, factory: :service_category
   end
 
   factory :product_photo do
     photo { test_image }
     association :product
+  end
+
+  factory :service_photo do
+    photo { test_image }
+    association :service
   end
 
   factory :translatable do
@@ -77,6 +89,8 @@ FactoryGirl.define do
 
   factory :category do
     factory :product_category, parent: :category, class: 'ProductCategory' do
+    end
+    factory :service_category, parent: :category, class: 'ServiceCategory' do
     end
   end
 end

@@ -1,12 +1,12 @@
 %h2.header-title {{ "products.new.form_title" | translate }}
-%form{ action: "/services", "ng-submit": "submit($event)" }
+%form{ "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
 
-  %form-field{ "error": "errors.product.name" }
+  %form-field{ "error": "errors.business_item.name" }
     %label.required
       {{ "products.new.name" | translate }}
-    %input{ type: "text", "ng-model": "form.product.name" }
+    %input{ type: "text", "ng-model": "form.business_item.name" }
 
   .field{ "ng-include": "'_category.html'" }
 
@@ -16,19 +16,19 @@
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
 
-  %form-field{ "error": "errors.product.model_number" }
+  %form-field{ "error": "errors.business_item.model_number" }
     %label {{ "products.new.model" | translate }}
-    %input{ type: "text", "ng-model": "form.product.model_number" }
+    %input{ type: "text", "ng-model": "form.business_item.model_number" }
 
-  %form-field{ "error": "errors.product.brand_name" }
+  %form-field{ "error": "errors.business_item.brand_name" }
     %label {{ "products.new.brand" | translate }}
-    %input{ type: "text", "ng-model": "form.product.brand_name" }
+    %input{ type: "text", "ng-model": "form.business_item.brand_name" }
 
   .field.compound-field{ "ng-include": "'_attributes.html'" }
 
-  %form-field{ "error": "errors.product.description" }
+  %form-field{ "error": "errors.business_item.description" }
     %label {{ "products.new.description" | translate }}
-    %textarea{ "ng-model": "form.product.description" }
+    %textarea{ "ng-model": "form.business_item.description" }
 
 
   %h3.line-behind
@@ -37,11 +37,11 @@
   .field.compound-field
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
-    %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
+    %form-field{ "error": "errors.business_item.min_order_quantity_number", class: 'inline-field' }
+      %input{ type: "text", "ng-model": "form.business_item.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
-      "ng-model": "form.product.min_order_quantity_unit" }
+      "ng-model": "form.business_item.min_order_quantity_unit_id" }
         %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
   %div{ "ng-include": "'_common_trade_info.html'" }

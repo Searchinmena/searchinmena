@@ -3,9 +3,10 @@
   ($rootScope, $http, $state, $modal, TranslatedFlash,
     PhotosUploader) ->
 
-    initialize: (scope, selectsLoader, resourceName) ->
+    initialize: (scope, selectsLoader, resourceName, photos_path) ->
       scope.form = {}
       scope.errors = {}
+      scope.form.business_item ||= {}
       scope.form.attributes = [new SIM.Attribute()]
 
       config = {
@@ -29,9 +30,7 @@
 
       scope.setCategory = (breadcrumbs) ->
         scope.breadcrumbs = breadcrumbs
-        scope.form ||= {}
-        scope.form.product ||= {}
-        scope.form.product.category_id = breadcrumbs.current().id
+        scope.form.business_item.category_id = breadcrumbs.current().id
 
       scope.addAttribute = ->
         scope.form.attributes.push(new SIM.Attribute())
@@ -41,13 +40,14 @@
         scope.form.attributes.splice(index, 1)
 
       scope.saveAndUploadPhotos = (photos) ->
+        console.log(scope.form)
         $http(
           url: "/#{resourceName}",
           data: scope.form,
           method: 'POST'
         ).success((data) ->
           itemId = data.id
-          PhotosUploader.upload(photos, itemId,
+          PhotosUploader.upload(photos_path, photos, itemId,
             ->
               TranslatedFlash.success("#{resourceName}.successfully_added")
               $state.go(resourceName)
@@ -68,7 +68,6 @@
       scope.submit = (e) ->
         e.preventDefault()
         scope.errors = {}
-        console.log(scope.form.attributes)
 
         # request photos from PhotosCtrl
         $rootScope.$broadcast("photos_request")

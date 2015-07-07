@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe ProductPhotoCreator do
+describe BusinessItem::ProductPhotoCreator do
   describe "#perform" do
-    let(:service) { ProductPhotoCreator.new(product_photo_repository) }
+    let(:service) { described_class.new(product_photo_repository) }
     let(:product_photo_repository) { ProductPhotoRepository.new }
     let(:validator) do
       double(:validator, valid?: true, errors?: false)
@@ -12,7 +12,7 @@ describe ProductPhotoCreator do
     let(:photo) { test_image }
 
     it "saves photo for product" do
-      expect(ProductPhotoValidator).to receive(:new)
+      expect(BusinessItemPhotoValidator).to receive(:new)
         .and_return(validator)
 
       service.perform(product, photo)
