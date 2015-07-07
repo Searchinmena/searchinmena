@@ -1,4 +1,4 @@
-class Business::Creator < BaseService
+class Business::Creator < Business::BaseCreator
   attr_accessor :business
 
   def initialize(business, business_params, tags_params, locale, user)
