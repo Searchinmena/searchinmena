@@ -252,7 +252,7 @@ textarea {
 
 }
 
-input[type="checkbox"] {
+input[type="checkbox"], input[type="radio"],  {
   float: left;
   margin: 3px $bs-5 0 0;
 
