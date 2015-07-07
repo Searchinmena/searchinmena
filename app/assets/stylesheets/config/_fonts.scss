@@ -65,6 +65,9 @@
 .icon-expand:before {
   content: "\e690";
 }
+.icon-eye-open:before {
+  content: "\e68d";
+}
 .icon-facebook:before {
   content: "\e68c";
 }
@@ -79,6 +82,12 @@
 }
 .icon-ok:before {
   content: "\e652";
+}
+.icon-pencil:before {
+  content: "\e64e";
+}
+.icon-remove:before {
+  content: "\e63c";
 }
 .icon-search:before {
   content: "\e631";
@@ -272,9 +281,6 @@
 .icon-repeat:before {
   content: "\e63b";
 }
-.icon-remove:before {
-  content: "\e63c";
-}
 .icon-remove-sign:before {
   content: "\e63d";
 }
@@ -325,9 +331,6 @@
 }
 .icon-phone-alt:before {
   content: "\e64d";
-}
-.icon-pencil:before {
-  content: "\e64e";
 }
 .icon-pause:before {
   content: "\e64f";
@@ -493,9 +496,6 @@
 }
 .icon-facetime-video:before {
   content: "\e68b";
-}
-.icon-eye-open:before {
-  content: "\e68d";
 }
 .icon-eye-close:before {
   content: "\e68e";
