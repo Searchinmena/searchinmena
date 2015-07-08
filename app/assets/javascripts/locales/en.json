@@ -62,6 +62,10 @@
     "title": "Category",
     "button": "Choose category"
   },
+  "categories_modal": {
+    "choose": "Choose Category",
+    "ok": "OK"
+  },
   "photos": {
     "title": "Photos",
     "at_least_one_photo": "At least {{min_count}} photo required",
@@ -108,10 +112,6 @@
       "order": "Min order",
       "order_comment": "eg. 10'000 bottles",
       "submit": "Add new product"
-    },
-    "categories": {
-      "choose": "Choose Category",
-      "ok": "OK"
     }
   },
   "services": {

@@ -3,7 +3,7 @@
   ($rootScope, $http, $state, $modal, TranslatedFlash,
     PhotosUploader) ->
 
-    initialize: (scope, selectsLoader, resourceName, photos_path) ->
+    initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController) ->
       scope.form = {}
       scope.errors = {}
       scope.form.business_item ||= {}
@@ -21,7 +21,7 @@
       scope.showCategories = ->
         modalInstance = $modal.open(
           templateUrl: 'categories.html',
-          controller: 'CategoriesCtrl',
+          controller: categoriesController,
           animation: false,
           size: 'lg'
         )
