@@ -39,7 +39,7 @@
     %form-field{ "error": "errors.business_item.average_completion_time", class: 'inline-field' }
       %input{ type: "text", "ng-model": "form.business_item.average_completion_time" }
     .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in completion_units",
+      %select{ "ng-options": "unit.id as unit.label for unit in frequencies",
       "ng-model": "form.business_item.average_completion_time_unit_id" }
         %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
