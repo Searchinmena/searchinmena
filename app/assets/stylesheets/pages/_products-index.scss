@@ -5,22 +5,27 @@
 
 .item-summary {
   @extend %clearfix;
+  @include transition(all, .25s, ease-in-out);
+  overflow: hidden;
   position: relative;
   border-top: $default-border;
+  
+  @media screen and (min-width: $tablet) {
+    &:hover, &:focus {
+      padding-left: 3 * $bs7;
 
-  &:hover {
-    background-color: $snow-white;
+      [dir="rtl"] & {
+        padding-left: initial;
+        padding-right: 3 * $bs7;
+      }
 
-    .edit, .see-page, .delete {
-      color: $blue-basic;
-    }
-
-    .see-page {
-      color: $purple-dark;
-    }
-
-    .delete {
-      color: $red;
+      .item-options {
+        left: 0px;
+        [dir="rtl"] & {
+          left: auto;
+          right: 0px;
+        } 
+      }
     }
   }
 
@@ -43,32 +48,38 @@
     [dir="rtl"] & {
       float: right;
     }
-    
-    @media screen and (min-width: $standard-desktop) {
+
+    @media screen and (min-width: $tablet) {
       width: 100%;
-      max-width: 4 * $bs8;
+      max-width: 3 * $bs8;
     }
 
-    @media screen and (min-width: $standard-desktop) {
-      max-width: 4 * $bs9;
+    @media screen and (min-width: $desktop) {
+      max-width: 3 * $bs9;
+    }
+
+    @media screen and (min-width: $big-desktop) {
+      max-width: 5 * $bs9;
     }
   }
 }
 
 .item-options {
   @extend %clearfix;
+  @include transition(all, .25s, ease-in-out);
   border-bottom: $bs0 solid #f5f5f5;
   clear: both;
 
   @media screen and (min-width: $tablet) {
     border-bottom: 0;
     position: absolute;
-    right: 0;
+    background-color: $snow-white;
+    left: -267px;
     height: 100%;
 
     [dir="rtl"] & {
-      left: 0;
-      right: auto;
+      left: auto;
+      right: -267px;
     }
   }
 
@@ -79,14 +90,13 @@
     width: 33.33%;
     text-align: center;
     float: left;
-    color: $basic-font; 
     padding: $bs1 0;
-    border-left: 0;
+    border-right: 0;
 
     [dir="rtl"] & {
       float: right;
-      border-left: $default-border;
-      border-right: 0;
+      border-right: $default-border;
+      border-left: 0;
     }
 
     @media screen and (min-width: $tablet) {
@@ -94,11 +104,11 @@
       min-height: $bs7;
       width: $bs7;
       border: 0;
-      border-left: $default-border;
+      border-right: $default-border;
 
       [dir="rtl"] & {
-        border-left: 0;
-        border-right: $default-border;
+        border-right: 0;
+        border-left: $default-border;
       }
     }
 
@@ -114,16 +124,19 @@
   }
 
   .see-page {
+    color: $purple-dark;
+
     &:hover, &:focus {
       background-color: $purple-dark; 
     }
   }
 
   .delete {
-    border-right: 0;
+    border-left: 0;
+    color: $red;
 
     [dir="rtl"] & {
-      border-left: 0;
+      border-right: 0;
     }
 
     &:hover, &:focus {
