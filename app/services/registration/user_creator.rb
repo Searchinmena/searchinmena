@@ -1,4 +1,4 @@
-class Registration::UserCreator < Registration::BaseCreator
+class Registration::UserCreator < BaseCreator
   inject :user_repository
   attr_accessor :user
 

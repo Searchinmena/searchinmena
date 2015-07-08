@@ -43,15 +43,5 @@ describe Business::Creator do
       subject
     end
   end
-
-  describe "#copy_errors" do
-    subject { creator.copy_errors }
-
-    it "copies errors to business" do
-      expect(business_validator).to receive(:copy_errors)
-        .with(business)
-      subject
-    end
-  end
 end
 
