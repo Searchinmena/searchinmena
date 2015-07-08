@@ -1,9 +1,7 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
-  'selectsLoader',
-  ($scope, $http, $translate, selectsLoader) ->
-    $scope.form = { business:
-      business_types: [381, 375, 378]
-    }
+  'selectsLoader', 'TranslatedFlash'
+  ($scope, $http, $translate, selectsLoader, TranslatedFlash) ->
+    $scope.form = { business: {} }
     $scope.errors = {}
 
     config = {
@@ -13,8 +11,6 @@
 
     selectsLoader.loadSelectsData($scope, config)
 
-    # Settings for business type multiselect
-    $scope.selectedBusinessTypes = $scope.form.business.business_types || []
     $translate('company.basic_info.select_business_types').then((translation) ->
       $scope.selectButtonText = translation
     )
@@ -24,13 +20,6 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
-      $scope.errors = { business: {
-          name: "can't be blank",
-          phone: "can't be blank",
-          country: "can't be blank",
-          business_types: "can't be blank"
-        }
-      }
 
       console.log($scope.form)
 
@@ -39,10 +28,10 @@
         data: $scope.form,
         method: 'POST'
       ).success(->
-        console.log('SUCCESS')
+        TranslatedFlash.success("company.successfully_added")
       ).error((errors) ->
-        console.log(errors)
         $scope.errors = errors
+        TranslatedFlash.error("company.adding_failed")
       )
 
       false

@@ -9,6 +9,8 @@
       "trade_details": "المعلومات التجارية",
       "certifications": "الشهادات"
     },
+    "successfully_added": "Company was successfully created!",
+    "adding_failed": "Company couldn't be created, please check the form",
     "basic_info": {
       "company_name": "أسم الشركة",
       "add_logo": "أضف لوجو",

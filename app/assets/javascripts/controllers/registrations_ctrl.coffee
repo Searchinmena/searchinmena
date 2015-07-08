@@ -34,6 +34,8 @@
     $scope.submit = (e) ->
       e.preventDefault()
 
+      $scope.errors = {}
+
       $http(
         url: e.target.action,
         data: $scope.form,

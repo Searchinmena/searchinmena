@@ -33,6 +33,6 @@ class BusinessesController < ApplicationController
   end
 
   def tags_params
-    params.permit(tags: [:id, :label])[:tags] || {}
+    params.permit(:tags).permit(:id, :label) || {}
   end
 end

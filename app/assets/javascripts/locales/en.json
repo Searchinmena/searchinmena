@@ -9,6 +9,8 @@
       "trade_details": "Trade Details",
       "certifications": "Certifications"
     },
+    "successfully_added": "Company was successfully created!",
+    "adding_failed": "Company couldn't be created, please check the form",
     "basic_info": {
       "company_name": "Company name",
       "add_logo": "Add logo",
