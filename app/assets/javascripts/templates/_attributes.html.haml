@@ -1,7 +1,7 @@
 %label {{ "attributes.title" | translate }}
 
 %ul
-  %li.field-item{ "ng-repeat": "attribute in form.attributes" }
+  %li.field-item{ "ng-repeat": "attribute in attributes" }
     %span {{ "attributes.attribute" | translate }}
     %input{ type: "text",
       placeholder: '{{ "attributes.attribute_placeholder" | translate }}',

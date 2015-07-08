@@ -7,7 +7,7 @@
       scope.form = {}
       scope.errors = {}
       scope.form.business_item ||= {}
-      scope.form.attributes = [new SIM.Attribute()]
+      scope.attributes = [new SIM.Attribute()]
 
       config = {
         units: "/units",
@@ -33,14 +33,17 @@
         scope.form.business_item.category_id = breadcrumbs.current().id
 
       scope.addAttribute = ->
-        scope.form.attributes.push(new SIM.Attribute())
+        scope.attributes.push(new SIM.Attribute())
 
       scope.removeAttribute = (attribute) ->
-        index = scope.form.attributes.indexOf(attribute)
-        scope.form.attributes.splice(index, 1)
+        index = scope.attributes.indexOf(attribute)
+        scope.attributes.splice(index, 1)
 
       scope.saveAndUploadPhotos = (photos) ->
-        console.log(scope.form)
+        scope.form.attributes = _(scope.attributes).filter((attribute) ->
+          attribute.isPresent()
+        )
+
         $http(
           url: "/#{resourceName}",
           data: scope.form,
