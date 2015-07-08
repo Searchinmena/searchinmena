@@ -68,10 +68,4 @@
 
         scope.selectedCategory.selected = false
         scope.selectedCategory = null
-
-      scope.ok = ->
-        $modalInstance.close(scope.breadcrumbs)
-
-      scope.cancel = ->
-        $modalInstance.dismiss('cancel')
   ]

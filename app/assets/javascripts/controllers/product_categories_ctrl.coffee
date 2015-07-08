@@ -3,4 +3,10 @@
     CATEGORIES_PATH = "/product_categories"
     
     CategoriesModal.initialize($scope, CATEGORIES_PATH)
+
+    $scope.ok = ->
+      $modalInstance.close($scope.breadcrumbs)
+
+    $scope.cancel = ->
+      $modalInstance.dismiss('cancel')
 ]
