@@ -25,12 +25,7 @@ describe NewServicePage, ->
     expect(page.categoryTitle()).toEqual("Choose Category")
     expect(page.submitCategoryButton().getAttribute("disabled")).toEqual("true")
 
-    categories = [
-      "Machinery",
-      "Apparel & Textile Machinery",
-      "Apparel Machinery",
-      "Zipper Making Machinery"
-    ]
+    categories = ["Design Services", "Website Design"]
     for category in categories
       page.chooseCategory(category)
       expect(page.categoryTitle()).toEqual("")
@@ -38,17 +33,17 @@ describe NewServicePage, ->
 
     expect(page.submitCategoryButton().getAttribute("disabled")).toBe(null)
 
-    page.chooseCategory("Zipper Making Machinery")
+    page.chooseCategory("Website Design")
     page.breadcrumbs((elements) ->
-      expect(elements.length).toEqual(4)
+      expect(elements.length).toEqual(2)
     )
 
-    page.chooseCategory("Sewing Machinery")
+    page.chooseCategory("Packaging Design")
     page.breadcrumbs((elements) ->
-      expect(elements.length).toEqual(4)
+      expect(elements.length).toEqual(2)
     )
 
-    count = 4
+    count = 2
     for category in categories.reverse()
       page.previousCategoryButton().click()
       page.breadcrumbs((elements) ->
@@ -61,7 +56,7 @@ describe NewServicePage, ->
   it "is possible to choose category, go back and choose different one from the same level", ->
     page.categoryButton().click()
 
-    categories = ["Energy", "Crude Oil"]
+    categories = ["Design Services", "Website Design"]
     page.chooseCategory(category) for category in categories
 
     page.breadcrumbs((elements) ->
@@ -69,29 +64,28 @@ describe NewServicePage, ->
     )
     expect(page.submitCategoryButton().getAttribute("disabled")).toBe(null)
 
-    page.chooseCategory("Petrochemical Products")
+    page.chooseCategory("Packaging Design")
     page.breadcrumbs((elements) ->
       expect(elements.length).toEqual(2)
     )
 
     page.previousCategoryButton().click()
-    page.chooseCategory("Petrochemical Products")
-    expect(page.breadcrumb("Petrochemical Products").isDisplayed()).toBe(true)
+    page.chooseCategory("Packaging Design")
+    expect(page.breadcrumb("Packaging Design").isDisplayed()).toBe(true)
     page.breadcrumbs((elements) ->
       expect(elements.length).toEqual(2)
     )
 
-    page.chooseCategory("Paraffin")
     page.submitCategoryButton().click()
 
     expect(element(By.css(page.categoriesModalCss)).isElementPresent()).toBe(false)
-    expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)
+    expect(page.breadcrumbInForm("Packaging Design").isDisplayed()).toBe(true)
 
   it "is possible to add service", ->
     page.nameInput().sendKeys("New Service")
 
     page.categoryButton().click()
-    categories = ["Energy", "Crude Oil"]
+    categories = ["Design Services", "Website Design"]
     page.chooseCategory(category) for category in categories
     page.submitCategoryButton().click()
 
