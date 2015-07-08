@@ -11,7 +11,8 @@ class BusinessStoringHandler < BaseService
   end
 
   def perform
-    success = [storing_handler, tags_storing_handler].map(&:perform).all?
+    success = [storing_handler,
+               tags_storing_handler].map(&:perform).all?
     Response.new(success: success)
   end
 end

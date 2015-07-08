@@ -4,9 +4,9 @@
 }
 
 %form-container {
+  @extend %four-sides-border;
   background-color: white;
   border-radius: $bs-3;
-  border: 1px solid #ddd;
 }
 
 .form-container {
@@ -233,11 +233,11 @@
   }
 
   .preview-image {
+    @extend %four-sides-border;
     float: left;
     width: 100%;
     max-width: 2 * $bs8;
     max-height: 100%;
-    border: 1px solid $border-grey;
   }
 }
 

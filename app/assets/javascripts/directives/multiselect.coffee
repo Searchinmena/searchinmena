@@ -1,16 +1,17 @@
 # Based on: http://jsfiddle.net/jaredwilli/vUSPu/
 
-@Sim.directive "multiselect", ->
-  restrict: "E"
-  templateUrl: "multiselect.html"
+@Sim.directive 'multiselect', ->
+  restrict: 'E'
+  templateUrl: 'multiselect.html'
   scope:
-    model: "="
-    options: "="
-    selectButtonText: "=selectButtonText"
+    model: '='
+    options: '='
+    selectButtonText: '=selectButtonText'
 
-  controller: ($scope) ->
+  link: ($scope) ->
     $scope.isDropdownVisible = false
     $scope.options = {}
+    $scope.model = []
 
     $scope.toggleSelect = () ->
       $scope.isDropdownVisible = !$scope.isDropdownVisible
@@ -19,7 +20,7 @@
       $scope.isDropdownVisible = false
 
     $scope.selectAll = ->
-      $scope.model = _.pluck($scope.options, "id")
+      $scope.model = _.pluck($scope.options, 'id')
 
     $scope.deselectAll = ->
       $scope.model = []
@@ -42,6 +43,6 @@
       names = (option.label for option in options when option.id in ids)
 
       if names.length == 0
-        "-- " + $scope.selectButtonText + " --"
+        '-- ' + $scope.selectButtonText + ' --'
       else
-        names.join(", ")
+        names.join(', ')

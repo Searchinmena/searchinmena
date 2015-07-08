@@ -91,7 +91,7 @@
     "supply": "قدرة التوريد",
     "supply_comment": "مثال: 1,000 عبوة يوميا",
     "choose_currency": "إختر عملة",
-    "choose_unit": "إختر وحدة,
+    "choose_unit": "إختر وحدة",
     "choose_frequency": "التكرار",
     "payment_terms": "شروط الدفع",
     "packaging": "معلومات التغليف"
@@ -100,7 +100,7 @@
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
     "successfully_added": "تمت إضافة المنتج بنجاح",
-    "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا
+    "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "new": {
       "form_title": "منتج جديد",
       "basic_section": "المعلومات الأساسية",

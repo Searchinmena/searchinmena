@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Registration::BusinessCreator do
   let(:creator) do
-    Registration::BusinessCreator.new(business, business_params,
-                                      tags_params, locale, user)
+    Registration::BusinessCreator.new(business, business_params, tags_params,
+                                      locale, user)
   end
   let(:business) { double(:business) }
   let(:business_params) { {} }

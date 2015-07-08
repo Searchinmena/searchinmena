@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe Registration::TagsStoringHandler do
+describe TagsStoringHandler do
   let(:handler) do
     described_class.new(business, tags_params, locale)
   end

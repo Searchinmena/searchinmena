@@ -20,9 +20,16 @@ FactoryGirl.define do
   factory :business do
     sequence(:name) { |n| "Business#{n}" }
     phone { "777-777-777" }
-    business_type { Business.business_types[:agent] }
     association :country
     association :user
+
+    transient do
+      business_types { [create(:business_type)] }
+    end
+
+    after(:build) do |business, evaluator|
+      business.business_types += evaluator.business_types
+    end
   end
 
   factory :product do

@@ -3,7 +3,7 @@
 %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "category.button" | translate }}
 
 %error-message-for{ "error": "errors.business_item.category_id" }
-#category
+#category{ "ng-show": "breadcrumbs" }
   %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
     {{item.name}}
     %span.icon-chevron-right

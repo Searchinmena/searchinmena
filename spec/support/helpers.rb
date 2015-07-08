@@ -4,6 +4,11 @@ def build_params(model, params = {})
   params
 end
 
+def build_business_params(business, business_type_ids = [], params = {})
+  params = build_params(business, params)
+  params.merge(business_type_ids: business_type_ids)
+end
+
 def build_user_params(user, params = {})
   params = build_params(user, params)
   category = User.categories.key(params[:category])

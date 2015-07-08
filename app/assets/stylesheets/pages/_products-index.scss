@@ -1,0 +1,181 @@
+.products-options {
+  @extend %dashboard-content-padding;
+  padding-bottom: $bs1;
+}
+
+.item-summary {
+  @extend %clearfix;
+  @include transition(all, .25s, ease-in-out);
+  overflow: hidden;
+  position: relative;
+  border-top: $default-border;
+  
+  @media screen and (min-width: $tablet) {
+    &:hover, &:focus {
+      padding-left: 3 * $bs7;
+
+      [dir="rtl"] & {
+        padding-left: initial;
+        padding-right: 3 * $bs7;
+      }
+
+      .item-options {
+        left: 0px;
+        [dir="rtl"] & {
+          left: auto;
+          right: 0px;
+        } 
+      }
+    }
+  }
+
+  .breadcrumbs {
+    border: 0;
+    color: $grey;
+    padding: 0 0 $bs0;
+  }
+
+  .item-title {
+    font-weight: normal;
+    margin: $bs-1 0 $bs0;
+    line-height: 1.3;
+  }
+
+  .item-info {
+    width: 60%;
+    float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 100%;
+      max-width: 3 * $bs8;
+    }
+
+    @media screen and (min-width: $desktop) {
+      max-width: 3 * $bs9;
+    }
+
+    @media screen and (min-width: $big-desktop) {
+      max-width: 5 * $bs9;
+    }
+  }
+}
+
+.item-options {
+  @extend %clearfix;
+  @include transition(all, .25s, ease-in-out);
+  border-bottom: $bs0 solid #f5f5f5;
+  clear: both;
+
+  @media screen and (min-width: $tablet) {
+    border-bottom: 0;
+    position: absolute;
+    background-color: $snow-white;
+    left: -267px;
+    height: 100%;
+
+    [dir="rtl"] & {
+      left: auto;
+      right: -267px;
+    }
+  }
+
+  .edit, .see-page, .delete {
+    @include transition(all, 0.15s, ease-in-out);
+    @extend %four-sides-border;
+    height: $bs7;
+    width: 33.33%;
+    text-align: center;
+    float: left;
+    padding: $bs1 0;
+    border-right: 0;
+
+    [dir="rtl"] & {
+      float: right;
+      border-right: $default-border;
+      border-left: 0;
+    }
+
+    @media screen and (min-width: $tablet) {
+      height: 100%;
+      min-height: $bs7;
+      width: $bs7;
+      border: 0;
+      border-right: $default-border;
+
+      [dir="rtl"] & {
+        border-right: 0;
+        border-left: $default-border;
+      }
+    }
+
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+
+  .edit {
+    &:hover , &:focus{
+      background-color: $blue-basic;
+    }
+  }
+
+  .see-page {
+    color: $purple-dark;
+
+    &:hover, &:focus {
+      background-color: $purple-dark; 
+    }
+  }
+
+  .delete {
+    border-left: 0;
+    color: $red;
+
+    [dir="rtl"] & {
+      border-right: 0;
+    }
+
+    &:hover, &:focus {
+      background-color: $red;
+    }
+  }
+
+  .icon {
+    font-size: $bs2;
+    display: block;
+  }
+
+  .icon-remove {
+    font-size: $bs1;
+    padding: $bs-5 0 $bs-4
+  }
+}
+
+.item-img {
+  width: 40%;
+  max-width: $bs7;
+  height: $bs7;
+  background-position: center center;
+  background-size: auto 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: image-url("vase-1.jpeg");
+  float: left;
+  margin: 0 $bs1 0 0;
+
+  [dir="rtl"] & {
+    float: right;
+    margin: 0 0 0 $bs1;
+  }
+
+  &.vase-3{
+    background-image: image-url("vase-5.jpg");
+  }
+  &.vase-4{
+    background-image: image-url("vase-6.png");
+  }
+}

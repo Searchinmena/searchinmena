@@ -38,7 +38,7 @@
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
     %form-field{ "error": "errors.business_item.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.business_item.min_order_quantity_number" }
+      %input{ type: "number", "ng-model": "form.business_item.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
       "ng-model": "form.business_item.min_order_quantity_unit_id" }
