@@ -38,7 +38,9 @@ describe ServiceValidator do
 
   describe "#average_completion_time" do
     it_behaves_like "positive integer" do
-      let(:business_item_params) { valid_params.merge(average_completion_time: field) }
+      let(:business_item_params) do
+        valid_params.merge(average_completion_time: field)
+      end
     end
   end
 end

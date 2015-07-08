@@ -4,7 +4,8 @@ class BusinessItem::ProductAttributesCreator < BaseService
   takes :params, :business_item
 
   def perform
-    creator = BusinessItem::AttributesCreator.new(product_attribute_repository, params, business_item)
+    creator = BusinessItem::AttributesCreator.new(
+      product_attribute_repository, params, business_item)
     creator.perform
   end
 end

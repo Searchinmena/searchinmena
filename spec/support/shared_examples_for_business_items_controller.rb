@@ -24,7 +24,9 @@ shared_examples "BusinessItemsController" do
       before { sign_in(user) }
 
       let(:creator) { double(:creator, perform: creator_response) }
-      let(:creator_response) { double(successful?: successful, object: business_item) }
+      let(:creator_response) do
+        double(successful?: successful, object: business_item)
+      end
       let(:attributes_params) { {} }
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do

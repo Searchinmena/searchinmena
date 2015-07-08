@@ -5,17 +5,17 @@ class BusinessItem::Creator < BaseService
         :params, :user
 
   def perform
-    response = save_business_item
+    business = business_repository.find_by_user_id(user.id)
+    return Response.new(success: false) unless business.present?
+
+    response = save_business_item(business)
     return response unless response.successful?
 
     business_item = response.object
     save_attributes_for(business_item)
   end
 
-  def save_business_item
-    business = business_repository.find_by_user_id(user.id)
-    return Response.new(success: false) unless business.present?
-
+  def save_business_item(business)
     business_item_params = params[:business_item].merge(business: business)
     business_item = item_repository.new(business_item_params)
     validator = validator_factory.new(business_item_params)

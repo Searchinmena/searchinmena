@@ -24,9 +24,11 @@ shared_examples "business item creator" do
       let(:valid) { true }
 
       before do
-        attributes_response = double(successful?: true, object: double(:business_item))
+        attributes_response = double(successful?: true,
+                                     object: double(:business_item))
         attribute_creator = double(perform: attributes_response)
-        expect(attributes_creator_class).to receive(:new).and_return(attribute_creator)
+        expect(attributes_creator_class).to receive(:new)
+          .and_return(attribute_creator)
       end
 
       it { is_expected.to be_successful }

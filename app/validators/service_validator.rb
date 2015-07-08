@@ -10,6 +10,7 @@ class ServiceValidator < BusinessItemValidator
   validates :scope_of_work,
             length: { maximum: A9n.validations[:max_text_area_size] }
   validates :average_completion_time,
-            numericality: { greater_than: 0, only_integer: true, allow_nil: true }
+            numericality: { greater_than: 0, only_integer: true,
+                            allow_nil: true }
 end
 

@@ -18,7 +18,8 @@ shared_examples "BusinessItemValidator" do
   end
 
   describe "length validation" do
-    [:name, :fob_price, :port, :supply_ability_capacity, :packaging_details].each do|field|
+    [:name, :fob_price, :port, :supply_ability_capacity,
+     :packaging_details].each do|field|
       let(:business_item_params) do
         too_long_field = "a" * (A9n.validations[:max_text_field_size] + 1)
         valid_params.merge(field => too_long_field)
@@ -45,7 +46,9 @@ shared_examples "BusinessItemValidator" do
 
   describe "#supply_ability_capacity" do
     it_behaves_like "positive integer" do
-      let(:business_item_params) { valid_params.merge(supply_ability_capacity: field) }
+      let(:business_item_params) do
+        valid_params.merge(supply_ability_capacity: field)
+      end
     end
   end
 
