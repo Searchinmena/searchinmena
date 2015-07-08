@@ -1,13 +1,13 @@
 loginHelper = require('./helpers/login_helper.coffee')
 helpers = require('./helpers/helpers.coffee')
-NewProductPage = require('./helpers/new_product_page.coffee')
+NewServicePage = require('./helpers/new_service_page.coffee')
 
-describe NewProductPage, ->
+describe NewServicePage, ->
   page = null
 
   beforeEach ->
     loginHelper.login()
-    page = new NewProductPage()
+    page = new NewServicePage()
     page.get()
 
   afterEach ->
@@ -87,8 +87,8 @@ describe NewProductPage, ->
     expect(element(By.css(page.categoriesModalCss)).isElementPresent()).toBe(false)
     expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)
 
-  it "is possible to add product", ->
-    page.nameInput().sendKeys("New Product")
+  it "is possible to add service", ->
+    page.nameInput().sendKeys("New Service")
 
     page.categoryButton().click()
     categories = ["Energy", "Crude Oil"]
@@ -98,4 +98,4 @@ describe NewProductPage, ->
     page.uploadFile()
 
     page.submitForm()
-    helpers.expectUrlChanged("/products")
+    helpers.expectUrlChanged("/services")
