@@ -4,7 +4,7 @@ class BusinessesController < ApplicationController
   def create
     business = business_repository.new
     business_creator = Business::Creator.new(business, business_params,
-                                             current_user)
+                                             tags_params, locale, current_user)
     response = business_creator.perform
     if response.successful?
       render_success(response.object)
@@ -30,5 +30,9 @@ class BusinessesController < ApplicationController
                                      :year_registered, :no_of_employees,
                                      :introduction, :address_line_1,
                                      :address_line_2, business_type_ids: [])
+  end
+
+  def tags_params
+    params.permit(tags: [:id, :label])[:tags] || {}
   end
 end
