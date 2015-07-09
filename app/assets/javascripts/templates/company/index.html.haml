@@ -1,4 +1,8 @@
-%h2.header-title {{ "company.title" | translate }}
+%h2.header-title 
+  {{ "company.title" | translate }}
+  %a.header-link{ href: "#" }
+    %span.icon.icon-eye-open
+    See your page
 
 %ul.company-tabs
   %li.tab{ "ng-repeat": "tab in tabs"}

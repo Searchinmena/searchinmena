@@ -45,6 +45,23 @@
     line-height: 3 * $bs2;
   }
 
+  .header-link {
+    text-transform: none;
+    font-size: $bs0;
+    border: none;
+    margin: 0 $bs0;
+    padding: $bs-5 0;
+
+    &:hover {
+      border-bottom: 1px solid $blue-basic;
+    }
+
+    .icon {
+      font-size: $bs2;
+      vertical-align: middle;
+    }
+  }
+
   .title {
     @extend %dashboard-content-padding;
   }
