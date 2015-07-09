@@ -8,8 +8,7 @@ describe ProductsController do
         "model_number" => "222",
         "brand_name" => "brand",
         "min_order_quantity_number" => "2",
-        "min_order_quantity_unit_id" => "1",
-        "payment_terms" => "terms"
+        "min_order_quantity_unit_id" => "1"
       )
     end
   end

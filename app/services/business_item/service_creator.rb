@@ -6,7 +6,9 @@ class BusinessItem::ServiceCreator < BaseService
   def perform
     creator = BusinessItem::Creator.new(
       service_repository, ServiceValidator,
-      BusinessItem::ServiceAttributesCreator, params, user
+      BusinessItem::ServiceAttributesCreator,
+      BusinessItem::ServicePaymentTermsCreator,
+      params, user
     )
     creator.perform
   end

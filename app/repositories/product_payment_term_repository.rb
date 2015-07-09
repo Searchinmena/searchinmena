@@ -1,0 +1,2 @@
+class ProductPaymentTermRepository < ProductResourceRepository
+end

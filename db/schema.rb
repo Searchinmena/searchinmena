@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707122153) do
+ActiveRecord::Schema.define(version: 20150709063650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 20150707122153) do
 
   add_index "product_attributes", ["product_id"], name: "index_product_attributes_on_product_id", using: :btree
 
+  create_table "product_payment_terms", force: :cascade do |t|
+    t.integer  "product_id",      null: false
+    t.integer  "payment_term_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "product_payment_terms", ["payment_term_id"], name: "index_product_payment_terms_on_payment_term_id", using: :btree
+  add_index "product_payment_terms", ["product_id", "payment_term_id"], name: "index_product_payment_terms_on_product_id_and_payment_term_id", unique: true, using: :btree
+  add_index "product_payment_terms", ["product_id"], name: "index_product_payment_terms_on_product_id", using: :btree
+
   create_table "product_photos", force: :cascade do |t|
     t.string   "photo",      null: false
     t.integer  "product_id"
@@ -95,7 +106,6 @@ ActiveRecord::Schema.define(version: 20150707122153) do
     t.integer  "fob_price_currency_id"
     t.integer  "fob_price_unit_id"
     t.string   "port"
-    t.string   "payment_terms"
     t.integer  "supply_ability_capacity"
     t.integer  "supply_ability_unit_id"
     t.integer  "supply_ability_frequency_id"

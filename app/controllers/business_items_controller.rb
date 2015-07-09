@@ -23,7 +23,8 @@ class BusinessItemsController < ApplicationController
   def new_business_item_params
     {
       business_item: business_item_params,
-      attributes: attributes_params
+      attributes: attributes_params,
+      payment_terms: payment_terms_params
     }
   end
 
@@ -41,6 +42,10 @@ class BusinessItemsController < ApplicationController
   end
 
   def attributes_params
-    params.permit(attributes: [:name, :value])[:attributes] || {}
+    params.permit(attributes: [:name, :value])[:attributes] || []
+  end
+
+  def payment_terms_params
+    params[:payment_terms] ? params[:payment_terms].keys : []
   end
 end
