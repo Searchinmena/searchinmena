@@ -107,6 +107,7 @@ nav {
     border-bottom: 0;
     text-decoration: none;
     text-transform: uppercase;
+    white-space: nowrap;
     
     &:hover, &:focus {
       background-color: $nav-link;
