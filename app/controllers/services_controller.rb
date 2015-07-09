@@ -1,4 +1,10 @@
 class ServicesController < BusinessItemsController
+  inject :service_repository
+
+  def repository
+    service_repository
+  end
+
   def business_item_creator
     BusinessItem::ServiceCreator.new(new_business_item_params, current_user)
   end

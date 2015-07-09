@@ -53,7 +53,8 @@ shared_examples "BusinessItemsController" do
 
         shared_examples_for "successful response" do
           it "is successful" do
-            expect(BusinessItemPresenter).to receive(:new).with(business_item)
+            expect(BusinessItemBasicPresenter).to receive(:new)
+              .with(business_item)
 
             post :create, new_business_item_params
             expect(response).to be_successful

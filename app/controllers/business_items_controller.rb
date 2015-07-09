@@ -8,10 +8,15 @@ class BusinessItemsController < ApplicationController
     end
   end
 
+  def index
+    business_items = repository.all
+    render json: business_items.map { |i| BusinessItemBasicPresenter.new(i) }
+  end
+
   private
 
   def render_success(business_item)
-    render json: BusinessItemPresenter.new(business_item)
+    render json: BusinessItemBasicPresenter.new(business_item)
   end
 
   def render_error(business_item)
