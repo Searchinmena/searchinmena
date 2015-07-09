@@ -7,7 +7,8 @@
       {{ "products.add_new_product" | translate }}
 
   .item-summary{ tabindex: "0", "ng-repeat": "product in products" }
-    %img{ "ng-src": "{{product.thumbUrl}}" }
+    .item-img-holder
+      %img.item-img{ "ng-src": "{{product.thumbUrl}}" }
     .item-info
       %h3.item-title {{product.name}}
       .breadcrumbs

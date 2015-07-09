@@ -16,7 +16,7 @@ defaults: &defaults
     port:
     user_name:
     password:
-  thumbnail_size: 50
+  thumbnail_size: 120
   aws:
     bucket_name: sim-uploads-development
     access_key_id: AKIAI3456PKJOR6S4P6Q
