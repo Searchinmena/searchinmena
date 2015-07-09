@@ -44,6 +44,8 @@ shared_examples "BusinessItemsController" do
       end
 
       before do
+        allow(controller).to receive(:repository)
+          .and_return(repository)
         expect(creator_class).to receive(:new)
           .with(expected_params, user).and_return(creator)
       end
@@ -54,7 +56,7 @@ shared_examples "BusinessItemsController" do
         shared_examples_for "successful response" do
           it "is successful" do
             expect(BusinessItemBasicPresenter).to receive(:new)
-              .with(business_item)
+              .with(business_item, repository)
 
             post :create, new_business_item_params
             expect(response).to be_successful

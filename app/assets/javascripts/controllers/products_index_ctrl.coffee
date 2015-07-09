@@ -1,10 +1,6 @@
-@Sim.controller 'ProductsIndexCtrl', ['$scope', '$http',
-  ($scope, $http) ->
+@Sim.controller 'ProductsIndexCtrl', ['$scope', 'BusinessItemsLoader',
+  ($scope, BusinessItemsLoader) ->
     PRODUCTS_PATH = "/products"
 
-    $http.get(PRODUCTS_PATH)
-      .success((data) ->
-        $scope.products = for attributes in data
-          new SIM.Product(attributes)
-      )
+    BusinessItemsLoader.load(PRODUCTS_PATH, $scope)
 ]

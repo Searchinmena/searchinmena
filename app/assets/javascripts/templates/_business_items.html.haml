@@ -1,0 +1,23 @@
+.item-summary{ tabindex: "0", "ng-repeat": "businessItem in businessItems" }
+  .item-img-holder
+    %img.item-img{ "ng-src": "{{businessItem.thumbUrl}}" }
+  .item-info
+    %h3.item-title {{businessItem.name}}
+    .breadcrumbs
+      in
+      %span.breadcrumbs-item{ "ng-repeat": "item in businessItem.breadcrumbsWithoutLast()" }
+        {{item.name}}
+        %span.icon-chevron-right
+      %span.breadcrumbs-item
+        {{businessItem.lastBreadcrumb().name}}
+
+  .item-options
+    %a.delete{ href: "#"}
+      %span.icon.icon-remove
+      remove
+    %a.see-page{ href: "#"}
+      %span.icon.icon-eye-open
+      see
+    %a.edit{ href: "#"}
+      %span.icon.icon-pencil
+      edit

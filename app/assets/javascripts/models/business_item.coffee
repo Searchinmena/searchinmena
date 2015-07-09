@@ -1,4 +1,4 @@
-class SIM.Product
+class SIM.BusinessItem
   constructor: (attributes) ->
     @id = attributes.id
     @name = attributes.name
