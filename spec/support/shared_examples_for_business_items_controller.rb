@@ -12,6 +12,12 @@ shared_examples "BusinessItemsController" do
       "packaging_details" => "packaging"
     }
   end
+  let(:user) { create(:seller) }
+
+  before do
+    allow(controller).to receive(:repository)
+      .and_return(repository)
+  end
 
   describe "#create" do
     it_behaves_like "redirects to signin if user not logged in" do
@@ -19,8 +25,6 @@ shared_examples "BusinessItemsController" do
     end
 
     context "user is logged in" do
-      let(:user) { create(:seller) }
-
       before { sign_in(user) }
 
       let(:creator) { double(:creator, perform: creator_response) }
@@ -44,8 +48,6 @@ shared_examples "BusinessItemsController" do
       end
 
       before do
-        allow(controller).to receive(:repository)
-          .and_return(repository)
         expect(creator_class).to receive(:new)
           .with(expected_params, user).and_return(creator)
       end
@@ -99,6 +101,26 @@ shared_examples "BusinessItemsController" do
           expect(response.status).to eq(409)
         end
       end
+    end
+  end
+
+  describe "#index" do
+    it_behaves_like "redirects to signin if user not logged in" do
+      before { post :index }
+    end
+
+    context "user is logged in" do
+      before do
+        sign_in(user)
+
+        expect(repository).to receive(:for_user).and_return([business_item])
+        expect(BusinessItemBasicPresenter).to receive(:new)
+          .with(business_item, repository)
+      end
+
+      subject { get :index }
+
+      it { is_expected.to be_successful }
     end
   end
 end

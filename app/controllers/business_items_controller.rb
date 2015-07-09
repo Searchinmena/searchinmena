@@ -9,7 +9,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def index
-    business_items = repository.all.map do |i|
+    business_items = repository.for_user(current_user).map do |i|
       BusinessItemBasicPresenter.new(i, repository)
     end
     render json: business_items

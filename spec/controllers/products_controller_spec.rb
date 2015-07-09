@@ -12,5 +12,6 @@ describe ProductsController do
         "min_order_quantity_unit_id" => "1"
       )
     end
+    let(:business_item) { create(:product, business: user.business) }
   end
 end

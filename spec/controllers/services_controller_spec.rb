@@ -12,5 +12,6 @@ describe ServicesController do
         "average_completion_time_unit_id" => "1"
       )
     end
+    let(:business_item) { create(:service, business: user.business) }
   end
 end
