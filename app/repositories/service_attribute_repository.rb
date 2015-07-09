@@ -1,0 +1,2 @@
+class ServiceAttributeRepository < ServiceResourceRepository
+end

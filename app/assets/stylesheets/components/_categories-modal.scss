@@ -13,7 +13,7 @@
   font-weight: 100;
   margin: 0;
   padding: $bs0;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
 
   .icon-chevron-right {
     vertical-align: middle;
@@ -66,7 +66,8 @@
     color: $blue-basic;
     padding: $bs-3 0;
     border: none;
-    display: block;
+    display: inline-block;
+    
 
     &:hover {
       cursor: pointer;
@@ -78,7 +79,7 @@
 .modal-action {
   @extend %clearfix;
   padding: $bs0;
-  border-top: 1px solid $border-grey;
+  border-top: $default-border;
 
   input {
     float: right;

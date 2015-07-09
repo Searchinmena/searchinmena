@@ -74,19 +74,11 @@ $alert-dark-green: #236900;
 
 .confirm-email {
   position: relative;
-  top: $bs1;
-
+  top: $bs-3;
+  left: auto;
+  margin: 0 auto $bs0;
   @media screen and (min-width: $medium-desktop) { 
-    position: absolute;
-    top: $bs6;
-    left: auto;
-    right: $bs2;
-    margin-left: 0;
-
-    [dir="rtl"] & {
-      right: auto;
-      left: $bs2;
-    }
+    margin: 0 $bs-1 $bs0;
   }
 }
 

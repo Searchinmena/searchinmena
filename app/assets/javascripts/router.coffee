@@ -16,6 +16,16 @@
         templateUrl: "products/new.html",
         controller: 'ProductsNewCtrl'
       )
+      .state('services',
+        url: '/services',
+        templateUrl: "services/index.html",
+        controller: 'ServicesIndexCtrl'
+      )
+      .state('new_service',
+        url: '/services/new',
+        templateUrl: "services/new.html",
+        controller: 'ServicesNewCtrl'
+      )
       .state('company',
         url: '/company',
         templateUrl: "company/index.html",

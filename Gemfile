@@ -41,7 +41,7 @@ group :test do
 end
 
 group :development do
-  gem 'rubocop'
+  gem 'rubocop', git: 'git@github.com:bbatsov/rubocop.git'
   gem 'haml-lint', require: false
   gem 'mailcatcher'
 end

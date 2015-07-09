@@ -31,7 +31,4 @@ class FileValidator < BaseValidator
                         max_file_size_in_mb: MAX_FILE_SIZE_IN_MB))
     end
   end
-
-  class NotImplementedError
-  end
 end

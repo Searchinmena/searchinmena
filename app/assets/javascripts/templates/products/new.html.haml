@@ -1,131 +1,52 @@
 %h2.header-title {{ "products.new.form_title" | translate }}
-%form{ action: "/products", "ng-submit": "submit($event)" }
+%form{ "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
-  %form-field{ "error": "errors.product.name" }
+
+  %form-field{ "error": "errors.business_item.name" }
     %label.required
       {{ "products.new.name" | translate }}
-    %input{ type: "text", "ng-model": "form.product.name" }
-  .field
-    %label.required
-      {{ "products.new.category" | translate }}
-    %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "products.new.category_button" | translate }}
+    %input{ type: "text", "ng-model": "form.business_item.name" }
 
-    %error-message-for{ "error": "errors.product.category_id" }
-    #category{ "ng-show": "breadcrumbs" }
-      %span.breadcrumbs-item{ "ng-repeat": "item in breadcrumbs.withoutLast()" }
-        {{item.name}}
-        %span.icon-chevron-right
-      %span.breadcrumbs-item
-        {{breadcrumbs.current().name}}
+  .field{ "ng-include": "'_category.html'" }
 
-  .field
-    %label.required
-      {{ "products.new.photos" | translate }}
-    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
-      "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "products.new.photos_button" | translate }}
-    %p.field-comment {{ "products.new.photos_comment" | translate }}
-    %p.field-comment {{ "products.new.photos_comment_thumbnail" | translate }}
-    %ul.photos-preview
-      %li{ "ng-repeat": "photo in photos" }
-        %img.preview-image{ "ngf-src": "photo",
-        "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
-        %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
-          %span.icon-remove
+  .field{ "ng-include": "'_photos.html'" }
 
-
-    %error-message-for{ "error": "errors.photos_general" }
-    .error{ "ng-repeat": "(fileName, errors) in errors.photos" }
-      {{fileName}}:
-      %div{ "ng-repeat": "error in errors.photo" }
-        {{error}}
 
   %h3.line-behind
     %span {{ "products.new.details_section" | translate }}
-  %form-field{ "error": "errors.product.model_number" }
+
+  %form-field{ "error": "errors.business_item.model_number" }
     %label {{ "products.new.model" | translate }}
-    %input{ type: "text", "ng-model": "form.product.model_number" }
-  %form-field{ "error": "errors.product.brand_name" }
+    %input{ type: "text", "ng-model": "form.business_item.model_number" }
+
+  %form-field{ "error": "errors.business_item.brand_name" }
     %label {{ "products.new.brand" | translate }}
-    %input{ type: "text", "ng-model": "form.product.brand_name" }
-  .field.compound-field
-    %label {{ "products.new.characteristics" | translate }}
+    %input{ type: "text", "ng-model": "form.business_item.brand_name" }
 
-    %ul
-      %li.field-item{ "ng-repeat": "attribute in form.attributes" }
-        %span {{ "products.new.attribute" | translate }}
-        %input{ type: "text",
-          placeholder: '{{ "products.new.attribute_placeholder" | translate }}',
-          "ng-model": "attribute.name" }
-        %span {{ "products.new.value" | translate }}
-        %input.with-remove-button{ type: "text",
-          placeholder: '{{ "products.new.value_placeholder" | translate }}',
-          "ng-model": "attribute.value" }
-          %button.remove-button.remove-attribute{ type: "button", "ng-click": "removeAttribute(attribute)" }
-            %span.icon-remove
+  .field.compound-field{ "ng-include": "'_attributes.html'" }
 
-    %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
-      %span.icon-plus
-      {{ "products.new.add_more" | translate }}
-  %form-field{ "error": "errors.product.description" }
+  %form-field{ "error": "errors.business_item.description" }
     %label {{ "products.new.description" | translate }}
-    %textarea{ "ng-model": "form.product.description" }
+    %textarea{ "ng-model": "form.business_item.description" }
+
 
   %h3.line-behind
-    %span {{ "products.new.trade_section" | translate }}
+    %span {{ "trade_info.title" | translate }}
+
   .field.compound-field
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
-    %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.min_order_quantity_number" }
+    %form-field{ "error": "errors.business_item.min_order_quantity_number", class: 'inline-field' }
+      %input{ type: "number", "ng-model": "form.business_item.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
-      "ng-model": "form.product.min_order_quantity_unit" }
-        %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
-  .field.compound-field
-    %label {{ "products.new.price" | translate }}
-    %p.field-comment {{ "products.new.price_comment" | translate }}
-    %form-field{ "error": "errors.product.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.fob_price" }
-    .select-field
-      %select{ "ng-options": "currency.id as currency.label for currency in currencies",
-      "ng-model": "form.product.fob_price_currency" }
-        %option{ value: "" } -- {{ "products.new.choose_currency" | translate }} --
-    %span {{ "products.new.per" | translate }}
-    .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in units",
-      "ng-model": "form.product.fob_price_unit" }
-        %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
-  %form-field{ "error": "errors.product.port" }
-    %label {{ "products.new.port" | translate }}
-    %input{ type: "text", "ng-model": "form.product.port" }
-  .field.compound-field
-    %label {{ "products.new.supply" | translate }}
-    %p.field-comment {{ "products.new.supply_comment" | translate }}
-    %form-field{ "error": "errors.product.supply_ability_capacity", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "form.product.supply_ability_capacity" }
-    .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in units",
-      "ng-model": "form.product.supply_ability_unit" }
-        %option{ value: "" } -- {{ "products.new.choose_unit" | translate }} --
+      "ng-model": "form.business_item.min_order_quantity_unit_id" }
+        %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
-    %span {{ "products.new.per" | translate }}
+  %div{ "ng-include": "'_common_trade_info.html'" }
 
-    .select-field
-      %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies",
-      "ng-model": "form.product.supply_ability_frequency" }
-        %option{ value: "" } -- {{ "products.new.choose_frequency" | translate }} --
 
-  .field
-    %label {{ "products.new.payment" | translate }}
-    .checkbox-field{ "ng-repeat": "term in payment_terms track by term.id" }
-      %input{ type: "checkbox", val: "{{term.id}}",
-      "ng-model": "form.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
-        %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
-
-  %form-field{ "error": "errors.product.packaging" }
-    %label {{ "products.new.packaging" | translate }}
-    %input{ type: "text", "ng-model": "form.product.packaging_details" }
   .actions.with-spinner
     %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
     .spinner

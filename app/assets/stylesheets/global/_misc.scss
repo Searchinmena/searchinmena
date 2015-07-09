@@ -1,0 +1,5 @@
+$default-border: 1px solid $border-grey;
+
+%four-sides-border {
+  border: $default-border;
+}

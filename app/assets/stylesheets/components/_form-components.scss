@@ -1,9 +1,9 @@
 %basic-input {
+  @extend %four-sides-border;
   -webkit-appearance: none;
   line-height: 2;
   padding: 0 $bs-3;
   width: 100%;
-  border: 1px solid $border-grey;
   display: block;
   font-family: inherit;
   border-radius: 0;
@@ -145,9 +145,9 @@ textarea {
 }
 
 .select-field {
+  @extend %four-sides-border;
   padding: 0;
   margin: 0;
-  border: 1px solid $border-grey;
   width: 100%;
   overflow: hidden;
   background-color: white;
@@ -201,9 +201,9 @@ textarea {
 }
 
 .company-logo {
+  @extend %four-sides-border;
   width: 2 * $bs8;
   height: 2 * $bs8;
-  border: 1px solid $border-grey;
   margin: 0 0 $bs1 0;
   background: image-url('icon-picture.png') center center no-repeat;
   background-size: 70% auto;
@@ -252,7 +252,7 @@ textarea {
 
 }
 
-input[type="checkbox"] {
+input[type="checkbox"], input[type="radio"],  {
   float: left;
   margin: 3px $bs-5 0 0;
 
@@ -287,11 +287,11 @@ tags-input .tags {
   }
 
   .tag-item {
+    @extend %four-sides-border;
     font: inherit;
     font-weight: 100;
     background: none;
     background-color: $light-grey;
-    border: 1px solid $border-grey;
     border-radius: 0;
     height: auto;
     margin: 3px 5px 3px 0;

@@ -61,52 +61,76 @@
       "delete": "حذف"
     }
   },
+  "category": {
+    "title": "فئة",
+    "button": "إختر الفئة"
+  },
+  "categories_modal": {
+    "choose": "إختر فئة",
+    "ok": "أوك"
+  },
+  "photos": {
+    "title": "صور",
+    "at_least_one_photo": "صور مطلوبة {{min_count}} حد أدنى",
+    "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
+    "button": "أضف صور",
+    "comment": "10 صور حد أقصى",
+    "comment_thumbnail": "الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور مربعة بقياس 500x500 بكسل "
+  },
+  "attributes": {
+    "title": "الخصائص",
+    "attribute": "خاصية",
+    "attribute_placeholder": "مثال: المادة",
+    "value": "القيمة",
+    "value_placeholder": "مثال: نحاس",
+    "add_more": "خاصية أخرى"
+  },
+  "trade_info": {
+    "title": "معلومات المنتج التجارية",
+    "fob_price": "سعر التسليم",
+    "fob_price_comment": "مثال: 10 دولار للكيلوغرام",
+    "per": "فترة",
+    "port": "ميناء الشحن",
+    "supply": "قدرة التوريد",
+    "supply_comment": "مثال: 1,000 عبوة يوميا",
+    "choose_currency": "إختر عملة",
+    "choose_unit": "إختر وحدة",
+    "choose_frequency": "التكرار",
+    "payment_terms": "شروط الدفع",
+    "packaging": "معلومات التغليف"
+  },
   "products": {
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
-    "at_least_one_photo": "صور مطلوبة {{min_count}} حد أدنى",
-    "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
     "successfully_added": "تمت إضافة المنتج بنجاح",
     "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "new": {
       "form_title": "منتج جديد",
       "basic_section": "المعلومات الأساسية",
       "name": "أسم المنتج",
-      "category": "فئة المنتج",
-      "category_button": "إختر الفئة",
-      "photos": "صور",
-      "photos_button": "أضف صور",
-      "photos_comment": "10 صور حد أقصى",
-      "photos_comment_thumbnail": "الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور مربعة بقياس 500x500 بكسل ",
       "details_section": "تفاصيل المنتج",
       "model": "رقم الموديل",
       "brand": "إسم الماركة",
-      "characteristics": "الخصائص",
-      "attribute": "خاصية",
-      "attribute_placeholder": "مثال: المادة",
-      "value": "القيمة",
-      "value_placeholder": "مثال: نحاس",
-      "add_more": "خاصية أخرى",
       "description": "شرح عن المنتج",
-      "trade_section": "معلومات المنتج التجارية",
       "order": "حد الطلب الأدنى",
-      "choose_unit": "إختر وحدة",
-      "choose_currency": "إختر عملة",
-      "choose_frequency": "التكرار",
       "order_comment": "مثال: 10,000 عبوة",
-      "price": "سعر التسليم",
-      "price_comment": "مثال: 10 دولار للكيلوغرام",
-      "per": "فترة",
-      "port": "ميناء الشحن",
-      "supply": "قدرة التوريد",
-      "supply_comment": "مثال: 1,000 عبوة يوميا",
-      "payment": "شروط الدفع",
-      "packaging": "معلومات التغليف",
       "submit": "أضف منتج جديد"
-    },
-    "categories": {
-      "choose": "إختر فئة",
-      "ok": "أوك"
+    }
+  },
+  "services": {
+    "your_services": "Your services",
+    "add_new_service": "Add new service",
+    "new": {
+      "form_title": "New service",
+      "basic_section": "Basic info",
+      "name": "Service name",
+      "details_section": "Service details",
+      "place_of_origin": "Place of origin",
+      "scope_of_work": "Scope of work",
+      "description": "Description",
+      "average_completion_time": "Average completion time",
+      "average_completion_time_comment": "eg. 100 hours",
+      "submit": "Add new service"
     }
   },
   "other": {

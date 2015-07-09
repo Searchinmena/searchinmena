@@ -1,0 +1,2 @@
+class ServiceRepository < UserResourceRepository
+end

@@ -1,7 +1,7 @@
 .dashboard-menu-btn {
   text-transform: uppercase;
   background-color: white;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
   color: $blue-basic;
   line-height: 3 * $bs2;
 
@@ -19,14 +19,14 @@
     line-height: 3 * $bs2;
     padding: 0 $bs2;
     vertical-align: middle;
-    border-right: 1px solid $border-grey;
+    border-right: $default-border;
     margin-right: $bs0;
 
     [dir="rtl"] & {
       margin-right: 0;
       margin-left: $bs0;
       border-right: 0;
-      border-left: 1px solid $border-grey;
+      border-left: $default-border;
     }
   }
 }
@@ -34,7 +34,7 @@
 .dashboard-navigation {
   @include transition(all, 1s, ease-in-out);
   background-color: white;
-  border-bottom: 1px solid $border-grey;
+  border-bottom: $default-border;
   list-style: none;
   width: 100%;
   max-height: 0;
@@ -47,8 +47,8 @@
   @media screen and (min-width: $medium-desktop) { 
     max-height: none;
     display: block;
-    border-top: 1px solid $border-grey;
-    border-right: 1px solid $border-grey;
+    border-top: $default-border;
+    border-right: $default-border;
     border-bottom: 0;
     position: absolute;
     left: 0;
@@ -58,7 +58,7 @@
     [dir="rtl"] & {
       right: 0;
       border-right: 0;
-      border-left: 1px solid $border-grey;
+      border-left: $default-border;
     }
   }
 
@@ -78,7 +78,7 @@
     position: relative;
     color: $basic-font;
     font-weight: 100;
-    border-bottom: 1px solid $border-grey;
+    border-bottom: $default-border;
 
     [dir="rtl"] & {
       padding: 0 0 0 $bs2;
@@ -124,13 +124,13 @@
     padding: 0 $bs2;
     float: left;
     color: $grey;
-    border-right: 1px solid $border-grey;
+    border-right: $default-border;
     margin-right: $bs0;
 
     [dir="rtl"] & {
       float: right;
       border-right: 0;
-      border-left: 1px solid $border-grey;
+      border-left: $default-border;
       margin-right: 0;
       margin-left: $bs0;
     }

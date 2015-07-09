@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706163507) do
+ActiveRecord::Schema.define(version: 20150707122153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,26 +87,93 @@ ActiveRecord::Schema.define(version: 20150706163507) do
   add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string   "name",                      null: false
+    t.string   "name",                        null: false
     t.string   "model_number"
     t.string   "brand_name"
     t.string   "description"
     t.integer  "category_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "min_order_quantity_number"
-    t.string   "min_order_quantity_unit"
+    t.integer  "min_order_quantity_unit_id"
     t.decimal  "fob_price"
-    t.string   "fob_price_currency"
-    t.string   "fob_price_unit"
+    t.integer  "fob_price_currency_id"
+    t.integer  "fob_price_unit_id"
     t.string   "port"
     t.string   "payment_terms"
     t.integer  "supply_ability_capacity"
-    t.string   "supply_ability_unit"
-    t.string   "supply_ability_frequency"
+    t.integer  "supply_ability_unit_id"
+    t.integer  "supply_ability_frequency_id"
     t.string   "packaging_details"
-    t.integer  "business_id",               null: false
+    t.integer  "business_id",                 null: false
   end
+
+  add_index "products", ["fob_price_currency_id"], name: "index_products_on_fob_price_currency_id", using: :btree
+  add_index "products", ["fob_price_unit_id"], name: "index_products_on_fob_price_unit_id", using: :btree
+  add_index "products", ["min_order_quantity_unit_id"], name: "index_products_on_min_order_quantity_unit_id", using: :btree
+  add_index "products", ["name"], name: "index_products_on_name", using: :btree
+  add_index "products", ["supply_ability_frequency_id"], name: "index_products_on_supply_ability_frequency_id", using: :btree
+  add_index "products", ["supply_ability_unit_id"], name: "index_products_on_supply_ability_unit_id", using: :btree
+
+  create_table "service_attributes", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "value",      null: false
+    t.integer  "service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "service_attributes", ["service_id"], name: "index_service_attributes_on_service_id", using: :btree
+
+  create_table "service_payment_terms", force: :cascade do |t|
+    t.integer  "service_id",      null: false
+    t.integer  "payment_term_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "service_payment_terms", ["payment_term_id"], name: "index_service_payment_terms_on_payment_term_id", using: :btree
+  add_index "service_payment_terms", ["service_id", "payment_term_id"], name: "index_service_payment_terms_on_service_id_and_payment_term_id", unique: true, using: :btree
+  add_index "service_payment_terms", ["service_id"], name: "index_service_payment_terms_on_service_id", using: :btree
+
+  create_table "service_photos", force: :cascade do |t|
+    t.string   "photo",      null: false
+    t.integer  "service_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "service_photos", ["service_id"], name: "index_service_photos_on_service_id", using: :btree
+
+  create_table "services", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.string   "place_of_origin"
+    t.text     "scope_of_work"
+    t.string   "description"
+    t.integer  "category_id"
+    t.decimal  "fob_price"
+    t.integer  "fob_price_currency_id"
+    t.integer  "fob_price_unit_id"
+    t.string   "port"
+    t.integer  "average_completion_time"
+    t.integer  "average_completion_time_unit_id"
+    t.integer  "supply_ability_capacity"
+    t.integer  "supply_ability_unit_id"
+    t.integer  "supply_ability_frequency_id"
+    t.string   "packaging_details"
+    t.integer  "business_id",                     null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "services", ["average_completion_time_unit_id"], name: "index_services_on_average_completion_time_unit_id", using: :btree
+  add_index "services", ["business_id"], name: "index_services_on_business_id", using: :btree
+  add_index "services", ["category_id"], name: "index_services_on_category_id", using: :btree
+  add_index "services", ["fob_price_currency_id"], name: "index_services_on_fob_price_currency_id", using: :btree
+  add_index "services", ["fob_price_unit_id"], name: "index_services_on_fob_price_unit_id", using: :btree
+  add_index "services", ["name"], name: "index_services_on_name", using: :btree
+  add_index "services", ["supply_ability_frequency_id"], name: "index_services_on_supply_ability_frequency_id", using: :btree
+  add_index "services", ["supply_ability_unit_id"], name: "index_services_on_supply_ability_unit_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.datetime "created_at"

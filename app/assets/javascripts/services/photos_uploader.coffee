@@ -1,14 +1,12 @@
 @Sim.service 'PhotosUploader', ['Upload', '$q',
   (Upload, $q) ->
-    PRODUCT_PHOTOS_PATH = '/product_photos'
-
-    upload: (photos, productId, success, error) ->
+    upload: (path, photos, businessItemId, success, error) ->
       @errors = {}
 
       promises = for photo in photos
         Upload.upload(
-          url: PRODUCT_PHOTOS_PATH,
-          fields: { 'product_id': productId },
+          url: path,
+          fields: { 'business_item_id': businessItemId },
           file: photo
         ).error((data) =>
           @errors[data.file_name] = data.errors
