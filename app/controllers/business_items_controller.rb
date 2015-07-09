@@ -42,7 +42,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def attributes_params
-    params.permit(attributes: [:name, :value])[:attributes] || []
+    params[:attributes] || []
   end
 
   def payment_terms_params
