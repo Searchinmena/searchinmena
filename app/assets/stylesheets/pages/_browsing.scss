@@ -32,9 +32,11 @@
   }
 
   .category-name {
+
     a {
       padding: $bs-3 $bs1;
-      display: block;
+      display: inline-block;
+      width: 100%;
       border: none;
 
       &:hover, &:focus {

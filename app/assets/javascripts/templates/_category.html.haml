@@ -1,5 +1,4 @@
-%label.required
-  {{ "category.title" | translate }}
+%label.required {{ "category.title" | translate }}
 %button.small-button#choose-category{ type: "button", "ng-click": "showCategories()" } {{ "category.button" | translate }}
 
 %error-message-for{ "error": "errors.business_item.category_id" }
