@@ -1,2 +1,2 @@
-class ProductAttributeRepository < AbstractRepository
+class ProductAttributeRepository < ProductResourceRepository
 end

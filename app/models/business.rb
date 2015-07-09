@@ -4,5 +4,6 @@ class Business < ActiveRecord::Base
   has_and_belongs_to_many :business_types,
                           join_table: "businesses_business_types"
   has_many :products
+  has_many :services
   belongs_to :country
 end

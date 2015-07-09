@@ -14,22 +14,10 @@ describe NewProductPage, ->
     loginHelper.logout()
 
   it "is possible to add and remove attributes", ->
-    expect(page.attributes().count()).toBe(1)
-
-    page.addAttributeButton().click()
-    expect(page.attributes().count()).toBe(2)
-
-    page.removeAttributeButton().click()
-    expect(page.attributes().count()).toBe(1)
+    page.checkAddingAttributes()
 
   it "is possible to add and remove photos", ->
-    expect(page.photos().count()).toBe(0)
-
-    page.uploadFile()
-    expect(page.photos().count()).toBe(1)
-
-    page.removePhotoButton().click()
-    expect(page.photos().count()).toBe(0)
+    page.checkAddingPhotos()
 
   it "is possible to choose category", ->
     page.categoryButton().click()
@@ -108,11 +96,6 @@ describe NewProductPage, ->
     page.submitCategoryButton().click()
 
     page.uploadFile()
-
-    page.modelNumberInput().sendKeys("123123")
-    page.minOrderInput().sendKeys("123123")
-    page.fobPriceInput().sendKeys("123123")
-    page.supplyAbilityInput().sendKeys("123123")
 
     page.submitForm()
     helpers.expectUrlChanged("/products")

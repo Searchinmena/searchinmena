@@ -23,5 +23,5 @@
           {{category.name}}
 
   .modal-action
-    %input{ type: "submit", value: "OK", "ng-click": "ok()",
-    "ng-disabled": "!selectedCategory" }
+    %input{ type: "submit", value: "{{ 'categories_modal.ok' | translate}}",
+    "ng-click": "ok()", "ng-disabled": "!selectedCategory" }

@@ -1,0 +1,2 @@
+class ServiceCategoryRepository < CategoryRepository
+end

@@ -1,0 +1,2 @@
+class ServicePhotoRepository < ServiceResourceRepository
+end

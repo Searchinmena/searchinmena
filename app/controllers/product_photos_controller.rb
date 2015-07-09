@@ -1,17 +1,11 @@
-class ProductPhotosController < ApplicationController
-  inject :product_repository, :product_photo_creator
+class ProductPhotosController < PhotosController
+  inject :product_repository, :product_photo_repository
 
-  def create
-    product = product_repository.find_for_user(current_user,
-                                               params[:product_id])
+  def repository
+    product_repository
+  end
 
-    file = params[:file]
-    response = product_photo_creator.perform(product, file)
-    if response.successful?
-      head :ok
-    else
-      render json: ProductPhotosErrorPresenter.new(file, response),
-             status: :conflict
-    end
+  def photo_creator
+    BusinessItem::ProductPhotoCreator.new(product_photo_repository)
   end
 end
