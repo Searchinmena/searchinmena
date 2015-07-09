@@ -24,8 +24,6 @@
     $scope.submit = (e) ->
       e.preventDefault()
 
-      console.log($scope.form)
-
       $http(
         url: e.target.action,
         data: $scope.form,
