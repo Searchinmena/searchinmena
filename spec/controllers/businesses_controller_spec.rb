@@ -1,9 +1,9 @@
 require "rails_helper"
 
 describe BusinessesController do
-  describe "#create" do
+  describe "#update" do
     it_behaves_like "redirects to signin if user not logged in" do
-      before { post :create }
+      before { put :update }
     end
 
     context "user is logged in" do
@@ -31,13 +31,14 @@ describe BusinessesController do
 
         expect(controller).to receive(:business_repository)
           .and_return(business_repository)
-        expect(business_repository).to receive(:new).and_return(business)
+        expect(business_repository).to receive(:find_or_create)
+          .and_return(business)
         expect(Business::Creator).to receive(:new)
           .with(business, business_params, tags_params, locale, user)
           .and_return(creator)
         expect(creator).to receive(:perform).and_return(creator_response)
 
-        post :create, params
+        put :update, params
       end
 
       context "creation successful" do

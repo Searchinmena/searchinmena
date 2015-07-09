@@ -17,6 +17,10 @@ class AbstractRepository
     klass.find_or_create_by(attributes)
   end
 
+  def find_by(attributes)
+    klass.where(attributes).first
+  end
+
   private
 
   def klass

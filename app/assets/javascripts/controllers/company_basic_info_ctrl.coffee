@@ -1,7 +1,6 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
   'selectsLoader', 'TranslatedFlash'
   ($scope, $http, $translate, selectsLoader, TranslatedFlash) ->
-    $scope.form = { business: {} }
     $scope.errors = {}
 
     config = {
@@ -15,6 +14,10 @@
       $scope.selectButtonText = translation
     )
 
+    $http.get('business/edit').success((business_attributes) ->
+      $scope.form.business = business_attributes || {}
+    )
+
     $scope.loadTags = (query) ->
       $http.get(window.Sim.TAGS_PATH, params: { query: query })
 
@@ -26,12 +29,12 @@
       $http(
         url: e.target.action,
         data: $scope.form,
-        method: 'POST'
+        method: 'PUT'
       ).success(->
-        TranslatedFlash.success("company.successfully_added")
+        TranslatedFlash.success("company.successfully_saved")
       ).error((errors) ->
         $scope.errors = errors
-        TranslatedFlash.error("company.adding_failed")
+        TranslatedFlash.error("company.saving_failed")
       )
 
       false
