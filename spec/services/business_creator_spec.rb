@@ -2,46 +2,59 @@ require "rails_helper"
 
 describe Business::Creator do
   let(:creator) do
-    Business::Creator.new(business, business_params, tags_params, locale, user)
+    described_class.new(business, business_params, tags_params, locale, user)
   end
-  let(:business) { double(:business) }
-  let(:business_params) { {} }
-  let(:tags_params) { double(:tags_params) }
+  let(:user) { create(:user) }
+  let(:business_type) { create(:business_type) }
+  let(:business) { build(:business) }
+  let(:business_params) do
+    build_business_params(business)
+  end
+  let(:tags_params) { {} }
   let(:locale) { "en" }
-  let(:user) { double(:user) }
-
-  fake(:business_validator)
+  let(:valid) { false }
+  let(:validator) do
+    double(:validator, valid?: valid, errors?: !valid, copy_errors: nil)
+  end
 
   before do
     expect(BusinessValidator).to receive(:new).with(business_params)
-      .and_return(business_validator)
+      .and_return(validator)
   end
 
   describe "#valid?" do
     subject { creator.valid? }
 
     it "delegates to business validator" do
-      expect(business_validator).to receive(:valid?)
+      expect(validator).to receive(:valid?)
       subject
     end
   end
 
   describe "#perform" do
-    fake(:business_storing_handler)
-
     subject { creator.perform }
 
-    before do
-      expect(BusinessStoringHandler).to receive(:new)
-      .with(business, { user: user }, tags_params,
-            locale, business_validator)
-      .and_return(business_storing_handler)
+    context "failed business creation" do
+      let(:success) { false }
+      let(:valid) { false }
+
+      it { is_expected.not_to be_successful }
+
+      it "doesn't save business" do
+        expect { subject }.not_to change { Business.count }
+      end
     end
 
-    it "delegates to storing handler" do
-      expect(business_storing_handler).to receive(:perform)
-      subject
+    context "successful business creation" do
+      let(:success) { true }
+      let(:valid) { true }
+
+      it { is_expected.to be_successful }
+
+      it "saves business" do
+        expect { subject }.to change { Business.count }.by(1)
+        expect(user.business).to be_present
+      end
     end
   end
 end
-
