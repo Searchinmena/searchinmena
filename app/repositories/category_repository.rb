@@ -20,7 +20,6 @@ class CategoryRepository < TranslatableRepository
     :category_id
   end
 
-  # TODO: check number of queries
   def hierarchy_for(category)
     hierarchy = []
     while category

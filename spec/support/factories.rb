@@ -36,12 +36,20 @@ FactoryGirl.define do
     sequence(:name) { |n| "Product#{n}" }
     association :business
     association :category, factory: :product_category
+
+    before :create do |product|
+      product.photos << build(:product_photo, product: nil)
+    end
   end
 
   factory :service do
     sequence(:name) { |n| "Service#{n}" }
     association :business
     association :category, factory: :service_category
+
+    before :create do |service|
+      service.photos << build(:service_photo, service: nil)
+    end
   end
 
   factory :product_photo do
@@ -89,7 +97,7 @@ FactoryGirl.define do
   end
 
   factory :category_translation do
-    association :category, factory: :product_category
+    category { create(:product_category, category_translation: nil) }
     locale { "en" }
     sequence(:value) { |n| "Value#{n}" }
   end
@@ -98,6 +106,15 @@ FactoryGirl.define do
     factory :product_category, parent: :category, class: 'ProductCategory' do
     end
     factory :service_category, parent: :category, class: 'ServiceCategory' do
+    end
+
+    transient do
+      category_translation { build(:category_translation, category: nil) }
+    end
+
+    before :create do |category, evaluator|
+      translation = evaluator.category_translation
+      category.translations << translation if translation
     end
   end
 end
