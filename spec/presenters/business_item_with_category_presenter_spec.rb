@@ -1,16 +1,17 @@
 require "rails_helper"
 
-describe BusinessItemBasicPresenter do
+describe BusinessItemWithCategoryPresenter do
   describe "#as_json" do
     let(:product) { create(:product) }
     let(:product_repository) { ProductRepository.new }
     let(:locale) { 'en' }
     let(:presenter) do
-      BusinessItemBasicPresenter.new(product)
+      BusinessItemWithCategoryPresenter.new(product, product_repository,
+                                              locale)
     end
 
     subject { presenter.as_json.keys }
 
-    it { is_expected.to eq([:id]) }
+    it { is_expected.to eq([:id, :name, :breadcrumbs, :thumb_url]) }
   end
 end

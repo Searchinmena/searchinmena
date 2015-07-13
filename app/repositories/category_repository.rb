@@ -29,7 +29,7 @@ class CategoryRepository < TranslatableRepository
     hierarchy
   end
 
-  def translation_for(category)
-    category.translations.first.value
+  def translation_for(category, locale)
+    category.translations.where(locale: locale).first.value
   end
 end

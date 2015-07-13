@@ -37,8 +37,12 @@ FactoryGirl.define do
     association :business
     association :category, factory: :product_category
 
-    before :create do |product|
-      product.photos << build(:product_photo, product: nil)
+    transient do
+      photos { [build(:product_photo, product: nil)] }
+    end
+
+    before :create do |product, evaluator|
+      product.photos += evaluator.photos
     end
   end
 

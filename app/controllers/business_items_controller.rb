@@ -10,7 +10,7 @@ class BusinessItemsController < ApplicationController
 
   def index
     business_items = repository.for_user(current_user).map do |i|
-      BusinessItemBasicPresenter.new(i, repository)
+      BusinessItemWithCategoryPresenter.new(i, repository, locale)
     end
     render json: business_items
   end
@@ -18,7 +18,7 @@ class BusinessItemsController < ApplicationController
   private
 
   def render_success(business_item)
-    render json: BusinessItemBasicPresenter.new(business_item, repository)
+    render json: BusinessItemBasicPresenter.new(business_item)
   end
 
   def render_error(business_item)

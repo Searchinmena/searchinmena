@@ -4,4 +4,5 @@ describe ServiceRepository do
   let(:repository) { ServiceRepository.new }
 
   it_behaves_like "UserResourceRepository", :service
+  it_behaves_like "BusinessItemRepository"
 end

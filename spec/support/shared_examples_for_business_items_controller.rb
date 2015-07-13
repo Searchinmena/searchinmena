@@ -58,7 +58,7 @@ shared_examples "BusinessItemsController" do
         shared_examples_for "successful response" do
           it "is successful" do
             expect(BusinessItemBasicPresenter).to receive(:new)
-              .with(business_item, repository)
+              .with(business_item)
 
             post :create, new_business_item_params
             expect(response).to be_successful
@@ -114,8 +114,8 @@ shared_examples "BusinessItemsController" do
         sign_in(user)
 
         expect(repository).to receive(:for_user).and_return([business_item])
-        expect(BusinessItemBasicPresenter).to receive(:new)
-          .with(business_item, repository)
+        expect(BusinessItemWithCategoryPresenter).to receive(:new)
+          .with(business_item, repository, :en)
       end
 
       subject { get :index }

@@ -99,3 +99,5 @@ describe NewProductPage, ->
 
     page.submitForm()
     helpers.expectUrlChanged("/products")
+
+    expect(page.firstBusinessItem().getText()).toEqual("New Product")
