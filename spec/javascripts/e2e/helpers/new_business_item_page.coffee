@@ -1,5 +1,5 @@
-path = require('path')
-unhideHelper = require('./unhide_helper.coffee')
+path = require("path")
+unhideHelper = require("./unhide_helper.coffee")
 
 class NewBusinessItemPage
   constructor: ->
@@ -75,7 +75,7 @@ class NewBusinessItemPage
 
   breadcrumbInForm: (category) ->
     element(By.cssContainingText(@breadcrumbInFormCss, category))
-  
+
   nameInput: ->
     element(By.model("form.business_item.name"))
 
@@ -114,4 +114,3 @@ class NewBusinessItemPage
     expect(@photos().count()).toBe(0)
 
 module.exports = NewBusinessItemPage
-

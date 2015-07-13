@@ -1,4 +1,4 @@
-helper = require('./helpers/facebook_helper.coffee')
+helper = require("./helpers/facebook_helper.coffee")
 
 describe "Facebook", ->
   describe "Facebook Registration", ->

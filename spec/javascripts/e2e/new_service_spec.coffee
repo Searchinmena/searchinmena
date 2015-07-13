@@ -1,6 +1,6 @@
-loginHelper = require('./helpers/login_helper.coffee')
-helpers = require('./helpers/helpers.coffee')
-NewServicePage = require('./helpers/new_service_page.coffee')
+loginHelper = require("./helpers/login_helper.coffee")
+helpers = require("./helpers/helpers.coffee")
+NewServicePage = require("./helpers/new_service_page.coffee")
 
 describe NewServicePage, ->
   page = null

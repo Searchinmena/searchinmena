@@ -1,4 +1,4 @@
-RegistrationPage = require('./helpers/registration_page.coffee')
+RegistrationPage = require("./helpers/registration_page.coffee")
 
 describe RegistrationPage, ->
   page = null
