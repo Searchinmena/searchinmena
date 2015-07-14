@@ -96,13 +96,13 @@ class NewBusinessItemPage
     submitButton.click()
 
   checkAddingAttributes: ->
-    expect(@attributes().count()).toBe(1)
-
-    @addAttributeButton().click()
     expect(@attributes().count()).toBe(2)
 
+    @addAttributeButton().click()
+    expect(@attributes().count()).toBe(3)
+
     @removeAttributeButton().click()
-    expect(@attributes().count()).toBe(1)
+    expect(@attributes().count()).toBe(2)
 
   checkAddingPhotos: ->
     expect(@photos().count()).toBe(0)
