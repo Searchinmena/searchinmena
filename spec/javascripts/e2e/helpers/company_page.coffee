@@ -22,6 +22,13 @@ class CompanyPage
     submitButton = element(By.css("input[type=submit]"))
     submitButton.click()
 
+  errors: (callback) ->
+    element.all(By.css(".error")).filter((element) ->
+      element.isDisplayed().then((isDisplayed) ->
+        isDisplayed == true
+      )
+    ).then(callback)
+
   errorFlashMessage: ->
     element(By.cssContainingText("[role=alert]", @errorMessage))
 
