@@ -18,6 +18,7 @@
 //= require angular-sanitize
 //= require angular-animate
 //= require angular-rails-templates
+//= require angular-utils-pagination
 //= require ng-tags-input
 //= require angular-flash-alert
 //= require jquery

@@ -2,5 +2,5 @@
   ($scope, BusinessItemsLoader) ->
     PRODUCTS_PATH = "/products"
 
-    BusinessItemsLoader.load(PRODUCTS_PATH, $scope)
+    BusinessItemsLoader.initialize(PRODUCTS_PATH, $scope)
 ]

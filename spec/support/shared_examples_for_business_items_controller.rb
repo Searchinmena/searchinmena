@@ -113,12 +113,11 @@ shared_examples "BusinessItemsController" do
       before do
         sign_in(user)
 
-        expect(repository).to receive(:for_user).and_return([business_item])
-        expect(BusinessItemWithCategoryPresenter).to receive(:new)
-          .with(business_item, repository, :en)
+        expect(BusinessItemsCollectionPresenter).to receive(:new)
+          .with(user, "2", repository, :en)
       end
 
-      subject { get :index }
+      subject { get :index, page: "2" }
 
       it { is_expected.to be_successful }
     end

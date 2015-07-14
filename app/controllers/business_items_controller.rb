@@ -9,10 +9,8 @@ class BusinessItemsController < ApplicationController
   end
 
   def index
-    business_items = repository.for_user(current_user).map do |i|
-      BusinessItemWithCategoryPresenter.new(i, repository, locale)
-    end
-    render json: business_items
+    render json: BusinessItemsCollectionPresenter.new(
+      current_user, params[:page], repository, locale)
   end
 
   private
