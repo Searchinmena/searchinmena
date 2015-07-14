@@ -33,6 +33,9 @@ describe CompanyPage, ->
     page.submitForm()
 
     page.errors((elements) ->
+      console.log "============"
+      console.log elements
+      console.log "============"
       expect(elements.length).toBe(0)
     )
 
