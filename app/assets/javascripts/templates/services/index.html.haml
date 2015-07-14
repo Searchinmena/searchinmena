@@ -4,4 +4,7 @@
     %span.icon-plus
     {{ "services.add_new_service" | translate }}
 
-  %div{ "ng-include": "'_business_items.html'" }
+  %div{ "ng-hide": "businessItems.length" }
+    {{ "services.empty_list" | translate }}
+
+  %div{ "ng-show": "businessItems.length", "ng-include": "'_business_items.html'" }

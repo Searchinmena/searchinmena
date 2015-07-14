@@ -97,6 +97,7 @@
     "packaging": "Packaging details"
   },
   "products": {
+    "empty_list": "No products yet.",
     "your_products": "Your products",
     "add_new_product": "Add new product",
     "successfully_added": "Product was successfully added",
@@ -115,6 +116,7 @@
     }
   },
   "services": {
+    "empty_list": "No services yet.",
     "your_services": "Your services",
     "add_new_service": "Add new service",
     "new": {
