@@ -8,9 +8,10 @@
   position: relative;
   border-top: 1px solid $border-grey;
 
-  &:hover {
+  &:hover, &:focus {
     @include box-shadow(0, 0, 5px, 2px, $border-grey);
-
+    outline: 0;
+    
     .edit, .see-page, .delete {
       color: $blue-basic;
     }
