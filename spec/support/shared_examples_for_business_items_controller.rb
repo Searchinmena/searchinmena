@@ -27,29 +27,62 @@ shared_examples "BusinessItemsController" do
       let(:creator_response) do
         double(successful?: successful, object: business_item)
       end
-      let(:attributes_params) { {} }
+      let(:attributes_params) { [{ name: "ania", value: "hai" }] }
+      let(:payment_terms_params) { { "12" => true } }
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do
         {
           business_item: business_item_params,
-          attributes: attributes_params
+          attributes: attributes_params,
+          payment_terms: payment_terms_params
         }
+      end
+
+      let(:expected_params) do
+        new_business_item_params.merge(
+          payment_terms: payment_terms_params.keys)
       end
 
       before do
         expect(creator_class).to receive(:new)
-          .with(new_business_item_params, user).and_return(creator)
+          .with(expected_params, user).and_return(creator)
       end
 
       context "creator response is successful" do
         let(:successful) { true }
 
-        it "is successful" do
-          expect(BusinessItemPresenter).to receive(:new).with(business_item)
+        shared_examples_for "successful response" do
+          it "is successful" do
+            expect(BusinessItemPresenter).to receive(:new).with(business_item)
 
-          post :create, business_item: business_item_params,
-                        attributes: attributes_params
-          expect(response).to be_successful
+            post :create, new_business_item_params
+            expect(response).to be_successful
+          end
+        end
+
+        it_behaves_like "successful response"
+
+        context "attributes not present" do
+          let(:attributes_params) { nil }
+          let(:expected_params) do
+            new_business_item_params.merge(
+              attributes: [],
+              payment_terms: payment_terms_params.keys
+            )
+          end
+
+          it_behaves_like "successful response"
+        end
+
+        context "payment_terms not present" do
+          let(:payment_terms_params) { nil }
+          let(:expected_params) do
+            new_business_item_params.merge(
+              payment_terms: []
+            )
+          end
+
+          it_behaves_like "successful response"
         end
       end
 
@@ -59,8 +92,7 @@ shared_examples "BusinessItemsController" do
         it "renders errors" do
           expect(ErrorsPresenter).to receive(:new).with(business_item)
 
-          post :create, business_item: business_item_params,
-                        attributes: attributes_params
+          post :create, new_business_item_params
           expect(response.status).to eq(409)
         end
       end

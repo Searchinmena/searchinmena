@@ -11,4 +11,7 @@ class Service < ActiveRecord::Base
 
   has_many :photos, class_name: "ServicePhoto", dependent: :delete_all
   has_many :service_attributes, dependent: :delete_all
+  has_many :service_payment_terms, dependent: :delete_all
+  has_many :payment_terms, through: :service_payment_terms,
+                           dependent: :delete_all
 end

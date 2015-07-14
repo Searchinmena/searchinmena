@@ -11,4 +11,7 @@ class Product < ActiveRecord::Base
 
   has_many :photos, class_name: "ProductPhoto", dependent: :delete_all
   has_many :product_attributes, dependent: :delete_all
+  has_many :product_payment_terms, dependent: :delete_all
+  has_many :payment_terms, through: :product_payment_terms,
+                           dependent: :delete_all
 end
