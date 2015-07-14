@@ -32,7 +32,10 @@
 .dashboard-content {
   @extend %four-sides-border;
   background-color: white;
-  margin: 0 $bs-1;
+  margin: $bs1 $bs-1;
+  @media screen and (min-width: $medium-desktop) { 
+    margin: 0 $bs-1;
+  }
 
   .header-title, .title, .subtitle {
     @extend %basic-title;
@@ -43,6 +46,23 @@
     border-bottom: $default-border;
     margin: 0 0 $bs2 0;
     line-height: 3 * $bs2;
+  }
+
+  .header-link {
+    text-transform: none;
+    font-size: $bs0;
+    border: none;
+    margin: 0 $bs0;
+    padding: $bs-5 0;
+
+    &:hover {
+      border-bottom: 1px solid $blue-basic;
+    }
+
+    .icon {
+      font-size: $bs2;
+      vertical-align: middle;
+    }
   }
 
   .title {

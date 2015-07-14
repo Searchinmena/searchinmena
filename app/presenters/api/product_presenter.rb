@@ -1,4 +1,4 @@
-class Api::ProductPresenter
+class ProductPresenter
   takes :product
 
   def as_json(*)
@@ -7,11 +7,11 @@ class Api::ProductPresenter
       model_number: product.model_number,
       brand_name: product.brand_name,
       description: product.description,
-      trad_info: trad_info_json
+      trade_info: trade_info_json
     }
   end
 
-  def trad_info_json
+  def trade_info_json
     {
       min_order_quantity: min_order_quantity_json,
       fob: fob_json,

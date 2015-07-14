@@ -13,7 +13,7 @@
     $translateProvider.determinePreferredLanguage(->
       $.cookie("locale")
     )
-    $translateProvider.useSanitizeValueStrategy('sanitize')
+    $translateProvider.useSanitizeValueStrategy('sanitizeParameters')
 ])
 
 @Sim.run(['$rootScope', '$http', ($rootScope, $http) ->

@@ -66,7 +66,8 @@
     color: $blue-basic;
     padding: $bs-3 0;
     border: none;
-    display: block;
+    display: inline-block;
+    
 
     &:hover {
       cursor: pointer;

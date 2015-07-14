@@ -1,6 +1,5 @@
 %div{ "ng-controller": "PhotosCtrl" }
-  %label.required
-    {{ "photos.title" | translate }}
+  %label.required {{ "photos.title" | translate }}
   %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
     "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "photos.button" | translate }}
   %p.field-comment {{ "photos.comment" | translate }}
