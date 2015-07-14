@@ -1,0 +1,148 @@
+.category-selection-wrapper {
+  
+  .title {
+    text-align: center;
+    color: $grey-dark;
+    margin: $bs6 0;
+  }
+
+  .line-behind span {
+    background-color: $snow-white;
+  }
+
+  .category-list {
+    @extend %clearfix;
+    margin: 0 0 $bs8;
+    list-style: none;
+    
+    @media screen and (min-width: $big-phone) {
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+    }
+    
+    @media screen and (min-width: $tablet) {
+      -moz-column-count: 3;
+      -webkit-column-count: 3;
+    }
+
+    @media screen and (min-width: $big-desktop) {
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+    }
+  }
+
+  .category-name {
+
+    a {
+      padding: $bs-3 $bs1;
+      display: inline-block;
+      width: 100%;
+      border: none;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.categories-list-button {
+  text-transform: uppercase;
+  background-color: $snow-white;
+  border-bottom: $default-border;
+  color: $blue-basic;
+  padding: $bs0 $bs2;
+
+  @media screen and (min-width: $medium-desktop) {
+    display: none;
+  }
+
+  .icon-list {
+    font-size: $bs2;
+    vertical-align: middle;
+    padding: 0 $bs-2 0 0;
+  }
+}
+
+.all-categories-list {
+  @include transition(all, .7s, ease-in-out);
+  padding: $bs1 0;
+  border-right: $default-border;
+  background-color: white;
+  font-size: $bs09;
+  position: absolute;
+  width: 90%;
+  left: -999px;
+  height: 100%;
+
+  &.show {
+    left: 0;
+  }
+
+  @media screen and (min-width: $medium-desktop) {
+    width: 2 * $bs9;
+    left: 0;
+    top: 0;
+  }
+
+  .main-category-link {
+    text-transform: uppercase;
+    padding: $bs-3;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a {
+    display: block;
+    border: 0;
+    color: $basic-font;
+
+    &:hover, &:focus {
+      background-color: $snow-white;
+
+      &:after {
+        color: $blue-basic;
+      }
+    }
+  }
+
+  .subcategory-name a{
+    padding: $bs-3 $bs-3 $bs-3 $bs2;
+
+    &.open:after {
+      font-family: "flatline";
+      content: "\e6a1";
+      font-size: $bs2; 
+      vertical-align: middle;
+    }
+  }
+  .sub-subcategory-name a{
+    padding: $bs-3 $bs-3 $bs-3 $bs5;
+
+    &:after {
+      font-family: "flatline";
+      content: "\e690";
+      font-size: $bs2;
+      vertical-align: middle;
+    }
+
+    &.open {
+      color: $blue-basic;
+    }
+
+    &:after {
+      content: "\e6a1";
+    }
+  }
+
+  .sub-sub-subcategory-name a {
+    padding: $bs-3 $bs-3 $bs-3 $bs6;
+    color: $blue-basic;
+
+    &:after {
+      display: none;
+    }
+  }
+}

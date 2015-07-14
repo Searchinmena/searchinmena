@@ -25,131 +25,185 @@
         %span.icon.icon-th.active
 
     %h3.title 245 Search Results:
-    %ul.search-results.net-view
-      %li.result-item
-        .item-main-img.vase-1
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase Never Seen Before
-        .from
-          from: Company Name
-      %li.result-item
-        .item-main-img.vase-2
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-      %li.result-item
-        .item-main-img.vase-3
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase So Beautiful You will die
-        .from
-          from: Company Name
-      %li.result-item
-        .item-main-img.vase-4
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-      %li.result-item
-        .item-main-img.vase-5
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-      %li.result-item
-        .item-main-img.vase-6
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-      %li.result-item
-        .item-main-img.vase-7
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
+    / %ul.search-results.net-view
+    /   %li.result-item
+    /     .item-main-img.vase-1
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase Never Seen Before
+    /     .from
+    /       from: Company Name
+    /   %li.result-item
+    /     .item-main-img.vase-2
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase
+    /     .from
+    /       from: Company Name
+    /   %li.result-item
+    /     .item-main-img.vase-3
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase So Beautiful You will die
+    /     .from
+    /       from: Company Name
+    /   %li.result-item
+    /     .item-main-img.vase-4
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase
+    /     .from
+    /       from: Company Name
+    /   %li.result-item
+    /     .item-main-img.vase-5
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase
+    /     .from
+    /       from: Company Name
+    /   %li.result-item
+    /     .item-main-img.vase-6
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase
+    /     .from
+    /       from: Company Name
+    /   %li.result-item
+    /     .item-main-img.vase-7
+    /     = link_to(product_path, class: "result-item-title") do
+    /       Beautiful oriental Vase
+    /     .from
+    /       from: Company Name
     %ul.search-results
       %li.result-item
-        .item-main-img.vase-1
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
+        = link_to(product_path, class: "item-img-link") do
+          = image_tag('vase-1.jpeg')
+        .result-header-info
+          = link_to(product_path, class: "result-item-title") do
+            Beautiful oriental Vase Awesome Thing for your House
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            Poland
+          = link_to("See company profile", "#", class: "plain-link")
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
       %li.result-item
-        .item-main-img.vase-2
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
+        = link_to(product_path, class: "item-img-link") do
+          = image_tag('vase-2.jpeg')
+        .result-header-info
+          = link_to(product_path, class: "result-item-title") do
+            Beautiful oriental Vase Awesome Thing for your House
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            Poland
+          = link_to("See company profile", "#", class: "plain-link")
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
       %li.result-item
-        .item-main-img.vase-3
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
+        = link_to(product_path, class: "item-img-link") do
+          = image_tag('vase-3.jpg')
+        .result-header-info
+          = link_to(product_path, class: "result-item-title") do
+            Beautiful oriental Vase Awesome Thing for your House
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            Poland
+          = link_to("See company profile", "#", class: "plain-link")
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
       %li.result-item
-        .item-main-img.vase-4
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
+        = link_to(product_path, class: "item-img-link") do
+          = image_tag('vase-4.jpg')
+        .result-header-info
+          = link_to(product_path, class: "result-item-title") do
+            Beautiful oriental Vase Awesome Thing for your House
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            Longer Name For the Company
+          .company-location
+            %span location:
+            Poland
+          = link_to("See company profile", "#", class: "plain-link")
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
       %li.result-item
-        .item-main-img.vase-5
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
+        = link_to(product_path, class: "item-img-link") do
+          = image_tag('vase-5.jpg')
+        .result-header-info
+          = link_to(product_path, class: "result-item-title") do
+            Beautiful oriental Vase Awesome Thing for your House
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            United States of America such long
+          = link_to("See company profile", "#", class: "plain-link")
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
       %li.result-item
-        .item-main-img.vase-6
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
-      %li.result-item
-        .item-main-img.vase-7
-        = link_to(product_path, class: "result-item-title") do
-          Beautiful oriental Vase
-        .from
-          from: Company Name
-        %p.result-item-description
-          Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-          cupcake tart halvah. Cotton
-          candy pudding apple pie gummies croissant. Marshmallow liquorice
-          chocolate icing marshmallow sugar
-          plum fruitcake fruitcake apple pie.
+        = link_to(product_path, class: "item-img-link") do
+          = image_tag('vase-6.png')
+        .result-header-info
+          = link_to(product_path, class: "result-item-title") do
+            Beautiful oriental Vase Awesome Thing for your House
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            Poland
+          = link_to("See company profile", "#", class: "plain-link")
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
