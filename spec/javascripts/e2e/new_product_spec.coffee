@@ -6,7 +6,7 @@ describe NewProductPage, ->
   page = null
 
   beforeEach ->
-    loginHelper.login()
+    loginHelper.loginAsSeller()
     page = new NewProductPage()
     page.get()
 

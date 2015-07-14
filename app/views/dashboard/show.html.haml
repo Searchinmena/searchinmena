@@ -13,7 +13,7 @@
         = t('dashboard_nav.company')
         %span.icon.icon-briefcase
 
-    - if current_user.seller?
+    - if current_user.can_see_business_items?
       %li
         %a.nav-link{ "ui-sref": "products", "ui-sref-active": "active" }
           = t('dashboard_nav.products')
