@@ -33,4 +33,4 @@ test:
   # Temporary solution to make Protractor tests for disappearing flash messages
   # pass on CircleCI, see https://github.com/wmluke/angular-flash/issues/27,
   # https://github.com/angular/protractor/issues/169
-  angular_flash_timeout: 15000
+  angular_flash_timeout: 10000
