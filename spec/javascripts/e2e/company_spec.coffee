@@ -23,6 +23,7 @@ describe CompanyPage, ->
     page.countryField().click()
     element(By.cssContainingText("option", "Poland")).click()
     page.businessTypesSelectField().click()
+    element(By.linkText("Uncheck all")).click()
     element(By.linkText("Business services")).click()
     page.submitForm()
 
