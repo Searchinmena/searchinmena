@@ -1,3 +1,11 @@
+@mixin float-direction {
+  float: left;
+
+  [dir="rtl"] & {
+    float: right;
+  }
+}
+
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content; 

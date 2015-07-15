@@ -33,11 +33,7 @@
 }
 
 .product-main-image, .product-short-info {
-  float: left;
-
-  [dir="rtl"] & {
-    float: right;
-  }
+  @include float-direction;
 }
 
 .product-main-image {
