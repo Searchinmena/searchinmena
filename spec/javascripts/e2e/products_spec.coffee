@@ -19,6 +19,5 @@ describe ProductsPage, ->
     loginHelper.logout()
 
   it "is possible to remove product", ->
-    count = page.itemsCount()
     page.deleteBusinessItem()
     expect(page.itemsCount()).toEqual(0)

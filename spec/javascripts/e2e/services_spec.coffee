@@ -19,6 +19,5 @@ describe ServicesPage, ->
     loginHelper.logout()
 
   it "is possible to remove service", ->
-    count = page.itemsCount()
     page.deleteBusinessItem()
     expect(page.itemsCount()).toEqual(0)
