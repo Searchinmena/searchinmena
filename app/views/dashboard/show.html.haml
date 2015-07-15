@@ -12,14 +12,16 @@
                    "ui-sref-opts": "{ reload: true }" }
         = t('dashboard_nav.company')
         %span.icon.icon-briefcase
-    %li
-      %a.nav-link{ "ui-sref": "products", "ui-sref-active": "active" }
-        = t('dashboard_nav.products')
-        %span.icon.icon-shopping-cart
-    %li
-      %a.nav-link{ "ui-sref": "services", "ui-sref-active": "active" }
-        = t('dashboard_nav.services')
-        %span.icon.icon-user
+
+    - if current_user.can_see_business_items?
+      %li
+        %a.nav-link{ "ui-sref": "products", "ui-sref-active": "active" }
+          = t('dashboard_nav.products')
+          %span.icon.icon-shopping-cart
+      %li
+        %a.nav-link{ "ui-sref": "services", "ui-sref-active": "active" }
+          = t('dashboard_nav.services')
+          %span.icon.icon-user
     %li
       %a.nav-link{ href: "#" }
         = t('dashboard_nav.messages')

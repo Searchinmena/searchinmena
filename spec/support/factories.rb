@@ -1,6 +1,3 @@
-TEST_EMAIL = "test@example.org"
-TEST_PASSWORD = "testtest"
-
 FactoryGirl.define do
   factory :user do
     sequence(:first_name) { "Alicia" }
@@ -10,10 +7,17 @@ FactoryGirl.define do
     password_confirmation { "voteforalicia" }
     category { User.categories[:buyer] }
 
+    factory :buyer, parent: :user do
+    end
+
     factory :seller, parent: :user do
       category { User.categories[:seller] }
 
-      association :business
+      business { build(:business, user: nil) }
+
+      factory :both, parent: :user do
+        category { User.categories[:both] }
+      end
     end
   end
 

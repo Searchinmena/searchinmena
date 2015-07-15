@@ -6,7 +6,7 @@ describe NewServicePage, ->
   page = null
 
   beforeEach ->
-    loginHelper.login()
+    loginHelper.loginAsSeller()
     page = new NewServicePage()
     page.get()
 
