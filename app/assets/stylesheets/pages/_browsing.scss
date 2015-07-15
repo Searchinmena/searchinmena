@@ -151,9 +151,13 @@
   }
 
   .result-header-info {
-    width: 65%;
+    width: 60%;
     padding: 0 $bs1;
     float: left;
+
+    [dir="rtl"] & {
+      float: right;
+    }
     
     @media screen and (min-width: $tablet) {
       padding: 0;
@@ -195,8 +199,12 @@
     font-size: $bs09;
     padding: 0 $bs1;
     float: left;
-    width: 65%;
+    width: 60%;
     color: $grey;
+
+    [dir="rtl"] & {
+      float: right;
+    }
 
     @media screen and (min-width: $big-phone) {
       width: 55%;
@@ -278,6 +286,11 @@
     position: absolute;
     border-left: $default-border;
     width: 3 * $bs7;
+
+    [dir="rtl"] & {
+      border-left: 0;
+      border-right: $default-border;
+    }
   }
 
   .company-location, .company-name, .plain-link {
@@ -314,6 +327,11 @@
   position: absolute;
   right: $bs2;
   top: 0;
+
+  [dir="rtl"] & {
+    right: auto;
+    left: 0;
+  }
 
   @media screen and (min-width: $tablet) {
     width: 100%;
