@@ -133,13 +133,12 @@ textarea {
   @extend .field;
 
   @media screen and (min-width: $tablet) {
+    @include float-direction;
     width: 2 * $bs8;
     display: inline-block;
-    float: left;
     margin: 0 $bs1 0 0;
 
     [dir="rtl"] & {
-      float: right;
       margin: 0 0 0 $bs1;
     }
   }
@@ -255,11 +254,10 @@ textarea {
 }
 
 input[type="checkbox"], input[type="radio"],  {
-  float: left;
+  @include float-direction;
   margin: 3px $bs-5 0 0;
 
   [dir="rtl"] & {
-    float: right;
     margin: 3px 0 0 $bs-5;
   }
 }

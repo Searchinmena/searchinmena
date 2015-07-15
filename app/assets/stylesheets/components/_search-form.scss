@@ -46,13 +46,9 @@
   @media screen and (min-width: 940px) {
     
     input[type="text"], .select-field, input[type="submit"] {
+      @include float-direction;
       display: inline-block;
-      float: left;
       margin: 0;
-
-      [dir="rtl"] & {
-        float: right;
-      }
     }
 
     input[type="text"] {
@@ -109,13 +105,9 @@
     padding: $bs2;
 
     input[type="text"], input[type="submit"] {
+      @include float-direction;
       display: inline-block;
-      float: left;
       margin: 0;
-
-      [dir="rtl"] & {
-        float: right;
-      }
     }
 
     input[type="submit"] {

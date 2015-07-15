@@ -1,6 +1,6 @@
 @Sim.service 'BusinessItemsLoader', ['$http',
   ($http) =>
-    initialize: (resourceName, scope) =>
+    initialize: (resourceName, scope) ->
       scope.businessItems = []
       scope.total = 0
       scope.perPage = 10
@@ -13,7 +13,7 @@
           new SIM.BusinessItem(attributes)
         scope.total = data.count
 
-      scope.pageChanged = (newPage) =>
+      scope.pageChanged = (newPage) ->
         $http.get("/#{resourceName}", params: { page: newPage })
           .success(scope.assignData)
 

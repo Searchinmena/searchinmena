@@ -13,13 +13,9 @@ footer {
     list-style: none;
 
     li {
+      @include float-direction;
       display: inline-block;
-      float: left;
       width: 100%;
-
-      [dir="rtl"] & {
-        float: right;
-      }
 
       @media screen and (min-width: $desktop) { 
         width: 45%;
@@ -67,12 +63,8 @@ address {
   padding: $bs5;
   
   @media screen and (min-width: $tablet) { 
+    @include float-direction;
     width: 50%;
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
   } 
 }
 

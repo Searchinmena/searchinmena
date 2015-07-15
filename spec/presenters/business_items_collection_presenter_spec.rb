@@ -8,7 +8,7 @@ describe BusinessItemsCollectionPresenter do
     let(:user) { create(:seller) }
     let(:page) { "1" }
     let(:repository) { ProductRepository.new }
-    let(:locale) { 'en' }
+    let(:locale) { "en" }
 
     let(:presenter) { described_class.new(user, page, repository, locale) }
 
