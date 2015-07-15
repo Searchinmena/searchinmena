@@ -2,17 +2,17 @@
   "dir-paginate": "businessItem in businessItems | itemsPerPage: 10",
   "total-items": "total", "current-page": "pagination.current" }
   .item-img-holder
-    %img.item-img{ "ng-src": "{{businessItem.thumbUrl}}" }
+    %img.item-img{ "ng-src": "{{ businessItem.thumbUrl }}" }
 
   .item-info
-    %h3.item-title {{businessItem.name}}
+    %h3.item-title {{ businessItem.name }}
     .breadcrumbs
       in
       %span.breadcrumbs-item{ "ng-repeat": "item in businessItem.breadcrumbsWithoutLast()" }
-        {{item.name}}
+        {{ item.name }}
         %span.icon-chevron-right
       %span.breadcrumbs-item
-        {{businessItem.lastBreadcrumb().name}}
+        {{ businessItem.lastBreadcrumb().name }}
 
   .item-options
     %a.edit{ href: "#"}
