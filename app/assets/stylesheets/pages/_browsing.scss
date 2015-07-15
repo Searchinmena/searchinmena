@@ -38,11 +38,7 @@
   padding: $bs-1 0 0;
 
   @media screen and (min-width: $tablet) {
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
+    @include float-direction;
   }
 
   a {
@@ -113,18 +109,18 @@
 
   &:hover {
     @include box-shadow(0, 0, 5px, 2px, $border-grey);
+    z-index: 99;
   }
 
   .item-img-link {
+    @include float-direction;
     width: 30%;
     height: $bs8;
-    float: left;
     margin: 0 0 0 $bs1;
     border: 1px solid $medium-grey;
 
     [dir="rtl"] & {
       margin: 0 $bs1 0 0;
-      float: right;
     }
 
     @media screen and (min-width: $tablet) {
@@ -151,13 +147,9 @@
   }
 
   .result-header-info {
+    @include float-direction;
     width: 60%;
     padding: 0 $bs1;
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
     
     @media screen and (min-width: $tablet) {
       padding: 0;
@@ -196,15 +188,11 @@
   }
 
   .result-item-description {
+    @include float-direction;
     font-size: $bs09;
     padding: 0 $bs1;
-    float: left;
     width: 60%;
     color: $grey;
-
-    [dir="rtl"] & {
-      float: right;
-    }
 
     @media screen and (min-width: $big-phone) {
       width: 55%;

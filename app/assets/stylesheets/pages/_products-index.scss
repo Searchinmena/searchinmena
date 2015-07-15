@@ -8,9 +8,10 @@
   position: relative;
   border-top: 1px solid $border-grey;
 
-  &:hover {
+  &:hover, &:focus {
     @include box-shadow(0, 0, 5px, 2px, $border-grey);
-
+    outline: 0;
+    
     .edit, .see-page, .delete {
       color: $blue-basic;
     }
@@ -37,12 +38,8 @@
   }
 
   .item-info {
+    @include float-direction;
     width: 60%;
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
     
     @media screen and (min-width: $standard-desktop) {
       width: 100%;
@@ -60,17 +57,16 @@
 
   .edit, .see-page, .delete {
     @include transition(all, 0.15s, ease-in-out);
+    @include float-direction;
     height: $bs7;
     width: 33.33%;
     text-align: center;
-    float: left;
     color: $basic-font; 
     padding: $bs1 0;
     border: 1px solid $border-grey;
     border-left: 0;
 
     [dir="rtl"] & {
-      float: right;
       border-left: 1px solid $border-grey;
       border-right: 0;
     }
@@ -128,27 +124,18 @@
   }
 }
 
-.item-img {
+.item-img-holder {
+  @include float-direction;
   width: 40%;
   max-width: $bs7;
   height: $bs7;
-  background-position: center center;
-  background-size: auto 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: image-url("vase-1.jpeg");
-  float: left;
   margin: 0 $bs1 0 0;
 
   [dir="rtl"] & {
-    float: right;
     margin: 0 0 0 $bs1;
   }
+}
 
-  &.vase-3{
-    background-image: image-url("vase-5.jpg");
-  }
-  &.vase-4{
-    background-image: image-url("vase-6.png");
-  }
+.item-img {
+  width: 100%;
 }

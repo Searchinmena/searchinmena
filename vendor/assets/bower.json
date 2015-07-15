@@ -15,6 +15,7 @@
     "ng-file-upload ": "5.0.7",
     "angular-bootstrap": "0.13.0",
     "underscore": "latest",
-    "angular-off-click": "0.0.7"
+    "angular-off-click": "0.0.7",
+    "angular-utils-pagination": "0.8.2"
   }
 }

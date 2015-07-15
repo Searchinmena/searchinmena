@@ -6,8 +6,8 @@
 }
 
 .tab {
+  @include float-direction;
   display: inline-block;
-  float: left;
   border-top: $bs-5 solid $blue-basic;
   position: relative;
   top: -.14rem;

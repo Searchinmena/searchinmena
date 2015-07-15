@@ -1,13 +1,17 @@
 loginHelper = require('./helpers/login_helper.coffee')
 helpers = require('./helpers/helpers.coffee')
 NewProductPage = require('./helpers/new_product_page.coffee')
+ProductsPage = require('./helpers/products_page.coffee')
 
 describe NewProductPage, ->
   page = null
+  productsPage = null
 
   beforeEach ->
-    loginHelper.login()
+    loginHelper.loginAsSeller()
     page = new NewProductPage()
+    productsPage = new ProductsPage()
+
     page.get()
 
   afterEach ->
@@ -88,14 +92,11 @@ describe NewProductPage, ->
     expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)
 
   it "is possible to add product", ->
-    page.nameInput().sendKeys("New Product")
+    page.addProduct()
 
-    page.categoryButton().click()
-    categories = ["Energy", "Crude Oil"]
-    page.chooseCategory(category) for category in categories
-    page.submitCategoryButton().click()
-
-    page.uploadFile()
-
-    page.submitForm()
     helpers.expectUrlChanged("/products")
+
+    expect(page.firstBusinessItem().getText()).toEqual("New Product")
+
+    # cleanup
+    productsPage.deleteBusinessItem()

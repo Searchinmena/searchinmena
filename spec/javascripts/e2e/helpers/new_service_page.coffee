@@ -4,4 +4,8 @@ class NewServicePage extends NewBusinessItemPage
   get: ->
     browser.get("/dashboard#/services/new")
 
+  addService: ->
+    categories = ["Design Services", "Website Design"]
+    @addBusinessItem("New Service", categories)
+
 module.exports = NewServicePage

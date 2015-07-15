@@ -97,7 +97,13 @@
     "payment_terms": "شروط الدفع",
     "packaging": "معلومات التغليف"
   },
+  "business_items": {
+    "edit": "edit",
+    "see": "see",
+    "remove": "remove"
+  },
   "products": {
+    "empty_list": "No products yet.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
     "successfully_added": "تمت إضافة المنتج بنجاح",
@@ -116,6 +122,7 @@
     }
   },
   "services": {
+    "empty_list": "No services yet.",
     "your_services": "Your services",
     "add_new_service": "Add new service",
     "new": {
