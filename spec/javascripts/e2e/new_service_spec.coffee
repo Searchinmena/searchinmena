@@ -1,13 +1,17 @@
 loginHelper = require('./helpers/login_helper.coffee')
 helpers = require('./helpers/helpers.coffee')
 NewServicePage = require('./helpers/new_service_page.coffee')
+ServicesPage = require('./helpers/services_page.coffee')
 
 describe NewServicePage, ->
   page = null
+  servicesPage = null
 
   beforeEach ->
     loginHelper.loginAsSeller()
     page = new NewServicePage()
+    servicesPage = new ServicesPage()
+
     page.get()
 
   afterEach ->
@@ -82,17 +86,11 @@ describe NewServicePage, ->
     expect(page.breadcrumbInForm("Packaging Design").isDisplayed()).toBe(true)
 
   it "is possible to add service", ->
-    page.nameInput().sendKeys("New Service")
+    page.addService()
 
-    page.categoryButton().click()
-    categories = ["Design Services", "Website Design"]
-    page.chooseCategory(category) for category in categories
-    page.submitCategoryButton().click()
-
-    page.uploadFile()
-
-    page.submitForm()
     helpers.expectUrlChanged("/services")
 
     expect(page.firstBusinessItem().getText()).toEqual("New Service")
 
+    # cleanup
+    servicesPage.deleteBusinessItem()

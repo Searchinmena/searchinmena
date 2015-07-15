@@ -118,5 +118,16 @@ class NewBusinessItemPage
   firstBusinessItem: ->
     element.all(By.css(@itemTitleCss)).get(0)
 
+  addBusinessItem: (name, categories) ->
+    @nameInput().sendKeys(name)
+
+    @categoryButton().click()
+    @chooseCategory(category) for category in categories
+    @submitCategoryButton().click()
+
+    @uploadFile()
+
+    @submitForm()
+
 module.exports = NewBusinessItemPage
 

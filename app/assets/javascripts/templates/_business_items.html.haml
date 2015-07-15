@@ -15,15 +15,15 @@
         {{ businessItem.lastBreadcrumb().name }}
 
   .item-options
-    %a.edit{ href: "#"}
+    %a.edit{ href: "#" }
       %span.icon.icon-pencil
-      edit
-    %a.see-page{ href: "#"}
+      {{ "business_items.edit" | translate }}
+    %a.see-page{ href: "#" }
       %span.icon.icon-eye-open
-      see
-    %a.delete{ href: "#"}
+      {{ "business_items.see" | translate }}
+    %a.delete{ href: "#", "ng-click": "deleteClicked($event, businessItem)" }
       %span.icon.icon-remove
-      remove
+      {{ "business_items.remove" | translate }}
 
 .pagination-container
   %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }
