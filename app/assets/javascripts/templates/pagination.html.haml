@@ -1,0 +1,16 @@
+%ul.pagination{ "ng-if": "1 < pages.length" }
+  %li.page-navigation{ "ng-if": "boundaryLinks", "ng-class": "{ disabled : pagination.current == 1 }" }
+    %a{ href:"", "ng-click": "setCurrent(1)" } &laquo;
+
+  %li.page-navigation{ "ng-if": "directionLinks", "ng-class": "{ disabled : pagination.current == 1 }" }
+    %a{ href: "", "ng-click": "setCurrent(pagination.current - 1)" } &lsaquo;
+
+  %li{ "ng-repeat": "pageNumber in pages track by $index", "ng-class": "{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }" }
+    %a{ href: "", "ng-click": "setCurrent(pageNumber)" } {{ pageNumber }}
+
+  %li.page-navigation{ "ng-if": "directionLinks", "ng-class": "{ disabled : pagination.current == pagination.last }" }
+    %a{ href: "", "ng-click": "setCurrent(pagination.current + 1)" } &rsaquo;
+
+  %li.page-navigation{ "ng-if": "boundaryLinks", "ng-class": "{ disabled : pagination.current == pagination.last }" }
+    %a{ href:"", "ng-click": "setCurrent(pagination.last)" } &raquo;
+

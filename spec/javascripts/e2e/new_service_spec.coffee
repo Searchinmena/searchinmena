@@ -93,3 +93,6 @@ describe NewServicePage, ->
 
     page.submitForm()
     helpers.expectUrlChanged("/services")
+
+    expect(page.firstBusinessItem().getText()).toEqual("New Service")
+

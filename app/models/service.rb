@@ -2,6 +2,8 @@ class Service < ActiveRecord::Base
   belongs_to :category
   belongs_to :business
 
+  has_many :category_translations, through: :category, source: :translations
+
   belongs_to :fob_price_currency, class_name: "Translatable"
   belongs_to :fob_price_unit, class_name: "Translatable"
   belongs_to :supply_ability_unit, class_name: "Translatable"

@@ -8,9 +8,10 @@
   position: relative;
   border-top: 1px solid $border-grey;
 
-  &:hover {
+  &:hover, &:focus {
     @include box-shadow(0, 0, 5px, 2px, $border-grey);
-
+    outline: 0;
+    
     .edit, .see-page, .delete {
       color: $blue-basic;
     }
@@ -128,15 +129,10 @@
   }
 }
 
-.item-img {
+.item-img-holder {
   width: 40%;
   max-width: $bs7;
   height: $bs7;
-  background-position: center center;
-  background-size: auto 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: image-url("vase-1.jpeg");
   float: left;
   margin: 0 $bs1 0 0;
 
@@ -144,11 +140,8 @@
     float: right;
     margin: 0 0 0 $bs1;
   }
+}
 
-  &.vase-3{
-    background-image: image-url("vase-5.jpg");
-  }
-  &.vase-4{
-    background-image: image-url("vase-6.png");
-  }
+.item-img {
+  width: 100%;
 }

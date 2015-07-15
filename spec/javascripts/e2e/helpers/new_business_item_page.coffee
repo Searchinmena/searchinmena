@@ -24,6 +24,8 @@ class NewBusinessItemPage
 
     @submitCss = ".actions input"
 
+    @itemTitleCss = ".item-title"
+
   attributes: ->
     element.all(By.model(@attributeModel))
 
@@ -112,6 +114,9 @@ class NewBusinessItemPage
 
     @removePhotoButton().click()
     expect(@photos().count()).toBe(0)
+
+  firstBusinessItem: ->
+    element.all(By.css(@itemTitleCss)).get(0)
 
 module.exports = NewBusinessItemPage
 

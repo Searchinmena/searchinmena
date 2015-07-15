@@ -2,6 +2,7 @@ require "rails_helper"
 
 describe ProductsController do
   it_behaves_like "BusinessItemsController" do
+    let(:repository) { ProductRepository.new }
     let(:creator_class) { BusinessItem::ProductCreator }
     let(:business_item_params) do
       common_business_params.merge(
@@ -11,5 +12,6 @@ describe ProductsController do
         "min_order_quantity_unit_id" => "1"
       )
     end
+    let(:business_item) { create(:product, business: user.business) }
   end
 end
