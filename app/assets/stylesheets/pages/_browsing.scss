@@ -38,11 +38,7 @@
   padding: $bs-1 0 0;
 
   @media screen and (min-width: $tablet) {
-    float: left;
-
-    [dir="rtl"] & {
-      float: right;
-    }
+    @include float-direction;
   }
 
   a {
@@ -113,18 +109,18 @@
 
   &:hover {
     @include box-shadow(0, 0, 5px, 2px, $border-grey);
+    z-index: 99;
   }
 
   .item-img-link {
+    @include float-direction;
     width: 30%;
     height: $bs8;
-    float: left;
     margin: 0 0 0 $bs1;
     border: 1px solid $medium-grey;
 
     [dir="rtl"] & {
       margin: 0 $bs1 0 0;
-      float: right;
     }
 
     @media screen and (min-width: $tablet) {
@@ -151,9 +147,9 @@
   }
 
   .result-header-info {
-    width: 65%;
+    @include float-direction;
+    width: 60%;
     padding: 0 $bs1;
-    float: left;
     
     @media screen and (min-width: $tablet) {
       padding: 0;
@@ -192,10 +188,10 @@
   }
 
   .result-item-description {
+    @include float-direction;
     font-size: $bs09;
     padding: 0 $bs1;
-    float: left;
-    width: 65%;
+    width: 60%;
     color: $grey;
 
     @media screen and (min-width: $big-phone) {
@@ -278,6 +274,11 @@
     position: absolute;
     border-left: $default-border;
     width: 3 * $bs7;
+
+    [dir="rtl"] & {
+      border-left: 0;
+      border-right: $default-border;
+    }
   }
 
   .company-location, .company-name, .plain-link {
@@ -314,6 +315,11 @@
   position: absolute;
   right: $bs2;
   top: 0;
+
+  [dir="rtl"] & {
+    right: auto;
+    left: 0;
+  }
 
   @media screen and (min-width: $tablet) {
     width: 100%;
