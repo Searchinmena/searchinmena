@@ -72,7 +72,8 @@
     "max_photos_exceeded": "You can upload at most {{max_count}} photos",
     "button": "Add photos",
     "comment": "Max 10 images",
-    "comment_thumbnail": "The first image is the main photo of the product. For best presentation will be a squre image at least 500 x 500px"
+    "comment_thumbnail": "The first image is the main photo of the product. For best presentation will be a squre image at least 500 x 500px",
+    "valid_photos": "You can't upload GIF images."
   },
   "attributes": {
     "title": "Characteristics",
