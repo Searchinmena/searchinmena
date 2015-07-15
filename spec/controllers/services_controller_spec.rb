@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe ServicesController do
-  it_behaves_like "BusinessItemsController" do
+  it_behaves_like "BusinessItemsController", :service do
     let(:repository) { ServiceRepository.new }
     let(:creator_class) { BusinessItem::ServiceCreator }
     let(:business_item_params) do

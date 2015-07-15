@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe ProductsController do
-  it_behaves_like "BusinessItemsController" do
+  it_behaves_like "BusinessItemsController", :product do
     let(:repository) { ProductRepository.new }
     let(:creator_class) { BusinessItem::ProductCreator }
     let(:business_item_params) do

@@ -1,6 +1,6 @@
 @Sim.controller 'ServicesIndexCtrl', ['$scope', 'BusinessItemsLoader',
   ($scope, BusinessItemsLoader) ->
-    SERVICES_PATH = "/services"
+    RESOURCE_NAME = "services"
 
-    BusinessItemsLoader.initialize(SERVICES_PATH, $scope)
+    BusinessItemsLoader.initialize(RESOURCE_NAME, $scope)
 ]
