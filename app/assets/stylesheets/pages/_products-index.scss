@@ -41,6 +41,14 @@
     @include float-direction;
     width: 60%;
     
+    @media screen and (min-width: $tablet) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 60%;
+    }
+    
     @media screen and (min-width: $standard-desktop) {
       width: 100%;
       max-width: 4 * $bs8;

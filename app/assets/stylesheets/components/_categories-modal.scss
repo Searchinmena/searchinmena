@@ -88,15 +88,4 @@
 
 #category {
   margin: $bs0 0 0;
-  .breadcrumbs-item, .icon-chevron-right {
-    display: inline-block;
-  }
-
-  .icon-chevron-right {
-    [dir="rtl"] & {
-      -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      transform: rotate(180deg);
-    }
-  }
 }

@@ -20,6 +20,17 @@
   .title {
     padding: 0 $bs2;
   }
+
+  .breadcrumbs {
+    font-size: $bs09;
+    margin: $bs0 0 0;
+    padding: 0 $bs2 $bs1;
+    border-bottom: $default-border;
+
+    a {
+      border: 0;
+    }
+  }
 }
 
 .search-filters {
@@ -72,17 +83,6 @@
     &.active {
       color: $purple-basic;
     }
-  }
-}
-
-.breadcrumbs {
-  font-size: $bs09;
-  margin: $bs0 0 0;
-  padding: 0 $bs2 $bs1;
-  border-bottom: $default-border;
-
-  a {
-    border: 0;
   }
 }
 
