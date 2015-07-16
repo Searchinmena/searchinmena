@@ -1,4 +1,6 @@
 class BusinessItemsController < ApplicationController
+  before_action :assign_business_item, only: [:destroy]
+
   def create
     response = business_item_creator.perform
     if response.successful?
@@ -8,10 +10,30 @@ class BusinessItemsController < ApplicationController
     end
   end
 
+  def index
+    render_collection
+  end
+
+  def destroy
+    repository.destroy(@business_item)
+
+    render_collection
+  end
+
   private
 
+  def assign_business_item
+    @business_item = repository.find_for_user(current_user, params[:id])
+    head :not_found unless @business_item
+  end
+
+  def render_collection
+    render json: BusinessItemsCollectionPresenter.new(
+      current_user, params[:page], repository, locale)
+  end
+
   def render_success(business_item)
-    render json: BusinessItemPresenter.new(business_item)
+    render json: BusinessItemBasicPresenter.new(business_item)
   end
 
   def render_error(business_item)
@@ -23,7 +45,8 @@ class BusinessItemsController < ApplicationController
   def new_business_item_params
     {
       business_item: business_item_params,
-      attributes: attributes_params
+      attributes: attributes_params,
+      payment_terms: payment_terms_params
     }
   end
 
@@ -41,6 +64,10 @@ class BusinessItemsController < ApplicationController
   end
 
   def attributes_params
-    params.permit(attributes: [:name, :value])[:attributes] || {}
+    params[:attributes] || []
+  end
+
+  def payment_terms_params
+    params[:payment_terms] ? params[:payment_terms].keys : []
   end
 end

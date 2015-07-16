@@ -11,7 +11,7 @@ describe "Locale switching", ->
 
     expect(helper.dirAttribute()).toEqual("rtl")
 
-    loginHelper.login()
+    loginHelper.loginAsSeller()
 
     expect(helper.activeLink().getText()).toEqual("الصفحة الرئيسية")
 

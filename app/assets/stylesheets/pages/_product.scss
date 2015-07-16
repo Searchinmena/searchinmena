@@ -33,11 +33,7 @@
 }
 
 .product-main-image, .product-short-info {
-  float: left;
-
-  [dir="rtl"] & {
-    float: right;
-  }
+  @include float-direction;
 }
 
 .product-main-image {
@@ -77,16 +73,6 @@
   font-size: $bs09;
 }
 
-.contact-supplier {
-  @extend %basic-button;
-  @extend %primary-button;
-  margin: $bs2 0 $bs4;
-
-  .icon-envelope {
-    font-size: $bs2;
-    vertical-align: sub;
-  }
-}
 
 .product-info {
   clear: both;

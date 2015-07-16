@@ -2,7 +2,7 @@ class BusinessItem::Creator < BaseService
   inject :business_repository
 
   takes :item_repository, :validator_factory, :attributes_creator_factory,
-        :params, :user
+        :payment_terms_creator_factory, :params, :user
 
   def perform
     business = business_repository.find_by_user_id(user.id)
@@ -13,6 +13,8 @@ class BusinessItem::Creator < BaseService
 
     business_item = response.object
     save_attributes_for(business_item)
+
+    save_payment_terms_for(business_item)
   end
 
   def save_business_item(business)
@@ -30,6 +32,14 @@ class BusinessItem::Creator < BaseService
       business_item
     )
     attributes_creator.perform
+  end
+
+  def save_payment_terms_for(business_item)
+    payment_terms_creator = payment_terms_creator_factory.new(
+      params[:payment_terms],
+      business_item
+    )
+    payment_terms_creator.perform
   end
 end
 

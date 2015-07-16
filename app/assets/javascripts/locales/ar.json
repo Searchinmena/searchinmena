@@ -75,7 +75,8 @@
     "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
     "button": "أضف صور",
     "comment": "10 صور حد أقصى",
-    "comment_thumbnail": "الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور مربعة بقياس 500x500 بكسل "
+    "comment_thumbnail": "الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور مربعة بقياس 500x500 بكسل ",
+    "valid_photos": "لا يمكنك إضافة صور GIF"
   },
   "attributes": {
     "title": "الخصائص",
@@ -99,7 +100,13 @@
     "payment_terms": "شروط الدفع",
     "packaging": "معلومات التغليف"
   },
+  "business_items": {
+    "edit": "edit",
+    "see": "see",
+    "remove": "remove"
+  },
   "products": {
+    "empty_list": "No products yet.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
     "successfully_added": "تمت إضافة المنتج بنجاح",
@@ -118,6 +125,7 @@
     }
   },
   "services": {
+    "empty_list": "No services yet.",
     "your_services": "Your services",
     "add_new_service": "Add new service",
     "new": {

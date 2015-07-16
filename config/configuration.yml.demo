@@ -17,7 +17,7 @@ production:
     port: 587
     user_name: aiham@searchinmena.com
     password: UqkQa7zmtEEbh0Kb0WRdMQ
-  thumbnail_size: 50
+  thumbnail_size: 120
   aws:
     bucket_name: sim-uploads-demo
     access_key_id: AKIAJ4W5KE65VD6QDZFQ

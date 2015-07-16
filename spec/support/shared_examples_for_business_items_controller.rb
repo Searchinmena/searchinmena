@@ -1,4 +1,4 @@
-shared_examples "BusinessItemsController" do
+shared_examples "BusinessItemsController" do |resource_name|
   let(:common_business_params) do
     {
       "name" => "name",
@@ -12,6 +12,12 @@ shared_examples "BusinessItemsController" do
       "packaging_details" => "packaging"
     }
   end
+  let(:user) { create(:seller) }
+
+  before do
+    allow(controller).to receive(:repository)
+      .and_return(repository)
+  end
 
   describe "#create" do
     it_behaves_like "redirects to signin if user not logged in" do
@@ -19,37 +25,69 @@ shared_examples "BusinessItemsController" do
     end
 
     context "user is logged in" do
-      let(:user) { create(:seller) }
-
       before { sign_in(user) }
 
       let(:creator) { double(:creator, perform: creator_response) }
       let(:creator_response) do
         double(successful?: successful, object: business_item)
       end
-      let(:attributes_params) { {} }
+      let(:attributes_params) { [{ name: "ania", value: "hai" }] }
+      let(:payment_terms_params) { { "12" => true } }
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do
         {
           business_item: business_item_params,
-          attributes: attributes_params
+          attributes: attributes_params,
+          payment_terms: payment_terms_params
         }
+      end
+
+      let(:expected_params) do
+        new_business_item_params.merge(
+          payment_terms: payment_terms_params.keys)
       end
 
       before do
         expect(creator_class).to receive(:new)
-          .with(new_business_item_params, user).and_return(creator)
+          .with(expected_params, user).and_return(creator)
       end
 
       context "creator response is successful" do
         let(:successful) { true }
 
-        it "is successful" do
-          expect(BusinessItemPresenter).to receive(:new).with(business_item)
+        shared_examples_for "successful response" do
+          it "is successful" do
+            expect(BusinessItemBasicPresenter).to receive(:new)
+              .with(business_item)
 
-          post :create, business_item: business_item_params,
-                        attributes: attributes_params
-          expect(response).to be_successful
+            post :create, new_business_item_params
+            expect(response).to be_successful
+          end
+        end
+
+        it_behaves_like "successful response"
+
+        context "attributes not present" do
+          let(:attributes_params) { nil }
+          let(:expected_params) do
+            new_business_item_params.merge(
+              attributes: [],
+              payment_terms: payment_terms_params.keys
+            )
+          end
+
+          it_behaves_like "successful response"
+        end
+
+        context "payment_terms not present" do
+          let(:payment_terms_params) { nil }
+          let(:expected_params) do
+            new_business_item_params.merge(
+              payment_terms: []
+            )
+          end
+
+          it_behaves_like "successful response"
         end
       end
 
@@ -59,10 +97,58 @@ shared_examples "BusinessItemsController" do
         it "renders errors" do
           expect(ErrorsPresenter).to receive(:new).with(business_item)
 
-          post :create, business_item: business_item_params,
-                        attributes: attributes_params
+          post :create, new_business_item_params
           expect(response.status).to eq(409)
         end
+      end
+    end
+  end
+
+  describe "#index" do
+    it_behaves_like "redirects to signin if user not logged in" do
+      before { post :index }
+    end
+
+    context "user is logged in" do
+      before do
+        sign_in(user)
+
+        expect(BusinessItemsCollectionPresenter).to receive(:new)
+          .with(user, "2", repository, :en)
+      end
+
+      subject { get :index, page: "2" }
+
+      it { is_expected.to be_successful }
+    end
+  end
+
+  describe "destroy" do
+    it_behaves_like "redirects to signin if user not logged in" do
+      before { delete :destroy, id: 1 }
+    end
+
+    context "user is logged in" do
+      before do
+        sign_in(user)
+      end
+
+      subject { delete :destroy, id: business_item.id, page: "2"  }
+
+      context "business item belongs to the user" do
+        let!(:business_item) { create(resource_name, business: user.business) }
+        before do
+          expect(BusinessItemsCollectionPresenter).to receive(:new)
+            .with(user, "2", repository, :en)
+        end
+
+        it { is_expected.to be_successful }
+      end
+
+      context "business item doesn't belong to the user" do
+        let!(:business_item) { create(resource_name) }
+
+        it { is_expected.to be_not_found }
       end
     end
   end

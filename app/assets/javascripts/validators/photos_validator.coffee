@@ -19,5 +19,13 @@
         )
         false
       else
-        true
+        res = true
+        for photo in scope.photos
+          if photo.name.match(/\.(gif)$/)
+            $translate("photos.valid_photos" ).then((translation) ->
+              scope.errors["photos_general"] = translation
+            )
+            res &= false
+        res
+          
 ]

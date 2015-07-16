@@ -1,4 +1,10 @@
 class ProductsController < BusinessItemsController
+  inject :product_repository
+
+  def repository
+    product_repository
+  end
+
   def business_item_creator
     BusinessItem::ProductCreator.new(new_business_item_params, current_user)
   end

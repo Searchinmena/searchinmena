@@ -12,4 +12,6 @@ body {
   min-height: 100%;
   background-color: $snow-white;
   position: relative;
+  overflow-x: hidden;
+  word-wrap: break-word;
 }

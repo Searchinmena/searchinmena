@@ -24,6 +24,8 @@ class NewBusinessItemPage
 
     @submitCss = ".actions input"
 
+    @itemTitleCss = ".item-title"
+
   attributes: ->
     element.all(By.model(@attributeModel))
 
@@ -96,13 +98,13 @@ class NewBusinessItemPage
     submitButton.click()
 
   checkAddingAttributes: ->
-    expect(@attributes().count()).toBe(1)
-
-    @addAttributeButton().click()
     expect(@attributes().count()).toBe(2)
 
+    @addAttributeButton().click()
+    expect(@attributes().count()).toBe(3)
+
     @removeAttributeButton().click()
-    expect(@attributes().count()).toBe(1)
+    expect(@attributes().count()).toBe(2)
 
   checkAddingPhotos: ->
     expect(@photos().count()).toBe(0)
@@ -112,5 +114,19 @@ class NewBusinessItemPage
 
     @removePhotoButton().click()
     expect(@photos().count()).toBe(0)
+
+  firstBusinessItem: ->
+    element.all(By.css(@itemTitleCss)).get(0)
+
+  addBusinessItem: (name, categories) ->
+    @nameInput().sendKeys(name)
+
+    @categoryButton().click()
+    @chooseCategory(category) for category in categories
+    @submitCategoryButton().click()
+
+    @uploadFile()
+
+    @submitForm()
 
 module.exports = NewBusinessItemPage

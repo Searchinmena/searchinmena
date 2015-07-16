@@ -19,4 +19,17 @@ class CategoryRepository < TranslatableRepository
   def foreign_key
     :category_id
   end
+
+  def hierarchy_for(category)
+    hierarchy = []
+    while category
+      hierarchy.unshift(category)
+      category = category.parent
+    end
+    hierarchy
+  end
+
+  def translation_for(category, locale)
+    category.translations.where(locale: locale).first.value
+  end
 end

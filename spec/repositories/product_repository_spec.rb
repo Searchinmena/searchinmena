@@ -4,4 +4,5 @@ describe ProductRepository do
   let(:repository) { ProductRepository.new }
 
   it_behaves_like "UserResourceRepository", :product
+  it_behaves_like "BusinessItemRepository"
 end

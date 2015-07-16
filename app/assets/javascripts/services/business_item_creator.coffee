@@ -7,7 +7,7 @@
       scope.form = {}
       scope.errors = {}
       scope.form.business_item ||= {}
-      scope.attributes = [new SIM.Attribute()]
+      scope.attributes = (new SIM.Attribute() for i in [0..1])
 
       config = {
         units: "/units",

@@ -15,7 +15,7 @@ header {
 }
 
 .logo {
-  float: left;
+  @include float-direction;
   padding: $bs1 0 $bs-4 $bs2;
   border-bottom: 0;
   width: 60%;
@@ -23,7 +23,6 @@ header {
   height: 60px;
 
   [dir="rtl"] & {
-    float: right;
     padding: $bs1 $bs2 $bs-4 0;
   }
 
@@ -84,12 +83,8 @@ nav {
     }
 
     li {
+      @include float-direction;
       display: inline-block;
-      float: left;
-
-      [dir="rtl"] & {
-        float: right;
-      }
     }
   }
   

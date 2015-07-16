@@ -35,7 +35,7 @@
 
   .field
     %label {{ "company.basic_info.main_products" | translate }}
-    %tags-input{ "ng-model": "form.tags", "display-property": "name",
+    %tags-input{ "ng-model": "form.tags", "display-property": "label", "key-property":"id",
       "replace-spaces-with-dashes": "false" }
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }

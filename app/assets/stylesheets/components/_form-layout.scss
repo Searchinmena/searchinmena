@@ -63,11 +63,7 @@
     @extend %clearfix;
     
     @media screen and (min-width: 1150px) {
-      float: left;
-
-      [dir="rtl"] & {
-        float: right;
-      }
+      @include float-direction;
     }
   }  
 }
@@ -81,11 +77,7 @@
     @extend %clearfix;
     
     @media screen and (min-width: 1150px) {
-      float: left;
-
-      [dir="rtl"] & {
-        float: right;
-      }
+      @include float-direction;
     }
   }
 }
@@ -219,11 +211,15 @@
 
   li {
     @extend %clearfix;
+    @include float-direction;
     width: 46%;
     height: 15em;
     display: inline-block;
-    float: left;
     margin: 0 2% $bs0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 $bs0 2%;
+    }
     
     @media screen and (min-width: $tablet) {
       width: auto;
@@ -234,10 +230,14 @@
 
   .preview-image {
     @extend %four-sides-border;
-    float: left;
+    @include float-direction;
     width: 100%;
     max-width: 2 * $bs8;
     max-height: 100%;
+
+    @media screen and (min-width: $tablet) {
+      width: auto;
+    }
   }
 }
 
@@ -246,12 +246,8 @@
 
   input[type="submit"] {
     @media screen and (min-width: $tablet) {
+      @include float-direction;
       display: inline-block;
-      float: left;
-
-      [dir="rtl"] & {
-        float: right;
-      }
     }
   }
 }

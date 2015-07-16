@@ -1,4 +1,4 @@
-class BusinessItemPresenter
+class BusinessItemBasicPresenter < BasePresenter
   takes :business_item
 
   def as_json(*)

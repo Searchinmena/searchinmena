@@ -118,21 +118,11 @@
 
   .icon {
     @include transition(all, .25s, ease-in-out);
+    @include float-direction;
     display: inline-block;
     font-size: $bs2;
     line-height: 3 * $bs2;
     padding: 0 $bs2;
-    float: left;
     color: $grey;
-    border-right: $default-border;
-    margin-right: $bs0;
-
-    [dir="rtl"] & {
-      float: right;
-      border-right: 0;
-      border-left: $default-border;
-      margin-right: 0;
-      margin-left: $bs0;
-    }
   }
 }

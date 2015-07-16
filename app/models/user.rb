@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def self.category_name(type)
     I18n.t("user.types.#{type}")
   end
+
+  def can_see_business_items?
+    seller? || both?
+  end
 end

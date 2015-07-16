@@ -46,13 +46,9 @@
   @media screen and (min-width: 940px) {
     
     input[type="text"], .select-field, input[type="submit"] {
+      @include float-direction;
       display: inline-block;
-      float: left;
       margin: 0;
-
-      [dir="rtl"] & {
-        float: right;
-      }
     }
 
     input[type="text"] {
@@ -106,20 +102,16 @@
   }
 
   @media screen and (min-width: $tablet) {
-    padding: $bs2;
+    padding: $bs2 $bs2 0;
 
     input[type="text"], input[type="submit"] {
+      @include float-direction;
       display: inline-block;
-      float: left;
       margin: 0;
-
-      [dir="rtl"] & {
-        float: right;
-      }
     }
 
     input[type="submit"] {
-      max-width: $bs8;
+      max-width: $bs9;
       border-radius: 0 $bs-5 $bs-5 0;
       margin: 0;
     }
@@ -130,6 +122,7 @@
   } 
 }
 
-.search-filed {
+.search-field {
   @extend %clearfix;
+  margin: 0;
 }
