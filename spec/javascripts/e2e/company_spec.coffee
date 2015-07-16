@@ -8,36 +8,30 @@ describe CompanyPage, ->
     loginHelper.login()
     page = new CompanyPage()
     page.get()
+    page.clearRequiredFields()
 
   afterEach ->
     loginHelper.logout()
 
-  it "shows error when inputs are invalid", ->
-    page.nameField().clear()
+  it "shows errors when inputs are invalid", ->
     page.submitForm()
 
-    page.errors((elements) ->
-      expect(elements.length).toBeGreaterThan(0)
-    )
-
+    expect(page.fieldsWithErrors().count()).toEqual(4)
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
-  it "is possible to add company", ->
-    page.nameField().clear().sendKeys("Lunar Logic")
-    page.phoneField().clear().sendKeys("0048 12 430 22 88")
+  it "shows no errors when inputs valid", ->
+    page.nameField().sendKeys("Lunar Logic")
+    page.phoneField().sendKeys("0048 12 430 22 88")
+
     page.countryField().click()
     element(By.cssContainingText("option", "Poland")).click()
-    page.businessTypesSelectField().click()
-    element(By.linkText("Uncheck all")).click()
+
+    page.businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
+
     page.submitForm()
 
-    page.errors((elements) ->
-      console.log "============"
-      console.log elements
-      console.log "============"
-      expect(elements.length).toBe(0)
-    )
+    expect(page.fieldsWithErrors().count()).toEqual(0)
 
   xit "displays success flash message after saving company", ->
     # Right now the check doesn't pass on CircleCI due to the following:

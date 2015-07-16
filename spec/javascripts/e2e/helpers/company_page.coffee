@@ -15,19 +15,30 @@ class CompanyPage
   countryField: ->
     element(By.model("form.business.country_id"))
 
-  businessTypesSelectField: ->
+  businessTypesSelectToggle: ->
     element(By.id("select-toggle"))
+
+  fieldsWithErrors: ->
+    element.all(By.css(".field-with-errors"))
+
+  clearBusinessTypes: ->
+    @businessTypesSelectToggle().click()
+    element(By.linkText("Uncheck all")).click()
+    @businessTypesSelectToggle().click()
+
+  clearCountry: ->
+    @countryField().click()
+    element(By.cssContainingText("option", "-- Select country --")).click()
+
+  clearRequiredFields: ->
+    @nameField().clear()
+    @phoneField().clear()
+    @clearCountry()
+    @clearBusinessTypes()
 
   submitForm: ->
     submitButton = element(By.css("input[type=submit]"))
     submitButton.click()
-
-  errors: (callback) ->
-    element.all(By.css(".error")).filter((element) ->
-      element.isDisplayed().then((isDisplayed) ->
-        isDisplayed == true
-      )
-    ).then(callback)
 
   errorFlashMessage: ->
     element(By.cssContainingText("[role=alert]", @errorMessage))
