@@ -2,7 +2,6 @@ class CompanyPage
   constructor: ->
     @errorMessage = "Company couldn't be saved, please check the form"
     @successMessage = "Company information was successfully saved"
-    @emptyOptionElement = By.cssContainingText("option", "-- Select country --")
 
   get: ->
     browser.get("/dashboard#/company")
@@ -29,7 +28,9 @@ class CompanyPage
 
   clearCountry: ->
     @countrySelect().click()
-    @countrySelect().element(@emptyOptionElement).click()
+    @countrySelect().element(By.cssContainingText("option", "Select country"))
+      .click()
+    browser.actions().mouseDown().mouseUp().perform()
 
   clearRequiredFields: ->
     @nameField().clear()

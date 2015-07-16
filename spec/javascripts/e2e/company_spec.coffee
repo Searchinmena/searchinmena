@@ -5,7 +5,7 @@ describe CompanyPage, ->
   page = null
 
   beforeEach ->
-    loginHelper.login()
+    loginHelper.loginAsBuyer()
     page = new CompanyPage()
     page.get()
     page.clearRequiredFields()
@@ -16,7 +16,7 @@ describe CompanyPage, ->
   it "shows errors when inputs are invalid", ->
     page.submitForm()
 
-    expect(element.all(By.css(".field-with-errors")).count()).toEqual(4)
+    expect(page.fieldsWithErrors().count()).toEqual(4)
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
   it "shows no errors when inputs valid", ->
