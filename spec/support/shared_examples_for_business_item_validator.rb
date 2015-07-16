@@ -18,7 +18,7 @@ shared_examples "BusinessItemValidator" do
   end
 
   describe "length validation" do
-    [:name, :fob_price, :port, :supply_ability_capacity,
+    [:fob_price, :port, :supply_ability_capacity,
      :packaging_details].each do|field|
       let(:business_item_params) do
         too_long_field = "a" * (A9n.validations[:max_text_field_size] + 1)
@@ -27,6 +27,18 @@ shared_examples "BusinessItemValidator" do
 
       it "requires #{field} to be shorter than
         #{A9n.validations[:max_text_field_size]}" do
+        is_expected.to be_invalid
+      end
+    end
+
+    describe "name" do
+      let(:business_item_params) do
+        too_long_field = "a" * (BusinessItemValidator::MAX_NAME_LENGTH + 1)
+        valid_params.merge(name: too_long_field)
+      end
+
+      it "requires name to be shorter than
+        #{BusinessItemValidator::MAX_NAME_LENGTH}" do
         is_expected.to be_invalid
       end
     end
