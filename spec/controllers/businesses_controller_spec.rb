@@ -31,7 +31,7 @@ describe BusinessesController do
 
         expect(controller).to receive(:business_repository)
           .and_return(business_repository)
-        expect(business_repository).to receive(:find_or_create)
+        expect(business_repository).to receive(:find_or_build)
           .and_return(business)
         expect(Business::Creator).to receive(:new)
           .with(business, business_params, tags_params, locale, user)

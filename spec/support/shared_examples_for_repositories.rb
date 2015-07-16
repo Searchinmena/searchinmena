@@ -76,7 +76,7 @@ shared_examples "any repository" do
 
     subject { repository.find_or_build(attributes) }
 
-    it { expect(subject.attributes).to eq(attributes) }
+    it { expect(subject.attributes.symbolize_keys).to include(attributes) }
 
     context "record alredy present" do
       let!(:object) { create(factory_name, attributes) }
