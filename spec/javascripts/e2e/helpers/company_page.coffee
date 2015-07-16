@@ -2,24 +2,31 @@ class CompanyPage
   constructor: ->
     @errorMessage = "Company couldn't be saved, please check the form"
     @successMessage = "Company information was successfully saved"
+    @nameFieldLocator = By.model("form.business.name")
+    @phoneFieldLocator = By.model("form.business.phone")
+    @countrySelectLocator = By.model("form.business.country_id")
+    @businessTypesSelectLocator = By.id("select-toggle")
 
   get: ->
     browser.get("/dashboard#/company")
 
   nameField: ->
-    element(By.model("form.business.name"))
+    element(@nameFieldLocator)
 
   phoneField: ->
-    element(By.model("form.business.phone"))
+    element(@phoneFieldLocator)
 
   countrySelect: ->
-    element(By.model("form.business.country_id"))
+    element(@countrySelectLocator)
 
   businessTypesSelectToggle: ->
-    element(By.id("select-toggle"))
+    element(@businessTypesSelectLocator)
 
   fieldsWithErrors: ->
     element.all(By.css(".field-with-errors"))
+
+  fieldWithErrors: (locator) ->
+    element.all(By.css(".field-with-errors")).all(locator).first()
 
   clearBusinessTypes: ->
     @businessTypesSelectToggle().click()

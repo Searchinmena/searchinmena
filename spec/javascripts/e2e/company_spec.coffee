@@ -16,7 +16,13 @@ describe CompanyPage, ->
   it "shows errors when inputs are invalid", ->
     page.submitForm()
 
-    expect(page.fieldsWithErrors().count()).toEqual(4)
+    expect(page.fieldWithErrors(page.nameFieldLocator).isPresent()).toBe(true)
+    expect(page.fieldWithErrors(page.phoneFieldLocator).isPresent()).toBe(true)
+    expect(page.fieldWithErrors(page.countrySelectLocator).isPresent())
+      .toBe(true)
+    expect(page.fieldWithErrors(page.businessTypesSelectLocator).isPresent())
+      .toBe(true)
+
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
   it "shows no errors when inputs valid", ->
@@ -24,7 +30,8 @@ describe CompanyPage, ->
     page.phoneField().sendKeys("0048 12 430 22 88")
 
     page.countrySelect().click()
-    page.countrySelect().element(By.cssContainingText("option", "Poland")).click()
+    page.countrySelect().element(By.cssContainingText("option", "Poland"))
+      .click()
 
     page.businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
