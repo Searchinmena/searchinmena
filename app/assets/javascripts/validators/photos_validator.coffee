@@ -21,7 +21,7 @@
       else
         res = true
         for photo in scope.photos
-          if photo.name.match(/\.(gif)$/)
+          if !photo.name.match(/\.(png|jpg|jpeg)$/)
             $translate("photos.valid_photos" ).then((translation) ->
               scope.errors["photos_general"] = translation
             )
