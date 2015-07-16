@@ -14,7 +14,6 @@ module Users
     end
 
     def create
-      binding.pry
       user_creator = Registration::Creator.new(registration_params)
       response = user_creator.perform
       if response.successful?
