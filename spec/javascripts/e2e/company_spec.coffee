@@ -16,11 +16,11 @@ describe CompanyPage, ->
   it "shows errors when inputs are invalid", ->
     page.submitForm()
 
-    expect(element(By.xpath("//div[@error='errors.business.name']")).getAttribute('class')).toMatch(/field-with-errors/)
-    expect(element(By.xpath("//div[@error='errors.business.phone']")).getAttribute('class')).toMatch(/field-with-errors/)
+    # expect(element(By.xpath("//div[@error='errors.business.name']")).getAttribute('class')).toMatch(/field-with-errors/)
+    # expect(element(By.xpath("//div[@error='errors.business.phone']")).getAttribute('class')).toMatch(/field-with-errors/)
     expect(element(By.xpath("//div[@error='errors.business.country_id']")).getAttribute('class')).toMatch(/field-with-errors/)
 
-    # expect(element.all(By.css(".field-with-errors")).count()).toEqual(4)
+    expect(element.all(By.css(".field-with-errors")).count()).toEqual(4)
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
   it "shows no errors when inputs valid", ->
@@ -35,11 +35,11 @@ describe CompanyPage, ->
 
     page.submitForm()
 
-    expect(element(By.xpath("//div[@error='errors.business.name']")).getAttribute('class')).not.toMatch(/field-with-errors/)
-    expect(element(By.xpath("//div[@error='errors.business.phone']")).getAttribute('class')).not.toMatch(/field-with-errors/)
+    # expect(element(By.xpath("//div[@error='errors.business.name']")).getAttribute('class')).not.toMatch(/field-with-errors/)
+    # expect(element(By.xpath("//div[@error='errors.business.phone']")).getAttribute('class')).not.toMatch(/field-with-errors/)
     expect(element(By.xpath("//div[@error='errors.business.country_id']")).getAttribute('class')).not.toMatch(/field-with-errors/)
 
-    # expect(page.fieldsWithErrors().count()).toEqual(0)
+    expect(page.fieldsWithErrors().count()).toEqual(0)
 
   xit "displays success flash message after saving company", ->
     # Right now the check doesn't pass on CircleCI due to the following:
