@@ -16,10 +16,6 @@ describe CompanyPage, ->
   it "shows errors when inputs are invalid", ->
     page.submitForm()
 
-    # expect(element(By.xpath("//div[@error='errors.business.name']")).getAttribute('class')).toMatch(/field-with-errors/)
-    # expect(element(By.xpath("//div[@error='errors.business.phone']")).getAttribute('class')).toMatch(/field-with-errors/)
-    expect(element(By.xpath("//div[@error='errors.business.country_id']")).getAttribute('class')).toMatch(/field-with-errors/)
-
     expect(element.all(By.css(".field-with-errors")).count()).toEqual(4)
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
@@ -27,17 +23,13 @@ describe CompanyPage, ->
     page.nameField().sendKeys("Lunar Logic")
     page.phoneField().sendKeys("0048 12 430 22 88")
 
-    page.countryField().click()
-    element(By.cssContainingText("option", "Poland")).click()
+    page.countrySelect().click()
+    page.countrySelect().element(By.cssContainingText("option", "Poland")).click()
 
     page.businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
 
     page.submitForm()
-
-    # expect(element(By.xpath("//div[@error='errors.business.name']")).getAttribute('class')).not.toMatch(/field-with-errors/)
-    # expect(element(By.xpath("//div[@error='errors.business.phone']")).getAttribute('class')).not.toMatch(/field-with-errors/)
-    expect(element(By.xpath("//div[@error='errors.business.country_id']")).getAttribute('class')).not.toMatch(/field-with-errors/)
 
     expect(page.fieldsWithErrors().count()).toEqual(0)
 

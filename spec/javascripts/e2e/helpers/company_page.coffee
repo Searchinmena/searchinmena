@@ -2,6 +2,7 @@ class CompanyPage
   constructor: ->
     @errorMessage = "Company couldn't be saved, please check the form"
     @successMessage = "Company information was successfully saved"
+    @emptyOptionElement = By.cssContainingText("option", "-- Select country --")
 
   get: ->
     browser.get("/dashboard#/company")
@@ -12,7 +13,7 @@ class CompanyPage
   phoneField: ->
     element(By.model("form.business.phone"))
 
-  countryField: ->
+  countrySelect: ->
     element(By.model("form.business.country_id"))
 
   businessTypesSelectToggle: ->
@@ -27,8 +28,8 @@ class CompanyPage
     @businessTypesSelectToggle().click()
 
   clearCountry: ->
-    @countryField().click()
-    element(By.cssContainingText("option", "-- Select country --")).click()
+    @countrySelect().click()
+    @countrySelect().element(@emptyOptionElement).click()
 
   clearRequiredFields: ->
     @nameField().clear()
