@@ -32,6 +32,7 @@ describe CompanyPage, ->
     page.countrySelect().click()
     page.countrySelect().element(By.cssContainingText("option", "Poland"))
       .click()
+    browser.actions().mouseDown().mouseUp().perform()
 
     page.businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
