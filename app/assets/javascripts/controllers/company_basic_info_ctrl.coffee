@@ -14,8 +14,10 @@
       $scope.selectButtonText = translation
     )
 
-    $http.get('business/edit').success((business_attributes) ->
-      $scope.form.business = business_attributes || {}
+    $http.get('business').success((businessAttributes) ->
+      $scope.form.business = businessAttributes
+    ).error(->
+      $scope.form.business = { business: {} }
     )
 
     $scope.loadTags = (query) ->

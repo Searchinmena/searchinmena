@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   resources :countries, only: [:index]
   resources :business_types, only: [:index]
 
-  resource :business, only: [:edit, :update]
+  resource :business, only: [:show, :update]
   resources :products, only: [:create, :index, :destroy]
   resources :services, only: [:create, :index, :destroy]
   resources :product_photos, only: [:create]

@@ -1,13 +1,17 @@
 class BusinessesController < ApplicationController
   inject :business_repository
 
-  def edit
-    business = business_repository.find_by(user_id: current_user.id)
-    render json: BusinessPresenter.new(business)
+  def show
+    business = business_repository.find_by_user_id(current_user.id)
+    if business
+      render json: BusinessPresenter.new(business)
+    else
+      head :not_found
+    end
   end
 
   def update
-    business = business_repository.find_or_create(user_id: current_user.id)
+    business = business_repository.find_or_build(user_id: current_user.id)
     business_creator = Business::Creator.new(business, business_params,
                                              tags_params, locale, current_user)
     response = business_creator.perform

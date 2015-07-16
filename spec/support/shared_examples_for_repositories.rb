@@ -70,4 +70,18 @@ shared_examples "any repository" do
       it { expect { subject }.to change { klass.count }.from(0).to(1) }
     end
   end
+
+  describe "#find_or_build" do
+    let(:attributes) { build_params(build(factory_name)) }
+
+    subject { repository.find_or_build(attributes) }
+
+    it { expect(subject.attributes).to eq(attributes) }
+
+    context "record alredy present" do
+      let!(:object) { create(factory_name, attributes) }
+
+      it { is_expected.to eq(object) }
+    end
+  end
 end
