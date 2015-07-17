@@ -24,7 +24,7 @@ describe Registration::SellerStorer do
     before do
       expect(Registration::UserCreator).to receive(:new)
         .with(user, user_params).and_return(user_handler)
-      expect(Business::Creator).to receive(:new)
+      expect(Business::Saver).to receive(:new)
         .with(business, business_params, tags_params, locale, user)
         .and_return(business_handler)
     end

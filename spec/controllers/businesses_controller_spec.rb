@@ -19,8 +19,8 @@ describe BusinessesController do
       let(:params) { { business: business_params } }
       let(:tags_params) { {} }
       let(:locale) { :en }
-      let(:creator) { double(:creator) }
-      let(:creator_response) do
+      let(:saver) { double(:saver) }
+      let(:saver_response) do
         double(successful?: successful, object: business)
       end
 
@@ -33,21 +33,21 @@ describe BusinessesController do
           .and_return(business_repository)
         expect(business_repository).to receive(:find_or_build)
           .and_return(business)
-        expect(Business::Creator).to receive(:new)
+        expect(Business::Saver).to receive(:new)
           .with(business, business_params, tags_params, locale, user)
-          .and_return(creator)
-        expect(creator).to receive(:perform).and_return(creator_response)
+          .and_return(saver)
+        expect(saver).to receive(:perform).and_return(saver_response)
 
         put :update, params
       end
 
-      context "creation successful" do
+      context "saving successful" do
         let(:successful) { true }
 
         it { expect(response).to be_successful }
       end
 
-      context "creation failed" do
+      context "saving failed" do
         let(:successful) { false }
 
         it { expect(response).not_to be_successful }

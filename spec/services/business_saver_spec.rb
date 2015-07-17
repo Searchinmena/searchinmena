@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe Business::Creator do
-  let(:creator) do
+describe Business::Saver do
+  let(:saver) do
     described_class.new(business, business_params, tags_params, locale, user)
   end
   let(:user) { create(:user) }
@@ -23,7 +23,7 @@ describe Business::Creator do
   end
 
   describe "#valid?" do
-    subject { creator.valid? }
+    subject { saver.valid? }
 
     it "delegates to business validator" do
       expect(validator).to receive(:valid?)
@@ -32,7 +32,7 @@ describe Business::Creator do
   end
 
   describe "#perform" do
-    subject { creator.perform }
+    subject { saver.perform }
 
     context "failed business creation" do
       let(:valid) { false }

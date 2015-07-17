@@ -12,9 +12,9 @@ class BusinessesController < ApplicationController
 
   def update
     business = business_repository.find_or_build(user_id: current_user.id)
-    business_creator = Business::Creator.new(business, business_params,
-                                             tags_params, locale, current_user)
-    response = business_creator.perform
+    business_saver = Business::Saver.new(business, business_params,
+                                         tags_params, locale, current_user)
+    response = business_saver.perform
     if response.successful?
       render_success(response.object)
     else
