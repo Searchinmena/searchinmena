@@ -1,13 +1,51 @@
 require "rails_helper"
 
 describe BusinessesController do
+  let(:user) { create(:buyer) }
+
+  fake(:business_repository)
+
+  describe "#show" do
+    it_behaves_like "redirects to signin if user not logged in" do
+      before { get :show }
+    end
+
+    context "user is logged in" do
+      let(:business) { user.business }
+
+      before do
+        sign_in(user)
+
+        expect(controller).to receive(:business_repository)
+          .and_return(business_repository)
+        expect(business_repository).to receive(:find_by_user_id).with(user.id)
+          .and_return(business)
+      end
+
+      it "is not found" do
+        get :show
+        expect(response).to be_not_found
+      end
+
+      context "user has business" do
+        let(:user) { create(:seller) }
+
+        before { expect(BusinessPresenter).to receive(:new).with(business) }
+
+        it "is successful" do
+          get :show
+          expect(response).to be_successful
+        end
+      end
+    end
+  end
+
   describe "#update" do
     it_behaves_like "redirects to signin if user not logged in" do
       before { put :update }
     end
 
     context "user is logged in" do
-      let(:user) { create(:user) }
       let(:business) { build(:business) }
       let(:business_params) do
         {
@@ -23,8 +61,6 @@ describe BusinessesController do
       let(:saver_response) do
         double(successful?: successful, object: business)
       end
-
-      fake(:business_repository)
 
       before do
         sign_in(user)

@@ -37,8 +37,7 @@ describe BusinessStoringHandler do
 
     it "performs storing handler and tags storing handler" do
       [storing_handler, tags_storing_handler].each do |handler|
-        expect(handler).to receive(:perform)
-        .and_return(response)
+        expect(handler).to receive(:perform).and_return(response)
       end
 
       is_expected.to be_successful
