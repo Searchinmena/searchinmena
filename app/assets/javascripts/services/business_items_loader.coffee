@@ -22,7 +22,7 @@
       scope.deleteClicked = (e, businessItem) ->
         e.preventDefault()
 
-        $http.delete("/#{resourceName}/#{businessItem.id}",
+        $http.delete("/#{resourceName}/#{businessItem.get('id')}",
           params: { page: scope.pagination.current })
             .success(scope.assignData)
 

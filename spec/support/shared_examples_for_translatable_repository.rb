@@ -7,6 +7,14 @@ shared_examples "TranslatableRepository" do
   let(:factory_name) { klass.to_s.underscore.downcase.to_sym }
   let(:locale) { "en" }
 
+  def create_item
+    create(factory_name)
+  end
+
+  def create_translation(item, locale)
+    create(:translation, translatable: item, locale: locale)
+  end
+
   describe "#all_with_translations" do
     let!(:object1) { create(factory_name) }
     let!(:object2) { create(factory_name) }
@@ -22,6 +30,22 @@ shared_examples "TranslatableRepository" do
     subject { repository.all_with_translations("en").first.translations.first }
 
     it { expect(subject.locale).to eq("en") }
+  end
+
+  describe "#translation_for" do
+    let(:item) { create_item }
+    let(:locale) { 'en' }
+    let!(:translation) { create_translation(item, locale) }
+
+    it { is_expected.to eq(translation.value) }
+
+    subject { repository.translation_for(item, locale) }
+
+    context "item is blank" do
+      subject { repository.translation_for(nil, locale) }
+
+      it { is_expected.to be_nil }
+    end
   end
 
   describe "#with_translations" do

@@ -9,6 +9,10 @@ class ServicesController < BusinessItemsController
     BusinessItem::ServiceCreator.new(new_business_item_params, current_user)
   end
 
+  def business_item_presenter_factory
+    ServicePresenter
+  end
+
   def business_item_params
     service_specific_params = params[:business_item].permit(
       [:place_of_origin, :scope_of_work, :average_completion_time,

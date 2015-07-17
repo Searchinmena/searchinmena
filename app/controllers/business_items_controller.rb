@@ -1,5 +1,5 @@
 class BusinessItemsController < ApplicationController
-  before_action :assign_business_item, only: [:destroy]
+  before_action :assign_business_item, only: [:show, :destroy]
 
   def create
     response = business_item_creator.perform
@@ -12,6 +12,10 @@ class BusinessItemsController < ApplicationController
 
   def index
     render_collection
+  end
+
+  def show
+    render json: business_item_presenter_factory.new(@business_item, locale)
   end
 
   def destroy

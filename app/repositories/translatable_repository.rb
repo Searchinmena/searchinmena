@@ -8,6 +8,12 @@ class TranslatableRepository < AbstractRepository
       .where("#{translations_table}.locale": locale)
   end
 
+  def translation_for(item, locale)
+    return unless item
+
+    item.translations.where(locale: locale).first.value
+  end
+
   def ordered(collection)
     collection.order(:id)
   end
