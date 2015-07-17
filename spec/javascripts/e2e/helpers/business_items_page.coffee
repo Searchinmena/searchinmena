@@ -9,8 +9,12 @@ class BusinessItemsPage
     @confimationOkCss = ".confirmation-modal .ok"
     @confimationCancelCss = ".confirmation-modal .cancel"
 
-  deleteBusinessItem: ->
+  clickDelete: ->
     element.all(By.css(@deleteLinkCss)).get(0).click()
+
+  deleteBusinessItem: ->
+    @clickDelete()
+    @confirmDeletion()
 
   itemsCount: ->
     element.all(By.css(@itemCss)).count()
@@ -28,14 +32,14 @@ class BusinessItemsPage
     element(By.css(@confimationCancelCss)).click()
 
   checkRemovingBusinessItem: ->
-    @deleteBusinessItem()
+    @clickDelete()
     expect(@confirmationModal().isPresent()).toBe(true)
     expect(@itemsCount()).toEqual(1)
 
     @cancelDeletion()
     expect(@itemsCount()).toEqual(1)
     
-    @deleteBusinessItem()
+    @clickDelete()
     @confirmDeletion()
     expect(@itemsCount()).toEqual(0)
 
@@ -45,5 +49,8 @@ class BusinessItemsPage
     @showLink().click()
 
     expect(browser.getCurrentUrl()).toEqual(href)
+
+    @get()
+    @deleteBusinessItem()
 
 module.exports = BusinessItemsPage
