@@ -35,7 +35,6 @@ describe Business::Creator do
     subject { creator.perform }
 
     context "failed business creation" do
-      let(:success) { false }
       let(:valid) { false }
 
       it { is_expected.not_to be_successful }
@@ -46,7 +45,6 @@ describe Business::Creator do
     end
 
     context "successful business creation" do
-      let(:success) { true }
       let(:valid) { true }
 
       it { is_expected.to be_successful }
