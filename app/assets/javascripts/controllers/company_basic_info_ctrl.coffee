@@ -27,7 +27,7 @@
       e.preventDefault()
 
       $http(
-        url: e.target.action,
+        url: '/business',
         data: $scope.form,
         method: 'PUT'
       ).success(->
