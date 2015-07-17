@@ -25,6 +25,4 @@
         $http.delete("/#{resourceName}/#{businessItem.get('id')}",
           params: { page: scope.pagination.current })
             .success(scope.assignData)
-
-
 ]
