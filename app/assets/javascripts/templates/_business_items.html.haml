@@ -15,7 +15,7 @@
     %a.see-page{ "ui-sref": "{{ showUrl(businessItem) }}" }
       %span.icon.icon-eye-open
       {{ "business_items.see" | translate }}
-    %a.delete{ href: "#", "ng-click": "deleteClicked($event, businessItem)" }
+    %a.delete{ href: "#", "ng-really-click": "deleteClicked(businessItem)" }
       %span.icon.icon-remove
       {{ "business_items.remove" | translate }}
 

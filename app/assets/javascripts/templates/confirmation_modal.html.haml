@@ -1,0 +1,12 @@
+.confirmation-modal
+  .remove-button{ "ng-click": "cancel()" }
+    %span.icon-remove
+  %h2.modal-header
+    {{ "confirmation_modal.are_you_sure" | translate }}
+
+  .modal-action
+    %input.ok{ type: "submit", value: "{{ 'confirmation_modal.ok' | translate}}",
+    "ng-click": "ok()" }
+
+    %input.cancel{ type: "submit", value: "{{ 'confirmation_modal.cancel' | translate}}",
+    "ng-click": "cancel()" }

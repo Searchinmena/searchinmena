@@ -20,12 +20,7 @@ describe ProductsPage, ->
     loginHelper.logout()
 
   it "is possible to remove product", ->
-    page.deleteBusinessItem()
-    expect(page.itemsCount()).toEqual(0)
+    page.checkRemovingBusinessItem()
 
   it "is possible to see product details", ->
-    link = page.showLink()
-    href = link.getAttribute("href")
-    page.showLink().click()
-
-    expect(browser.getCurrentUrl()).toEqual(href)
+    page.checkShowingSingleBusinessItem()
