@@ -12,6 +12,7 @@ bundle install
 cp config/database.yml.example config/database.yml
 bundle exec rake db:create
 bundle exec rake db:migrate
+bundle exec rake db:seed
 
 cp config/pre-push .git/hooks/pre-push
 
