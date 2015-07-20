@@ -1,4 +1,9 @@
 {
+  "confirmation_modal": {
+    "are_you_sure": "Are you sure?",
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
   "dashboard": {
     "greeting": "مرحبا بك"
   },
@@ -75,8 +80,7 @@
     "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
     "button": "أضف صور",
     "comment": "10 صور حد أقصى",
-    "comment_thumbnail": "الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور مربعة بقياس 500x500 بكسل ",
-    "valid_photos": "لا يمكنك إضافة صور GIF"
+    "comment_thumbnail": "الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور مربعة بقياس 500x500 بكسل "
   },
   "attributes": {
     "title": "الخصائص",

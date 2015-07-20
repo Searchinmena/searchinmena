@@ -19,5 +19,7 @@ describe ProductsPage, ->
     loginHelper.logout()
 
   it "is possible to remove product", ->
-    page.deleteBusinessItem()
-    expect(page.itemsCount()).toEqual(0)
+    page.checkRemovingBusinessItem()
+
+  it "is possible to see product details", ->
+    page.checkShowingSingleBusinessItem()

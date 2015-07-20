@@ -535,6 +535,7 @@ Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**'
     - 'app/presenters/business_presenter.rb'
+    - 'app/presenters/business_item_presenter.rb'
 
 Metrics/BlockNesting:
   Max: 3

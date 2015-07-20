@@ -2,26 +2,20 @@
   "dir-paginate": "businessItem in businessItems | itemsPerPage: 10",
   "total-items": "total", "current-page": "pagination.current" }
   .item-img-holder
-    %img.item-img{ "ng-src": "{{ businessItem.thumbUrl }}" }
+    %img.item-img{ "ng-src": "{{ businessItem.get('thumb_url') }}" }
 
   .item-info
-    %h3.item-title {{ businessItem.name }}
-    .breadcrumbs
-      in
-      %span.breadcrumbs-item{ "ng-repeat": "item in businessItem.breadcrumbsWithoutLast()" }
-        {{ item.name }}
-        %span.icon-chevron-right
-      %span.breadcrumbs-item
-        {{ businessItem.lastBreadcrumb().name }}
+    %h3.item-title {{ businessItem.get('name') }}
+    .breadcrumbs{ "ng-include": "'_breadcrumbs.html'" }
 
   .item-options
     %a.edit{ href: "#" }
       %span.icon.icon-pencil
       {{ "business_items.edit" | translate }}
-    %a.see-page{ href: "#" }
+    %a.see-page{ "ui-sref": "{{ showUrl(businessItem) }}" }
       %span.icon.icon-eye-open
       {{ "business_items.see" | translate }}
-    %a.delete{ href: "#", "ng-click": "deleteClicked($event, businessItem)" }
+    %a.delete{ "ng-click-with-confirm": "deleteClicked(businessItem)" }
       %span.icon.icon-remove
       {{ "business_items.remove" | translate }}
 

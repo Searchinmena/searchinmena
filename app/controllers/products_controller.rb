@@ -9,6 +9,10 @@ class ProductsController < BusinessItemsController
     BusinessItem::ProductCreator.new(new_business_item_params, current_user)
   end
 
+  def business_item_presenter_factory
+    ProductPresenter
+  end
+
   def business_item_params
     product_specific_params = params[:business_item].permit(
       [:model_number, :brand_name, :min_order_quantity_number,

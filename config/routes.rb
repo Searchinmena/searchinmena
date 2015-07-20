@@ -34,8 +34,8 @@ Rails.application.routes.draw do
   resources :business_types, only: [:index]
 
   resource :business, only: [:show, :update]
-  resources :products, only: [:create, :index, :destroy]
-  resources :services, only: [:create, :index, :destroy]
+  resources :products, only: [:create, :index, :show, :destroy]
+  resources :services, only: [:create, :index, :show, :destroy]
   resources :product_photos, only: [:create]
   resources :service_photos, only: [:create]
   resources :product_categories, only: [:index]

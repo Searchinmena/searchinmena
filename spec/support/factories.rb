@@ -55,8 +55,12 @@ FactoryGirl.define do
     association :business
     association :category, factory: :service_category
 
-    before :create do |service|
-      service.photos << build(:service_photo, service: nil)
+    transient do
+      photos { [build(:service_photo, service: nil)] }
+    end
+
+    before :create do |service, evaluator|
+      service.photos += evaluator.photos
     end
   end
 
@@ -68,6 +72,18 @@ FactoryGirl.define do
   factory :service_photo do
     photo { test_image }
     association :service
+  end
+
+  factory :product_attribute do
+    association :product
+    sequence(:name) { |n| "attribute#{n}" }
+    sequence(:value) { |n| "value#{n}" }
+  end
+
+  factory :service_attribute do
+    association :service
+    sequence(:name) { |n| "attribute#{n}" }
+    sequence(:value) { |n| "value#{n}" }
   end
 
   factory :translatable do

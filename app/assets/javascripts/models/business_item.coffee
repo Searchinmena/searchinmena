@@ -1,11 +1,12 @@
 class SIM.BusinessItem
   constructor: (attributes) ->
-    @id = attributes.id
-    @name = attributes.name
-    @thumbUrl = attributes.thumb_url
+    @attributes = attributes
     @breadcrumbs = new SIM.Breadcrumbs()
     for categoryAttributes in attributes.breadcrumbs
       @breadcrumbs.push(new SIM.Category(categoryAttributes))
+
+  get: (attribute) ->
+    @attributes[attribute]
 
   breadcrumbsWithoutLast: ->
     @breadcrumbs.withoutLast()
