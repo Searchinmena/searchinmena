@@ -1,10 +1,53 @@
-%h1 Service
+%div{ "ng-include": "'_business_item_header.html'" }
+.product-short-info
+  %button.contact-supplier
+    %span.icon.icon-envelope
+    Contact Seller
+  .column
+    %h4.subtitle Basic Info
+    %table.product-details
+      %tr
+        %td.attribute Place of origin:
+        %td
+          {{ businessItem.get('place_of_origin') }}
+      %tr
+        %td.attribute Avg completion time:
+        %td
+          {{ businessItem.get('average_completion_time') }}
+          {{ businessItem.get('average_completion_time_unit') }}
+      %tr
+        %td.attribute Fob price:
+        %td
+          {{ businessItem.get('fob_price') }}
+          {{ businessItem.get('fob_price_currency') }}
+          {{ businessItem.get('fob_price_unit') }}
+      %tr
+        %td.attribute Supply ability:
+        %td 
+          {{ businessItem.get('supply_ability_capacity') }}
+          {{ businessItem.get('supply_ability_unit') }}
+          {{ businessItem.get('supply_ability_frequency') }}
+      %tr
+        %td.attribute Payment Terms:
+        %td
+          %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
+            {{ paymentTerm }}
+      %tr
+        %td.attribute Packaging details:
+        %td {{ businessItem.get('packaging_details') }}
+  .column
+    %h4.subtitle Attributes
+    %table.product-details
+      %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
+        %td.attribute {{ attribute['name'] }}:
+        %td {{ attribute['value'] }}
 
-%div{ "ng-include": "'_business_item.html'" }
 
-%div Place of origin: {{ businessItem.get('place_of_origin') }}
-%div Scope of work: {{ businessItem.get('scope_of_work') }}
-%div
-  Avg completion time:
-  {{ businessItem.get('average_completion_time') }}
-  {{ businessItem.get('average_completion_time_unit') }}
+.product-info
+  %h4.section-title.line-behind 
+    %span Scope of work
+  %p.item-description {{ businessItem.get('scope_of_work') }}
+  %h4.section-title.line-behind 
+    %span Description
+  %p.item-description {{ businessItem.get('description') }}
+

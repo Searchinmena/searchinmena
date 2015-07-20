@@ -220,6 +220,34 @@
       max-width: 60%;
     }
   }
+
+  .contact-supplier {
+    margin: $bs2 0 $bs0;
+    width: $bs7;
+    position: absolute;
+    right: $bs2;
+    top: 0;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: 0;
+    }
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+      right: auto;
+      top: auto;
+      width: 100%;
+    }
+    
+    .value {
+      display: none;
+      
+      @media screen and (min-width: $tablet) {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .net-view {
@@ -304,41 +332,5 @@
     span {
       color: grey;
     }
-  }
-}
-
-.contact-supplier {
-  @extend %basic-button;
-  @extend %blue-button;
-  margin: $bs2 0 $bs0;
-  width: $bs7;
-  position: absolute;
-  right: $bs2;
-  top: 0;
-
-  [dir="rtl"] & {
-    right: auto;
-    left: 0;
-  }
-
-  @media screen and (min-width: $tablet) {
-    width: 100%;
-    max-width: 2 * $bs8;
-    position: relative;
-    right: auto;
-    top: auto;
-  }
-  
-  .value {
-    display: none;
-    
-    @media screen and (min-width: $tablet) {
-      display: inline-block;
-    }
-  }
-
-  .icon {
-    vertical-align: sub;
-    font-size: $bs2;
   }
 }

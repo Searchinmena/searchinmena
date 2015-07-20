@@ -163,3 +163,18 @@ input[type="submit"] {
     vertical-align: sub;
   }
 }
+
+.contact-supplier {
+  @extend %basic-button;
+  @extend %blue-button;
+
+  .icon {
+    vertical-align: sub;
+    font-size: $bs2;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+    max-width: 2 * $bs8;
+  }
+}

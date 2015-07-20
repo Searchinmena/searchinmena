@@ -1,8 +1,53 @@
-%div{ "ng-include": "'_business_item.html'" }
+%div{ "ng-include": "'_business_item_header.html'" }
+.product-short-info
+  %button.contact-supplier
+    %span.icon.icon-envelope
+    Contact Seller
+  .column
+    %h4.subtitle Basic Info
+    %table.product-details
+      %tr
+        %td.attribute Model number:
+        %td
+          {{ businessItem.get('model_number') }}
+      %tr
+        %td.attribute Brand name:
+        %td
+          {{ businessItem.get('brand_name') }}
+      %tr
+        %td.attribute Min order:
+        %td
+          {{ businessItem.get('min_order_quantity_number') }}
+          {{ businessItem.get('min_order_quantity_unit') }}
+      %tr
+        %td.attribute Fob price:
+        %td
+          {{ businessItem.get('fob_price') }}
+          {{ businessItem.get('fob_price_currency') }}
+          {{ businessItem.get('fob_price_unit') }}
+      %tr
+        %td.attribute Supply ability:
+        %td 
+          {{ businessItem.get('supply_ability_capacity') }}
+          {{ businessItem.get('supply_ability_unit') }}
+          {{ businessItem.get('supply_ability_frequency') }}
+      %tr
+        %td.attribute Payment Terms:
+        %td
+          %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
+            {{ paymentTerm }}
+      %tr
+        %td.attribute Packaging details:
+        %td {{ businessItem.get('packaging_details') }}
+  .column
+    %h4.subtitle Attributes
+    %table.product-details
+      %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
+        %td.attribute {{ attribute['name'] }}:
+        %td {{ attribute['value'] }}
 
-/ %div Model number: {{ businessItem.get('model_number') }}
-/ %div Brand name: {{ businessItem.get('description') }}
-/ %div
-/   Min order:
-/   {{ businessItem.get('min_order_quantity_number') }}
-/   {{ businessItem.get('min_order_quantity_unit') }}
+
+.product-info
+  %h4.section-title.line-behind 
+    %span Description
+  %p.item-description {{ businessItem.get('description') }}

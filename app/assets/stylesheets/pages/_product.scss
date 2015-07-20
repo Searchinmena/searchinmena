@@ -1,5 +1,24 @@
-.product-header {
+%info-column {
+  width: 100%;
   padding: $bs2;
+
+  @media screen and (min-width: $desktop) {
+    @include float-direction;
+    width: 45%;
+    padding: $bs2 0;
+    margin: 0 $bs2;
+  }
+
+  @media screen and (min-width: $standard-desktop) {
+    width: 50%;
+  }
+  @media screen and (min-width: $big-desktop) {
+    width: 60%;
+  }
+}
+
+.product-header {
+  @extend %info-column;
   border-bottom: $default-border;
 
   .breadcrumbs {
@@ -9,6 +28,24 @@
 
   .seller {
     padding: $bs0 0 0;
+  }
+}
+
+.product-short-info {
+  @extend %info-column;
+  @extend %clearfix;
+
+  .column {
+    @include float-direction;
+    margin: 0 $bs2 0 0;
+
+    [dir="rtl"] & {
+      margin: 0 0 0 $bs2;
+    }
+  }
+
+  .contact-supplier {
+    margin: 0 0 $bs2;
   }
 }
 
@@ -24,28 +61,42 @@
   background-color: white;
 }
 
-.product-main-image, .product-short-info {
-  @include float-direction;
-}
-
-.product-main-image {
+.item-gallery {
+  margin: 0 auto;
   max-width: 25em;
   width: 100%;
-  margin: 0 0 $bs2;
-}
-
-.product-short-info {
-  width: 100%;
+  padding: $bs2 $bs2 0;
+  background-color: white;
 
   @media screen and (min-width: $tablet) {
-    width: 50%;
-    padding: 0 $bs2 $bs2;
+    @include float-direction;
   }
 
   @media screen and (min-width: $desktop) {
+    padding: $bs2 0 0 $bs2;
+
+    [dir="rtl"] & {
+      padding: $bs2 $bs2 0 0;
+    }
+  }
+  
+  .product-main-image {
     width: 100%;
-    max-width: 5 * $bs9;
-  }  
+  }
+
+  .gallery-thumbs {
+    @extend %clearfix;
+    list-style: none;
+    margin: $bs0 0;
+
+
+    .item-img-holder {
+      display: inline-block;
+      border: $default-border;
+      padding: $bs-5;
+      margin: 1px;
+    }
+  }
 }
 
 .product-details {
