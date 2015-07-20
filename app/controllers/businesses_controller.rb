@@ -16,6 +16,7 @@ class BusinessesController < ApplicationController
                                          tags_params, locale, current_user)
     response = business_saver.perform
     if response.successful?
+      ensure_proper_user_type
       render_success(response.object)
     else
       render_error(response.object)
@@ -42,5 +43,12 @@ class BusinessesController < ApplicationController
 
   def tags_params
     params.permit(:tags).permit(:id, :label) || {}
+  end
+
+  def ensure_proper_user_type
+    if current_user.buyer?
+      current_user.category = :both
+      current_user.save
+    end
   end
 end
