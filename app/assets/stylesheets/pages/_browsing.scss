@@ -154,23 +154,6 @@
     @media screen and (min-width: $tablet) {
       padding: 0;
     }
-    
-    @media screen and (min-width: $medium-desktop) {
-      width: 100%;
-      max-width: 3.4 * $bs8;
-    }
-
-    @media screen and (min-width: $standard-desktop) {
-      max-width: 3.4 * $bs9;
-    }
-
-    @media screen and (min-width: $huge-desktop) {
-      max-width: 4 * $bs9;
-    }
-
-    @media screen and (min-width: $giga-desktop) {
-      max-width: 60%;
-    }
   }
 
   .result-item-title {
@@ -191,10 +174,10 @@
     @include float-direction;
     font-size: $bs09;
     padding: 0 $bs1;
-    width: 60%;
-    color: $grey;
+    margin: $bs0 0;
+    width: 100%;
 
-    @media screen and (min-width: $big-phone) {
+    @media screen and (min-width: 60px) {
       width: 55%;
       max-width: 3.4 * $bs8;
     }
