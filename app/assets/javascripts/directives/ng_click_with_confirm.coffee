@@ -1,9 +1,7 @@
-@Sim.directive 'ngReallyClick', ['$modal', '$timeout', ($modal, $timeout) ->
+@Sim.directive 'ngClickWithConfirm', ['$modal', '$timeout', ($modal, $timeout) ->
   restrict: 'A'
   link: (scope, element, attrs) ->
-    element.bind 'click', (e) ->
-      e.preventDefault()
-
+    element.bind 'click', ->
       modalInstance = $modal.open(
         templateUrl: 'confirmation_modal.html',
         controller: 'ConfirmationCtrl',
@@ -12,7 +10,7 @@
       )
       modalInstance.result.then(->
         $timeout( ->
-          scope.$apply(attrs.ngReallyClick)
+          scope.$apply(attrs.ngClickWithConfirm)
         )
       )
 ]
