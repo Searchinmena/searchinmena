@@ -1,6 +1,6 @@
 class PhotoValidator < FileValidator
-  VALID_CONTENT_TYPES = %w{image/png image/jpeg image/gif}
-  VALID_EXTENSIONS = %w{png jpg gif}
+  VALID_CONTENT_TYPES = %w{image/png image/jpeg}
+  VALID_EXTENSIONS = %w{png jpg}
 
   def initialize(record_params = {})
     self.file = record_params[:photo]
