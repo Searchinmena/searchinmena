@@ -16,7 +16,6 @@ class BusinessesController < ApplicationController
                                          tags_params, locale, current_user)
     response = business_saver.perform
     if response.successful?
-      ensure_proper_user_type
       render_success(response.object)
     else
       render_error(response.object)
@@ -26,6 +25,7 @@ class BusinessesController < ApplicationController
   private
 
   def render_success(business)
+    ensure_proper_user_type
     render json: BusinessPresenter.new(business)
   end
 
