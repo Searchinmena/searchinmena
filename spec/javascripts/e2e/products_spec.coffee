@@ -7,7 +7,7 @@ describe ProductsPage, ->
 
   beforeEach ->
     loginHelper.loginAsSeller()
-    
+
     newProductPage = new NewProductPage()
     newProductPage.get()
     newProductPage.addProduct()

@@ -5,7 +5,7 @@ describe CompanyPage, ->
   page = null
 
   beforeEach ->
-    loginHelper.loginAsBuyer()
+    loginHelper.loginAsBoth()
     page = new CompanyPage()
     page.get()
     page.clearRequiredFields()
