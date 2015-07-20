@@ -29,6 +29,14 @@ mailcatcher
 bundle exec rails s
 ```
 
+#### Test users
+After you seed you will have 3 test users available:
+- seller: "seller@example.org",
+- buyer: "buyer@example.org",
+- both: "both@example.org",
+
+all with password: "testtest".
+
 #### Running tests
 
 Run all tests
