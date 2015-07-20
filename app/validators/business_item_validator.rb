@@ -1,4 +1,6 @@
 class BusinessItemValidator < BaseValidator
+  MAX_NAME_LENGTH = 130
+
   def self.fields
     [:name, :fob_price, :port, :supply_ability_capacity, :packaging_details,
      :description, :category_id]
@@ -7,7 +9,8 @@ class BusinessItemValidator < BaseValidator
   attr_accessor(*fields)
 
   validates :name, :category_id, presence: true
-  validates :name, :fob_price, :port, :supply_ability_capacity,
+  validates :name, length: { maximum: MAX_NAME_LENGTH }
+  validates :fob_price, :port, :supply_ability_capacity,
             :packaging_details,
             length: { maximum: A9n.validations[:max_text_field_size] }
   validates :description,

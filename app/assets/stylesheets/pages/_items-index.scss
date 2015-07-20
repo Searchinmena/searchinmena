@@ -1,4 +1,10 @@
-.products-options {
+.empty-index {
+  color: $grey;
+  margin: $bs3 0 0;
+  font-weight: normal;
+}
+
+.index-options {
   @extend %dashboard-content-padding;
   padding-bottom: $bs1;
 }
@@ -40,6 +46,14 @@
   .item-info {
     @include float-direction;
     width: 60%;
+    
+    @media screen and (min-width: $tablet) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 60%;
+    }
     
     @media screen and (min-width: $standard-desktop) {
       width: 100%;

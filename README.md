@@ -12,6 +12,7 @@ bundle install
 cp config/database.yml.example config/database.yml
 bundle exec rake db:create
 bundle exec rake db:migrate
+bundle exec rake db:seed
 
 cp config/pre-push .git/hooks/pre-push
 
@@ -27,6 +28,14 @@ mailcatcher
 
 bundle exec rails s
 ```
+
+#### Test users
+After you seed you will have 3 test users available:
+- seller: "seller@example.org",
+- buyer: "buyer@example.org",
+- both: "both@example.org",
+
+all with password: "testtest".
 
 #### Running tests
 
