@@ -35,10 +35,9 @@ class BusinessesController < ApplicationController
   end
 
   def business_params
-    params.require(:business).permit(:name, :country_id, :phone,
-                                     :year_registered, :no_of_employees,
-                                     :introduction, :address_line_1,
-                                     :address_line_2, business_type_ids: [])
+    params[:business].permit(:name, :country_id, :phone, :year_registered,
+                             :no_of_employees, :introduction, :address_line_1,
+                             :address_line_2, business_type_ids: [])
   end
 
   def tags_params

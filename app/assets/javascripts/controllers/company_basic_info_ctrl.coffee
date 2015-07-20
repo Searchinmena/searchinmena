@@ -2,6 +2,8 @@
   'selectsLoader', 'TranslatedFlash'
   ($scope, $http, $translate, selectsLoader, TranslatedFlash) ->
     $scope.errors = {}
+    $scope.form = {}
+    $scope.form.business = {}
 
     config = {
       countries: "/countries",
@@ -16,8 +18,6 @@
 
     $http.get('business').success((businessAttributes) ->
       $scope.form.business = businessAttributes
-    ).error(->
-      $scope.form.business = { business: {} }
     )
 
     $scope.loadTags = (query) ->
