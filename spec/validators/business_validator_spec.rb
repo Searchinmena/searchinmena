@@ -25,7 +25,8 @@ describe BusinessValidator do
   end
 
   describe "length validation" do
-    [:name, :country, :phone, :address_line_1, :address_line_2].each do |field|
+    [:name, :country, :phone, :address_line_1, :address_line_2,
+     :no_of_employees, :year_registered].each do |field|
       let(:business_params) do
         too_long_field = "a" * (A9n.validations[:max_text_field_size] + 1)
         valid_params.merge(field => too_long_field)
@@ -35,6 +36,16 @@ describe BusinessValidator do
         #{A9n.validations[:max_text_field_size]}" do
         is_expected.to be_invalid
       end
+    end
+
+    let(:business_params) do
+      too_long_field = "a" * (A9n.validations[:max_text_area_size] + 1)
+      valid_params.merge(introduction: too_long_field)
+    end
+
+    it "requires introduction to be shorter than
+      #{A9n.validations[:max_text_area_size]}" do
+      is_expected.to be_invalid
     end
   end
 
