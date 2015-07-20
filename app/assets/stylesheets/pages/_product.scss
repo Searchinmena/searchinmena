@@ -22,14 +22,6 @@
   @extend %clearfix;
   padding: $bs2;
   background-color: white;
-
-  .section-title {
-    margin: 0 0 $bs0;
-
-    span {
-      top: -0.6rem;
-    }
-  }
 }
 
 .product-main-image, .product-short-info {
@@ -52,7 +44,7 @@
 
   @media screen and (min-width: $desktop) {
     width: 100%;
-    max-width: 4 * $bs9;
+    max-width: 5 * $bs9;
   }  
 }
 
@@ -67,13 +59,28 @@
       padding: $bs-3 0 $bs-3 $bs0;
     }
   }
+
+  .payment-term:after {
+    content: "|";
+    padding: 0 $bs-5;
+    font-size: $bs1;
+    color: $grey;
+  }
 }
 
 .product-description {
   font-size: $bs09;
 }
 
-
 .product-info {
   clear: both;
+  padding: $bs0 $bs2;
+
+  .section-title {
+    margin: 0 0 $bs0;
+
+    span {
+      top: -0.7rem;
+    }
+  }
 }

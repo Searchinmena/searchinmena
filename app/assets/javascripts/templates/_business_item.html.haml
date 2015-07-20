@@ -1,30 +1,56 @@
-%div Name: {{ businessItem.get('name') }}
-.breadcrumbs{ "ng-include": "'_breadcrumbs.html'" }
-%div Description: {{ businessItem.get('description') }}
-%div
-  Fob price
-  {{ businessItem.get('fob_price') }}
-  {{ businessItem.get('fob_price_currency') }}
-  {{ businessItem.get('fob_price_unit') }}
-%div Port {{ businessItem.get('port') }}
-%div
-  Supply ability:
-  {{ businessItem.get('supply_ability_capacity') }}
-  {{ businessItem.get('supply_ability_unit') }}
-  {{ businessItem.get('supply_ability_frequency') }}
-%div Packaging details: {{ businessItem.get('packaging_details') }}
+.product-header
+  %h1.product-title {{ businessItem.get('name') }}
+
+  .breadcrumbs{ "ng-include": "'_breadcrumbs.html'" }
+  .seller
+    Seller:
+    %a{href: "#"} Great Company
+
+.product-short-info
+  %table.product-details
+    %tr
+      %td.attribute Model number:
+      %td
+        {{ businessItem.get('model_number') }}
+    %tr
+      %td.attribute Min order:
+      %td
+        {{ businessItem.get('min_order_quantity_number') }}
+        {{ businessItem.get('min_order_quantity_unit') }}
+    %tr
+      %td.attribute Fob price:
+      %td
+        {{ businessItem.get('fob_price') }}
+        {{ businessItem.get('fob_price_currency') }}
+        {{ businessItem.get('fob_price_unit') }}
+    %tr
+      %td.attribute Supply ability:
+      %td 
+        {{ businessItem.get('supply_ability_capacity') }}
+        {{ businessItem.get('supply_ability_unit') }}
+        {{ businessItem.get('supply_ability_frequency') }}
+    %tr
+      %td.attribute Payment Terms:
+      %td
+        %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
+          {{ paymentTerm }}
+    %tr
+      %td.attribute Packaging details:
+      %td {{ businessItem.get('packaging_details') }}
 
 Attributes
-%ul 
-  %li{ "ng-repeat": "attribute in businessItem.get('attributes')" }
-    {{ attribute['name'] }} {{ attribute['value'] }}
+%table.product-details
+  %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
+    %td.attribute {{ attribute['name'] }}:
+    %td {{ attribute['value'] }}
+.product-info
+  %h4.section-title.line-behind 
+    %span Description
+  %p.item-description {{ businessItem.get('description') }}
+
 
 Photos
 %ul 
   %li.item-img-holder{ "ng-repeat": "photo in businessItem.get('photos')" }
     %img.item-img{ "ng-src": "{{ photo['thumb'] }}" }
 
-Payment Terms
-%ul 
-  %li{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
-    {{ paymentTerm }}
