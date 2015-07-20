@@ -10,6 +10,7 @@ describe ProductPresenter do
 
       item
     end
+
     let(:additional_keys) do
       [
         :model_number,

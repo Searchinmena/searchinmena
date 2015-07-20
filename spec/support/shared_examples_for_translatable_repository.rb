@@ -3,7 +3,7 @@ shared_examples "TranslatableRepository" do
 
   it_behaves_like "any repository"
 
-  let(:klass) { described_class.name.sub('Repository', '').constantize }
+  let(:klass) { described_class.name.sub("Repository", "").constantize }
   let(:factory_name) { klass.to_s.underscore.downcase.to_sym }
   let(:locale) { "en" }
 
@@ -22,7 +22,7 @@ shared_examples "TranslatableRepository" do
     before do
       [object1, object2].each do |o|
         %w{en ar}.each do |locale|
-          repository.create_translation(o, 'val', locale)
+          repository.create_translation(o, "val", locale)
         end
       end
     end
@@ -34,7 +34,7 @@ shared_examples "TranslatableRepository" do
 
   describe "#translation_for" do
     let(:item) { create_item }
-    let(:locale) { 'en' }
+    let(:locale) { "en" }
     let!(:translation) { create_translation(item, locale) }
 
     it { is_expected.to eq(translation.value) }
@@ -51,7 +51,7 @@ shared_examples "TranslatableRepository" do
   describe "#with_translations" do
     before do
       object = create(factory_name)
-      repository.create_translation(object, 'val', locale)
+      repository.create_translation(object, "val", locale)
     end
 
     subject { repository.with_translations(locale).first.translations.first }

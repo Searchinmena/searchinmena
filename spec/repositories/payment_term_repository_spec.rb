@@ -14,14 +14,13 @@ describe PaymentTermRepository do
 
     let(:payment_term) { create(:payment_term) }
     let!(:other_payment_term) { create(:payment_term) }
+    let(:locale) { "en" }
 
     before do
       [payment_term, other_payment_term].each do |pt|
         create(:translation, locale: locale, translatable: pt)
       end
     end
-
-    let(:locale) { 'en' }
 
     subject { repository.for_business_item(business_item, locale) }
 

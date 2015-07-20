@@ -1,7 +1,7 @@
 shared_examples "BusinessItemPresenter" do
   let(:presenter) { described_class.new(business_item, locale) }
 
-  let(:locale) { 'en' }
+  let(:locale) { "en" }
   let(:expected_keys) do
     [
       :id,
@@ -54,10 +54,10 @@ shared_examples "BusinessItemPresenter" do
 
     before do
       expect(BusinessItemCategoryPresenter).to receive(:new)
-        .with(business_item.category, locale).and_return('category')
-      expect(PhotoPresenter).to receive(:new).and_return('photo')
-      expect(AttributePresenter).to receive(:new).and_return('attribute')
-      expect(PaymentTermPresenter).to receive(:new).and_return('payment_term')
+        .with(business_item.category, locale).and_return("category")
+      expect(PhotoPresenter).to receive(:new).and_return("photo")
+      expect(AttributePresenter).to receive(:new).and_return("attribute")
+      expect(PaymentTermPresenter).to receive(:new).and_return("payment_term")
 
       business_item.fob_price = 1 / 3.0
       business_item.fob_price_currency = currency
@@ -67,10 +67,10 @@ shared_examples "BusinessItemPresenter" do
     end
 
     it { expect(subject.keys).to eq(expected_keys + additional_keys) }
-    it { expect(subject[:breadcrumbs]).to eq('category') }
-    it { expect(subject[:attributes]).to eq(['attribute']) }
-    it { expect(subject[:photos]).to eq(['photo']) }
-    it { expect(subject[:payment_terms]).to eq(['payment_term']) }
+    it { expect(subject[:breadcrumbs]).to eq("category") }
+    it { expect(subject[:attributes]).to eq(["attribute"]) }
+    it { expect(subject[:photos]).to eq(["photo"]) }
+    it { expect(subject[:payment_terms]).to eq(["payment_term"]) }
     it { expect(subject[:fob_price]).to eq("0.33") }
     it { expect(subject[:fob_price_currency]).to eq("USD") }
     it { expect(subject[:fob_price_unit]).to eq("Box/Boxes") }

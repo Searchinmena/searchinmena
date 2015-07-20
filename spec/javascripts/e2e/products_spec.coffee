@@ -1,5 +1,4 @@
 loginHelper = require('./helpers/login_helper.coffee')
-helpers = require('./helpers/helpers.coffee')
 NewProductPage = require('./helpers/new_product_page.coffee')
 ProductsPage = require('./helpers/products_page.coffee')
 

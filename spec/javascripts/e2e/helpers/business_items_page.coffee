@@ -2,7 +2,6 @@ class BusinessItemsPage
   constructor: ->
     @deleteLinkCss = "a.delete"
     @itemCss = ".item-summary"
-
     @showLinkCss = "a.see-page"
 
     @confirmationModalCss = ".confirmation-modal"
