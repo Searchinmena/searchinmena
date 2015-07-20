@@ -1,0 +1,10 @@
+%h1 Service
+
+%div{ "ng-include": "'_business_item.html'" }
+
+%div Place of origin: {{ businessItem.get('place_of_origin') }}
+%div Scope of work: {{ businessItem.get('scope_of_work') }}
+%div
+  Avg completion time:
+  {{ businessItem.get('average_completion_time') }}
+  {{ businessItem.get('average_completion_time_unit') }}

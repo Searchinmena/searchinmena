@@ -19,5 +19,7 @@ describe ServicesPage, ->
     loginHelper.logout()
 
   it "is possible to remove service", ->
-    page.deleteBusinessItem()
-    expect(page.itemsCount()).toEqual(0)
+    page.checkRemovingBusinessItem()
+
+  it "is possible to see service details", ->
+    page.checkShowingSingleBusinessItem()

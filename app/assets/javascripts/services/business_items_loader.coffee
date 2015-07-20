@@ -19,12 +19,8 @@
 
       scope.pageChanged(1)
 
-      scope.deleteClicked = (e, businessItem) ->
-        e.preventDefault()
-
-        $http.delete("/#{resourceName}/#{businessItem.id}",
+      scope.deleteClicked = (businessItem) ->
+        $http.delete("/#{resourceName}/#{businessItem.get('id')}",
           params: { page: scope.pagination.current })
             .success(scope.assignData)
-
-
 ]

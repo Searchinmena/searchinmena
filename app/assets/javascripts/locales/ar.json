@@ -1,4 +1,9 @@
 {
+  "confirmation_modal": {
+    "are_you_sure": "Are you sure?",
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
   "dashboard": {
     "greeting": "مرحبا بك"
   },
