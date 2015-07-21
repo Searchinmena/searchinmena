@@ -3,10 +3,9 @@
   ($rootScope, $http, $state, $modal, TranslatedFlash,
     PhotosUploader) ->
 
-    initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController) ->
-      scope.form = {}
+    initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
+      scope.businessItem = businessItemFactory.build()
       scope.errors = {}
-      scope.form.business_item ||= {}
       scope.attributes = (new SIM.Attribute() for i in [0..1])
 
       config = {
@@ -30,7 +29,7 @@
 
       scope.setCategory = (breadcrumbs) ->
         scope.breadcrumbs = breadcrumbs
-        scope.form.business_item.category_id = breadcrumbs.current().id
+        scope.businessItem.category_id = breadcrumbs.current().id
 
       scope.addAttribute = ->
         scope.attributes.push(new SIM.Attribute())
@@ -39,29 +38,31 @@
         index = scope.attributes.indexOf(attribute)
         scope.attributes.splice(index, 1)
 
+      scope.saveSucceededCallback = (data, photos) ->
+        itemId = data.id
+        PhotosUploader.upload(photos_path, photos, itemId,
+          ->
+            TranslatedFlash.success("#{resourceName}.successfully_added")
+            $state.go(resourceName)
+          , (errors) ->
+            scope.errors.photos = errors
+            scope.showFlashError()
+        )
+
+      scope.showFlashError = ->
+        TranslatedFlash.error("#{resourceName}.adding_failed")
+
       scope.saveAndUploadPhotos = (photos) ->
-        scope.form.attributes = _(scope.attributes).filter((attribute) ->
+        scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
         )
 
-        $http(
-          url: "/#{resourceName}",
-          data: scope.form,
-          method: 'POST'
-        ).success((data) ->
-          itemId = data.id
-          PhotosUploader.upload(photos_path, photos, itemId,
-            ->
-              TranslatedFlash.success("#{resourceName}.successfully_added")
-              $state.go(resourceName)
-            ,
-            (errors) ->
-              scope.errors.photos = errors
-              TranslatedFlash.error("#{resourceName}.adding_failed")
-          )
-        ).error((errors) ->
-          scope.errors = errors
-          TranslatedFlash.error("#{resourceName}.adding_failed")
+        scope.businessItem.$save(
+          (data) ->
+            scope.saveSucceededCallback(data, photos)
+          , (response) ->
+            scope.errors = response["data"]
+            scope.showFlashError()
         )
 
       scope.$on("photos_response", (event, photos) ->

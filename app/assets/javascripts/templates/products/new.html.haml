@@ -2,11 +2,11 @@
 %form{ "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
-
+  
   %form-field{ "error": "errors.business_item.name" }
     %label.required
       {{ "products.new.name" | translate }}
-    %input{ type: "text", "ng-model": "form.business_item.name" }
+    %input{ type: "text", "ng-model": "businessItem.name" }
 
   .field{ "ng-include": "'_category.html'" }
 
@@ -18,17 +18,17 @@
 
   %form-field{ "error": "errors.business_item.model_number" }
     %label {{ "products.new.model" | translate }}
-    %input{ type: "text", "ng-model": "form.business_item.model_number" }
+    %input{ type: "text", "ng-model": "businessItem.model_number" }
 
   %form-field{ "error": "errors.business_item.brand_name" }
     %label {{ "products.new.brand" | translate }}
-    %input{ type: "text", "ng-model": "form.business_item.brand_name" }
+    %input{ type: "text", "ng-model": "businessItem.brand_name" }
 
   .field.compound-field{ "ng-include": "'_attributes.html'" }
 
   %form-field{ "error": "errors.business_item.description" }
     %label {{ "products.new.description" | translate }}
-    %textarea{ "ng-model": "form.business_item.description" }
+    %textarea{ "ng-model": "businessItem.description" }
 
 
   %h3.line-behind
@@ -38,10 +38,10 @@
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
     %form-field{ "error": "errors.business_item.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "number", "ng-model": "form.business_item.min_order_quantity_number" }
+      %input{ type: "number", "ng-model": "businessItem.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
-      "ng-model": "form.business_item.min_order_quantity_unit_id" }
+      "ng-model": "businessItem.min_order_quantity_unit_id" }
         %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
   %div{ "ng-include": "'_common_trade_info.html'" }
@@ -49,4 +49,4 @@
 
   .actions.with-spinner
     %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
-    .spinner
+    .spinner{ "ng-hide": "product.$resolved" }

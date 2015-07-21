@@ -1,8 +1,6 @@
-@Sim.controller 'ServicesIndexCtrl', ['$scope', 'BusinessItemsLoader',
-  ($scope, BusinessItemsLoader) ->
-    RESOURCE_NAME = "services"
-
-    BusinessItemsLoader.initialize(RESOURCE_NAME, $scope)
+@Sim.controller 'ServicesIndexCtrl', ['$scope', 'BusinessItemsLoader', 'ServiceFactory',
+  ($scope, BusinessItemsLoader, ServiceFactory) ->
+    BusinessItemsLoader.initialize(ServiceFactory, $scope)
 
     $scope.showUrl = (businessitem) ->
       "service({ id: #{businessitem.get('id')} })"

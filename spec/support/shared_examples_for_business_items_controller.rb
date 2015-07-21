@@ -31,20 +31,23 @@ shared_examples "BusinessItemsController" do |resource_name|
       let(:creator_response) do
         double(successful?: successful, object: business_item)
       end
-      let(:attributes_params) { [{ name: "ania", value: "hai" }] }
+      let(:breadcrumbs_params) { [{ name: "ania", value: "hai" }] }
       let(:payment_terms_params) { { "12" => true } }
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do
         {
-          business_item: business_item_params,
-          attributes: attributes_params,
-          payment_terms: payment_terms_params
+          resource_name => business_item_params,
+          :breadcrumbs => breadcrumbs_params,
+          :payment_terms => payment_terms_params
         }
       end
 
       let(:expected_params) do
-        new_business_item_params.merge(
-          payment_terms: payment_terms_params.keys)
+        {
+          business_item: new_business_item_params[resource_name],
+          attributes: breadcrumbs_params,
+          payment_terms: payment_terms_params.keys
+        }
       end
 
       before do
@@ -67,13 +70,14 @@ shared_examples "BusinessItemsController" do |resource_name|
 
         it_behaves_like "successful response"
 
-        context "attributes not present" do
-          let(:attributes_params) { nil }
+        context "breadcrumbs not present" do
+          let(:breadcrumbs_params) { nil }
           let(:expected_params) do
-            new_business_item_params.merge(
+            {
+              business_item: new_business_item_params[resource_name],
               attributes: [],
               payment_terms: payment_terms_params.keys
-            )
+            }
           end
 
           it_behaves_like "successful response"
@@ -82,9 +86,11 @@ shared_examples "BusinessItemsController" do |resource_name|
         context "payment_terms not present" do
           let(:payment_terms_params) { nil }
           let(:expected_params) do
-            new_business_item_params.merge(
+            {
+              business_item: new_business_item_params[resource_name],
+              attributes: breadcrumbs_params,
               payment_terms: []
-            )
+            }
           end
 
           it_behaves_like "successful response"
