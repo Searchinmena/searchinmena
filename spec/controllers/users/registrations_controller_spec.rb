@@ -5,9 +5,12 @@ describe Users::RegistrationsController do
   let(:business) { build(:business, user: nil) }
   let(:sign_up_params) do
     {
+      "first_name" => user.first_name,
+      "last_name" => user.last_name,
       "email" => user.email,
       "password" => user.password,
-      "password_confirmation" => user.password_confirmation
+      "password_confirmation" => user.password_confirmation,
+      "category" => user.category
     }
   end
 
@@ -42,11 +45,13 @@ describe Users::RegistrationsController do
   end
 
   describe "#create" do
+    let(:business_type) { create(:business_type) }
     let(:business_params) do
       {
         "name" => business.name,
         "country_id" => business.country_id.to_s,
-        "phone" => business.phone
+        "phone" => business.phone,
+        "business_type_ids" => [business_type.id.to_s]
       }
     end
     let(:registration_params) do

@@ -47,11 +47,13 @@ describe BusinessesController do
 
     context "user is logged in" do
       let(:business) { build(:business) }
+      let(:business_type) { create(:business_type) }
       let(:business_params) do
         {
           "name" => business.name,
           "country_id" => business.country_id.to_s,
-          "phone" => business.phone
+          "phone" => business.phone,
+          "business_type_ids" => [business_type.id.to_s]
         }
       end
       let(:params) { { business: business_params } }
