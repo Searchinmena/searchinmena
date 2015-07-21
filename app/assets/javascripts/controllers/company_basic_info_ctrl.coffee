@@ -1,10 +1,9 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
-  'selectsLoader',
-  ($scope, $http, $translate, selectsLoader) ->
-    $scope.form = { business:
-      business_types: [381, 375, 378]
-    }
+  'selectsLoader', 'TranslatedFlash'
+  ($scope, $http, $translate, selectsLoader, TranslatedFlash) ->
     $scope.errors = {}
+    $scope.form = {}
+    $scope.form.business = {}
 
     config = {
       countries: "/countries",
@@ -13,10 +12,12 @@
 
     selectsLoader.loadSelectsData($scope, config)
 
-    # Settings for business type multiselect
-    $scope.selectedBusinessTypes = $scope.form.business.business_types || []
     $translate('company.basic_info.select_business_types').then((translation) ->
       $scope.selectButtonText = translation
+    )
+
+    $http.get('business').success((businessAttributes) ->
+      $scope.form.business = businessAttributes
     )
 
     $scope.loadTags = (query) ->
@@ -24,25 +25,16 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
-      $scope.errors = { business: {
-          name: "can't be blank",
-          phone: "can't be blank",
-          country: "can't be blank",
-          business_types: "can't be blank"
-        }
-      }
-
-      console.log($scope.form)
 
       $http(
-        url: e.target.action,
+        url: '/business',
         data: $scope.form,
-        method: 'POST'
+        method: 'PUT'
       ).success(->
-        console.log('SUCCESS')
+        TranslatedFlash.success("company.successfully_saved")
       ).error((errors) ->
-        console.log(errors)
         $scope.errors = errors
+        TranslatedFlash.error("company.saving_failed")
       )
 
       false

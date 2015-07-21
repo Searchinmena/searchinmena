@@ -14,6 +14,8 @@
       "trade_details": "Trade Details",
       "certifications": "Certifications"
     },
+    "successfully_saved": "Company information was successfully saved",
+    "saving_failed": "Company couldn't be saved, please check the form",
     "basic_info": {
       "company_name": "Company name",
       "add_logo": "Add logo",
@@ -21,6 +23,7 @@
       "city": "City",
       "location": "Location",
       "select_country": "Select country",
+      "address": "Address",
       "business_types": "Business types",
       "select_business_types": "Select business types",
       "main_products": "Main products",

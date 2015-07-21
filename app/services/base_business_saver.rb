@@ -1,8 +1,9 @@
-class Registration::BusinessCreator < Registration::BaseCreator
-  attr_accessor :business
+class BaseBusinessSaver < BaseCreator
+  attr_accessor :business, :user
 
   def initialize(business, business_params, tags_params, locale, user)
     business_params.merge!(user: user)
+    self.user = user
     self.business = business
     self.validator = BusinessValidator.new(business_params)
     self.storing_handler = BusinessStoringHandler.new(

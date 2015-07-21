@@ -14,6 +14,8 @@
       "trade_details": "المعلومات التجارية",
       "certifications": "الشهادات"
     },
+    "successfully_saved": "Company information was successfully saved",
+    "saving_failed": "Company couldn't be saved, please check the form",
     "basic_info": {
       "company_name": "أسم الشركة",
       "add_logo": "أضف لوجو",
@@ -21,6 +23,7 @@
       "city": "المدينة",
       "location": "المكان",
       "select_country": "إختر بلد",
+      "address": "Address AR",
       "business_types": "نوع العمل",
       "select_business_types": "إختر نوع العمل",
       "main_products": "المنتجات الرئيسية",
