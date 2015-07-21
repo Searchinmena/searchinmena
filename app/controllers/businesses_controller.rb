@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  inject :business_repository
+  inject :business_repository, :user_category_service
 
   def show
     business = business_repository.find_by_user_id(current_user.id)
@@ -12,9 +12,17 @@ class BusinessesController < ApplicationController
 
   def update
     business = business_repository.find_or_build(user_id: current_user.id)
-    business_saver = Business::Saver.new(business, business_params,
-                                         tags_params, locale, current_user)
+    base_business_saver = BaseBusinessSaver.new(business, business_params,
+                                tags_params, locale, current_user)
+    business_saver = Business::Saver.new(base_business_saver,
+                                         user_category_service)
     response = business_saver.perform
+    render_response(response)
+  end
+
+  private
+
+  def render_response(response)
     if response.successful?
       render_success(response.object)
     else
@@ -22,10 +30,7 @@ class BusinessesController < ApplicationController
     end
   end
 
-  private
-
   def render_success(business)
-    ensure_proper_user_type
     render json: BusinessPresenter.new(business)
   end
 
@@ -43,12 +48,5 @@ class BusinessesController < ApplicationController
 
   def tags_params
     params.permit(:tags).permit(:id, :label) || {}
-  end
-
-  def ensure_proper_user_type
-    if current_user.buyer?
-      current_user.category = :both
-      current_user.save
-    end
   end
 end

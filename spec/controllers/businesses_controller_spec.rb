@@ -59,22 +59,30 @@ describe BusinessesController do
       let(:params) { { business: business_params } }
       let(:tags_params) { {} }
       let(:locale) { :en }
-      let(:saver) { double(:saver) }
+      let(:base_business_saver) { double(:base_business_saver) }
+      let(:business_saver) { double(:business_saver) }
       let(:saver_response) do
         double(successful?: successful, object: business)
       end
+
+      fake(:user_category_service)
 
       before do
         sign_in(user)
 
         expect(controller).to receive(:business_repository)
           .and_return(business_repository)
+        expect(controller).to receive(:user_category_service)
+          .and_return(user_category_service)
         expect(business_repository).to receive(:find_or_build)
           .and_return(business)
-        expect(Business::Saver).to receive(:new)
+        expect(BaseBusinessSaver).to receive(:new)
           .with(business, business_params, tags_params, locale, user)
-          .and_return(saver)
-        expect(saver).to receive(:perform).and_return(saver_response)
+          .and_return(base_business_saver)
+        expect(Business::Saver).to receive(:new)
+          .with(base_business_saver, user_category_service)
+          .and_return(business_saver)
+        expect(business_saver).to receive(:perform).and_return(saver_response)
 
         put :update, params
       end

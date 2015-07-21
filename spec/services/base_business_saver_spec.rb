@@ -1,10 +1,10 @@
 require "rails_helper"
 
-describe Business::Saver do
+describe BaseBusinessSaver do
   let(:saver) do
     described_class.new(business, business_params, tags_params, locale, user)
   end
-  let(:user) { create(:user) }
+  let(:user) { create(:buyer) }
   let(:business_type) { create(:business_type) }
   let(:business) { build(:business) }
   let(:business_params) do
@@ -46,6 +46,7 @@ describe Business::Saver do
 
     context "successful business creation" do
       let(:valid) { true }
+      fake(:user_category_service)
 
       it { is_expected.to be_successful }
 

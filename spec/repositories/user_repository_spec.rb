@@ -43,4 +43,13 @@ describe UserRepository do
       it { expect(user_params["password_confirmation"]).not_to be_empty }
     end
   end
+
+  describe "#update_category" do
+    let(:user) { build(:buyer) }
+    let(:category) { "both" }
+
+    before { subject.update_category(user, category) }
+
+    it { expect(user.category).to eq(category) }
+  end
 end

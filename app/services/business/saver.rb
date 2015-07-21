@@ -1,15 +1,10 @@
-class Business::Saver < BaseCreator
-  attr_accessor :business
+class Business::Saver < BaseService
+  takes :base_business_saver, :user_category_service
 
-  def initialize(business, business_params, tags_params, locale, user)
-    business_params.merge!(user: user)
-    self.business = business
-    self.validator = BusinessValidator.new(business_params)
-    self.storing_handler = BusinessStoringHandler.new(
-      business, business_params, tags_params, locale, validator)
-  end
+  def perform(user)
+    response = base_business_saver.perform
+    return response unless response.successful?
 
-  def copy_errors
-    validator.copy_errors(business)
+    user_category_service.perform(user)
   end
 end
