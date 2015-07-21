@@ -1,7 +1,7 @@
 {
   "confirmation_modal": {
-    "are_you_sure": "Are you sure?",
-    "ok": "Ok",
+    "are_you_sure": "Are you sure you want to remove this?",
+    "ok": "Yes, I'm sure",
     "cancel": "Cancel"
   },
   "dashboard": {

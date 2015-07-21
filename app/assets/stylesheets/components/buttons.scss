@@ -93,6 +93,17 @@
   }
 }
 
+%ghost-dark-button {
+  color: $basic-font;
+  border: 2px solid $basic-font;
+  background: none;
+
+  &:hover, &:focus {
+    outline: 0;
+    background-color: $white-opaque;
+  }
+}
+
 input[type="submit"] {
   @extend %basic-button;
   @extend %primary-button;
@@ -178,3 +189,4 @@ input[type="submit"] {
     max-width: 2 * $bs8;
   }
 }
+

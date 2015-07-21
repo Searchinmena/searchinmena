@@ -1,4 +1,4 @@
-.categories-modal {
+.modal-dialog {
   z-index: 1001;
 
   .remove-button {
@@ -6,6 +6,10 @@
     margin: $bs0;
     padding: $bs-3;
     cursor: pointer;
+
+    [dir="rtl"] &{
+      float: left;
+    }
   }
 }
 
@@ -83,6 +87,23 @@
 
   input {
     float: right;
+
+    [dir="rtl"] & {
+      float: left;
+    }
+  }
+
+  .cancel {
+    @include float-direction;
+    @extend %secondary-button
+  }
+
+  .cancel, .ok {
+    width: 48%;
+  }
+
+  .confirmation-modal & {
+    border-top: 0;
   }
 }
 
