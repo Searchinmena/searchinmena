@@ -22,6 +22,11 @@ class CompanyPage
   businessTypesSelectToggle: ->
     element(@businessTypesSelectLocator)
 
+  select: (selectElement, optionName) ->
+      selectElement.click()
+      selectElement.element(By.cssContainingText("option", optionName)).click()
+      browser.actions().mouseDown().mouseUp().perform()
+
   fieldsWithErrors: ->
     element.all(By.css(".field-with-errors"))
 
@@ -34,10 +39,7 @@ class CompanyPage
     @businessTypesSelectToggle().click()
 
   clearCountry: ->
-    @countrySelect().click()
-    @countrySelect().element(By.cssContainingText("option", "Select country"))
-      .click()
-    browser.actions().mouseDown().mouseUp().perform()
+    @select(@countrySelect(), "Select country")
 
   clearRequiredFields: ->
     @nameField().clear()

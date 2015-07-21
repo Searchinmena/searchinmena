@@ -29,10 +29,7 @@ describe CompanyPage, ->
     page.nameField().sendKeys("Lunar Logic")
     page.phoneField().sendKeys("0048 12 430 22 88")
 
-    page.countrySelect().click()
-    page.countrySelect().element(By.cssContainingText("option", "Poland"))
-      .click()
-    browser.actions().mouseDown().mouseUp().perform()
+    page.select(page.countrySelect(), "Poland")
 
     page.businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
