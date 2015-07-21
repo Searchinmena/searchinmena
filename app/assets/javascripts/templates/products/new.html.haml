@@ -48,5 +48,6 @@
 
 
   .actions.with-spinner
-    %input{ type: "submit", value: '{{ "products.new.submit" | translate }}' }
-    .spinner{ "ng-hide": "product.$resolved" }
+    %input{ type: "submit", value: '{{ "products.new.submit" | translate }}',
+      "ng-disabled": "loading" }
+    .spinner{ "ng-show": "loading" }

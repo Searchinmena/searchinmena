@@ -45,14 +45,17 @@
             TranslatedFlash.success("#{resourceName}.successfully_added")
             $state.go(resourceName)
           , (errors) ->
+            scope.loading = false
             scope.errors.photos = errors
             scope.showFlashError()
         )
 
       scope.showFlashError = ->
         TranslatedFlash.error("#{resourceName}.adding_failed")
+        scope.loading = false
 
       scope.saveAndUploadPhotos = (photos) ->
+        scope.loading = true
         scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
         )
@@ -61,6 +64,7 @@
           (data) ->
             scope.saveSucceededCallback(data, photos)
           , (response) ->
+            scope.loading = false
             scope.errors = response["data"]
             scope.showFlashError()
         )
