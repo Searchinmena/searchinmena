@@ -16,7 +16,7 @@ class BusinessesController < ApplicationController
                                 tags_params, locale, current_user)
     business_saver = Business::Saver.new(base_business_saver,
                                          user_category_service)
-    response = business_saver.perform
+    response = business_saver.perform(current_user, business)
     render_response(response)
   end
 

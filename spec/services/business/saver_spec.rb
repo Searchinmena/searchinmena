@@ -8,10 +8,11 @@ describe Business::Saver do
     described_class.new(base_business_saver, user_category_service)
   end
   let(:user) { build(:user) }
+  let(:business) { build(:business) }
   let(:response) { double(:response, successful?: true) }
 
   describe "#perform" do
-    subject { saver.perform(user) }
+    subject { saver.perform(user, business) }
 
     it "uses UserCategoryService to change category" do
       expect(saver).to receive(:base_business_saver)
@@ -21,7 +22,7 @@ describe Business::Saver do
 
       expect(saver).to receive(:user_category_service)
         .and_return(user_category_service)
-      expect(user_category_service).to receive(:perform).with(user)
+      expect(user_category_service).to receive(:perform).with(user, business)
         .and_return(response)
 
       is_expected.to be_successful

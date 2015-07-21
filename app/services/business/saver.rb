@@ -1,10 +1,10 @@
 class Business::Saver < BaseService
   takes :base_business_saver, :user_category_service
 
-  def perform(user)
+  def perform(user, business)
     response = base_business_saver.perform
     return response unless response.successful?
 
-    user_category_service.perform(user)
+    user_category_service.perform(user, business)
   end
 end
