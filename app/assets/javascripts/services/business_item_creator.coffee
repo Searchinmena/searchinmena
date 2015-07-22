@@ -55,7 +55,6 @@
         scope.loading = false
 
       scope.saveAndUploadPhotos = (photos) ->
-        scope.loading = true
         scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
         )
@@ -75,6 +74,7 @@
 
       scope.submit = (e) ->
         e.preventDefault()
+        scope.loading = true
         scope.errors = {}
 
         # request photos from PhotosCtrl

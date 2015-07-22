@@ -46,5 +46,7 @@
   %div{ "ng-include": "'_common_trade_info.html'" }
 
 
-  .actions
-    %input{ type: "submit", value: '{{ "services.new.submit" | translate }}' }
+  .actions.with-spinner
+    %input{ type: "submit", value: '{{ "services.new.submit" | translate }}',
+      "ng-disabled": "loading" }
+    .spinner{ "ng-show": "loading" }
