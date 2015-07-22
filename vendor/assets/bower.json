@@ -4,6 +4,7 @@
     "angular": "1.4.0",
     "angular-mocks": "1.4.0",
     "angular-ui-router": "0.2.15",
+    "angular-resource": "1.4.0",
     "angular-cookies": "1.4.0",
     "jquery.cookie": "1.4.1",
     "ng-tags-input": "2.3.0",

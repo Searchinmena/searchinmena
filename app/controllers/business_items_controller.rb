@@ -55,7 +55,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def business_item_params
-    params[:business_item]
+    params[resource_name]
       .permit([:name, :description, :category_id,
                :fob_price, :fob_price_currency_id, :fob_price_unit_id, :port,
                :payment_terms, :supply_ability_capacity,
@@ -68,7 +68,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def attributes_params
-    params[:attributes] || []
+    params[:breadcrumbs] || []
   end
 
   def payment_terms_params

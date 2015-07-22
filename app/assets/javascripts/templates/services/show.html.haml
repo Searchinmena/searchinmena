@@ -1,11 +1,11 @@
 %div{ "ng-include": "'_business_item_header.html'" }
-.product-short-info
+.item-short-info
   %button.contact-supplier
     %span.icon.icon-envelope
     Contact Seller
   .column
     %h4.subtitle Basic Info
-    %table.product-details
+    %table.item-details
       %tr
         %td.attribute Place of origin:
         %td
@@ -37,13 +37,13 @@
         %td {{ businessItem.get('packaging_details') }}
   .column
     %h4.subtitle Attributes
-    %table.product-details
+    %table.item-details
       %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
         %td.attribute {{ attribute['name'] }}:
         %td {{ attribute['value'] }}
 
 
-.product-info
+.item-detailed-info
   %h4.section-title.line-behind 
     %span Scope of work
   %p.item-description {{ businessItem.get('scope_of_work') }}

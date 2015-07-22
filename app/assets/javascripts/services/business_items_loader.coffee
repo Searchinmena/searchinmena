@@ -1,6 +1,6 @@
-@Sim.service 'BusinessItemsLoader', ['$http',
-  ($http) =>
-    initialize: (resourceName, scope) ->
+@Sim.service 'BusinessItemsLoader', [
+  ->
+    initialize: (businessItemFactory, scope) ->
       scope.businessItems = []
       scope.total = 0
       scope.perPage = 10
@@ -14,13 +14,11 @@
         scope.total = data.count
 
       scope.pageChanged = (newPage) ->
-        $http.get("/#{resourceName}", params: { page: newPage })
-          .success(scope.assignData)
+        businessItemFactory.get({ page: newPage }, scope.assignData)
 
       scope.pageChanged(1)
 
       scope.deleteClicked = (businessItem) ->
-        $http.delete("/#{resourceName}/#{businessItem.get('id')}",
-          params: { page: scope.pagination.current })
-            .success(scope.assignData)
+        params = { id: businessItem.get('id'), page: scope.pagination.current }
+        businessItemFactory.delete(params, scope.assignData)
 ]

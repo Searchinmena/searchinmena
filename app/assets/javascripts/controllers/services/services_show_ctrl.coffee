@@ -1,7 +1,6 @@
-@Sim.controller 'ServicesShowCtrl', ['$scope', '$stateParams', 'BusinessItemLoader',
-  ($scope, $stateParams, BusinessItemLoader) ->
-    RESOURCE_NAME = "services"
-
+@Sim.controller 'ServicesShowCtrl', ['$scope', '$stateParams',
+  'BusinessItemLoader', 'ServiceFactory',
+  ($scope, $stateParams, BusinessItemLoader, ServiceFactory) ->
     BusinessItemLoader.initialize(
-      RESOURCE_NAME, $stateParams.id, $scope)
+      ServiceFactory, $stateParams.id, $scope)
 ]

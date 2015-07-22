@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/browse" => "pages#browse", as: :browse
   get "/results" => "pages#results", as: :results
   get "/product" => "pages#product", as: :product
+  get "/company" => "pages#company", as: :company
 
   resource :dashboard, controller: :dashboard
 

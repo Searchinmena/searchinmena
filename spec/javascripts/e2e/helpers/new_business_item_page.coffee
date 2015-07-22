@@ -79,19 +79,19 @@ class NewBusinessItemPage
     element(By.cssContainingText(@breadcrumbInFormCss, category))
 
   nameInput: ->
-    element(By.model("form.business_item.name"))
+    element(By.model("businessItem.name"))
 
   modelNumberInput: ->
-    element(By.model("form.business_item.model_number"))
+    element(By.model("businessItem.model_number"))
 
   minOrderInput: ->
-    element(By.model("form.business_item.min_order_quantity_number"))
+    element(By.model("businessItem.min_order_quantity_number"))
 
   fobPriceInput: ->
-    element(By.model("form.business_item.fob_price"))
+    element(By.model("businessItem.fob_price"))
 
   supplyAbilityInput: ->
-    element(By.model("form.business_item.supply_ability_capacity"))
+    element(By.model("businessItem.supply_ability_capacity"))
 
   submitForm: ->
     submitButton = element(By.css(@submitCss))
