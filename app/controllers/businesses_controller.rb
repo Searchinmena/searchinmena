@@ -43,7 +43,7 @@ class BusinessesController < ApplicationController
   def business_params
     params[:business].permit(:name, :country_id, :phone, :year_registered,
                              :no_of_employees, :introduction, :address_line_1,
-                             :address_line_2, business_type_ids: [])
+                             :address_line_2, :city, business_type_ids: [])
   end
 
   def tags_params

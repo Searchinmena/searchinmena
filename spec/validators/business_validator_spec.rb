@@ -25,7 +25,7 @@ describe BusinessValidator do
   end
 
   describe "length validation" do
-    [:name, :country_id, :phone, :address_line_1, :address_line_2,
+    [:name, :country_id, :phone, :city, :address_line_1, :address_line_2,
      :no_of_employees, :year_registered].each do |field|
       let(:business_params) do
         too_long_field = "a" * (A9n.validations[:max_text_field_size] + 1)

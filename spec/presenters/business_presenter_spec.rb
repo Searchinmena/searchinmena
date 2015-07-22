@@ -11,6 +11,7 @@ describe BusinessPresenter do
       is_expected.to include(
         name: business.name,
         phone: business.phone,
+        city: business.city,
         country_id: business.country_id,
         year_registered: business.year_registered,
         no_of_employees: business.no_of_employees,
