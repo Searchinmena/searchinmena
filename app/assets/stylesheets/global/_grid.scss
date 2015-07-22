@@ -6,6 +6,11 @@
   }
 }
 
+%wide-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 %max-width-container {
   max-width: 1380px;
   margin: $bs3 auto;
@@ -42,4 +47,8 @@
     min-height: 100vh;
     min-height: calc(100vh - 106px);
   }
+}
+
+.clearfix {
+  @extend %clearfix;
 }

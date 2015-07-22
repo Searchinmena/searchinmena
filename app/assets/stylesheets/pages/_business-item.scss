@@ -17,7 +17,7 @@
   }
 }
 
-.product-header {
+.item-header {
   @extend %info-column;
   border-bottom: $default-border;
 
@@ -29,9 +29,15 @@
   .seller {
     padding: $bs0 0 0;
   }
+
+  .item-title {
+    font-size: $bs2;
+    margin: 0 0 $bs0;
+    font-weight: normal;
+  }
 }
 
-.product-short-info {
+.item-short-info {
   @extend %info-column;
   @extend %clearfix;
 
@@ -49,11 +55,7 @@
   }
 }
 
-.product-title {
-  @extend %basic-title;
-  font-size: $bs2;
-  margin: 0 0 $bs0;
-}
+
 
 .product-page {
   @extend %clearfix;
@@ -99,7 +101,11 @@
   }
 }
 
-.product-details {
+.item-description {
+  margin: $bs0 0 $bs5;
+}
+
+.item-details {
   font-size: $bs09;
 
   .attribute {
@@ -118,12 +124,11 @@
     color: $grey;
   }
 }
-
-.product-description {
-  font-size: $bs09;
+.item-basic-info {
+  padding: $bs0 $bs2;
 }
 
-.product-info {
+.item-detailed-info {
   clear: both;
   padding: $bs0 $bs2;
 
@@ -133,5 +138,89 @@
     span {
       top: -0.7rem;
     }
+  }
+}
+
+.company-view {
+  @extend %clearfix;
+  @extend %wide-container;
+  background-color: white;
+
+  @media screen and (min-width: 1600px) {
+    border-left: $default-border;
+    border-right: $default-border;
+  }
+
+  .item-detailed-info {
+    @media screen and (min-width: $desktop) {
+      display: inline-block;
+      clear: none;
+      width: 49%;
+      vertical-align: top;
+    }
+  }
+}
+
+.company-header {
+  @extend %clearfix;
+  padding: $bs2;
+  border-bottom: $default-border;
+
+  .company-name {
+    font-weight: normal;
+    margin: 0 0 $bs0;
+  }
+
+  .company-logo-holder {
+    @include float-direction;
+    height: auto;
+    background: none;
+    padding: $bs-3;
+
+    .company-logo {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.contact-item {
+  @include float-direction;
+  margin: 0 $bs2 $bs0 0;
+
+  [dir="rtl"] & {
+    margin: 0 0 $bs0 $bs2;
+  }
+  .icon {
+    font-size: $bs2;
+    color: $grey;
+    vertical-align: sub;
+  }
+}
+
+.company-short-info {
+  @include float-direction;
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    max-width: 3.5 * $bs9;
+    padding: 0 $bs2;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 5 * $bs9;
+  }
+
+  @media screen and (min-width: $standard-desktop) {
+    max-width: 7.3 * $bs9;
+  }
+}
+
+.company-gallery {
+  img {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin: 0 $bs-3 0 0;
   }
 }

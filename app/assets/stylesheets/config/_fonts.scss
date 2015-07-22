@@ -113,7 +113,9 @@
 .icon-user:before {
   content: "\e609";
 }
-
+.icon-phone-alt:before {
+  content: "\e64d";
+}
 //not used
 
 .icon-zoom-out:before {
@@ -328,9 +330,6 @@
 }
 .icon-phone:before {
   content: "\e64c";
-}
-.icon-phone-alt:before {
-  content: "\e64d";
 }
 .icon-pause:before {
   content: "\e64f";
