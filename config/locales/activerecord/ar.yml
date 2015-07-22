@@ -7,5 +7,6 @@ ar:
       invalid: "غير صالح"
       inclusion: " ليست موجودة في القائمة"
       uniqueness: "مؤخوذ"
-      file_too_large: 'You cannot upload a file greater than %{max_file_size_in_mb} MB'
+      file_too_large: "You cannot upload a file greater than %{max_file_size_in_mb} MB"
       invalid_content_type: "Only following file types allowed: %{types}"
+      not_an_integer: "number is too big"
