@@ -6,6 +6,6 @@
 
     BusinessItemCreator.initialize(
       $scope, selectsLoader, RESOURCE_NAME, PHOTOS_PATH,
-      "ServiceCategoriesCtrl", ServiceFactory)
+      'ServiceCategoriesCtrl', ServiceFactory)
 ]
 
