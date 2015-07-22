@@ -13,8 +13,12 @@ class ProductsController < BusinessItemsController
     ProductPresenter
   end
 
+  def resource_name
+    :product
+  end
+
   def business_item_params
-    product_specific_params = params[:business_item].permit(
+    product_specific_params = params[resource_name].permit(
       [:model_number, :brand_name, :min_order_quantity_number,
        :min_order_quantity_unit_id])
     super.merge(product_specific_params)

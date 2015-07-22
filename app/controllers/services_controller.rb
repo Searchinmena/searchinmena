@@ -13,8 +13,12 @@ class ServicesController < BusinessItemsController
     ServicePresenter
   end
 
+  def resource_name
+    :service
+  end
+
   def business_item_params
-    service_specific_params = params[:business_item].permit(
+    service_specific_params = params[resource_name].permit(
       [:place_of_origin, :scope_of_work, :average_completion_time,
        :average_completion_time_unit_id])
     super.merge(service_specific_params)
