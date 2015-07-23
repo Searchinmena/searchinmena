@@ -1,10 +1,6 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
   'selectsLoader', 'TranslatedFlash'
   ($scope, $http, $translate, selectsLoader, TranslatedFlash) ->
-    $scope.errors = {}
-    $scope.form = {}
-    $scope.form.business = {}
-
     config = {
       countries: "/countries",
       business_types: "/business_types"
@@ -31,6 +27,7 @@
         data: $scope.form,
         method: 'PUT'
       ).success(->
+        $scope.errors = {}
         TranslatedFlash.success("company.successfully_saved")
       ).error((errors) ->
         $scope.errors = errors
