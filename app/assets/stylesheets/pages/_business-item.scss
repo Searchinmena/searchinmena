@@ -173,13 +173,26 @@
 
   .company-logo-holder {
     @include float-direction;
-    height: auto;
     background: none;
+    width: 100%;
+    max-height: $bs9;
     padding: $bs-3;
+    height: auto;
+
+    @media screen and (min-width: $tablet) {
+      width: 2 * $bs8;
+      max-height: 2 * $bs8;
+    }
 
     .company-logo {
+      display: block;
       max-width: 100%;
+      max-height: 1.9 * $bs6;
       margin: 0 auto;
+
+      @media screen and (min-width: $tablet) {
+        max-height: 2 * $bs7;
+      }
     }
   }
 }
@@ -203,16 +216,24 @@
   width: 100%;
 
   @media screen and (min-width: $tablet) {
-    max-width: 3.5 * $bs9;
+    max-width: 4.3 * $bs8;
     padding: 0 $bs2;
   }
 
   @media screen and (min-width: $desktop) {
-    max-width: 5 * $bs9;
+    max-width: 5.1 * $bs9;
   }
 
   @media screen and (min-width: $standard-desktop) {
-    max-width: 7.3 * $bs9;
+    max-width: 6.5 * $bs9;
+  }
+  
+  @media screen and (min-width: $big-desktop) {
+    max-width: 7 * $bs9;
+  }
+
+  @media screen and (min-width: $huge-desktop) {
+    max-width: 8 * $bs9;
   }
 }
 
