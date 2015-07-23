@@ -1,5 +1,5 @@
 .item-summary{ tabindex: "0",
-  "dir-paginate": "businessItem in businessItems | itemsPerPage: 10",
+  "dir-paginate": "businessItem in businessItems | orderObjectBy: 'created_at' : true | itemsPerPage: 10",
   "total-items": "total", "current-page": "pagination.current" }
   .item-img-holder
     %img.item-img{ "ng-src": "{{ businessItem.get('thumb_url') }}" }

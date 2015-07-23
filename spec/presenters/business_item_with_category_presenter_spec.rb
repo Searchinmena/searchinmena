@@ -12,6 +12,6 @@ describe BusinessItemWithCategoryPresenter do
 
     subject { presenter.as_json.keys }
 
-    it { is_expected.to eq([:id, :name, :breadcrumbs, :thumb_url]) }
+    it { is_expected.to eq([:id, :name, :breadcrumbs, :thumb_url, :created_at]) }
   end
 end
