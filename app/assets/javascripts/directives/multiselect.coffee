@@ -2,7 +2,7 @@
 
 @Sim.directive 'multiselect', ->
   restrict: 'E'
-  templateUrl: 'multiselect.html'
+  templateUrl: 'components/multiselect.html'
   scope:
     model: '='
     options: '='

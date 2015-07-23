@@ -16,7 +16,7 @@
     )
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters')
 
-    paginationTemplateProvider.setPath('pagination.html')
+    paginationTemplateProvider.setPath('components/pagination.html')
 ])
 
 @Sim.run(['$rootScope', '$http', ($rootScope, $http) ->

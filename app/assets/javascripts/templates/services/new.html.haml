@@ -7,9 +7,9 @@
     %label.required {{ "services.new.name" | translate }}
     %input{ type: "text", "ng-model": "businessItem.name" }
 
-  .field{ "ng-include": "'_category.html'" }
+  .field{ "ng-include": "'business_items/_category.html'" }
 
-  .field{ "ng-include": "'_photos.html'" }
+  .field{ "ng-include": "'business_items/_photos.html'" }
 
 
   %h3.line-behind
@@ -23,7 +23,7 @@
     %label {{ "services.new.scope_of_work" | translate }}
     %textarea{ "ng-model": "businessItem.scope_of_work" }
 
-  .field.compound-field{ "ng-include": "'_attributes.html'" }
+  .field.compound-field{ "ng-include": "'business_items/_attributes.html'" }
 
   %form-field{ "error": "errors.business_item.description" }
     %label {{ "services.new.description" | translate }}
@@ -43,7 +43,7 @@
       "ng-model": "businessItem.average_completion_time_unit_id" }
         %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
-  %div{ "ng-include": "'_common_trade_info.html'" }
+  %div{ "ng-include": "'business_items/_common_trade_info.html'" }
 
 
   .actions
