@@ -1,11 +1,10 @@
 %section.company-view
   .company-header
     .company-logo-holder
-      = image_tag('logo-1.png', class: "company-logo")
+      = image_tag('logo-3.png', class: "company-logo")
     .company-short-info
-      %h2.company-name 
-        Sage Software Middle East Sage Software Middle East
-        Sage Software Middle EastSage Software Middle East
+      %h2.company-name
+        Sage Software Middle East
       .clearfix
         .contact-item
           %span.icon.icon-phone-alt
@@ -32,7 +31,9 @@
         %td 150
   .item-detailed-info
     %h4.section-title.line-behind
-      %span Trade Details
+      %span
+        %span.icon.icon-briefcase
+        Trade Details
     %table.item-details
       %tr
         %td.attribute Annual sales value:
@@ -65,15 +66,29 @@
         %td Others | Wire Transfer | PayPal | Credit Card | L/C | T/T
   .item-detailed-info
     %h4.section-title.line-behind
-      %span Certifications
+      %span
+        %span.icon.icon-certificate
+        Certifications
     .certificate
-      .cert-name INTEGRITY SHOPEX
-      .cert-origin issued by SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
       .cert-img
-        = image_tag("certification.jpg")
+        = image_tag("certificate-1.jpg")
+      .cert-name INTEGRITY SHOPEX
+      .cert-origin
+        %span issued by:
+        SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
+    .certificate
+      .cert-img
+        = image_tag("certificate-2.jpg")
+      .cert-name INTEGRITY SHOPEX
+      .cert-origin
+        %span issued by:
+        SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
+
   .item-detailed-info
     %h4.section-title.line-behind
-      %span Company Introduction
+      %span
+        %span.icon.icon-comment
+        Company Introduction
     %p.item-description
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -82,7 +97,9 @@
       cillum dolore eu fugiat nulla pariatur.
   .item-detailed-info
     %h4.section-title.line-behind
-      %span Company Gallery
+      %span
+        %span.icon.icon-picture
+        Company Gallery
     .company-gallery
       = image_tag("warehouse-1.jpg")
       = image_tag("warehouse-2.jpg")

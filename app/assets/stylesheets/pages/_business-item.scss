@@ -138,6 +138,12 @@
     span {
       top: -0.7rem;
     }
+
+    .icon {
+      top: -.15rem;
+      font-size: $bs2;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -243,5 +249,38 @@
     height: 120px;
     display: inline-block;
     margin: 0 $bs-3 0 0;
+  }
+}
+
+.certificate {
+  @extend %clearfix;
+  clear: both;
+  margin: 0 0 $bs2 0;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+.cert-img {
+  @include float-direction;
+  max-width: $bs9;
+  margin: 0 $bs0 0 0;
+
+  [dir="rtl"] & {
+    margin: 0 0 0 $bs0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.cert-origin {
+  font-size: $bs09;
+  margin: $bs0 0 0;
+
+  span {
+    color: $grey;
   }
 }
