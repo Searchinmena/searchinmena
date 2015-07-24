@@ -68,7 +68,7 @@ shared_examples "price" do
   it_behaves_like "positive number"
 
   context "greater than given precision and scale" do
-    let(:field) { 1234567891234567.89 }
+    let(:field) { "1234567891234567.89" }
 
     it { is_expected.to_not be_valid }
   end
