@@ -115,6 +115,12 @@
     [dir="rtl"] & {
       padding: $bs-3 0 $bs-3 $bs0;
     }
+
+    td {
+      word-wrap: break-word;
+      word-break: break-all;
+      table-layout: fixed;
+    }
   }
 
   .payment-term:after {
@@ -122,6 +128,12 @@
     padding: 0 $bs-5;
     font-size: $bs1;
     color: $grey;
+  }
+
+  .payment-term:last-of-type {
+    &:after {
+      content: "";
+    }
   }
 }
 .item-basic-info {
