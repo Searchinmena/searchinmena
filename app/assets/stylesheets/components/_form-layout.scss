@@ -274,6 +274,12 @@
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
+  50% {
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
   100% {
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
