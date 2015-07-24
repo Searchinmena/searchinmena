@@ -7,39 +7,39 @@
   .column
     %h4.subtitle Basic Info
     %table.item-details
-      %tr{ "ng-show": "product.model_number" }
+      %tr{ "ng-show": "businessItem.get('model_number')" }
         %td.attribute Model number:
         %td
-          {{ product.model_number }}
-      %tr{ "ng-show": "product.brand_name" }
+          {{ businessItem.get('model_number') }}
+      %tr{ "ng-show": "businessItem.get('brand_name')" }
         %td.attribute Brand name:
         %td
-          {{ product.brand_name }}
-      %tr{ "ng-show": "product.min_order_quantity_number" }
+          {{ businessItem.get('brand_name') }}
+      %tr{ "ng-show": "businessItem.get('min_order_quantity_number')" }
         %td.attribute Min order:
         %td
-          {{ product.min_order_quantity_number }}
-          {{ product.min_order_quantity_unit }}
-      %tr{ "ng-show": "product.fob_price" }
+          {{ businessItem.get('min_order_quantity_number') }}
+          {{ businessItem.get('min_order_quantity_unit') }}
+      %tr{ "ng-show": "businessItem.get('fob_price')" }
         %td.attribute Fob price:
         %td
-          {{ product.fob_price }}
-          {{ product.fob_price_currency }}
-          {{ product.fob_price_unit }}
-      %tr{ "ng-show": "product.supply_ability_capacity" }
+          {{ businessItem.get('fob_price') }}
+          {{ businessItem.get('fob_price_currency') }}
+          {{ businessItem.get('fob_price_unit') }}
+      %tr{ "ng-show": "businessItem.get('supply_ability_capacity')" }
         %td.attribute Supply ability:
         %td
-          {{ product.supply_ability_capacity }}
-          {{ product.supply_ability_unit }}
-          {{ product.supply_ability_frequency }}
+          {{ businessItem.get('supply_ability_capacity') }}
+          {{ businessItem.get('supply_ability_unit') }}
+          {{ businessItem.get('supply_ability_frequency') }}
       %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
         %td.attribute Payment Terms:
         %td
           %span.payment-term{ "ng-repeat": "paymentTerm in product.payment_terms" }
             {{ paymentTerm }}
-      %tr{ "ng-show": "product.packaging_details" }
+      %tr{ "ng-show": "businessItem.get('packaging_details')" }
         %td.attribute Packaging details:
-        %td {{ product.packaging_details }}
+        %td {{ businessItem.get('packaging_details') }}
 
   .column{ "ng-show": "businessItem.hasAttributes()" }
     %h4.subtitle Attributes
@@ -49,6 +49,6 @@
         %td {{ attribute["value"] }}
 
 .item-detailed-info
-  %h4.section-title.line-behind{ "ng-show": "product.description" }
+  %h4.section-title.line-behind{ "ng-show": "businessItem.get('description')" }
     %span Description
-  %p.item-description {{ product.description }}
+  %p.item-description {{ businessItem.get('description') }}

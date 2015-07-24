@@ -7,47 +7,47 @@
   .column
     %h4.subtitle Basic Info
     %table.item-details
-      %tr{ "ng-show": "service.place_of_origin" }
+      %tr{ "ng-show": "businessItem.get('place_of_origin')" }
         %td.attribute Place of origin:
         %td
-          {{ service.place_of_origin }}
-      %tr{ "ng-show": "service.average_completion_time" }
+          {{ businessItem.get('place_of_origin') }}
+      %tr{ "ng-show": "businessItem.get('average_completion_time')" }
         %td.attribute Avg completion time:
         %td
-          {{ service.average_completion_time }}
-          {{ service.average_completion_time_unit }}
-      %tr{ "ng-show": "service.fob_price" }
+          {{ businessItem.get('average_completion_time') }}
+          {{ businessItem.get('average_completion_time_unit') }}
+      %tr{ "ng-show": "businessItem.get('fob_price')" }
         %td.attribute Fob price:
         %td
-          {{ service.fob_price }}
-          {{ service.fob_price_currency }}
-          {{ service.fob_price_unit }}
-      %tr{ "ng-show": "service.supply_ability_capacity" }
+          {{ businessItem.get('fob_price') }}
+          {{ businessItem.get('fob_price_currency') }}
+          {{ businessItem.get('fob_price_unit') }}
+      %tr{ "ng-show": "businessItem.get('supply_ability_capacity')" }
         %td.attribute Supply ability:
         %td
-          {{ service.supply_ability_capacity }}
-          {{ service.supply_ability_unit }}
-          {{ service.supply_ability_frequency }}
+          {{ businessItem.get('supply_ability_capacity') }}
+          {{ businessItem.get('supply_ability_unit') }}
+          {{ businessItem.get('supply_ability_frequency') }}
       %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
         %td.attribute Payment Terms:
         %td
-          %span.payment-term{ "ng-repeat": "paymentTerm in service.payment_terms" }
+          %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
             {{ paymentTerm }}
-      %tr{ "ng-show": "service.packaging_details" }
+      %tr{ "ng-show": "businessItem.get('packaging_details')" }
         %td.attribute Packaging details:
-        %td {{ service.packaging_details }}
+        %td {{ businessItem.get('packaging_details') }}
 
   .column{ "ng-show": "businessItem.hasAttributes()" }
     %h4.subtitle Attributes
     %table.item-details
-      %tr{ "ng-repeat": "attribute in service.attributes" }
+      %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
         %td.attribute {{ attribute['name'] }}:
         %td {{ attribute['value'] }}
 
 .item-detailed-info
-  %h4.section-title.line-behind{ "ng-show": "service.scope_of_work" }
+  %h4.section-title.line-behind{ "ng-show": "businessItem.get('scope_of_work')" }
     %span Scope of work
-  %p.item-description {{ service.scope_of_work }}
-  %h4.section-title.line-behind{ "ng-show": "service.description" }
+  %p.item-description {{ businessItem.get('scope_of_work') }}
+  %h4.section-title.line-behind{ "ng-show": "businessItem.get('description')" }
     %span Description
-  %p.item-description {{ service.description }}
+  %p.item-description {{ businessItem.get('description') }}
