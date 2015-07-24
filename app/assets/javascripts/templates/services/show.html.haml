@@ -28,7 +28,7 @@
           {{ service.supply_ability_capacity }}
           {{ service.supply_ability_unit }}
           {{ service.supply_ability_frequency }}
-      %tr{ "ng-show": "service.payment_terms.length > 0" }
+      %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
         %td.attribute Payment Terms:
         %td
           %span.payment-term{ "ng-repeat": "paymentTerm in service.payment_terms" }
@@ -37,7 +37,7 @@
         %td.attribute Packaging details:
         %td {{ service.packaging_details }}
 
-  .column{ "ng-show": "service.attributes.length > 0" }
+  .column{ "ng-show": "businessItem.hasAttributes()" }
     %h4.subtitle Attributes
     %table.item-details
       %tr{ "ng-repeat": "attribute in service.attributes" }

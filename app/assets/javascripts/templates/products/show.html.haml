@@ -32,7 +32,7 @@
           {{ product.supply_ability_capacity }}
           {{ product.supply_ability_unit }}
           {{ product.supply_ability_frequency }}
-      %tr{ "ng-show": "product.payment_terms.length > 0" }
+      %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
         %td.attribute Payment Terms:
         %td
           %span.payment-term{ "ng-repeat": "paymentTerm in product.payment_terms" }
@@ -41,7 +41,7 @@
         %td.attribute Packaging details:
         %td {{ product.packaging_details }}
 
-  .column{ "ng-show": "product.attributes.length > 0" }
+  .column{ "ng-show": "businessItem.hasAttributes()" }
     %h4.subtitle Attributes
     %table.item-details
       %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }

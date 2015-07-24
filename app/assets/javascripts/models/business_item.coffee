@@ -13,3 +13,12 @@ class SIM.BusinessItem
 
   lastBreadcrumb: ->
     @breadcrumbs.current()
+
+  firstPhoto: ->
+    @get('photos')[0].url
+
+  hasPaymentTerms: ->
+    @get('payment_terms').length > 0
+
+  hasAttributes: ->
+    @get('attributes').length > 0
