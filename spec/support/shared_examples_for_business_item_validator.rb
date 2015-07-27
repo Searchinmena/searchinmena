@@ -56,17 +56,51 @@ shared_examples "BusinessItemValidator" do
     end
   end
 
+  let(:unit) { create(:unit) }
+  let(:frequency) { create(:frequency) }
+  let(:currency) { create(:currency) }
+
   describe "#supply_ability_capacity" do
     it_behaves_like "positive integer" do
       let(:business_item_params) do
-        valid_params.merge(supply_ability_capacity: field)
+        valid_params.merge(
+          supply_ability_capacity: field,
+          supply_ability_unit_id: unit.id,
+          supply_ability_frequency_id: frequency.id
+        )
+      end
+    end
+
+    context "supply_ability_capacity is present" do
+      let(:business_item_params) do
+        valid_params.merge(supply_ability_capacity: 7)
+      end
+
+      it "requires supply_ability_unit_id and supply_ability_frequency_id" do
+        is_expected.to be_invalid
       end
     end
   end
 
   describe "#fob_price" do
     it_behaves_like "price" do
-      let(:business_item_params) { valid_params.merge(fob_price: field) }
+      let(:business_item_params) do
+        valid_params.merge(
+          fob_price: field,
+          fob_price_currency_id: currency.id,
+          fob_price_unit_id: unit.id
+        )
+      end
+    end
+
+    context "fob_price is present" do
+      let(:business_item_params) do
+        valid_params.merge(fob_price: 7)
+      end
+
+      it "requires fob_price_currency_id and fob_price_unit_id" do
+        is_expected.to be_invalid
+      end
     end
   end
 end

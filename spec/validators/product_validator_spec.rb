@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe ProductValidator do
-  it_behaves_like "BusinessItemValidator" do
-    let(:valid_params) { build_params(build(:product)) }
-  end
-
   subject { described_class.new(business_item_params) }
 
   let(:business_item_params) { valid_params }
@@ -29,9 +25,24 @@ describe ProductValidator do
   end
 
   describe "#min_order_quantity_number" do
+    let(:unit) { create(:unit) }
+
     it_behaves_like "positive integer" do
       let(:business_item_params) do
-        valid_params.merge(min_order_quantity_number: field)
+        valid_params.merge(
+          min_order_quantity_number: field,
+          min_order_quantity_unit_id: unit.id
+        )
+      end
+    end
+
+    context "min_order_quantity_number is present" do
+      let(:business_item_params) do
+        valid_params.merge(min_order_quantity_number: 7)
+      end
+
+      it "requires min_order_quantity_unit_id" do
+        is_expected.to be_invalid
       end
     end
   end
