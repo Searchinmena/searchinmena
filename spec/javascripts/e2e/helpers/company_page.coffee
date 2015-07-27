@@ -8,7 +8,7 @@ class CompanyPage
     @businessTypesSelectLocator = By.id("select-toggle")
 
   get: ->
-    browser.get("/dashboard#/company")
+    browser.get("/#/dashboard/company/basic_info")
 
   nameField: ->
     element(@nameFieldLocator)
