@@ -22,3 +22,6 @@ class SIM.BusinessItem
 
   hasAttributes: ->
     @get('attributes').length > 0
+
+  hasAnyBasicInfoPresent: ->
+    @attributes.length > 0

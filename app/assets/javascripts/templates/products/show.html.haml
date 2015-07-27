@@ -5,7 +5,8 @@
     Contact Seller
 
   .column
-    %h4.subtitle Basic Info
+    %h4.subtitle{ "ng-show": "businessItem.hasAnyBasicInfoPresent()" }
+      Basic Info
     %table.item-details
       %tr{ "ng-show": "businessItem.get('model_number')" }
         %td.attribute Model number:
