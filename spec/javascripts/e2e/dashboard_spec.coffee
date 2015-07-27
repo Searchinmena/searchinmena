@@ -14,19 +14,19 @@ describe DashboardPage, ->
     it "hides products and services", ->
       loginHelper.loginAsBuyer()
       page.get()
-      expect(page.productsLink().isPresent()).toBe(false)
-      expect(page.servicesLink().isPresent()).toBe(false)
+      expect(page.productsLink().isDisplayed()).toBe(false)
+      expect(page.servicesLink().isDisplayed()).toBe(false)
 
   describe "seller user", ->
     it "shows products and services", ->
       loginHelper.loginAsSeller()
       page.get()
-      expect(page.productsLink().isPresent()).toBe(true)
-      expect(page.servicesLink().isPresent()).toBe(true)
+      expect(page.productsLink().isDisplayed()).toBe(true)
+      expect(page.servicesLink().isDisplayed()).toBe(true)
 
   describe "both user", ->
     it "shows products and services", ->
       loginHelper.loginAsBoth()
       page.get()
-      expect(page.productsLink().isPresent()).toBe(true)
-      expect(page.servicesLink().isPresent()).toBe(true)
+      expect(page.productsLink().isDisplayed()).toBe(true)
+      expect(page.servicesLink().isDisplayed()).toBe(true)

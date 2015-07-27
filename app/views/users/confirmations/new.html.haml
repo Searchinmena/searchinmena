@@ -1,7 +1,7 @@
 .container
   .form-container
     .form-header
-      %h1.form-title= t("confirmations.msg")
+      %h1.form-title= t("confirmations.text")
 
     = form_for(resource, as: resource_name,
       url: confirmation_path(resource_name),
@@ -10,4 +10,4 @@
         = f.label :email, t("devise.confirmations.email")
         = f.email_field :email, autofocus: true
       .actions
-        = f.submit t("confirmations.msg")
+        = f.submit t("confirmations.text")

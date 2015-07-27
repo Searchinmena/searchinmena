@@ -1,0 +1,33 @@
+%section.landing-header
+  .landing-header-info
+    %h1
+      {{ "home.header_line_1" | translate }}
+      %br
+      {{ "home.header_line_2" | translate }}
+    .landing-header-sub-info
+      %h2
+        {{ "home.sub_header" | translate }}
+      %a{ href: "https://goo.gl/VJhhcl",
+        target: "_blank", class: "video-link" }
+        %span.icon-play-circle
+        {{ "home.watch_video" | translate }}
+      %div{ "ng-show": "user" }
+        %a.browse-btn{ href: Sim::Routes.browse_path }
+          {{ "home.browse" | translate }}
+        %a.dashboard-btn{ href: Sim::Routes.dashboard_path }
+          {{ "home.see_dashboard" | translate }}
+      %div{ "ng-hide": "user" }
+        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
+          {{ "home.join_now" | translate }}
+%form.search-form.landing-search-form
+  %h2.title Search for product, service or company
+  .field.search-field
+    .select-field
+      %select
+        %option all
+        %option product
+        %option service
+        %option company
+    %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}" }
+    %input{ type: "submit", value: "{{ 'home.search_submit' | translate }}" }
+

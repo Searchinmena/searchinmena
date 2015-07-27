@@ -4,8 +4,33 @@
     "ok": "Ok",
     "cancel": "Cancel"
   },
+  "home": {
+    "header_line_1": "Join Search in MENA marketplace",
+    "header_line_2": "and start getting inquiries from buyers today.",
+    "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.",
+    "watch_video": "watch video",
+    "browse": "Browse",
+    "see_dashboard": "See dashboard",
+    "join_now": "Join now",
+    "search_placeholder": "I'm looking for...",
+    "search_submit": "Search"
+  },
+  "confirm_email_message": {
+    "text": "الرجاء تأكيد حسابك",
+    "or": "أو",
+    "link": "إعادة ارسال التعليمات اللازمة لتأكيد حسابك"
+  },
+  "dashboard_nav": {
+    "home": "الصفحة الرئيسية",
+    "company": "الشركة",
+    "products": "المنتجات",
+    "services": "الخدمات",
+    "messages": "الرسائل",
+    "settings": "اعدادات الحسات"
+  },
   "dashboard": {
-    "greeting": "مرحبا بك"
+    "greeting": "مرحبا بك",
+    "go_to": "Go to..."
   },
   "company": {
     "title": "ملف الشركة - اللغة العربية",

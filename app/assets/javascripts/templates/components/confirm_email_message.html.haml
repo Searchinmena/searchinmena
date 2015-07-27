@@ -1,0 +1,5 @@
+.alert.alert-warning.confirm-email
+  {{ "confirm_email_message.text" | translate }}
+  {{ "confirm_email_message.or" | translate }}
+  %a{ href: Sim::Routes.new_user_confirmation_path }
+    {{ "confirm_email_message.link" | translate }}

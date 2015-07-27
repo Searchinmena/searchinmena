@@ -3,7 +3,7 @@ module Users
     protected
 
     def after_sign_in_path_for(_resource)
-      dashboard_path
+      Sim::Routes.dashboard_path
     end
   end
 end

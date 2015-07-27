@@ -9,14 +9,6 @@ en:
     terms: "Terms of use"
     privacy: "Privacy Policy"
 
-  dashboard_nav:
-    home: "Home"
-    company: "Company"
-    products: "Products"
-    services: "Services"
-    messages: "Messages"
-    settings: "Account Settings"
-
   text:
     title: "What you get"
     description:
@@ -70,9 +62,7 @@ en:
       both: "both"
 
   confirmations:
-    or: "or"
-    msg: "Resend confirmation instructions"
-    msg2: "Please confirm your email"
+    text: "Resend confirmation instructions"
 
   mailer:
     hello_msg: "Hello!"

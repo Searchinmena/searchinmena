@@ -17,11 +17,9 @@ Rails.application.routes.draw do
   end
 
   get "/home" => "pages#home", as: :home
-  get "/browse" => "pages#browse", as: :browse
-  get "/results" => "pages#results", as: :results
-  get "/product" => "pages#product", as: :product
 
-  resource :dashboard, controller: :dashboard
+  # TODO: remove it after finishing browsing feature
+  get "/product" => "pages#product", as: :product
 
   root to: "pages#home"
 
@@ -34,6 +32,8 @@ Rails.application.routes.draw do
   resources :business_types, only: [:index]
 
   resource :company, only: [:create]
+  resource :user
+
   resources :products, only: [:create, :index, :show, :destroy]
   resources :services, only: [:create, :index, :show, :destroy]
   resources :product_photos, only: [:create]
