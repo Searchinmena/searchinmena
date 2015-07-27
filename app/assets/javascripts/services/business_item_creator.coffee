@@ -43,7 +43,7 @@
         PhotosUploader.upload(photos_path, photos, itemId,
           ->
             TranslatedFlash.success("#{resourceName}.successfully_added")
-            $state.go(resourceName)
+            $state.go("dashboard.#{resourceName}")
           , (errors) ->
             scope.loading = false
             scope.errors.photos = errors
