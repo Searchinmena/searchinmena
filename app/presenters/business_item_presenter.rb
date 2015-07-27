@@ -17,7 +17,7 @@ class BusinessItemPresenter < BasePresenter
       id: business_item.id,
       name: business_item.name,
       description: business_item.description,
-      fob_price: formatted_price(business_item.fob_price),
+      fob_price: business_item.fob_price,
       fob_price_currency: fob_price_currency,
       fob_price_unit: fob_price_unit,
       port: business_item.port,

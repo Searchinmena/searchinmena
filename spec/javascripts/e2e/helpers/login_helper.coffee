@@ -1,6 +1,6 @@
 module.exports =
   login: (email) ->
-    browser.get('/users/sign_in')
+    browser.get("/users/sign_in")
 
     emailField = element(By.id("user_email"))
     passwordField = element(By.id("user_password"))

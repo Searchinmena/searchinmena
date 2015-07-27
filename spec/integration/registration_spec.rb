@@ -75,7 +75,7 @@ describe Registration::Creator do
       end
 
       context "user params invalid" do
-        let(:user_params) { valid_user_params.merge(email: '') }
+        let(:user_params) { valid_user_params.merge(email: "") }
 
         context "business params valid" do
           let(:business_params) { valid_business_params }

@@ -1,7 +1,6 @@
 class SIM.BusinessItem
   constructor: (attributes) ->
     @attributes = attributes
-    @payment_terms = {}
     @breadcrumbs = new SIM.Breadcrumbs()
     for categoryAttributes in attributes.breadcrumbs
       @breadcrumbs.push(new SIM.Category(categoryAttributes))
@@ -14,3 +13,12 @@ class SIM.BusinessItem
 
   lastBreadcrumb: ->
     @breadcrumbs.current()
+
+  firstPhoto: ->
+    @get('photos')[0].url
+
+  hasPaymentTerms: ->
+    @get('payment_terms').length > 0
+
+  hasAttributes: ->
+    @get('attributes').length > 0

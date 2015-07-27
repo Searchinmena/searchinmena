@@ -12,6 +12,8 @@ describe BusinessItemWithCategoryPresenter do
 
     subject { presenter.as_json.keys }
 
-    it { is_expected.to eq([:id, :name, :breadcrumbs, :thumb_url]) }
+    it "should include necessary keys" do
+      is_expected.to eq([:id, :name, :breadcrumbs, :thumb_url, :created_at])
+    end
   end
 end

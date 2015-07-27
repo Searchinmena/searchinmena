@@ -1,4 +1,4 @@
-%div{"ng-class": "{open: open}"}
+%div.wrapper{"ng-class": "{open: open}"}
   %a#select-toggle.select-field{"ng-bind": "displayButtonText()", "ng-click": "toggleSelect()"}
   %ul.dropdown-menu{"ng-show": "isDropdownVisible", "off-click": "hideDropdown()", "off-click-filter": "'#select-toggle'"}
     %li

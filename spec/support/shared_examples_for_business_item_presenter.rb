@@ -59,7 +59,7 @@ shared_examples "BusinessItemPresenter" do
       expect(AttributePresenter).to receive(:new).and_return("attribute")
       expect(PaymentTermPresenter).to receive(:new).and_return("payment_term")
 
-      business_item.fob_price = 1 / 3.0
+      business_item.fob_price = 0.33
       business_item.fob_price_currency = currency
       business_item.fob_price_unit = unit
       business_item.supply_ability_unit = unit
@@ -71,7 +71,7 @@ shared_examples "BusinessItemPresenter" do
     it { expect(subject[:attributes]).to eq(["attribute"]) }
     it { expect(subject[:photos]).to eq(["photo"]) }
     it { expect(subject[:payment_terms]).to eq(["payment_term"]) }
-    it { expect(subject[:fob_price]).to eq("0.33") }
+    it { expect(subject[:fob_price]).to eq(0.33) }
     it { expect(subject[:fob_price_currency]).to eq("USD") }
     it { expect(subject[:fob_price_unit]).to eq("Box/Boxes") }
     it { expect(subject[:supply_ability_unit]).to eq("Box/Boxes") }

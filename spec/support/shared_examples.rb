@@ -21,7 +21,7 @@ shared_context "photo validation" do |model_name, field_name|
     it { is_expected.to be_valid }
 
     context "file has invalid extension" do
-      let(:content_type) { 'audio/x-aac' }
+      let(:content_type) { "audio/x-aac" }
 
       it { is_expected.not_to be_valid }
     end
@@ -68,7 +68,7 @@ shared_examples "price" do
   it_behaves_like "positive number"
 
   context "greater than given precision and scale" do
-    let(:field) { '1234567.89' }
+    let(:field) { 123_456_789_123_456_7.89 }
 
     it { is_expected.to_not be_valid }
   end

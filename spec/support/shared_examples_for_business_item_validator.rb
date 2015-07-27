@@ -8,7 +8,7 @@ shared_examples "BusinessItemValidator" do
   describe "presence validation" do
     [:name, :category_id].each do |field|
       let(:business_item_params) do
-        valid_params.merge(field => '')
+        valid_params.merge(field => "")
       end
 
       it "requires #{field} to be present" do

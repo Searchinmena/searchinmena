@@ -36,9 +36,9 @@ shared_examples "BusinessItemsController" do |resource_name|
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do
         {
-          resource_name => business_item_params,
-          :breadcrumbs => breadcrumbs_params,
-          :payment_terms => payment_terms_params
+          "#{resource_name}": business_item_params,
+          breadcrumbs: breadcrumbs_params,
+          payment_terms: payment_terms_params
         }
       end
 

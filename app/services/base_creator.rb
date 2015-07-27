@@ -1,4 +1,4 @@
-class Registration::BaseCreator < BaseService
+class BaseCreator < BaseService
   attr_accessor :validator, :storing_handler
 
   delegate :valid?, to: :validator

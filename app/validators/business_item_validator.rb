@@ -19,6 +19,7 @@ class BusinessItemValidator < BaseValidator
             numericality: { greater_than: 0, only_integer: true,
                             allow_nil: true }
   validates :fob_price,
-            numericality: { greater_than: 0, allow_nil: true },
-            format: { with: /#{A9n.validations[:price_format]}/ }
+            numericality: { greater_than: 0 },
+            format: { with: /#{A9n.validations[:price_format]}/ },
+            allow_nil: true
 end

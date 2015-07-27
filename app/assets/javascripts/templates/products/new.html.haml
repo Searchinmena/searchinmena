@@ -2,7 +2,7 @@
 %form{ "ng-submit": "submit($event)" }
   %h3.line-behind
     %span {{ "products.new.basic_section" | translate }}
-  
+
   %form-field{ "error": "errors.business_item.name" }
     %label.required
       {{ "products.new.name" | translate }}
@@ -38,7 +38,7 @@
     %label {{ "products.new.order" | translate }}
     %p.field-comment {{ "products.new.order_comment" | translate }}
     %form-field{ "error": "errors.business_item.min_order_quantity_number", class: 'inline-field' }
-      %input{ type: "number", "ng-model": "businessItem.min_order_quantity_number" }
+      %input{ type: "number", min: "0", "ng-model": "businessItem.min_order_quantity_number" }
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",
       "ng-model": "businessItem.min_order_quantity_unit_id" }

@@ -13,6 +13,11 @@ class UserRepository < AbstractRepository
     new(user_params)
   end
 
+  def update_category(user, category)
+    user.category = category
+    user.save
+  end
+
   private
 
   def generate_password

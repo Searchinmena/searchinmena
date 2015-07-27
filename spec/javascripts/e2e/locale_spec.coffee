@@ -1,5 +1,5 @@
-helper = require('./helpers/locale_helper.coffee')
-loginHelper = require('./helpers/login_helper.coffee')
+helper = require("./helpers/locale_helper.coffee")
+loginHelper = require("./helpers/login_helper.coffee")
 
 describe "Locale switching", ->
   it "it switches language and dir", ->

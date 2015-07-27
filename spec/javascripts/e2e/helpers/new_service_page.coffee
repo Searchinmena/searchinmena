@@ -1,4 +1,4 @@
-NewBusinessItemPage = require('./new_business_item_page.coffee')
+NewBusinessItemPage = require("./new_business_item_page.coffee")
 
 class NewServicePage extends NewBusinessItemPage
   get: ->

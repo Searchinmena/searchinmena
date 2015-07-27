@@ -1,4 +1,4 @@
-module.exports = 
+module.exports =
   unhide: (element) ->
     # https://code.google.com/p/selenium/wiki/FrequentlyAskedQuestions#Q%3a_Does_WebDriver_support_file_uploads?
     browser.executeScript(
