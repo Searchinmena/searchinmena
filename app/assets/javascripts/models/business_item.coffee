@@ -1,7 +1,7 @@
 class SIM.BusinessItem
   BASIC_INFO = [
     'model_number', 'brand_name', 'min_order_quantity_number',
-    'fob_price', 'supply_ability_capacity', 'payment_terms']
+    'fob_price', 'supply_ability_capacity', 'payment_terms', 'packaging_details']
 
   constructor: (attributes) ->
     @attributes = attributes
