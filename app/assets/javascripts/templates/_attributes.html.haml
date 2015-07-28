@@ -2,16 +2,18 @@
 
 %ul
   %li.field-item{ "ng-repeat": "attribute in attributes" }
-    %span {{ "attributes.attribute" | translate }}
-    %input{ type: "text",
-      placeholder: '{{ "attributes.attribute_placeholder" | translate }}',
-      "ng-model": "attribute.name" }
-    %span {{ "attributes.value" | translate }}
-    %input.with-remove-button{ type: "text",
-      placeholder: '{{ "attributes.value_placeholder" | translate }}',
-      "ng-model": "attribute.value" }
-      %button.remove-button.remove-attribute{ type: "button", "ng-click": "removeAttribute(attribute)" }
-        %span.icon-remove
+    .inline-field
+      %span {{ "attributes.attribute" | translate }}
+      %input{ type: "text",
+        placeholder: '{{ "attributes.attribute_placeholder" | translate }}',
+        "ng-model": "attribute.name" }
+    .inline-field
+      %span {{ "attributes.value" | translate }}
+      %input.with-remove-button{ type: "text",
+        placeholder: '{{ "attributes.value_placeholder" | translate }}',
+        "ng-model": "attribute.value" }
+    %button.remove-button.remove-attribute{ type: "button", "ng-click": "removeAttribute(attribute)" }
+      %span.icon-remove
 
 %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
   %span.icon-plus
