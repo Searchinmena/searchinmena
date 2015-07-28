@@ -3,7 +3,7 @@
     initialize: (businessItemFactory, scope) ->
       scope.businessItems = []
       scope.total = 0
-      scope.perPage = 10
+      scope.perPage = Config.itemsPerPage
       scope.pagination = {
         current: 1
       }
