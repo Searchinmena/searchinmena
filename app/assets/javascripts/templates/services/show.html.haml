@@ -5,7 +5,7 @@
       %span.icon.icon-envelope
       Contact Seller
 
-    .column
+    .column{ "ng-show": "businessItem.hasAnyBasicInfoPresent()" }
       %h4.subtitle Basic Info
       %table.item-details
         %tr{ "ng-show": "businessItem.get('place_of_origin')" }
