@@ -18,6 +18,7 @@ shared_examples "BusinessItemPresenter" do
       :breadcrumbs,
       :attributes,
       :photos,
+      :cover_photo,
       :payment_terms
     ]
   end

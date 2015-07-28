@@ -11,7 +11,6 @@
       %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
         %span.icon-remove
 
-
   %error-message-for{ "error": "errors.photos_general" }
   .error{ "ng-repeat": "(fileName, errors) in errors.photos" }
     {{fileName}}:
