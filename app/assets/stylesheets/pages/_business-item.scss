@@ -83,7 +83,9 @@
   }
   
   .product-main-image {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 
   .gallery-thumbs {
@@ -111,16 +113,18 @@
   .attribute {
     color: $grey;
     padding: $bs-3 $bs0 $bs-3 0;
+    word-wrap: normal;
+    word-break: normal;
 
     [dir="rtl"] & {
       padding: $bs-3 0 $bs-3 $bs0;
     }
+  }
 
-    td {
-      word-wrap: break-word;
-      word-break: break-all;
-      table-layout: fixed;
-    }
+  td {
+    word-wrap: break-word;
+    word-break: break-all;
+    table-layout: fixed;
   }
 
   .payment-term:after {

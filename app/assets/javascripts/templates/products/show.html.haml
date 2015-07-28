@@ -4,7 +4,7 @@
     %span.icon.icon-envelope
     Contact Seller
 
-  .column
+  .column{ "ng-show": "businessItem.hasAnyBasicInfoPresent()" }
     %h4.subtitle Basic Info
     %table.item-details
       %tr{ "ng-show": "businessItem.get('model_number')" }
@@ -35,7 +35,7 @@
       %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
         %td.attribute Payment Terms:
         %td
-          %span.payment-term{ "ng-repeat": "paymentTerm in product.payment_terms" }
+          %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
             {{ paymentTerm }}
       %tr{ "ng-show": "businessItem.get('packaging_details')" }
         %td.attribute Packaging details:
