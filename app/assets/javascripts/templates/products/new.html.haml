@@ -43,6 +43,7 @@
       %select{ "ng-options": "unit.id as unit.label for unit in units",
       "ng-model": "businessItem.min_order_quantity_unit_id" }
         %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
+      %error-message-for{ "error": "errors.business_item.min_order_quantity_unit_id" }
 
   %div{ "ng-include": "'_common_trade_info.html'" }
 
