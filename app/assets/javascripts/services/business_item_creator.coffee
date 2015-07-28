@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'PhotosUploader',
+  '$modal', 'TranslatedFlash', 'PhotosUploader', 'PhotosValidator',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    PhotosUploader) ->
+    PhotosUploader, PhotosValidator) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -54,7 +54,13 @@
         TranslatedFlash.error("#{resourceName}.adding_failed")
         scope.loading = false
 
-      scope.saveAndUploadPhotos = (photos) ->
+      scope.saveAndUploadPhotos = ->
+        photos = scope.businessItem.photos
+
+        unless PhotosValidator.validate(scope, photos)
+          TranslatedFlash.error("products.adding_failed")
+          return
+
         scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
         )
@@ -68,17 +74,11 @@
             scope.showFlashError()
         )
 
-      scope.$on("photos_response", (event, photos) ->
-        scope.saveAndUploadPhotos(photos)
-      )
-
       scope.submit = (e) ->
         e.preventDefault()
         scope.loading = true
         scope.errors = {}
-
-        # request photos from PhotosCtrl
-        $rootScope.$broadcast("photos_request")
+        scope.saveAndUploadPhotos()
 
         false
 ]
