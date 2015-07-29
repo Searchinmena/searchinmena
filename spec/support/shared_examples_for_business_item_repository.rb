@@ -18,7 +18,6 @@ shared_examples "BusinessItemRepository" do
 
       it { is_expected.to eq("/assets/default-image.png") }
 
-
       context "thumb" do
         let(:type) { :thumb }
 

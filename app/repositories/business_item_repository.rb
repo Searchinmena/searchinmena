@@ -17,7 +17,7 @@ module BusinessItemRepository
   private
 
   def default_image_for(type)
-    image = type ? "default-image-#{type.to_s}.png" : "default-image.png"
+    image = type ? "default-image-#{type}.png" : "default-image.png"
     ActionController::Base.helpers.asset_path(image)
   end
 end
