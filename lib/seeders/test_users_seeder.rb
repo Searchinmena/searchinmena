@@ -13,9 +13,14 @@ class TestUsersSeeder
     require './spec/support/factories'
 
     TEST_USERS.each do |type, email|
-      unless User.where(email: email).count > 0
-        FactoryGirl.create(type, email: email, password: TEST_PASSWORD)
-      end
+      next if User.where(email: email).count > 0
+
+      FactoryGirl.create(
+        type,
+        email: email,
+        password: TEST_PASSWORD,
+        password_confirmation: TEST_PASSWORD
+      )
     end
   end
 end
