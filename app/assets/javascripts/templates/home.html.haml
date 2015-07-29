@@ -4,6 +4,7 @@
       {{ "home.header_line_1" | translate }}
       %br
       {{ "home.header_line_2" | translate }}
+
     .landing-header-sub-info
       %h2
         {{ "home.sub_header" | translate }}
@@ -19,6 +20,7 @@
       %div{ "ng-hide": "user" }
         %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
           {{ "home.join_now" | translate }}
+
 %form.search-form.landing-search-form
   %h2.title Search for product, service or company
   .field.search-field
@@ -30,4 +32,3 @@
         %option company
     %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}" }
     %input{ type: "submit", value: "{{ 'home.search_submit' | translate }}" }
-

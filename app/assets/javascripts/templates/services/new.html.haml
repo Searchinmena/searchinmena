@@ -11,7 +11,6 @@
 
   .field{ "ng-include": "'business_items/_photos.html'" }
 
-
   %h3.line-behind
     %span {{ "services.new.details_section" | translate }}
 
@@ -29,7 +28,6 @@
     %label {{ "services.new.description" | translate }}
     %textarea{ "ng-model": "businessItem.description" }
 
-
   %h3.line-behind
     %span {{ "trade_info.title" | translate }}
 
@@ -44,7 +42,6 @@
         %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
   %div{ "ng-include": "'business_items/_common_trade_info.html'" }
-
 
   .actions.with-spinner
     %input{ type: "submit", value: '{{ "services.new.submit" | translate }}',
