@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'PhotosUploader', 'PhotosValidator',
+  '$modal', 'TranslatedFlash', 'PhotosUploader', 'Upload', 'PhotosValidator',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    PhotosUploader, PhotosValidator) ->
+    PhotosUploader, Upload, PhotosValidator) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -69,13 +69,13 @@
           attribute.isPresent()
         )
 
-        scope.businessItem.$save(
-          (data) ->
-            scope.saveSucceededCallback(data, photos)
-          , (response) ->
-            scope.loading = false
-            scope.errors = response["data"]
-            scope.showFlashError()
+        console.log(photos)
+
+        Upload.upload(
+          url: "/#{resourceName}",
+          fields: {business_item: scope.businessItem},
+          file: photos,
+          fileFormDataName: ["file1", "file2"]
         )
 
       scope.submit = (e) ->
