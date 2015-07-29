@@ -7,10 +7,17 @@ module BusinessItemRepository
       .where("business_id = ?", user.business.id)
   end
 
-  def photo_url_for(product, type = nil)
-    photo = product.photos.first
-    return unless photo
+  def photo_url_for(business_item, type = nil)
+    photo = business_item.photos.first
+    return default_image_for(type) unless photo
 
     photo.photo_url(type)
+  end
+
+  private
+
+  def default_image_for(type)
+    image = type ? "default-image-#{type.to_s}.png" : "default-image.png"
+    ActionController::Base.helpers.asset_path(image)
   end
 end

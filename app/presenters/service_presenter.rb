@@ -18,8 +18,4 @@ class ServicePresenter < BusinessItemPresenter
   def attributes_collection
     business_item.service_attributes
   end
-
-  def cover_photo
-    super || ActionController::Base.helpers.asset_path("default-service.png")
-  end
 end

@@ -18,8 +18,4 @@ class ProductPresenter < BusinessItemPresenter
   def attributes_collection
     business_item.product_attributes
   end
-
-  def cover_photo
-    super || ActionController::Base.helpers.asset_path("default-product.png")
-  end
 end

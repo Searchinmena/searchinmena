@@ -11,6 +11,8 @@ describe ServicePresenter do
       item
     end
 
+    let(:repository) { ServiceRepository.new }
+
     let(:additional_keys) do
       [
         :place_of_origin,

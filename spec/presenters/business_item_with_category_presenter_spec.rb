@@ -7,7 +7,7 @@ describe BusinessItemWithCategoryPresenter do
     let(:locale) { "en" }
     let(:presenter) do
       BusinessItemWithCategoryPresenter.new(product, product_repository,
-                                              locale)
+                                            locale)
     end
 
     subject { presenter.as_json.keys }
