@@ -75,7 +75,7 @@ en:
     msg2: "Please confirm your email"
 
   mailer:
-    hello_msg: "Hello!"
+    hello_msg: "Hello"
 
   footer:
     about_us: "About Us"

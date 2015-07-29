@@ -74,7 +74,7 @@ ar:
     msg2: "الرجاء تأكيد حسابك"
 
   mailer:
-    hello_msg: "مرحبا!"
+    hello_msg: "مرحبا"
 
   footer:
     about_us: "About Us"
