@@ -1,6 +1,6 @@
 @Sim.controller 'RegistrationsCtrl', ['$scope', '$http', '$translate',
-'selectsLoader',
-  ($scope, $http, $translate, selectsLoader) ->
+'selectsLoader', 'DASHBOARD_PATH', 'TAGS_PATH'
+  ($scope, $http, $translate, selectsLoader, DASHBOARD_PATH, TAGS_PATH) ->
     config = {
       countries: '/countries',
       business_types: '/business_types'
@@ -29,7 +29,7 @@
       provider == 'facebook'
 
     $scope.loadTags = (query) ->
-      $http.get(window.Sim.TAGS_PATH, params: { query: query })
+      $http.get(TAGS_PATH, params: { query: query })
 
     $scope.submit = (e) ->
       e.preventDefault()
@@ -39,7 +39,7 @@
         data: $scope.form,
         method: 'POST'
       ).success(->
-        window.location = window.Sim.DASHBOARD_PATH
+        window.location = DASHBOARD_PATH
       ).error((errors) ->
         $scope.errors = errors
       )

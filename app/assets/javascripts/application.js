@@ -31,5 +31,6 @@
 //= require sim
 //= require router
 //= require config
+//= require constants
 //= require_tree ./services
 //= require_tree .
