@@ -2,7 +2,7 @@ module Users
   class ConfirmationsController < Devise::ConfirmationsController
     def create
       super do
-        flash[:error] = full_error_message_for(resource)
+        flash.now[:error] = full_error_message_for(resource)
       end
     end
 
