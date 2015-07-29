@@ -9,6 +9,12 @@ class User < ActiveRecord::Base
 
   has_one :business, dependent: :delete
 
+  # hate doing this, but it's needed for users/passwords controller -
+  # devise standard update action and I think that
+  # implementing custom action would be too much overkill
+  # #developerplakaljakkomitowal
+  include PasswordValidations
+
   def self.category_name(type)
     I18n.t("user.types.#{type}")
   end

@@ -1,4 +1,6 @@
 ar:
+  attributes:
+    password_confirmation: "Password confirmation"
   errors:
     messages:
       blank: "لا يمكن أن يكون فارغا"
@@ -11,3 +13,4 @@ ar:
       invalid_content_type: "Only following file types allowed: %{types}"
       not_an_integer: "number is too big"
       greater_than: "must be greater than 0"
+      confirmation: "does not match"

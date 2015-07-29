@@ -5,5 +5,11 @@ module Users
         flash.now[:error] = full_error_message_for(resource)
       end
     end
+
+    def update
+      super do
+        flash.now[:error] = full_error_message_for(resource)
+      end
+    end
   end
 end
