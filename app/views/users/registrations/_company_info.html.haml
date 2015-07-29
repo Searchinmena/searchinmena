@@ -26,7 +26,7 @@
 
     %tags-input{ "ng-model": "form.business.tags", "display-property": "label",
       "replace-spaces-with-dashes": "false" }
-      %auto-complete{ source: "loadTags($query)",
+      %auto-complete{ source: "loadTags($query)", "key-property": "id", "display-property": "label"
         "select-first-match": "false" }
     %p.field-comment
       {{ "company.basic_info.tag_comment_1" | translate }}
