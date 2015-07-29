@@ -18,7 +18,7 @@ class UserValidator < BaseValidator
   validate :uniqueness
 
   def uniqueness
-    existing_count = User.where(email: email)
+    existing_count = User.where("LOWER(email) = LOWER(?)", email)
       .where.not(id: id).count
 
     if existing_count > 0
