@@ -47,6 +47,6 @@ class UserBusinessesController < ApplicationController
   end
 
   def tags_params
-    params.permit(:tags).permit(:id, :label) || {}
+    params.permit(tags: [:id, :label])[:tags] || {}
   end
 end
