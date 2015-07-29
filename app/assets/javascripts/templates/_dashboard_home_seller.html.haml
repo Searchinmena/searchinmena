@@ -9,7 +9,7 @@
 %section.dashboard-content
   %h2.header-title 
     Your Products
-    %a.header-link{ href: "#" }
+    %a.header-link{ "ui-sref": "products", "ui-sref-active": "active" }
       %span.icon.icon-eye-open
       See all
   .index-options
@@ -19,7 +19,67 @@
 
   .item-summary
     .item-img-holder
+      = image_tag("vase-5.jpg", class: "item-img")
+    .item-info
+      %h3.item-title Item Name
+      .breadcrumbs
+        %span in
+        %span.breadcrumbs_item Agliculture
+        %span.icon-chevron-right
+        %span.breadcrumbs_item Kapusta
+    .item-options
+      %a.edit{ href: "#" }
+        %span.icon.icon-pencil
+        {{ "business_items.edit" | translate }}
+      %a.see-page{ "ui-sref": "{{ showUrl(businessItem) }}" }
+        %span.icon.icon-eye-open
+        {{ "business_items.see" | translate }}
+      %a.delete{ "ng-click-with-confirm": "deleteClicked(businessItem)" }
+        %span.icon.icon-remove
+        {{ "business_items.remove" | translate }}
+  .item-summary
+    .item-img-holder
       = image_tag("vase-1.jpeg", class: "item-img")
+    .item-info
+      %h3.item-title Item Name
+      .breadcrumbs
+        %span in
+        %span.breadcrumbs_item Agliculture
+        %span.icon-chevron-right
+        %span.breadcrumbs_item Kapusta
+    .item-options
+      %a.edit{ href: "#" }
+        %span.icon.icon-pencil
+        {{ "business_items.edit" | translate }}
+      %a.see-page{ "ui-sref": "{{ showUrl(businessItem) }}" }
+        %span.icon.icon-eye-open
+        {{ "business_items.see" | translate }}
+      %a.delete{ "ng-click-with-confirm": "deleteClicked(businessItem)" }
+        %span.icon.icon-remove
+        {{ "business_items.remove" | translate }}
+  .item-summary
+    .item-img-holder
+      = image_tag("vase-3.jpg", class: "item-img")
+    .item-info
+      %h3.item-title Item Name
+      .breadcrumbs
+        %span in
+        %span.breadcrumbs_item Agliculture
+        %span.icon-chevron-right
+        %span.breadcrumbs_item Kapusta
+    .item-options
+      %a.edit{ href: "#" }
+        %span.icon.icon-pencil
+        {{ "business_items.edit" | translate }}
+      %a.see-page{ "ui-sref": "{{ showUrl(businessItem) }}" }
+        %span.icon.icon-eye-open
+        {{ "business_items.see" | translate }}
+      %a.delete{ "ng-click-with-confirm": "deleteClicked(businessItem)" }
+        %span.icon.icon-remove
+        {{ "business_items.remove" | translate }}
+  .item-summary
+    .item-img-holder
+      = image_tag("vase-2.jpeg", class: "item-img")
     .item-info
       %h3.item-title Item Name
       .breadcrumbs
@@ -60,7 +120,7 @@
 %section.dashboard-content
   %h2.header-title
     Your Services
-    %a.header-link{ href: "#" }
+    %a.header-link{ "ui-sref": "services", "ui-sref-active": "active" }
       %span.icon.icon-eye-open
       See all
   .index-options
