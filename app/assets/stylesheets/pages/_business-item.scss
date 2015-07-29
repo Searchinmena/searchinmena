@@ -188,11 +188,6 @@
   padding: $bs2;
   border-bottom: $default-border;
 
-  .company-name {
-    font-weight: normal;
-    margin: 0 0 $bs0;
-  }
-
   .company-logo-holder {
     @include float-direction;
     background: none;
@@ -256,6 +251,21 @@
 
   @media screen and (min-width: $huge-desktop) {
     max-width: 8 * $bs9;
+  }
+
+  .company-name {
+    font-weight: normal;
+    margin: 0 0 $bs0;
+  }
+
+
+  &.company-profile-summary {
+    @extend %dashboard-content-padding;
+    padding-bottom: $bs2;
+
+    .company-name {
+      margin-top: 0;
+    }
   }
 }
 

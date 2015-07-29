@@ -31,6 +31,7 @@
 
 .dashboard-content {
   @extend %four-sides-border;
+  @extend %clearfix;
   background-color: white;
   margin: $bs1 $bs-1;
   @media screen and (min-width: $medium-desktop) { 

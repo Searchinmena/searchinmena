@@ -1,7 +1,15 @@
 %section.dashboard-content
   %h2.header-title Company Profile Summary
-  .company-profile-summary
-    %h3 Your Company
+  .company-short-info.company-profile-summary
+    %h2.company-name
+      Sage Software Middle East
+    .clearfix
+      .contact-item
+        %span.icon.icon-phone-alt
+        696583445
+      .contact-item
+        %span.icon.icon-pushpin
+        Wellington, New Zeland
 
     %button.small-button
       %span.icon-pencil
@@ -9,7 +17,7 @@
 %section.dashboard-content
   %h2.header-title 
     Your Products
-    %a.header-link{ "ui-sref": "products", "ui-sref-active": "active" }
+    %a.header-link{ href: "#" }
       %span.icon.icon-eye-open
       See all
   .index-options
@@ -120,7 +128,7 @@
 %section.dashboard-content
   %h2.header-title
     Your Services
-    %a.header-link{ "ui-sref": "services", "ui-sref-active": "active" }
+    %a.header-link{ href: "#" }
       %span.icon.icon-eye-open
       See all
   .index-options
