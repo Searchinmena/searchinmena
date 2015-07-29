@@ -69,13 +69,15 @@
           attribute.isPresent()
         )
 
-        console.log(photos)
-
         Upload.upload(
           url: "/#{resourceName}",
           fields: {business_item: scope.businessItem},
           file: photos,
           fileFormDataName: ["file1", "file2"]
+        ).error(
+          (data, status, headers, config) ->
+            scope.errors = data
+            TranslatedFlash.error("#{resourceName}.adding_failed")
         )
 
       scope.submit = (e) ->
