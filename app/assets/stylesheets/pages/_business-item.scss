@@ -83,7 +83,9 @@
   }
   
   .product-main-image {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
   }
 
   .gallery-thumbs {
@@ -111,16 +113,18 @@
   .attribute {
     color: $grey;
     padding: $bs-3 $bs0 $bs-3 0;
+    word-wrap: normal;
+    word-break: normal;
 
     [dir="rtl"] & {
       padding: $bs-3 0 $bs-3 $bs0;
     }
+  }
 
-    td {
-      word-wrap: break-word;
-      word-break: break-all;
-      table-layout: fixed;
-    }
+  td {
+    word-wrap: break-word;
+    word-break: break-all;
+    table-layout: fixed;
   }
 
   .payment-term:after {
@@ -183,11 +187,6 @@
   @extend %clearfix;
   padding: $bs2;
   border-bottom: $default-border;
-
-  .company-name {
-    font-weight: normal;
-    margin: 0 0 $bs0;
-  }
 
   .company-logo-holder {
     @include float-direction;
@@ -252,6 +251,21 @@
 
   @media screen and (min-width: $huge-desktop) {
     max-width: 8 * $bs9;
+  }
+
+  .company-name {
+    font-weight: normal;
+    margin: 0 0 $bs0;
+  }
+
+
+  &.company-profile-summary {
+    @extend %dashboard-content-padding;
+    padding-bottom: $bs2;
+
+    .company-name {
+      margin-top: 0;
+    }
   }
 }
 

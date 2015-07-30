@@ -1,6 +1,7 @@
 class ProductValidator < BusinessItemValidator
   def self.fields
-    super + [:model_number, :brand_name, :min_order_quantity_number]
+    super + [:model_number, :brand_name, :min_order_quantity_number,
+             :min_order_quantity_unit_id]
   end
 
   attr_accessor(*fields)
@@ -10,4 +11,8 @@ class ProductValidator < BusinessItemValidator
   validates :min_order_quantity_number,
             numericality: { greater_than: 0, only_integer: true,
                             allow_nil: true }
+
+  validates :min_order_quantity_unit_id,
+    presence: true,
+    if: proc { |i| i.min_order_quantity_number.present? }
 end

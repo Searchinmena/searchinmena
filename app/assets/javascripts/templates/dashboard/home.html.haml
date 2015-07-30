@@ -1,3 +1,6 @@
-%h1.title.greeting 
-  {{ "dashboard.greeting" | translate }}
-  {{ user.fullName() }}
+%section.dashboard-content
+  %h1.title.greeting 
+    {{ "dashboard.greeting" | translate }}
+    {{ user.fullName() }}
+
+%div{ "ng-include": "'_dashboard_home_seller.html'" }

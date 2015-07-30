@@ -65,7 +65,7 @@ en:
     text: "Resend confirmation instructions"
 
   mailer:
-    hello_msg: "Hello!"
+    hello_msg: "Hello"
 
   footer:
     about_us: "About Us"

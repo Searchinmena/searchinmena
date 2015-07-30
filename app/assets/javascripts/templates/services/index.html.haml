@@ -1,11 +1,12 @@
-%h2.header-title {{ "services.your_services" | translate }}
-%section.items-index
-  .index-options
-    %button.small-button{ "ui-sref": "dashboard.new_service" }
-      %span.icon-plus
-      {{ "services.add_new_service" | translate }}
+%section.dashboard-content
+  %h2.header-title {{ "services.your_services" | translate }}
+  %section.items-index
+    .index-options
+      %button.small-button{ "ui-sref": "dashboard.new_service" }
+        %span.icon-plus
+        {{ "services.add_new_service" | translate }}
 
-  %h3.empty-index{ "ng-hide": "businessItems.length" }
-    {{ "services.empty_list" | translate }}
+    %h3.empty-index{ "ng-hide": "businessItems.length" }
+      {{ "services.empty_list" | translate }}
 
-  %div{ "ng-show": "businessItems.length", "ng-include": "'business_items/_index.html'" }
+    %div{ "ng-show": "businessItems.length", "ng-include": "'business_items/_index.html'" }

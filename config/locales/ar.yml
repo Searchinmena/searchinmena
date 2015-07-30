@@ -72,7 +72,7 @@ ar:
     text: "إعادة ارسال التعليمات اللازمة لتأكيد حسابك"
 
   mailer:
-    hello_msg: "مرحبا!"
+    hello_msg: "مرحبا"
 
   footer:
     about_us: "About Us"

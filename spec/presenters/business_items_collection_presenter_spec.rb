@@ -17,7 +17,7 @@ describe BusinessItemsCollectionPresenter do
     it { expect(subject[:count]).to eq(20) }
     it "returns first page by default" do
       expect(subject[:items].as_json.map { |i| i[:id] }).to eq(
-        products[0...10].map(&:id))
+        products[10...20].map(&:id).reverse)
     end
 
     context "second page" do
@@ -26,7 +26,7 @@ describe BusinessItemsCollectionPresenter do
       it { expect(subject[:count]).to eq(20) }
       it "returns second page of business items" do
         expect(subject[:items].as_json.map { |i| i[:id] }).to eq(
-          products[10...20].map(&:id))
+          products[0...10].map(&:id).reverse)
       end
     end
   end

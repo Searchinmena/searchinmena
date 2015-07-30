@@ -47,6 +47,14 @@ describe UserValidator do
     let(:user_params) { valid_params.merge(email: existing_user.email) }
 
     it { is_expected.not_to be_valid }
+
+    context "email is not unique but with first letter uppercase" do
+      let(:user_params) do
+        valid_params.merge(email: existing_user.email.camelcase)
+      end
+
+      it { is_expected.not_to be_valid }
+    end
   end
 
   describe "password confirmation" do

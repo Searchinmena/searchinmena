@@ -152,7 +152,28 @@
     padding: 0 $bs1;
     
     @media screen and (min-width: $tablet) {
+      width: 45%;
       padding: 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 55%;
+    }
+
+    @media screen and (min-width: $medium-desktop) {
+      max-width: 3.4 * $bs8;
+    }
+
+    @media screen and (min-width: $standard-desktop) {
+      max-width: 3.4 * $bs9;
+    }
+
+    @media screen and (min-width: $huge-desktop) {
+      max-width: 4 * $bs9;
+    }
+
+    @media screen and (min-width: $giga-desktop) {
+      max-width: 60%;
     }
   }
 
@@ -162,7 +183,7 @@
     line-height: 1.4;
 
     @media screen and (min-width: $tablet) {
-      font-size: $bs2;
+      font-size: 1.3 * $bs1;
     }
 
     &:hover, &:focus {
@@ -175,16 +196,16 @@
     font-size: $bs09;
     padding: 0 $bs1;
     margin: $bs0 0;
-    width: 100%;
-
-    @media screen and (min-width: 60px) {
-      width: 55%;
-      max-width: 3.4 * $bs8;
-    }
+    width: 55%;
 
     @media screen and (min-width: $tablet) {
       font-size: $bs0;
+      width: 45%;
       padding: 0;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 55%;
     }
 
     @media screen and (min-width: $medium-desktop) {

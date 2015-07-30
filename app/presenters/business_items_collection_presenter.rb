@@ -1,7 +1,7 @@
 class BusinessItemsCollectionPresenter
   attr_accessor :user, :page, :repository, :locale
 
-  LIMIT = 10
+  LIMIT = A9n.items_per_page
 
   def initialize(user, page, repository, locale)
     self.user = user
@@ -23,7 +23,8 @@ class BusinessItemsCollectionPresenter
 
   def items(business_items)
     offset = (page - 1) * LIMIT
-    business_items.limit(LIMIT).offset(offset).map do |i|
+    items = business_items.order(created_at: :desc).limit(LIMIT).offset(offset)
+    items.map do |i|
       BusinessItemWithCategoryPresenter.new(i, repository, locale)
     end
   end
