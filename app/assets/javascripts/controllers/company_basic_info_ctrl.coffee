@@ -2,9 +2,10 @@
   'selectsLoader', 'TranslatedFlash', 'TAGS_PATH', 'USER_BUSINESS_PATH',
   ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH,
     USER_BUSINESS_PATH) ->
+
     config = {
-      countries: "/countries",
-      business_types: "/business_types"
+      countries: '/countries',
+      business_types: '/business_types'
     }
 
     selectsLoader.loadSelectsData($scope, config)
@@ -15,6 +16,9 @@
 
     $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
       $scope.form.business = businessAttributes
+      $http.get('business_tags', { params: { business_id: businessAttributes.id } }).success((tags) ->
+        $scope.form.business.tags = tags
+      )
     )
 
     $scope.loadTags = (query) ->
@@ -29,10 +33,10 @@
         method: 'PUT'
       ).success(->
         $scope.errors = {}
-        TranslatedFlash.success("company.successfully_saved")
+        TranslatedFlash.success('company.successfully_saved')
       ).error((errors) ->
         $scope.errors = errors
-        TranslatedFlash.error("company.saving_failed")
+        TranslatedFlash.error('company.saving_failed')
       )
 
       false
