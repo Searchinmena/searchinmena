@@ -1,11 +1,11 @@
-@Sim.service 'CurrentUser', ['User',
-  (User) ->
+@Sim.service 'CurrentUser', ['User', '$location',
+  (User, $location) ->
     authorize: (scope) ->
       User.get(
         (data) ->
           scope.user = new User(data)
         ,
         (error) ->
-          window.location = window.Sim.SIGN_IN_PATH
+          $location.path(window.Sim.SIGN_IN_PATH)
       )
 ]

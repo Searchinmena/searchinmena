@@ -20,7 +20,8 @@ describe UserPresenter do
         email: user.email,
         provider: user.provider,
         uid: user.uid,
-        can_see_business_items: can_see_business_items
+        can_see_business_items: can_see_business_items,
+        confirmed_at: user.confirmed_at
       )
     end
   end

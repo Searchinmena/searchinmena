@@ -1,84 +1,84 @@
-@Sim.config ["$stateProvider", "$urlRouterProvider",
+@Sim.config ['$stateProvider', '$urlRouterProvider',
   ($stateProvider, $urlRouterProvider) ->
-    $stateProvider.state("root",
-      url: "/",
-      templateUrl: "home.html"
+    $stateProvider.state('root',
+      url: '/',
+      templateUrl: 'home.html'
     )
-    .state("dashboard",
-      url: "/dashboard",
+    .state('dashboard',
+      url: '/dashboard',
       abstract: true,
-      templateUrl: "dashboard/layout.html",
-      controller: "DashboardCtrl"
+      templateUrl: 'dashboard/layout.html',
+      controller: 'DashboardCtrl'
     )
-    .state("dashboard.home",
-      url: "",
-      templateUrl: "dashboard/home.html"
+    .state('dashboard.home',
+      url: '',
+      templateUrl: 'dashboard/home.html'
     )
-    .state("dashboard.products",
-      url: "/products",
-      templateUrl: "products/index.html",
-      controller: "ProductsIndexCtrl"
+    .state('dashboard.products',
+      url: '/products',
+      templateUrl: 'products/index.html',
+      controller: 'ProductsIndexCtrl'
     )
-    .state("dashboard.new_product",
-      url: "/products/new",
-      templateUrl: "products/new.html",
-      controller: "ProductsNewCtrl"
+    .state('dashboard.new_product',
+      url: '/products/new',
+      templateUrl: 'products/new.html',
+      controller: 'ProductsNewCtrl'
     )
-    .state("dashboard.services",
-      url: "/services",
-      templateUrl: "services/index.html",
-      controller: "ServicesIndexCtrl"
+    .state('dashboard.services',
+      url: '/services',
+      templateUrl: 'services/index.html',
+      controller: 'ServicesIndexCtrl'
     )
-    .state("dashboard.new_service",
-      url: "/services/new",
-      templateUrl: "services/new.html",
-      controller: "ServicesNewCtrl"
+    .state('dashboard.new_service',
+      url: '/services/new',
+      templateUrl: 'services/new.html',
+      controller: 'ServicesNewCtrl'
     )
-    .state("dashboard.company",
-      url: "/company",
+    .state('dashboard.company',
+      url: '/company',
       abstract: true,
-      templateUrl: "company/index.html",
-      controller: "CompanyCtrl"
+      templateUrl: 'company/index.html',
+      controller: 'CompanyCtrl'
     )
-    .state("dashboard.company.basic_info",
-      url: "/basic_info",
-      templateUrl: "company/basic_info.html",
-      controller: "CompanyBasicInfoCtrl"
+    .state('dashboard.company.basic_info',
+      url: '/basic_info',
+      templateUrl: 'company/basic_info.html',
+      controller: 'CompanyBasicInfoCtrl'
     )
-    .state("dashboard.company.trade_details",
-      url: "/trade_details",
-      templateUrl: "company/trade_details.html",
-      controller: "CompanyTradeDetailsCtrl"
+    .state('dashboard.company.trade_details',
+      url: '/trade_details',
+      templateUrl: 'company/trade_details.html',
+      controller: 'CompanyTradeDetailsCtrl'
     )
-    .state("dashboard.company.certifications",
-      url: "/certifications",
-      templateUrl: "company/certifications.html",
-      controller: "CompanyCertificationsCtrl"
-    )
-
-    $stateProvider.state("product",
-      url: "/products/:id",
-      templateUrl: "products/show.html",
-      controller: "ProductsShowCtrl"
-    )
-    $stateProvider.state("service",
-      url: "/services/:id",
-      templateUrl: "services/show.html",
-      controller: "ServicesShowCtrl"
+    .state('dashboard.company.certifications',
+      url: '/certifications',
+      templateUrl: 'company/certifications.html',
+      controller: 'CompanyCertificationsCtrl'
     )
 
-    $stateProvider.state("browse",
-      url: "/browse",
-      templateUrl: "browse.html"
+    $stateProvider.state('product',
+      url: '/products/:id',
+      templateUrl: 'products/show.html',
+      controller: 'ProductsShowCtrl'
     )
-    $stateProvider.state("results",
-      url: "/results",
-      templateUrl: "results.html"
+    $stateProvider.state('service',
+      url: '/services/:id',
+      templateUrl: 'services/show.html',
+      controller: 'ServicesShowCtrl'
     )
 
-    $urlRouterProvider.otherwise("/")
+    $stateProvider.state('browse',
+      url: '/browse',
+      templateUrl: 'browse.html'
+    )
+    $stateProvider.state('results',
+      url: '/results',
+      templateUrl: 'results.html'
+    )
+
+    $urlRouterProvider.otherwise('/')
 ]
 
-@Sim.DASHBOARD_PATH = "/#/dashboard"
-@Sim.SIGN_IN_PATH = "/users/sign_in"
-@Sim.TAGS_PATH = "/tags"
+@Sim.DASHBOARD_PATH = '/#/dashboard'
+@Sim.SIGN_IN_PATH = '/users/sign_in'
+@Sim.TAGS_PATH = '/tags'

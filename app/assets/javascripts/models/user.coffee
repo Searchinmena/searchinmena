@@ -8,6 +8,9 @@
 
       canSeeBusinessItems: ->
         @can_see_business_items
+
+      emailConfirmed: ->
+        !!@confirmed_at
     )
     
     User
