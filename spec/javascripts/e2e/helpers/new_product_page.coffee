@@ -2,7 +2,7 @@ NewBusinessItemPage = require("./new_business_item_page.coffee")
 
 class NewProductPage extends NewBusinessItemPage
   get: ->
-    browser.get("/dashboard#/products/new")
+    browser.get("/#/dashboard/products/new")
 
   addProduct: ->
     categories = ["Energy", "Crude Oil"]

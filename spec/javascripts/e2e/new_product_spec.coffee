@@ -94,7 +94,7 @@ describe NewProductPage, ->
   it "is possible to add product", ->
     page.addProduct()
 
-    helpers.expectUrlChanged("/products")
+    helpers.expectUrlChanged("/#/dashboard/products")
 
     expect(page.firstBusinessItem().getText()).toEqual("New Product")
 

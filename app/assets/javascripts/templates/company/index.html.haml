@@ -7,7 +7,7 @@
 
   %ul.company-tabs
     %li.tab{ "ng-repeat": "tab in tabs"}
-      %a{ "ui-sref": "{{tab.href}}", "ui-sref-active": "active",
+      %a{ "ui-sref": "dashboard.{{tab.href}}", "ui-sref-active": "active",
           class: "tab-link" }
         {{ tab.name | translate }}
         .icon-chevron-down

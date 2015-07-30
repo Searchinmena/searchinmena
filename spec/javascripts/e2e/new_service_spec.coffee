@@ -88,7 +88,7 @@ describe NewServicePage, ->
   it "is possible to add service", ->
     page.addService()
 
-    helpers.expectUrlChanged("/services")
+    helpers.expectUrlChanged("/#/dashboard/services")
 
     expect(page.firstBusinessItem().getText()).toEqual("New Service")
 

@@ -9,10 +9,9 @@
         {{ "products.new.name" | translate }}
       %input{ type: "text", "ng-model": "businessItem.name" }
 
-    .field{ "ng-include": "'_category.html'" }
+    .field{ "ng-include": "'business_items/_category.html'" }
 
-    .field{ "ng-include": "'_photos.html'" }
-
+    .field{ "ng-include": "'business_items/_photos.html'" }
 
     %h3.line-behind
       %span {{ "products.new.details_section" | translate }}
@@ -25,12 +24,11 @@
       %label {{ "products.new.brand" | translate }}
       %input{ type: "text", "ng-model": "businessItem.brand_name" }
 
-    .field.compound-field{ "ng-include": "'_attributes.html'" }
+    .field.compound-field{ "ng-include": "'business_items/_attributes.html'" }
 
     %form-field{ "error": "errors.business_item.description" }
       %label {{ "products.new.description" | translate }}
       %textarea{ "ng-model": "businessItem.description" }
-
 
     %h3.line-behind
       %span {{ "trade_info.title" | translate }}
@@ -46,9 +44,7 @@
           %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
       %error-message-for{ "error": "errors.business_item.min_order_quantity_unit_id" }
 
-
-    %div{ "ng-include": "'_common_trade_info.html'" }
-
+    %div{ "ng-include": "'business_items/_common_trade_info.html'" }
 
     .actions.with-spinner
       %input{ type: "submit", value: '{{ "products.new.submit" | translate }}',

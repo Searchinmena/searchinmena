@@ -1,61 +1,79 @@
 @Sim.config ['$stateProvider', '$urlRouterProvider',
   ($stateProvider, $urlRouterProvider) ->
-    $stateProvider.state('dashboard',
+    $stateProvider.state('root',
       url: '/',
-      templateUrl: "dashboard.html",
+      templateUrl: 'home.html'
+    )
+    .state('dashboard',
+      url: '/dashboard',
+      abstract: true,
+      templateUrl: 'dashboard/layout.html',
       controller: 'DashboardCtrl'
     )
-
-    $stateProvider.state('products',
+    .state('dashboard.home',
+      url: '',
+      templateUrl: 'dashboard/home.html'
+    )
+    .state('dashboard.products',
       url: '/products',
-      templateUrl: "products/index.html",
+      templateUrl: 'products/index.html',
       controller: 'ProductsIndexCtrl'
     )
-    $stateProvider.state('new_product',
+    .state('dashboard.new_product',
       url: '/products/new',
-      templateUrl: "products/new.html",
+      templateUrl: 'products/new.html',
       controller: 'ProductsNewCtrl'
     )
-    $stateProvider.state('product',
-      url: '/products/:id',
-      templateUrl: "products/show.html",
-      controller: 'ProductsShowCtrl'
-    )
-
-    $stateProvider.state('services',
+    .state('dashboard.services',
       url: '/services',
-      templateUrl: "services/index.html",
+      templateUrl: 'services/index.html',
       controller: 'ServicesIndexCtrl'
     )
-    $stateProvider.state('new_service',
+    .state('dashboard.new_service',
       url: '/services/new',
-      templateUrl: "services/new.html",
+      templateUrl: 'services/new.html',
       controller: 'ServicesNewCtrl'
+    )
+    .state('dashboard.company',
+      url: '/company',
+      abstract: true,
+      templateUrl: 'company/index.html',
+      controller: 'CompanyCtrl'
+    )
+    .state('dashboard.company.basic_info',
+      url: '/basic_info',
+      templateUrl: 'company/basic_info.html',
+      controller: 'CompanyBasicInfoCtrl'
+    )
+    .state('dashboard.company.trade_details',
+      url: '/trade_details',
+      templateUrl: 'company/trade_details.html',
+      controller: 'CompanyTradeDetailsCtrl'
+    )
+    .state('dashboard.company.certifications',
+      url: '/certifications',
+      templateUrl: 'company/certifications.html',
+      controller: 'CompanyCertificationsCtrl'
+    )
+
+    $stateProvider.state('product',
+      url: '/products/:id',
+      templateUrl: 'products/show.html',
+      controller: 'ProductsShowCtrl'
     )
     $stateProvider.state('service',
       url: '/services/:id',
-      templateUrl: "services/show.html",
+      templateUrl: 'services/show.html',
       controller: 'ServicesShowCtrl'
     )
 
-    $stateProvider.state('company',
-      url: '/company',
-      templateUrl: "company/index.html",
-      controller: 'CompanyCtrl'
+    $stateProvider.state('browse',
+      url: '/browse',
+      templateUrl: 'browse.html'
     )
-    .state('company.basic_info',
-      templateUrl: "company/basic_info.html",
-      controller: 'CompanyBasicInfoCtrl'
-    )
-    .state('company.trade_details',
-      url: '/trade_details',
-      templateUrl: "company/trade_details.html",
-      controller: "CompanyTradeDetailsCtrl"
-    )
-    .state('company.certifications',
-      url: '/certifications',
-      templateUrl: "company/certifications.html",
-      controller: "CompanyCertificationsCtrl"
+    $stateProvider.state('results',
+      url: '/results',
+      templateUrl: 'results.html'
     )
 
     $urlRouterProvider.otherwise('/')

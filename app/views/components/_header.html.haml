@@ -6,31 +6,30 @@
       class: "language-choice", "ng-click": "changeLanguage($event, 'ar')",
        lang: "ar"
 
-  = link_to(root_path, class: "logo") do
+  %a.logo{ href: "/#/" }
     = image_tag("logo-proposition-4.png")
   .mobile-menu-btn{ tabindex: "0", "toggle-nav": "true" }
     %span.icon-list-alt
   %nav{ role: "navigation" }
     %ul
       %li
-        = link_to(browse_path, class: "nav-link") do
+        %a.nav-link{ href: Sim::Routes.browse_path }
           %span.icon.icon-search
           = t('main_nav.browse')
-      %li
         - if user_signed_in?
-          = link_to(dashboard_path, class: "nav-link user-link") do
-            %span.icon.icon-home
-            = t('main_nav.dashboard')
+          %li
+            %a.nav-link.user-link{ href: Sim::Routes.dashboard_path }
+              %span.icon.icon-home
+              = t('main_nav.dashboard')
+          %li
+            %a.nav-link.user-link{ href: Sim::Routes.destroy_user_session_path }
+              %span.icon.icon-off
+              = t('main_nav.logout')
         - else
-          = link_to(new_user_registration_path,
-            class: "nav-link user-link") do
-            = t('main_nav.signup')
-      %li
-        - if user_signed_in?
-          = link_to(destroy_user_session_path, class: "nav-link user-link") do
-            %span.icon.icon-off
-            = t('main_nav.logout')
-        - else
-          = link_to(user_session_path, class: "nav-link user-link") do
-            = t('main_nav.login')
+          %li
+            %a.nav-link.user-link{ href: Sim::Routes.new_user_registration_path }
+              = t('main_nav.signup')
+          %li
+            %a.nav-link.user-link{ href: Sim::Routes.user_session_path }
+              = t('main_nav.login')
 .gradient-decor
