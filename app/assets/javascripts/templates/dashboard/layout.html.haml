@@ -2,6 +2,7 @@
   .dashboard-menu-btn{ "toggle-dashboard-nav": "true", tabindex: "0" }
     %span.icon-chevron-down
       {{ "dashboard.go_to" | translate }}
+
   %ul.dashboard-navigation{ role: "navigation", "toggle-dashboard-nav": "true" }
     %li
       %a.nav-link{ "ui-sref": "dashboard.home", "ui-sref-active": "active" }
@@ -28,6 +29,7 @@
       %a.nav-link{ href: "#" }
         {{ "dashboard_nav.settings" | translate }}
         %span.icon.icon-cog
+
   %div{ "ng-include": "'components/confirm_email_message.html'" }
 
   %ui-view
