@@ -79,6 +79,3 @@
     $urlRouterProvider.otherwise('/')
 ]
 
-@Sim.DASHBOARD_PATH = '/#/dashboard'
-@Sim.SIGN_IN_PATH = '/users/sign_in'
-@Sim.TAGS_PATH = '/tags'
