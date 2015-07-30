@@ -11,6 +11,7 @@ en:
       uniqueness: "is already taken"
       file_too_large: "You cannot upload a file greater than %{max_file_size_in_mb} MB"
       invalid_content_type: "Only following file types allowed: %{types}"
+      invalid_size: "Image is too small. It should be at least %{min_width} x %{min_height} px"
       not_an_integer: "number is too big"
       greater_than: "must be greater than 0"
       confirmation: "does not match"

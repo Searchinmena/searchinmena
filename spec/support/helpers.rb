@@ -19,8 +19,8 @@ def build_user_params(user, params = {})
   )
 end
 
-def test_image(content_type = nil)
+def test_image(name: 'test-image.png', content_type: nil)
   content_type ||= PhotoValidator::VALID_CONTENT_TYPES.first
-  path = File.join(Rails.root, 'spec', 'support', 'fixtures', 'test-image.png')
+  path = File.join(Rails.root, 'spec', 'support', 'fixtures', name)
   Rack::Test::UploadedFile.new(path, content_type)
 end

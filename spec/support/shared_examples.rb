@@ -10,11 +10,8 @@ shared_context "photo validation" do |model_name, field_name|
   describe "photo validation" do
     let(:model) { build(model_name) }
     let(:params) { build_params(model, field_name => file) }
-    let(:file) do
-      double(content_type: content_type, size: size)
-    end
-    let(:content_type) { PhotoValidator::VALID_CONTENT_TYPES.first }
-    let(:size) { FileValidator::MAX_FILE_SIZE_IN_MB - 1 }
+    let(:file) { test_image(content_type: content_type) }
+    let(:content_type) { nil }
 
     subject { described_class.new(params) }
 
@@ -27,7 +24,19 @@ shared_context "photo validation" do |model_name, field_name|
     end
 
     context "file is too large" do
-      let(:size) { 6.megabytes }
+      let(:file) { test_image(name: 'too-large.png') }
+
+      it { is_expected.not_to be_valid }
+    end
+
+    context "file is not wide enough" do
+      let(:file) { test_image(name: 'not-wide-enough.png') }
+
+      it { is_expected.not_to be_valid }
+    end
+
+    context "file is not high enough" do
+      let(:file) { test_image(name: 'not-high-enough.png') }
 
       it { is_expected.not_to be_valid }
     end
