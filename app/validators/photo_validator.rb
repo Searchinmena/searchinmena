@@ -2,11 +2,12 @@ class PhotoValidator < FileValidator
   VALID_CONTENT_TYPES = %w{image/png image/jpeg}
   VALID_EXTENSIONS = %w{png jpg}
 
+
   validate :validate_minimum_image_size
 
-  def initialize(record_params = {})
+  def initialize(record_params = {}, file_error_key = :file)
     self.file = record_params[:photo]
-    super(record_params)
+    super(record_params, file_error_key)
   end
 
   def valid_content_types

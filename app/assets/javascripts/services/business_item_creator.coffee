@@ -58,24 +58,24 @@
         TranslatedFlash.error("#{resourceName}.adding_failed")
         scope.loading = false
 
-      scope.saveAndUploadPhotos = ->
-        photos = scope.businessItem.photos
-
-        unless PhotosValidator.validate(scope, photos)
-          TranslatedFlash.error("products.adding_failed")
-          return
-
-        scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
+      scope.saveAndUploadPhotos = (photos) ->
+        attributes = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
+        ).map((attribute) ->
+          delete attribute['$$hashKey']
+          attribute
         )
+
+        console.log(attributes)
 
         Upload.upload(
           url: "/#{resourceName}",
-          fields: {business_item: scope.businessItem},
+          fields: {business_item: scope.businessItem, attributes: attributes},
           file: photos,
           fileFormDataName: ["file1", "file2"]
         ).error(
           (data, status, headers, config) ->
+            console.log(data)
             scope.errors = data
             TranslatedFlash.error("#{resourceName}.adding_failed")
         )

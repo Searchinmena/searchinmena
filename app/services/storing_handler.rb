@@ -1,4 +1,4 @@
-class StoringHandler < BaseService
+class StoringHandler < ::BaseService
   attr_reader :record, :record_params, :repository, :validator
 
   def initialize(record, record_params, repository, validator)
@@ -10,23 +10,21 @@ class StoringHandler < BaseService
 
   def perform
     assign_attributes
-    validate
-    success = if errors?
+    success = if valid?
                 copy_errors
                 false
               else
                 repository.save(record)
                 true
               end
-
-    Response.new(success: success, object: record)
+    ::Response.new(success: success, object: record)
   end
 
   def assign_attributes
     record.assign_attributes(record_params)
   end
 
-  def validate
+  def valid?
     validator.valid?
   end
 

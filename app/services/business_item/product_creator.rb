@@ -1,16 +1,16 @@
-class BusinessItem::ProductCreator < BaseService
+class BusinessItem::ProductCreator < BaseCreator
   inject :product_repository
 
-  takes :params, :user
+  attr_accessor :product
 
-  def perform
-    creator = BusinessItem::Creator.new(
-      product_repository, ProductValidator,
-      BusinessItem::ProductAttributesCreator,
-      BusinessItem::ProductPaymentTermsCreator,
-      params, user
-    )
-    creator.perform
+  def initialize(product, product_params, attributes_params)
+    self.product = product
+    self.validator = ProductValidator.new(product_params)
+    self.storing_handler = ::StoringHandler.new(
+      product, product_params, product_repository, validator)
+  end
+
+  def copy_errors
+    validator.copy_errors(product)
   end
 end
-

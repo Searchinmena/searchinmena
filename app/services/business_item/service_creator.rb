@@ -13,4 +13,3 @@ class BusinessItem::ServiceCreator < BaseService
     creator.perform
   end
 end
-

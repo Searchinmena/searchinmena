@@ -33,6 +33,15 @@ class BusinessItemsController < ApplicationController
 
   private
 
+  def business_item_parsed_params
+    ActionController::Parameters.new(JSON.parse(params["business_item"]))
+  end
+
+  def assign_business_item
+    @business_item = repository.find_for_user(current_user, params[:id])
+    head :not_found unless @business_item
+  end
+
   def render_collection
     render json: BusinessItemsCollectionPresenter.new(
       current_user, params[:page], repository, locale)
@@ -57,8 +66,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def business_item_params
-    params[resource_name]
-      .permit([:name, :description, :category_id,
+    business_item_parsed_params.permit([:name, :description, :category_id,
                :fob_price, :fob_price_currency_id, :fob_price_unit_id, :port,
                :payment_terms, :supply_ability_capacity,
                :supply_ability_unit_id, :supply_ability_frequency_id,
@@ -70,7 +78,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def attributes_params
-    params[:breadcrumbs] || []
+    params[:attributes] || []
   end
 
   def payment_terms_params
