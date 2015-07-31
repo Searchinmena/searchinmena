@@ -3,53 +3,32 @@
   .item-short-info
     %button.contact-supplier
       %span.icon.icon-envelope
-      Contact Seller
+      {{ "business_item.contact_seller" | translate }}
 
     .column{ "ng-show": "businessItem.hasAnyBasicInfoPresent()" }
-      %h4.subtitle Basic Info
+      %h4.subtitle
+        {{ "business_item.basic_info" | translate }}
       %table.item-details
         %tr{ "ng-show": "businessItem.get('model_number')" }
-          %td.attribute Model number:
+          %td.attribute
+            {{ "product.model_number" | translate }}:
           %td
             {{ businessItem.get('model_number') }}
         %tr{ "ng-show": "businessItem.get('brand_name')" }
-          %td.attribute Brand name:
+          %td.attribute
+            {{ "product.brand_name" | translate }}:
           %td
             {{ businessItem.get('brand_name') }}
         %tr{ "ng-show": "businessItem.get('min_order_quantity_number')" }
-          %td.attribute Min order:
+          %td.attribute
+            {{ "product.product" | translate }}:
           %td
             {{ businessItem.get('min_order_quantity_number') }}
             {{ businessItem.get('min_order_quantity_unit') }}
-        %tr{ "ng-show": "businessItem.get('fob_price')" }
-          %td.attribute Fob price:
-          %td
-            {{ businessItem.get('fob_price') }}
-            {{ businessItem.get('fob_price_currency') }}
-            {{ businessItem.get('fob_price_unit') }}
-        %tr{ "ng-show": "businessItem.get('supply_ability_capacity')" }
-          %td.attribute Supply ability:
-          %td
-            {{ businessItem.get('supply_ability_capacity') }}
-            {{ businessItem.get('supply_ability_unit') }}
-            {{ businessItem.get('supply_ability_frequency') }}
-        %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
-          %td.attribute Payment Terms:
-          %td
-            %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
-              {{ paymentTerm }}
-        %tr{ "ng-show": "businessItem.get('packaging_details')" }
-          %td.attribute Packaging details:
-          %td {{ businessItem.get('packaging_details') }}
 
-    .column{ "ng-show": "businessItem.hasAttributes()" }
-      %h4.subtitle Attributes
-      %table.item-details
-        %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
-          %td.attribute {{ attribute["name"] }}:
-          %td {{ attribute["value"] }}
+        %div{ "ng-include": "'business_item/_common_trade_info.html'" }
+
+    %div{ "ng-include": "'business_item/_attributes.html'" }
 
   .item-detailed-info
-    %h4.section-title.line-behind{ "ng-show": "businessItem.get('description')" }
-      %span Description
-    %p.item-description {{ businessItem.get('description') }}
+    %div{ "ng-include": "'business_item/_description.html'" }

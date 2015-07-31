@@ -130,6 +130,25 @@
     "payment_terms": "Payment terms",
     "packaging": "Packaging details"
   },
+  "business_item": {
+    "seller": "Seller",
+    "contact_seller": "Contact seller",
+    "basic_info": "Basic info",
+    "fob_price": "Fob price",
+    "supply_ability": "Supply ability",
+    "payment_terms": "Payment terms",
+    "attributes": "Attributes",
+    "attributes": "Packaging details"
+  },
+  "product": {
+    "model_number": "Model number",
+    "brand_name": "Brand mame",
+    "min_order": "Min order"
+  },
+  "service": {
+    "place_of_origin": "Place of origin",
+    "avg_completion_time": "Avg completion time"
+  },
   "business_items": {
     "edit": "edit",
     "see": "see",

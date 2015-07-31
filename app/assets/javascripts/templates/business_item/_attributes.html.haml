@@ -1,0 +1,6 @@
+.column{ "ng-show": "businessItem.hasAttributes()" }
+  %h4.subtitle Attributes
+  %table.item-details
+    %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
+      %td.attribute {{ attribute["name"] }}:
+      %td {{ attribute["value"] }}
