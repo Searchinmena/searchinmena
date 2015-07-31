@@ -2,17 +2,30 @@ require "rails_helper"
 
 describe TagRepository do
   let(:repository) { TagRepository.new }
+  let(:locale) { 'en' }
 
   it_behaves_like "TranslatableRepository"
 
-  describe "#find_with_query" do
-    let(:locale) { 'en' }
-    subject { repository.find_with_query(query, locale) }
+  def tag_with_translation(value, locale)
+    translation = create(:translation, value: value, locale: locale)
+    create(:tag_with_translation, translation: translation)
+  end
 
-    def tag_with_translation(value, locale)
-      translation = create(:translation, value: value, locale: locale)
-      create(:tag_with_translation, translation: translation)
+  describe "#for_business_with_translations" do
+    let!(:not_matching_tag) { tag_with_translation("not_matching_tag", locale) }
+    let!(:tags) { [tag_with_translation("matching_tag", locale)] }
+    let(:business) { create(:business, tags: tags) }
+
+    subject { repository.for_business_with_translations(business.id, locale) }
+
+    it "should return translated tags for business" do
+      is_expected.to eq(tags)
     end
+
+  end
+
+  describe "#find_with_query" do
+    subject { repository.find_with_query(query, locale) }
 
     let!(:tag) do
       create(:tag_with_translation,
