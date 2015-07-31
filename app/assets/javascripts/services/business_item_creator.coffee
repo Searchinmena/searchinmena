@@ -38,6 +38,10 @@
         index = scope.attributes.indexOf(attribute)
         scope.attributes.splice(index, 1)
 
+      scope.removePhoto = (photo) ->
+        index = scope.businessItem.photos.indexOf(photo)
+        scope.businessItem.photos.splice(index, 1)
+
       scope.saveSucceededCallback = (data, photos) ->
         itemId = data.id
         PhotosUploader.upload(photos_path, photos, itemId,

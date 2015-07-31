@@ -37,7 +37,7 @@
 
     = form_field("user.email") do
       = f.label :email, t("devise.active_record.attributes.user.email")
-      = f.email_field :email, "ng-model": "form.user.email"
+      = f.text_field :email, "ng-model": "form.user.email"
 
     - unless user.provider.present?
       = form_field("user.password") do
