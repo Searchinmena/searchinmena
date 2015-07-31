@@ -24,9 +24,9 @@
   .field
     = label_tag :main_products, t("sign_up.main_products")
 
-    %tags-input{ "ng-model": "form.business.tags", "key-property": "id", "display-property": "label",
+    %tags-input{ "ng-model": "form.tags", "display-property": "label",
       "replace-spaces-with-dashes": "false" }
-      %auto-complete{ source: "loadTags($query)", "display-property": "label",
+      %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }
     %p.field-comment
       {{ "company.basic_info.tag_comment_1" | translate }}

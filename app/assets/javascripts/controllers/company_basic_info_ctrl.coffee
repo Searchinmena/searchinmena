@@ -9,6 +9,13 @@
       business_types: '/business_types'
     }
 
+    tags_params = (business_id) -> {
+      params: {
+        business_id: business_id,
+        locale: language.get()
+      }
+    }
+
     selectsLoader.loadSelectsData($scope, config)
 
     $translate('company.basic_info.select_business_types').then((translation) ->
@@ -17,8 +24,9 @@
 
     $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
       $scope.form.business = businessAttributes
-      $http.get('business_tags', { params: { business_id: businessAttributes.id, locale: language.get() } }).success((tags) ->
-        $scope.form.business.tags = tags
+
+      $http.get('business_tags', tags_params(businessAttributes.id)).success((tags) ->
+        $scope.form.tags = tags
       )
     )
 
