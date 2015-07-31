@@ -181,12 +181,15 @@
       vertical-align: top;
     }
   }
+
+  .company-tabs {
+    margin-bottom: $bs1;
+  }
 }
 
 .company-header {
   @extend %clearfix;
   padding: $bs2;
-  border-bottom: $default-border;
 
   .company-logo-holder {
     @include float-direction;

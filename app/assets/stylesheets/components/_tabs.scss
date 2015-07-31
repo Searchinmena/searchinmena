@@ -1,20 +1,24 @@
 .company-tabs {
   @extend %clearfix;
   list-style: none;
-  border-top: $bs-5 solid $border-grey;
-  margin-top: -1.7rem;
+  border-bottom: $default-border;
 }
 
 .tab {
   @include float-direction;
   display: inline-block;
   border-top: $bs-5 solid $blue-basic;
+  border-right: $default-border;
   position: relative;
-  top: -.14rem;
-  width: 33%;
+  width: 33.3%;
   text-align: center;
   font-size: $bs09;
   height: $bs7;
+
+  [dir="rtl"] & {
+    border-right: 0;
+    border-left: $default-border;
+  }
 
   &:nth-of-type(1) {
     border-color: $blue-basic;
@@ -89,5 +93,16 @@
 
   &.active .icon-chevron-down {
     display: block;
+  }
+
+  &.active:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -1px;
+    background-color: white;
   }
 }

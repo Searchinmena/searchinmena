@@ -18,9 +18,6 @@ Rails.application.routes.draw do
 
   get "/home" => "pages#home", as: :home
 
-  # TODO: remove it after finishing browsing feature
-  get "/product" => "pages#product", as: :product
-
   root to: "pages#home"
 
   resources :tags, only: [:index]
