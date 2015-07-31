@@ -4,10 +4,7 @@ class TagsStoringHandler < BaseService
   takes :business, :tags_params, :locale
 
   def perform
-    tags = []
-    tags_params.each do |tag_params|
-      tags << find_or_create_tag(tag_params)
-    end
+    tags = tags_params.map { |tag| find_or_create_tag(tag) }
     success = business_repository.assign_tags(business, tags)
     Response.new(success: success)
   end
