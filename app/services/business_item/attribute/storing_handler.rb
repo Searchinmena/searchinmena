@@ -29,9 +29,13 @@ class BusinessItem::Attribute::StoringHandler < BaseService
     creators.map(&:perform).all?
   end
 
-  def copy_errors(product)
+  def copy_errors
     creators.map(&:copy_errors)
     false
+  end
+
+  def objects
+    creators.map(&:object)
   end
 
 end

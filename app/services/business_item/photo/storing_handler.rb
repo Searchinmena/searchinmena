@@ -14,7 +14,7 @@ class BusinessItem::Photo::StoringHandler < BaseService
     success = if photos_present? && valid?
                 store
               else
-                copy_errors(product)
+                copy_errors
               end
     Response.new(success: success, object: product)
   end
@@ -31,9 +31,13 @@ class BusinessItem::Photo::StoringHandler < BaseService
     creators.map(&:perform).all?
   end
 
-  def copy_errors(product)
+  def copy_errors
     creators.map(&:copy_errors)
     false
+  end
+
+  def objects
+    creators.map(&:object)
   end
 
 end

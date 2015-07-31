@@ -12,6 +12,8 @@ defaults: &defaults
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
     min_image_width: 500
     min_image_height: 500
+    min_business_item_photo_count: 1
+    max_business_item_photo_count: 10
   angular_flash_timeout: 5000
   mandrill:
     address:

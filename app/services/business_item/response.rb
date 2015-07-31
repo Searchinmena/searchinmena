@@ -1,9 +1,9 @@
 class BusinessItem::Response < ::Response
-  attr_accessor :product, :photos, :attributes
+  attr_accessor :object, :photos, :attributes
 
-  def initialize(success: true, product: nil, photos: nil, attributes: nil)
+  def initialize(success: true, product: nil, attributes: nil, photos: nil)
     self.success = success
-    self.product = product
+    self.object = product
     self.photos = photos
     self.attributes = attributes
   end

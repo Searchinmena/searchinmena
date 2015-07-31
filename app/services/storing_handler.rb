@@ -11,11 +11,10 @@ class StoringHandler < ::BaseService
   def perform
     assign_attributes
     success = if valid?
+                repository.save(record)
+              else
                 copy_errors
                 false
-              else
-                repository.save(record)
-                true
               end
     ::Response.new(success: success, object: record)
   end

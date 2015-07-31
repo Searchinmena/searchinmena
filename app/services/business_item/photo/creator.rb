@@ -33,4 +33,8 @@ class BusinessItem::Photo::Creator < BaseCreator
   def copy_errors
     validator.copy_errors(photo)
   end
+
+  def object
+    photo
+  end
 end

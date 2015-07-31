@@ -13,4 +13,8 @@ class BusinessItem::Attribute::Creator < BaseCreator
   def copy_errors
     validator.copy_errors(attribute)
   end
+
+  def object
+    attribute
+  end
 end
