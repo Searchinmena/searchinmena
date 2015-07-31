@@ -2,4 +2,3 @@
   ($resource) ->
     $resource('/services/:id', { id: '@id' })
 ]
-

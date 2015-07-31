@@ -1,5 +1,5 @@
 shared_examples "BusinessItemPresenter" do
-  let(:presenter) { described_class.new(business_item, locale) }
+  let(:presenter) { described_class.new(business_item, repository, locale) }
 
   let(:locale) { "en" }
   let(:expected_keys) do
@@ -18,6 +18,7 @@ shared_examples "BusinessItemPresenter" do
       :breadcrumbs,
       :attributes,
       :photos,
+      :cover_photo,
       :payment_terms
     ]
   end

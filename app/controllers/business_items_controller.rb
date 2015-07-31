@@ -15,7 +15,8 @@ class BusinessItemsController < ApplicationController
   end
 
   def show
-    render json: business_item_presenter_factory.new(@business_item, locale)
+    render json: business_item_presenter_factory.new(
+      @business_item, repository, locale)
   end
 
   def destroy
