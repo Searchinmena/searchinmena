@@ -7,19 +7,33 @@ describe BusinessRepository do
 
   let(:business) { create(:business) }
 
-  describe "#add_tag" do
-    let(:tag) { create(:tag) }
+  describe "#update_tags" do
+    context "adding tags" do
+      let(:tags) { [create(:tag)] }
 
-    subject { repository.add_tag(business, tag) }
+      subject { repository.update_tags(business, tags) }
 
-    it "changes tags count properly" do
-      expect { subject }.to change { business.tags.count }
-        .from(0).to(1)
+      it "changes tags count properly" do
+        expect { subject }.to change { business.tags.count }
+          .from(0).to(1)
+      end
+
+      it "assigns tag to business" do
+        subject
+        expect(business.tags.all).to eq(tags)
+      end
     end
 
-    it "assigns tag to business" do
-      subject
-      expect(business.tags.first).to eq(tag)
+    context "removing tags" do
+      let(:tags) { [] }
+      let(:business) { create(:business, tags: [create(:tag)]) }
+
+      subject { repository.update_tags(business, tags) }
+
+      it "changes tags count properly" do
+        expect { subject }.to change { business.tags.count }
+          .from(1).to(0)
+      end
     end
   end
 

@@ -1,8 +1,4 @@
 class BusinessRepository < AbstractRepository
-  def add_tag(business, tag)
-    business.tags << tag
-  end
-
   def update_tags(business, tags)
     business.update(tags: tags)
   end

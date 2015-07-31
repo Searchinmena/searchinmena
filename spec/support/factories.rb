@@ -40,6 +40,7 @@ FactoryGirl.define do
     sequence(:name) { |n| "Product#{n}" }
     association :business
     association :category, factory: :product_category
+    association :tags
 
     transient do
       photos { [build(:product_photo, product: nil)] }
