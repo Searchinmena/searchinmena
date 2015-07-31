@@ -1,6 +1,7 @@
 class BusinessRepository < AbstractRepository
-  def update_tags(business, tags)
-    business.update(tags: tags)
+  def assign_tags(business, tags)
+    business.assign_attributes(tags: tags)
+    business.tags
   end
 
   def find_by_user_id(user_id)

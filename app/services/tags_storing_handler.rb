@@ -8,7 +8,7 @@ class TagsStoringHandler < BaseService
     tags_params.each do |tag_params|
       tags << find_or_create_tag(tag_params)
     end
-    success = business_repository.update_tags(business, tags)
+    success = business_repository.assign_tags(business, tags)
     Response.new(success: success)
   end
 

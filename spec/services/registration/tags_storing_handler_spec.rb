@@ -27,7 +27,7 @@ describe TagsStoringHandler do
     it "adds tag" do
       expect(tag_repository).to receive(:find_or_create_by_translation)
         .with("Ania", "en").and_return(tag)
-      expect(business_repository).to receive(:update_tags)
+      expect(business_repository).to receive(:assign_tags)
         .with(business, [tag]).and_return(true)
 
       is_expected.to be_successful
@@ -39,7 +39,7 @@ describe TagsStoringHandler do
       it "finds tag by id" do
         expect(tag_repository).to receive(:find_by_id)
           .with(7).and_return(tag)
-        expect(business_repository).to receive(:update_tags)
+        expect(business_repository).to receive(:assign_tags)
           .with(business, [tag]).and_return(true)
 
         is_expected.to be_successful

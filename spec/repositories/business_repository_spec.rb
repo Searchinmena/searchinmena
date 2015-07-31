@@ -7,11 +7,11 @@ describe BusinessRepository do
 
   let(:business) { create(:business) }
 
-  describe "#update_tags" do
+  describe "#assign_tags" do
     context "adding tags" do
-      let(:tags) { [create(:tag)] }
+      let(:tags) { [build(:tag)] }
 
-      subject { repository.update_tags(business, tags) }
+      subject { repository.assign_tags(business, tags) }
 
       it "changes tags count properly" do
         expect { subject }.to change { business.tags.count }
@@ -26,9 +26,9 @@ describe BusinessRepository do
 
     context "removing tags" do
       let(:tags) { [] }
-      let(:business) { create(:business, tags: [create(:tag)]) }
+      let(:business) { create(:business, tags: [build(:tag)]) }
 
-      subject { repository.update_tags(business, tags) }
+      subject { repository.assign_tags(business, tags) }
 
       it "changes tags count properly" do
         expect { subject }.to change { business.tags.count }
