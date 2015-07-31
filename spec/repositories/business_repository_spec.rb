@@ -8,11 +8,14 @@ describe BusinessRepository do
   let(:business) { create(:business) }
 
   describe "#assign_tags" do
+    let(:tags) { [build(:tag)] }
+    subject { repository.assign_tags(business, tags) }
+
+    it "should return business model" do
+      expect(subject).to eq business
+    end
+
     context "adding tags" do
-      let(:tags) { [build(:tag)] }
-
-      subject { repository.assign_tags(business, tags) }
-
       it "changes tags count properly" do
         expect { subject }.to change { business.tags.count }
           .from(0).to(1)
@@ -27,8 +30,6 @@ describe BusinessRepository do
     context "removing tags" do
       let(:tags) { [] }
       let(:business) { create(:business, tags: [build(:tag)]) }
-
-      subject { repository.assign_tags(business, tags) }
 
       it "changes tags count properly" do
         expect { subject }.to change { business.tags.count }
