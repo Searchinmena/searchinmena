@@ -7,4 +7,3 @@ class BusinessRepository < AbstractRepository
     klass.where(user_id: user_id).first
   end
 end
-
