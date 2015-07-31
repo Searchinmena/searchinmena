@@ -3,7 +3,7 @@
   %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "businessItem.photos",
     "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "photos.button" | translate }}
   %p.field-comment {{ "photos.comment" | translate }}
-  %p.field-comment {{ "photos.comment_thumbnail" | translate }}
+  %p.field-comment {{ "photos.comment_thumbnail" | translate:photoCommentTranslationData }}
   %ul.photos-preview
     %li{ "ng-repeat": "photo in businessItem.photos" }
       %img.preview-image{ "ngf-src": "photo",

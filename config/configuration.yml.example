@@ -10,6 +10,8 @@ defaults: &defaults
     max_text_area_size: 2000
     max_text_field_size: 255
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
+    min_image_width: 500
+    min_image_height: 500
   angular_flash_timeout: 5000
   mandrill:
     address:
