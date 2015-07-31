@@ -1,8 +1,8 @@
 class BusinessTagsController < TranslatableController
-  inject :business_repository
+  inject :tag_repository
 
   def index
-    tags = business_repository.tags(params[:business_id])
+    tags = tag_repository.for_business_with_translations(params[:business_id], params[:locale])
     render json: tags.map { |t| TranslatablePresenter.new(t) }
   end
 end
