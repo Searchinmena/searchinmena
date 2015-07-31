@@ -1,7 +1,8 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
   'selectsLoader', 'TranslatedFlash', 'TAGS_PATH', 'USER_BUSINESS_PATH',
+  'language'
   ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH,
-    USER_BUSINESS_PATH) ->
+    USER_BUSINESS_PATH, language) ->
 
     config = {
       countries: '/countries',
@@ -16,7 +17,7 @@
 
     $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
       $scope.form.business = businessAttributes
-      $http.get('business_tags', { params: { business_id: businessAttributes.id } }).success((tags) ->
+      $http.get('business_tags', { params: { business_id: businessAttributes.id, locale: language.get() } }).success((tags) ->
         $scope.form.business.tags = tags
       )
     )

@@ -55,7 +55,7 @@ module Users
     end
 
     def tags_params
-      params.permit(tags: [:id, :label])[:tags] || {}
+      params[:business].permit(tags: [:id, :label])[:tags] || {}
     end
   end
 end
