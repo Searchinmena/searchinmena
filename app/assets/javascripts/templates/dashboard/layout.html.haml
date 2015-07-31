@@ -1,0 +1,35 @@
+.dashboard-container{ "ng-show": "user" }
+  .dashboard-menu-btn{ "toggle-dashboard-nav": "true", tabindex: "0" }
+    %span.icon-chevron-down
+      {{ "dashboard.go_to" | translate }}
+
+  %ul.dashboard-navigation{ role: "navigation", "toggle-dashboard-nav": "true" }
+    %li
+      %a.nav-link{ "ui-sref": "dashboard.home", "ui-sref-active": "active" }
+        {{ "dashboard_nav.home" | translate }}
+        %span.icon.icon-home
+    %li
+      %a.nav-link{ "ui-sref": "dashboard.company.basic_info", "ui-sref-active": "active" }
+        {{ "dashboard_nav.company" | translate }}
+        %span.icon.icon-briefcase
+
+    %li{ "ng-show": "user.canSeeBusinessItems()" }
+      %a.nav-link{ "ui-sref": "dashboard.products", "ui-sref-active": "active" }
+        {{ "dashboard_nav.products" | translate }}
+        %span.icon.icon-shopping-cart
+    %li{ "ng-show": "user.canSeeBusinessItems()" }
+      %a.nav-link{ "ui-sref": "dashboard.services", "ui-sref-active": "active" }
+        {{ "dashboard_nav.services" | translate }}
+        %span.icon.icon-user
+    %li
+      %a.nav-link{ href: "#" }
+        {{ "dashboard_nav.messages" | translate }}
+        %span.icon.icon-envelope
+    %li
+      %a.nav-link{ href: "#" }
+        {{ "dashboard_nav.settings" | translate }}
+        %span.icon.icon-cog
+
+  %div{ "ng-include": "'components/confirm_email_message.html'" }
+
+  %ui-view

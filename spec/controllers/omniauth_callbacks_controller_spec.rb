@@ -20,7 +20,7 @@ describe Users::OmniauthCallbacksController do
     context "when user exists" do
       let(:user) { create(:user, provider: "facebook", uid: "123456") }
 
-      it { expect(response).to redirect_to(dashboard_path) }
+      it { expect(response).to redirect_to(Sim::Routes.dashboard_path) }
     end
 
     context "when user doesn't exist" do

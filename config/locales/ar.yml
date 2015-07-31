@@ -69,12 +69,10 @@ ar:
       both: "بائع/مشتري"
 
   confirmations:
-    or: "أو"
-    msg: "إعادة ارسال التعليمات اللازمة لتأكيد حسابك"
-    msg2: "الرجاء تأكيد حسابك"
+    text: "إعادة ارسال التعليمات اللازمة لتأكيد حسابك"
 
   mailer:
-    hello_msg: "مرحبا!"
+    hello_msg: "مرحبا"
 
   footer:
     about_us: "About Us"

@@ -1,52 +1,50 @@
-%h2.header-title {{ "services.new.form_title" | translate }}
-%form{ "ng-submit": "submit($event)" }
-  %h3.line-behind
-    %span {{ "services.new.basic_section" | translate }}
+%section.dashboard-content
+  %h2.header-title {{ "services.new.form_title" | translate }}
+  %form{ "ng-submit": "submit($event)" }
+    %h3.line-behind
+      %span {{ "services.new.basic_section" | translate }}
 
-  %form-field{ "error": "errors.business_item.name" }
-    %label.required {{ "services.new.name" | translate }}
-    %input{ type: "text", "ng-model": "businessItem.name" }
+    %form-field{ "error": "errors.business_item.name" }
+      %label.required {{ "services.new.name" | translate }}
+      %input{ type: "text", "ng-model": "businessItem.name" }
 
-  .field{ "ng-include": "'_category.html'" }
+    .field{ "ng-include": "'business_items/_category.html'" }
 
-  .field{ "ng-include": "'_photos.html'" }
+    .field{ "ng-include": "'business_items/_photos.html'" }
 
+    %h3.line-behind
+      %span {{ "services.new.details_section" | translate }}
 
-  %h3.line-behind
-    %span {{ "services.new.details_section" | translate }}
+    %form-field{ "error": "errors.business_item.place_of_origin" }
+      %label {{ "services.new.place_of_origin" | translate }}
+      %input{ type: "text", "ng-model": "businessItem.place_of_origin" }
 
-  %form-field{ "error": "errors.business_item.place_of_origin" }
-    %label {{ "services.new.place_of_origin" | translate }}
-    %input{ type: "text", "ng-model": "businessItem.place_of_origin" }
+    %form-field{ "error": "errors.business_item.scope_of_work" }
+      %label {{ "services.new.scope_of_work" | translate }}
+      %textarea{ "ng-model": "businessItem.scope_of_work" }
 
-  %form-field{ "error": "errors.business_item.scope_of_work" }
-    %label {{ "services.new.scope_of_work" | translate }}
-    %textarea{ "ng-model": "businessItem.scope_of_work" }
+    .field.compound-field{ "ng-include": "'business_items/_attributes.html'" }
 
-  .field.compound-field{ "ng-include": "'_attributes.html'" }
+    %form-field{ "error": "errors.business_item.description" }
+      %label {{ "services.new.description" | translate }}
+      %textarea{ "ng-model": "businessItem.description" }
 
-  %form-field{ "error": "errors.business_item.description" }
-    %label {{ "services.new.description" | translate }}
-    %textarea{ "ng-model": "businessItem.description" }
+    %h3.line-behind
+      %span {{ "trade_info.title" | translate }}
 
+    .field.compound-field
+      %label {{ "services.new.average_completion_time" | translate }}
+      %p.field-comment {{ "services.new.average_completion_time_comment" | translate }}
+      %form-field{ "error": "errors.business_item.average_completion_time", class: 'inline-field' }
+        %input{ type: "text", "ng-model": "businessItem.average_completion_time" }
+      .select-field
+        %select{ "ng-options": "unit.id as unit.label for unit in frequencies",
+        "ng-model": "businessItem.average_completion_time_unit_id" }
+          %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
 
-  %h3.line-behind
-    %span {{ "trade_info.title" | translate }}
+    %div{ "ng-include": "'business_items/_common_trade_info.html'" }
 
-  .field.compound-field
-    %label {{ "services.new.average_completion_time" | translate }}
-    %p.field-comment {{ "services.new.average_completion_time_comment" | translate }}
-    %form-field{ "error": "errors.business_item.average_completion_time", class: 'inline-field' }
-      %input{ type: "text", "ng-model": "businessItem.average_completion_time" }
-    .select-field
-      %select{ "ng-options": "unit.id as unit.label for unit in frequencies",
-      "ng-model": "businessItem.average_completion_time_unit_id" }
-        %option{ value: "" } -- {{ "trade_info.choose_unit" | translate }} --
-
-  %div{ "ng-include": "'_common_trade_info.html'" }
-
-
-  .actions.with-spinner
-    %input{ type: "submit", value: '{{ "services.new.submit" | translate }}',
-      "ng-disabled": "loading" }
-    .spinner{ "ng-show": "loading" }
+    .actions.with-spinner
+      %input{ type: "submit", value: '{{ "services.new.submit" | translate }}',
+        "ng-disabled": "loading" }
+      .spinner{ "ng-show": "loading" }

@@ -1,11 +1,11 @@
-%div{ "ng-controller": "PhotosCtrl" }
+%div
   %label.required {{ "photos.title" | translate }}
-  %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "photos",
+  %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "businessItem.photos",
     "ngf-keep": "true", multiple: "true", id: "add-photo" } {{ "photos.button" | translate }}
   %p.field-comment {{ "photos.comment" | translate }}
   %p.field-comment {{ "photos.comment_thumbnail" | translate }}
   %ul.photos-preview
-    %li{ "ng-repeat": "photo in photos" }
+    %li{ "ng-repeat": "photo in businessItem.photos" }
       %img.preview-image{ "ngf-src": "photo",
       "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
       %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }

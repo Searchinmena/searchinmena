@@ -140,6 +140,7 @@
 
 .item-img-holder {
   @include float-direction;
+  overflow: hidden;
   width: 40%;
   max-width: $bs7;
   height: $bs7;

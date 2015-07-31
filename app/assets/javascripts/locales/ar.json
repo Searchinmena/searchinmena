@@ -4,8 +4,33 @@
     "ok": "Yes, I'm sure",
     "cancel": "Cancel"
   },
+  "home": {
+    "header_line_1": "Join Search in MENA marketplace",
+    "header_line_2": "and start getting inquiries from buyers today.",
+    "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.",
+    "watch_video": "watch video",
+    "browse": "Browse",
+    "see_dashboard": "See dashboard",
+    "join_now": "Join now",
+    "search_placeholder": "I'm looking for...",
+    "search_submit": "Search"
+  },
+  "confirm_email_message": {
+    "text": "الرجاء تأكيد حسابك",
+    "or": "أو",
+    "link": "إعادة ارسال التعليمات اللازمة لتأكيد حسابك"
+  },
+  "dashboard_nav": {
+    "home": "الصفحة الرئيسية",
+    "company": "الشركة",
+    "products": "المنتجات",
+    "services": "الخدمات",
+    "messages": "الرسائل",
+    "settings": "اعدادات الحسات"
+  },
   "dashboard": {
-    "greeting": "مرحبا بك"
+    "greeting": "مرحبا بك",
+    "go_to": "Go to..."
   },
   "company": {
     "title": "ملف الشركة - اللغة العربية",
@@ -27,9 +52,11 @@
       "business_types": "نوع العمل",
       "select_business_types": "إختر نوع العمل",
       "main_products": "المنتجات الرئيسية",
+      "tag_comment_1": "When you start typing you can choose from our suggestions of tags",
+      "tag_comment_2": "or create a new one by pressing the enter key.",
       "year_registered": "سنة تسجيل الشركة",
       "no_of_employees": "عدد الموظفين",
-      "detailed_introduction": "مقدمة مختصرة عن الشركة",
+      "introduction": "مقدمة مختصرة عن الشركة",
       "company_photos": "صور الشركة",
       "add_photos": "أضف صور",
       "max_images": " 5 صور حد أقصى",
@@ -103,6 +130,25 @@
     "choose_frequency": "التكرار",
     "payment_terms": "شروط الدفع",
     "packaging": "معلومات التغليف"
+  },
+  "business_item": {
+    "seller": "Seller",
+    "contact_seller": "Contact seller",
+    "basic_info": "Basic info",
+    "fob_price": "Fob price",
+    "supply_ability": "Supply ability",
+    "payment_terms": "Payment terms",
+    "attributes": "Attributes",
+    "attributes": "Packaging details"
+  },
+  "product": {
+    "model_number": "Model number",
+    "brand_name": "Brand mame",
+    "min_order": "Min order"
+  },
+  "service": {
+    "place_of_origin": "Place of origin",
+    "avg_completion_time": "Avg completion time"
   },
   "business_items": {
     "edit": "edit",

@@ -1,14 +1,15 @@
-%h2.header-title
-  {{ "company.title" | translate }}
-  %a.header-link{ href: "#" }
-    %span.icon.icon-eye-open
-    See your page
+%section.dashboard-content
+  %h2.header-title
+    {{ "company.title" | translate }}
+    %a.header-link{ href: "#" }
+      %span.icon.icon-eye-open
+      See your page
 
-%ul.company-tabs
-  %li.tab{ "ng-repeat": "tab in tabs"}
-    %a{ "ui-sref": "{{tab.href}}", "ui-sref-active": "active",
-        class: "tab-link" }
-      {{ tab.name | translate }}
-      .icon-chevron-down
+  %ul.company-tabs
+    %li.tab{ "ng-repeat": "tab in tabs"}
+      %a{ "ui-sref": "dashboard.{{tab.href}}", "ui-sref-active": "active",
+          class: "tab-link" }
+        {{ tab.name | translate }}
+        .icon-chevron-down
 
-%ui-view
+  %ui-view

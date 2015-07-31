@@ -26,7 +26,7 @@ module Users
 
     def sign_in_and_redirect(user)
       sign_in(user, event: :authentication)
-      redirect_to dashboard_path
+      redirect_to Sim::Routes.dashboard_path
     end
 
     def store_hash_and_redirect(hash)

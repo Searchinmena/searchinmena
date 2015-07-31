@@ -14,6 +14,6 @@ module.exports =
     element(By.css("a.nav-link.active"))
 
   goToOtherDashboardPart: ->
-    productsLink = element(By.css("a[href='#/products']"))
+    productsLink = element(By.css("a[href='#/dashboard/products']"))
     productsLink.click()
 

@@ -3,7 +3,7 @@
   link: (scope, element, attrs) ->
     element.bind 'click', ->
       modalInstance = $modal.open(
-        templateUrl: 'confirmation_modal.html',
+        templateUrl: 'components/confirmation_modal.html',
         controller: 'ConfirmationCtrl',
         animation: false,
         size: 'lg'

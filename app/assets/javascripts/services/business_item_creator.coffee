@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'PhotosUploader',
+  '$modal', 'TranslatedFlash', 'PhotosUploader', 'PhotosValidator',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    PhotosUploader) ->
+    PhotosUploader, PhotosValidator) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -19,7 +19,7 @@
 
       scope.showCategories = ->
         modalInstance = $modal.open(
-          templateUrl: 'categories.html',
+          templateUrl: 'business_items/categories.html',
           controller: categoriesController,
           animation: false,
           size: 'lg'
@@ -38,12 +38,16 @@
         index = scope.attributes.indexOf(attribute)
         scope.attributes.splice(index, 1)
 
+      scope.removePhoto = (photo) ->
+        index = scope.businessItem.photos.indexOf(photo)
+        scope.businessItem.photos.splice(index, 1)
+
       scope.saveSucceededCallback = (data, photos) ->
         itemId = data.id
         PhotosUploader.upload(photos_path, photos, itemId,
           ->
             TranslatedFlash.success("#{resourceName}.successfully_added")
-            $state.go(resourceName)
+            $state.go("dashboard.#{resourceName}")
           , (errors) ->
             scope.loading = false
             scope.errors.photos = errors
@@ -54,7 +58,13 @@
         TranslatedFlash.error("#{resourceName}.adding_failed")
         scope.loading = false
 
-      scope.saveAndUploadPhotos = (photos) ->
+      scope.saveAndUploadPhotos = ->
+        photos = scope.businessItem.photos
+
+        unless PhotosValidator.validate(scope, photos)
+          TranslatedFlash.error("products.adding_failed")
+          return
+
         scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
         )
@@ -68,17 +78,11 @@
             scope.showFlashError()
         )
 
-      scope.$on("photos_response", (event, photos) ->
-        scope.saveAndUploadPhotos(photos)
-      )
-
       scope.submit = (e) ->
         e.preventDefault()
         scope.loading = true
         scope.errors = {}
-
-        # request photos from PhotosCtrl
-        $rootScope.$broadcast("photos_request")
+        scope.saveAndUploadPhotos()
 
         false
 ]

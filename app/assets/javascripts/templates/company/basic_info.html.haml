@@ -39,6 +39,10 @@
       "replace-spaces-with-dashes": "false" }
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }
+    %p.field-comment
+      {{ "company.basic_info.tag_comment_1" | translate }}
+      %br
+      {{ "company.basic_info.tag_comment_2" | translate }}
 
   %form-field{ "error": "errors.business.year_registered" }
     %label {{ "company.basic_info.year_registered" | translate }}
@@ -48,9 +52,9 @@
     %label {{ "company.basic_info.no_of_employees" | translate }}
     %input.size-specified{ type: "number", min: "0", "ng-model": "form.business.no_of_employees" }
 
-  %form-field{ "error": "errors.business.detailed_introduction" }
-    %label {{ "company.basic_info.detailed_introduction" | translate }}
-    %textarea{{ "ng-model": "form.business.detailed_introduction" }}
+  %form-field{ "error": "errors.business.introduction" }
+    %label {{ "company.basic_info.introduction" | translate }}
+    %textarea{{ "ng-model": "form.business.introduction" }}
 
   %form-field{ "error": "errors.business.company_photos" }
     %label {{ "company.basic_info.company_photos" | translate }}

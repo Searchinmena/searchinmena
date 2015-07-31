@@ -30,5 +30,7 @@
 //= require angular-off-click
 //= require sim
 //= require router
+//= require constants
+//= require_tree ./models
 //= require_tree ./services
 //= require_tree .

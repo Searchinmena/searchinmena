@@ -16,6 +16,7 @@ Cubic Foot/Cubic Feet,Cubic Foot/Cubic Feet AR
 Cubic Inch/Cubic Inches,Cubic Inch/Cubic Inches AR
 Cubic Meter/Cubic Meters,Cubic Meter/Cubic Meters AR
 Cubic Yard/Cubic Yards,Cubic Yard/Cubic Yards AR
+Day/Days,Day/Days AR
 Degrees Celsius,Degrees Celsius AR
 Degrees Fahrenheit,Degrees Fahrenheit AR
 Dozen/Dozens,Dozen/Dozens AR
@@ -31,6 +32,7 @@ Gram/Grams,Gram/Grams AR
 Gross,Gross AR
 Hectare/Hectares,Hectare/Hectares AR
 Hertz,Hertz AR
+Hour/Hours,Hour/Hours AR
 Inch/Inches,Inch/Inches AR
 Kiloampere/Kiloamperes,Kiloampere/Kiloamperes AR
 Kilogram/Kilograms,Kilogram/Kilograms AR
@@ -53,6 +55,7 @@ Millimeter/Millimeters,Millimeter/Millimeters AR
 Milliohm/Milliohms,Milliohm/Milliohms AR
 Millivolt/Millivolts,Millivolt/Millivolts AR
 Milliwatt/Milliwatts,Milliwatt/Milliwatts AR
+Month/Months,Month/Months AR
 Nautical Mile/Nautical Miles,Nautical Mile/Nautical Miles AR
 Ohm/Ohms,Ohm/Ohms AR
 Ounce/Ounces,Ounce/Ounces AR
@@ -90,3 +93,5 @@ Volt/Volts,Volt/Volts AR
 Watt/Watts,Watt/Watts AR
 Wp,Wp AR
 Yard/Yards,Yard/Yards AR
+Year/Years,Year/Years AR
+Other,Other AR

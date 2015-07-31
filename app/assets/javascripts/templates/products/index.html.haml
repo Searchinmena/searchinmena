@@ -1,11 +1,12 @@
-%h2.header-title {{ "products.your_products" | translate }}
-%section.items-index
-  .index-options
-    %button.small-button{ "ui-sref": "new_product" }
-      %span.icon-plus
-      {{ "products.add_new_product" | translate }}
+%section.dashboard-content
+  %h2.header-title {{ "products.your_products" | translate }}
+  %section.items-index
+    .index-options
+      %button.small-button{ "ui-sref": "dashboard.new_product" }
+        %span.icon-plus
+        {{ "products.add_new_product" | translate }}
 
-  %h3.empty-index{ "ng-hide": "businessItems.length" }
-    {{ "products.empty_list" | translate }}
+    %h3.empty-index{ "ng-hide": "businessItems.length" }
+      {{ "products.empty_list" | translate }}
 
-  %div{ "ng-show": "businessItems.length", "ng-include": "'_business_items.html'" }
+    %div{ "ng-show": "businessItems.length", "ng-include": "'business_items/_index.html'" }

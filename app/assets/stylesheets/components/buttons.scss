@@ -1,6 +1,7 @@
 %basic-button {
   @include transition(all, .25s, ease-in-out);
   display: block;
+  font-size: $bs0;
   width: 100%;
   text-align: center;
   background: none;
@@ -112,7 +113,7 @@ input[type="submit"] {
     color: $grey;
     border-color: $grey;
     background-color: $border-grey;
-    cursor: text;
+    cursor: default;
   }
 }
 

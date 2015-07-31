@@ -46,3 +46,4 @@ module Sim
     config.angular_templates.markups        = %w(haml)
   end
 end
+

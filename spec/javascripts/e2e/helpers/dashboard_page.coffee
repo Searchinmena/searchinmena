@@ -1,11 +1,11 @@
 class DashboardPage
   get: ->
-    browser.get("/dashboard")
+    browser.get("/#/dashboard")
 
   productsLink: ->
-    element(By.css("a[href='#/products']"))
+    element(By.css("a[href='#/dashboard/products']"))
 
   servicesLink: ->
-    element(By.css("a[href='#/services']"))
+    element(By.css("a[href='#/dashboard/services']"))
 
 module.exports = DashboardPage

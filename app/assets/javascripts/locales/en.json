@@ -4,6 +4,30 @@
     "ok": "Yes, I'm sure",
     "cancel": "Cancel"
   },
+  "home": {
+    "header_line_1": "Join Search in MENA marketplace",
+    "header_line_2": "and start getting inquiries from buyers today.",
+    "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.",
+    "watch_video": "watch video",
+    "browse": "Browse",
+    "see_dashboard": "See dashboard",
+    "join_now": "Join now",
+    "search_placeholder": "I'm looking for...",
+    "search_submit": "Search"
+  },
+  "confirm_email_message": {
+    "text": "Please confirm your email",
+    "or": "or",
+    "link": "Resend confirmation instructions"
+  },
+  "dashboard_nav": {
+    "home": "Home",
+    "company": "Company",
+    "products": "Products",
+    "services": "Services",
+    "messages": "Messages",
+    "settings": "Account Settings"
+  },
   "dashboard": {
     "greeting": "Welcome to your dashboard,"
   },
@@ -27,9 +51,11 @@
       "business_types": "Business types",
       "select_business_types": "Select business types",
       "main_products": "Main products",
+      "tag_comment_1": "When you start typing you can choose from our suggestions of tags",
+      "tag_comment_2": "or create a new one by pressing the enter key.",
       "year_registered": "Year company registered",
       "no_of_employees": "No. of employees",
-      "detailed_introduction": "Detailed introduction",
+      "introduction": "Detailed introduction",
       "company_photos": "Company photos",
       "add_photos": "Add photos",
       "max_images": "max 5 images",
@@ -103,6 +129,25 @@
     "choose_frequency": "Choose frequency",
     "payment_terms": "Payment terms",
     "packaging": "Packaging details"
+  },
+  "business_item": {
+    "seller": "Seller",
+    "contact_seller": "Contact seller",
+    "basic_info": "Basic info",
+    "fob_price": "Fob price",
+    "supply_ability": "Supply ability",
+    "payment_terms": "Payment terms",
+    "attributes": "Attributes",
+    "attributes": "Packaging details"
+  },
+  "product": {
+    "model_number": "Model number",
+    "brand_name": "Brand mame",
+    "min_order": "Min order"
+  },
+  "service": {
+    "place_of_origin": "Place of origin",
+    "avg_completion_time": "Avg completion time"
   },
   "business_items": {
     "edit": "edit",

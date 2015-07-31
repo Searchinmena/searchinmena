@@ -1,6 +1,6 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
-  'selectsLoader', 'TranslatedFlash'
-  ($scope, $http, $translate, selectsLoader, TranslatedFlash) ->
+  'selectsLoader', 'TranslatedFlash', 'TAGS_PATH'
+  ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH) ->
     config = {
       countries: "/countries",
       business_types: "/business_types"
@@ -17,7 +17,7 @@
     )
 
     $scope.loadTags = (query) ->
-      $http.get(window.Sim.TAGS_PATH, params: { query: query })
+      $http.get(TAGS_PATH, params: { query: query })
 
     $scope.submit = (e) ->
       e.preventDefault()
