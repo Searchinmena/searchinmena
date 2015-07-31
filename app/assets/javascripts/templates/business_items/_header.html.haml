@@ -10,5 +10,5 @@
   .breadcrumbs{ "ng-include": "'business_items/_breadcrumbs.html'" }
 
   .seller
-    Seller:
-    %a{href: "#"} Great Company
+    {{ "business_item.seller" | translate }}
+    %a{ href: "#" } {{ business.name }}
