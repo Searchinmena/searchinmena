@@ -21,7 +21,6 @@ describe TagRepository do
     it "should return translated tags for business" do
       is_expected.to eq(tags)
     end
-
   end
 
   describe "#find_with_query" do

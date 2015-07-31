@@ -13,7 +13,7 @@ describe BusinessTagsController do
         .with(business.id.to_s, locale)
         .and_return([translatable])
       expect(TranslatablePresenter).to receive(:new).with(translatable)
-        .and_return({})   
+        .and_return({})
 
       get :index, locale: locale, business_id: business.id
       expect(response).to be_successful
