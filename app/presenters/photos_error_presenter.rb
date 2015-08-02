@@ -3,7 +3,7 @@ class PhotosErrorPresenter
 
   def as_json(*)
     {
-      file_name: file.original_filename,
+      file_name: file.filename,
       errors: response.errors
     }
   end

@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'PhotosUploader', 'Upload', 'PhotosValidator',
+  '$modal', 'TranslatedFlash', 'PhotosUploader', 'Upload', 'PhotosValidator', 'AttributesErrors',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    PhotosUploader, Upload, PhotosValidator) ->
+    PhotosUploader, Upload, PhotosValidator, AttributesErrors) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -58,7 +58,9 @@
         TranslatedFlash.error("#{resourceName}.adding_failed")
         scope.loading = false
 
-      scope.saveAndUploadPhotos = (photos) ->
+      scope.saveAndUploadPhotos = ->
+        photos = scope.businessItem.photos
+
         attributes = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
         ).map((attribute) ->
@@ -66,17 +68,17 @@
           attribute
         )
 
-        console.log(attributes)
-
         Upload.upload(
           url: "/#{resourceName}",
           fields: {business_item: scope.businessItem, attributes: attributes},
           file: photos,
-          fileFormDataName: ["file1", "file2"]
+          fileFormDataName: _.map(photos, (photo, index) ->
+            "file" + index
+          )
         ).error(
           (data, status, headers, config) ->
-            console.log(data)
             scope.errors = data
+            scope.errors.attributes = AttributesErrors.format_messages(data.attributes)
             TranslatedFlash.error("#{resourceName}.adding_failed")
         )
 

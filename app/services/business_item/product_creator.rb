@@ -1,16 +1,18 @@
-class BusinessItem::ProductCreator < BaseCreator
-  inject :product_repository
+class BusinessItem::ProductCreator < BaseService
+  inject :business_repository, :product_repository
+  takes :params, :user
 
-  attr_accessor :product
+  def perform
+    business = business_repository.find_by_user_id(user.id)
+    return Response.new(success: false) unless business.present?
 
-  def initialize(product, product_params, attributes_params)
-    self.product = product
-    self.validator = ProductValidator.new(product_params)
-    self.storing_handler = ::StoringHandler.new(
-      product, product_params, product_repository, validator)
-  end
+    product = product_repository.new_for_business(business, params[:business_item])
 
-  def copy_errors
-    validator.copy_errors(product)
+    records = {user: user, business_item: product}
+
+    product_creator = BusinessItem::ProductStoringHandler.new(records[:product],
+                                                               params[:business_item],
+                                                               params[:attributes],
+                                                               params[:photos]).perform
   end
 end

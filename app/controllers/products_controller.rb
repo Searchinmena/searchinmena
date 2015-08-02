@@ -6,7 +6,7 @@ class ProductsController < BusinessItemsController
   end
 
   def business_item_creator
-    BusinessItem::Creator.new(product_params, current_user)
+    BusinessItem::ProductCreator.new(product_params, current_user)
   end
 
   def business_item_presenter_factory
@@ -38,6 +38,6 @@ class ProductsController < BusinessItemsController
   end
 
   def attributes_params
-    JSON.parse(params[:attributes])
+    JSON.parse(params[:attributes]).map { |attribute| attribute.symbolize_keys! }
   end
 end

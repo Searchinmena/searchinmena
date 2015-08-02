@@ -4,4 +4,4 @@ class SIM.Attribute
     @value = ''
 
   isPresent: ->
-    @name != '' && @value != ''
+    @name != '' || @value != ''

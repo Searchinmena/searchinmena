@@ -36,7 +36,7 @@ shared_examples "BusinessItemsController" do |resource_name|
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do
         {
-          "#{resource_name}": business_item_params,
+          business_item: business_item_params,
           breadcrumbs: breadcrumbs_params,
           payment_terms: payment_terms_params
         }
@@ -44,7 +44,7 @@ shared_examples "BusinessItemsController" do |resource_name|
 
       let(:expected_params) do
         {
-          business_item: new_business_item_params[resource_name],
+          business_item: new_business_item_params,
           attributes: breadcrumbs_params,
           payment_terms: payment_terms_params.keys
         }
@@ -74,7 +74,7 @@ shared_examples "BusinessItemsController" do |resource_name|
           let(:breadcrumbs_params) { nil }
           let(:expected_params) do
             {
-              business_item: new_business_item_params[resource_name],
+              business_item: new_business_item_params,
               attributes: [],
               payment_terms: payment_terms_params.keys
             }
@@ -87,7 +87,7 @@ shared_examples "BusinessItemsController" do |resource_name|
           let(:payment_terms_params) { nil }
           let(:expected_params) do
             {
-              business_item: new_business_item_params[resource_name],
+              business_item: new_business_item_params,
               attributes: breadcrumbs_params,
               payment_terms: []
             }

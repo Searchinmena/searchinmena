@@ -6,7 +6,7 @@ class BusinessItemsController < ApplicationController
     if response.successful?
       render_success(response.object)
     else
-      render_error(response.object)
+      render_error(response.object, response.attributes, response.photos)
     end
   end
 
@@ -51,9 +51,11 @@ class BusinessItemsController < ApplicationController
     render json: BusinessItemBasicPresenter.new(business_item)
   end
 
-  def render_error(business_item)
+  def render_error(business_item, attributes, photos)
     render json: {
-      business_item: ErrorsPresenter.new(business_item)
+      business_item: ErrorsPresenter.new(business_item),
+      attributes: attributes.map { |attribute| ErrorsPresenter.new(attribute) },
+      photos: photos.map { |photo| PhotosErrorPresenter.new(photo.photo, photo) },
     }, status: :conflict
   end
 
