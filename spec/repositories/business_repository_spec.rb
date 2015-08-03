@@ -11,10 +11,6 @@ describe BusinessRepository do
     let(:tags) { [build(:tag)] }
     subject { repository.assign_tags(business, tags) }
 
-    it "should return business model" do
-      expect(subject).to eq business
-    end
-
     context "adding tags" do
       it "changes tags count properly" do
         expect { subject }.to change { business.tags.count }
