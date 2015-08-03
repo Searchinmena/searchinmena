@@ -21,5 +21,5 @@ describe ServicesPage, ->
   it "is possible to remove service", ->
     page.checkRemovingBusinessItem()
 
-  xit "is possible to see service details", ->
+  it "is possible to see service details", ->
     page.checkShowingSingleBusinessItem()

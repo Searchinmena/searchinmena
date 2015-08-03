@@ -1,3 +1,5 @@
+helpers = require('./helpers.coffee')
+
 class BusinessItemsPage
   constructor: ->
     @deleteLinkCss = "a.delete"
@@ -47,7 +49,7 @@ class BusinessItemsPage
     href = link.getAttribute("href")
     @showLink().click()
 
-    expect(browser.getCurrentUrl()).toEqual(href)
+    helpers.expectUrlInTargetBlank(href)
 
     @get()
     @deleteBusinessItem()
