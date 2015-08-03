@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   resources :countries, only: [:index]
   resources :business_types, only: [:index]
 
-  resource :business, only: [:show, :update]
+  resources :businesses, only: [:show]
+  resource :user_business, only: [:show, :update]
   resource :user
 
   resources :products, only: [:create, :index, :show, :destroy]

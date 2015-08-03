@@ -1,6 +1,7 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
-  'selectsLoader', 'TranslatedFlash', 'TAGS_PATH'
-  ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH) ->
+  'selectsLoader', 'TranslatedFlash', 'TAGS_PATH', 'USER_BUSINESS_PATH',
+  ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH,
+    USER_BUSINESS_PATH) ->
     config = {
       countries: "/countries",
       business_types: "/business_types"
@@ -12,7 +13,7 @@
       $scope.selectButtonText = translation
     )
 
-    $http.get('business').success((businessAttributes) ->
+    $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
       $scope.form.business = businessAttributes
     )
 
@@ -23,7 +24,7 @@
       e.preventDefault()
 
       $http(
-        url: '/business',
+        url: USER_BUSINESS_PATH,
         data: $scope.form,
         method: 'PUT'
       ).success(->
