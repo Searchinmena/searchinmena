@@ -1,4 +1,4 @@
-class BusinessItem::PaymentTermsCreator
+class BusinessItem::PaymentTerms::Creator
   takes :repository, :params, :business_item
 
   def perform
@@ -9,7 +9,7 @@ class BusinessItem::PaymentTermsCreator
       )
       payment_term = repository.new(payment_terms_params)
       validator = PaymentTermValidator.new(payment_terms_params)
-      storing_handler = StoringHandler.new(payment_term,
+      storing_handler = ::StoringHandler.new(payment_term,
                                            payment_terms_params,
                                            repository,
                                            validator)

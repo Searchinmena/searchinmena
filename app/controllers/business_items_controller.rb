@@ -37,6 +37,19 @@ class BusinessItemsController < ApplicationController
     ActionController::Parameters.new(JSON.parse(params["business_item"]))
   end
 
+  def attributes_params
+    parse_attributes params[:attributes] || []
+  end
+
+  def payment_terms_params
+    params[:payment_terms] ? JSON.parse(params[:payment_terms]).keys : []
+  end
+
+  def photos_params
+    files = params.select { |key, value| key.to_s.include? "file" }.values
+    files.any? ? files : []
+  end
+
   def assign_business_item
     @business_item = repository.find_for_user(current_user, params[:id])
     head :not_found unless @business_item
@@ -55,7 +68,7 @@ class BusinessItemsController < ApplicationController
     render json: {
       business_item: ErrorsPresenter.new(business_item),
       attributes: attributes.map { |attribute| ErrorsPresenter.new(attribute) },
-      photos: photos.map { |photo| PhotosErrorPresenter.new(photo.photo, photo) },
+      photos: photos.map { |photo| PhotosErrorPresenter.new(photo.photo, photo) }
     }, status: :conflict
   end
 
@@ -79,11 +92,9 @@ class BusinessItemsController < ApplicationController
     fail NotImplementedError
   end
 
-  def attributes_params
-    params[:attributes] || []
-  end
+  private
 
-  def payment_terms_params
-    params[:payment_terms] ? params[:payment_terms].keys : []
+  def parse_attributes(params)
+    JSON.parse(params).map { |attribute| attribute.symbolize_keys! }
   end
 end

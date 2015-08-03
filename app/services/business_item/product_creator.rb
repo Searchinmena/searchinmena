@@ -10,9 +10,10 @@ class BusinessItem::ProductCreator < BaseService
 
     records = {user: user, business_item: product}
 
-    product_creator = BusinessItem::ProductStoringHandler.new(records[:product],
+    product_creator = BusinessItem::ProductStoringHandler.new(records[:business_item],
                                                                params[:business_item],
                                                                params[:attributes],
+                                                               params[:payment_terms],
                                                                params[:photos]).perform
   end
 end

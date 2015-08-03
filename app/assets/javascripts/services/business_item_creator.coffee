@@ -68,9 +68,11 @@
           attribute
         )
 
+        console.log(scope)
+
         Upload.upload(
           url: "/#{resourceName}",
-          fields: {business_item: scope.businessItem, attributes: attributes},
+          fields: {business_item: scope.businessItem, attributes: attributes, payment_terms: scope.businessItem.payment_terms},
           file: photos,
           fileFormDataName: _.map(photos, (photo, index) ->
             "file" + index

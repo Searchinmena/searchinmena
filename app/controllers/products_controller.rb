@@ -21,7 +21,8 @@ class ProductsController < BusinessItemsController
     {
       business_item: business_item_params,
       photos: photos_params,
-      attributes: attributes_params
+      attributes: attributes_params,
+      payment_terms: payment_terms_params
     }
   end
 
@@ -30,14 +31,5 @@ class ProductsController < BusinessItemsController
       [:model_number, :brand_name, :min_order_quantity_number,
        :min_order_quantity_unit_id])
     super.merge(product_specific_params)
-  end
-
-  def photos_params
-    files = params.select { |key, value| key.to_s.include? "file" }.values
-    files.any? ? files : []
-  end
-
-  def attributes_params
-    JSON.parse(params[:attributes]).map { |attribute| attribute.symbolize_keys! }
   end
 end
