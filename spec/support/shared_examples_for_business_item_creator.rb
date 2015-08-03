@@ -8,7 +8,9 @@ shared_examples "business item creator" do
     let(:business_item_params) do
       {
         business_item: build_params(business_item),
-        attributes: []
+        attributes: [],
+        payment_terms: [],
+        photos: []
       }
     end
     let(:user) { create(:seller) }
