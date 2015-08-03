@@ -1,39 +1,14 @@
 shared_examples "business item creator" do
   describe "#perform" do
-    let(:creator) { described_class.new(business_item_params, user) }
-    let(:validator) do
-      double(:validator, valid?: valid, errors?: !valid)
-    end
+    let(:photo) { test_image }
 
-    let(:business_item_params) do
-      {
-        business_item: build_params(business_item),
-        attributes: [],
-        payment_terms: [],
-        photos: []
-      }
-    end
+    let(:business_item_params) { build_params(business_item) }
     let(:user) { create(:seller) }
-
-    before do
-      expect(validator_factory).to receive(:new)
-        .and_return(validator)
-    end
 
     subject { creator.perform }
 
     context "business item validation passed" do
-      let(:valid) { true }
-
-      before do
-        response = double(successful?: true,
-                          object: double(:business_item))
-        creator = double(perform: response)
-        expect(attributes_creator_class).to receive(:new)
-          .and_return(creator)
-        expect(payment_terms_creator_class).to receive(:new)
-          .and_return(creator)
-      end
+      let(:creator) { described_class.new(business_item, business_item_params, [], [], [photo]) }
 
       it { is_expected.to be_successful }
 
@@ -44,11 +19,7 @@ shared_examples "business item creator" do
     end
 
     context "business item validation failed" do
-      let(:valid) { false }
-
-      before do
-        expect(validator).to receive(:copy_errors)
-      end
+      let(:creator) { described_class.new(business_item, business_item_params, [], [], []) }
 
       it { is_expected.not_to be_successful }
 
@@ -59,4 +30,3 @@ shared_examples "business item creator" do
     end
   end
 end
-

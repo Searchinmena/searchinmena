@@ -24,8 +24,8 @@ class BusinessItem::ProductStoringHandler < BaseService
 
   def perform
     success = if valid?
-                handlers.map(&:perform).all?(&:successful?)
-                payment_terms_storing_handler.perform
+                handlers.map(&:perform).all?(&:successful?) &&
+                payment_terms_storing_handler.perform.successful?
               else
                 copy_errors
               end

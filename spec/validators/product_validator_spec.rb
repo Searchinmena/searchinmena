@@ -4,10 +4,10 @@ describe ProductValidator do
   subject { described_class.new(business_item_params) }
 
   let(:business_item_params) { valid_params }
-  let(:valid_params) { build_params(build(:service)) }
+  let(:valid_params) { build_params(build(:product)).merge(photos_count: 1) }
 
   it_behaves_like "BusinessItemValidator" do
-    let(:valid_params) { build_params(build(:service)) }
+    let(:valid_params) { build_params(build(:product)).merge(photos_count: 1) }
 
     describe "additional length validation" do
       [:model_number, :brand_name, :min_order_quantity_number].each do|field|
