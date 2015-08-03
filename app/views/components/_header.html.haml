@@ -1,10 +1,10 @@
 %header
-  .language-selection{ "ng-controller": 'LanguageCtrl' }
-    = link_to 'english', '#/',
+  .language-selection{ "ng-controller": "LanguageCtrl" }
+    = link_to "english", "#/",
       class: "language-choice", "ng-click": "changeLanguage($event, 'en')"
-    = link_to 'العربية', '#/',
+    = link_to "العربية", "#/",
       class: "language-choice", "ng-click": "changeLanguage($event, 'ar')",
-       lang: "ar"
+      lang: "ar"
 
   %a.logo{ href: "/#/" }
     = image_tag("logo-proposition-4.png")
@@ -15,21 +15,21 @@
       %li
         %a.nav-link{ href: Sim::Routes.browse_path }
           %span.icon.icon-search
-          = t('main_nav.browse')
+          = t("main_nav.browse")
         - if user_signed_in?
           %li
             %a.nav-link.user-link{ href: Sim::Routes.dashboard_path }
               %span.icon.icon-home
-              = t('main_nav.dashboard')
+              = t("main_nav.dashboard")
           %li
             %a.nav-link.user-link{ href: Sim::Routes.destroy_user_session_path }
               %span.icon.icon-off
-              = t('main_nav.logout')
+              = t("main_nav.logout")
         - else
           %li
             %a.nav-link.user-link{ href: Sim::Routes.new_user_registration_path }
-              = t('main_nav.signup')
+              = t("main_nav.signup")
           %li
             %a.nav-link.user-link{ href: Sim::Routes.user_session_path }
-              = t('main_nav.login')
+              = t("main_nav.login")
 .gradient-decor

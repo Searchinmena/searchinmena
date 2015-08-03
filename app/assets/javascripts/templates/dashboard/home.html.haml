@@ -1,6 +1,55 @@
 %section.dashboard-content
-  %h1.title.greeting 
+  %h1.title.greeting
     {{ "dashboard.greeting" | translate }}
     {{ user.fullName() }}
 
-%div{ "ng-include": "'_dashboard_home_seller.html'" }
+%section.dashboard-content
+  %h2.header-title Company Profile Summary
+  .company-short-info.company-profile-summary
+    %h2.company-name
+      Sage Software Middle East
+    .clearfix
+      .contact-item
+        %span.icon.icon-phone-alt
+        696583445
+      .contact-item
+        %span.icon.icon-pushpin
+        Wellington, New Zeland
+
+    %button.small-button
+      %span.icon-pencil
+      edit company info
+
+%section.dashboard-content{ "ng-controller": "ProductsIndexCtrl" }
+  %h2.header-title
+    Your Products
+    %a.header-link{ "ui-sref": "dashboard.products" }
+      %span.icon.icon-eye-open
+      See all
+
+  .index-options
+    %button.small-button{ "ui-sref": "dashboard.new_product" }
+      %span.icon-plus
+      {{ "products.add_new_product" | translate }}
+
+  %h3.empty-index{ "ng-hide": "businessItems.length" }
+    {{ "products.empty_list" | translate }}
+
+  %div{ "ng-show": "businessItems.length", "ng-include": "'business_items/_summary.html'" }
+
+%section.dashboard-content{ "ng-controller": "ServicesIndexCtrl" }
+  %h2.header-title
+    Your Services
+    %a.header-link{ "ui-sref": "dashboard.services" }
+      %span.icon.icon-eye-open
+      See all
+
+  .index-options
+    %button.small-button{ "ui-sref": "dashboard.new_service" }
+      %span.icon-plus
+      {{ "services.add_new_service" | translate }}
+
+  %h3.empty-index{ "ng-hide": "businessItems.length" }
+    {{ "products.empty_list" | translate }}
+
+  %div{ "ng-show": "businessItems.length", "ng-include": "'business_items/_summary.html'" }
