@@ -21,7 +21,7 @@
             {{ businessItem.get('brand_name') }}
         %tr{ "ng-show": "businessItem.get('min_order_quantity_number')" }
           %td.attribute
-            {{ "product.product" | translate }}:
+            {{ "product.min_order" | translate }}:
           %td
             {{ businessItem.get('min_order_quantity_number') }}
             {{ businessItem.get('min_order_quantity_unit') }}

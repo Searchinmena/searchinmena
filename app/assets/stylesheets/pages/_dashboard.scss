@@ -34,6 +34,7 @@
   @extend %clearfix;
   background-color: white;
   margin: $bs1 $bs-1;
+  
   @media screen and (min-width: $medium-desktop) { 
     margin: 0 $bs-1 $bs1;
   }
@@ -44,17 +45,19 @@
 
   .header-title {
     @extend %dashboard-content-padding;
+    padding-top: 0.95 * $bs2;
+    padding-bottom: $bs2;
     border-bottom: $default-border;
     margin: 0 0 $bs2 0;
-    line-height: 3 * $bs2;
+
   }
 
   .header-link {
     text-transform: none;
     font-size: $bs0;
     border: none;
-    margin: 0 $bs0;
-    padding: $bs-5 0;
+    display: block;
+    border-bottom: 1px solid white;
 
     &:hover {
       border-bottom: 1px solid $blue-basic;
@@ -63,6 +66,11 @@
     .icon {
       font-size: $bs2;
       vertical-align: middle;
+    }
+
+    @media screen and (min-width: $tablet) { 
+      display: inline-block;
+      margin: 0 $bs0;
     }
   }
 

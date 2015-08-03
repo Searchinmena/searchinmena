@@ -21,5 +21,5 @@ describe ProductsPage, ->
   it "is possible to remove product", ->
     page.checkRemovingBusinessItem()
 
-  it "is possible to see product details", ->
+  xit "is possible to see product details", ->
     page.checkShowingSingleBusinessItem()

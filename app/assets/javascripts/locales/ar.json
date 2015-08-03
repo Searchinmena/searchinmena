@@ -139,7 +139,7 @@
     "supply_ability": "Supply ability",
     "payment_terms": "Payment terms",
     "attributes": "Attributes",
-    "attributes": "Packaging details"
+    "packaging_details": "Packaging details"
   },
   "product": {
     "model_number": "Model number",

@@ -125,6 +125,11 @@
     word-wrap: break-word;
     word-break: break-all;
     table-layout: fixed;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
   .payment-term:after {
@@ -136,7 +141,7 @@
 
   .payment-term:last-of-type {
     &:after {
-      content: "";
+      visibility: hidden;
     }
   }
 }
