@@ -8,6 +8,8 @@ class ProductPresenter < BusinessItemPresenter
     )
   end
 
+  private
+
   def min_order_quantity_unit
     translatable_repository.translation_for(
       business_item.min_order_quantity_unit, locale)
@@ -17,4 +19,3 @@ class ProductPresenter < BusinessItemPresenter
     business_item.product_attributes
   end
 end
-

@@ -2,4 +2,3 @@
   ($resource) ->
     $resource('/products/:id', { id: '@id' })
 ]
-

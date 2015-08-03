@@ -1,16 +1,19 @@
 class BusinessItemPresenter < BasePresenter
   inject :payment_term_repository, :translatable_repository
 
-  takes :business_item, :locale
+  takes :business_item, :repository, :locale
 
   def as_json(*)
     basic_attributes.merge(
       breadcrumbs: breadcrumbs,
       attributes: attributes,
       photos: photos,
+      cover_photo: repository.photo_url_for(business_item),
       payment_terms: payment_terms
     )
   end
+
+  private
 
   def basic_attributes
     {

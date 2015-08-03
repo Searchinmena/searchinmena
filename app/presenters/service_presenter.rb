@@ -8,6 +8,8 @@ class ServicePresenter < BusinessItemPresenter
     )
   end
 
+  private
+
   def average_completion_time_unit
     translatable_repository.translation_for(
       business_item.average_completion_time_unit, locale)
@@ -17,4 +19,3 @@ class ServicePresenter < BusinessItemPresenter
     business_item.service_attributes
   end
 end
-

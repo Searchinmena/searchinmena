@@ -18,7 +18,8 @@ class BusinessItemsController < ApplicationController
     @business_item = repository.find_by_id(params[:id])
     return head :not_found unless @business_item
 
-    render json: business_item_presenter_factory.new(@business_item, locale)
+    render json: business_item_presenter_factory.new(
+      @business_item, repository, locale)
   end
 
   def destroy
