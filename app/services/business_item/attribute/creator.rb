@@ -1,13 +1,11 @@
-class BusinessItem::Attribute::Creator < BaseCreator
-  inject :product_attribute_repository
-
+class BusinessItem::Attribute::Creator < ::BaseCreator
   attr_accessor :attribute
 
-  def initialize(attribute, attribute_params)
+  def initialize(repository, attribute, attribute_params)
     self.attribute = attribute
     self.validator = AttributeValidator.new(attribute_params)
     self.storing_handler = ::StoringHandler.new(
-      attribute, attribute_params, product_attribute_repository, validator)
+      attribute, attribute_params, repository, validator)
   end
 
   def copy_errors

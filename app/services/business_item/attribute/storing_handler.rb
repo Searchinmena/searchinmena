@@ -1,14 +1,13 @@
-class BusinessItem::Attribute::StoringHandler < BaseService
-  inject :product_attribute_repository
+class BusinessItem::Attribute::StoringHandler < ::BaseService
 
   attr_reader :product, :creators
 
-  def initialize(product, attributes_params)
+  def initialize(repository, product, attributes_params)
     @product = product
     @attributes_params = attributes_params
     @creators = attributes_params.map do |attribute|
-      new_attribute = product_attribute_repository.new_for_product(product, attribute)
-      BusinessItem::Attribute::Creator.new(new_attribute, attribute)
+      new_attribute = repository.new_for_product(product, attribute)
+      BusinessItem::Attribute::Creator.new(repository, new_attribute, attribute)
     end
   end
 

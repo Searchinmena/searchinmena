@@ -1,12 +1,12 @@
 class BusinessItem::Photo::StoringHandler < BaseService
 
-  attr_reader :product, :creators
+  attr_reader :busiess_item, :creators
 
-  def initialize(product, photos_params)
-    @product = product
+  def initialize(repository, busiess_item, photos_params)
+    @busiess_item = busiess_item
     @photos_params = photos_params
     @creators = photos_params.map do |photo|
-      BusinessItem::Photo::Creator.new(product, photo)
+      BusinessItem::Photo::Creator.new(repository, busiess_item, photo)
     end
   end
 
@@ -16,7 +16,7 @@ class BusinessItem::Photo::StoringHandler < BaseService
               else
                 copy_errors
               end
-    Response.new(success: success, object: product)
+    Response.new(success: success, object: busiess_item)
   end
 
   def photos_present?

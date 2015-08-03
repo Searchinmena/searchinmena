@@ -6,7 +6,7 @@ class ServicesController < BusinessItemsController
   end
 
   def business_item_creator
-    BusinessItem::ServiceCreator.new(new_business_item_params, current_user)
+    BusinessItem::ServiceCreator.new(service_params, current_user)
   end
 
   def business_item_presenter_factory
@@ -18,10 +18,19 @@ class ServicesController < BusinessItemsController
   end
 
   def business_item_params
-    service_specific_params = params[resource_name].permit(
+    service_specific_params = params.permit(
       [:place_of_origin, :scope_of_work, :average_completion_time,
        :average_completion_time_unit_id])
     super.merge(service_specific_params)
+  end
+
+  def service_params
+    {
+      business_item: business_item_params,
+      photos: photos_params,
+      attributes: attributes_params,
+      payment_terms: payment_terms_params
+    }
   end
 end
 

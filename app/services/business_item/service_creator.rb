@@ -1,15 +1,19 @@
 class BusinessItem::ServiceCreator < BaseService
-  inject :service_repository
-
+  inject :business_repository, :service_repository
   takes :params, :user
 
   def perform
-    creator = BusinessItem::Creator.new(
-      service_repository, ServiceValidator,
-      BusinessItem::ServiceAttributesCreator,
-      BusinessItem::ServicePaymentTermsCreator,
-      params, user
-    )
-    creator.perform
+    business = business_repository.find_by_user_id(user.id)
+    return Response.new(success: false) unless business.present?
+
+    service = service_repository.new_for_business(business, params[:business_item])
+
+    records = {user: user, business_item: service}
+
+    product_creator = BusinessItem::ServiceStoringHandler.new(records[:business_item],
+                                                               params[:business_item],
+                                                               params[:attributes],
+                                                               params[:payment_terms],
+                                                               params[:photos]).perform
   end
 end

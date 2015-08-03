@@ -1,13 +1,13 @@
 class BusinessItem::Photo::Creator < BaseCreator
-  attr_accessor :product_photo_repository, :photo
+  attr_accessor :repository, :photo
 
-  def initialize(business_item, photo)
-    self.product_photo_repository = ProductPhotoRepository.new
-    attributes = product_photo_repository.attributes_with_business_item({ photo: photo },
+  def initialize(repository, business_item, photo)
+    self.repository = repository
+    attributes = repository.attributes_with_business_item({ photo: photo },
                                                                         business_item)
-    self.photo = product_photo_repository.new(attributes)
+    self.photo = repository.new(attributes)
     self.validator = BusinessItemPhotoValidator.new(attributes)
-    self.storing_handler = ::StoringHandler.new(photo, attributes, product_photo_repository, validator)
+    self.storing_handler = ::StoringHandler.new(photo, attributes, repository, validator)
   end
 
   def perform
@@ -16,7 +16,7 @@ class BusinessItem::Photo::Creator < BaseCreator
                 copy_errors
                 false
               else
-                product_photo_repository.save(photo)
+                repository.save(photo)
                 true
               end
     ::Response.new(success: success, object: photo)

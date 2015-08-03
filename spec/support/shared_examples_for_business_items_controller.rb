@@ -31,22 +31,21 @@ shared_examples "BusinessItemsController" do |resource_name|
       let(:creator_response) do
         double(successful?: successful, object: business_item)
       end
-      let(:breadcrumbs_params) { [{ name: "ania", value: "hai" }] }
+      let(:attributes_params) { [{ name: "ania", value: "hai" }] }
       let(:payment_terms_params) { { "12" => true } }
       let(:business_item) { double(:business_item) }
       let(:new_business_item_params) do
         {
-          business_item: business_item_params,
-          breadcrumbs: breadcrumbs_params,
-          payment_terms: payment_terms_params
+          business_item: business_item_params
         }
       end
 
       let(:expected_params) do
         {
-          business_item: new_business_item_params,
-          attributes: breadcrumbs_params,
-          payment_terms: payment_terms_params.keys
+          attributes: attributes_params.to_json,
+          business_item: new_business_item_params.to_json,
+          payment_terms: payment_terms_params.keys.to_json
+          photos: []
         }
       end
 
@@ -71,12 +70,13 @@ shared_examples "BusinessItemsController" do |resource_name|
         it_behaves_like "successful response"
 
         context "breadcrumbs not present" do
-          let(:breadcrumbs_params) { nil }
+          let(:attributes) { nil }
           let(:expected_params) do
             {
-              business_item: new_business_item_params,
+              business_item: new_business_item_params.to_json,
               attributes: [],
-              payment_terms: payment_terms_params.keys
+              payment_terms: payment_terms_params.keys.to_json,
+              photos: []
             }
           end
 
@@ -87,9 +87,10 @@ shared_examples "BusinessItemsController" do |resource_name|
           let(:payment_terms_params) { nil }
           let(:expected_params) do
             {
-              business_item: new_business_item_params,
-              attributes: breadcrumbs_params,
-              payment_terms: []
+              business_item: new_business_item_params.to_json,
+              attributes: attributes_params.to_json,
+              payment_terms: [],
+              photos: []
             }
           end
 
@@ -103,7 +104,7 @@ shared_examples "BusinessItemsController" do |resource_name|
         it "renders errors" do
           expect(ErrorsPresenter).to receive(:new).with(business_item)
 
-          post :create, new_business_item_params
+          post :create, new_business_item_params.to_json
           expect(response.status).to eq(409)
         end
       end

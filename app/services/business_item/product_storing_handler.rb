@@ -1,5 +1,5 @@
 class BusinessItem::ProductStoringHandler < BaseService
-  inject :product_repository, :product_payment_term_repository
+  inject :product_repository, :product_attribute_repository, :product_photo_repository, :product_payment_term_repository
 
   attr_accessor :handlers, :product, :storing_handler, :attributes_storing_handler,
                 :photos_storing_handler, :payment_terms_storing_handler
@@ -10,9 +10,11 @@ class BusinessItem::ProductStoringHandler < BaseService
     self.storing_handler = StoringHandler.new(product, product_params,
                                               product_repository, product_validator)
 
-    self.attributes_storing_handler = BusinessItem::Attribute::StoringHandler.new(product,
+    self.attributes_storing_handler = BusinessItem::Attribute::StoringHandler.new(product_attribute_repository,
+                                                                                  product,
                                                                                   attributes_params)
-    self.photos_storing_handler = BusinessItem::Photo::StoringHandler.new(product,
+    self.photos_storing_handler = BusinessItem::Photo::StoringHandler.new(product_photo_repository,
+                                                                          product,
                                                                           photos_params)
     self.payment_terms_storing_handler = BusinessItem::PaymentTerms::Creator.new(product_payment_term_repository,
                                                                                 payment_terms_params,
@@ -29,7 +31,7 @@ class BusinessItem::ProductStoringHandler < BaseService
               end
 
     BusinessItem::Response.new(success: success,
-                               product: product,
+                               business_item: product,
                                attributes: attributes,
                                photos: photos)
   end

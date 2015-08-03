@@ -42,17 +42,9 @@
         index = scope.businessItem.photos.indexOf(photo)
         scope.businessItem.photos.splice(index, 1)
 
-      scope.saveSucceededCallback = (data, photos) ->
-        itemId = data.id
-        PhotosUploader.upload(photos_path, photos, itemId,
-          ->
-            TranslatedFlash.success("#{resourceName}.successfully_added")
-            $state.go("dashboard.#{resourceName}")
-          , (errors) ->
-            scope.loading = false
-            scope.errors.photos = errors
-            scope.showFlashError()
-        )
+      scope.saveSucceededCallback = ->
+        TranslatedFlash.success("#{resourceName}.successfully_added")
+        $state.go("dashboard.#{resourceName}")
 
       scope.showFlashError = ->
         TranslatedFlash.error("#{resourceName}.adding_failed")
@@ -68,8 +60,6 @@
           attribute
         )
 
-        console.log(scope)
-
         Upload.upload(
           url: "/#{resourceName}",
           fields: {business_item: scope.businessItem, attributes: attributes, payment_terms: scope.businessItem.payment_terms},
@@ -77,6 +67,8 @@
           fileFormDataName: _.map(photos, (photo, index) ->
             "file" + index
           )
+        ).success(
+          scope.saveSucceededCallback()
         ).error(
           (data, status, headers, config) ->
             scope.errors = data
