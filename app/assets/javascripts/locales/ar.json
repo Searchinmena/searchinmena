@@ -30,7 +30,8 @@
   },
   "dashboard": {
     "greeting": "مرحبا بك",
-    "go_to": "Go to..."
+    "go_to": "Go to...",
+    "see_all": "See all"
   },
   "company": {
     "title": "ملف الشركة - اللغة العربية",
@@ -39,6 +40,8 @@
       "trade_details": "المعلومات التجارية",
       "certifications": "الشهادات"
     },
+    "profile_summary": "Company Profile Summary",
+    "edit_info": "Edit company info",
     "successfully_saved": "Company information was successfully saved",
     "saving_failed": "Company couldn't be saved, please check the form",
     "basic_info": {

@@ -4,7 +4,7 @@
     {{ user.fullName() }}
 
 %section.dashboard-content
-  %h2.header-title Company Profile Summary
+  %h2.header-title {{ "company.profile_summary" | translate }}
   .company-short-info.company-profile-summary
     %h2.company-name {{ business.name }}
     .clearfix
@@ -18,14 +18,14 @@
 
     %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
       %span.icon-pencil
-      edit company info
+      {{ "company.edit_info" | translate }}
 
 %section.dashboard-content{ "ng-controller": "ProductsIndexCtrl" }
   %h2.header-title
-    Your Products
+    {{ "products.your_products" | translate }}
     %a.header-link{ "ui-sref": "dashboard.products" }
       %span.icon.icon-eye-open
-      See all
+      {{ "dashboard.see_all" | translate }}
 
   .index-options
     %button.small-button{ "ui-sref": "dashboard.new_product" }
@@ -39,10 +39,10 @@
 
 %section.dashboard-content{ "ng-controller": "ServicesIndexCtrl" }
   %h2.header-title
-    Your Services
+    {{ "services.your_services" | translate }}
     %a.header-link{ "ui-sref": "dashboard.services" }
       %span.icon.icon-eye-open
-      See all
+      {{ "dashboard.see_all" | translate }}
 
   .index-options
     %button.small-button{ "ui-sref": "dashboard.new_service" }
