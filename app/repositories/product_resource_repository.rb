@@ -3,7 +3,7 @@ class ProductResourceRepository < AbstractRepository
     attributes.merge(product: business_item)
   end
 
-  def new_for_product(product, attrubute)
+  def new_for_business_item(product, attrubute)
     klass.new(attrubute.merge({product: product}))
   end
 end

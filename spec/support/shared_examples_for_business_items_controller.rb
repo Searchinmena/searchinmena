@@ -44,7 +44,7 @@ shared_examples "BusinessItemsController" do |resource_name|
         {
           attributes: attributes_params.to_json,
           business_item: new_business_item_params.to_json,
-          payment_terms: payment_terms_params.keys.to_json
+          payment_terms: payment_terms_params.keys.to_json,
           photos: []
         }
       end
