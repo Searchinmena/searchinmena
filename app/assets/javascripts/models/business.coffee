@@ -1,5 +1,5 @@
 @Sim.factory 'Business', ['$resource',
   ($resource) ->
-    $resource('/business')
+    $resource('/businesses/:id', { id: '@id' })
 ]
 

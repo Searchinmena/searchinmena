@@ -1,5 +1,5 @@
 class BusinessItemsController < ApplicationController
-  before_action :assign_business_item, only: [:show, :destroy]
+  skip_before_filter :authenticate_user!, only: [:show]
 
   def create
     response = business_item_creator.perform
@@ -15,21 +15,22 @@ class BusinessItemsController < ApplicationController
   end
 
   def show
+    @business_item = repository.find_by_id(params[:id])
+    return head :not_found unless @business_item
+
     render json: business_item_presenter_factory.new(@business_item, locale)
   end
 
   def destroy
+    @business_item = repository.find_for_user(current_user, params[:id])
+    return head :not_found unless @business_item
+
     repository.destroy(@business_item)
 
     render_collection
   end
 
   private
-
-  def assign_business_item
-    @business_item = repository.find_for_user(current_user, params[:id])
-    head :not_found unless @business_item
-  end
 
   def render_collection
     render json: BusinessItemsCollectionPresenter.new(

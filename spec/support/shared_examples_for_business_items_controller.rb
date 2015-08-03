@@ -160,10 +160,6 @@ shared_examples "BusinessItemsController" do |resource_name|
   end
 
   describe "show" do
-    it_behaves_like "redirects to signin if user not logged in" do
-      before { get :show, id: 1 }
-    end
-
     context "user is logged in" do
       before do
         sign_in(user)
@@ -178,12 +174,6 @@ shared_examples "BusinessItemsController" do |resource_name|
         end
 
         it { is_expected.to be_successful }
-      end
-
-      context "business item doesn't belong to the user" do
-        let!(:business_item) { create(resource_name) }
-
-        it { is_expected.to be_not_found }
       end
     end
   end

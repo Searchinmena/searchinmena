@@ -5,6 +5,7 @@ shared_examples "BusinessItemPresenter" do
   let(:expected_keys) do
     [
       :id,
+      :business_id,
       :name,
       :description,
       :fob_price,
