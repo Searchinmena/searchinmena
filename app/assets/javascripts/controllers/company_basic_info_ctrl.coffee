@@ -1,10 +1,19 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
   'selectsLoader', 'TranslatedFlash', 'TAGS_PATH', 'USER_BUSINESS_PATH',
+  'language'
   ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH,
-    USER_BUSINESS_PATH) ->
+    USER_BUSINESS_PATH, language) ->
+
     config = {
-      countries: "/countries",
-      business_types: "/business_types"
+      countries: '/countries',
+      business_types: '/business_types'
+    }
+
+    tags_params = (business_id) -> {
+      params: {
+        business_id: business_id,
+        locale: language.get()
+      }
     }
 
     selectsLoader.loadSelectsData($scope, config)
@@ -15,6 +24,10 @@
 
     $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
       $scope.form.business = businessAttributes
+
+      $http.get('business_tags', tags_params(businessAttributes.id)).success((tags) ->
+        $scope.form.tags = tags
+      )
     )
 
     $scope.loadTags = (query) ->
@@ -29,10 +42,10 @@
         method: 'PUT'
       ).success(->
         $scope.errors = {}
-        TranslatedFlash.success("company.successfully_saved")
+        TranslatedFlash.success('company.successfully_saved')
       ).error((errors) ->
         $scope.errors = errors
-        TranslatedFlash.error("company.saving_failed")
+        TranslatedFlash.error('company.saving_failed')
       )
 
       false

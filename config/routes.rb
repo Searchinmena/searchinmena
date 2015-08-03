@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   resources :payment_terms, only: [:index]
   resources :countries, only: [:index]
   resources :business_types, only: [:index]
+  resources :business_tags, only: [:index]
 
   resources :businesses, only: [:show]
   resource :user_business, only: [:show, :update]

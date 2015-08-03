@@ -3,6 +3,7 @@ class BusinessPresenter
 
   def as_json(*)
     {
+      id: business.id,
       name: business.name,
       phone: business.phone,
       city: business.city,

@@ -9,6 +9,7 @@ describe BusinessPresenter do
 
     it "includes prefilled attributes" do
       is_expected.to include(
+        id: business.id,
         name: business.name,
         phone: business.phone,
         city: business.city,
