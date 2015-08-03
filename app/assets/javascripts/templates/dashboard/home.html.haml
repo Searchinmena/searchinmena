@@ -6,17 +6,17 @@
 %section.dashboard-content
   %h2.header-title Company Profile Summary
   .company-short-info.company-profile-summary
-    %h2.company-name
-      Sage Software Middle East
+    %h2.company-name {{ business.name }}
     .clearfix
       .contact-item
         %span.icon.icon-phone-alt
-        696583445
+        %span {{ business.phone }}
       .contact-item
         %span.icon.icon-pushpin
-        Wellington, New Zeland
+        %span{ "ng-show": "business.city" } {{ business.city }},
+        %span {{ business.country }}
 
-    %button.small-button
+    %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
       %span.icon-pencil
       edit company info
 
