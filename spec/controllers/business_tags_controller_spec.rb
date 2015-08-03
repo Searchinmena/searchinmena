@@ -5,7 +5,7 @@ describe BusinessTagsController do
     let(:business) { create(:business, tags: [create(:tag)]) }
     let(:tag_repository) { double }
     let(:translatable) { double }
-    let(:locale) { 'en' }
+    let(:locale) { "en" }
 
     it "is successful" do
       expect(controller).to receive(:tag_repository).and_return(tag_repository)

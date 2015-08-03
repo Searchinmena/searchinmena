@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe TagRepository do
   let(:repository) { TagRepository.new }
-  let(:locale) { 'en' }
+  let(:locale) { "en" }
 
   it_behaves_like "TranslatableRepository"
 
@@ -20,6 +20,7 @@ describe TagRepository do
 
     it "should return translated tags for business" do
       is_expected.to eq(tags)
+      is_expected.not_to include(not_matching_tag)
     end
   end
 

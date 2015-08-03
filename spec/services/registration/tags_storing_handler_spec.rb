@@ -29,6 +29,7 @@ describe TagsStoringHandler do
         .with("Ania", "en").and_return(tag)
       expect(business_repository).to receive(:assign_tags)
         .with(business, [tag]).and_return(true)
+      expect(tag).to receive(:valid?).and_return(true)
 
       is_expected.to be_successful
     end
@@ -41,6 +42,7 @@ describe TagsStoringHandler do
           .with(7).and_return(tag)
         expect(business_repository).to receive(:assign_tags)
           .with(business, [tag]).and_return(true)
+        expect(tag).to receive(:valid?).and_return(true)
 
         is_expected.to be_successful
       end
