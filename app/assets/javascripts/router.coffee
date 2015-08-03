@@ -2,7 +2,8 @@
   ($stateProvider, $urlRouterProvider) ->
     $stateProvider.state('root',
       url: '/',
-      templateUrl: 'home.html'
+      templateUrl: 'home.html',
+      controller: 'HomeCtrl'
     )
     .state('dashboard',
       url: '/dashboard',
