@@ -23,9 +23,9 @@ class CompanyPage
     element(@businessTypesSelectLocator)
 
   select: (selectElement, optionName) ->
-      selectElement.click()
-      selectElement.element(By.cssContainingText("option", optionName)).click()
-      browser.actions().mouseDown().mouseUp().perform()
+    selectElement.click()
+    selectElement.element(By.cssContainingText("option", optionName)).click()
+    browser.actions().mouseDown().mouseUp().perform()
 
   fieldsWithErrors: ->
     element.all(By.css(".field-with-errors"))
@@ -40,6 +40,11 @@ class CompanyPage
 
   clearCountry: ->
     @select(@countrySelect(), "Select country")
+
+  clearTags: ->
+    element.all(By.css(".remove-button")).each( (removeButton) ->
+      removeButton.click()
+    )
 
   clearRequiredFields: ->
     @nameField().clear()
@@ -56,5 +61,23 @@ class CompanyPage
 
   successFlashMessage: ->
     element(By.cssContainingText("[role=alert]", @successMessage))
+
+  tagInput: ->
+    element(By.model("form.tags")).element(By.css("input[type=text]"))
+
+  removeTagButton: (tagName) ->
+    removeButton = element(By.cssContainingText(".tag-item", tagName)).element(By.css(".remove-button"))
+    removeButton.click()
+
+  clickSuggestedTag: ->
+    suggestedTag = element(By.css(".suggestion-item"))
+    suggestedTag.click()
+
+  fillRequiredFields: ->
+    @nameField().sendKeys("Lunar Logic")
+    @phoneField().sendKeys("0048 12 430 22 88")
+    @select(@countrySelect(), "Poland")
+    @businessTypesSelectToggle().click()
+    element(By.linkText("Business services")).click()
 
 module.exports = CompanyPage
