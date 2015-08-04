@@ -23,9 +23,9 @@ class CompanyPage
     element(@businessTypesSelectLocator)
 
   select: (selectElement, optionName) ->
-      selectElement.click()
-      selectElement.element(By.cssContainingText("option", optionName)).click()
-      browser.actions().mouseDown().mouseUp().perform()
+    selectElement.click()
+    selectElement.element(By.cssContainingText("option", optionName)).click()
+    browser.actions().mouseDown().mouseUp().perform()
 
   fieldsWithErrors: ->
     element.all(By.css(".field-with-errors"))
