@@ -31,7 +31,10 @@
   "dashboard": {
     "greeting": "Welcome to your dashboard,",
     "go_to": "Go to...",
-    "see_all": "See all"
+    "see_all": "See all",
+    "browse_message": "As a buyer you can browse offers and contact sellers to find the best deal for you!",
+    "create_company_message": "Only sellers can add products and services, click below if you want to become one",
+    "create_company_button": "Create company profile"
   },
   "company": {
     "title": "Company Profile",
