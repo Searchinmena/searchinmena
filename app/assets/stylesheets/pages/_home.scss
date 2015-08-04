@@ -66,6 +66,43 @@
   @extend %basic-button;
 }
 
+.browse-buttons {
+  @extend %clearfix;
+  width: 100%;
+  max-width: 3.45 * $bs8;
+  margin: $bs6 auto 0;
+}
+
+.category-btn {
+  @include float-direction;
+  width: 33.33%;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  padding: 0 $bs-5;
+
+  &:hover {
+    span {
+      background-color: $white-opaque;
+    }
+  }
+
+  span {
+    @include transition(background-color, .25s, ease);
+    border: 2px solid white;
+    padding: $bs2 0 0;
+    width: $bs7;
+    height: $bs7;
+    border-radius: 50%;
+    font-size: $bs4;
+    display: block;
+    text-align: center;
+    margin: 0 auto $bs0 auto;
+  }
+}
+
 .dashboard-btn {
   @extend %blue-button;
   margin-top: $bs2;
