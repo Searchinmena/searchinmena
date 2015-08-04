@@ -1,6 +1,8 @@
 shared_examples "business item payment terms creator" do
   describe "#perform" do
-    let(:creator) { described_class.new(repository, payment_terms_params, business_item) }
+    let(:creator) do
+      described_class.new(repository, payment_terms_params, business_item)
+    end
     let(:payment_terms_params) { 2.times.map { create(:payment_term).id } }
 
     subject { creator.perform }

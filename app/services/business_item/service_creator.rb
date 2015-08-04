@@ -6,14 +6,18 @@ class BusinessItem::ServiceCreator < BaseService
     business = business_repository.find_by_user_id(user.id)
     return Response.new(success: false) unless business.present?
 
-    service = service_repository.new_for_business(business, params[:business_item])
+    business_item_handler(business, params).perform
+  end
 
-    records = {user: user, business_item: service}
+  private
 
-    product_creator = BusinessItem::ServiceStoringHandler.new(records[:business_item],
-                                                               params[:business_item],
-                                                               params[:attributes],
-                                                               params[:payment_terms],
-                                                               params[:photos]).perform
+  def business_item_handler(business, params)
+    service = service_repository.new_for_business(business,
+                                                  params[:business_item])
+    records = { user: user, business_item: service }
+    BusinessItem::ServiceStoringHandler.new(
+      records[:business_item], params[:business_item],
+      params[:attributes], params[:payment_terms], params[:photos]
+    )
   end
 end

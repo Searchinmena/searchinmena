@@ -8,7 +8,7 @@ module BusinessItemRepository
   end
 
   def new_for_business(business, params)
-    klass.new params.merge({business_id: business.id})
+    klass.new params.merge(business_id: business.id)
   end
 
   def photo_url_for(business_item, type = nil)

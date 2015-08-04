@@ -16,8 +16,12 @@ class ProductValidator < BusinessItemValidator
     presence: true,
     if: proc { |i| i.min_order_quantity_number.present? }
 
-  validates :photos_count, numericality: {
-                              greater_than_or_equal_to: A9n.validations[:min_business_item_photo_count].to_i,
-                              less_than_or_equal_to:  A9n.validations[:max_business_item_photo_count].to_i }
+  min_photos = A9n.validations[:min_business_item_photo_count].to_i
+  max_photos = A9n.validations[:max_business_item_photo_count].to_i
 
+  validates :photos_count,
+    numericality: {
+      greater_than_or_equal_to: min_photos,
+      less_than_or_equal_to: max_photos
+    }
 end

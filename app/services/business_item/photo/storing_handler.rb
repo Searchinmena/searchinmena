@@ -1,5 +1,4 @@
 class BusinessItem::Photo::StoringHandler < BaseService
-
   attr_reader :busiess_item, :creators
 
   def initialize(repository, busiess_item, photos_params)
@@ -39,5 +38,4 @@ class BusinessItem::Photo::StoringHandler < BaseService
   def objects
     creators.map(&:object)
   end
-
 end

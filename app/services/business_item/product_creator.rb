@@ -5,15 +5,21 @@ class BusinessItem::ProductCreator < BaseService
   def perform
     business = business_repository.find_by_user_id(user.id)
     return Response.new(success: false) unless business.present?
+    business_item_handler(business, params).perform
+  end
 
-    product = product_repository.new_for_business(business, params[:business_item])
+  private
 
-    records = {user: user, business_item: product}
-
-    product_creator = BusinessItem::ProductStoringHandler.new(records[:business_item],
-                                                               params[:business_item],
-                                                               params[:attributes],
-                                                               params[:payment_terms],
-                                                               params[:photos]).perform
+  def business_item_handler(business, params)
+    product = product_repository.new_for_business(
+      business,
+      params[:business_item]
+    )
+    records = { user: user, business_item: product }
+    BusinessItem::ProductStoringHandler.new(records[:business_item],
+                                            params[:business_item],
+                                            params[:attributes],
+                                            params[:payment_terms],
+                                            params[:photos])
   end
 end

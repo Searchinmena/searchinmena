@@ -1,5 +1,4 @@
 class BusinessItem::Attribute::StoringHandler < ::BaseService
-
   attr_reader :product, :creators
 
   def initialize(repository, product, attributes_params)
@@ -36,5 +35,4 @@ class BusinessItem::Attribute::StoringHandler < ::BaseService
   def objects
     creators.map(&:object)
   end
-
 end

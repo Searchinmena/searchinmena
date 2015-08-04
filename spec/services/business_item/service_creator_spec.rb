@@ -4,6 +4,6 @@ describe BusinessItem::ServiceStoringHandler do
   it_behaves_like "business item creator" do
     let(:business_item) { build(:service) }
     let(:validator_factory) { ServiceValidator }
-    let(:business_items) { user.business.products }
+    let(:business_items) { user.business.services }
   end
 end

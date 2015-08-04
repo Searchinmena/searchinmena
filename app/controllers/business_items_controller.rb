@@ -33,6 +33,15 @@ class BusinessItemsController < ApplicationController
 
   private
 
+  def business_item_data
+    {
+      business_item: business_item_params,
+      photos: photos_params,
+      attributes: attributes_params,
+      payment_terms: payment_terms_params
+    }
+  end
+
   def business_item_parsed_params
     ActionController::Parameters.new(JSON.parse(params["business_item"]))
   end
@@ -46,7 +55,7 @@ class BusinessItemsController < ApplicationController
   end
 
   def photos_params
-    files = params.select { |key, value| key.to_s.include? "file" }.values
+    files = params.select { |key, _| key.to_s.include? "file" }.values
     files.any? ? files : []
   end
 
@@ -68,7 +77,9 @@ class BusinessItemsController < ApplicationController
     render json: {
       business_item: ErrorsPresenter.new(business_item),
       attributes: attributes.map { |attribute| ErrorsPresenter.new(attribute) },
-      photos: photos.map { |photo| PhotosErrorPresenter.new(photo.photo, photo) }
+      photos: photos.map do |photo|
+        PhotosErrorPresenter.new(photo.photo, photo)
+      end
     }, status: :conflict
   end
 
@@ -81,11 +92,19 @@ class BusinessItemsController < ApplicationController
   end
 
   def business_item_params
-    business_item_parsed_params.permit([:name, :description, :category_id,
-               :fob_price, :fob_price_currency_id, :fob_price_unit_id, :port,
-               :payment_terms, :supply_ability_capacity,
-               :supply_ability_unit_id, :supply_ability_frequency_id,
-               :packaging_details])
+    business_item_parsed_params.permit(
+      [:name,
+       :description,
+       :category_id,
+       :fob_price,
+       :fob_price_currency_id,
+       :fob_price_unit_id,
+       :port,
+       :payment_terms,
+       :supply_ability_capacity,
+       :supply_ability_unit_id,
+       :supply_ability_frequency_id,
+       :packaging_details])
   end
 
   def business_item_creator
@@ -95,6 +114,6 @@ class BusinessItemsController < ApplicationController
   private
 
   def parse_attributes(params)
-    JSON.parse(params).map { |attribute| attribute.symbolize_keys! }
+    JSON.parse(params).map(&:symbolize_keys!)
   end
 end

@@ -2,7 +2,6 @@ class PhotoValidator < FileValidator
   VALID_CONTENT_TYPES = %w{image/png image/jpeg}
   VALID_EXTENSIONS = %w{png jpg}
 
-
   validate :validate_minimum_image_size
 
   def initialize(record_params = {}, file_error_key = :file)
@@ -45,4 +44,3 @@ class PhotoValidator < FileValidator
     A9n.validations[:min_image_height]
   end
 end
-
