@@ -59,11 +59,6 @@ class BusinessItemsController < ApplicationController
     files.any? ? files : []
   end
 
-  def assign_business_item
-    @business_item = repository.find_for_user(current_user, params[:id])
-    head :not_found unless @business_item
-  end
-
   def render_collection
     render json: BusinessItemsCollectionPresenter.new(
       current_user, params[:page], repository, locale)

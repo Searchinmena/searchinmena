@@ -14,7 +14,7 @@ class BusinessItem::Attribute::StoringHandler < ::BaseService
     success = if valid?
                 store
               else
-                copy_errors(product)
+                copy_errors
               end
     Response.new(success: success, object: product)
   end

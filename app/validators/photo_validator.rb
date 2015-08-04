@@ -4,9 +4,9 @@ class PhotoValidator < FileValidator
 
   validate :validate_minimum_image_size
 
-  def initialize(record_params = {}, file_error_key = :file)
+  def initialize(record_params = {})
     self.file = record_params[:photo]
-    super(record_params, file_error_key)
+    super(record_params)
   end
 
   def valid_content_types

@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'PhotosUploader', 'Upload', 'PhotosValidator', 'AttributesErrors',
+  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'PhotosValidator', 'AttributesErrors',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    PhotosUploader, Upload, PhotosValidator, AttributesErrors) ->
+    BusinessItemWithDependencies, Upload, PhotosValidator, AttributesErrors) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -60,13 +60,8 @@
           attribute
         )
 
-        Upload.upload(
-          url: "/#{resourceName}",
-          fields: {business_item: scope.businessItem, attributes: attributes, payment_terms: scope.businessItem.payment_terms},
-          file: photos,
-          fileFormDataName: _.map(photos, (photo, index) ->
-            "file" + index
-          )
+        BusinessItemWithDependencies.create(
+          resourceName, scope.businessItem, attributes, scope.businessItem.payment_terms, photos
         ).success(
           scope.saveSucceededCallback()
         ).error(

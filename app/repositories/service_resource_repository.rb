@@ -3,7 +3,7 @@ class ServiceResourceRepository < AbstractRepository
     attributes.merge(service: business_item)
   end
 
-  def new_for_business_item(service, attrubute)
-    klass.new(attrubute.merge(service: service))
+  def new_for_business_item(service, attribute)
+    klass.new(attributes_with_business_item(attribute, service))
   end
 end
