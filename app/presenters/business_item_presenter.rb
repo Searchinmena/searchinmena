@@ -8,12 +8,19 @@ class BusinessItemPresenter < BasePresenter
       breadcrumbs: breadcrumbs,
       attributes: attributes,
       photos: photos,
-      cover_photo: repository.photo_url_for(business_item),
+      cover_photo: cover_photo,
       payment_terms: payment_terms
     )
   end
 
   private
+
+  def cover_photo
+    {
+      url: repository.photo_url_for(business_item),
+      thubm: repository.photo_url_for(business_item, :thumb)
+    }
+  end
 
   def basic_attributes
     {
