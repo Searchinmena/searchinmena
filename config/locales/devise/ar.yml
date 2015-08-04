@@ -105,6 +105,7 @@ ar:
       already_confirmed: "تم تأكيد الحساب مسبقاً، حاول تسجيل الدخول من فضلك. "
       confirmation_period_expired: "كان يجب تأكيده خلال %{period}، قم بطلب تأكيد الحساب من جديد من فضلك."
       expired: "لقد انتهت صلاحيته، قم بطلب واحد جديد من فضلك."
+      confirmation: "does not match (ar)"
       not_found: "غير موجود."
       not_locked: "لم يتم تفعيله."
       not_saved:
