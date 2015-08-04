@@ -24,32 +24,23 @@ shared_examples "BusinessItemPresenter" do
     ]
   end
 
-  def payment_term_with_translation(locale)
-    payment_term = create(:payment_term)
-    translation = create(:translation,
-                         translatable: payment_term,
-                         locale: locale)
-    payment_term.translations << translation
-    payment_term
-  end
-
   describe "#as_json" do
     subject { presenter.as_json }
 
     let(:currency) do
-      c = create(:currency)
+      c = create(:currency, translations: [])
       create(:translation, translatable: c, locale: locale, value: "USD")
       c
     end
 
     let(:unit) do
-      u = create(:unit)
+      u = create(:unit, translations: [])
       create(:translation, translatable: u, locale: locale, value: "Box/Boxes")
       u
     end
 
     let(:frequency) do
-      f = create(:frequency)
+      f = create(:frequency, translations: [])
       create(:translation, translatable: f, locale: locale, value: "Quater")
       f
     end

@@ -31,7 +31,7 @@ FactoryGirl.define do
       business_types { [create(:business_type)] }
     end
 
-    after(:build) do |business, evaluator|
+    after :build do |business, evaluator|
       business.business_types += evaluator.business_types
     end
   end
@@ -87,6 +87,14 @@ FactoryGirl.define do
   end
 
   factory :translatable do
+    transient do
+      translations { [create(:translation, translatable: nil)] }
+    end
+
+    after :create do |translatable, evaluator|
+      translatable.translations += evaluator.translations
+    end
+
     factory :unit, parent: :translatable, class: "Unit" do
     end
     factory :currency, parent: :translatable, class: "Currency" do
@@ -100,45 +108,32 @@ FactoryGirl.define do
     factory :business_type, parent: :translatable, class: "BusinessType" do
     end
     factory :tag, parent: :translatable, class: "Tag" do
-      factory :tag_with_translation do
-        transient do
-          translation { create(:translation) }
-        end
-
-        after :create do |tag, evaluator|
-          translation = evaluator.translation
-          tag.translations << translation
-          tag.save
-        end
-      end
     end
   end
 
   factory :translation do
-    association :translatable
     locale { "en" }
     sequence(:value) { |n| "Value#{n}" }
   end
 
   factory :category_translation do
-    category { create(:product_category, category_translation: nil) }
+    category { create(:product_category, category_translations: []) }
     locale { "en" }
     sequence(:value) { |n| "Value#{n}" }
   end
 
   factory :category do
-    factory :product_category, parent: :category, class: 'ProductCategory' do
+    factory :product_category, parent: :category, class: "ProductCategory" do
     end
-    factory :service_category, parent: :category, class: 'ServiceCategory' do
+    factory :service_category, parent: :category, class: "ServiceCategory" do
     end
 
     transient do
-      category_translation { build(:category_translation, category: nil) }
+      category_translations { [build(:category_translation, category: nil)] }
     end
 
     before :create do |category, evaluator|
-      translation = evaluator.category_translation
-      category.translations << translation if translation
+      category.translations += evaluator.category_translations
     end
   end
 end

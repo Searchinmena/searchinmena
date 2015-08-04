@@ -6,7 +6,7 @@ describe ServicePresenter do
       item = create(:service)
 
       item.service_attributes << create(:service_attribute)
-      item.payment_terms << payment_term_with_translation(locale)
+      item.payment_terms << create(:payment_term)
 
       item
     end

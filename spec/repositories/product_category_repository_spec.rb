@@ -5,7 +5,7 @@ describe ProductCategoryRepository do
 
   it_behaves_like "TranslatableRepository" do
     def create_item
-      create(:product_category, category_translation: nil)
+      create(:product_category, category_translations: [])
     end
 
     def create_translation(item, locale)
