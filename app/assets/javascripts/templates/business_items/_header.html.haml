@@ -1,9 +1,11 @@
 %section.item-gallery
-  %img{ "ng-src": "{{ businessItem.get('cover_photo') }}", class: "product-main-image" }
+  %a{ "ng-click": "openCoverPhoto()" }
+    %img{ "ng-src": "{{ coverPhoto['url'] }}", class: "product-main-image" }
 
   %ul.gallery-thumbs
-    %li.item-img-holder{ "ng-repeat": "photo in businessItem.get('photos')" }
-      %img.item-img{ "ng-src": "{{ photo['thumb'] }}" }
+    %li.item-img-holder{ "ng-repeat": "photo in photos" }
+      %a{ "ng-click": "openLightboxModal($index)" }
+        %img.item-img{ "ng-src": "{{ photo['thumb'] }}" }
 
 .item-header
   %h1.item-title {{ businessItem.get('name') }}
