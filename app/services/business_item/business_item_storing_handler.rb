@@ -25,17 +25,16 @@ class BusinessItem::BusinessItemStoringHandler <
       business_item,
       photos_params
     )
-    self.payment_terms_handler = BusinessItem::PaymentTerms::Creator.new(
+    self.payment_terms_handler = BusinessItem::PaymentTerms::StoringHandler.new(
       payment_term_repository,
       payment_terms_params,
       business_item
     )
-    self.handlers = [storing_handler, attributes_handler, photos_handler]
+    self.handlers = [storing_handler, attributes_handler, photos_handler, payment_terms_handler]
   end
 
   def store
-    handlers.map(&:perform).all?(&:successful?) &&
-     payment_terms_handler.perform
+    handlers.map(&:perform).all?(&:successful?)
   end
 
   def response(success)

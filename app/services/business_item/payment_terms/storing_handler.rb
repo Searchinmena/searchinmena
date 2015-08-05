@@ -1,4 +1,4 @@
-class BusinessItem::PaymentTerms::Creator
+class BusinessItem::PaymentTerms::StoringHandler
   takes :repository, :params, :business_item
 
   def perform
@@ -16,5 +16,12 @@ class BusinessItem::PaymentTerms::Creator
       storing_handler.perform
     end
     Response.new(success: responses.all?(&:successful?), object: business_item)
+  end
+
+  def valid?
+    true
+  end
+
+  def copy_errors
   end
 end
