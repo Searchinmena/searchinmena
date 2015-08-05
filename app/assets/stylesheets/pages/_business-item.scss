@@ -5,7 +5,7 @@
 
   @media screen and (min-width: $desktop) {
     @include float-direction;
-    width: 45%;
+    width: 55%;
     padding: $bs2 0;
     margin: 0 $bs2;
   }
@@ -49,6 +49,18 @@
     [dir="rtl"] & {
       margin: 0 0 0 $bs2;
     }
+
+    .subtitle {
+      @extend %basic-title;
+      color: $grey;
+    }
+
+    .section-title {
+
+      span {
+        top: -0.7rem;
+      }
+    }
   }
 
   .contact-supplier {
@@ -71,11 +83,8 @@
   padding: $bs2 $bs2 0;
   background-color: white;
 
-  @media screen and (min-width: $tablet) {
-    @include float-direction;
-  }
-
   @media screen and (min-width: $desktop) {
+    @include float-direction;
     padding: $bs2 0 0 $bs2;
 
     [dir="rtl"] & {
@@ -166,7 +175,7 @@
   }
 }
 
-.company-view {
+.company-view, .product-view, .service-view {
   @extend %clearfix;
   @extend %wide-container;
   background-color: white;

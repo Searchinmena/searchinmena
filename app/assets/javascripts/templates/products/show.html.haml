@@ -1,4 +1,4 @@
-%section.dashboard-content
+%section.product-view
   %div{ "ng-include": "'business_items/_header.html'" }
   .item-short-info
     %button.contact-supplier
@@ -53,5 +53,5 @@
 
     %div{ "ng-include": "'business_item/_attributes.html'" }
 
-  .item-detailed-info
-    %div{ "ng-include": "'business_item/_description.html'" }
+    .column
+      %div{ "ng-include": "'business_item/_description.html'" }
