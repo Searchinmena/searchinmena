@@ -14,4 +14,10 @@
 
     canSeeBusinessItems: ->
       @user && @user.canSeeBusinessItems()
+
+    emailConfirmed: ->
+      @user && @user.emailConfirmed()
+
+    fullName: ->
+      @user && @user.fullName()
 ]
