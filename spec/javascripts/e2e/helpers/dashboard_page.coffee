@@ -2,10 +2,57 @@ class DashboardPage
   get: ->
     browser.get("/#/dashboard")
 
+  productsNavLink: ->
+    element(By.css(".dashboard-navigation [href='#/dashboard/products']"))
+
+  servicesNavLink: ->
+    element(By.css(".dashboard-navigation [href='#/dashboard/services']"))
+
+  companyName: ->
+    element(By.css(".dashboard-content .company-name"))
+
+  editCompanyLink: ->
+    element(By.css(".company-profile-summary [href='#/dashboard/company/basic_info']"))
+
   productsLink: ->
-    element(By.css("a[href='#/dashboard/products']"))
+    element(By.css(".dashboard-content [href='#/dashboard/products']"))
 
   servicesLink: ->
-    element(By.css("a[href='#/dashboard/services']"))
+    element(By.css(".dashboard-content [href='#/dashboard/services']"))
+
+  addNewProductLink: ->
+    element(By.css(".dashboard-content [href='#/dashboard/products/new']"))
+
+  addNewServiceLink: ->
+    element(By.css(".dashboard-content [href='#/dashboard/services/new']"))
+
+  emptyProducts: ->
+    element(By.cssContainingText(".empty-index", "No products yet."))
+
+  emptyServices: ->
+    element(By.cssContainingText(".empty-index", "No services yet."))
+
+  buyerContent: ->
+    element(By.css(".buyer-dashboard-content"))
+
+  browseLink: ->
+    element(By.css("[href='#/browse']"))
+
+  createCompanyLink: ->
+    element(By.css(".buyer-dashboard-content [href='#/dashboard/company/basic_info']"))
+
+  checkSummaryContent: ->
+    expect(@buyerContent().isDisplayed()).toBe(false)
+
+    expect(@companyName().isDisplayed()).toBe(true)
+    expect(@editCompanyLink().isDisplayed()).toBe(true)
+
+    expect(@productsLink().isDisplayed()).toBe(true)
+    expect(@addNewProductLink().isDisplayed()).toBe(true)
+    expect(@emptyProducts().isDisplayed()).toBe(true)
+
+    expect(@servicesLink().isDisplayed()).toBe(true)
+    expect(@addNewServiceLink().isDisplayed()).toBe(true)
+    expect(@emptyServices().isDisplayed()).toBe(true)
 
 module.exports = DashboardPage

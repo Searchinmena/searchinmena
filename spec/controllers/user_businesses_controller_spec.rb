@@ -29,8 +29,11 @@ describe UserBusinessesController do
 
       context "user has business" do
         let(:user) { create(:seller) }
+        let(:locale) { :en }
 
-        before { expect(BusinessPresenter).to receive(:new).with(business) }
+        before do
+          expect(BusinessPresenter).to receive(:new).with(business, locale)
+        end
 
         it "is successful" do
           get :show

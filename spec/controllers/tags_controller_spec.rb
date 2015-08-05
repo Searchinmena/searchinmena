@@ -13,7 +13,7 @@ describe TagsController do
       fake(:tag_repository)
       let(:query) { "Ania" }
       let(:locale) { "en" }
-      let(:tag) { create(:tag_with_translation) }
+      let(:tag) { create(:tag) }
 
       it "is success" do
         expect(controller).to receive(:tag_repository)

@@ -6,7 +6,7 @@ describe ProductPresenter do
       item = create(:product)
 
       item.product_attributes << create(:product_attribute)
-      item.payment_terms << payment_term_with_translation(locale)
+      item.payment_terms << create(:payment_term)
 
       item
     end

@@ -5,7 +5,7 @@ describe BusinessesController do
     let(:business) { create(:business) }
 
     it "is not found" do
-      get :show, id: "not exisint id"
+      get :show, id: "not existing id"
       expect(response).to be_not_found
     end
 

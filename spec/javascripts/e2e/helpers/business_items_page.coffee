@@ -39,7 +39,7 @@ class BusinessItemsPage
 
     @cancelDeletion()
     expect(@itemsCount()).toEqual(1)
-    
+
     @clickDelete()
     @confirmDeletion()
     expect(@itemsCount()).toEqual(0)

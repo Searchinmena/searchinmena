@@ -29,7 +29,7 @@
   }
 }
 
-.dashboard-content {
+.dashboard-content, .buyer-dashboard-content {
   @extend %four-sides-border;
   @extend %clearfix;
   background-color: white;

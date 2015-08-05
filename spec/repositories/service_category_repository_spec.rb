@@ -5,7 +5,7 @@ describe ServiceCategoryRepository do
 
   it_behaves_like "TranslatableRepository" do
     def create_item
-      create(:service_category, category_translation: nil)
+      create(:service_category, category_translations: [])
     end
 
     def create_translation(item, locale)

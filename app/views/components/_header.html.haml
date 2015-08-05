@@ -1,10 +1,10 @@
 %header
-  .language-selection{ "ng-controller": 'LanguageCtrl' }
-    = link_to 'english', '#/',
+  .language-selection{ "ng-controller": "LanguageCtrl" }
+    = link_to "english", "#/",
       class: "language-choice", "ng-click": "changeLanguage($event, 'en')"
-    = link_to 'العربية', '#/',
+    = link_to "العربية", "#/",
       class: "language-choice", "ng-click": "changeLanguage($event, 'ar')",
-       lang: "ar"
+      lang: "ar"
 
   %a.logo{ href: "/#/" }
     = image_tag("logo-proposition-4.png")
@@ -32,4 +32,5 @@
         %li
           %a.nav-link.user-link{ href: Sim::Routes.user_session_path }
             = t('main_nav.login')
+
 .gradient-decor

@@ -8,31 +8,31 @@ shared_examples "any repository" do
 
   describe "#find_by_id" do
     let!(:object) { create(factory_name) }
-    it { expect(subject.find_by_id(object.id)).to eq(object)  }
+    it { expect(subject.find_by_id(object.id)).to eq(object) }
   end
 
   describe "#all" do
     let!(:object_1) { create(factory_name) }
     let!(:object_2) { create(factory_name) }
-    it { expect(subject.all).to eq([object_1, object_2])  }
+    it { expect(subject.all).to eq([object_1, object_2]) }
   end
 
   describe "#first" do
     let!(:object_1) { create(factory_name) }
     let!(:object_2) { create(factory_name) }
-    it { expect(subject.first).to eq(object_1)  }
+    it { expect(subject.first).to eq(object_1) }
   end
 
   describe "#last" do
     let!(:object_1) { create(factory_name) }
     let!(:object_2) { create(factory_name) }
-    it { expect(subject.last).to eq(klass.last)  }
+    it { expect(subject.last).to eq(klass.last) }
   end
 
   describe "#count" do
     let!(:object_1) { create(factory_name) }
     let!(:object_2) { create(factory_name) }
-    it { expect(subject.count).to eq(2)  }
+    it { expect(subject.count).to eq(2) }
   end
 
   describe "#save" do

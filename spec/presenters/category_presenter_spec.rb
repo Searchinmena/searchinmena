@@ -3,8 +3,10 @@ require "rails_helper"
 describe CategoryPresenter do
   describe "#as_json" do
     let(:presenter) { CategoryPresenter.new(category) }
-    let(:category) { create(:product_category, category_translation: nil) }
-    let!(:translation) { create(:category_translation, category: category) }
+    let(:translation) { create(:category_translation) }
+    let(:category) do
+      create(:product_category, category_translations: [translation])
+    end
 
     subject { presenter.as_json }
 

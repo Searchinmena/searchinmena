@@ -30,7 +30,11 @@
   },
   "dashboard": {
     "greeting": "مرحبا بك",
-    "go_to": "Go to..."
+    "go_to": "Go to...",
+    "see_all": "See all",
+    "browse_message": "As a buyer you can browse offers and contact sellers to find the best deal for you!",
+    "create_company_message": "Only sellers can add products and services, click below if you want to become one",
+    "create_company_button": "Create company profile"
   },
   "company": {
     "title": "ملف الشركة - اللغة العربية",
@@ -39,6 +43,8 @@
       "trade_details": "المعلومات التجارية",
       "certifications": "الشهادات"
     },
+    "profile_summary": "Company Profile Summary",
+    "edit_info": "Edit company info",
     "successfully_saved": "Company information was successfully saved",
     "saving_failed": "Company couldn't be saved, please check the form",
     "basic_info": {

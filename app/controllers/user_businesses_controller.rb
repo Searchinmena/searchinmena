@@ -31,7 +31,7 @@ class UserBusinessesController < ApplicationController
   end
 
   def render_success(business)
-    render json: BusinessPresenter.new(business)
+    render json: BusinessPresenter.new(business, locale)
   end
 
   def render_error(business)
