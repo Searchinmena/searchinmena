@@ -3,14 +3,14 @@ require "rails_helper"
 describe BusinessItemCategoryPresenter do
   describe "#as_json" do
     let(:category) { double(id: id) }
-    let(:locale) { 'en' }
+    let(:locale) { "en" }
     let(:category_repository) { double }
     let(:presenter) do
       BusinessItemCategoryPresenter.new(category, locale)
     end
 
     let(:id) { 1 }
-    let(:translation) { 'ania' }
+    let(:translation) { "ania" }
 
     subject { presenter.as_json.first }
 

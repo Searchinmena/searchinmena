@@ -8,7 +8,7 @@ describe TagRepository do
 
   def tag_with_translation(value, locale)
     translation = create(:translation, value: value, locale: locale)
-    create(:tag_with_translation, translation: translation)
+    create(:tag, translations: [translation])
   end
 
   describe "#for_business_with_translations" do
@@ -28,8 +28,7 @@ describe TagRepository do
     subject { repository.find_with_query(query, locale) }
 
     let!(:tag) do
-      create(:tag_with_translation,
-             translation: create(:translation, locale: locale))
+      create(:tag, translations: [create(:translation, locale: locale)])
     end
     let!(:matching_tag1) { tag_with_translation("AniasomethingB", locale) }
     let!(:matching_tag2) { tag_with_translation("AniasomethingA", locale) }

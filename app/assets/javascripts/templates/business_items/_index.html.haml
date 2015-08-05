@@ -1,23 +1,7 @@
 .item-summary{ tabindex: "0",
   "dir-paginate": "businessItem in businessItems | itemsPerPage: perPage",
   "total-items": "total", "current-page": "pagination.current" }
-  .item-img-holder
-    %img.item-img{ "ng-src": "{{ businessItem.get('thumb_url') }}" }
-
-  .item-info
-    %h3.item-title {{ businessItem.get('name') }}
-    .breadcrumbs{ "ng-include": "'business_items/_breadcrumbs.html'" }
-
-  .item-options
-    %a.edit{ href: "#" }
-      %span.icon.icon-pencil
-      {{ "business_items.edit" | translate }}
-    %a.see-page{ "ui-sref": "{{ showUrl(businessItem) }}", target: "_blank" }
-      %span.icon.icon-eye-open
-      {{ "business_items.see" | translate }}
-    %a.delete{ "ng-click-with-confirm": "deleteClicked(businessItem)" }
-      %span.icon.icon-remove
-      {{ "business_items.remove" | translate }}
+  %div{ "ng-include": "'business_items/_item.html'" }
 
 .pagination-container
   %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }

@@ -8,24 +8,22 @@ shared_examples "TranslatableRepository" do
   let(:locale) { "en" }
 
   def create_item
-    create(factory_name)
+    create(factory_name, translations: [])
   end
 
   def create_translation(item, locale)
     create(:translation, translatable: item, locale: locale)
   end
 
+  def create_item_with_translation(value)
+    o = create(factory_name, translations: [])
+    repository.create_translation(o, value, locale)
+    o
+  end
+
   describe "#all_with_translations" do
     let!(:object1) { create(factory_name) }
     let!(:object2) { create(factory_name) }
-
-    before do
-      [object1, object2].each do |o|
-        %w{en ar}.each do |locale|
-          repository.create_translation(o, "val", locale)
-        end
-      end
-    end
 
     subject { repository.all_with_translations("en").first.translations.first }
 
@@ -49,10 +47,7 @@ shared_examples "TranslatableRepository" do
   end
 
   describe "#with_translations" do
-    before do
-      object = create(factory_name)
-      repository.create_translation(object, "val", locale)
-    end
+    before { create(factory_name) }
 
     subject { repository.with_translations(locale).first.translations.first }
 
@@ -65,11 +60,7 @@ shared_examples "TranslatableRepository" do
     subject { repository.find_or_create_by_translation(value, locale) }
 
     context "record already present" do
-      let!(:object) do
-        o = create(factory_name)
-        repository.create_translation(o, value, locale)
-        o
-      end
+      let!(:object) { create_item_with_translation(value) }
 
       it { is_expected.to eq(object) }
       it { expect { subject }.not_to change { klass.count } }
@@ -91,11 +82,7 @@ shared_examples "TranslatableRepository" do
     subject { repository.find_by_translation(value, locale) }
 
     context "record already present" do
-      let!(:object) do
-        o = create(factory_name)
-        repository.create_translation(o, value, locale)
-        o
-      end
+      let!(:object) { create_item_with_translation(value) }
 
       it { is_expected.to eq(object) }
     end
@@ -119,7 +106,7 @@ shared_examples "TranslatableRepository" do
 
   describe "#create_translation" do
     let(:value) { "value" }
-    let!(:object) { create(factory_name) }
+    let!(:object) { create(factory_name, translations: []) }
 
     subject do
       repository.create_translation(object, value, locale)

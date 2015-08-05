@@ -6,3 +6,4 @@ exports.config =
   baseUrl: 'http://localhost:3000/',
   onPrepare: () ->
     browser.driver.manage().window().maximize()
+    browser.get('/')

@@ -15,7 +15,7 @@ shared_examples "CategoryRepository" do |resource_name|
     before do
       [parent, category].each do |o|
         %w{en ar}.each do |locale|
-          repository.create_translation(o, 'val', locale)
+          repository.create_translation(o, "val", locale)
         end
       end
     end
@@ -45,10 +45,10 @@ shared_examples "CategoryRepository" do |resource_name|
     subject { repository.translation_for(category, locale) }
 
     let(:category) do
-      create(resource_name, category_translation: category_translation)
+      create(resource_name, category_translations: [category_translation])
     end
-    let(:locale) { 'en' }
-    let(:category_translation) { create(:category_translation, locale: 'en') }
+    let(:locale) { "en" }
+    let(:category_translation) { create(:category_translation, locale: "en") }
 
     it { is_expected.to eq(category_translation.value) }
   end
