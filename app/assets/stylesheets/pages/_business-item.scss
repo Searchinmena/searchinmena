@@ -29,6 +29,10 @@
 
   .seller {
     padding: $bs0 0 0;
+
+    a {
+      display: inline-block;
+    }
   }
 
   .item-title {
