@@ -78,10 +78,15 @@
   width: 33.33%;
   color: white;
   border: none;
+  font-size: $bs09;
   text-transform: uppercase;
   display: inline-block;
   text-align: center;
   padding: 0 $bs-5;
+
+  @media screen and (min-width: 360px) {
+    font-size: $bs0;
+  }
 
   &:hover {
     span {
@@ -92,14 +97,20 @@
   span {
     @include transition(background-color, .25s, ease);
     border: 2px solid white;
-    padding: $bs2 0 0;
-    width: $bs7;
-    height: $bs7;
+    width: $bs6;
+    height: $bs6;
+    padding: $bs-2 0 0;
     border-radius: 50%;
     font-size: $bs4;
     display: block;
     text-align: center;
     margin: 0 auto $bs0 auto;
+
+    @media screen and (min-width: 360px) {
+      width: $bs7;
+      height: $bs7;
+      padding: $bs2 0 0;
+    }
   }
 }
 
