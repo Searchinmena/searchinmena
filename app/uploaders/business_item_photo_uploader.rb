@@ -13,4 +13,3 @@ class BusinessItemPhotoUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [A9n.thumbnail_size, A9n.thumbnail_size]
   end
 end
-

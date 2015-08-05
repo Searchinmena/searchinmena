@@ -26,6 +26,9 @@ class NewBusinessItemPage
 
     @itemTitleCss = ".item-title"
 
+  get: ->
+    browser.get(@path())
+
   attributes: ->
     element.all(By.model(@attributeModel))
 
@@ -115,6 +118,15 @@ class NewBusinessItemPage
     @removePhotoButton().click()
     expect(@photos().count()).toBe(0)
 
+  checkRenderingErrors: ->
+    @submitForm()
+
+    expect(browser.getCurrentUrl()).toMatch(@path())
+
+    expect(@nameError().isPresent()).toBe(true)
+    expect(@categoryError().isPresent()).toBe(true)
+    expect(@photosError().isPresent()).toBe(true)
+
   firstBusinessItem: ->
     element.all(By.css(@itemTitleCss)).get(0)
 
@@ -128,5 +140,14 @@ class NewBusinessItemPage
     @uploadFile()
 
     @submitForm()
+
+  nameError: ->
+    element(By.css(".field[error='errors.business_item.name'] span.error"))
+
+  categoryError: ->
+    element(By.css("span.error[error='errors.business_item.category_id']"))
+
+  photosError: ->
+    element(By.css("span.error[error='errors.photos_general']"))
 
 module.exports = NewBusinessItemPage

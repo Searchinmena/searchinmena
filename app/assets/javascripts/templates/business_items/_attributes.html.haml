@@ -1,7 +1,7 @@
 %label {{ "attributes.title" | translate }}
 
 %ul
-  %li.field-item{ "ng-repeat": "attribute in attributes" }
+  %li.field-item{ "ng-repeat": "(index, attribute) in attributes" }
     .inline-field
       %span {{ "attributes.attribute" | translate }}
       %input{ type: "text",
@@ -14,6 +14,9 @@
         "ng-model": "attribute.value" }
     %button.remove-button.remove-attribute{ type: "button", "ng-click": "removeAttribute(attribute)" }
       %span.icon-remove
+
+    .error{ "ng-repeat": "(i, error) in errors.attributes[index]" }
+      %error-message-for{ "error": "error" }
 
 %button.plus-button{ type: "button", "ng-click": "addAttribute()", id: "add-attribute" }
   %span.icon-plus

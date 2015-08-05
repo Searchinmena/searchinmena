@@ -6,7 +6,7 @@ class ProductsController < BusinessItemsController
   end
 
   def business_item_creator
-    BusinessItem::ProductCreator.new(new_business_item_params, current_user)
+    BusinessItem::ProductCreator.new(business_item_data, current_user)
   end
 
   def business_item_presenter_factory
@@ -18,7 +18,7 @@ class ProductsController < BusinessItemsController
   end
 
   def business_item_params
-    product_specific_params = params[resource_name].permit(
+    product_specific_params = business_item_parsed_params.permit(
       [:model_number, :brand_name, :min_order_quantity_number,
        :min_order_quantity_unit_id])
     super.merge(product_specific_params)

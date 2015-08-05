@@ -531,7 +531,7 @@ Style/WordArray:
 Metrics/AbcSize:
   # The ABC size is a calculated magnitude, so this number can be a Fixnum or
   # a Float.
-  Max: 16
+  Max: 18
   Exclude:
     - 'db/migrate/**'
     - 'app/presenters/business_presenter.rb'

@@ -4,10 +4,10 @@ describe ServiceValidator do
   subject { described_class.new(business_item_params) }
 
   let(:business_item_params) { valid_params }
-  let(:valid_params) { build_params(build(:service)) }
+  let(:valid_params) { build_params(build(:service)).merge(photos_count: 1) }
 
   it_behaves_like "BusinessItemValidator" do
-    let(:valid_params) { build_params(build(:service)) }
+    let(:valid_params) { build_params(build(:service)).merge(photos_count: 1) }
 
     describe "additional length validation" do
       [:place_of_origin, :average_completion_time].each do|field|

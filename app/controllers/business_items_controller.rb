@@ -6,7 +6,7 @@ class BusinessItemsController < ApplicationController
     if response.successful?
       render_success(response.object)
     else
-      render_error(response.object)
+      render_error(response.object, response.attributes, response.photos)
     end
   end
 
@@ -33,6 +33,32 @@ class BusinessItemsController < ApplicationController
 
   private
 
+  def business_item_data
+    {
+      business_item: business_item_params,
+      photos: photos_params,
+      attributes: attributes_params,
+      payment_terms: payment_terms_params
+    }
+  end
+
+  def business_item_parsed_params
+    ActionController::Parameters.new(JSON.parse(params["business_item"]))
+  end
+
+  def attributes_params
+    parse_attributes params[:attributes] || []
+  end
+
+  def payment_terms_params
+    params[:payment_terms] ? JSON.parse(params[:payment_terms]).keys : []
+  end
+
+  def photos_params
+    files = params.select { |key, _| key.to_s.include? "file" }.values
+    files.any? ? files : []
+  end
+
   def render_collection
     render json: BusinessItemsCollectionPresenter.new(
       current_user, params[:page], repository, locale)
@@ -42,9 +68,13 @@ class BusinessItemsController < ApplicationController
     render json: BusinessItemBasicPresenter.new(business_item)
   end
 
-  def render_error(business_item)
+  def render_error(business_item, attributes, photos)
     render json: {
-      business_item: ErrorsPresenter.new(business_item)
+      business_item: ErrorsPresenter.new(business_item),
+      attributes: attributes.map { |attribute| ErrorsPresenter.new(attribute) },
+      photos: photos.map do |photo|
+        PhotosErrorPresenter.new(photo.photo, photo)
+      end
     }, status: :conflict
   end
 
@@ -57,23 +87,28 @@ class BusinessItemsController < ApplicationController
   end
 
   def business_item_params
-    params[resource_name]
-      .permit([:name, :description, :category_id,
-               :fob_price, :fob_price_currency_id, :fob_price_unit_id, :port,
-               :payment_terms, :supply_ability_capacity,
-               :supply_ability_unit_id, :supply_ability_frequency_id,
-               :packaging_details])
+    business_item_parsed_params.permit(
+      [:name,
+       :description,
+       :category_id,
+       :fob_price,
+       :fob_price_currency_id,
+       :fob_price_unit_id,
+       :port,
+       :payment_terms,
+       :supply_ability_capacity,
+       :supply_ability_unit_id,
+       :supply_ability_frequency_id,
+       :packaging_details])
   end
 
   def business_item_creator
     fail NotImplementedError
   end
 
-  def attributes_params
-    params[:breadcrumbs] || []
-  end
+  private
 
-  def payment_terms_params
-    params[:payment_terms] ? params[:payment_terms].keys : []
+  def parse_attributes(params)
+    JSON.parse(params).map(&:symbolize_keys!)
   end
 end

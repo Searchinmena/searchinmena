@@ -1,8 +1,16 @@
 shared_examples "business item attributes creator" do
   describe "#perform" do
-    let(:creator) { described_class.new(attributes_params, business_item) }
-    let(:attributes_params) do
-      [{ name: "attr1", value: "value1" }, { name: "attr2", value: "value2" }]
+    let(:creator) do
+      described_class.new(repository, attribute, attribute_params)
+    end
+    let(:attribute_params) do
+      { name: "attr2", value: "value2" }
+    end
+    let(:attribute) do
+      repository.new_for_business_item(
+        business_item,
+        attribute_params
+      )
     end
 
     subject { creator.perform }
@@ -11,8 +19,7 @@ shared_examples "business item attributes creator" do
 
     it "saves attributes for business_item" do
       subject
-      expect(attributes.count).to eq(2)
+      expect(attributes.count).to eq(1)
     end
   end
 end
-

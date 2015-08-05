@@ -1,6 +1,6 @@
 shared_examples "business item photo creator" do
   describe "#perform" do
-    let(:service) { described_class.new(repository) }
+    let(:service) { described_class.new(repository, business_item, photo) }
     let(:validator) do
       double(:validator, valid?: true, errors?: false)
     end
@@ -11,7 +11,7 @@ shared_examples "business item photo creator" do
       expect(BusinessItemPhotoValidator).to receive(:new)
         .and_return(validator)
 
-      service.perform(business_item, photo)
+      service.perform
 
       expect(business_item.photos).not_to be_empty
     end

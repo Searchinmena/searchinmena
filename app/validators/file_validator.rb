@@ -2,7 +2,12 @@ class FileValidator < BaseValidator
   MAX_FILE_SIZE_IN_MB = 5
   validate :check_content_type, :file_size
 
-  attr_accessor :file
+  attr_accessor :file, :file_error_key
+
+  def initialize(record_params = {}, file_error_key = :file)
+    @file_error_key = file_error_key
+    super(record_params)
+  end
 
   def valid_content_types
     fail NotImplementedError
@@ -11,7 +16,7 @@ class FileValidator < BaseValidator
   def check_content_type
     if file.present? && !valid_content_type?(file)
       errors.add(
-        :file,
+        file_error_key,
         I18n.t('errors.messages.invalid_content_type',
               types: valid_extensions.join(", "))
       )
@@ -26,7 +31,7 @@ class FileValidator < BaseValidator
 
   def file_size
     if file.present? && file.size.to_f > MAX_FILE_SIZE_IN_MB.megabytes
-      errors.add(:file,
+      errors.add(file_error_key,
                  I18n.t('errors.messages.file_too_large',
                         max_file_size_in_mb: MAX_FILE_SIZE_IN_MB))
     end

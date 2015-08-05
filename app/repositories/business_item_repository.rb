@@ -7,10 +7,13 @@ module BusinessItemRepository
       .where("business_id = ?", user.business.id)
   end
 
+  def new_for_business(business, params)
+    klass.new params.merge(business_id: business.id)
+  end
+
   def photo_url_for(business_item, type = nil)
     photo = business_item.photos.first
     return default_image_for(type) unless photo
-
     photo.photo_url(type)
   end
 

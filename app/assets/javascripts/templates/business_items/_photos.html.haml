@@ -12,7 +12,7 @@
         %span.icon-remove
 
   %error-message-for{ "error": "errors.photos_general" }
-  .error{ "ng-repeat": "(fileName, errors) in errors.photos" }
-    {{fileName}}:
-    %div{ "ng-repeat": "error in errors.photo" }
+  .error{ "ng-repeat": "(i, photo_errors) in errors.photos" }
+    {{photo_errors.file_name}}:
+    %div{ "ng-repeat": "(j, error) in photo_errors.errors.photo" }
       {{error}}

@@ -100,3 +100,6 @@ describe NewProductPage, ->
 
     # cleanup
     productsPage.deleteBusinessItem()
+
+  it "renders errors on failure", ->
+    page.checkRenderingErrors()

@@ -44,4 +44,3 @@ class PhotoValidator < FileValidator
     A9n.validations[:min_image_height]
   end
 end
-

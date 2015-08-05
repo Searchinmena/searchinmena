@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'PhotosUploader', 'PhotosValidator',
+  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    PhotosUploader, PhotosValidator) ->
+    BusinessItemWithDependencies, Upload, AttributesErrors) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -42,40 +42,28 @@
         index = scope.businessItem.photos.indexOf(photo)
         scope.businessItem.photos.splice(index, 1)
 
-      scope.saveSucceededCallback = (data, photos) ->
-        itemId = data.id
-        PhotosUploader.upload(photos_path, photos, itemId,
-          ->
-            TranslatedFlash.success("#{resourceName}.successfully_added")
-            $state.go("dashboard.#{resourceName}")
-          , (errors) ->
-            scope.loading = false
-            scope.errors.photos = errors
-            scope.showFlashError()
-        )
-
-      scope.showFlashError = ->
-        TranslatedFlash.error("#{resourceName}.adding_failed")
-        scope.loading = false
-
       scope.saveAndUploadPhotos = ->
         photos = scope.businessItem.photos
 
-        unless PhotosValidator.validate(scope, photos)
-          TranslatedFlash.error("products.adding_failed")
-          return
-
-        scope.businessItem.breadcrumbs = _(scope.attributes).filter((attribute) ->
+        attributes = _(scope.attributes).filter((attribute) ->
           attribute.isPresent()
+        ).map((attribute) ->
+          delete attribute['$$hashKey']
+          attribute
         )
 
-        scope.businessItem.$save(
-          (data) ->
-            scope.saveSucceededCallback(data, photos)
-          , (response) ->
-            scope.loading = false
-            scope.errors = response["data"]
-            scope.showFlashError()
+        BusinessItemWithDependencies.create(
+          resourceName, scope.businessItem, attributes, scope.businessItem.payment_terms, photos
+        ).then(->
+          TranslatedFlash.success("#{resourceName}.successfully_added")
+          $state.go("dashboard.#{resourceName}")
+        ,
+        (data) ->
+          scope.errors = data
+          scope.errors.photos_general = data['business_item']['photos_count']
+          scope.errors.attributes = AttributesErrors.format_messages(data.attributes)
+          TranslatedFlash.error("#{resourceName}.adding_failed")
+          scope.loading = false
         )
 
       scope.submit = (e) ->
