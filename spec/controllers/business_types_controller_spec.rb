@@ -4,7 +4,7 @@ describe BusinessTypesController do
   describe "#index" do
     let(:repository) { double }
     let(:translatable) { double }
-    let(:locale) { "en" } 
+    let(:locale) { "en" }
 
     context "without business_id param" do
       it "is successful" do
