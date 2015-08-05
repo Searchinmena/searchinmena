@@ -1,8 +1,8 @@
 @Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
   'selectsLoader', 'TranslatedFlash', 'TAGS_PATH', 'USER_BUSINESS_PATH',
-  'language'
+  'language', 'CurrentUser',
   ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH,
-    USER_BUSINESS_PATH, language) ->
+    USER_BUSINESS_PATH, language, CurrentUser) ->
 
     config = {
       countries: '/countries',
@@ -41,6 +41,9 @@
         data: $scope.form,
         method: 'PUT'
       ).success(->
+        # reauthorize user to show correct menu
+        CurrentUser.authorize($scope)
+
         $scope.errors = {}
         TranslatedFlash.success('company.successfully_saved')
       ).error((errors) ->
