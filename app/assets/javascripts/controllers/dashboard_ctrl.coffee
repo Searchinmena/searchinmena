@@ -1,8 +1,4 @@
-@Sim.controller 'DashboardCtrl', ['$scope', '$http', 'CurrentUser', 'USER_BUSINESS_PATH',
-  ($scope, $http, CurrentUser, USER_BUSINESS_PATH) ->
+@Sim.controller 'DashboardCtrl', ['$scope', 'CurrentUser',
+  ($scope, CurrentUser) ->
     CurrentUser.authorize($scope)
-
-    $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
-      $scope.business = businessAttributes
-    )
 ]

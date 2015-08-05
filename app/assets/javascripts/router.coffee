@@ -13,7 +13,8 @@
     )
     .state('dashboard.home',
       url: '',
-      templateUrl: 'dashboard/home.html'
+      templateUrl: 'dashboard/home.html',
+      controller: 'DashboardHomeCtrl'
     )
     .state('dashboard.products',
       url: '/products',
