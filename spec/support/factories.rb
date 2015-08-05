@@ -106,17 +106,6 @@ FactoryGirl.define do
     factory :country, parent: :translatable, class: "Country" do
     end
     factory :business_type, parent: :translatable, class: "BusinessType" do
-      factory :business_type_with_translation do
-        transient do
-          translation { create(:translation) }
-        end
-
-        after :create do |business_type, evaluator|
-          translation = evaluator.translation
-          business_type.translations << translation
-          translation.save
-        end
-      end
     end
     factory :tag, parent: :translatable, class: "Tag" do
     end

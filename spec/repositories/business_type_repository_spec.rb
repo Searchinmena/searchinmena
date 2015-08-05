@@ -8,7 +8,7 @@ describe BusinessTypeRepository do
 
   def business_type_with_translation(value, locale)
     translation = create(:translation, value: value, locale: locale)
-    create(:business_type_with_translation, translation: translation)
+    create(:business_type, translations: [translation])
   end
 
   describe "#for_business_with_translations" do
