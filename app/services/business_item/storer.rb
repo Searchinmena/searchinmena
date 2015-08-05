@@ -1,4 +1,4 @@
-class BusinessItem::Storer
+class BusinessItem::Storer < BaseService
   attr_accessor :handlers, :object
 
   def perform(object)
