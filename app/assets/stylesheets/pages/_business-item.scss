@@ -1,4 +1,5 @@
 %info-column {
+  overflow: hidden;
   width: 100%;
   padding: $bs2;
 
@@ -122,9 +123,6 @@
   }
 
   td {
-    word-wrap: break-word;
-    word-break: break-all;
-    table-layout: fixed;
 
     span {
       display: inline-block;

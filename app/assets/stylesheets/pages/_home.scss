@@ -1,27 +1,25 @@
 .landing-header {
-  background-image: image-url('warehouse-1.jpg');
+  background-image: image-url('mena-map.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
-  padding: $bs9 0 0 0;
+  background-position: center bottom;
+  padding: 0 0 $bs0 0;
 
   @media screen and (min-width: $tablet) {
     height: 45em;
-    background-size: cover;
     padding: 0;
   }
 }
 
 .landing-header-info {
-  color: white;
-  background-color: $blue-medium;
   padding: 0 0 $bs2 0;
+  margin: 0 auto;
+  text-align: center;
 
   @media screen and (min-width: $tablet) {
     padding: $bs5 0;
     width: 60%;
     height: 45em;
-    float: right;
-    background-color: $blue-opaque;
   }
 
   @media screen and (min-width: $standard-desktop) {
@@ -39,8 +37,7 @@
   h1 {
     font-size: $bs3;
     line-height: 1.3;
-    padding: $bs0 $bs2;
-    background-color: $blue-basic;
+    color: $blue-basic;
     
     @media screen and (min-width: $standard-desktop) {
       font-size: $bs5;
@@ -53,7 +50,6 @@
 
     @media screen and (min-width: $tablet) {
       font-size: 21px;
-      max-width: 31em;
     }
 
     @media screen and (min-width: $standard-desktop) {
@@ -66,23 +62,51 @@
   padding: 0 $bs2;
 }
 
-.browse-btn, .dashboard-btn, .sign-up-btn {
+.dashboard-btn, .sign-up-btn {
   @extend %basic-button;
 }
 
-.browse-btn, .dashboard-btn {
-  @extend %ghost-button;
+.browse-buttons {
+  @extend %clearfix;
+  width: 100%;
+  max-width: 3.45 * $bs8;
+  margin: $bs6 auto 0;
+}
+
+.category-btn {
+  @include float-direction;
+  width: 33.33%;
+  color: white;
+  border: none;
+  text-transform: uppercase;
   display: inline-block;
-  margin-top: $bs2;
+  text-align: center;
+  padding: 0 $bs-5;
 
-   @media screen and (min-width: $tablet) {
-    margin-right: $bs0;
-
-    [dir="rtl"] & {
-      margin-right: 0;
-      margin-left: $bs0;
+  &:hover {
+    span {
+      background-color: $white-opaque;
     }
   }
+
+  span {
+    @include transition(background-color, .25s, ease);
+    border: 2px solid white;
+    padding: $bs2 0 0;
+    width: $bs7;
+    height: $bs7;
+    border-radius: 50%;
+    font-size: $bs4;
+    display: block;
+    text-align: center;
+    margin: 0 auto $bs0 auto;
+  }
+}
+
+.dashboard-btn {
+  @extend %blue-button;
+  margin-top: $bs2;
+  margin: $bs2 auto 0;
 
   @media screen and (min-width: $desktop) {
     margin-top: $bs5;
@@ -91,13 +115,12 @@
 
 
 .sign-up-btn {
-  margin: $bs5 0;
+  margin: $bs5 auto;
   @extend %purple-button;
 }
 
 .video-link {
   text-transform: uppercase;
-  color: white;
   border: 0;
   display: block;
 
