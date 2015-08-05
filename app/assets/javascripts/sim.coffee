@@ -4,8 +4,8 @@
 
 @Sim.SCROLL_TO_TOP_SPEED = 300
 
-@Sim.config(['$translateProvider', 'paginationTemplateProvider',
-  ($translateProvider, paginationTemplateProvider) ->
+@Sim.config(['$translateProvider', 'paginationTemplateProvider', 'LightboxProvider',
+  ($translateProvider, paginationTemplateProvider, LightboxProvider) ->
     $translateProvider.useStaticFilesLoader(
       prefix: "/assets/locales/",
       suffix: '.json'
@@ -17,6 +17,7 @@
     $translateProvider.useSanitizeValueStrategy('sanitizeParameters')
 
     paginationTemplateProvider.setPath('components/pagination.html')
+    LightboxProvider.templateUrl = 'components/lightbox.html'
 ])
 
 @Sim.run(['$rootScope', '$http', ($rootScope, $http) ->
