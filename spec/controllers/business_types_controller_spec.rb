@@ -25,8 +25,8 @@ describe BusinessTypesController do
 
       it "is successful" do
         expect(controller).to receive(:repository).and_return(repository)
-        expect(repository).to receive(:for_business_with_translations).with(business_id, locale)
-          .and_return([translatable])
+        expect(repository).to receive(:for_business_with_translations)
+          .with(business_id, locale).and_return([translatable])
         expect(TranslatablePresenter).to receive(:new).with(translatable)
           .and_return({})
 

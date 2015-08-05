@@ -12,7 +12,9 @@ describe BusinessTypeRepository do
   end
 
   describe "#for_business_with_translations" do
-    let!(:not_matching_business_type) { business_type_with_translation('Not Matching', 'en') }
+    let!(:not_matching_business_type) do
+      business_type_with_translation('Not Matching', 'en')
+    end
     let!(:business_types) { [business_type_with_translation('Matching', 'en')] }
     let(:business) { create(:business, business_types: business_types) }
 
