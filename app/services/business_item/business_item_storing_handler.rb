@@ -30,7 +30,8 @@ class BusinessItem::BusinessItemStoringHandler <
       payment_terms_params,
       business_item
     )
-    self.handlers = [storing_handler, attributes_handler, photos_handler, payment_terms_handler]
+    self.handlers = [storing_handler, attributes_handler, photos_handler,
+                     payment_terms_handler]
   end
 
   def store

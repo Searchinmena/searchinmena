@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe BusinessItem::PaymentTerms::Creator do
+describe BusinessItem::PaymentTerms::StoringHandler do
   context 'for product' do
     it_behaves_like "business item payment terms creator" do
       let(:repository) { ProductPaymentTermRepository.new }
