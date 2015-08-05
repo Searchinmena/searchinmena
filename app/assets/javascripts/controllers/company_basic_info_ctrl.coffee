@@ -42,7 +42,7 @@
         method: 'PUT'
       ).success(->
         # reauthorize user to show correct menu
-        CurrentUser.authorize($scope)
+        CurrentUser.authorize()
 
         $scope.errors = {}
         TranslatedFlash.success('company.successfully_saved')
