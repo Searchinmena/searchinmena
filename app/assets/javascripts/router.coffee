@@ -81,8 +81,9 @@
     # it needs to be parametried with id,
     # but for now it's Gosia's mockup
     $stateProvider.state('company',
-      url: '/company',
+      url: '/company/:id',
       templateUrl: 'company/show.html'
+      controller: 'CompanyShowCtrl'
     )
 
     $urlRouterProvider.otherwise('/')

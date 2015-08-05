@@ -33,5 +33,6 @@
 //= require router
 //= require constants
 //= require_tree ./models
+//= require_tree ./presenters
 //= require_tree ./services
 //= require_tree .
