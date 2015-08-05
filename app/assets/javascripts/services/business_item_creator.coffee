@@ -1,7 +1,7 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'PhotosValidator', 'AttributesErrors',
+  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    BusinessItemWithDependencies, Upload, PhotosValidator, AttributesErrors) ->
+    BusinessItemWithDependencies, Upload, AttributesErrors) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -42,14 +42,6 @@
         index = scope.businessItem.photos.indexOf(photo)
         scope.businessItem.photos.splice(index, 1)
 
-      scope.saveSucceededCallback = ->
-        TranslatedFlash.success("#{resourceName}.successfully_added")
-        $state.go("dashboard.#{resourceName}")
-
-      scope.showFlashError = ->
-        TranslatedFlash.error("#{resourceName}.adding_failed")
-        scope.loading = false
-
       scope.saveAndUploadPhotos = ->
         photos = scope.businessItem.photos
 
@@ -62,13 +54,16 @@
 
         BusinessItemWithDependencies.create(
           resourceName, scope.businessItem, attributes, scope.businessItem.payment_terms, photos
-        ).success(
-          scope.saveSucceededCallback()
-        ).error(
-          (data, status, headers, config) ->
-            scope.errors = data
-            scope.errors.attributes = AttributesErrors.format_messages(data.attributes)
-            TranslatedFlash.error("#{resourceName}.adding_failed")
+        ).then(->
+          TranslatedFlash.success("#{resourceName}.successfully_added")
+          $state.go("dashboard.#{resourceName}")
+        ,
+        (data) ->
+          scope.errors = data
+          scope.errors.photos_general = data['business_item']['photos_count']
+          scope.errors.attributes = AttributesErrors.format_messages(data.attributes)
+          TranslatedFlash.error("#{resourceName}.adding_failed")
+          scope.loading = false
         )
 
       scope.submit = (e) ->
