@@ -41,4 +41,18 @@ class DashboardPage
   createCompanyLink: ->
     element(By.css(".buyer-dashboard-content [href='#/dashboard/company/basic_info']"))
 
+  checkSummaryContent: ->
+    expect(@buyerContent().isDisplayed()).toBe(false)
+
+    expect(@companyName().isDisplayed()).toBe(true)
+    expect(@editCompanyLink().isDisplayed()).toBe(true)
+
+    expect(@productsLink().isDisplayed()).toBe(true)
+    expect(@addNewProductLink().isDisplayed()).toBe(true)
+    expect(@emptyProducts().isDisplayed()).toBe(true)
+
+    expect(@servicesLink().isDisplayed()).toBe(true)
+    expect(@addNewServiceLink().isDisplayed()).toBe(true)
+    expect(@emptyServices().isDisplayed()).toBe(true)
+
 module.exports = DashboardPage

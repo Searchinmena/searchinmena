@@ -41,18 +41,7 @@ describe DashboardPage, ->
       it "shows basic company info and business item sections", ->
         loginHelper.loginAsSeller()
         page.get()
-        expect(page.buyerContent().isDisplayed()).toBe(false)
-
-        expect(page.companyName().isDisplayed()).toBe(true)
-        expect(page.editCompanyLink().isDisplayed()).toBe(true)
-
-        expect(page.productsLink().isDisplayed()).toBe(true)
-        expect(page.addNewProductLink().isDisplayed()).toBe(true)
-        expect(page.emptyProducts().isDisplayed()).toBe(true)
-
-        expect(page.servicesLink().isDisplayed()).toBe(true)
-        expect(page.addNewServiceLink().isDisplayed()).toBe(true)
-        expect(page.emptyServices().isDisplayed()).toBe(true)
+        page.checkSummaryContent()
 
     describe "when both user", ->
       it "shows products and services nav links", ->
@@ -60,6 +49,11 @@ describe DashboardPage, ->
         page.get()
         expect(page.productsNavLink().isDisplayed()).toBe(true)
         expect(page.servicesNavLink().isDisplayed()).toBe(true)
+
+      it "shows basic company info and business item sections", ->
+        loginHelper.loginAsBoth()
+        page.get()
+        page.checkSummaryContent()
 
   describe "user is not logged in", ->
     it "redirects to sign in", ->
