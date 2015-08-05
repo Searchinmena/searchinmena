@@ -3,14 +3,15 @@
     {{ "dashboard.greeting" | translate }}
     {{ user.fullName() }}
 
-%section.buyer-dashboard-content{ "ng-hide": "user.canSeeBusinessItems()" }
-  %p {{ "dashboard.browse_message" | translate }}
-  %button.small-button{ "ui-sref": "browse" }
-    {{ "home.browse" | translate }}
+%section.buyer-dashboard-content.dashboard-content{ "ng-hide": "user.canSeeBusinessItems()" }
+  .index-options
+    %p {{ "dashboard.browse_message" | translate }}
+    %button.small-button{ "ui-sref": "browse" }
+      {{ "home.browse" | translate }}
 
-  %p {{ "dashboard.create_company_message" | translate }}
-  %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
-    {{ "dashboard.create_company_button" | translate }}
+    %p {{ "dashboard.create_company_message" | translate }}
+    %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
+      {{ "dashboard.create_company_button" | translate }}
 
 %section.dashboard-content{ "ng-show": "user.canSeeBusinessItems()" }
   %h2.header-title {{ "company.profile_summary" | translate }}
