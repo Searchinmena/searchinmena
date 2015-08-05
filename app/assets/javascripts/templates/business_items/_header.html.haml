@@ -2,7 +2,7 @@
   %a{ "ng-click": "openCoverPhoto()" }
     %img{ "ng-src": "{{ coverPhoto['url'] }}", class: "product-main-image" }
 
-  %ul.gallery-thumbs
+  %ul.gallery-thumbs{ "ng-show": "photos.length" }
     %li.item-img-holder{ "ng-repeat": "photo in photos" }
       %a{ "ng-click": "openLightboxModal($index)" }
         %img.item-img{ "ng-src": "{{ photo['thumb'] }}" }
