@@ -10,7 +10,7 @@ class BusinessItem::Photo::StoringHandler < BusinessItem::BaseStoringHandler
   end
 
   def valid?
-    @photos_params.any?  && super
+    @photos_params.any? && super
   end
 
   def object
