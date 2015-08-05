@@ -27,13 +27,7 @@ describe CompanyPage, ->
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
   it "shows no errors when inputs valid", ->
-    page.nameField().sendKeys("Lunar Logic")
-    page.phoneField().sendKeys("0048 12 430 22 88")
-
-    page.select(page.countrySelect(), "Poland")
-
-    page.businessTypesSelectToggle().click()
-    element(By.linkText("Business services")).click()
+    page.fillRequiredFields()
 
     page.submitForm()
 
