@@ -9,7 +9,8 @@
         %option company
     %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}" }
     %input{ type: "submit", value: "{{ 'home.search_submit' | translate }}" }
-  .browse-buttons
+
+  .browse-buttons{ hidden: true }
     %h2.title Browse
     %a.category-btn
       %span.icon-shopping-cart
@@ -20,6 +21,7 @@
     %a.category-btn
       %span.icon-briefcase
       Companies
+
 %section.landing-header
   .landing-header-info
     %h1

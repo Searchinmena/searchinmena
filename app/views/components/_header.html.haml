@@ -12,24 +12,24 @@
     %span.icon-list-alt
   %nav{ role: "navigation", "toggle-nav": "true" }
     %ul
-      %li
+      %li{ hidden: true }
         %a.nav-link{ href: Sim::Routes.browse_path }
           %span.icon.icon-search
           = t('main_nav.browse')
-        - if user_signed_in?
-          %li
-            %a.nav-link.user-link{ href: Sim::Routes.dashboard_path }
-              %span.icon.icon-home
-              = t('main_nav.dashboard')
-          %li
-            %a.nav-link.user-link{ href: Sim::Routes.destroy_user_session_path }
-              %span.icon.icon-off
-              = t('main_nav.logout')
-        - else
-          %li
-            %a.nav-link.user-link{ href: Sim::Routes.new_user_registration_path }
-              = t('main_nav.signup')
-          %li
-            %a.nav-link.user-link{ href: Sim::Routes.user_session_path }
-              = t('main_nav.login')
+      - if user_signed_in?
+        %li
+          %a.nav-link.user-link{ href: Sim::Routes.dashboard_path }
+            %span.icon.icon-home
+            = t('main_nav.dashboard')
+        %li
+          %a.nav-link.user-link{ href: Sim::Routes.destroy_user_session_path }
+            %span.icon.icon-off
+            = t('main_nav.logout')
+      - else
+        %li
+          %a.nav-link.user-link{ href: Sim::Routes.new_user_registration_path }
+            = t('main_nav.signup')
+        %li
+          %a.nav-link.user-link{ href: Sim::Routes.user_session_path }
+            = t('main_nav.login')
 .gradient-decor

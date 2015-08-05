@@ -68,10 +68,11 @@
       controller: 'ServicesShowCtrl'
     )
 
-    $stateProvider.state('browse',
-      url: '/browse',
-      templateUrl: 'browse.html'
-    )
+    # Temporarily hidden
+    # $stateProvider.state('browse',
+    #   url: '/browse',
+    #   templateUrl: 'browse.html'
+    # )
     $stateProvider.state('results',
       url: '/results',
       templateUrl: 'results.html'
