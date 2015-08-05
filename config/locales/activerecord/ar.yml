@@ -1,6 +1,4 @@
 ar:
-  attributes:
-    password_confirmation: "Password confirmation"
   errors:
     messages:
       blank: "لا يمكن أن يكون فارغا"
@@ -14,4 +12,3 @@ ar:
       invalid_size: "Image is too small. It should be at least %{min_width} x %{min_height} px"
       not_an_integer: "number is too big"
       greater_than: "must be greater than 0"
-      confirmation: "does not match"
