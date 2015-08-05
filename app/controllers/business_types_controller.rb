@@ -2,10 +2,12 @@ class BusinessTypesController < TranslatableController
   inject :business_type_repository
 
   def index
-    collection = if params[:business_id]
-      repository.for_business_with_translations(params[:business_id], params[:locale])
+    if params[:business_id]
+      collection = repository.for_business_with_translations(
+        params[:business_id], params[:locale]
+      )
     else
-      repository.all_with_translations(params[:locale])
+      collection = repository.all_with_translations(params[:locale])
     end
     render json: collection.map { |t| TranslatablePresenter.new(t) }
   end
