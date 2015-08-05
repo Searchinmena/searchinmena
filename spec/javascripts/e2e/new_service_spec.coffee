@@ -94,3 +94,7 @@ describe NewServicePage, ->
 
     # cleanup
     servicesPage.deleteBusinessItem()
+
+  it "renders errors on failure", ->
+    page.checkRenderingErrors()
+
