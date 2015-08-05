@@ -22,7 +22,7 @@ describe AttributeValidator do
 
   describe "#value" do
     context "name is blank" do
-      let(:attribute_params) { valid_params.merge(name: nil) }
+      let(:attribute_params) { valid_params.merge(name: nil, value: nil) }
 
       it { is_expected.to be_valid }
     end
@@ -30,6 +30,14 @@ describe AttributeValidator do
     context "name is present but value not" do
       let(:attribute_params) do
         valid_params.merge(name: "attribute", value: nil)
+      end
+
+      it { is_expected.to be_invalid }
+    end
+
+    context "value is present but name not" do
+      let(:attribute_params) do
+        valid_params.merge(value: "value", name: nil)
       end
 
       it { is_expected.to be_invalid }
