@@ -1,4 +1,4 @@
-class BusinessItem::ProductStoringHandler < BaseService
+class BusinessItem::ProductStoringHandler < BusinessItem::BaseStoringHandler
   inject :product_repository, :product_attribute_repository,
          :product_photo_repository, :product_payment_term_repository
 
@@ -24,27 +24,16 @@ class BusinessItem::ProductStoringHandler < BaseService
     self.handlers = [storing_handler, attributes_handler, photos_handler]
   end
 
-  def perform
-    success = if valid?
-                handlers.map(&:perform).all?(&:successful?) &&
-                payment_terms_handler.perform.successful?
-              else
-                copy_errors
-              end
+  def store
+    handlers.map(&:perform).all?(&:successful?) &&
+      payment_terms_handler.perform.successful?
+  end
 
+  def response(success)
     BusinessItem::Response.new(success: success,
                                business_item: product,
                                attributes: attributes,
                                photos: photos)
-  end
-
-  def valid?
-    handlers.map(&:valid?).all?
-  end
-
-  def copy_errors
-    handlers.map(&:copy_errors)
-    false
   end
 
   def attributes
