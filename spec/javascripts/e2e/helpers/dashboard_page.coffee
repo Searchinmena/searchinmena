@@ -12,7 +12,7 @@ class DashboardPage
     element(By.css(".dashboard-content .company-name"))
 
   editCompanyLink: ->
-    element(By.css(".dashboard-content [href='#/dashboard/company/basic_info']"))
+    element(By.css(".company-profile-summary [href='#/dashboard/company/basic_info']"))
 
   productsLink: ->
     element(By.css(".dashboard-content [href='#/dashboard/products']"))

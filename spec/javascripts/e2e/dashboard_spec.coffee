@@ -12,7 +12,7 @@ describe DashboardPage, ->
     afterEach ->
       loginHelper.logout()
 
-    describe "buyer user", ->
+    describe "when buyer user", ->
       it "hides products and services nav links", ->
         loginHelper.loginAsBuyer()
         page.get()
@@ -31,7 +31,7 @@ describe DashboardPage, ->
         expect(page.productsLink().isDisplayed()).toBe(false)
         expect(page.servicesLink().isDisplayed()).toBe(false)
 
-    describe "seller user", ->
+    describe "when seller user", ->
       it "shows products and services nav links", ->
         loginHelper.loginAsSeller()
         page.get()
@@ -54,7 +54,7 @@ describe DashboardPage, ->
         expect(page.addNewServiceLink().isDisplayed()).toBe(true)
         expect(page.emptyServices().isDisplayed()).toBe(true)
 
-    describe "both user", ->
+    describe "when both user", ->
       it "shows products and services nav links", ->
         loginHelper.loginAsBoth()
         page.get()
