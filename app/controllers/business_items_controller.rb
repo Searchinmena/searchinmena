@@ -72,7 +72,7 @@ class BusinessItemsController < ApplicationController
     render json: {
       business_item: ErrorsPresenter.new(business_item),
       attributes: attributes.map { |attribute| ErrorsPresenter.new(attribute) },
-      photos: photos.map do |photo|
+      photos: photos.select { |photo| photo.errors.present? }.map do |photo|
         PhotosErrorPresenter.new(photo.photo, photo)
       end
     }, status: :conflict
