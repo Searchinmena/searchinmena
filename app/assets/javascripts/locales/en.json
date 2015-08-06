@@ -189,6 +189,8 @@
     "empty_list": "No services yet.",
     "your_services": "Your services",
     "add_new_service": "Add new service",
+    "successfully_added": "Service was successfully added",
+    "adding_failed": "Error occurred while adding service, please check the form",
     "new": {
       "form_title": "New service",
       "basic_section": "Basic info",
