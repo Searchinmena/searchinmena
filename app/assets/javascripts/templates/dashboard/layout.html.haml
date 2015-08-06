@@ -21,7 +21,7 @@
       %a.nav-link{ "ui-sref": "dashboard.services", "ui-sref-active": "active" }
         {{ "dashboard_nav.services" | translate }}
         %span.icon.icon-user
-    %li
+    %li{ hidden: true }
       %a.nav-link{ href: "#" }
         {{ "dashboard_nav.messages" | translate }}
         %span.icon.icon-envelope
