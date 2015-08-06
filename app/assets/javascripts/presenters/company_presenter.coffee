@@ -16,9 +16,9 @@ class CompanyPresenter
 
   location: ->
     if @company.city
-      @company.city + ', ' + @company.country_id
+      @company.city + ', ' + @company.country
     else
-      @company.country_id
+      @company.country
 
   products: ->
     if @tags
