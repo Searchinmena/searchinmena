@@ -1,4 +1,4 @@
-.alert.alert-warning.confirm-email{ "ng-show": "!user.emailConfirmed()" }
+.alert.alert-warning.confirm-email{ "ng-show": "!currentUser.emailConfirmed()" }
   {{ "confirm_email_message.text" | translate }}
   {{ "confirm_email_message.or" | translate }}
   %a{ href: Sim::Routes.new_user_confirmation_path }

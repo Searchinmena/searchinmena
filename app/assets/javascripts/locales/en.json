@@ -4,6 +4,11 @@
     "ok": "Yes, I'm sure",
     "cancel": "Cancel"
   },
+  "lightbox": {
+    "prev": "Previous",
+    "next": "Next",
+    "open_in_new_tab": "Open image in new tab"
+  },
   "home": {
     "header_line_1": "Join Search in MENA marketplace",
     "header_line_2": "and start getting inquiries from buyers today.",

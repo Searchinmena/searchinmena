@@ -36,9 +36,9 @@
         target: "_blank", class: "video-link" }
         %span.icon-play-circle
         {{ "home.watch_video" | translate }}
-      %div{ "ng-show": "user" }
+      %div{ "ng-show": "currentUser.isPresent()" }
         %a.dashboard-btn{ href: Sim::Routes.dashboard_path }
           {{ "home.see_dashboard" | translate }}
-      %div{ "ng-hide": "user" }
+      %div{ "ng-hide": "currentUser.isPresent()" }
         %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
           {{ "home.join_now" | translate }}

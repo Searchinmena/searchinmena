@@ -1,9 +1,9 @@
 %section.dashboard-content
   %h1.title.greeting
     {{ "dashboard.greeting" | translate }}
-    {{ user.fullName() }}
+    {{ currentUser.fullName() }}
 
-%section.buyer-dashboard-content.dashboard-content{ "ng-hide": "user.canSeeBusinessItems()" }
+%section.buyer-dashboard-content.dashboard-content{ "ng-hide": "currentUser.canSeeBusinessItems()" }
   .index-options
     / %p {{ "dashboard.browse_message" | translate }}
     / %button.small-button{ "ui-sref": "browse" }
@@ -13,7 +13,7 @@
     %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
       {{ "dashboard.create_company_button" | translate }}
 
-%section.dashboard-content{ "ng-show": "user.canSeeBusinessItems()" }
+%section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()" }
   %h2.header-title {{ "company.profile_summary" | translate }}
   .company-short-info.company-profile-summary
     %h2.company-name {{ business.name }}
@@ -30,7 +30,7 @@
       %span.icon-pencil
       {{ "company.edit_info" | translate }}
 
-%section.dashboard-content{ "ng-show": "user.canSeeBusinessItems()", "ng-controller": "ProductsIndexCtrl" }
+%section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()", "ng-controller": "ProductsIndexCtrl" }
   %h2.header-title
     {{ "products.your_products" | translate }}
     %a.header-link{ "ui-sref": "dashboard.products" }
@@ -47,7 +47,7 @@
 
   %div{ "ng-show": "businessItems.length", "ng-include": "'business_items/_summary.html'" }
 
-%section.dashboard-content{ "ng-show": "user.canSeeBusinessItems()", "ng-controller": "ServicesIndexCtrl" }
+%section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()", "ng-controller": "ServicesIndexCtrl" }
   %h2.header-title
     {{ "services.your_services" | translate }}
     %a.header-link{ "ui-sref": "dashboard.services" }

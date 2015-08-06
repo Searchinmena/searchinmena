@@ -27,13 +27,7 @@ describe CompanyPage, ->
     expect(page.errorFlashMessage().isDisplayed()).toBe(true)
 
   it "shows no errors when inputs valid", ->
-    page.nameField().sendKeys("Lunar Logic")
-    page.phoneField().sendKeys("0048 12 430 22 88")
-
-    page.select(page.countrySelect(), "Poland")
-
-    page.businessTypesSelectToggle().click()
-    element(By.linkText("Business services")).click()
+    page.fillRequiredFields()
 
     page.submitForm()
 
@@ -51,7 +45,8 @@ describe CompanyPage, ->
     page.clickSuggestedTag()
 
     page.submitForm()
-    page.get()
+    # page.get()
+    expect(page.fieldsWithErrors().count()).toEqual(0)
 
     # tags should be added
     expect(element(By.cssContainingText("span", "Ania")).isDisplayed()).toBe(true)
@@ -60,7 +55,8 @@ describe CompanyPage, ->
 
     page.removeTagButton("Ania")
     page.submitForm()
-    page.get()
+    # page.get()
+    expect(page.fieldsWithErrors().count()).toEqual(0)
 
     # tag should be removed
     expect(element(By.cssContainingText("span", "Ania")).isPresent()).toBe(false)
