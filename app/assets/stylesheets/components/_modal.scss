@@ -134,5 +134,9 @@
 
   .btn-next {
     float: right;
+
+    [dir="rtl"] & {
+      float: left;
+    }
   }
 }

@@ -1,5 +1,4 @@
 .search-results-container
-  %div{ "ng-include": "'components/_categories_list.html'" }
   .search-results-content
     %form.search-results-form
       .field.search-field
@@ -27,59 +26,72 @@
         %span.icon.icon-th.active
 
     %h3.title 245 Search Results:
-    / %ul.search-results.net-view
-    /   %li.result-item
-    /     .item-main-img.vase-1
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase Never Seen Before
-    /     .from
-    /       from: Company Name
-    /   %li.result-item
-    /     .item-main-img.vase-2
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase
-    /     .from
-    /       from: Company Name
-    /   %li.result-item
-    /     .item-main-img.vase-3
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase So Beautiful You will die
-    /     .from
-    /       from: Company Name
-    /   %li.result-item
-    /     .item-main-img.vase-4
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase
-    /     .from
-    /       from: Company Name
-    /   %li.result-item
-    /     .item-main-img.vase-5
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase
-    /     .from
-    /       from: Company Name
-    /   %li.result-item
-    /     .item-main-img.vase-6
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase
-    /     .from
-    /       from: Company Name
-    /   %li.result-item
-    /     .item-main-img.vase-7
-    /     %a.result-item-title{ href: "/product" }
-    /       Beautiful oriental Vase
-    /     .from
-    /       from: Company Name
-
-    %ul.search-results
+    %ul.search-results.net-view
       %li.result-item
         %a.item-img-link{ href: "/product" }
-          %img{ src: 'vase-1.jpeg' }
+          %img{ src: 'assets/strange-2.jpg' }
         .result-header-info
           %a.result-item-title{ href: "/product" }
             Beautiful oriental Vase Awesome Thing for your House
+          .from
+            %span from:
+            %a{ href: "/#/company" } Company Name
         .result-item-description
-          %table.product-details
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            Wellington (New Zeland)
+          %a.plain-link{ "ui-sref": "dashboard.company" } See company profile
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
+
+      %li.result-item
+        %a.item-img-link{ href: "/product" }
+          %img{ src: 'assets/strange-1.jpg' }
+        .result-header-info
+          %a.result-item-title{ href: "/product" }
+            Beautiful oriental Vase Awesome Thing for your House
+          .from
+            %span from:
+            %a{ href: "/#/company" } Company Name
+        .result-item-description
+          %p
+            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
+            cupcake tart halvah. Cotton
+            candy pudding apple pie gummies croissant. Marshmallow liquorice
+            chocolate icing marshmallow sugar
+            plum fruitcake fruitcake apple pie.
+        .company-summary
+          .company-name
+            McDonald's
+          .company-location
+            %span location:
+            Poland
+          %a.plain-link{ "ui-sref": "dashboard.company" } See company profile
+          %button.contact-supplier
+            %span.icon.icon-envelope
+            %span.value Contact Seller
+    %ul.search-results
+      %li.result-item
+        %a.item-img-link{ href: "/product" }
+          %img{ src: 'assets/strange-2.jpg' }
+        .result-header-info
+          %a.result-item-title{ href: "/product" }
+            Beautiful oriental Vase Awesome Thing for your House
+          .from
+            %span from:
+            %a{ href: "/#/company" } Company Name
+        .result-item-description
+          %table.item-details
             %tr
               %td.attribute FOB price:
               %td $4,500 - 10,000 / Piece
@@ -105,10 +117,13 @@
 
       %li.result-item
         %a.item-img-link{ href: "/product" }
-          %img{ src: 'vase-2.jpeg' }
+          %img{ src: 'assets/strange-1.jpg' }
         .result-header-info
           %a.result-item-title{ href: "/product" }
             Beautiful oriental Vase Awesome Thing for your House
+          .from
+            %span from:
+            %a{ href: "/#/company" } Company Name
         .result-item-description
           %p
             Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
@@ -127,98 +142,3 @@
             %span.icon.icon-envelope
             %span.value Contact Seller
 
-      %li.result-item
-        %a.item-img-link{ href: "/product" }
-          %img{ src: 'vase-3.jpg' }
-        .result-header-info
-          %a.result-item-title{ href: "/product" }
-            Beautiful oriental Vase Awesome Thing for your House
-        .result-item-description
-          %p
-            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-            cupcake tart halvah. Cotton
-            candy pudding apple pie gummies croissant. Marshmallow liquorice
-            chocolate icing marshmallow sugar
-            plum fruitcake fruitcake apple pie.
-        .company-summary
-          .company-name
-            McDonald's
-          .company-location
-            %span location:
-            Poland
-          %a.plain-link{ "ui-sref": "dashboard.company" } See company profile
-          %button.contact-supplier
-            %span.icon.icon-envelope
-            %span.value Contact Seller
-
-      %li.result-item
-        %a.item-img-link{ href: "/product" }
-          %img{ src: 'vase-4.jpg' }
-        .result-header-info
-          %a.result-item-title{ href: "/product" }
-            Beautiful oriental Vase Awesome Thing for your House
-        .result-item-description
-          %p
-            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-            cupcake tart halvah. Cotton
-            candy pudding apple pie gummies croissant. Marshmallow liquorice
-            chocolate icing marshmallow sugar
-            plum fruitcake fruitcake apple pie.
-        .company-summary
-          .company-name
-            Longer Name For the Company
-          .company-location
-            %span location:
-            Poland
-          %a.plain-link{ "ui-sref": "dashboard.company" } See company profile
-          %button.contact-supplier
-            %span.icon.icon-envelope
-            %span.value Contact Seller
-
-      %li.result-item
-        %a.item-img-link{ href: "/product" }
-          %img{ src: 'vase-5.jpg' }
-        .result-header-info
-          %a.result-item-title{ href: "/product" }
-            Beautiful oriental Vase Awesome Thing for your House
-        .result-item-description
-          %p
-            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-            cupcake tart halvah. Cotton
-            candy pudding apple pie gummies croissant. Marshmallow liquorice
-            chocolate icing marshmallow sugar
-            plum fruitcake fruitcake apple pie.
-        .company-summary
-          .company-name
-            McDonald's
-          .company-location
-            %span location:
-            United States of America such long
-          %a.plain-link{ "ui-sref": "dashboard.company" } See company profile
-          %button.contact-supplier
-            %span.icon.icon-envelope
-            %span.value Contact Seller
-
-      %li.result-item
-        %a.item-img-link{ href: "/product" }
-          %img{ src: 'vase-6.png' }
-        .result-header-info
-          %a.result-item-title{ href: "/product" }
-            Beautiful oriental Vase Awesome Thing for your House
-        .result-item-description
-          %p
-            Chupa chups cheesecake chocolate bar tootsie roll lemon drops muffin
-            cupcake tart halvah. Cotton
-            candy pudding apple pie gummies croissant. Marshmallow liquorice
-            chocolate icing marshmallow sugar
-            plum fruitcake fruitcake apple pie.
-        .company-summary
-          .company-name
-            McDonald's
-          .company-location
-            %span location:
-            Poland
-          %a.plain-link{ "ui-sref": "dashboard.company" } See company profile
-          %button.contact-supplier
-            %span.icon.icon-envelope
-            %span.value Contact Seller

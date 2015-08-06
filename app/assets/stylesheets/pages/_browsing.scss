@@ -1,22 +1,7 @@
-.search-results-container {
-  position: relative; 
-  background-color: $medium-grey;
-  padding: 0;
-
-  @media screen and (min-width: $medium-desktop) {
-    padding: 0 0 $bs2 2 * $bs9;
-  }
-}
-
 .search-results-content {
+  position: relative;
   background-color: white;
 
-  @media screen and (min-width: $medium-desktop) {
-    margin: 0 $bs-1;
-    border: $default-border;
-    border-top: 0;
-  }
-  
   .title {
     padding: 0 $bs2;
   }
@@ -99,7 +84,7 @@
 .result-item {
   @extend %clearfix;
   position: relative;
-  border-top: $default-border;
+  border-bottom: $default-border;
   display: block;
   padding: $bs1 0 0;
 
@@ -243,19 +228,37 @@
       top: auto;
       width: 100%;
     }
-    
+
     .value {
       display: none;
-      
+
       @media screen and (min-width: $tablet) {
         display: inline-block;
       }
     }
   }
+
+  .from {
+    display: none;
+    margin: $bs-3 0;
+    font-size: $bs09;
+
+    span {
+      color: $grey;
+    }
+
+    a {
+      color: $basic-font;
+      border-color: $basic-font;
+    }
+  }
 }
 
 .net-view {
-  
+  .company-summary, .result-item-description {
+    display: none;
+  }
+
   .result-item-title {
     margin: $bs0 0 $bs-3;
 
@@ -263,16 +266,31 @@
       font-size: $bs1;
     }
   }
-  .item-main-img {
+
+  .result-item .result-header-info {
+    max-width: none;
+    width: 100%;
+    float: none;
+  }
+
+  .item-img-link {
     width: 100%;
     height: 15em;
-
-    @media screen and (min-width: $tablet) {
-      border: $default-border;
-    }
+    margin: 0 auto $bs-3;
+    border: 0;
 
     @media screen and (min-width: $desktop) {
+      max-width: 100%;
       width: 15em;
+      display: block;
+      float: none;
+    }
+
+   img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: 0 auto;
     }
   }
 
@@ -281,16 +299,54 @@
     height: 23em;
 
     @media screen and (min-width: $tablet) {
-      border-bottom: 0;
+      @include float-direction;
       width: 33%;
-      float: left;
       height: 25em;
+      border-right: $default-border;
+      border-bottom: $default-border;
+
+      [dir="rtl"] & {
+        border-right: 0;
+        border-left: $default-border;
+      }
     }
-    
+
     @media screen and (min-width: $desktop) {
-      width: 20em;
-      float: left;
+      width: 25%;
       height: 23em;
+
+      &:nth-child(4n){
+        border-right: 0;
+
+        [dir="rtl"] & {
+          border-left: 0;
+        }
+      }
+    }
+
+    @media screen and (min-width: $big-desktop) {
+      width: 20%;
+
+      &:nth-child(4n){
+        border-right: $default-border;
+
+        [dir="rtl"] & {
+          border-left: $default-border;
+          border-right: 0;
+        }
+      }
+
+      &:nth-child(5n){
+        border-right: 0;
+
+        [dir="rtl"] & {
+          border-left: 0;
+        }
+      }
+    }
+
+    .from {
+      display: block;
     }
   }
 }

@@ -211,9 +211,8 @@
 
   li {
     @extend %clearfix;
-    @include float-direction;
     width: 46%;
-    height: 15em;
+    vertical-align: top;
     display: inline-block;
     margin: 0 2% $bs0 0;
 
@@ -224,7 +223,6 @@
     @media screen and (min-width: $tablet) {
       width: auto;
       max-width: 2 * $bs9;
-      height: 2 * $bs9;
     }
   }
 
