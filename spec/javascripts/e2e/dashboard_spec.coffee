@@ -25,7 +25,7 @@ describe DashboardPage, ->
 
         expect(page.buyerContent().isDisplayed()).toBe(true)
 
-        expect(page.browseLink().isDisplayed()).toBe(true)
+        # expect(page.browseLink().isDisplayed()).toBe(true)
         expect(page.createCompanyLink().isDisplayed()).toBe(true)
 
         expect(page.productsLink().isDisplayed()).toBe(false)

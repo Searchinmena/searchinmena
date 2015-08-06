@@ -12,7 +12,7 @@
       emailConfirmed: ->
         !!@confirmed_at
     )
-    
+
     User
 ]
 
