@@ -1,12 +1,18 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors',
+  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors', 'MIN_IMAGE_WIDTH', 'MIN_IMAGE_HEIGHT',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
-    BusinessItemWithDependencies, Upload, AttributesErrors) ->
+    BusinessItemWithDependencies, Upload, AttributesErrors,
+    MIN_IMAGE_WIDTH, MIN_IMAGE_HEIGHT) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
       scope.errors = {}
       scope.attributes = (new SIM.Attribute() for i in [0..1])
+
+      scope.photoCommentTranslationData = {
+        min_image_width: MIN_IMAGE_WIDTH,
+        min_image_height: MIN_IMAGE_HEIGHT
+      }
 
       config = {
         units: "/units",
