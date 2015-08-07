@@ -36,7 +36,7 @@
     %span {{ "trade_info.per" | translate }}
     .select-field
       %select{ "ng-options": "frequency.id as frequency.label for frequency in frequencies",
-      "ng-model": "businessItem.supply_ability_frequency_id" }  
+      "ng-model": "businessItem.supply_ability_frequency_id" }
         %option{ value: "" } -- {{ "trade_info.choose_frequency" | translate }} --
     %error-message-for{ "error": "errors.business_item.supply_ability_frequency_id" }
 
@@ -47,7 +47,7 @@
     "ng-model": "businessItem.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
       %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
-%form-field{ "error": "errors.business_item.packaging" }
+%form-field{ "error": "errors.business_item.packaging_details" }
   %label {{ "trade_info.packaging" | translate }}
   %input{ type: "text", "ng-model": "businessItem.packaging_details" }
 
