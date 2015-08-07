@@ -39,6 +39,26 @@ describe BusinessValidator do
     end
 
     let(:business_params) do
+      too_long_field = "a" * (A9n.validations[:max_name_length] + 1)
+      valid_params.merge(name: too_long_field, city: too_long_field)
+    end
+
+    it "requires name and city to be shorter than
+      #{A9n.validations[:max_name_length]}" do
+      is_expected.to be_invalid
+    end
+
+    let(:business_params) do
+      too_long_field = "a" * (A9n.validations[:max_phone_length] + 1)
+      valid_params.merge(phone: too_long_field)
+    end
+
+    it "requires phone to be shorter than
+      #{A9n.validations[:max_phone_length]}" do
+      is_expected.to be_invalid
+    end
+
+    let(:business_params) do
       too_long_field = "a" * (A9n.validations[:max_text_area_size] + 1)
       valid_params.merge(introduction: too_long_field)
     end

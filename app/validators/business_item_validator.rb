@@ -11,7 +11,7 @@ class BusinessItemValidator < BaseValidator
   attr_accessor(*fields)
 
   validates :name, :category_id, presence: true
-  validates :name, length: { maximum: MAX_NAME_LENGTH }
+  validates :name, length: { maximum: A9n.validations[:max_name_length]  }
   validates :fob_price, :port, :supply_ability_capacity,
             :packaging_details,
             length: { maximum: A9n.validations[:max_text_field_size] }
