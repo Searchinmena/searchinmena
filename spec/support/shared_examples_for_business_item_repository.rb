@@ -7,10 +7,18 @@ shared_examples "BusinessItemRepository" do
 
     it { is_expected.to be_present }
 
-    context "thumb" do
-      let(:type) { :thumb }
+    context "photo present" do
+      let(:photo) { double(photo_url: "photo") }
 
-      it { is_expected.to be_present }
+      before do
+        allow(product).to receive(:photos).and_return([photo])
+      end
+
+      context "thumb" do
+        let(:type) { :thumb }
+
+        it { is_expected.to be_present }
+      end
     end
 
     context "no photo present" do
