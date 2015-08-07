@@ -43,6 +43,7 @@
   },
   "company": {
     "title": "Company Profile",
+    "see_your_page": "See your page",
     "tabs": {
       "basic_info": "Basic Information",
       "trade_details": "Trade Details",
