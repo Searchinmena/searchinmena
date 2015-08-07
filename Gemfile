@@ -26,6 +26,7 @@ gem 'fog'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'
 gem 'sidekiq'
+gem 'sinatra', require: nil
 
 group :development, :test do
   gem 'pry'

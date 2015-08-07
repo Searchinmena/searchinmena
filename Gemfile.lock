@@ -494,6 +494,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sidekiq
   simplecov
+  sinatra
   spring
   spring-commands-rspec
   therubyracer
