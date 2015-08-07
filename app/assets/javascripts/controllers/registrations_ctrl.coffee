@@ -33,6 +33,7 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
+      $scope.submitting = true
 
       $http(
         url: e.target.action,
@@ -44,5 +45,6 @@
         $scope.errors = errors
       )
 
+      $scope.submitting = false
       false
 ]
