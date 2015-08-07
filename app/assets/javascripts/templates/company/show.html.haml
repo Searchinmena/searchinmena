@@ -14,33 +14,33 @@
           {{ businessPresenter.location() }}
       %button.contact-supplier
         %span.icon.icon-envelope
-        Contact Seller
+        {{ "company.show.contact_seller" | translate }}
   %ul.company-tabs
     %li.tab
       %a.tab-link.active
-        Information
+        {{ "company.show.information" | translate }}
         .icon-chevron-down
     %li.tab
       %a.tab-link
-        Products
+        {{ "company.show.products" | translate }}
         .icon-chevron-down
     %li.tab
       %a.tab-link
-        Services
+        {{ "company.show.services" | translate }}
         .icon-chevron-down
   .item-basic-info
     %table.item-details
       %tr{ 'ng-show': 'businessPresenter.businessTypes()' }
-        %td.attribute Business Types:
+        %td.attribute {{ "company.show.business_types" | translate }}:
         %td {{ businessPresenter.businessTypes() }}
       %tr{ 'ng-show': 'businessPresenter.products()' }
-        %td.attribute Main Products:
+        %td.attribute {{ "company.show.main_products" | translate }}:
         %td {{ businessPresenter.products() }}
       %tr{ 'ng-show': 'businessPresenter.yearRegistered()' }
-        %td.attribute Year Company Registered:
+        %td.attribute {{ "company.show.year_registered" | translate }}:
         %td {{ businessPresenter.yearRegistered() }}
       %tr{ 'ng-show': 'businessPresenter.noOfEmployees()' }
-        %td.attribute No. of employes:
+        %td.attribute {{ "company.show.no_of_employees" | translate }}:
         %td {{ businessPresenter.noOfEmployees() }}
   / .item-detailed-info
   /   %h4.section-title.line-behind
@@ -100,14 +100,14 @@
     %h4.section-title.line-behind
       %span
         %span.icon.icon-comment
-        Company Introduction
+        {{ "company.show.company_introduction" | translate }}
     %p.item-description
       {{ businessPresenter.introduction() }}
   .item-detailed-info
     %h4.section-title.line-behind
       %span
         %span.icon.icon-picture
-        Company Gallery
+        {{ "company.show.company_gallery" | translate }}
     .company-gallery
       = image_tag("warehouse-1.jpg")
       = image_tag("warehouse-2.jpg")
