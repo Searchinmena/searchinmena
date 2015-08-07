@@ -37,12 +37,11 @@ set :keep_releases, 5
 set :linked_files, %w{config/database.yml config/unicorn.rb}
 set :linked_dirs, %w{pids log public/assets}
 
-set :whenever_command, 'bundle exec whenever'
-require 'whenever/capistrano'
-
-after 'deploy:updating', 'configuration:copy'
-after 'deploy:publishing', 'unicorn:restart'
-after 'deploy:published', 'db:seed'
-after 'deploy:finishing', 'deploy:cleanup'
+after "deploy:updating", "configuration:copy"
+after "deploy:publishing", "unicorn:restart"
+after "deploy:published", "db:seed"
+after "deploy:finishing", "deploy:cleanup"
+after 'deploy:finished', 'god:restart'
+after 'god:restart', 'sidekiq:restart'
 
 before 'deploy:compile_assets', 'bower:install'

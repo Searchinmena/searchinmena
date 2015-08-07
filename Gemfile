@@ -24,6 +24,9 @@ gem 'angular-rails-templates', '~> 0.2.0'
 gem 'mini_magick'
 gem 'fog'
 gem 'carrierwave'
+gem 'carrierwave_backgrounder'
+gem 'sidekiq'
+gem 'sinatra', require: nil
 
 group :development, :test do
   gem 'pry'

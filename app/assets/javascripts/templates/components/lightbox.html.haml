@@ -1,14 +1,14 @@
 .modal-body{ "ng-swipe-left": "Lightbox.nextImage()", "ng-swipe-right": "Lightbox.prevImage()" }
   .lightbox-nav
     %button.close{ "aria-hidden": "true", "ng-click": "$dismiss()" } ×
-    .btn-group
-      %a.btn.btn-xs.btn-default{ "ng-click": "Lightbox.prevImage()", "ng-show": "{{ Lightbox.images.length > 1 }}" }
-        ‹ {{ "lightbox.prev" | translate }}
-      %a.btn.btn-xs.btn-default{ "ng-href": "{{ Lightbox.imageUrl }}", target: "_blank", title: "Open in new tab" }
-        {{ "lightbox.open_in_new_tab" | translate }}
-      %a.btn.btn-xs.btn-default{ "ng-click": "Lightbox.nextImage()", "ng-show": "{{ Lightbox.images.length > 1 }}" }
-        {{ "lightbox.next" | translate }} ›
+
   .lightbox-image-container
+    %a.btn-nav-img.next-img{ "ng-click": "Lightbox.prevImage()", "ng-show": "{{ Lightbox.images.length > 1 }}" }
+      %span.icon-chevron-left
+      / {{ "lightbox.prev" | translate }}
+    %a.btn-nav-img.prev-img{ "ng-click": "Lightbox.nextImage()", "ng-show": "{{ Lightbox.images.length > 1 }}" }
+      / {{ "lightbox.next" | translate }}
+      %span.icon-chevron-right
     .lightbox-image-caption
       %span {{ Lightbox.imageCaption }}
     %img{ alt: "", "lightbox-src": "{{ Lightbox.imageUrl }}" }

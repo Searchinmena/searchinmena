@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_for :users,
     controllers: {
       registrations: "users/registrations",

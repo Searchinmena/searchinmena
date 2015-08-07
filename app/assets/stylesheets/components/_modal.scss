@@ -112,6 +112,34 @@
 }
 
 .lightbox-image-container {
+  position: relative;
+
+  .btn-nav-img {
+    position: absolute;
+    top: 50%;
+    margin-top: -$bs5;
+    border: 0;
+
+    span {
+      font-size: $bs4 ;
+      padding: $bs-3;
+      background-color: $white-ghost;
+
+      @media screen and (min-width: $tablet) {
+        font-size: $bs6;
+        padding: $bs0;
+      }
+    }
+  }
+
+  .next-img {
+    left: 0;
+  }
+
+  .prev-img {
+    right: 0;
+  }
+
   img {
     width: auto !important;
     height: auto !important;
@@ -124,7 +152,6 @@
 
 .lightbox-nav {
   margin: 0 0 $bs2;
-  border-bottom: $default-border;
 
   a {
     padding: $bs0 0;
