@@ -6,7 +6,7 @@ class BusinessItemPhotoUploader < CarrierWave::Uploader::Base
 
   storage :fog
 
-  process :resize_to_limit => [A9n.original_size, A9n.original_size]
+  process :resize_to_limit => [A9n.original_width, A9n.original_height]
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"

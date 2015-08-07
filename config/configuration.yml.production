@@ -23,7 +23,8 @@ production:
     user_name: aiham@searchinmena.com
     password:
   items_per_page: 10
-  original_size: 500
+  original_width: 1200
+  original_height: 900
   thumbnail_size: 120
   aws:
     bucket_name: sim-uploads-production
