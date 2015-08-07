@@ -1,4 +1,4 @@
-%section.dashboard-content
+%section.service-view
   %div{ "ng-include": "'business_items/_header.html'" }
   .item-short-info
     %button.contact-supplier
@@ -48,9 +48,9 @@
 
     %div{ "ng-include": "'business_item/_attributes.html'" }
 
-  .item-detailed-info
-    %h4.section-title.line-behind{ "ng-show": "businessItem.get('scope_of_work')" }
-      %span Scope of work
-    %p.item-description {{ businessItem.get('scope_of_work') }}
+    .column
+      %h4.section-title.line-behind{ "ng-show": "businessItem.get('scope_of_work')" }
+        %span Scope of work
+      %p.item-description {{ businessItem.get('scope_of_work') }}
 
-    %div{ "ng-include": "'business_item/_description.html'" }
+      %div{ "ng-include": "'business_item/_description.html'" }

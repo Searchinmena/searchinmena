@@ -10,11 +10,16 @@
     "open_in_new_tab": "Open image in new tab"
   },
   "home": {
+    "search_header": "Search for product, service or company",
+    "browse_header": "Browse",
+    "all": "All",
+    "products": "Products",
+    "services": "Services",
+    "companies": "Companies",
     "header_line_1": "Join Search in MENA marketplace",
     "header_line_2": "and start getting inquiries from buyers today.",
     "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.",
     "watch_video": "watch video",
-    "browse": "Browse",
     "see_dashboard": "See dashboard",
     "join_now": "Join now",
     "search_placeholder": "I'm looking for...",
