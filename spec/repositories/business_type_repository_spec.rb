@@ -15,7 +15,9 @@ describe BusinessTypeRepository do
     let!(:not_matching_business_type) do
       business_type_with_translation('Not Matching', locale)
     end
-    let!(:business_types) { [business_type_with_translation('Matching', locale)] }
+    let!(:business_types) do 
+      [business_type_with_translation('Matching', locale)]
+    end
     let(:business) { create(:business, business_types: business_types) }
 
     subject { repository.for_business_with_translations(business.id, locale) }
