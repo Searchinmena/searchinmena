@@ -20,7 +20,7 @@ class CompanyPresenter
     else
       @company.country
 
-  products: ->
+  mainProducts: ->
     if @tags
       @tags.map( (tag) -> tag.label ).join(', ')
     else

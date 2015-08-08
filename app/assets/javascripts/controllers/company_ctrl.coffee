@@ -5,10 +5,12 @@
     $scope.tabs = for tab in tabs
       new SIM.Tab("company.#{tab}", "company.tabs.#{tab}")
 
+    businessId = undefined
+
     $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
-      $scope.business = businessAttributes
+      businessId = businessAttributes.id
     )
 
     $scope.companyShowPath = ->
-      COMPANY_SHOW_PATH + $scope.business.id
+      COMPANY_SHOW_PATH + businessId
 ]

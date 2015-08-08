@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe BusinessTypeRepository do
   let(:repository) { BusinessTypeRepository.new }
-  let(:locale) { 'en' }
+  let(:locale) { "en" }
 
   it_behaves_like "TranslatableRepository"
 
@@ -13,9 +13,9 @@ describe BusinessTypeRepository do
 
   describe "#for_business_with_translations" do
     let!(:not_matching_business_type) do
-      business_type_with_translation('Not Matching', 'en')
+      business_type_with_translation('Not Matching', locale)
     end
-    let!(:business_types) { [business_type_with_translation('Matching', 'en')] }
+    let!(:business_types) { [business_type_with_translation('Matching', locale)] }
     let(:business) { create(:business, business_types: business_types) }
 
     subject { repository.for_business_with_translations(business.id, locale) }

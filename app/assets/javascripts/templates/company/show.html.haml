@@ -33,9 +33,9 @@
       %tr{ 'ng-show': 'businessPresenter.businessTypes()' }
         %td.attribute {{ "company.show.business_types" | translate }}:
         %td {{ businessPresenter.businessTypes() }}
-      %tr{ 'ng-show': 'businessPresenter.products()' }
+      %tr{ 'ng-show': 'businessPresenter.mainProducts()' }
         %td.attribute {{ "company.show.main_products" | translate }}:
-        %td {{ businessPresenter.products() }}
+        %td {{ businessPresenter.mainProducts() }}
       %tr{ 'ng-show': 'businessPresenter.yearRegistered()' }
         %td.attribute {{ "company.show.year_registered" | translate }}:
         %td {{ businessPresenter.yearRegistered() }}

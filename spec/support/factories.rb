@@ -26,16 +26,13 @@ FactoryGirl.define do
     phone { "777-777-777" }
     year_registered { 2011 }
     no_of_employees { 123 }
-    city { 'Krakow' }
-    introduction { 'business introduction' }
+    city { "Krakow" }
+    introduction { "business introduction" }
     association :country
     association :user
 
     transient do
       tags { [create(:tag)] }
-    end
-
-    transient do
       business_types { [create(:business_type)] }
     end
 
