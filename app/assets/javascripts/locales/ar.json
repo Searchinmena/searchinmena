@@ -159,20 +159,20 @@
   },
   "product": {
     "model_number": "رقم الموديل",
-    "brand_name": "اسم الماركة",
-    "min_order": "Min order"
+    "brand_name": "العلامة التجارية,
+    "min_order": "حد الطلب الأدنى"
   },
   "service": {
-    "place_of_origin": "Place of origin",
-    "avg_completion_time": "Avg completion time"
+    "place_of_origin": "مكان الصنع",
+    "avg_completion_time": "متوسط زمن الإنتهاء"
   },
   "business_items": {
-    "edit": "edit",
-    "see": "see",
-    "remove": "remove"
+    "edit": "تعديل",
+    "see": "شاهد",
+    "remove": "حذف"
   },
   "products": {
-    "empty_list": "No products yet.",
+    "empty_list": "لايوجد منتجات بعد.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
     "successfully_added": "تمت إضافة المنتج بنجاح",
@@ -191,22 +191,22 @@
     }
   },
   "services": {
-    "empty_list": "No services yet.",
-    "your_services": "Your services",
-    "add_new_service": "Add new service",
-    "successfully_added": "Service was successfully added",
-    "adding_failed": "Error occurred while adding service, please check the form",
+    "empty_list": "لايوجد خدمات بعد",
+    "your_services": "الخدمات",
+    "add_new_service": "أضف خدمة جديدة",
+    "successfully_added": "تمّ إضافة الخدمة بنجاح",
+    "adding_failed": "خطأ ما حدث أثتاء إضافة الخدمة، تأكد من الحقول مرة أخرى",
     "new": {
-      "form_title": "New service",
-      "basic_section": "Basic info",
-      "name": "Service name",
-      "details_section": "Service details",
-      "place_of_origin": "Place of origin",
-      "scope_of_work": "Scope of work",
-      "description": "Description",
-      "average_completion_time": "Average completion time",
-      "average_completion_time_comment": "eg. 100 hours",
-      "submit": "Add new service"
+      "form_title": "خدمة جديدة",
+      "basic_section": "معلومات أساسية",
+      "name": "اسم الخدمة",
+      "details_section": "تفاصيل الخدمة",
+      "place_of_origin": "المكان",
+      "scope_of_work": "مجال الخدمة",
+      "description": "عن الخدمة",
+      "average_completion_time": "متوسط زمن الإنتهاء",
+      "average_completion_time_comment": "مثال: 100 ساعة",
+      "submit": "أضف"
     }
   },
   "other": {
