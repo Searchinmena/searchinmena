@@ -1,21 +1,21 @@
 ar:
   main_nav:
     browse: "تصفح"
-    dashboard: "لوحة التحكم الرئيسية"
+    dashboard: "لوحة التحكم"
     logout: "تسجيل الخروج"
     login: "تسجيل الدخول"
     signup: "حساب جديد"
-    contact_us: "Contact Us"
-    terms: "Terms of use"
-    privacy: "Privacy Policy"
+    contact_us: "اتصل بنا"
+    terms: "شروط الإستخدام"
+    privacy: "سياسة الخصوصية"
 
   dashboard_nav:
-    home: "الصفحة الرئيسية"
+    home: "الرئيسية"
     company: "الشركة"
     products: "المنتجات"
     services: "الخدمات"
     messages: "الرسائل"
-    settings: "اعدادات الحسات"
+    settings: "اعدادات الحساب"
 
   text:
     title: "على ماذا تحصل"
@@ -36,31 +36,30 @@ ar:
 
   business:
     business_types:
-      manufacturer: "مصنع"
+      manufacturer: "مصنّع"
       trading_company: "شركة تجارية"
       buying_office: "مكتب مشتريات"
       agent: "وكيل"
-      distributor:  "موزع / تجار الجملة"
+      distributor:  "موزّع "
       goverment_entity: "هيئة حكومية"
       association: "جمعية"
-      business_services: "خدمات"
+      business_services: "خدمات أعمال"
       other: "أخرى"
 
   sign_up:
-    facebook: "Sign up with Facebook"
-    or: "or"
+    facebook: "سجّل من خلال فيس بوك "
+    or: "أو"
     facebook_explanation:
-      "We prefilled your name and email with data from Facebook,
-      please complete the form to create your account."
+      " لقد قمنا باستخدام اسمك وبريدك الإلكتروني من حسابك فيس بوك الخاص بك، الرجاء قم بتعبئة الحقول المتبقية لإتمام التسجيل."
     contant_info_header: "معلومات الاتصال الخاصة بك"
-    company_name: "Company Name"
-    location: "الموقع"
-    location_select: "-- Select Country --"
+    company_name: "اسم الشركة"
+    location: "البلد"
+    location_select: "إختر"
     contact_number: "رقم الاتصال"
     main_products: "المنتجات الرئيسية"
 
   sign_in:
-    facebook: "Sign in with Facebook"
+    facebook: "سجّل دخول عن طريق فيس بوك"
 
   user:
     categories:
@@ -75,15 +74,15 @@ ar:
     hello_msg: "مرحبا"
 
   footer:
-    about_us: "About Us"
+    about_us: "من نحن"
     about_description: "MENA Network LTD manages an online B2B advertising directory,
       HQ in Dubai Silicon Oasis - UAE, owned by Salim Akil, Silicon Oasis Founders a wholly
       owned entity of DSOA (Government of Dubai) and other 23 shareholders. MENA Network has
       offices in Dubai, Riyadh and San Francisco."
-    find_us: "Find Us"
-    companies: "Companies"
-    address_title: "Address:"
-    address_line_1: "UAE, Dubai Silicon Oasis, Techno Hub Building,"
-    address_line_2: "Block A, Office G029"
-    address_line_3: "Office Number: 0097143311050"
+    find_us: "موقعنا"
+    companies: "الشركات"
+    address_title: "العنوان"
+    address_line_1: "الإمارات العربية المتحدة، دبي، "
+    address_line_2: "مبنى أ، مكتب ٢٩"
+    address_line_3: "رقم الهاتف: ٠٠٩٧١٤٣٣١١٠٥٠"
     copyright: "MENA Network LTD, All rights reserved."
