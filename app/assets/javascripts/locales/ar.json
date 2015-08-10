@@ -1,29 +1,29 @@
 {
   "confirmation_modal": {
-    "are_you_sure": "Are you sure you want to remove this?",
-    "ok": "Yes, I'm sure",
-    "cancel": "Cancel"
+    "are_you_sure": "هل أنت متأكد",
+    "ok": "نعم، متأكد",
+    "cancel": "إلغاء"
   },
   "lightbox": {
-    "prev": "Previous",
-    "next": "Next",
-    "open_in_new_tab": "Open image in new tab"
+    "prev": "السابق",
+    "next": "التالي",
+    "open_in_new_tab": "افتح الصورة في نافذة جديدة"
   },
   "home": {
-    "search_header": "Search for product, service or company",
-    "browse_header": "Browse",
-    "all": "All",
+    "search_header": "ابحث عن شركة، منتج، خدمة",
+    "browse_header": "تصفّح",
+    "all": "الجميع",
     "products": "المنتجات",
     "services": "الخدمات",
-    "companies": "Companies",
-    "header_line_1": "Join Search in MENA marketplace",
-    "header_line_2": "and start getting inquiries from buyers today.",
-    "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.",
-    "watch_video": "watch video",
-    "see_dashboard": "See dashboard",
-    "join_now": "Join now",
-    "search_placeholder": "I'm looking for...",
-    "search_submit": "Search"
+    "companies": "الشركات",
+    "header_line_1": "انضم إلى Search In MENA ",
+    "header_line_2": "وابدأ باستقبال طلبات من مشترين.",
+    "sub_header": "نحن أكبر موقع للشركات التي ترغب في بيع أو شراء منتجاتها وخدماتها في منطقة الشرق الأوسط وشمال إفريقيا",
+    "watch_video": "شاهد الفيديو",
+    "see_dashboard": "لوحة التحكم",
+    "join_now": "انضم الآن",
+    "search_placeholder": " ...أنا أبحث عن",
+    "search_submit": "بحث"
   },
   "confirm_email_message": {
     "text": "الرجاء تأكيد حسابك",
@@ -36,15 +36,15 @@
     "products": "المنتجات",
     "services": "الخدمات",
     "messages": "الرسائل",
-    "settings": "اعدادات الحسات"
+    "settings": "إعدادات الحساب"
   },
   "dashboard": {
     "greeting": "مرحبا بك",
-    "go_to": "Go to...",
-    "see_all": "See all",
-    "browse_message": "As a buyer you can browse offers and contact sellers to find the best deal for you!",
-    "create_company_message": "Only sellers can add products and services, click below if you want to become one",
-    "create_company_button": "Create company profile"
+    "go_to": "اذهب إلى ...",
+    "see_all": "شاهد الجمبع",
+    "browse_message": "يستطيع المشتري البحث عن شركات ومنتجاتها والإتصال بهم من خلال الموقع",
+    "create_company_message": "يستطيع الباعة وحدهم إضافة منتجات وخدمات، إضغط الرتبط في الأسفل لتصبح منهم.",
+    "create_company_button": "إنشاء حساب شركة"
   },
   "company": {
     "title": "ملف الشركة - اللغة العربية",
@@ -53,29 +53,29 @@
       "trade_details": "المعلومات التجارية",
       "certifications": "الشهادات"
     },
-    "profile_summary": "Company Profile Summary",
-    "edit_info": "Edit company info",
-    "successfully_saved": "Company information was successfully saved",
-    "saving_failed": "Company couldn't be saved, please check the form",
+    "profile_summary": "ملخص ملف الشركة",
+    "edit_info": "تعديل معلومات الشركة",
+    "successfully_saved": "تمّ حفظ معلومات الشركة بنجاج",
+    "saving_failed": "لم يتم حفظ معلومات الشركة، تأكد من الحقول",
     "basic_info": {
       "company_name": "أسم الشركة",
-      "add_logo": "أضف لوجو",
+      "add_logo": "أضف شعار الشركة",
       "contact_number": "رقم الإتصال",
       "city": "المدينة",
       "location": "المكان",
       "select_country": "إختر بلد",
-      "address": "Address AR",
+      "address": "العنوان",
       "business_types": "نوع العمل",
       "select_business_types": "إختر نوع العمل",
       "main_products": "المنتجات الرئيسية",
-      "tag_comment_1": "When you start typing you can choose from our suggestions of tags",
-      "tag_comment_2": "or create a new one by pressing the enter key.",
+      "tag_comment_1": ".إبدأ الكتابة وستظهر لك قائمة اقتراحات",
+      "tag_comment_2": "  Enter تستطيع حفظ الكتابة في أي وقت عند الضغط على ",
       "year_registered": "سنة تسجيل الشركة",
       "no_of_employees": "عدد الموظفين",
       "introduction": "مقدمة مختصرة عن الشركة",
       "company_photos": "صور الشركة",
       "add_photos": "أضف صور",
-      "max_images": " 5 صور حد أقصى",
+      "max_images": "حد أقصى خمس صور,
       "submit": "حفظ"
     },
     "trade_details": {
@@ -148,18 +148,18 @@
     "packaging": "معلومات التغليف"
   },
   "business_item": {
-    "seller": "Seller",
-    "contact_seller": "Contact seller",
-    "basic_info": "Basic info",
-    "fob_price": "Fob price",
-    "supply_ability": "Supply ability",
-    "payment_terms": "Payment terms",
-    "attributes": "Attributes",
-    "packaging_details": "Packaging details"
+    "seller": "البائع",
+    "contact_seller": "اتصل بالبائع",
+    "basic_info": "معلومات أساسية",
+    "fob_price": "سعر التسليم",
+    "supply_ability": "قدرة التوريد",
+    "payment_terms": "شروط الدفع",
+    "attributes": "أوصاف",
+    "packaging_details": "تفاصيل التغليف"
   },
   "product": {
-    "model_number": "Model number",
-    "brand_name": "Brand mame",
+    "model_number": "رقم الموديل",
+    "brand_name": "اسم الماركة",
     "min_order": "Min order"
   },
   "service": {
