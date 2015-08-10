@@ -72,7 +72,9 @@
   }
 }
 
-
+.description-column {
+  clear: both;
+}
 
 .product-page {
   @extend %clearfix;

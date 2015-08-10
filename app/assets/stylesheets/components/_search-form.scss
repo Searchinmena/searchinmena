@@ -118,6 +118,7 @@
 
     input[type="text"] {
       border-radius: $bs-5 0 0 $bs-5;
+      max-width: 5 * $bs8;
     }
   } 
 }
