@@ -1,6 +1,7 @@
 .modal-body{ "ng-swipe-left": "Lightbox.nextImage()", "ng-swipe-right": "Lightbox.prevImage()" }
   .lightbox-nav
-    %button.close{ "aria-hidden": "true", "ng-click": "$dismiss()" } ×
+    %button.remove-button{ "aria-hidden": "true", "ng-click": "$dismiss()" }
+      %span.icon-remove
 
   .lightbox-image-container
     %a.btn-nav-img.next-img{ "ng-click": "Lightbox.prevImage()", "ng-show": "{{ Lightbox.images.length > 1 }}" }

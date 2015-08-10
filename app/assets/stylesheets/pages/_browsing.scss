@@ -36,6 +36,11 @@
   font-size: $bs-1;
   border-right: $default-border;
 
+  [dir="rtl"] & {
+    border-right: 0;
+    border-left: $default-border;
+  }
+
   &.active {
     color: white;
     background-color: $blue-basic;

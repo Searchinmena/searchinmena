@@ -151,7 +151,13 @@
 }
 
 .lightbox-nav {
+  @extend %clearfix;
   margin: 0 0 $bs2;
+
+  .remove-button {
+    margin: 0;
+    padding: $bs0;
+  }
 
   a {
     padding: $bs0 0;
