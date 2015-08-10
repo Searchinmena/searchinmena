@@ -26,8 +26,7 @@ Foot/Feet,قدم
 Forty-Foot Container,حاوية 45 قدم
 Furlong/Furlongs,فرلنغ
 Gallon/Gallons,غالون
-Gill/Gills,Gill/Gills AR
-Grain/Grains,Grain/Grains AR
+Grain/Grains,بذرة
 Gram/Grams,غرام
 Gross,إجمالي
 Hectare/Hectares,هكتار
@@ -45,53 +44,51 @@ Liter/Liters,لتر
 Long Ton/Long Tons,طن طولي
 Megahertz,ميغاهرتز
 Meter/Meters,متر
-Metric Ton/Metric Tons,Metric Ton/Metric Tons AR
-Mile/Miles,Mile/Miles AR
-Milliampere/Milliamperes,Milliampere/Milliamperes AR
-Milligram/Milligrams,Milligram/Milligrams AR
-Millihertz,Millihertz AR
-Milliliter/Milliliters,Milliliter/Milliliters AR
-Millimeter/Millimeters,Millimeter/Millimeters AR
-Milliohm/Milliohms,Milliohm/Milliohms AR
-Millivolt/Millivolts,Millivolt/Millivolts AR
-Milliwatt/Milliwatts,Milliwatt/Milliwatts AR
-Month/Months,Month/Months AR
-Nautical Mile/Nautical Miles,Nautical Mile/Nautical Miles AR
-Ohm/Ohms,Ohm/Ohms AR
-Ounce/Ounces,Ounce/Ounces AR
-Pack/Packs,Pack/Packs AR
-Pair/Pairs,Pair/Pairs AR
-Pallet/Pallets,Pallet/Pallets AR
-Parcel/Parcels,Parcel/Parcels AR
-Perch/Perchs,Perch/Perchs AR
-Piece/Pieces,Piece/Pieces AR
-Pint/Pints,Pint/Pints AR
-Plant /Plants,Plant /Plants AR
-Pole /Poles,Pole /Poles AR
-Pound/Pounds,Pound/Pounds AR
-Quart/Quarts,Quart/Quarts AR
-Quarter/Quarters,Quarter/Quarters AR
-Rod/Rods,Rod/Rods AR
-Roll/Rolls,Roll/Rolls AR
-Set/Sets,Set/Sets AR
-Sheet/Sheets,Sheet/Sheets AR
-Short Ton/Short Tons,Short Ton/Short Tons AR
-Square Centimeter/Square Centimeters,Square Centimeter/Square Centimeters AR
-Square Foot/Square Feet,Square Foot/Square Feet AR
-Square Inch/Square Inches,Square Inch/Square Inches AR
-Square Meter/Square Meters,Square Meter/Square Meters AR
-Square Mile/Square Miles,Square Mile/Square Miles AR
-Square Yard/Square Yards,Square Yard/Square Yards AR
-Stone/Stones,Stone/Stones AR
-Strand/Strands,Strand/Strands AR
-Ton/Tons,Ton/Tons AR
-Tonne/Tonnes,Tonne/Tonnes AR
-Tray/Trays,Tray/Trays AR
-Twenty-Foot Container,Twenty-Foot Container AR
-Unit/Units,Unit/Units AR
-Volt/Volts,Volt/Volts AR
-Watt/Watts,Watt/Watts AR
-Wp,Wp AR
-Yard/Yards,Yard/Yards AR
-Year/Years,Year/Years AR
-Other,Other AR
+Metric Ton/Metric Tons,طن متري
+Mile/Miles,ميل
+Milliampere/Milliamperes,ملي أمبير
+Milligram/Milligrams,ميلي جرام
+Millihertz,ميلي هرتز
+Milliliter/Milliliters,ميلي لتر
+Millimeter/Millimeters,ميلي متر
+Milliohm/Milliohms,ميلي أوم
+Millivolt/Millivolts,ميلي فولت
+Milliwatt/Milliwatts,ميلي وات
+Month/Months,شهر
+Nautical Mile/Nautical Miles,ميل بحري
+Ohm/Ohms,أوم
+Ounce/Ounces,أونصة
+Pack/Packs,حزمة
+Pair/Pairs,زوج
+Pallet/Pallets,منصة
+Parcel/Parcels,ربطة
+Perch/Perchs,قصبة
+Piece/Pieces,قطعة
+Pint/Pints,باينت
+Plant /Plants,نبتة
+Pole /Poles,عمود
+Pound/Pounds,باوند
+Quart/Quarts,ربع جالون
+Quarter/Quarters,سنوي
+Rod/Rods,قضيب
+Roll/Rolls,لفة
+Set/Sets,طقم
+Sheet/Sheets,صفيحة
+Short Ton/Short Tons,طن أمريكي
+Square Centimeter/Square Centimeters,سم مربع
+Square Foot/Square Feet,قدم مربعة
+Square Inch/Square Inches,بوصة مربعة
+Square Meter/Square Meters,متر مربع
+Square Mile/Square Miles,ميل مربع
+Square Yard/Square Yards,يارد مربع
+Stone/Stones,حجر
+Strand/Strands,شريط
+Ton/Tons,طن
+Tray/Trays,طن طولي
+Twenty-Foot Container,حاوية 20 قدم
+Unit/Units,وحدة
+Volt/Volts,فولت
+Watt/Watts,واط
+Yard/Yards,يارد
+Year/Years,سنة
+Other,أخرى
