@@ -75,7 +75,7 @@
       "introduction": "مقدمة مختصرة عن الشركة",
       "company_photos": "صور الشركة",
       "add_photos": "أضف صور",
-      "max_images": "حد أقصى خمس صور,
+      "max_images": "حد أقصى خمس صور",
       "submit": "حفظ"
     },
     "trade_details": {
@@ -159,7 +159,7 @@
   },
   "product": {
     "model_number": "رقم الموديل",
-    "brand_name": "العلامة التجارية,
+    "brand_name": "العلامة التجارية",
     "min_order": "حد الطلب الأدنى"
   },
   "service": {
