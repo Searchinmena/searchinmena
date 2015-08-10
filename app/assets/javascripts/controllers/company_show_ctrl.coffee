@@ -1,0 +1,21 @@
+@Sim.controller 'CompanyShowCtrl', ['$scope', '$http', '$stateParams',
+  'CompanyPresenter', 'language', 'BUSINESSES_PATH', 'BUSINESS_TYPES_PATH',
+  'BUSINESS_TAGS_PATH'
+  ($scope, $http, $stateParams, CompanyPresenter, language,
+    BUSINESSES_PATH, BUSINESS_TYPES_PATH, BUSINESS_TAGS_PATH) ->
+  
+    params = {
+      params: {
+        business_id: $stateParams.id,
+        locale: language.get()
+      }
+    }
+
+    $http.get(BUSINESSES_PATH + $stateParams.id).success((businessAttributes) ->
+      $http.get(BUSINESS_TAGS_PATH, params).success((tags) ->
+        $http.get(BUSINESS_TYPES_PATH, params).success((types) ->
+          $scope.businessPresenter = new CompanyPresenter(businessAttributes, tags, types)
+        )
+      )
+    )
+]

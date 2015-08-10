@@ -4,117 +4,113 @@
       = image_tag('logo-3.png', class: "company-logo")
     .company-short-info
       %h2.company-name
-        Sage Software Middle East
+        {{ businessPresenter.name() }}
       .clearfix
         .contact-item
           %span.icon.icon-phone-alt
-          696583445
+          {{ businessPresenter.phone() }}
         .contact-item
           %span.icon.icon-pushpin
-          Wellington, New Zeland
+          {{ businessPresenter.location() }}
       %button.contact-supplier
         %span.icon.icon-envelope
-        Contact Seller
+        {{ "company.show.contact_seller" | translate }}
   %ul.company-tabs
     %li.tab
       %a.tab-link.active
-        Information
+        {{ "company.show.information" | translate }}
         .icon-chevron-down
     %li.tab
       %a.tab-link
-        Products
+        {{ "company.show.products" | translate }}
         .icon-chevron-down
     %li.tab
       %a.tab-link
-        Services
+        {{ "company.show.services" | translate }}
         .icon-chevron-down
   .item-basic-info
     %table.item-details
-      %tr
-        %td.attribute Business Types:
-        %td Manufacturer | Trading Company | Buying Office | Agent
-      %tr
-        %td.attribute Main Products:
-        %td Coffee Tables, Coffee Mugs, Coffee Life, School Supplies
-      %tr
-        %td.attribute Year Company Registered:
-        %td 1997
-      %tr
-        %td.attribute No. of employes:
-        %td 150
-  .item-detailed-info
+      %tr{ 'ng-show': 'businessPresenter.businessTypes()' }
+        %td.attribute {{ "company.show.business_types" | translate }}:
+        %td {{ businessPresenter.businessTypes() }}
+      %tr{ 'ng-show': 'businessPresenter.mainProducts()' }
+        %td.attribute {{ "company.show.main_products" | translate }}:
+        %td {{ businessPresenter.mainProducts() }}
+      %tr{ 'ng-show': 'businessPresenter.yearRegistered()' }
+        %td.attribute {{ "company.show.year_registered" | translate }}:
+        %td {{ businessPresenter.yearRegistered() }}
+      %tr{ 'ng-show': 'businessPresenter.noOfEmployees()' }
+        %td.attribute {{ "company.show.no_of_employees" | translate }}:
+        %td {{ businessPresenter.noOfEmployees() }}
+  / .item-detailed-info
+  /   %h4.section-title.line-behind
+  /     %span
+  /       %span.icon.icon-briefcase
+  /       Trade Details
+  /   %table.item-details
+  /     %tr
+  /       %td.attribute Annual sales value:
+  /       %td USD 2,700,000.00
+  /     %tr
+  /       %td.attribute Main Markets:
+  /       %td
+  /         North America, Northern Europe, South America, Western Europe,
+  /         Southern Europe
+  /     %tr
+  /       %td.attribute Customer list:
+  /       %td Matel, IBM, Apple, Microsoft, Schools in London
+  /     %tr
+  /       %td.attribute Nearest port:
+  /       %td La Manche, Sopot, Silicon Valey
+  /     %tr
+  /       %td.attribute Avarage lead time:
+  /       %td 7 days
+  /     %tr
+  /       %td.attribute Offices overseas:
+  /       %td Poland, Czech Republic, Denmark
+  /     %tr
+  /       %td.attribute Language spoken:
+  /       %td english | german | polish | arabic
+  /     %tr
+  /       %td.attribute Accepted delivery terms:
+  /       %td UPC | Plane | Ship
+  /     %tr
+  /       %td.attribute Accepted payment terms:
+  /       %td Others | Wire Transfer | PayPal | Credit Card | L/C | T/T
+  / .item-detailed-info
+  /   %h4.section-title.line-behind
+  /     %span
+  /       %span.icon.icon-certificate
+  /       Certifications
+  /   .certificate
+  /     .cert-img
+  /       = image_tag("certificate-1.jpg")
+  /     .cert-name INTEGRITY SHOPEX
+  /     .cert-origin
+  /       %span issued by:
+  /       SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
+  /   .certificate
+  /     .cert-img
+  /       = image_tag("certificate-2.jpg")
+  /     .cert-name INTEGRITY SHOPEX
+  /     .cert-origin
+  /       %span issued by:
+  /       SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
+  .item-detailed-info{ 'ng-show': 'businessPresenter.introduction()' }
     %h4.section-title.line-behind
       %span
         %span.icon.icon-comment
-        Company Introduction
+        {{ "company.show.company_introduction" | translate }}
     %p.item-description
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur.
+      {{ businessPresenter.introduction() }}
   .item-detailed-info
     %h4.section-title.line-behind
       %span
         %span.icon.icon-picture
-        Company Gallery
+        {{ "company.show.company_gallery" | translate }}
     .company-gallery
       = image_tag("warehouse-1.jpg")
       = image_tag("warehouse-2.jpg")
       = image_tag("strange-1.jpg")
       = image_tag("strange-2.jpg")
       = image_tag("strange-1.jpg")
-  .item-detailed-info
-    %h4.section-title.line-behind
-      %span
-        %span.icon.icon-briefcase
-        Trade Details
-    %table.item-details
-      %tr
-        %td.attribute Annual sales value:
-        %td USD 2,700,000.00
-      %tr
-        %td.attribute Main Markets:
-        %td
-          North America, Northern Europe, South America, Western Europe,
-          Southern Europe
-      %tr
-        %td.attribute Customer list:
-        %td Matel, IBM, Apple, Microsoft, Schools in London
-      %tr
-        %td.attribute Nearest port:
-        %td La Manche, Sopot, Silicon Valey
-      %tr
-        %td.attribute Avarage lead time:
-        %td 7 days
-      %tr
-        %td.attribute Offices overseas:
-        %td Poland, Czech Republic, Denmark
-      %tr
-        %td.attribute Language spoken:
-        %td english | german | polish | arabic
-      %tr
-        %td.attribute Accepted delivery terms:
-        %td UPC | Plane | Ship
-      %tr
-        %td.attribute Accepted payment terms:
-        %td Others | Wire Transfer | PayPal | Credit Card | L/C | T/T
-  .item-detailed-info
-    %h4.section-title.line-behind
-      %span
-        %span.icon.icon-certificate
-        Certifications
-    .certificate
-      .cert-img
-        = image_tag("certificate-1.jpg")
-      .cert-name INTEGRITY SHOPEX
-      .cert-origin
-        %span issued by:
-        SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
-    .certificate
-      .cert-img
-        = image_tag("certificate-2.jpg")
-      .cert-name INTEGRITY SHOPEX
-      .cert-origin
-        %span issued by:
-        SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD

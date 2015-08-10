@@ -24,15 +24,21 @@ FactoryGirl.define do
   factory :business do
     sequence(:name) { |n| "Business#{n}" }
     phone { "777-777-777" }
+    year_registered { 2011 }
+    no_of_employees { 123 }
+    city { "Krakow" }
+    introduction { "business introduction" }
     association :country
     association :user
 
     transient do
+      tags { [create(:tag)] }
       business_types { [create(:business_type)] }
     end
 
     after :build do |business, evaluator|
       business.business_types += evaluator.business_types
+      business.tags += evaluator.tags
     end
   end
 

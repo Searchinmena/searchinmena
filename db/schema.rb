@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 20150810112028) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",         null: false
-    t.integer  "country_id",      null: false
     t.integer  "year_registered"
     t.integer  "no_of_employees"
     t.text     "introduction"
+    t.integer  "country_id",      null: false
     t.string   "address_line_1"
     t.string   "address_line_2"
     t.string   "city"

@@ -5,10 +5,9 @@ describe BusinessRepository do
 
   it_behaves_like "any repository"
 
-  let(:business) { create(:business) }
-
   describe "#assign_tags" do
     let(:tags) { [build(:tag)] }
+    let(:business) { create(:business, tags: []) }
     subject { repository.assign_tags(business, tags) }
 
     context "adding tags" do
@@ -35,6 +34,8 @@ describe BusinessRepository do
   end
 
   describe "#find_by_user_id" do
+    let(:business) { create(:business) }
+
     subject { repository.find_by_user_id(user.id) }
 
     context "user with business" do

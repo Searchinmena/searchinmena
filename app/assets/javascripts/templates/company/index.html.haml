@@ -1,9 +1,9 @@
 %section.dashboard-content
   %h2.header-title
     {{ "company.title" | translate }}
-    %a.header-link{ href: "#" }
+    %a.header-link{ href: "{{ companyShowPath() }}" }
       %span.icon.icon-eye-open
-      See your page
+      {{ "company.see_your_page" | translate }}
 
   %ul.company-tabs{ hidden: true }
     %li.tab{ "ng-repeat": "tab in tabs"}

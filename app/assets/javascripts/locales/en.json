@@ -48,6 +48,7 @@
   },
   "company": {
     "title": "Company Profile",
+    "see_your_page": "See your page",
     "tabs": {
       "basic_info": "Basic Information",
       "trade_details": "Trade Details",
@@ -77,6 +78,18 @@
       "add_photos": "Add photos",
       "max_images": "max 5 images",
       "submit": "Save changes"
+    },
+    "show": {
+      "contact_seller": "Contact Seller",
+      "information": "Information",
+      "products": "Products",
+      "services": "Services",
+      "business_types": "Business Types",
+      "main_products": "Main Products",
+      "year_registered": "Year Company Registered",
+      "no_of_employees": "No. of employees",
+      "company_introduction": "Company Introduction",
+      "company_gallery": "Company Gallery"
     },
     "trade_details": {
       "annual_sales_value": "Annual sales value",

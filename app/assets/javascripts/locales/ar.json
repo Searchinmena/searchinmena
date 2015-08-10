@@ -48,6 +48,7 @@
   },
   "company": {
     "title": "ملف الشركة - اللغة العربية",
+    "see_your_page": "See your page",
     "tabs": {
       "basic_info": "المعلومات الأساسية",
       "trade_details": "المعلومات التجارية",
@@ -77,6 +78,18 @@
       "add_photos": "أضف صور",
       "max_images": "حد أقصى خمس صور",
       "submit": "حفظ"
+    },
+    "show": {
+      "contact_seller": "Contact Seller",
+      "information": "Information",
+      "products": "Products",
+      "services": "Services",
+      "business_types": "Business Types",
+      "main_products": "Main Products",
+      "year_registered": "Year Company Registered",
+      "no_of_employees": "No. of employees",
+      "company_introduction": "Company Introduction",
+      "company_gallery": "Company Gallery"
     },
     "trade_details": {
       "annual_sales_value": "حجم المبيعات السنوي",
