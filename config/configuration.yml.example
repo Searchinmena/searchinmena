@@ -9,6 +9,8 @@ defaults: &defaults
     password_max_length: 72
     max_text_area_size: 2000
     max_text_field_size: 255
+    max_name_length: 130
+    max_phone_length: 50
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
     min_image_width: 500
     min_image_height: 500
