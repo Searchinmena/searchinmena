@@ -1,11 +1,11 @@
-T/T,T/T AR
-L/C,L/C AR
-D/P,D/P AR
-D/A,D/A AR
-Credit Card,Credit Card AR
-PayPal,PayPal AR
-Western Union,Western Union AR
-Cash,Cash AR
-Escrow,Escrow AR
-Wire Transfer,Wire Transfer AR
-Others,Others AR
+T/T,تحويل تلغرافي
+L/C,الاعتماد المستندي
+D/P,مستندات ضد الدفع
+D/A,مستندات مقابل القبول
+Credit Card,بطاقة إئتمان
+PayPal,باي بال
+Western Union,ويسترن يونيون
+Cash,نقدي
+Escrow,حساب طرف ثالث
+Wire Transfer,تحويل مصرفي
+Others,أخرى
