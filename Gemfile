@@ -48,6 +48,7 @@ group :development do
   gem 'rubocop', git: 'git@github.com:bbatsov/rubocop.git'
   gem 'haml-lint', require: false
   gem 'mailcatcher'
+  gem 'foreman'
 end
 
 group :production do
