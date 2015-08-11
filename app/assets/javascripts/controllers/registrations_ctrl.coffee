@@ -8,10 +8,6 @@
 
     selectsLoader.loadSelectsData($scope, config)
 
-    $translate('company.basic_info.select_business_types').then((translation) ->
-      $scope.selectButtonText = translation
-    )
-
     $scope.init = (user_attributes) ->
       user_attributes = JSON.parse(user_attributes)
 

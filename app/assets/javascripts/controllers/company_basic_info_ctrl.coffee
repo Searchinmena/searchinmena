@@ -18,10 +18,6 @@
 
     selectsLoader.loadSelectsData($scope, config)
 
-    $translate('company.basic_info.select_business_types').then((translation) ->
-      $scope.selectButtonText = translation
-    )
-
     $http.get(USER_BUSINESS_PATH).success((businessAttributes) ->
       $scope.form.business = businessAttributes
 
