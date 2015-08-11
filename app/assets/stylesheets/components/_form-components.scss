@@ -119,6 +119,11 @@ label {
       float: none;
       top: 0;
       margin-top: $bs2;
+
+      [dir="rtl"] & {
+        float: none;
+        margin-top: $bs3;
+      }
     }
   }
 }

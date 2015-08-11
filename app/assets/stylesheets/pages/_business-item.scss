@@ -160,6 +160,7 @@
 }
 .item-basic-info {
   padding: $bs0 $bs2;
+  overflow: hidden;
 }
 
 .item-detailed-info {
@@ -185,6 +186,11 @@
   @extend %clearfix;
   @extend %wide-container;
   background-color: white;
+
+  @media screen and (min-width: 1165px) {
+    min-height: 100vh;
+    min-height: calc(100vh - 675px);
+  }
 
   @media screen and (min-width: 1600px) {
     border-left: $default-border;

@@ -61,11 +61,11 @@
   
   .form-wrapper {
     @extend %clearfix;
-    
+
     @media screen and (min-width: 1150px) {
       @include float-direction;
     }
-  }  
+  }
 }
 
 .sign-up-wrapper {
@@ -75,7 +75,7 @@
 
   .form-wrapper {
     @extend %clearfix;
-    
+
     @media screen and (min-width: 1150px) {
       @include float-direction;
     }
