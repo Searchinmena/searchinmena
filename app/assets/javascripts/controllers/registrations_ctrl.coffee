@@ -33,17 +33,19 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
-      $scope.loading = true
+      unless $scope.loading
+        $scope.loading = true
 
-      $http(
-        url: e.target.action,
-        data: $scope.form,
-        method: 'POST'
-      ).success(->
-        window.location = DASHBOARD_PATH
-      ).error((errors) ->
-        $scope.errors = errors
-      )
-      $scope.loading = false
+        $http(
+          url: e.target.action,
+          data: $scope.form,
+          method: 'POST'
+        ).success(->
+          window.location = DASHBOARD_PATH
+          $scope.loading = false
+        ).error((errors) ->
+          $scope.errors = errors
+          $scope.loading = false
+        )
       false
 ]
