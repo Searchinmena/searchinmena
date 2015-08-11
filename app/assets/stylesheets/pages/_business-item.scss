@@ -252,6 +252,13 @@
     font-size: $bs2;
     color: $grey;
     vertical-align: sub;
+    display: inline-block;
+  }
+
+  .address-line {
+    display: block;
+    line-height: 1.6;
+    text-indent: $bs3;
   }
 }
 
