@@ -141,7 +141,7 @@
   },
   "attributes": {
     "title": "الخصائص",
-    "attribute": "خاصية"
+    "attribute": "خاصية",
     "attribute_placeholder": "مثال: المادة",
     "value": "القيمة",
     "value_placeholder": "مثال: نحاس",
