@@ -1,5 +1,5 @@
 .column{ "ng-show": "businessItem.hasAttributes()" }
-  %h4.subtitle {{ "attributes.attribute" | translate }}
+  %h4.subtitle {{ "attributes.attributes" | translate }}
   %table.item-details
     %tr{ "ng-repeat": "attribute in businessItem.get('attributes')" }
       %td.attribute {{ attribute["name"] }}:
