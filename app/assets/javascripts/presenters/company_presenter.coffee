@@ -8,6 +8,12 @@ class CompanyPresenter
 
   phone: -> @company.phone
 
+  addressLine1: ->
+    @company.address_line_1
+
+  addressLine2: ->
+    @company.address_line_2
+
   yearRegistered: -> @company.year_registered
 
   noOfEmployees: -> @company.no_of_employees
