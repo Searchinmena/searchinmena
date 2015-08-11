@@ -66,4 +66,5 @@
       = render partial: "company_info", locals: { f: f, business: business }
 
     .actions
-      = f.submit t("devise.registrations.submit")
+      %input{ type: "submit", value: '{{ "registration.submit" | translate }}',
+        "ng-disabled": "loading" }

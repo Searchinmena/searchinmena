@@ -1,4 +1,7 @@
 {
+  "registration": {
+    "submit": "ارسال"
+  },
   "confirmation_modal": {
     "are_you_sure": "هل أنت متأكد",
     "ok": "نعم، متأكد",

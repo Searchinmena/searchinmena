@@ -1,4 +1,7 @@
 {
+  "registration": {
+    "submit": "Sign up"
+  },
   "confirmation_modal": {
     "are_you_sure": "Are you sure you want to remove this?",
     "ok": "Yes, I'm sure",
