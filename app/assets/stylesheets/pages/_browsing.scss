@@ -346,6 +346,11 @@
       width: 15em;
       display: block;
       float: none;
+
+      [dir="rtl"] & {
+        float: none;
+        margin: 0 0 $bs-3;
+      }
     }
 
    img {
