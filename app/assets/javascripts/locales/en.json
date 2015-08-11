@@ -124,6 +124,7 @@
   },
   "category": {
     "title": "Category",
+    "in": "in"
     "button": "Choose category"
   },
   "categories_modal": {
