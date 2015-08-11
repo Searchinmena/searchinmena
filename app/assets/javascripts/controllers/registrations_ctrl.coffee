@@ -42,9 +42,9 @@
           method: 'POST'
         ).success(->
           window.location = DASHBOARD_PATH
-          $scope.loading = false
         ).error((errors) ->
           $scope.errors = errors
+        ).then(
           $scope.loading = false
         )
       false
