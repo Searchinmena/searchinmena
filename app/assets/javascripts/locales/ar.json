@@ -124,6 +124,7 @@
   },
   "category": {
     "title": "فئة",
+    "in": "in AR",
     "button": "إختر الفئة"
   },
   "categories_modal": {
@@ -140,8 +141,7 @@
   },
   "attributes": {
     "title": "الخصائص",
-    "attribute": "خاصية",
-    "attributes": "Attributes AR",
+    "attribute": "خاصية"
     "attribute_placeholder": "مثال: المادة",
     "value": "القيمة",
     "value_placeholder": "مثال: نحاس",
