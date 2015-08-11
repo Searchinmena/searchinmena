@@ -11,6 +11,9 @@
 
       emailConfirmed: ->
         !!@confirmed_at
+
+      businessId: ->
+        @business_id
     )
 
     User

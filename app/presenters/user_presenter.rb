@@ -9,7 +9,8 @@ class UserPresenter
       provider: user.provider,
       uid: user.uid,
       can_see_business_items: user.can_see_business_items?,
-      confirmed_at: user.confirmed_at
+      confirmed_at: user.confirmed_at,
+      business_id: user.business.try(:id)
     }
   end
 end

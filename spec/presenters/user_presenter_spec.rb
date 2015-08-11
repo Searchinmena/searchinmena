@@ -3,8 +3,8 @@ require "rails_helper"
 describe UserPresenter do
   describe "#as_json" do
     let(:presenter) { UserPresenter.new(user) }
-    let(:user) { build(:buyer, provider: "facebook", uid: "1234567") }
-    let(:can_see_business_items) { false }
+    let(:user) { build(:seller, provider: "facebook", uid: "1234567") }
+    let(:can_see_business_items) { true }
 
     subject { presenter.as_json }
 
@@ -21,7 +21,8 @@ describe UserPresenter do
         provider: user.provider,
         uid: user.uid,
         can_see_business_items: can_see_business_items,
-        confirmed_at: user.confirmed_at
+        confirmed_at: user.confirmed_at,
+        business_id: user.business.id
       )
     end
   end

@@ -20,4 +20,7 @@
 
     fullName: ->
       @user && @user.fullName()
+
+    businessId: ->
+      @user && @user.businessId()
 ]
