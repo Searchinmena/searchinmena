@@ -2,7 +2,7 @@
   %label {{ "trade_info.fob_price" | translate }}
   %p.field-comment {{ "trade_info.fob_price_comment" | translate }}
   %form-field{ "error": "errors.business_item.fob_price", class: 'inline-field' }
-    %input{ type: "number", step: "any", min: "0", "ng-model": "businessItem.fob_price" }
+    %input{ type: "text", "ng-model": "businessItem.fob_price" }
   .inline-field
     .select-field
       %select{ "ng-options": "currency.id as currency.label for currency in currencies",
@@ -25,7 +25,7 @@
   %label {{ "trade_info.supply" | translate }}
   %p.field-comment {{ "trade_info.supply_comment" | translate }}
   %form-field{ "error": "errors.business_item.supply_ability_capacity", class: 'inline-field' }
-    %input{ type: "number", min: "0", "ng-model": "businessItem.supply_ability_capacity" }
+    %input{ type: "text", "ng-model": "businessItem.supply_ability_capacity" }
   .inline-field
     .select-field
       %select{ "ng-options": "unit.id as unit.label for unit in units",

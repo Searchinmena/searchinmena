@@ -46,11 +46,11 @@
 
   %form-field{ "error": "errors.business.year_registered" }
     %label {{ "company.basic_info.year_registered" | translate }}
-    %input.size-specified{ type: "number", min: "0", "ng-model": "form.business.year_registered" }
+    %input.size-specified{ type: "text", "ng-model": "form.business.year_registered" }
 
   %form-field{ "error": "errors.business.no_of_employees" }
     %label {{ "company.basic_info.no_of_employees" | translate }}
-    %input.size-specified{ type: "number", min: "0", "ng-model": "form.business.no_of_employees" }
+    %input.size-specified{ type: "text", "ng-model": "form.business.no_of_employees" }
 
   %form-field{ "error": "errors.business.introduction" }
     %label {{ "company.basic_info.introduction" | translate }}
