@@ -9,6 +9,13 @@ GIT
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
 
+GIT
+  remote: git@github.com:lesniakania/carrierwave_backgrounder.git
+  revision: 78f32ffccd43c8b0ef589d8764a9c03f75b1a3a9
+  specs:
+    carrierwave_backgrounder (0.4.1)
+      carrierwave (~> 0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -82,8 +89,6 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    carrierwave_backgrounder (0.4.1)
-      carrierwave (~> 0.5)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chronic (0.10.2)
@@ -470,7 +475,7 @@ DEPENDENCIES
   capistrano-rvm
   capistrano3-unicorn
   carrierwave
-  carrierwave_backgrounder
+  carrierwave_backgrounder!
   coffee-rails (~> 4.1.0)
   dependor
   devise
