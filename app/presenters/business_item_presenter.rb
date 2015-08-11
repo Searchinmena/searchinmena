@@ -1,7 +1,7 @@
 class BusinessItemPresenter < BasePresenter
   inject :payment_term_repository, :translatable_repository
 
-  takes :business_item, :repository, :locale
+  takes :business_item, :repository, :photos_repository, :locale
 
   def as_json(*)
     basic_attributes.merge(
@@ -17,8 +17,9 @@ class BusinessItemPresenter < BasePresenter
 
   def cover_photo
     {
-      url: repository.photo_url_for(business_item),
-      thubm: repository.photo_url_for(business_item, :thumb)
+      url: repository.cover_photo_url_for(business_item, photos_repository),
+      thumb: repository.cover_photo_url_for(business_item,
+                                            photos_repository, :thumb)
     }
   end
 
@@ -64,7 +65,7 @@ class BusinessItemPresenter < BasePresenter
   end
 
   def photos
-    business_item.photos.map { |p| PhotoPresenter.new(p) }
+    business_item.photos.map { |p| PhotoPresenter.new(p, photos_repository) }
   end
 
   def attributes

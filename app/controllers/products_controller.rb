@@ -1,8 +1,12 @@
 class ProductsController < BusinessItemsController
-  inject :product_repository
+  inject :product_repository, :product_photo_repository
 
   def repository
     product_repository
+  end
+
+  def photos_repository
+    product_photo_repository
   end
 
   def business_item_creator

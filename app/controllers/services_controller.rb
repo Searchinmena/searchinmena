@@ -1,8 +1,12 @@
 class ServicesController < BusinessItemsController
-  inject :service_repository
+  inject :service_repository, :service_photo_repository
 
   def repository
     service_repository
+  end
+
+  def photos_repository
+    service_photo_repository
   end
 
   def business_item_creator

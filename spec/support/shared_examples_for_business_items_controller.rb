@@ -19,6 +19,8 @@ shared_examples "BusinessItemsController" do |resource_name|
   before do
     allow(controller).to receive(:repository)
       .and_return(repository)
+    allow(controller).to receive(:photos_repository)
+      .and_return(photos_repository)
   end
 
   describe "#create" do
@@ -129,7 +131,7 @@ shared_examples "BusinessItemsController" do |resource_name|
         sign_in(user)
 
         expect(BusinessItemsCollectionPresenter).to receive(:new)
-          .with(user, "2", repository, :en)
+          .with(user, "2", repository, photos_repository, :en)
       end
 
       subject { get :index, page: "2" }
@@ -154,7 +156,7 @@ shared_examples "BusinessItemsController" do |resource_name|
         let!(:business_item) { create(resource_name, business: user.business) }
         before do
           expect(BusinessItemsCollectionPresenter).to receive(:new)
-            .with(user, "2", repository, :en)
+            .with(user, "2", repository, photos_repository, :en)
         end
 
         it { is_expected.to be_successful }

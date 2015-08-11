@@ -8,9 +8,12 @@ describe BusinessItemsCollectionPresenter do
     let(:user) { create(:seller) }
     let(:page) { "1" }
     let(:repository) { ProductRepository.new }
+    let(:photos_repository) { ProductPhotoRepository.new }
     let(:locale) { "en" }
 
-    let(:presenter) { described_class.new(user, page, repository, locale) }
+    let(:presenter) do
+      described_class.new(user, page, repository, photos_repository, locale)
+    end
 
     subject { presenter.as_json }
 

@@ -1,6 +1,6 @@
 shared_examples "BusinessItemRepository" do
   describe "#photo_url" do
-    subject { repository.photo_url_for(product, type) }
+    subject { repository.cover_photo_url_for(product, photos_repository, type) }
 
     let(:product) { create(:product) }
     let(:type) { nil }

@@ -1,12 +1,13 @@
 class BusinessItemsCollectionPresenter
-  attr_accessor :user, :page, :repository, :locale
+  attr_accessor :user, :page, :repository, :photos_repository, :locale
 
   LIMIT = A9n.items_per_page
 
-  def initialize(user, page, repository, locale)
+  def initialize(user, page, repository, photos_repository, locale)
     self.user = user
     self.page = page.present? ? page.to_i : 1
     self.repository = repository
+    self.photos_repository = photos_repository
     self.locale = locale
   end
 
@@ -25,7 +26,8 @@ class BusinessItemsCollectionPresenter
     offset = (page - 1) * LIMIT
     items = business_items.order(created_at: :desc).limit(LIMIT).offset(offset)
     items.map do |i|
-      BusinessItemWithCategoryPresenter.new(i, repository, locale)
+      BusinessItemWithCategoryPresenter.new(i, repository,
+                                            photos_repository, locale)
     end
   end
 

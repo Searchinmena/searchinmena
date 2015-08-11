@@ -1,10 +1,10 @@
 class PhotoPresenter
-  takes :photo
+  takes :photo, :repository
 
   def as_json(*)
     {
-      thumb: photo.photo_url(:thumb),
-      url: photo.photo_url
+      thumb: repository.photo_url(photo, :thumb),
+      url: repository.photo_url(photo)
     }
   end
 end

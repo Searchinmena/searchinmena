@@ -4,10 +4,11 @@ describe BusinessItemWithCategoryPresenter do
   describe "#as_json" do
     let(:product) { create(:product) }
     let(:product_repository) { ProductRepository.new }
+    let(:photos_repository) { ProductPhotoRepository.new }
     let(:locale) { "en" }
     let(:presenter) do
       BusinessItemWithCategoryPresenter.new(product, product_repository,
-                                            locale)
+                                            photos_repository, locale)
     end
 
     subject { presenter.as_json.keys }

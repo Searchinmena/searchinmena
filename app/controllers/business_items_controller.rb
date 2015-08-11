@@ -19,7 +19,7 @@ class BusinessItemsController < ApplicationController
     return head :not_found unless @business_item
 
     render json: business_item_presenter_factory.new(
-      @business_item, repository, locale)
+      @business_item, repository, photos_repository, locale)
   end
 
   def destroy
@@ -61,7 +61,7 @@ class BusinessItemsController < ApplicationController
 
   def render_collection
     render json: BusinessItemsCollectionPresenter.new(
-      current_user, params[:page], repository, locale)
+      current_user, params[:page], repository, photos_repository, locale)
   end
 
   def render_success(business_item)

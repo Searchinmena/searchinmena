@@ -1,5 +1,7 @@
 require "rails_helper"
 
 describe ProductPhotoRepository do
-  it_behaves_like "ProductResourceRepository"
+  let(:repository) { ProductPhotoRepository.new }
+
+  it_behaves_like "PhotoRepository"
 end

@@ -11,16 +11,8 @@ module BusinessItemRepository
     klass.new params.merge(business_id: business.id)
   end
 
-  def photo_url_for(business_item, type = nil)
+  def cover_photo_url_for(business_item, photos_repository, type = nil)
     photo = business_item.photos.first
-    return default_image_for(type) unless photo
-    photo.photo_url(type)
-  end
-
-  private
-
-  def default_image_for(type)
-    image = type ? "default-image-#{type}.png" : "default-image.png"
-    ActionController::Base.helpers.asset_path(image)
+    photos_repository.photo_url(photo, type)
   end
 end

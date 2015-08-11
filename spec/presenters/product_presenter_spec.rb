@@ -12,6 +12,7 @@ describe ProductPresenter do
     end
 
     let(:repository) { ProductRepository.new }
+    let(:photos_repository) { ProductPhotoRepository.new }
 
     let(:additional_keys) do
       [

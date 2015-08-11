@@ -12,6 +12,7 @@ describe ServicePresenter do
     end
 
     let(:repository) { ServiceRepository.new }
+    let(:photos_repository) { ServicePhotoRepository.new }
 
     let(:additional_keys) do
       [
