@@ -6,7 +6,7 @@
   scope:
     model: '='
     options: '='
-    selectButtonText: '=selectButtonText'
+    selectButtonText: '='
 
   link: ($scope) ->
     $scope.isDropdownVisible = false
