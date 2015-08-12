@@ -40,7 +40,6 @@
           window.location = DASHBOARD_PATH
         ).error((errors) ->
           $scope.errors = errors
-        ).then(
           $scope.loading = false
         )
       false
