@@ -71,6 +71,12 @@ shared_examples "positive integer" do
 
     it { is_expected.not_to be_valid }
   end
+
+  context "is greater than #{A9n.validations[:max_integer]}" do
+    let(:field) { A9n.validations[:max_integer] + 1 }
+
+    it { is_expected.to_not be_valid }
+  end
 end
 
 shared_examples "price" do

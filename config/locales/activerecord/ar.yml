@@ -15,3 +15,4 @@ ar:
       greater_than_or_equal_to: " %{count} يساوي آو أكبر من "
       less_than: " %{count} أصغر من"
       less_than_or_equal_to: " %{count} يساوي آو أصغر من "
+      invalid_year: "should be a four-digit year"

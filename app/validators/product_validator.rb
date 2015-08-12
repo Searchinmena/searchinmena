@@ -9,8 +9,12 @@ class ProductValidator < BusinessItemValidator
   validates :model_number, :brand_name, :min_order_quantity_number,
             length: { maximum: A9n.validations[:max_text_field_size] }
   validates :min_order_quantity_number,
-            numericality: { greater_than: 0, only_integer: true,
-                            allow_nil: true }
+    numericality: {
+      greater_than: 0,
+      less_than_or_equal_to: A9n.validations[:max_integer],
+      only_integer: true,
+      allow_nil: true
+    }
 
   validates :min_order_quantity_unit_id,
     presence: true,

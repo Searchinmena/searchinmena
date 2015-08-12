@@ -13,8 +13,12 @@ class ServiceValidator < BusinessItemValidator
   validates :scope_of_work,
             length: { maximum: A9n.validations[:max_text_area_size] }
   validates :average_completion_time,
-            numericality: { greater_than: 0, only_integer: true,
-                            allow_nil: true }
+            numericality: {
+              greater_than: 0,
+              less_than_or_equal_to: A9n.validations[:max_integer],
+              only_integer: true,
+              allow_nil: true
+            }
 
   min_photos = A9n.validations[:min_business_item_photo_count].to_i
   max_photos = A9n.validations[:max_business_item_photo_count].to_i

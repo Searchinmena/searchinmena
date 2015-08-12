@@ -26,7 +26,7 @@ describe BusinessValidator do
 
   describe "length validation" do
     [:name, :country_id, :phone, :city, :address_line_1, :address_line_2,
-     :no_of_employees, :year_registered].each do |field|
+     :no_of_employees].each do |field|
       let(:business_params) do
         too_long_field = "a" * (A9n.validations[:max_text_field_size] + 1)
         valid_params.merge(field => too_long_field)
@@ -75,9 +75,21 @@ describe BusinessValidator do
     end
   end
 
-  describe "#year_registered" do
-    it_behaves_like "positive integer" do
-      let(:business_params) { valid_params.merge(year_registered: field) }
+  describe "year_registered" do
+    context "number too big" do
+      let(:business_params) do
+        valid_params.merge(year_registered: 123_123_123_123)
+      end
+
+      it { is_expected.to be_invalid }
+    end
+
+    context "number is valid year but not reasonable one" do
+      let(:business_params) do
+        valid_params.merge(year_registered: 1000)
+      end
+
+      it { is_expected.to be_invalid }
     end
   end
 end

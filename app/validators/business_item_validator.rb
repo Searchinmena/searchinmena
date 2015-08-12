@@ -18,8 +18,12 @@ class BusinessItemValidator < BaseValidator
   validates :description,
             length: { maximum: A9n.validations[:max_text_area_size] }
   validates :supply_ability_capacity,
-            numericality: { greater_than: 0, only_integer: true,
-                            allow_nil: true }
+    numericality: {
+      greater_than: 0,
+      less_than_or_equal_to: A9n.validations[:max_integer],
+      only_integer: true,
+      allow_nil: true
+    }
   validates :fob_price,
             numericality: { greater_than: 0 },
             format: { with: /#{A9n.validations[:price_format]}/ },
