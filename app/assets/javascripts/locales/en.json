@@ -18,10 +18,10 @@
     "all": "All",
     "products": "Products",
     "services": "Services",
-    "companies": "Companies",
+    "businesses": "Companies",
     "header_line_1": "Join Search in MENA marketplace",
     "header_line_2": "and start getting inquiries from buyers today.",
-    "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.",
+    "sub_header": "We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create company profiles and buyers browse sellers they want to source from.",
     "watch_video": "watch video",
     "see_dashboard": "See dashboard",
     "join_now": "Join now",
@@ -35,7 +35,7 @@
   },
   "dashboard_nav": {
     "home": "Home",
-    "company": "Company",
+    "business": "Company",
     "products": "Products",
     "services": "Services",
     "messages": "Messages",
@@ -46,10 +46,10 @@
     "go_to": "Go to...",
     "see_all": "See all",
     "browse_message": "As a buyer you can browse offers and contact sellers to find the best deal for you!",
-    "create_company_message": "Only sellers can add products and services, click below if you want to become one",
-    "create_company_button": "Create company profile"
+    "create_business_message": "Only sellers can add products and services, click below if you want to become one",
+    "create_business_button": "Create company profile"
   },
-  "company": {
+  "business": {
     "title": "Company Profile",
     "see_your_page": "See your page",
     "tabs": {
@@ -62,7 +62,7 @@
     "successfully_saved": "Company information was successfully saved",
     "saving_failed": "Company couldn't be saved, please check the form",
     "basic_info": {
-      "company_name": "Company name",
+      "business_name": "Company name",
       "add_logo": "Add logo",
       "contact_number": "Contact number",
       "city": "City",
@@ -77,7 +77,7 @@
       "year_registered": "Year company registered",
       "no_of_employees": "No. of employees",
       "introduction": "Detailed introduction",
-      "company_photos": "Company photos",
+      "business_photos": "Company photos",
       "add_photos": "Add photos",
       "max_images": "max 5 images",
       "submit": "Save changes"
@@ -91,8 +91,8 @@
       "main_products": "Main Products",
       "year_registered": "Year Company Registered",
       "no_of_employees": "No. of employees",
-      "company_introduction": "Company Introduction",
-      "company_gallery": "Company Gallery"
+      "business_introduction": "Company Introduction",
+      "business_gallery": "Company Gallery"
     },
     "trade_details": {
       "annual_sales_value": "Annual sales value",

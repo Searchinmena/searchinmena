@@ -9,14 +9,6 @@ ar:
     terms: "شروط الإستخدام"
     privacy: "سياسة الخصوصية"
 
-  dashboard_nav:
-    home: "الرئيسية"
-    company: "الشركة"
-    products: "المنتجات"
-    services: "الخدمات"
-    messages: "الرسائل"
-    settings: "اعدادات الحساب"
-
   text:
     title: "على ماذا تحصل"
     description:
@@ -52,7 +44,7 @@ ar:
     facebook_explanation:
       " لقد قمنا باستخدام اسمك وبريدك الإلكتروني من حسابك فيس بوك الخاص بك، الرجاء قم بتعبئة الحقول المتبقية لإتمام التسجيل."
     contant_info_header: "معلومات الاتصال الخاصة بك"
-    company_name: "اسم الشركة"
+    business_name: "اسم الشركة"
     location: "البلد"
     location_select: "إختر"
     contact_number: "رقم الاتصال"
@@ -75,12 +67,13 @@ ar:
 
   footer:
     about_us: "من نحن"
-    about_description: "MENA Network LTD manages an online B2B advertising directory,
+    about_description:
+      "MENA Network LTD manages an online B2B advertising directory,
       HQ in Dubai Silicon Oasis - UAE, owned by Salim Akil, Silicon Oasis Founders a wholly
       owned entity of DSOA (Government of Dubai) and other 23 shareholders. MENA Network has
       offices in Dubai, Riyadh and San Francisco."
     find_us: "موقعنا"
-    companies: "الشركات"
+    businesses: "الشركات"
     address_title: "العنوان"
     address_line_1: "الإمارات العربية المتحدة، دبي، "
     address_line_2: "مبنى أ، مكتب ٢٩"

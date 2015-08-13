@@ -1,12 +1,12 @@
 loginHelper = require("./helpers/login_helper.coffee")
-CompanyPage = require("./helpers/company_page.coffee")
+BusinessPage = require("./helpers/business_page.coffee")
 
-describe CompanyPage, ->
+describe BusinessPage, ->
   page = null
 
   beforeEach ->
     loginHelper.loginAsBoth()
-    page = new CompanyPage()
+    page = new BusinessPage()
     page.get()
     page.clearRequiredFields()
     page.clearTags()

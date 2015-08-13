@@ -3,7 +3,7 @@
 
 = f.fields_for business do |b|
   = form_field("business.name") do
-    = b.label :name, t("sign_up.company_name")
+    = b.label :name, t("sign_up.business_name")
     = b.text_field :name, "ng-model": "form.business.name"
 
   = form_field("business.country_id") do
@@ -17,8 +17,8 @@
     = b.text_field :phone, "ng-model": "form.business.phone"
 
   .field{ "ng-class": "{'field-with-errors': errors.business.business_type_ids}" }
-    %label {{ "company.basic_info.business_types" | translate }}
-    %multiselect{ "model": "form.business.business_type_ids", "options": "business_types", "select-button-text": "{{ 'company.basic_info.select_business_types' | translate }}" }
+    %label {{ "business.basic_info.business_types" | translate }}
+    %multiselect{ "model": "form.business.business_type_ids", "options": "business_types", "select-button-text": "{{ 'business.basic_info.select_business_types' | translate }}" }
     %error-message-for{ "error": "errors.business.business_type_ids" }
 
   .field
@@ -29,6 +29,6 @@
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }
     %p.field-comment
-      {{ "company.basic_info.tag_comment_1" | translate }}
+      {{ "business.basic_info.tag_comment_1" | translate }}
       %br
-      {{ "company.basic_info.tag_comment_2" | translate }}
+      {{ "business.basic_info.tag_comment_2" | translate }}

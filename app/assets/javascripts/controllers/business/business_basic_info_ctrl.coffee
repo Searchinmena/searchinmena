@@ -1,4 +1,4 @@
-@Sim.controller 'CompanyBasicInfoCtrl', ['$scope', '$http', '$translate',
+@Sim.controller 'BusinessBasicInfoCtrl', ['$scope', '$http', '$translate',
   'selectsLoader', 'TranslatedFlash', 'TAGS_PATH', 'USER_BUSINESS_PATH',
   'language', 'CurrentUser',
   ($scope, $http, $translate, selectsLoader, TranslatedFlash, TAGS_PATH,
@@ -41,10 +41,10 @@
         CurrentUser.authorize()
 
         $scope.errors = {}
-        TranslatedFlash.success('company.successfully_saved')
+        TranslatedFlash.success('business.successfully_saved')
       ).error((errors) ->
         $scope.errors = errors
-        TranslatedFlash.error('company.saving_failed')
+        TranslatedFlash.error('business.saving_failed')
       )
 
       false

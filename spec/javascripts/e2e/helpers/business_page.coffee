@@ -1,4 +1,4 @@
-class CompanyPage
+class BusinessPage
   constructor: ->
     @errorMessage = "Company couldn't be saved, please check the form"
     @successMessage = "Company information was successfully saved"
@@ -80,4 +80,4 @@ class CompanyPage
     @businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
 
-module.exports = CompanyPage
+module.exports = BusinessPage

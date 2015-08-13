@@ -1,12 +1,12 @@
 %section.dashboard-content
   %h2.header-title
-    {{ "company.title" | translate }}
-    %a.header-link{ "ui-sref": "company({ id: currentUser.businessId() })",
+    {{ "business.title" | translate }}
+    %a.header-link{ "ui-sref": "business({ id: currentUser.businessId() })",
       "ng-show": "currentUser.businessId()" }
       %span.icon.icon-eye-open
-      {{ "company.see_your_page" | translate }}
+      {{ "business.see_your_page" | translate }}
 
-  %ul.company-tabs{ hidden: true }
+  %ul.business-tabs{ hidden: true }
     %li.tab{ "ng-repeat": "tab in tabs"}
       %a{ "ui-sref": "dashboard.{{tab.href}}", "ui-sref-active": "active",
           class: "tab-link" }

@@ -169,7 +169,7 @@ textarea {
       margin-top: $bs0;
     }
   }
-  
+
   @media screen and (min-width: 956px) {
     &.field-with-label {
       margin-top: 0;
@@ -234,7 +234,7 @@ textarea {
   }
 }
 
-.company-logo-holder {
+.business-logo-holder {
   @extend %four-sides-border;
   width: 2 * $bs8;
   height: 2 * $bs8;

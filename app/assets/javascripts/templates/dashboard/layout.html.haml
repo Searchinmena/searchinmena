@@ -9,8 +9,8 @@
         {{ "dashboard_nav.home" | translate }}
         %span.icon.icon-home
     %li
-      %a.nav-link{ "ui-sref": "dashboard.company.basic_info", "ui-sref-active": "active" }
-        {{ "dashboard_nav.company" | translate }}
+      %a.nav-link{ "ui-sref": "dashboard.business.basic_info", "ui-sref-active": "active" }
+        {{ "dashboard_nav.business" | translate }}
         %span.icon.icon-briefcase
 
     %li{ "ng-show": "currentUser.canSeeBusinessItems()" }

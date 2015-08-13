@@ -8,11 +8,11 @@ class DashboardPage
   servicesNavLink: ->
     element(By.css(".dashboard-navigation [href='#/dashboard/services']"))
 
-  companyName: ->
-    element(By.css(".dashboard-content .company-name"))
+  businessName: ->
+    element(By.css(".dashboard-content .business-name"))
 
-  editCompanyLink: ->
-    element(By.css(".company-profile-summary [href='#/dashboard/company/basic_info']"))
+  editBusinessLink: ->
+    element(By.css(".business-profile-summary [href='#/dashboard/company/basic_info']"))
 
   productsLink: ->
     element(By.css(".dashboard-content [href='#/dashboard/products']"))
@@ -38,14 +38,14 @@ class DashboardPage
   browseLink: ->
     element(By.css("[href='#/browse']"))
 
-  createCompanyLink: ->
+  createBusinessLink: ->
     element(By.css(".buyer-dashboard-content [href='#/dashboard/company/basic_info']"))
 
   checkSummaryContent: ->
     expect(@buyerContent().isDisplayed()).toBe(false)
 
-    expect(@companyName().isDisplayed()).toBe(true)
-    expect(@editCompanyLink().isDisplayed()).toBe(true)
+    expect(@businessName().isDisplayed()).toBe(true)
+    expect(@editBusinessLink().isDisplayed()).toBe(true)
 
     expect(@productsLink().isDisplayed()).toBe(true)
     expect(@addNewProductLink().isDisplayed()).toBe(true)

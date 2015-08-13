@@ -58,7 +58,7 @@
   @extend %clearfix;
   @extend %form-container;
   position: relative;
-  
+
   .form-wrapper {
     @extend %clearfix;
 
@@ -168,17 +168,17 @@
   }
 }
 
-.company-info {
+.business-info {
   max-height: 999px;
   opacity: 1;
 }
 
-.company-info.ng-hide-add.ng-hide-add-active,
-.company-info.ng-hide-remove.ng-hide-remove-active {
+.business-info.ng-hide-add.ng-hide-add-active,
+.business-info.ng-hide-remove.ng-hide-remove-active {
   @include transition(all, .5s, ease-in-out);
 }
 
-.company-info.ng-hide {
+.business-info.ng-hide {
   opacity: 0;
   max-height: 0;
 }
@@ -219,7 +219,7 @@
     [dir="rtl"] & {
       margin: 0 0 $bs0 2%;
     }
-    
+
     @media screen and (min-width: $tablet) {
       width: auto;
       max-width: 2 * $bs9;
@@ -263,7 +263,6 @@
     margin: $bs-3 $bs0;
   }
 }
-
 
 @include keyframes(spinning) {
   0% {

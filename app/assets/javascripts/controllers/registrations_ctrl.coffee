@@ -16,7 +16,7 @@
         business: {}
       }
 
-    $scope.shouldShowCompanyInfo = ->
+    $scope.shouldShowBusinessInfo = ->
       category = $scope.form.user.category
       category == 'seller' || category == 'both'
 

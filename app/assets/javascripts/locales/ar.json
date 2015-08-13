@@ -18,7 +18,7 @@
     "all": "الجميع",
     "products": "المنتجات",
     "services": "الخدمات",
-    "companies": "الشركات",
+    "businesses": "الشركات",
     "header_line_1": "انضم إلى Search In MENA.  ",
     "header_line_2": "وابدأ باستقبال طلبات من مشترين.",
     "sub_header": "نحن أكبر موقع للشركات التي ترغب في بيع أو شراء منتجاتها وخدماتها في منطقة الشرق الأوسط وشمال إفريقيا",
@@ -35,7 +35,7 @@
   },
   "dashboard_nav": {
     "home": "الصفحة الرئيسية",
-    "company": "الشركة",
+    "business": "الشركة",
     "products": "المنتجات",
     "services": "الخدمات",
     "messages": "الرسائل",
@@ -46,10 +46,10 @@
     "go_to": "اذهب إلى ...",
     "see_all": "شاهد الجمبع",
     "browse_message": "يستطيع المشتري البحث عن شركات ومنتجاتها والإتصال بهم من خلال الموقع",
-    "create_company_message": "يستطيع الباعة وحدهم إضافة منتجات وخدمات، إضغط الرتبط في الأسفل لتصبح منهم.",
-    "create_company_button": "إنشاء حساب شركة"
+    "create_business_message": "يستطيع الباعة وحدهم إضافة منتجات وخدمات، إضغط الرتبط في الأسفل لتصبح منهم.",
+    "create_business_button": "إنشاء حساب شركة"
   },
-  "company": {
+  "business": {
     "title": "ملف الشركة - اللغة العربية",
     "see_your_page": "شاهد ملف شركتك",
     "tabs": {
@@ -62,7 +62,7 @@
     "successfully_saved": "تمّ حفظ معلومات الشركة بنجاج",
     "saving_failed": "لم يتم حفظ معلومات الشركة، تأكد من الحقول",
     "basic_info": {
-      "company_name": "أسم الشركة",
+      "business_name": "أسم الشركة",
       "add_logo": "أضف شعار الشركة",
       "contact_number": "رقم الإتصال",
       "city": "المدينة",
@@ -77,7 +77,7 @@
       "year_registered": "سنة تسجيل الشركة",
       "no_of_employees": "عدد الموظفين",
       "introduction": "مقدمة مختصرة عن الشركة",
-      "company_photos": "صور الشركة",
+      "business_photos": "صور الشركة",
       "add_photos": "أضف صور",
       "max_images": "حد أقصى خمس صور",
       "submit": "حفظ"
@@ -91,8 +91,8 @@
       "main_products": "المنتجات الرئيسية المباعة",
       "year_registered": "سنة تسجيل الشركة",
       "no_of_employees": "عدد الموظفين",
-      "company_introduction": "مقدمة عن الشركة",
-      "company_gallery": "صور الشركة"
+      "business_introduction": "مقدمة عن الشركة",
+      "business_gallery": "صور الشركة"
     },
     "trade_details": {
       "annual_sales_value": "حجم المبيعات السنوي",

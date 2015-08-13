@@ -7,39 +7,39 @@ describe RegistrationPage, ->
     page = new RegistrationPage()
     page.get()
 
-  it "doesn't render company info by default", ->
-    expect(page.companyInfoElement().isDisplayed()).toBe(false)
+  it "doesn't render business info by default", ->
+    expect(page.businessInfoElement().isDisplayed()).toBe(false)
 
-  it "shows company info when 'seller' chosen", ->
+  it "shows business info when 'seller' chosen", ->
     page.chooseUserCategory(page.sellerCategory)
 
-    expect(page.companyInfoElement().isDisplayed()).toBe(true)
+    expect(page.businessInfoElement().isDisplayed()).toBe(true)
 
-  it "shows company info when 'both' chosen", ->
+  it "shows business info when 'both' chosen", ->
     page.chooseUserCategory(page.bothCategory)
 
-    expect(page.companyInfoElement().isDisplayed()).toBe(true)
+    expect(page.businessInfoElement().isDisplayed()).toBe(true)
 
-  it "hides company info when 'buyer' chosen", ->
+  it "hides business info when 'buyer' chosen", ->
     page.chooseUserCategory(page.sellerCategory)
 
     page.chooseUserCategory(page.buyerCategory)
 
-    expect(page.companyInfoElement().isDisplayed()).toBe(false)
+    expect(page.businessInfoElement().isDisplayed()).toBe(false)
 
-  it "persist company option visibility after validation failed", ->
+  it "persist business option visibility after validation failed", ->
     page.chooseUserCategory(page.sellerCategory)
     page.submitForm()
 
-    expect(page.companyInfoElement().isDisplayed()).toBe(true)
+    expect(page.businessInfoElement().isDisplayed()).toBe(true)
 
     sellerButton = element(By.id(page.sellerCategory))
     expect(sellerButton.isSelected()).toBe(true)
 
-    companyNameField = page.companyNameField()
-    expect(companyNameField.element(By.className("error"))
+    businessNameField = page.businessNameField()
+    expect(businessNameField.element(By.className("error"))
       .isDisplayed()).toBe(true)
-    expect(companyNameField.getAttribute("class"))
+    expect(businessNameField.getAttribute("class"))
       .toContain("field-with-errors")
 
   it "is possible to add tag", ->

@@ -62,8 +62,8 @@
           = f.label User.category_name(cat), for: "user_category_#{cat}",
             class: "inline-label"
 
-    .fields-group.company-info{ "ng-show": "shouldShowCompanyInfo()" }
-      = render partial: "company_info", locals: { f: f, business: business }
+    .fields-group.business-info{ "ng-show": "shouldShowBusinessInfo()" }
+      = render partial: "business_info", locals: { f: f, business: business }
 
     .actions
       %input{ type: "submit", value: '{{ "registration.submit" | translate }}',

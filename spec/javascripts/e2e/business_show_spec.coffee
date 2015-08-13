@@ -1,12 +1,12 @@
-CompanyShowPage = require("./helpers/company_show_page.coffee")
-helpers = require('./helpers/helpers.coffee')
-loginHelper = require('./helpers/login_helper.coffee')
+BusinessShowPage = require("./helpers/business_show_page.coffee")
+helpers = require("./helpers/helpers.coffee")
+loginHelper = require("./helpers/login_helper.coffee")
 
-describe CompanyShowPage, ->
+describe BusinessShowPage, ->
   page = null
 
   beforeEach ->
-    page = new CompanyShowPage()
+    page = new BusinessShowPage()
 
   xit "displays basic information", ->
     page.get()

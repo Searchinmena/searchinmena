@@ -120,7 +120,7 @@
 
   .icon {
     font-size: $bs5;
-    color: $grey; 
+    color: $grey;
     vertical-align: middle;
 
     &.active {
@@ -317,7 +317,7 @@
 }
 
 .net-view {
-  .company-summary, .result-item-description {
+  .business-summary, .result-item-description {
     display: none;
   }
 
@@ -391,7 +391,7 @@
   }
 }
 
-.company-summary {
+.business-summary {
   @extend %item-options-holder;
   background-color: $snow-white;
   padding: $bs2;
@@ -409,7 +409,7 @@
     }
   }
 
-  .company-location, .company-name, .plain-link {
+  .business-location, .business-name, .plain-link {
     width: 50%;
 
     @media screen and (min-width: $tablet) {
@@ -417,18 +417,18 @@
     }
   }
 
-  .company-name {
+  .business-name {
     margin: $bs-5 0;
     font-weight: bold;
-    
+
     @media screen and (min-width: $tablet) {
       font-size: $bs1;
     }
   }
 
-  .company-location {
+  .business-location {
     margin: $bs-5 0;
-    
+
     span {
       color: grey;
     }

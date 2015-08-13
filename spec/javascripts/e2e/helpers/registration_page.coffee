@@ -1,20 +1,20 @@
 class RegistrationPage
   constructor: ->
-    @companyInfoCss = ".company-info"
+    @businessInfoCss = ".business-info"
     @sellerCategory = "user_category_seller"
     @buyerCategory = "user_category_buyer"
     @bothCategory = "user_category_both"
-    @companyNameCss = "user_business_name"
+    @businessNameCss = "user_business_name"
 
   get: ->
     browser.get("/users/sign_up")
 
-  companyInfoElement: ->
-    element(By.css(@companyInfoCss))
+  businessInfoElement: ->
+    element(By.css(@businessInfoCss))
 
-  companyNameField: ->
-    companyNameInput = element(By.id(@companyNameCss))
-    companyNameInput.element(By.xpath(".."))
+  businessNameField: ->
+    businessNameInput = element(By.id(@businessNameCss))
+    businessNameInput.element(By.xpath(".."))
 
   chooseUserCategory: (label) ->
     radioButton = element(By.id(label))

@@ -36,26 +36,26 @@
       templateUrl: 'services/new.html',
       controller: 'ServicesNewCtrl'
     )
-    .state('dashboard.company',
+    .state('dashboard.business',
       url: '/company',
       abstract: true,
-      templateUrl: 'company/index.html',
-      controller: 'CompanyCtrl'
+      templateUrl: 'business/index.html',
+      controller: 'BusinessCtrl'
     )
-    .state('dashboard.company.basic_info',
+    .state('dashboard.business.basic_info',
       url: '/basic_info',
-      templateUrl: 'company/basic_info.html',
-      controller: 'CompanyBasicInfoCtrl'
+      templateUrl: 'business/basic_info.html',
+      controller: 'BusinessBasicInfoCtrl'
     )
-    .state('dashboard.company.trade_details',
+    .state('dashboard.business.trade_details',
       url: '/trade_details',
-      templateUrl: 'company/trade_details.html',
-      controller: 'CompanyTradeDetailsCtrl'
+      templateUrl: 'business/trade_details.html',
+      controller: 'BusinessTradeDetailsCtrl'
     )
-    .state('dashboard.company.certifications',
+    .state('dashboard.business.certifications',
       url: '/certifications',
-      templateUrl: 'company/certifications.html',
-      controller: 'CompanyCertificationsCtrl'
+      templateUrl: 'business/certifications.html',
+      controller: 'BusinessCertificationsCtrl'
     )
 
     $stateProvider.state('product',
@@ -81,12 +81,11 @@
     # TODO
     # it needs to be parametried with id,
     # but for now it's Gosia's mockup
-    $stateProvider.state('company',
+    $stateProvider.state('business',
       url: '/company/:id',
-      templateUrl: 'company/show.html'
-      controller: 'CompanyShowCtrl'
+      templateUrl: 'business/show.html'
+      controller: 'BusinessShowCtrl'
     )
 
     $urlRouterProvider.otherwise('/')
 ]
-

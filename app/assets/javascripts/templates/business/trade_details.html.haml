@@ -1,0 +1,62 @@
+%form
+  .field
+    %label {{ "business.trade_details.annual_sales_value" | translate }}
+    %input{ type: "text"}
+  .field
+    %label {{ "business.trade_details.export" | translate }}
+    %input.size-specified{ type: "text" }
+    %span %
+  .field
+    %label {{ "business.trade_details.main_markets" | translate }}
+    %input{ type: "text", placeholder: '{{ "business.trade_details.add_region" | translate }}'}
+  .field
+    %label {{ "business.trade_details.customer_list" | translate }}
+    %input{ type: "text", placeholder: '{{ "business.trade_details.customer_name" | translate }}'}
+    %button.plus-button
+      %span.icon-plus
+      {{ "business.trade_details.add_more" | translate }}
+  .field
+    %label {{ "business.trade_details.nearest_port" | translate }}
+    %input{ type: "text", placeholder: '{{ "business.trade_details.port_name" | translate }}'}
+    %button.plus-button
+      %span.icon-plus
+      {{ "business.trade_details.add_more" | translate }}
+  .field
+    %label {{ "business.trade_details.average_lead_time" | translate }}
+    %input{ type: "text"}
+  .field
+    %label {{ "business.trade_details.offices_overseas" | translate }}
+    %input{ type: "text", placeholder: '{{ "business.trade_details.office" | translate }}'}
+    %button.plus-button
+      %spa.icon-plus
+      {{ "business.trade_details.add_more" | translate }}
+  .field
+    %label {{ "business.trade_details.language_spoken" | translate }}
+    %input{ type: "text", placeholder: '{{ "business.trade_details.add_language" | translate }}'}
+  .field
+    %label {{ "business.trade_details.accepted_delivery_terms" | translate }}
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Horse
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Mule
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Rocket
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Boat
+  .field
+    %label {{ "business.trade_details.accepted_payment_terms" | translate }}
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Gold
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Mules
+    .checkbox-field
+      %input{ type: "checkbox"}
+      %label.inline-label Smiles
+  .actions
+    %input{ type: "submit", value: '{{ "business.trade_details.submit" | translate }}'}

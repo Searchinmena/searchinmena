@@ -97,7 +97,7 @@
       padding: $bs2 $bs2 0 0;
     }
   }
-  
+
   .product-main-image {
     max-width: 100%;
     display: block;
@@ -182,7 +182,7 @@
   }
 }
 
-.company-view, .product-view, .service-view {
+.business-view, .product-view, .service-view {
   @extend %clearfix;
   @extend %wide-container;
   background-color: white;
@@ -206,16 +206,16 @@
     }
   }
 
-  .company-tabs {
+  .business-tabs {
     margin-bottom: $bs1;
   }
 }
 
-.company-header {
+.business-header {
   @extend %clearfix;
   padding: $bs2;
 
-  .company-logo-holder {
+  .business-logo-holder {
     @include float-direction;
     background: none;
     width: 100%;
@@ -228,7 +228,7 @@
       max-height: 2 * $bs8;
     }
 
-    .company-logo {
+    .business-logo {
       display: block;
       max-width: 100%;
       max-height: 1.9 * $bs6;
@@ -262,7 +262,7 @@
   }
 }
 
-.company-short-info {
+.business-short-info {
   @include float-direction;
   width: 100%;
 
@@ -278,7 +278,7 @@
   @media screen and (min-width: $standard-desktop) {
     max-width: 6.5 * $bs9;
   }
-  
+
   @media screen and (min-width: $big-desktop) {
     max-width: 7 * $bs9;
   }
@@ -287,23 +287,23 @@
     max-width: 8 * $bs9;
   }
 
-  .company-name {
+  .business-name {
     font-weight: normal;
     margin: 0 0 $bs0;
   }
 
 
-  &.company-profile-summary {
+  &.business-profile-summary {
     @extend %dashboard-content-padding;
     padding-bottom: $bs2;
 
-    .company-name {
+    .business-name {
       margin-top: 0;
     }
   }
 }
 
-.company-gallery {
+.business-gallery {
   img {
     width: 120px;
     height: 120px;

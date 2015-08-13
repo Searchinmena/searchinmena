@@ -9,14 +9,14 @@
     / %button.small-button{ "ui-sref": "browse" }
     /   {{ "home.browse" | translate }}
 
-    %p {{ "dashboard.create_company_message" | translate }}
-    %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
-      {{ "dashboard.create_company_button" | translate }}
+    %p {{ "dashboard.create_business_message" | translate }}
+    %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
+      {{ "dashboard.create_business_button" | translate }}
 
 %section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()" }
-  %h2.header-title {{ "company.profile_summary" | translate }}
-  .company-short-info.company-profile-summary
-    %h2.company-name {{ business.name }}
+  %h2.header-title {{ "business.profile_summary" | translate }}
+  .business-short-info.business-profile-summary
+    %h2.business-name {{ business.name }}
     .clearfix
       .contact-item
         %span.icon.icon-phone-alt
@@ -26,9 +26,9 @@
         %span{ "ng-show": "business.city" } {{ business.city }},
         %span {{ business.country }}
 
-    %button.small-button{ "ui-sref": "dashboard.company.basic_info" }
+    %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
       %span.icon-pencil
-      {{ "company.edit_info" | translate }}
+      {{ "business.edit_info" | translate }}
 
 %section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()", "ng-controller": "ProductsIndexCtrl" }
   %h2.header-title

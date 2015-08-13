@@ -26,7 +26,7 @@ describe DashboardPage, ->
         expect(page.buyerContent().isDisplayed()).toBe(true)
 
         # expect(page.browseLink().isDisplayed()).toBe(true)
-        expect(page.createCompanyLink().isDisplayed()).toBe(true)
+        expect(page.createBusinessLink().isDisplayed()).toBe(true)
 
         expect(page.productsLink().isDisplayed()).toBe(false)
         expect(page.servicesLink().isDisplayed()).toBe(false)
@@ -38,7 +38,7 @@ describe DashboardPage, ->
         expect(page.productsNavLink().isDisplayed()).toBe(true)
         expect(page.servicesNavLink().isDisplayed()).toBe(true)
 
-      it "shows basic company info and business item sections", ->
+      it "shows basic business info and business item sections", ->
         loginHelper.loginAsSeller()
         page.get()
         page.checkSummaryContent()
@@ -50,7 +50,7 @@ describe DashboardPage, ->
         expect(page.productsNavLink().isDisplayed()).toBe(true)
         expect(page.servicesNavLink().isDisplayed()).toBe(true)
 
-      it "shows basic company info and business item sections", ->
+      it "shows basic business info and business item sections", ->
         loginHelper.loginAsBoth()
         page.get()
         page.checkSummaryContent()

@@ -1,65 +1,65 @@
 %form{ "ng-submit": "submit($event)" }
   %form-field{ "error": "errors.business.name" }
-    %label {{ "company.basic_info.company_name" | translate }}
+    %label {{ "business.basic_info.business_name" | translate }}
     %input{ type: "text", "ng-model": "form.business.name" }
 
   %form-field{ "error": "errors.business.logo" }
-    .company-logo-holder
-    %button.small-button {{ "company.basic_info.add_logo" | translate }}
+    .business-logo-holder
+    %button.small-button {{ "business.basic_info.add_logo" | translate }}
 
   %form-field{ "error": "errors.business.phone" }
-    %label {{ "company.basic_info.contact_number" | translate }}
+    %label {{ "business.basic_info.contact_number" | translate }}
     %input{ type: "text", "ng-model": "form.business.phone" }
 
   %form-field{ "error": "errors.business.city" }
-    %label {{ "company.basic_info.city" | translate }}
+    %label {{ "business.basic_info.city" | translate }}
     %input{ type: "text", "ng-model": "form.business.city" }
 
   %form-field{ "error": "errors.business.country_id" }
-    %label {{ "company.basic_info.location" | translate }}
+    %label {{ "business.basic_info.location" | translate }}
     .select-field
       %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country_id" }
-        %option{ value: "" } -- {{ "company.basic_info.select_country" | translate }} --
+        %option{ value: "" } -- {{ "business.basic_info.select_country" | translate }} --
 
   %form-field{ "error": "errors.business.address_line_1"}
-    %label {{ "company.basic_info.address" | translate }}
+    %label {{ "business.basic_info.address" | translate }}
     %input{ type: "text", "ng-model": "form.business.address_line_1" }
 
   %form-field{ "error": "errors.business.address_line_2" }
     %input{ type: "text", "ng-model": "form.business.address_line_2" }
 
   .field{ "ng-class": "{'field-with-errors': errors.business.business_type_ids}" }
-    %label {{ "company.basic_info.business_types" | translate }}
-    %multiselect{ "model": "form.business.business_type_ids", "options": "business_types", "select-button-text": "{{ 'company.basic_info.select_business_types' | translate }}" }
+    %label {{ "business.basic_info.business_types" | translate }}
+    %multiselect{ "model": "form.business.business_type_ids", "options": "business_types", "select-button-text": "{{ 'business.basic_info.select_business_types' | translate }}" }
     %error-message-for{ "error": "errors.business.business_type_ids" }
 
   .field
-    %label {{ "company.basic_info.main_products" | translate }}
+    %label {{ "business.basic_info.main_products" | translate }}
     %tags-input{ "ng-model": "form.tags", "display-property": "label",
       "replace-spaces-with-dashes": "false" }
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }
     %p.field-comment
-      {{ "company.basic_info.tag_comment_1" | translate }}
+      {{ "business.basic_info.tag_comment_1" | translate }}
       %br
-      {{ "company.basic_info.tag_comment_2" | translate }}
+      {{ "business.basic_info.tag_comment_2" | translate }}
 
   %form-field{ "error": "errors.business.year_registered" }
-    %label {{ "company.basic_info.year_registered" | translate }}
+    %label {{ "business.basic_info.year_registered" | translate }}
     %input.size-specified{ type: "text", "ng-model": "form.business.year_registered" }
 
   %form-field{ "error": "errors.business.no_of_employees" }
-    %label {{ "company.basic_info.no_of_employees" | translate }}
+    %label {{ "business.basic_info.no_of_employees" | translate }}
     %input.size-specified{ type: "text", "ng-model": "form.business.no_of_employees" }
 
   %form-field{ "error": "errors.business.introduction" }
-    %label {{ "company.basic_info.introduction" | translate }}
+    %label {{ "business.basic_info.introduction" | translate }}
     %textarea{{ "ng-model": "form.business.introduction" }}
 
-  %form-field{ "error": "errors.business.company_photos" }
-    %label {{ "company.basic_info.company_photos" | translate }}
-    %button.small-button {{ "company.basic_info.add_photos" | translate }}
-    %p.field-comment {{ "company.basic_info.max_images" | translate }}
+  %form-field{ "error": "errors.business.business_photos" }
+    %label {{ "business.basic_info.business_photos" | translate }}
+    %button.small-button {{ "business.basic_info.add_photos" | translate }}
+    %p.field-comment {{ "business.basic_info.max_images" | translate }}
 
   .actions
-    %input{ type: "submit", value: '{{ "company.basic_info.submit" | translate }}' }
+    %input{ type: "submit", value: '{{ "business.basic_info.submit" | translate }}' }

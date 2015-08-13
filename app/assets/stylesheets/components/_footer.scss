@@ -7,8 +7,8 @@ footer {
   .title {
     text-transform: none;
   }
-  
-  .companies-list {
+
+  .businesses-list {
     @extend %clearfix;
     list-style: none;
 
@@ -17,7 +17,7 @@ footer {
       display: inline-block;
       width: 100%;
 
-      @media screen and (min-width: $desktop) { 
+      @media screen and (min-width: $desktop) {
         width: 45%;
         margin: 0 5% 0 0;
 
@@ -26,7 +26,7 @@ footer {
         }
       }
 
-      @media screen and (min-width: $medium-desktop) { 
+      @media screen and (min-width: $medium-desktop) {
         width: 30%;
 
         margin: 0 3% 0 0;
@@ -34,11 +34,11 @@ footer {
         [dir="rtl"] & {
           margin: 0 0 0 3%;
         }
-      }  
+      }
     }
   }
 
-  .companies-list-link {
+  .businesses-list-link {
     color: white;
     padding: $bs-3 $bs-3 $bs-2 0;
     display: block;
@@ -61,11 +61,11 @@ address {
 
 .footer-column {
   padding: $bs5;
-  
-  @media screen and (min-width: $tablet) { 
+
+  @media screen and (min-width: $tablet) {
     @include float-direction;
     width: 50%;
-  } 
+  }
 }
 
 .social-link {
@@ -83,7 +83,7 @@ address {
 .facebook-link {
   background-image: image-url("icon-facebook.png");
   background-color: #3B5998;
-  
+
   &:hover, &:focus {
     outline: 3px solid #3B5998;
   }
