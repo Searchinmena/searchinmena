@@ -7,9 +7,9 @@ describe CompanyShowPage, ->
 
   beforeEach ->
     page = new CompanyShowPage()
-    page.get()
 
-  xit "displays basic informations", ->
+  xit "displays basic information", ->
+    page.get()
     expect(page.isBusinessNameDisplayed()).toBeTruthy()
     expect(page.isPhoneDisplayed()).toBeTruthy()
     expect(page.isCityAndCountryNameDisplayed()).toBeTruthy()
@@ -18,12 +18,16 @@ describe CompanyShowPage, ->
     expect(page.isNoOfEmployeesDisplayed()).toBeTruthy()
     expect(page.isIntroductionDisplayed()).toBeTruthy()
 
-  it "open contact sender modal", ->
-    page.contactSupplierButton().click()
-    helpers.expectUrlChanged("/users/sign_in")
+  describe "contact button", ->
+    describe "when user not logged in", ->
+      it "redirects to sign in page", ->
+        page.get()
+        page.contactSupplierButton().click()
+        helpers.expectUrlChanged("/users/sign_in")
 
-    loginHelper.loginAsBuyer()
-    page.get()
-    page.contactSupplierButton().click()
-    expect(page.messageModal().isPresent()).toBe(true)
-
+    describe "when user logged in", ->
+      it "opens contact sender modal", ->
+        loginHelper.loginAsBuyer()
+        page.get()
+        page.contactSupplierButton().click()
+        expect(page.messageModal().isPresent()).toBe(true)

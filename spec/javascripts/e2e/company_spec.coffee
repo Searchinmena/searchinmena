@@ -68,5 +68,3 @@ describe CompanyPage, ->
     # Right now the check doesn't pass on CircleCI due to the following:
     # https://github.com/wmluke/angular-flash/issues/27,
     # https://github.com/angular/protractor/issues/169
-
-
