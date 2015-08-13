@@ -26,4 +26,10 @@ class CompanyShowPage
   isIntroductionDisplayed: ->
     element(By.cssContainingText('p', 'business introduction')).isDisplayed()
 
+  contactSupplierButton: ->
+    element(By.css('button.contact-supplier'))
+
+  messageModal: ->
+    element(By.css('.message-modal'))
+
 module.exports = CompanyShowPage

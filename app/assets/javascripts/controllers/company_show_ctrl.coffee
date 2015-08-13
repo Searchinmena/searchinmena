@@ -1,8 +1,8 @@
 @Sim.controller 'CompanyShowCtrl', ['$scope', '$http', '$stateParams',
   'CompanyPresenter', 'language', 'BUSINESSES_PATH', 'BUSINESS_TYPES_PATH',
-  'BUSINESS_TAGS_PATH'
+  'BUSINESS_TAGS_PATH', 'MessageModal',
   ($scope, $http, $stateParams, CompanyPresenter, language,
-    BUSINESSES_PATH, BUSINESS_TYPES_PATH, BUSINESS_TAGS_PATH) ->
+    BUSINESSES_PATH, BUSINESS_TYPES_PATH, BUSINESS_TAGS_PATH, MessageModal) ->
   
     params = {
       params: {
@@ -18,4 +18,6 @@
         )
       )
     )
+
+    $scope.MessageModal = MessageModal
 ]

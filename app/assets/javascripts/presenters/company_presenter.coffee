@@ -4,6 +4,8 @@ class CompanyPresenter
     @tags = tags
     @types = types
 
+  id: -> @company.id
+
   name: -> @company.name
 
   phone: -> @company.phone

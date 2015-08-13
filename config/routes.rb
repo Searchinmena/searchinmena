@@ -42,4 +42,5 @@ Rails.application.routes.draw do
   resources :service_photos, only: [:create]
   resources :product_categories, only: [:index]
   resources :service_categories, only: [:index]
+  resources :messages, only: [:create]
 end
