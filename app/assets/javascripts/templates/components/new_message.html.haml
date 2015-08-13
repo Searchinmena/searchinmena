@@ -1,0 +1,20 @@
+.confirmation-modal.message-modal
+  .remove-button{ "ng-click": "cancel()" }
+    %span.icon-remove
+
+  %h2.modal-header {{ "messages.new.form_title" | translate }}
+
+  %form{ "ng-submit": "submit($event)" }
+    %form-field{ "error": "errors.subject" }
+      %label.required
+        {{ "messages.new.subject" | translate }}
+      %input{ type: "text", "ng-model": "message.subject" }
+
+    %form-field{ "error": "errors.body" }
+      %label.required
+        {{ "messages.new.body" | translate }}
+      %textarea{ "ng-model": "message.body" }
+
+    .actions
+      %input{ type: "submit", value: '{{ "messages.new.submit" | translate }}' }
+

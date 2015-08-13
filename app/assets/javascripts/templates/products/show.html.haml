@@ -1,7 +1,7 @@
 %section.product-view
   %div{ "ng-include": "'business_items/_header.html'" }
   .item-short-info
-    %button.contact-supplier
+    %button.contact-supplier{ "ng-click": "MessageModal.new(business.id)" }
       %span.icon.icon-envelope
       {{ "business_item.contact_seller" | translate }}
 

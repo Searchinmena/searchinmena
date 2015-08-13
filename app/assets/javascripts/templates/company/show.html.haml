@@ -16,7 +16,7 @@
             {{ businessPresenter.addressLine1() }}
           %span.address-line
             {{ businessPresenter.addressLine2() }}
-      %button.contact-supplier
+      %button.contact-supplier{ "ng-click": "MessageModal.new(businessPresenter.id())" }
         %span.icon.icon-envelope
         {{ "company.show.contact_seller" | translate }}
   %ul.company-tabs

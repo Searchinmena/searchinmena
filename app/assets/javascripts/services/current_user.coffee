@@ -1,9 +1,10 @@
 @Sim.service 'CurrentUser', ['User', 'SIGN_IN_PATH',
   (User, SIGN_IN_PATH) ->
-    authorize: () ->
+    authorize: (callback) ->
       User.get(
         (data) =>
           @user = new User(data)
+          callback() if callback
         ,
         (error) ->
           window.location = SIGN_IN_PATH

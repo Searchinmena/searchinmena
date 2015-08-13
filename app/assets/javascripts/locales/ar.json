@@ -229,5 +229,14 @@
   "other": {
     "check_all": "حدد الكل",
     "uncheck_all": "إلغاء التحديد"
+  },
+  "messages": {
+    "new": {
+      "form_title": "New message",
+      "subject": "Subject",
+      "body": "Body",
+      "submit": "Send",
+      "success": "Message successfully sent."
+    }
   }
 }

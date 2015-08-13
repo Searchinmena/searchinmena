@@ -1,6 +1,9 @@
-@Sim.service 'BusinessItemLoader', ['Business',  'SmartFlash', '$state', 'Lightbox',
-  (Business, SmartFlash, $state, Lightbox) ->
+@Sim.service 'BusinessItemLoader', ['Business',  'SmartFlash', '$state',
+  'Lightbox', 'MessageModal',
+  (Business, SmartFlash, $state, Lightbox, MessageModal) ->
     initialize: (businessItemFactory, id, scope) ->
+      scope.MessageModal = MessageModal
+
       businessItemFactory.get({ id: id },
         (attributes) ->
           scope.businessItem = new SIM.BusinessItem(attributes)

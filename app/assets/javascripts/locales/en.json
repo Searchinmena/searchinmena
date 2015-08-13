@@ -229,5 +229,14 @@
   "other": {
     "check_all": "Check all",
     "uncheck_all": "Uncheck all"
+  },
+  "messages": {
+    "new": {
+      "form_title": "New message",
+      "subject": "Subject",
+      "body": "Body",
+      "submit": "Send",
+      "success": "Message successfully sent."
+    }
   }
 }

@@ -1,5 +1,5 @@
 @Sim.controller 'DashboardCtrl', ['$scope', 'CurrentUser',
   ($scope, CurrentUser) ->
-    CurrentUser.authorize($scope)
+    CurrentUser.authorize()
     $scope.currentUser = CurrentUser
 ]
