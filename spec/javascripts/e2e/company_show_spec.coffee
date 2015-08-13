@@ -31,3 +31,4 @@ describe CompanyShowPage, ->
         page.get()
         page.contactSupplierButton().click()
         expect(page.messageModal().isPresent()).toBe(true)
+        loginHelper.logout()
