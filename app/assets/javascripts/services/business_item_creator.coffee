@@ -66,7 +66,8 @@
         ,
         (data) ->
           scope.errors = data
-          scope.errors.photos_general = data['business_item']['photos_count']
+          if data['business_item']
+            scope.errors.photos_general = data['business_item']['photos_count']
           scope.errors.attributes = AttributesErrors.format_messages(data.attributes)
           TranslatedFlash.error("#{resourceName}.adding_failed")
           scope.loading = false
