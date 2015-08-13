@@ -1,5 +1,5 @@
 class FileValidator < BaseValidator
-  MAX_FILE_SIZE_IN_MB = 5
+  MAX_FILE_SIZE_IN_MB = A9n.validations[:max_file_size_in_mb]
   validate :check_content_type, :file_size
 
   attr_accessor :file, :file_error_key

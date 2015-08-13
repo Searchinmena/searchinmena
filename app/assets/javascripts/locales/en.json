@@ -140,7 +140,7 @@
     "max_photos_exceeded": "You can upload at most {{max_count}} photos",
     "button": "Add photos",
     "comment": "Max 10 images",
-    "comment_thumbnail": "The first image is the main photo of the product. For best presentation will be an image at least {{min_image_width}} x {{min_image_height}} px"
+    "comment_thumbnail": "The first image is the main photo of the product. For best presentation images should be at least {{min_image_width}} x {{min_image_height}} px in size. An image can't be bigger than {{max_file_size_in_mb}} MB."
   },
   "attributes": {
     "title": "Characteristics",

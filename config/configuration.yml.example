@@ -18,6 +18,7 @@ defaults: &defaults
     min_image_height: 500
     min_business_item_photo_count: 1
     max_business_item_photo_count: 10
+    max_file_size_in_mb: 5
   angular_flash_timeout: 5000
   mandrill:
     address:

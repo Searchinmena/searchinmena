@@ -1,8 +1,9 @@
 @Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
-  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors', 'MIN_IMAGE_WIDTH', 'MIN_IMAGE_HEIGHT',
+  '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors',
+  'MIN_IMAGE_WIDTH', 'MIN_IMAGE_HEIGHT', 'MAX_FILE_SIZE_IN_MB',
   ($rootScope, $http, $state, $modal, TranslatedFlash,
     BusinessItemWithDependencies, Upload, AttributesErrors,
-    MIN_IMAGE_WIDTH, MIN_IMAGE_HEIGHT) ->
+    MIN_IMAGE_WIDTH, MIN_IMAGE_HEIGHT, MAX_FILE_SIZE_IN_MB) ->
 
     initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
@@ -11,7 +12,8 @@
 
       scope.photoCommentTranslationData = {
         min_image_width: MIN_IMAGE_WIDTH,
-        min_image_height: MIN_IMAGE_HEIGHT
+        min_image_height: MIN_IMAGE_HEIGHT,
+        max_file_size_in_mb: MAX_FILE_SIZE_IN_MB
       }
 
       config = {
