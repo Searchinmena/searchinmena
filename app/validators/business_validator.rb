@@ -24,6 +24,6 @@ class BusinessValidator < BaseValidator
   validates :year_registered, format: {
     with: A9n.validations[:year_format],
     message: I18n.t("errors.messages.invalid_year"),
-    allow_nil: true
+    allow_blank: true
   }
 end

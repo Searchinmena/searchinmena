@@ -85,11 +85,21 @@ describe BusinessValidator do
     end
 
     context "number is valid year but not reasonable one" do
-      let(:business_params) do
-        valid_params.merge(year_registered: 1000)
-      end
+      let(:business_params) { valid_params.merge(year_registered: 1000) }
 
       it { is_expected.to be_invalid }
+    end
+
+    context "year is empty" do
+      let(:business_params) { valid_params.merge(year_registered: "") }
+
+      it { is_expected.to be_valid }
+    end
+
+    context "year is nil" do
+      let(:business_params) { valid_params.merge(year_registered: nil) }
+
+      it { is_expected.to be_valid }
     end
   end
 end
