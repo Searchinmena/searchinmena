@@ -1,0 +1,1 @@
+gem build sim-importer.gemspec && gem install sim-importer

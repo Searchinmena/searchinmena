@@ -1,0 +1,35 @@
+---
+companies:
+  new_table: businesses
+  columns:
+    name: name
+    user_id: user_id
+headquaters:
+  new_table: businesses
+  columns:
+    country_id: country_id
+    city: city
+    phone1: phone
+    street: address_line_1
+trading_informations:
+  new_table: businesses
+  columns:
+    year_established: year_registered
+trading_informations:
+  new_table: businesses_business_types
+  columns:
+    company_id: business_id
+    business_type_id1: business_type_id
+products:
+  new_table: products
+  columns:
+    name: name
+    description: description
+    company_id: business_id
+services:
+  new_table: services
+  columns:
+    name: name
+    description: description
+    company_id: business_id
+

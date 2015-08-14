@@ -1,0 +1,9 @@
+old_db:
+  adapter: mysql2
+  username: root
+  database: sim_old_production
+
+current_db:
+  adapter: postgresql
+  database: sim_new_development
+
