@@ -1,21 +1,22 @@
 module Sim
   module Importer
     class Migrator
-      attr_accessor :config, :mapping
+      attr_accessor :new_connection, :sql_builder_factory, :ids_mapper
 
-      def initialize(config, mapping)
-        self.config = config
-        self.mapping = mapping
+      def initialize(new_connection, sql_builder_factory, ids_mapper)
+        self.new_connection = new_connection
+        self.sql_builder_factory = sql_builder_factory
+        self.ids_mapper = ids_mapper
       end
 
-      def run(old_table, values)
-        new_table = mapping.new_table(old_table)
-        new_columns = mapping.new_columns(old_table)
-        command = "INSERT INTO" \
-          "#{new_table} (#{new_columns.join(", ")})" \
-          "values #{values};"
-
-        puts command
+      def run(old_table, old_data)
+        old_data.each do |row|
+          sql_builder = sql_builder_factory.build(old_table)
+          command = sql_builder.run(old_table, row)
+          puts command
+          new_id = new_connection.insert(command)
+          ids_mapper.set(old_table, row["id"], new_id)
+        end
       end
     end
   end

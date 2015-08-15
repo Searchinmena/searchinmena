@@ -1,23 +1,37 @@
+require "active_record"
+require "yaml"
 require "./lib/sim/importer/version"
 require "./lib/sim/importer/config"
 require "./lib/sim/importer/mapping"
 require "./lib/sim/importer/connection"
+require "./lib/sim/importer/old_connection"
+require "./lib/sim/importer/new_connection"
 require "./lib/sim/importer/mapper"
 require "./lib/sim/importer/old_data_retriever"
-require "./lib/sim/importer/values_mapper"
+require "./lib/sim/importer/standard_sql_builder"
+require "./lib/sim/importer/user_sql_builder"
+require "./lib/sim/importer/sql_builder_factory"
+require "./lib/sim/importer/columns_mapper"
+require "./lib/sim/importer/relations_mapper"
 require "./lib/sim/importer/migrator"
-require "yaml"
+require "./lib/sim/importer/ids_mapper"
+require "./lib/sim/importer/row"
 
 module Sim
   module Importer
     def self.run
-      config = Config.new
+      old_connection = OldConnection
+      new_connection = NewConnection
       mapping = Mapping.new
-      old_data_retriever = OldDataRetriever.new(config, mapping)
-      values_mapper = ValuesMapper.new
-      migrator = Migrator.new(config, mapping)
+      old_data_retriever = OldDataRetriever.new(old_connection)
+      ids_mapper = IdsMapper.new
+      columns_mapper = ColumnsMapper.new(mapping)
+      relations_mapper = RelationsMapper.new(mapping, ids_mapper)
+      sql_builder_factory = SqlBuilderFactory.new(mapping, columns_mapper,
+                                   relations_mapper)
+      migrator = Migrator.new(new_connection, sql_builder_factory, ids_mapper)
 
-      mapper = Mapper.new(mapping, old_data_retriever, values_mapper, migrator)
+      mapper = Mapper.new(mapping, old_data_retriever, new_connection, migrator)
       mapper.run
     end
   end

@@ -13,8 +13,8 @@ module Sim
         db["old_db"]
       end
 
-      def current_db
-        db["current_db"]
+      def new_db
+        db["new_db"]
       end
     end
   end

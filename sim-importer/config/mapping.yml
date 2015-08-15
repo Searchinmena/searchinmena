@@ -1,35 +1,57 @@
 ---
+users:
+  new_table: users
+  columns:
+    email: email
+    first_name: first_name
+    last_name: last_name
 companies:
   new_table: businesses
   columns:
     name: name
-    user_id: user_id
+  relations:
+    user_id:
+      new_name: user_id
+      old_table: users
 headquaters:
   new_table: businesses
   columns:
-    country_id: country_id
     city: city
     phone1: phone
     street: address_line_1
+  relations:
+    country_id:
+      new_name: country_id
+      old_table: countries
 trading_informations:
   new_table: businesses
   columns:
     year_established: year_registered
 trading_informations:
   new_table: businesses_business_types
-  columns:
-    company_id: business_id
-    business_type_id1: business_type_id
+  relations:
+    company_id:
+      new_name: business_id
+      old_table: companies
+    #business_type_id1:
+      #new_name: business_type_id
+      #old_table: missing!
 products:
   new_table: products
   columns:
     name: name
     description: description
-    company_id: business_id
+  relations:
+    company_id:
+      new_name: business_id
+      old_table: companies
 services:
   new_table: services
   columns:
     name: name
     description: description
-    company_id: business_id
+  relations:
+    company_id:
+      new_name: business_id
+      old_table: companies
 

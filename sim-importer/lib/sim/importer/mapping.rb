@@ -14,15 +14,39 @@ module Sim
       end
 
       def old_columns(old_table)
-        mapping[old_table]["columns"].keys
+        columns = mapping[old_table]["columns"]
+        return [] unless columns
+
+        columns.keys
       end
 
       def new_columns(old_table)
-        mapping[old_table]["columns"].values
+        columns = mapping[old_table]["columns"]
+        return [] unless columns
+
+        columns.values
+      end
+
+      def old_relations(old_table)
+        relations = mapping[old_table]["relations"]
+        return [] unless relations
+
+        relations.keys
+      end
+
+      def new_relations(old_table)
+        relations = mapping[old_table]["relations"]
+        return [] unless relations
+
+        relations.values.map { |v| v["new_name"] }
       end
 
       def new_table(old_table)
         mapping[old_table]["new_table"]
+      end
+
+      def old_relation_table_name(old_table, relation_name)
+        mapping[old_table]["relations"][relation_name]["old_table"]
       end
     end
   end

@@ -1,17 +1,16 @@
 module Sim
   module Importer
     class OldDataRetriever
-      attr_accessor :config, :mapping
+      attr_accessor :old_connection
 
-      def initialize(config, mapping)
-        self.config = config
-        self.mapping = mapping
+      def initialize(old_connection)
+        self.old_connection = old_connection
       end
 
       def run(old_table)
-        old_columns = mapping.old_columns(old_table).join(", ")
-        Connection.establish(config.old_db) do |old_db|
-          old_db.execute("SELECT #{old_columns} FROM #{old_table} LIMIT 3").to_a
+        command = "SELECT * FROM #{old_table} LIMIT 3"
+        old_connection.select_all(command).map do |row_data|
+          Row.new(row_data)
         end
       end
     end

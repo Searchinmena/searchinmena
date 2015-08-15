@@ -1,11 +1,12 @@
-require "active_record"
-
 module Sim
   module Importer
-    class Connection
-      def self.establish(config, &block)
-        ActiveRecord::Base.establish_connection(config)
-          .with_connection(&block)
+    class Connection < ActiveRecord::Base
+      def self.select_all(command)
+        connection.select_all(command)
+      end
+
+      def self.insert(command)
+        connection.insert(command)
       end
     end
   end

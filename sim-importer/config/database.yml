@@ -3,7 +3,7 @@ old_db:
   username: root
   database: sim_old_production
 
-current_db:
+new_db:
   adapter: postgresql
   database: sim_new_development
 
