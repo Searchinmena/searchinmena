@@ -11,7 +11,7 @@ American Samoa,ساموا-الأمريكي
 Austria,النمسا
 Australia,أستراليا
 Aruba,أروبا
-Åland Islands,جزر آلاند
+Aland,جزر آلاند
 Azerbaijan,أذربيجان
 Bosnia and Herzegovina,البوسنة و الهرسك
 Barbados,بربادوس
@@ -23,7 +23,7 @@ Bahrain,البحرين
 Burundi,بوروندي
 Benin,بنين
 Bermuda,جزر برمود
-Brunei Darussalam,بروناي
+Brunei,بروناي
 Bolivia,بوليفيا
 Brazil,البرازيل
 Bahamas,الباهاماس
@@ -35,7 +35,6 @@ Canada,كندا
 Central African Republic,جمهورية أفريقيا الوسطى
 Congo,جمهورية الكونغو
 Switzerland,سويسرا
-Côte d'Ivoire,ساحل العاج
 Cook Islands,جزر كوك
 Chile,تشيلي
 Cameroon,كاميرون
@@ -105,7 +104,7 @@ South Korea,كوريا الجنوبية
 Kuwait,الكويت
 Cayman Islands,جزر كايمان
 Kazakhstan,كازاخستان
-Lao People's Democratic Republic,لاوس
+Laos,لاوس
 Lebanon,لبنان
 Saint Lucia,سانت لوسيا
 Liechtenstein,ليختنشتين
@@ -120,12 +119,12 @@ Morocco,المغرب
 Monaco,موناكو
 Moldova,مولدافيا
 Montenegro,الجبل الأسود
-Saint-Martin (France),(سانت مارتن (فرنسا 
+Saint-Martin,(سانت مارتن (فرنسا 
 Madagascar,مدغشقر
 Marshall Islands,جزر مارشال
 Macedonia,جمهورية مقدونيا
 Mali,مالي
-Myanmar,ميانمار
+Myanmar [Burma],ميانمار
 Mongolia,منغوليا
 Macau,ماكاو
 Martinique,مارتينيك
@@ -143,7 +142,7 @@ Niger,النيجر
 Norfolk Island,جزيرة نورفولك
 Nigeria,نيجيريا
 Nicaragua,نيكاراجوا
-The Netherlands,هولندا
+Netherlands,هولندا
 Norway,النرويج
 Nepal,نيبال
 Nauru,ناورو
@@ -157,7 +156,7 @@ Philippines,الفليبين
 Pakistan,باكستان
 Poland,بولندا
 Puerto Rico,بورتوريكو
-"Palestine, State of",فلسطين
+Palestine,فلسطين
 Portugal,البرتغال
 Palau,بالاو
 Paraguay,باراغواي
@@ -165,7 +164,7 @@ Qatar,قطر
 Réunion,ريونيون
 Romania,رومانيا
 Serbia,جمهورية صربيا
-Russian Federation,روسيا
+Russia,روسيا
 Rwanda,رواندا
 Saudi Arabia,المملكة العربية السعودية
 Seychelles,سيشيل
@@ -188,7 +187,7 @@ Togo,توغو
 Thailand,تايلندا
 Tajikistan,طاجيكستان
 Tokelau,توكيلاو
-Timor-Leste,تيمور الشرقية
+East Timor,تيمور الشرقية
 Turkmenistan,تركمانستان
 Tunisia,تونس
 Tonga,تونغا
@@ -202,11 +201,11 @@ Uganda,أوغندا
 United States,الولايات المتحدة
 Uruguay,أورغواي
 Uzbekistan,أوزباكستان
-Vatican,الفاتيكان
+Vatican City,الفاتيكان
 Saint Vincent and the Grenadines,سانت فنسنت وجزر غرينادين
 Venezuela,فنزويلا
-Virgin Islands (British),الجزر العذراء البريطانية
-Virgin Islands (U.S.),الجزر العذراء الأميركية
+British Virgin Islands,الجزر العذراء البريطانية
+U.S. Virgin Islands,الجزر العذراء الأميركية
 Vietnam,فيتنام
 Vanuatu,فانواتو
 Wallis and Futuna Islands,والس وفوتونا
