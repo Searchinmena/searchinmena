@@ -14,7 +14,8 @@ module Sim
           sql_builder = sql_builder_factory.build(old_table)
           command = sql_builder.run(old_table, row)
           puts command
-          new_id = new_connection.insert(command)
+          #new_id = new_connection.insert(command)
+          new_id = row["id"] # TODO: REMOVE IT SOME DAY!1
           ids_mapper.set(old_table, row["id"], new_id)
         end
       end

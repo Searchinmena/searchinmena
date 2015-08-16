@@ -12,9 +12,13 @@ require "./lib/sim/importer/standard_sql_builder"
 require "./lib/sim/importer/user_sql_builder"
 require "./lib/sim/importer/sql_builder_factory"
 require "./lib/sim/importer/columns_mapper"
+require "./lib/sim/importer/standard_relations_mapper"
+require "./lib/sim/importer/countries_relations_mapper"
+require "./lib/sim/importer/relations_mapper_factory"
 require "./lib/sim/importer/relations_mapper"
 require "./lib/sim/importer/migrator"
 require "./lib/sim/importer/ids_mapper"
+require "./lib/sim/importer/countries_mapper"
 require "./lib/sim/importer/row"
 
 module Sim
@@ -25,8 +29,14 @@ module Sim
       mapping = Mapping.new
       old_data_retriever = OldDataRetriever.new(old_connection)
       ids_mapper = IdsMapper.new
+      countries_mapper = CountriesMapper.new(old_connection, new_connection)
       columns_mapper = ColumnsMapper.new(mapping)
-      relations_mapper = RelationsMapper.new(mapping, ids_mapper)
+      mappers = {
+        ids_mapper: ids_mapper,
+        countries_mapper: countries_mapper
+      }
+      relations_mapper_factory = RelationsMapperFactory.new(mappers)
+      relations_mapper = RelationsMapper.new(mapping, relations_mapper_factory)
       sql_builder_factory = SqlBuilderFactory.new(mapping, columns_mapper,
                                    relations_mapper)
       migrator = Migrator.new(new_connection, sql_builder_factory, ids_mapper)
