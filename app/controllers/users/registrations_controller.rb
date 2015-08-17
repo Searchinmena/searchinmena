@@ -45,6 +45,7 @@ module Users
         user: sign_up_params,
         business: business_params,
         tags: tags_params,
+        logo: nil,
         locale: locale
       }
     end

@@ -1,11 +1,11 @@
 class BusinessItem::Photo::StoringHandler < BusinessItem::BaseStoringHandler
-  attr_reader :busiess_item, :handlers
+  attr_reader :business_item, :handlers
 
-  def initialize(repository, busiess_item, photos_params)
-    @busiess_item = busiess_item
+  def initialize(repository, business_item, photos_params)
+    @business_item = business_item
     @photos_params = photos_params
     @handlers = photos_params.map do |photo|
-      BusinessItem::Photo::Creator.new(repository, busiess_item, photo)
+      BusinessItem::Photo::Creator.new(repository, business_item, photo)
     end
   end
 
@@ -14,6 +14,6 @@ class BusinessItem::Photo::StoringHandler < BusinessItem::BaseStoringHandler
   end
 
   def object
-    busiess_item
+    business_item
   end
 end

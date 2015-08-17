@@ -1,10 +1,34 @@
 class Business::Saver < BaseService
-  takes :base_business_saver, :user_category_service
+  attr_accessor :handlers, :business, :photos
 
-  def perform(user, business)
-    response = base_business_saver.perform
-    return response unless response.successful?
+  def initialize(handlers, business, photos)
+    self.handlers = handlers
+    self.business = business
+    self.photos = photos
+  end
 
-    user_category_service.perform(user, business)
+  def perform
+    success = if valid?
+      store
+    else
+      copy_errors
+    end
+
+    Business::BusinessResponse.new(success: success,
+                                   business: business,
+                                   photos: photos)
+  end
+
+  def valid?
+    handlers.map(&:valid?).all?
+  end
+
+  def store
+    handlers.map(&:perform).all?(&:successful?)
+  end
+
+  def copy_errors
+    handlers.each(&:copy_errors)
+    false
   end
 end

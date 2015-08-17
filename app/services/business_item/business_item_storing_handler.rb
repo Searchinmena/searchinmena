@@ -34,10 +34,6 @@ class BusinessItem::BusinessItemStoringHandler <
                      payment_terms_handler]
   end
 
-  def store
-    handlers.map(&:perform).all?(&:successful?)
-  end
-
   def response(success)
     BusinessItem::Response.new(success: success,
                                business_item: business_item,

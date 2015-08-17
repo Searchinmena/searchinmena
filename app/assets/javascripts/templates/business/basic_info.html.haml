@@ -3,9 +3,13 @@
     %label {{ "business.basic_info.business_name" | translate }}
     %input{ type: "text", "ng-model": "form.business.name" }
 
-  %form-field{ "error": "errors.business.logo" }
+  %div
     .business-logo-holder
-    %button.small-button {{ "business.basic_info.add_logo" | translate }}
+      %img.preview-image{ "ngf-src": "form.business.logo[0]", "ngf-default-src": "{{ form.business.logo[0] || \"#{asset_path('default-image.png')}\" }}", "ngf-accept": "'image/*'", "ngf-multiple": false, "ngf-keep": false, multiple: false }
+      %button.remove-button.remove-photo{ type: "button", "ng-click": "removeLogo()", "ng-show": "form.business.logo" }
+        %span.icon-remove
+    %error-message-for{ "error": "errors.business.logo" }
+    %button.small-button{ type: "button", "ngf-select": "", "ng-model": "form.business.logo" } {{ "business.basic_info.add_logo" | translate }}
 
   %form-field{ "error": "errors.business.phone" }
     %label {{ "business.basic_info.contact_number" | translate }}
@@ -56,10 +60,30 @@
     %label {{ "business.basic_info.introduction" | translate }}
     %textarea{{ "ng-model": "form.business.introduction" }}
 
-  %form-field{ "error": "errors.business.business_photos" }
-    %label {{ "business.basic_info.business_photos" | translate }}
-    %button.small-button {{ "business.basic_info.add_photos" | translate }}
-    %p.field-comment {{ "business.basic_info.max_images" | translate }}
+  / %form-field{ "error": "errors.business.business_photos" }
+  /   %label {{ "business.basic_info.photos_title" | translate }}
+  /   %button.small-button {{ "business.basic_info.add_photos" | translate }}
+  /   %p.field-comment {{ "business.basic_info.max_images" | translate }}
 
-  .actions
-    %input{ type: "submit", value: '{{ "business.basic_info.submit" | translate }}' }
+  %div
+    %label {{ "business.basic_info.photos_title" | translate }}
+    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "form.business.photos",
+      "ngf-keep": "true", multiple: "true" } {{ "business.basic_info.add_photos" | translate }}
+    %p.field-comment {{ "business.basic_info.max_images" | translate }}
+    %p.field-comment {{ "photos.comment_thumbnail" | translate:photoCommentTranslationData }}
+    %ul.photos-preview
+      %li{ "ng-repeat": "photo in form.business.photos" }
+        %img.preview-image{ "ngf-src": "photo",
+        "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
+        %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
+          %span.icon-remove
+
+    %error-message-for{ "error": "errors.photos_general" }
+    .error{ "ng-repeat": "(i, photo_errors) in errors.photos" }
+      {{photo_errors.file_name}}:
+      %div{ "ng-repeat": "(j, error) in photo_errors.errors.photo" }
+        {{error}}
+
+  .actions.with-spinner
+    %input{ type: "submit", value: '{{ "business.basic_info.submit" | translate }}', "ng-disabled": "loading" }
+    .spinner{ "ng-show": "loading" }

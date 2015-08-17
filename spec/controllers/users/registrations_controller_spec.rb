@@ -58,7 +58,8 @@ describe Users::RegistrationsController do
       {
         user: sign_up_params,
         business: business_params,
-        tags: tags_params
+        tags: tags_params,
+        logo: nil
       }
     end
     let(:tags_params) { [{ "label" => "ania" }] }

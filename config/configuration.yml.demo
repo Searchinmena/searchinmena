@@ -17,6 +17,7 @@ production:
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
     min_image_width: 300
     min_image_height: 250
+    min_logo_size: 120
     min_business_item_photo_count: 1
     max_business_item_photo_count: 10
     max_file_size_in_mb: 5
@@ -31,6 +32,7 @@ production:
   original_height: 900
   bigger_thumbnail_size: 240
   thumbnail_size: 120
+  max_logo_size: 500
   aws:
     bucket_name: sim-uploads-demo
     access_key_id: AKIAJ4W5KE65VD6QDZFQ

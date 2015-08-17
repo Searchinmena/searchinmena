@@ -235,12 +235,13 @@ textarea {
 }
 
 .business-logo-holder {
-  @extend %four-sides-border;
-  width: 2 * $bs8;
-  height: 2 * $bs8;
+  @extend %clearfix;
+  //@extend %four-sides-border;
+  //max-width: 2 * $bs8;
+  max-height: 2 * $bs8;
   margin: 0 0 $bs1 0;
-  background: image-url('icon-picture.png') center center no-repeat;
-  background-size: 70% auto;
+  //background: image-url('icon-picture.png') center center no-repeat;
+  //background-size: 70% auto;
   background-color: $snow-white;
 }
 
