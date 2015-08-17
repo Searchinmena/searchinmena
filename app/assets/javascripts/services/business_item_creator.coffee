@@ -5,7 +5,7 @@
     BusinessItemWithDependencies, Upload, AttributesErrors,
     MIN_IMAGE_WIDTH, MIN_IMAGE_HEIGHT, MAX_FILE_SIZE_IN_MB) ->
 
-    initialize: (scope, selectsLoader, resourceName, photos_path, categoriesController, businessItemFactory) ->
+    initialize: (scope, selectsLoader, resourceName, categoriesController, businessItemFactory) ->
       scope.businessItem = businessItemFactory.build()
       scope.errors = {}
       scope.attributes = (new SIM.Attribute() for i in [0..1])
