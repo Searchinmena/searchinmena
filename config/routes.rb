@@ -38,8 +38,6 @@ Rails.application.routes.draw do
 
   resources :products, only: [:create, :index, :show, :destroy]
   resources :services, only: [:create, :index, :show, :destroy]
-  resources :product_photos, only: [:create]
-  resources :service_photos, only: [:create]
   resources :product_categories, only: [:index]
   resources :service_categories, only: [:index]
   resources :messages, only: [:create]
