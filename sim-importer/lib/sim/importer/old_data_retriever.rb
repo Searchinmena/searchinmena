@@ -11,7 +11,15 @@ module Sim
       end
 
       def run(new_table)
-        old_data = mapping.old_tables(new_table).map do |old_table|
+        old_data = old_data(new_table)
+        old_data = old_data.flatten.group_by { |v| v[GROUP_KEY] }
+        old_data.values.map { |v| Row.new(v.reduce({}, :merge)) }
+      end
+
+      private
+
+      def old_data(new_table)
+        mapping.old_tables(new_table).map do |old_table|
           command = "SELECT * FROM #{old_table} LIMIT 3"
           data = old_connection.select_all(command)
           data.map do |row|
@@ -20,9 +28,6 @@ module Sim
             row
           end
         end
-
-        old_data = old_data.flatten.group_by { |v| v[GROUP_KEY] }
-        old_data.values.map { |v| Row.new(v.reduce(Hash.new, :merge)) }
       end
     end
   end

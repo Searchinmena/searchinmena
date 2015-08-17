@@ -24,7 +24,7 @@ module Sim
         old_countries = old_countries.map do |country|
           { country["name"] => country["id"] }
         end
-        old_countries.reduce(Hash.new, :merge)
+        old_countries.reduce({}, :merge)
       end
 
       def new_countries(new_connection)
@@ -32,7 +32,7 @@ module Sim
           "FROM translatable AS countries " \
           "JOIN translations ON countries.id = translations.translatable_id " \
           "WHERE countries.type = 'Country' AND locale = 'en'"
-        new_countries = new_connection.select_all(command)
+        new_connection.select_all(command)
       end
     end
   end

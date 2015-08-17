@@ -36,13 +36,14 @@ module Sim
       def old_relations(new_table)
         mapping[new_table].values.map do |v|
           v["relations"]
-        end.compact.reduce(Hash.new, :merge)
+        end.compact.reduce({}, :merge)
       end
 
       def new_relations(new_table)
-        mapping[new_table].values.map do |v|
+        relations = mapping[new_table].values.map do |v|
           v["relations"]
-        end.compact.map(&:values).flatten.map { |v| v["new_name"] }
+        end
+        relations.compact.map(&:values).flatten.map { |v| v["new_name"] }
       end
     end
   end
