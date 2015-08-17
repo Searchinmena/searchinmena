@@ -1,3 +1,5 @@
+require 'bcrypt'
+
 module Sim
   module Importer
     class UserSqlBuilder < StandardSqlBuilder
@@ -9,15 +11,16 @@ module Sim
       end
 
       def additional_values
-        [generate_password]
+        [generate_encrypted_password]
       end
 
       private
 
-      def generate_password
-        PASSWORD_LENGTH.times.map do
+      def generate_encrypted_password
+        password = PASSWORD_LENGTH.times.map do
           PASSWORD_RANGE.sample
         end.join
+        BCrypt::Password.create(password)
       end
     end
   end

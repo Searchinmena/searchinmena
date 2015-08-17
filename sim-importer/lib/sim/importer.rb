@@ -27,7 +27,7 @@ module Sim
       old_connection = OldConnection
       new_connection = NewConnection
       mapping = Mapping.new
-      old_data_retriever = OldDataRetriever.new(old_connection)
+      old_data_retriever = OldDataRetriever.new(mapping, old_connection)
       ids_mapper = IdsMapper.new
       countries_mapper = CountriesMapper.new(old_connection, new_connection)
       columns_mapper = ColumnsMapper.new(mapping)

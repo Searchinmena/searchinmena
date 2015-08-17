@@ -9,24 +9,22 @@ module Sim
         self.relations_mapper = relations_mapper
       end
 
-      def run(old_table, row)
-        new_table = mapping.new_table(old_table)
-
+      def run(new_table, row)
         "INSERT INTO " \
-          "#{new_table} (#{insert_list(old_table)}) " \
-          "values #{values(old_table, row)}"
+          "#{new_table} (#{insert_list(new_table)}) " \
+          "values #{values(new_table, row)}"
       end
 
-      def insert_list(old_table)
-        new_columns = mapping.new_columns(old_table)
-        new_relations = mapping.new_relations(old_table)
+      def insert_list(new_table)
+        new_columns = mapping.new_columns(new_table)
+        new_relations = mapping.new_relations(new_table)
 
         (new_columns + additional_columns + new_relations).join(", ")
       end
 
-      def values(old_table, row)
-        mapped_columns = columns_mapper.run(old_table, row)
-        mapped_relations = relations_mapper.run(old_table, row)
+      def values(new_table, row)
+        mapped_columns = columns_mapper.run(new_table, row)
+        mapped_relations = relations_mapper.run(new_table, row)
         mapped_all = (mapped_columns + additional_values + mapped_relations)
         "(#{quoted(mapped_all).join(", ")})"
       end

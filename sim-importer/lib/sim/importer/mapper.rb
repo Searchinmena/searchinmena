@@ -13,13 +13,13 @@ module Sim
 
       def run
         new_connection.transaction do
-          mapping.each_old_table do |old_table|
-            puts "Moving #{old_table}\n\n"
+          mapping.each_new_table do |new_table|
+            puts "Moving #{new_table}\n\n"
 
-            old_data = old_data_retriever.run(old_table)
-            migrator.run(old_table, old_data)
+            old_data = old_data_retriever.run(new_table)
+            migrator.run(old_data, new_table)
 
-            puts "\nMoved #{old_table}\n\n\n"
+            puts "\nMoved #{new_table}\n\n\n"
           end
         end
       end

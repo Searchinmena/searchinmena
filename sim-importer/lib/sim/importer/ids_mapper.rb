@@ -13,7 +13,7 @@ module Sim
       end
 
       def new_id(table, old_id)
-        @repository[table][old_id]
+        @repository[table][old_id.to_i]
       end
     end
   end

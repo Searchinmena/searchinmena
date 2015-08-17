@@ -13,8 +13,8 @@ module Sim
         self.relations_mapper = relations_mapper
       end
 
-      def build(old_table)
-        klass = REPOSITORY[old_table.to_sym] || StandardSqlBuilder
+      def build(new_table)
+        klass = REPOSITORY[new_table.to_sym] || StandardSqlBuilder
         klass.new(mapping, columns_mapper, relations_mapper)
       end
     end

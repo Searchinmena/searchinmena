@@ -1,57 +1,57 @@
 ---
 users:
-  new_table: users
-  columns:
-    email: email
-    first_name: first_name
-    last_name: last_name
-companies:
-  new_table: businesses
-  columns:
-    name: name
-  relations:
-    user_id:
-      new_name: user_id
-      old_table: users
-headquaters:
-  new_table: businesses
-  columns:
-    city: city
-    phone1: phone
-    street: address_line_1
-  relations:
-    country_id:
-      new_name: country_id
-      old_table: countries
+  users:
+    columns:
+      email: email
+      first_name: first_name
+      last_name: last_name
+businesses:
+  companies:
+    columns:
+      name: name
+    relations:
+      user_id:
+        new_name: user_id
+        rel_table: users
+  headquaters:
+    group_by: company_id
+    columns:
+      city: city
+      phone1: phone
+      street: address_line_1
+    relations:
+      country_id:
+        new_name: country_id
+        rel_table: countries
+  trading_informations:
+    group_by: company_id
+    columns:
+      year_established: year_registered
 trading_informations:
-  new_table: businesses
-  columns:
-    year_established: year_registered
-trading_informations:
-  new_table: businesses_business_types
-  relations:
-    company_id:
-      new_name: business_id
-      old_table: companies
-    #business_type_id1:
-      #new_name: business_type_id
-      #old_table: missing!
+  businesses_business_types:
+    relations:
+      company_id:
+        new_name: business_id
+        rel_table: businesses
+      #business_type_id1:
+        #new_name: business_type_id
+        #rel_table: missing!
 products:
-  new_table: products
-  columns:
-    name: name
-    description: description
-  relations:
-    company_id:
-      new_name: business_id
-      old_table: companies
+  products:
+    columns:
+      name: name
+      description: description
+    relations:
+      company_id:
+        new_name: business_id
+        rel_table: businesses
 services:
-  new_table: services
-  columns:
-    name: name
-    description: description
-  relations:
-    company_id:
-      new_name: business_id
-      old_table: companies
+  services:
+    columns:
+      name: name
+      description: description
+    relations:
+      company_id:
+        new_name: business_id
+        rel_table: businesses
 

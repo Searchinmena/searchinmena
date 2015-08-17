@@ -9,14 +9,14 @@ module Sim
         self.ids_mapper = ids_mapper
       end
 
-      def run(old_table, old_data)
+      def run(old_data, new_table)
         old_data.each do |row|
-          sql_builder = sql_builder_factory.build(old_table)
-          command = sql_builder.run(old_table, row)
+          sql_builder = sql_builder_factory.build(new_table)
+          command = sql_builder.run(new_table, row)
           puts command
-          #new_id = new_connection.insert(command)
-          new_id = row["id"] # TODO: REMOVE IT SOME DAY!1
-          ids_mapper.set(old_table, row["id"], new_id)
+          new_id = new_connection.insert(command)
+          #new_id = row["id"] # TODO: REMOVE IT SOME DAY!1
+          ids_mapper.set(new_table, row["id"], new_id)
         end
       end
     end

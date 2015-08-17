@@ -9,44 +9,40 @@ module Sim
         self.mapping = YAML.load(File.read(MAPPING_PATH))
       end
 
-      def each_old_table(&block)
+      def each_new_table(&block)
         mapping.each_key(&block)
       end
 
-      def old_columns(old_table)
-        columns = mapping[old_table]["columns"]
-        return [] unless columns
-
-        columns.keys
+      def old_tables(new_table)
+        mapping[new_table].keys
       end
 
-      def new_columns(old_table)
-        columns = mapping[old_table]["columns"]
-        return [] unless columns
-
-        columns.values
+      def group_by(new_table, old_table)
+        mapping[new_table][old_table]["group_by"] || "id"
       end
 
-      def old_relations(old_table)
-        relations = mapping[old_table]["relations"]
-        return [] unless relations
-
-        relations.keys
+      def old_columns(new_table)
+        mapping[new_table].values.map do |v|
+          v["columns"]
+        end.compact.map(&:keys).flatten
       end
 
-      def new_relations(old_table)
-        relations = mapping[old_table]["relations"]
-        return [] unless relations
-
-        relations.values.map { |v| v["new_name"] }
+      def new_columns(new_table)
+        mapping[new_table].values.map do |v|
+          v["columns"]
+        end.compact.map(&:values).flatten
       end
 
-      def new_table(old_table)
-        mapping[old_table]["new_table"]
+      def old_relations(new_table)
+        mapping[new_table].values.map do |v|
+          v["relations"]
+        end.compact.reduce(Hash.new, :merge)
       end
 
-      def old_relation_table_name(old_table, relation_name)
-        mapping[old_table]["relations"][relation_name]["old_table"]
+      def new_relations(new_table)
+        mapping[new_table].values.map do |v|
+          v["relations"]
+        end.compact.map(&:values).flatten.map { |v| v["new_name"] }
       end
     end
   end

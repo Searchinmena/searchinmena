@@ -7,8 +7,8 @@ module Sim
         self.mapping = mapping
       end
 
-      def run(old_table, row)
-        mapping.old_columns(old_table).map do |column_name|
+      def run(new_table, row)
+        mapping.old_columns(new_table).map do |column_name|
           row[column_name]
         end
       end

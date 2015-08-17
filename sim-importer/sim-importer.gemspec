@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "pg", '~> 0.18', '>= 0.18.2'
   spec.add_dependency "mysql2", '~> 0.3', '>= 0.3.19'
   spec.add_dependency "activerecord", '~> 4.0', '>= 4.0.0'
+  spec.add_dependency "bcrypt", '~> 3.1.10', '>= 3.1.10'
 end
