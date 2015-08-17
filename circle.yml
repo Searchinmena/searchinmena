@@ -7,9 +7,6 @@ deployment:
     branch: master
     commands:
       - bundle exec cap demo deploy
-dependencies:
-  pre:
-    - sudo apt-get update
 test:
   pre:
     - bundle exec rake bower:install
