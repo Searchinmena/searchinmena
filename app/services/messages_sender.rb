@@ -9,7 +9,8 @@ class MessagesSender
 
     validator = validator_factory.new(subject, body)
     if validator.valid?
-      UserMailer.contact_seller(business.user, user, subject, body).deliver
+      UserMailer.contact_seller(business.user, user, subject, body).deliver_now
+      UserMailer.message_confirmation(business, user, subject, body).deliver_now
       ::Response.new(success: true)
     else
       ::Response.new(success: false, object: validator)
