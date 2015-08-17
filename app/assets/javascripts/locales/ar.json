@@ -232,11 +232,11 @@
   },
   "messages": {
     "new": {
-      "form_title": "New message",
-      "subject": "Subject",
-      "body": "Body",
-      "submit": "Send",
-      "success": "Message successfully sent."
+      "form_title": "رسالة جديدة",
+      "subject": "العنوان",
+      "body": "نص الرسالة",
+      "submit": "أرسل",
+      "success": "تم إرسال الرسالة بنجاح."
     }
   }
 }
