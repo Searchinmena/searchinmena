@@ -1,13 +1,18 @@
 .landing-header {
-  background-image: image-url('mena-map.png');
+  background-image: image-url('mena-map-small.png');
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center bottom;
   padding: 0 0 $bs0 0;
 
   @media screen and (min-width: $tablet) {
+    background-image: image-url('mena-map-medium.png');
     height: 45em;
     padding: 0;
+  }
+
+  @media screen and (min-width: $standard-desktop) {
+    background-image: image-url('mena-map-large.png');
   }
 }
 
