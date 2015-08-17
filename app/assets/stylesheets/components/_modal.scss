@@ -141,10 +141,26 @@
 
   .next-img {
     left: 0;
+
+    [dir="rtl"] & {
+      left: auto;
+      right: 0;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
   }
 
   .prev-img {
     right: 0;
+
+    [dir="rtl"] & {
+      right: auto;
+      left: 0;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
   }
 
   img {
@@ -170,13 +186,5 @@
     padding: $bs0 0;
     display: inline-block;
     border: 0;
-  }
-
-  .btn-next {
-    float: right;
-
-    [dir="rtl"] & {
-      float: left;
-    }
   }
 }
