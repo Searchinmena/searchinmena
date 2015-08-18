@@ -12,7 +12,7 @@ class ControllersInjector
   end
 
   def messages_sender
-    MessagesSender.new(MessageValidator)
+    MessagesSender.new(MessageValidator, message_formatter)
   end
 end
 

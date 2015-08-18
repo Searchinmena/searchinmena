@@ -1,5 +1,5 @@
 class MessagesSender
-  takes :validator_factory
+  takes :validator_factory, :message_formatter
 
   def perform(business_id, user, subject, body)
     return ::Response.new(success: false) unless user
@@ -9,6 +9,7 @@ class MessagesSender
 
     validator = validator_factory.new(subject, body)
     if validator.valid?
+      body = message_formatter.perform(body)
       UserMailer.contact_seller(business.user, user, subject, body).deliver_now
       UserMailer.message_confirmation(business, user, subject, body).deliver_now
       ::Response.new(success: true)
