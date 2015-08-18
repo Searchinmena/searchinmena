@@ -75,8 +75,9 @@
     #   templateUrl: 'browse.html'
     # )
     $stateProvider.state('results',
-      url: '/results',
-      templateUrl: 'results.html'
+      url: '/results?:type&:query',
+      templateUrl: 'results.html',
+      controller: 'ResultsCtrl'
     )
     $stateProvider.state('business',
       url: '/company/:id',

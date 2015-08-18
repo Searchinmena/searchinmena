@@ -8,9 +8,10 @@ describe Search::Service do
   let(:search_strategy) { double(:search_strategy, perform: nil) }
 
   describe "#perform" do
-    subject { search_service.perform(search_params) }
+    subject { search_service.perform(type, query) }
 
-    let(:search_params) { { type: 'product', query: 'query' } }
+    let(:type) { 'product' }
+    let(:query) { 'query' }
 
     it "runs proper strategy" do
       expect(search_strategy).to receive(:perform)

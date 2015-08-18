@@ -1,5 +1,12 @@
 @Sim.factory 'Search', ['$resource',
   ($resource) ->
-    $resource('/search')
+    Search = $resource('/search')
+
+    angular.extend(Search.prototype,
+      toParams: ->
+        { type: @type, query: @query }
+    )
+
+    Search
 ]
 

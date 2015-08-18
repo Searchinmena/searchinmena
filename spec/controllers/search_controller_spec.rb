@@ -3,7 +3,8 @@ require "rails_helper"
 describe SearchController do
   describe "#create" do
     let(:business) { create(:business) }
-    let(:search_params) { { type: 'product', query: 'some product' } }
+    let(:type) { "product" }
+    let(:query) { "some product" }
     let(:search_service) { double(:search_service) }
     let(:search_response) { Search::Response.new(success: successful) }
 
@@ -11,9 +12,9 @@ describe SearchController do
       expect(controller).to receive(:search_service)
         .and_return(search_service)
       expect(search_service).to receive(:perform)
-        .with(search_params).and_return(search_response)
+        .with(type, query).and_return(search_response)
 
-      post :create, search: search_params
+      get :index, type: type, query: query
     end
 
     context "search is successful" do

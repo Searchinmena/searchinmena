@@ -1,5 +1,5 @@
-@Sim.controller 'HomeCtrl', ['$scope', 'User', 'Search',
-  ($scope, User, Search) ->
+@Sim.controller 'HomeCtrl', ['$scope', '$state', 'User', 'Search',
+  ($scope, $state, User, Search) ->
     User.get((data) ->
       $scope.user = new User(data)
     )
@@ -7,5 +7,5 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
-      $scope.search.$save()
+      $state.go("results", $scope.search.toParams())
 ]

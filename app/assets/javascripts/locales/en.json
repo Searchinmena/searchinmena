@@ -1,4 +1,6 @@
 {
+  "contact_seller": "Contact seller",
+  "search_submit": "Search",
   "registration": {
     "submit": "Sign up"
   },
@@ -25,8 +27,7 @@
     "watch_video": "watch video",
     "see_dashboard": "See dashboard",
     "join_now": "Join now",
-    "search_placeholder": "I'm looking for...",
-    "search_submit": "Search"
+    "search_placeholder": "I'm looking for..."
   },
   "confirm_email_message": {
     "text": "Please confirm your email",
@@ -83,7 +84,6 @@
       "submit": "Save changes"
     },
     "show": {
-      "contact_seller": "Contact Seller",
       "information": "Information",
       "products": "Products",
       "services": "Services",
@@ -166,7 +166,6 @@
   },
   "business_item": {
     "seller": "Seller",
-    "contact_seller": "Contact seller",
     "basic_info": "Basic info",
     "fob_price": "Fob price",
     "supply_ability": "Supply ability",
@@ -238,5 +237,11 @@
       "submit": "Send",
       "success": "Message successfully sent."
     }
+  },
+  "results": {
+    "from": "from",
+    "see_company_profile": "See company profile",
+    "title": "Search Results",
+    "view_options": "view options"
   }
 }

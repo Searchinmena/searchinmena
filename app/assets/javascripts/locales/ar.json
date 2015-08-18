@@ -1,4 +1,6 @@
 {
+  "contact_seller": "اتصل بالبائع",
+  "search_submit": "بحث",
   "registration": {
     "submit": "ارسال"
   },
@@ -25,8 +27,7 @@
     "watch_video": "شاهد الفيديو",
     "see_dashboard": "لوحة التحكم",
     "join_now": "انضم الآن",
-    "search_placeholder": " ...أنا أبحث عن",
-    "search_submit": "بحث"
+    "search_placeholder": " ...أنا أبحث عن"
   },
   "confirm_email_message": {
     "text": "الرجاء تأكيد حسابك",
@@ -83,7 +84,6 @@
       "submit": "حفظ"
     },
     "show": {
-      "contact_seller": "اتصل بالبائع",
       "information": "المعلومات",
       "products": "المنتجاتs",
       "services": "الخدمات",
@@ -166,7 +166,6 @@
   },
   "business_item": {
     "seller": "البائع",
-    "contact_seller": "اتصل بالبائع",
     "basic_info": "معلومات أساسية",
     "fob_price": "سعر التسليم",
     "supply_ability": "قدرة التوريد",
@@ -238,5 +237,11 @@
       "submit": "أرسل",
       "success": "تم إرسال الرسالة بنجاح."
     }
+  },
+  "results": {
+    "from": "from",
+    "see_company_profile": "See company profile",
+    "title": "Search Results",
+    "view_options": "view options"
   }
 }
