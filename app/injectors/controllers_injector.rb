@@ -14,5 +14,15 @@ class ControllersInjector
   def messages_sender
     MessagesSender.new(MessageValidator)
   end
+
+  def search_service
+    Search::Service.new(search_strategy_factory)
+  end
+
+  def search_strategy_factory
+    Search::StrategyFactory.new(product_repository,
+                                service_repository,
+                                business_repository)
+  end
 end
 

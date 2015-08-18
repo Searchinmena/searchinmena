@@ -6,4 +6,5 @@ describe ProductRepository do
 
   it_behaves_like "UserResourceRepository", :product
   it_behaves_like "BusinessItemRepository"
+  it_behaves_like "Searchable by name", :product
 end
