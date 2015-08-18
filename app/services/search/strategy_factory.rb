@@ -9,7 +9,7 @@ class Search::StrategyFactory
 
   def build(type)
     klass = STRATEGIES[type.to_sym]
-    klass.new(repositories, SearchQueryValidator)
+    klass.new(repositories)
   end
 
   def repositories

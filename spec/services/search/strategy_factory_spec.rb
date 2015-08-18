@@ -24,7 +24,7 @@ describe Search::Service do
 
     it do
       expect(Search::Strategies::ProductStrategy).to receive(:new)
-        .with(repositories, SearchQueryValidator)
+        .with(repositories)
 
       subject
     end

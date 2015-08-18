@@ -12,18 +12,6 @@ describe Search::Service do
 
     let(:search_params) { { type: 'product', query: 'query' } }
 
-    context "type missing" do
-      let(:search_params) { { query: 'query' } }
-
-      it { expect { subject }.to raise_error(KeyError) }
-    end
-
-    context "query missing" do
-      let(:search_params) { { type: 'product' } }
-
-      it { expect { subject }.to raise_error(KeyError) }
-    end
-
     it "runs proper strategy" do
       expect(search_strategy).to receive(:perform)
       subject
