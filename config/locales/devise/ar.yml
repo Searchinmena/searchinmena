@@ -68,7 +68,7 @@ ar:
       submit_edit: "تعديل"
       password: "كلمة المرور"
       password_confirmation: "تأكيد كلمة المرور "
-      password_field_info: "(%{number} حروف أقل شئ)"
+      password_field_info: "( حروف %{number} أقل من)"
       edit_password_label: "كلمة المرور جديدة"
       edit_password_field_info: "(لعدم التعديل الرجاء ترك فراغ)"
       edit_password_confirmation_label: "كلمة المرور الحالية"
