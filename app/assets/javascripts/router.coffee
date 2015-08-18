@@ -78,9 +78,6 @@
       url: '/results',
       templateUrl: 'results.html'
     )
-    # TODO
-    # it needs to be parametried with id,
-    # but for now it's Gosia's mockup
     $stateProvider.state('business',
       url: '/company/:id',
       templateUrl: 'business/show.html'
