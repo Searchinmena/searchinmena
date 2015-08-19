@@ -139,8 +139,8 @@
     "at_least_one_photo": "صور مطلوبة {{min_count}} حد أدنى",
     "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
     "button": "أضف صور",
-    "comment": "10 صور حد أقصى",
-    "comment_thumbnail": "{{min_image_width}} الصورة الأولى المرفوعة أولا هي الصورة التفضيلية. لأفضل عرض حاول أن ترفع صور بقياس  x {{min_image_height}} بكسل An image can't be bigger than {{max_file_size_in_mb}} MB."
+    "comment": " 10 صور حد أقصى، كل صورة لاتزيد عن {{max_file_size_in_mb}}  ميغابايبت",
+    "comment_thumbnail": "  الصورة المرفوعة أولا تظهر على الكتالوج. حاول أن ترفع صور بقياس {{min_image_height}} x {{min_image_width}}       "
   },
   "attributes": {
     "title": "الخصائص",
