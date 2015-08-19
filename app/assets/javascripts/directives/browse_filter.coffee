@@ -8,7 +8,7 @@
       search: '='
       type: '@'
 
-    link: ($scope, el, attrs) ->
+    link: ($scope) ->
       $scope.browseFilterSelected = (type, search) ->
         search.type == type || !search.type && type == "all"
 

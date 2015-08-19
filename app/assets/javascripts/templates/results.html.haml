@@ -25,12 +25,12 @@
 
     .view-options
       %span.filter-label {{ "results.view_options" | translate }}
-      %span.icon.icon-th-list
-      %span.icon.icon-th.active
+      %view-option.icon-th-list{ type: 'list-view', selected: 'viewOptionSelected' }
+      %view-option.icon-th{ type: 'net-view', selected: 'viewOptionSelected' }
 
   %h3.title {{ resultsCount }} {{ "results.title" | translate }}
 
-  %ul.search-results{ 'ng-class': '{ "net-view": netView }' }
+  %ul.search-results{ 'ng-class': '{ "net-view": isNetViewSelected() }' }
     %li.result-item{ 'ng-repeat': 'result in results' }
       %a.item-img-link{ 'ui-sref': 'result.showPath()' }
         %img{ src: 'result.coverPhoto()' }
