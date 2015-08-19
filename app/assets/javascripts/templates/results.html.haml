@@ -6,15 +6,15 @@
 
   .search-filters
     .browse-options
-      .browse-filter{ 'ng-class': '{ "active": browseFilterSelected("all") }' }
+      %browse-filter{ type: 'all', search: 'search' }
         {{ 'home.all' | translate }}
-      .browse-filter{ 'ng-class': '{ "active": browseFilterSelected("product") }' }
+      %browse-filter{ type: 'product', search: 'search' }
         %span.icon-shopping-cart
         {{ 'home.products' | translate }}
-      .browse-filter{ 'ng-class': '{ "active": browseFilterSelected("service") }' }
+      %browse-filter{ type: 'service', search: 'search' }
         %span.icon-user
         {{ 'home.services' | translate }}
-      .browse-filter{ 'ng-class': '{ "active": browseFilterSelected("business") }' }
+      %browse-filter{ type: 'business', search: 'search' }
         %span.icon-briefcase
         {{ 'home.businesses' | translate }}
     / .sorting
