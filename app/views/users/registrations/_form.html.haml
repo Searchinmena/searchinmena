@@ -59,7 +59,7 @@
       - User.categories.keys.each do |cat|
         .checkbox-field
           = f.radio_button :category, cat, "ng-model": "form.user.category"
-          = f.label User.category_name(cat), for: "user_category_#{cat}",
+          = f.label t("user.categories.#{User.category_name(cat)}"), for: "user_category_#{cat}",
             class: "inline-label"
 
     .fields-group.business-info{ "ng-show": "shouldShowBusinessInfo()" }
