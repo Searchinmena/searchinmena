@@ -76,7 +76,7 @@
     # )
     $stateProvider.state('results',
       url: '/results?:type&:query',
-      templateUrl: 'results.html',
+      templateUrl: 'search/results.html',
       controller: 'ResultsCtrl'
     )
     $stateProvider.state('business',

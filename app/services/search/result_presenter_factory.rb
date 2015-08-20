@@ -1,22 +1,25 @@
 class Search::ResultPresenterFactory
   takes :product_repository, :product_photo_repository,
-    :service_repository, :service_photo_repository
+    :service_repository, :service_photo_repository,
+    :business_repository
 
-  RepositoryItem = Struct.new(:klass, :repository, :photo_repository)
+  Item = Struct.new(:klass, :args)
 
-  def repositories
+  def items
     {
-      product: RepositoryItem.new(ProductPresenter,
-                                  product_repository,
-                                  product_photo_repository),
-      service: RepositoryItem.new(ServicePresenter,
-                                  service_repository,
-                                  service_photo_repository)
+      product: Item.new(ProductPresenter,
+                        [product_repository,
+                         product_photo_repository]),
+      service: Item.new(ServicePresenter,
+                        [service_repository,
+                         service_photo_repository]),
+      business: Item.new(BusinessPresenter, [])
     }
   end
 
   def build(result, type, locale)
-    item = repositories[type.to_sym]
-    item.klass.new(result, item.repository, item.photo_repository, locale)
+    item = items[type.to_sym]
+    args = item.args + [locale]
+    item.klass.new(result, *args)
   end
 end

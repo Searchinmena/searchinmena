@@ -1,0 +1,38 @@
+%a.item-img-link{ 'ui-sref': '{{ result.showPath() }}' }
+  %img{ "ng-src": "{{ result.coverPhotoUrl('thumb') }}" }
+.result-item-description
+  .clearfix
+    .contact-item
+      %span.icon.icon-phone-alt
+      {{ result.phone() }}
+    .contact-item
+      %span.icon.icon-pushpin{ 'ng-show': 'result.location()' }
+      {{ result.location() }}
+      %span.address-line
+        {{ result.addressLine1() }}
+      %span.address-line
+        {{ result.addressLine2() }}
+  %table.item-details
+    %tr{ 'ng-show': 'result.businessTypes()' }
+      %td.attribute {{ "business.show.business_types" | translate }}:
+      %td {{ result.businessTypes() }}
+    %tr{ 'ng-show': 'result.mainProducts()' }
+      %td.attribute {{ "business.show.main_products" | translate }}:
+      %td {{ result.mainProducts() }}
+    %tr{ 'ng-show': 'result.yearRegistered()' }
+      %td.attribute {{ "business.show.year_registered" | translate }}:
+      %td {{ result.yearRegistered() }}
+    %tr{ 'ng-show': 'result.noOfEmployees()' }
+      %td.attribute {{ "business.show.no_of_employees" | translate }}:
+      %td {{ result.noOfEmployees() }}
+.business-summary
+  .business-name
+    {{ result.name() }}
+  .business-location
+    %span {{ "results.location" | translate }}:
+    {{ result.location() }}
+  %a.plain-link{ 'ui-sref': '{{ result.showPath() }}' }
+    {{ "results.see_company_profile" | translate }}
+  %button.contact-supplier.contact-supplier{ "ng-click": "MessageModal.new(result.businessId())" }
+    %span.icon.icon-envelope
+    %span.value {{ "contact_seller" | translate }}

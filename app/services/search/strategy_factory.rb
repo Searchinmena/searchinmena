@@ -4,7 +4,7 @@ class Search::StrategyFactory
   STRATEGIES = {
     product: Search::Strategies::ProductStrategy,
     service: Search::Strategies::ServiceStrategy,
-    company: Search::Strategies::BusinessStrategy
+    business: Search::Strategies::BusinessStrategy
   }
 
   def build(type)

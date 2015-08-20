@@ -1,8 +1,10 @@
 @Sim.service 'ResultPresenterFactory', ['ProductPresenter', 'ServicePresenter',
-  (ProductPresenter, ServicePresenter) ->
+  'BusinessPresenter',
+  (ProductPresenter, ServicePresenter, BusinessPresenter) ->
     REPOSITORY = {
       product: ProductPresenter,
-      service: ServicePresenter
+      service: ServicePresenter,
+      business: BusinessPresenter
     }
 
     build: (type, resultData) ->

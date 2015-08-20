@@ -29,7 +29,8 @@ class ControllersInjector
     Search::ResultPresenterFactory.new(product_repository,
                                       product_photo_repository,
                                       service_repository,
-                                      service_photo_repository)
+                                      service_photo_repository,
+                                      business_repository)
   end
 end
 

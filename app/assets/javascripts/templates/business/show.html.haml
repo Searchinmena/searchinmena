@@ -10,7 +10,7 @@
           %span.icon.icon-phone-alt
           {{ businessPresenter.phone() }}
         .contact-item
-          %span.icon.icon-pushpin
+          %span.icon.icon-pushpin{ 'ng-show': 'result.location()' }
           {{ businessPresenter.location() }}
           %span.address-line
             {{ businessPresenter.addressLine1() }}
@@ -19,19 +19,19 @@
       %button.contact-supplier{ "ng-click": "MessageModal.new(businessPresenter.id())" }
         %span.icon.icon-envelope
         {{ "contact_seller" | translate }}
-  %ul.business-tabs
-    %li.tab
-      %a.tab-link.active
-        {{ "business.show.information" | translate }}
-        .icon-chevron-down
-    %li.tab
-      %a.tab-link
-        {{ "business.show.products" | translate }}
-        .icon-chevron-down
-    %li.tab
-      %a.tab-link
-        {{ "business.show.services" | translate }}
-        .icon-chevron-down
+  -#%ul.business-tabs
+    -#%li.tab
+      -#%a.tab-link.active
+        -#{{ "business.show.information" | translate }}
+        -#.icon-chevron-down
+    -#%li.tab
+      -#%a.tab-link
+        -#{{ "business.show.products" | translate }}
+        -#.icon-chevron-down
+    -#%li.tab
+      -#%a.tab-link
+        -#{{ "business.show.services" | translate }}
+        -#.icon-chevron-down
   .item-basic-info
     %table.item-details
       %tr{ 'ng-show': 'businessPresenter.businessTypes()' }

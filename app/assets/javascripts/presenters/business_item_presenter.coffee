@@ -63,7 +63,10 @@ class SIM.BusinessItemPresenter
     @business.location()
 
   businessPath: ->
-    @business.path()
+    @business.showPath()
+
+  templatePath: ->
+    'search/_business_item_result.html'
 
 @Sim.value('BusinessItemPresenter', SIM.BusinessItemPresenter)
 

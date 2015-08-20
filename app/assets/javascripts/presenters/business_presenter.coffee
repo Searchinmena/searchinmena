@@ -40,7 +40,15 @@ class SIM.BusinessPresenter
     else
       undefined
 
-  path: ->
+  showPath: ->
     "business({ id: #{@id()} })"
+
+  templatePath: ->
+    'search/_business_result.html'
+
+  coverPhotoUrl: (type) ->
+    # TODO: change when logo is implemented
+    @business.logo = {}
+    @business.logo[type || 'url']
 
 @Sim.value('BusinessPresenter', SIM.BusinessPresenter)
