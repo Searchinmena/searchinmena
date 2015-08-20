@@ -18,6 +18,8 @@ class BusinessItemPresenter < BasePresenter
   def cover_photo
     {
       url: repository.cover_photo_url_for(business_item, photos_repository),
+      bigger_thumb: repository.cover_photo_url_for(business_item,
+                                            photos_repository, :bigger_thumb),
       thumb: repository.cover_photo_url_for(business_item,
                                             photos_repository, :thumb)
     }

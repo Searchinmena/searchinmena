@@ -29,6 +29,7 @@ production:
   items_per_page: 10
   original_width: 1200
   original_height: 900
+  bigger_thumbnail_size: 240
   thumbnail_size: 120
   aws:
     bucket_name: sim-uploads-demo

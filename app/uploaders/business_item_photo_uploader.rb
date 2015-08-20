@@ -15,4 +15,8 @@ class BusinessItemPhotoUploader < CarrierWave::Uploader::Base
   version :thumb do
     process resize_to_fill: [A9n.thumbnail_size, A9n.thumbnail_size]
   end
+
+  version :bigger_thumb do
+    process resize_to_fill: [A9n.bigger_thumbnail_size, A9n.bigger_thumbnail_size]
+  end
 end
