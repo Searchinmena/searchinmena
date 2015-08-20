@@ -2,7 +2,7 @@
   (Search) ->
     perform: (searchParams, successCallback) ->
       Search.query(searchParams).$promise.then((data) ->
-        successCallback(searchParams.type, data)
+        successCallback(data)
       )
 ]
 

@@ -4,11 +4,10 @@ class SearchController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    type = params[:type]
-    response = search_service.perform(type, params[:query])
+    response = search_service.perform(params[:type], params[:query])
     if response.successful?
       render json: response.results
-        .map { |result| result_presenter_factory.build(result, type, locale) }
+        .map { |result| result_presenter_factory.build(result, locale) }
     else
       head :conflict
     end

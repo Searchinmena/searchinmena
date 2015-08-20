@@ -4,10 +4,12 @@ class Search::StrategyFactory
   STRATEGIES = {
     product: Search::Strategies::ProductStrategy,
     service: Search::Strategies::ServiceStrategy,
-    business: Search::Strategies::BusinessStrategy
+    business: Search::Strategies::BusinessStrategy,
+    all: Search::Strategies::AllStrategy
   }
 
   def build(type)
+    type ||= :all
     klass = STRATEGIES[type.to_sym]
     klass.new(repositories)
   end

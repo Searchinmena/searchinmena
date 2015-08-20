@@ -7,8 +7,8 @@
       business: BusinessPresenter
     }
 
-    build: (type, resultData) ->
-      klass = REPOSITORY[type]
+    build: (resultData) ->
+      klass = REPOSITORY[resultData.key]
       new klass(resultData)
 ]
 

@@ -9,9 +9,9 @@
     $scope.isNetViewSelected = ->
       $scope.viewOptionSelected == 'net-view'
     
-    $scope.dataLoaded = (type, data) ->
+    $scope.dataLoaded = (data) ->
       $scope.results = _(data).map((resultData) ->
-        ResultPresenterFactory.build(type, resultData)
+        ResultPresenterFactory.build(resultData)
       )
 
     SearchService.perform($scope.search.toParams(), $scope.dataLoaded)

@@ -7,19 +7,24 @@ class Search::ResultPresenterFactory
 
   def items
     {
-      product: Item.new(ProductPresenter,
+      product: Item.new(ProductResultPresenter,
                         [product_repository,
                          product_photo_repository]),
-      service: Item.new(ServicePresenter,
+      service: Item.new(ServiceResultPresenter,
                         [service_repository,
                          service_photo_repository]),
-      business: Item.new(BusinessPresenter, [])
+      business: Item.new(BusinessResultPresenter, [])
     }
   end
 
-  def build(result, type, locale)
-    item = items[type.to_sym]
+  def build(result, locale)
+    key = key(result)
+    item = items[key]
     args = item.args + [locale]
-    item.klass.new(result, *args)
+    item.klass.new(result, key, *args)
+  end
+
+  def key(result)
+    result.class.to_s.underscore.to_sym
   end
 end
