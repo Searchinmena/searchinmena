@@ -1,9 +1,10 @@
-@Sim.controller 'HomeCtrl', ['$scope', '$state', 'User', 'Search',
-  ($scope, $state, User, Search) ->
+@Sim.controller 'HomeCtrl', ['$scope', '$state', 'User', 'Search', 'SearchService',
+  ($scope, $state, User, Search, SearchService) ->
     User.get((data) ->
       $scope.user = new User(data)
     )
     $scope.search = new Search()
+    $scope.SearchService = SearchService
 
     $scope.submit = (e) ->
       e.preventDefault()

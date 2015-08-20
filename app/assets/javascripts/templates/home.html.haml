@@ -3,10 +3,8 @@
   .field.search-field
     .select-field
       %select{ "ng-model": "search.type" }
-        %option all
-        %option product
-        %option service
-        %option business
+        %option{ 'ng-repeat': 'type in SearchService.searchTypes()', value: '{{type}}' }
+          {{ SearchService.translationKeyFor(type) | translate }}
     %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}",
       "ng-model": "search.query" }
     %input{ type: "submit", value: "{{ 'search_submit' | translate }}" }

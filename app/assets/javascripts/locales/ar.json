@@ -233,6 +233,14 @@
       "success": "تم إرسال الرسالة بنجاح."
     }
   },
+  "search": {
+    "types": {
+      "all": "All",
+      "product": "Product",
+      "service": "Service",
+      "business": "Company"
+    }
+  },
   "results": {
     "no_results": "No results found",
     "from": "from",
