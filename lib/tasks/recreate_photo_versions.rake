@@ -10,7 +10,7 @@ task recreate_photo_versions: :environment do
       o.photo.recreate_versions!(:bigger_thumb)
       o.save
     rescue => e
-      puts  "ERROR: #{o.class}: #{o.id} -> #{e.to_s}"
+      puts "ERROR: #{o.class}: #{o.id} -> #{e}"
     end
   end
 end
