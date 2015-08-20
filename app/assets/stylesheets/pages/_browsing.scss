@@ -47,6 +47,10 @@
     background-color: $blue-basic;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: $big-phone) {
     font-size: $bs09;
   }
@@ -57,7 +61,7 @@
     width: auto;
   }
 
-  span {
+  .icon {
     font-size: $bs3;
     vertical-align: middle;
     display: none;
@@ -125,6 +129,10 @@
 
     &.active {
       color: $purple-basic;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

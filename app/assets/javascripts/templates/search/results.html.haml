@@ -9,20 +9,14 @@
       %browse-filter{ type: 'all', search: 'search' }
         {{ 'home.all' | translate }}
       %browse-filter{ type: 'product', search: 'search' }
-        %span.icon-shopping-cart
+        %span.icon.icon-shopping-cart
         {{ 'home.products' | translate }}
       %browse-filter{ type: 'service', search: 'search' }
-        %span.icon-user
+        %span.icon.icon-user
         {{ 'home.services' | translate }}
       %browse-filter{ type: 'business', search: 'search' }
-        %span.icon-briefcase
+        %span.icon.icon-briefcase
         {{ 'home.businesses' | translate }}
-    / .sorting
-    /   %span.filter-label Sort by:
-    /   %a.active{ href: '#' } Best matching
-    /   %a{ href: '#' }
-    /     Most popular
-
     .view-options
       %span.filter-label {{ "results.view_options" | translate }}
       %view-option.icon-th-list{ type: 'list-view', selected: 'viewOptionSelected' }

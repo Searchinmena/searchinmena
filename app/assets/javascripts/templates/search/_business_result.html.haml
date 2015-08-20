@@ -1,5 +1,8 @@
 %a.item-img-link{ 'ui-sref': '{{ result.showPath() }}' }
   %img{ "ng-src": "{{ result.coverPhotoUrl('thumb') }}" }
+.result-header-info
+  %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
+    {{ result.name() }}
 .result-item-description
   .clearfix
     .contact-item
@@ -25,12 +28,8 @@
     %tr{ 'ng-show': 'result.noOfEmployees()' }
       %td.attribute {{ "business.show.no_of_employees" | translate }}:
       %td {{ result.noOfEmployees() }}
+
 .business-summary
-  .business-name
-    {{ result.name() }}
-  .business-location
-    %span {{ "results.location" | translate }}:
-    {{ result.location() }}
   %a.plain-link{ 'ui-sref': '{{ result.showPath() }}' }
     {{ "results.see_company_profile" | translate }}
   %button.contact-supplier.contact-supplier{ "ng-click": "MessageModal.new(result.businessId())" }
