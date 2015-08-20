@@ -1,10 +1,14 @@
-@Sim.factory 'ProductFactory', ['Product', (Product) ->
-  build: (attributes) ->
-    new Product(attributes)
+@Sim.factory 'ProductFactory', ['Product', 'ProductPresenter',
+  (Product, ProductPresenter) ->
+    build: (attributes) ->
+      new Product(attributes)
 
-  get: (params, successCallback, errorCallback) ->
-    Product.get(params, successCallback, errorCallback)
+    buildPresenter: (attributes) ->
+      new ProductPresenter(attributes)
 
-  delete: (params, successCallback, errorCallback) ->
-    Product.delete(params, successCallback, errorCallback)
+    get: (params, successCallback, errorCallback) ->
+      Product.get(params, successCallback, errorCallback)
+
+    delete: (params, successCallback, errorCallback) ->
+      Product.delete(params, successCallback, errorCallback)
 ]

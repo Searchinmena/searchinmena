@@ -11,7 +11,7 @@ class TranslatableRepository < AbstractRepository
   def translation_for(item, locale)
     return unless item
 
-    item.translations.where(locale: locale).first.value
+    item.translations.where(locale: locale).first.try(:value)
   end
 
   def ordered(collection)

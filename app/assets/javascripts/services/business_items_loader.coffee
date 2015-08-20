@@ -1,5 +1,5 @@
-@Sim.service 'BusinessItemsLoader', ['ITEMS_PER_PAGE',
-  (ITEMS_PER_PAGE) ->
+@Sim.service 'BusinessItemsLoader', ['ITEMS_PER_PAGE', 'BusinessItemPresenter',
+  (ITEMS_PER_PAGE, BusinessItemPresenter) ->
     initialize: (businessItemFactory, scope) ->
       scope.businessItems = []
       scope.total = 0
@@ -10,7 +10,7 @@
 
       scope.assignData = (data) ->
         scope.businessItems = for attributes in data.items
-          new SIM.BusinessItem(attributes)
+          businessItemFactory.buildPresenter(attributes)
         scope.total = data.count
 
       scope.pageChanged = (newPage) ->

@@ -11,17 +11,17 @@
       %table.item-details
         %tr{ "ng-show": "businessItem.get('model_number')" }
           %td.attribute
-            {{ "product.model_number" | translate }}:
+            {{ "business_item.model_number" | translate }}:
           %td
             {{ businessItem.get('model_number') }}
         %tr{ "ng-show": "businessItem.get('brand_name')" }
           %td.attribute
-            {{ "product.brand_name" | translate }}:
+            {{ "business_item.brand_name" | translate }}:
           %td
             {{ businessItem.get('brand_name') }}
         %tr{ "ng-show": "businessItem.get('min_order_quantity_number')" }
           %td.attribute
-            {{ "product.min_order" | translate }}:
+            {{ "business_item.min_order_quantity_number" | translate }}:
           %td
             {{ businessItem.get('min_order_quantity_number') }}
             {{ businessItem.get('min_order_quantity_unit') }}
@@ -32,13 +32,15 @@
           %td
             {{ businessItem.get('fob_price') }}
             {{ businessItem.get('fob_price_currency') }}
+            \/
             {{ businessItem.get('fob_price_unit') }}
         %tr{ "ng-show": "businessItem.get('supply_ability_capacity')" }
           %td.attribute
-            {{ "business_item.attributes" | translate }}:
+            {{ "business_item.supply_ability_capacity" | translate }}:
           %td
             {{ businessItem.get('supply_ability_capacity') }}
             {{ businessItem.get('supply_ability_unit') }}
+            \/
             {{ businessItem.get('supply_ability_frequency') }}
         %tr{ "ng-show": "businessItem.hasPaymentTerms()" }
           %td.attribute

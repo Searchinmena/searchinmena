@@ -155,32 +155,27 @@
     "fob_price": "سعر التسليم",
     "fob_price_comment": "مثال: 10 دولار للكيلوغرام",
     "per": "فترة",
-    "port": "ميناء الشحن",
     "supply": "قدرة التوريد",
     "supply_comment": "مثال: 1,000 عبوة يوميا",
     "choose_currency": "إختر عملة",
     "choose_unit": "إختر وحدة",
-    "choose_frequency": "التكرار",
-    "payment_terms": "شروط الدفع",
-    "packaging": "معلومات التغليف"
+    "choose_frequency": "التكرار"
   },
   "business_item": {
+    "model_number": "رقم الموديل",
+    "brand_name": "العلامة التجارية",
+    "min_order_quantity_number": "حد الطلب الأدنى",
+    "place_of_origin": "مكان الصنع",
+    "scope_of_work": "مجال الخدمة",
+    "average_completion_time": "متوسط زمن الإنتهاء",
     "seller": "البائع",
     "basic_info": "معلومات أساسية",
     "fob_price": "سعر التسليم",
-    "supply_ability": "قدرة التوريد",
+    "port": "ميناء الشحن",
+    "supply_ability_capacity": "قدرة التوريد",
     "payment_terms": "شروط الدفع",
     "attributes": "أوصاف",
     "packaging_details": "تفاصيل التغليف"
-  },
-  "product": {
-    "model_number": "رقم الموديل",
-    "brand_name": "العلامة التجارية",
-    "min_order": "حد الطلب الأدنى"
-  },
-  "service": {
-    "place_of_origin": "مكان الصنع",
-    "avg_completion_time": "متوسط زمن الإنتهاء"
   },
   "business_items": {
     "edit": "تعديل",
@@ -239,7 +234,9 @@
     }
   },
   "results": {
+    "no_results": "No results found",
     "from": "from",
+    "location": "location",
     "see_company_profile": "See company profile",
     "title": "Search Results",
     "view_options": "view options"

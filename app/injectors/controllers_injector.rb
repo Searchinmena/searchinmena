@@ -24,5 +24,12 @@ class ControllersInjector
                                 service_repository,
                                 business_repository)
   end
+
+  def result_presenter_factory
+    Search::ResultPresenterFactory.new(product_repository,
+                                      product_photo_repository,
+                                      service_repository,
+                                      service_photo_repository)
+  end
 end
 

@@ -1,6 +1,8 @@
 @Sim.service 'SearchService', ['Search',
-   (Search) ->
-    perform: (search) ->
-      Search.query(search.toParams())
+  (Search) ->
+    perform: (searchParams, successCallback) ->
+      Search.query(searchParams).$promise.then((data) ->
+        successCallback(searchParams.type, data)
+      )
 ]
 

@@ -18,11 +18,11 @@
     %error-message-for{ "error": "errors.business_item.fob_price_unit_id" }
 
 %form-field{ "error": "errors.business_item.port" }
-  %label {{ "trade_info.port" | translate }}
+  %label {{ "business_item.port" | translate }}
   %input{ type: "text", "ng-model": "businessItem.port" }
 
 .field.compound-field
-  %label {{ "trade_info.supply" | translate }}
+  %label {{ "business_item.supply_ability_capacity" | translate }}
   %p.field-comment {{ "trade_info.supply_comment" | translate }}
   %form-field{ "error": "errors.business_item.supply_ability_capacity", class: 'inline-field' }
     %input{ type: "text", "ng-model": "businessItem.supply_ability_capacity" }
@@ -41,13 +41,13 @@
     %error-message-for{ "error": "errors.business_item.supply_ability_frequency_id" }
 
 .field
-  %label {{ "trade_info.payment_terms" | translate }}
+  %label {{ "business_item.payment_terms" | translate }}
   .checkbox-field{ "ng-repeat": "term in payment_terms track by term.id" }
     %input{ type: "checkbox", val: "{{term.id}}",
     "ng-model": "businessItem.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
       %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
 %form-field{ "error": "errors.business_item.packaging_details" }
-  %label {{ "trade_info.packaging" | translate }}
+  %label {{ "business_item.packaging_details" | translate }}
   %input{ type: "text", "ng-model": "businessItem.packaging_details" }
 

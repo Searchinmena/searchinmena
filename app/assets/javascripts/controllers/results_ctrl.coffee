@@ -1,13 +1,20 @@
 @Sim.controller 'ResultsCtrl', ['$scope', '$state', '$stateParams',
-  'Search', 'SearchService',
-  ($scope, $state, $stateParams, Search, SearchService) ->
+  'Search', 'SearchService', 'ResultPresenterFactory', 'MessageModal',
+  ($scope, $state, $stateParams, Search, SearchService,
+  ResultPresenterFactory, MessageModal) ->
     $scope.search = new Search(type: $stateParams.type, query: $stateParams.query)
+    $scope.MessageModal = MessageModal
     
     $scope.viewOptionSelected = 'list-view'
     $scope.isNetViewSelected = ->
       $scope.viewOptionSelected == 'net-view'
     
-    SearchService.perform($scope.search)
+    $scope.dataLoaded = (type, data) ->
+      $scope.results = _(data).map((resultData) ->
+        ResultPresenterFactory.build(type, resultData)
+      )
+
+    SearchService.perform($scope.search.toParams(), $scope.dataLoaded)
 
     $scope.submit = (e) ->
       e.preventDefault()

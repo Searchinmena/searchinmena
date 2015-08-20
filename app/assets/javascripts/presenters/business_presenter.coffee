@@ -1,4 +1,4 @@
-class BusinessPresenter
+class SIM.BusinessPresenter
   constructor: (business, tags, types) ->
     @business = business
     @tags = tags
@@ -40,4 +40,7 @@ class BusinessPresenter
     else
       undefined
 
-@Sim.value('BusinessPresenter', BusinessPresenter)
+  path: ->
+    "business({ id: #{@id()} })"
+
+@Sim.value('BusinessPresenter', SIM.BusinessPresenter)

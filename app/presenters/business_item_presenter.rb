@@ -26,7 +26,7 @@ class BusinessItemPresenter < BasePresenter
   def basic_attributes
     {
       id: business_item.id,
-      business_id: business_item.business_id,
+      business: BasicBusinessPresenter.new(business_item.business, locale),
       name: business_item.name,
       description: business_item.description,
       fob_price: business_item.fob_price,
