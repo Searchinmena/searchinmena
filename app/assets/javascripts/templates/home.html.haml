@@ -10,13 +10,13 @@
     %input{ type: "submit", value: "{{ 'search_submit' | translate }}" }
   .browse-buttons
     %h2.title {{ "home.browse_header" | translate }}
-    %a.category-btn
+    %a.category-btn{ 'ui-sref': 'results({ type: "product" })' }
       %span.icon-shopping-cart
       {{ "home.products" | translate }}
-    %a.category-btn
+    %a.category-btn{ 'ui-sref': 'results({ type: "service" })' }
       %span.icon-user
       {{ "home.services" | translate }}
-    %a.category-btn
+    %a.category-btn{ 'ui-sref': 'results({ type: "business" })' }
       %span.icon-briefcase
       {{ "home.businesses" | translate }}
 %section.landing-header
