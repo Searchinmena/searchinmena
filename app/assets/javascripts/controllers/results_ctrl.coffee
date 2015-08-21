@@ -11,7 +11,7 @@
 
     $scope.perPage = ITEMS_PER_PAGE
     $scope.pagination = {
-      current: 1
+      current: $stateParams.page
     }
     
     $scope.viewOptionSelected = 'list-view'
