@@ -1,4 +1,4 @@
-helpers = require("./helpers/helpers.coffee")
+helpers = require("./helpers.coffee")
 
 class BusinessPage
   constructor: ->
