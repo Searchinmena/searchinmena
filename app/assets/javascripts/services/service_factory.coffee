@@ -11,5 +11,8 @@
 
     delete: (params, successCallback, errorCallback) ->
       Service.delete(params, successCallback, errorCallback)
+
+    indexPath: ->
+      "dashboard.services"
 ]
 

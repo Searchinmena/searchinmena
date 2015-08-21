@@ -17,7 +17,7 @@
       controller: 'DashboardHomeCtrl'
     )
     .state('dashboard.products',
-      url: '/products',
+      url: '/products?:page',
       templateUrl: 'products/index.html',
       controller: 'ProductsIndexCtrl'
     )
@@ -27,7 +27,7 @@
       controller: 'ProductsNewCtrl'
     )
     .state('dashboard.services',
-      url: '/services',
+      url: '/services?:page',
       templateUrl: 'services/index.html',
       controller: 'ServicesIndexCtrl'
     )

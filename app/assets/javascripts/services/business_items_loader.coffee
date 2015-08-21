@@ -1,20 +1,21 @@
 @Sim.service 'BusinessItemsLoader', ['ITEMS_PER_PAGE', 'BusinessItemPresenter',
-  (ITEMS_PER_PAGE, BusinessItemPresenter) ->
+  '$state', '$stateParams'
+  (ITEMS_PER_PAGE, BusinessItemPresenter, $state, $stateParams) ->
     initialize: (businessItemFactory, scope) ->
       scope.perPage = ITEMS_PER_PAGE
       scope.pagination = {
-        current: 1
+        current: $stateParams.page
       }
 
-      scope.assignData = (data) ->
+      scope.dataLoaded = (data) ->
         scope.businessItems = for attributes in data.items
           businessItemFactory.buildPresenter(attributes)
         scope.total = data.count
 
-      scope.pageChanged = (newPage) ->
-        businessItemFactory.get({ page: newPage }, scope.assignData)
+      businessItemFactory.get({ page: $stateParams.page }, scope.dataLoaded)
 
-      scope.pageChanged(1)
+      scope.pageChanged = (newPage) ->
+        $state.go(businessItemFactory.indexPath(), { page: newPage })
 
       scope.deleteClicked = (businessItem) ->
         params = { id: businessItem.get('id'), page: scope.pagination.current }

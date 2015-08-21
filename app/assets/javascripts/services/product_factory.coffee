@@ -11,4 +11,7 @@
 
     delete: (params, successCallback, errorCallback) ->
       Product.delete(params, successCallback, errorCallback)
+
+    indexPath: ->
+      "dashboard.products"
 ]
