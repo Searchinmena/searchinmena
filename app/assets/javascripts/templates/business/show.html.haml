@@ -10,7 +10,7 @@
           %span.icon.icon-phone-alt
           {{ businessPresenter.phone() }}
         .contact-item
-          %span.icon.icon-pushpin{ 'ng-show': 'result.location()' }
+          %span.icon.icon-pushpin{ 'ng-show': 'businessPresenter.location()' }
           {{ businessPresenter.location() }}
           %span.address-line
             {{ businessPresenter.addressLine1() }}
