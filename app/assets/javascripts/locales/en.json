@@ -1,4 +1,6 @@
 {
+  "contact_seller": "Contact seller",
+  "search_submit": "Search",
   "registration": {
     "submit": "Sign up"
   },
@@ -25,8 +27,7 @@
     "watch_video": "watch video",
     "see_dashboard": "See dashboard",
     "join_now": "Join now",
-    "search_placeholder": "I'm looking for...",
-    "search_submit": "Search"
+    "search_placeholder": "I'm looking for..."
   },
   "confirm_email_message": {
     "text": "Please confirm your email",
@@ -83,7 +84,6 @@
       "submit": "Save changes"
     },
     "show": {
-      "contact_seller": "Contact Seller",
       "information": "Information",
       "products": "Products",
       "services": "Services",
@@ -155,33 +155,27 @@
     "fob_price": "FOB price",
     "fob_price_comment": "eg. 100'000 USD per kg",
     "per": "per",
-    "port": "Port",
     "supply": "Supply ability",
     "supply_comment": "eg. 1000 piece/pieces per day",
     "choose_currency": "Choose currency",
     "choose_unit": "Choose unit",
-    "choose_frequency": "Choose frequency",
-    "payment_terms": "Payment terms",
-    "packaging": "Packaging details"
+    "choose_frequency": "Choose frequency"
   },
   "business_item": {
+    "model_number": "Model number",
+    "brand_name": "Brand mame",
+    "min_order_quantity_number": "Min order",
+    "place_of_origin": "Place of origin",
+    "scope_of_work": "Scope of work",
+    "average_completion_time": "Avg completion time",
     "seller": "Seller",
-    "contact_seller": "Contact seller",
     "basic_info": "Basic info",
     "fob_price": "Fob price",
-    "supply_ability": "Supply ability",
+    "port": "Port",
+    "supply_ability_capacity": "Supply ability",
     "payment_terms": "Payment terms",
     "attributes": "Attributes",
     "packaging_details": "Packaging details"
-  },
-  "product": {
-    "model_number": "Model number",
-    "brand_name": "Brand mame",
-    "min_order": "Min order"
-  },
-  "service": {
-    "place_of_origin": "Place of origin",
-    "avg_completion_time": "Avg completion time"
   },
   "business_items": {
     "edit": "edit",
@@ -238,5 +232,21 @@
       "submit": "Send",
       "success": "Message successfully sent."
     }
+  },
+  "search": {
+    "types": {
+      "all": "All",
+      "product": "Product",
+      "service": "Service",
+      "business": "Company"
+    }
+  },
+  "results": {
+    "no_results": "No results found",
+    "from": "from",
+    "location": "location",
+    "see_company_profile": "See company profile",
+    "title": "Search Results",
+    "view_options": "view options"
   }
 }

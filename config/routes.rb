@@ -41,4 +41,6 @@ Rails.application.routes.draw do
   resources :product_categories, only: [:index]
   resources :service_categories, only: [:index]
   resources :messages, only: [:create]
+
+  get '/search' => "search#index", as: :search
 end

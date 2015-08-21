@@ -1,14 +1,13 @@
-%form.search-form
+%form.search-form{ "ng-submit": "submit($event)" }
   %h2.title {{ "home.search_header" | translate }}
   .field.search-field
     .select-field
-      %select
-        %option all
-        %option product
-        %option service
-        %option company
-    %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}" }
-    %input{ type: "submit", value: "{{ 'home.search_submit' | translate }}" }
+      %select{ "ng-model": "search.type" }
+        %option{ 'ng-repeat': 'type in SearchService.searchTypes()', value: '{{type}}' }
+          {{ SearchService.translationKeyFor(type) | translate }}
+    %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}",
+      "ng-model": "search.query" }
+    %input{ type: "submit", value: "{{ 'search_submit' | translate }}" }
   .browse-buttons
     %h2.title {{ "home.browse_header" | translate }}
     %a.category-btn

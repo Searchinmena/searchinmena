@@ -1,0 +1,37 @@
+.search-results-content
+  %form.search-results-form{ 'ng-submit': 'submit($event)' }
+    .field.search-field
+      %input{ type: 'text', value: '{{ search.query }}', 'ng-model': 'search.query' }
+      %input{ type: 'submit', value: '{{ "search_submit" | translate }}' }
+
+  .search-filters
+    .browse-options
+      %browse-filter{ type: 'all', search: 'search' }
+        {{ 'home.all' | translate }}
+      %browse-filter{ type: 'product', search: 'search' }
+        %span.icon.icon-shopping-cart
+        {{ 'home.products' | translate }}
+      %browse-filter{ type: 'service', search: 'search' }
+        %span.icon.icon-user
+        {{ 'home.services' | translate }}
+      %browse-filter{ type: 'business', search: 'search' }
+        %span.icon.icon-briefcase
+        {{ 'home.businesses' | translate }}
+    .view-options
+      %span.filter-label {{ "results.view_options" | translate }}
+      %view-option.icon-th-list{ type: 'list-view', selected: 'viewOptionSelected' }
+      %view-option.icon-th{ type: 'net-view', selected: 'viewOptionSelected' }
+
+  %h3.title {{ resultsCount }} {{ "results.title" | translate }}
+
+  %p.empty-results{ 'ng-hide': 'results.length > 0' }
+    {{ "results.no_results" | translate }}
+
+  %ul.search-results{ 'ng-class': '{ "net-view": isNetViewSelected() }',
+    'ng-show': 'results.length > 0' }
+    %li.result-item{ 'dir-paginate': 'result in results | itemsPerPage: perPage',
+      'total-items': 'total', 'current-page': 'pagination.current' }
+      %ng-include{ 'src': 'result.templatePath()' }
+
+  .pagination-container
+    %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }

@@ -1,0 +1,7 @@
+%p.breadcrumbs
+  %span {{ "category.in" | translate }}
+  %span.breadcrumbs-item{ "ng-repeat": "item in businessItem.breadcrumbsWithoutLast()" }
+    {{ item.name }}
+    %span.icon-chevron-right
+  %span.breadcrumbs-item
+    {{ businessItem.lastBreadcrumb().name }}

@@ -3,7 +3,7 @@ require "rails_helper"
 describe ServicePresenter do
   it_behaves_like "BusinessItemPresenter" do
     let(:business_item) do
-      item = create(:service)
+      item = create(:service, business: business)
 
       item.service_attributes << create(:service_attribute)
       item.payment_terms << create(:payment_term)

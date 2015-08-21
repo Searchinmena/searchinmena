@@ -1,4 +1,6 @@
 class BusinessRepository < AbstractRepository
+  include SearchableByNameRepository
+
   def assign_tags(business, tags)
     business.assign_attributes(tags: tags)
   end

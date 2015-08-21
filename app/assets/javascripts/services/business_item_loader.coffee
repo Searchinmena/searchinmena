@@ -1,13 +1,13 @@
 @Sim.service 'BusinessItemLoader', ['Business',  'SmartFlash', '$state',
-  'Lightbox', 'MessageModal',
-  (Business, SmartFlash, $state, Lightbox, MessageModal) ->
+  'Lightbox', 'MessageModal', 'BusinessItemPresenter',
+  (Business, SmartFlash, $state, Lightbox, MessageModal, BusinessItemPresenter) ->
     initialize: (businessItemFactory, id, scope) ->
       scope.MessageModal = MessageModal
 
       businessItemFactory.get({ id: id },
         (attributes) ->
-          scope.businessItem = new SIM.BusinessItem(attributes)
-          scope.business = Business.get({ id: attributes['business_id'] })
+          scope.businessItem = businessItemFactory.buildPresenter(attributes)
+          scope.business = Business.get({ id: scope.businessItem.businessId() })
           scope.photos = scope.businessItem.get('photos')
           scope.coverPhoto = scope.businessItem.get('cover_photo')
         ,

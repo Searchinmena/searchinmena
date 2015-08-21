@@ -1,3 +1,5 @@
+helpers = require("./helpers/helpers.coffee")
+
 class BusinessPage
   constructor: ->
     @errorMessage = "Company couldn't be saved, please check the form"
@@ -22,11 +24,6 @@ class BusinessPage
   businessTypesSelectToggle: ->
     element(@businessTypesSelectLocator)
 
-  select: (selectElement, optionName) ->
-    selectElement.click()
-    selectElement.element(By.cssContainingText("option", optionName)).click()
-    browser.actions().mouseDown().mouseUp().perform()
-
   fieldsWithErrors: ->
     element.all(By.css(".field-with-errors"))
 
@@ -39,7 +36,7 @@ class BusinessPage
     @businessTypesSelectToggle().click()
 
   clearCountry: ->
-    @select(@countrySelect(), "Select country")
+    helpers.select(@countrySelect(), "Select country")
 
   clearTags: ->
     element.all(By.css(".remove-button")).each( (removeButton) ->
@@ -76,7 +73,7 @@ class BusinessPage
   fillRequiredFields: ->
     @nameField().sendKeys("Lunar Logic")
     @phoneField().sendKeys("0048 12 430 22 88")
-    @select(@countrySelect(), "Poland")
+    helpers.select(@countrySelect(), "Poland")
     @businessTypesSelectToggle().click()
     element(By.linkText("Business services")).click()
 

@@ -1,11 +1,18 @@
-@Sim.factory 'ServiceFactory', ['Service', (Service) ->
-  build: ->
-    new Service()
+@Sim.factory 'ServiceFactory', ['Service', 'ServicePresenter',
+  (Service, ServicePresenter) ->
+    build: ->
+      new Service()
 
-  get: (params, successCallback, errorCallback) ->
-    Service.get(params, successCallback, errorCallback)
+    buildPresenter: (attributes) ->
+      new ServicePresenter(attributes)
 
-  delete: (params, successCallback, errorCallback) ->
-    Service.delete(params, successCallback, errorCallback)
+    get: (params, successCallback, errorCallback) ->
+      Service.get(params, successCallback, errorCallback)
+
+    delete: (params, successCallback, errorCallback) ->
+      Service.delete(params, successCallback, errorCallback)
+
+    indexPath: ->
+      "dashboard.services"
 ]
 

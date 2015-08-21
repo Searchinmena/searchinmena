@@ -7,7 +7,7 @@ shared_examples "BusinessItemPresenter" do
   let(:expected_keys) do
     [
       :id,
-      :business_id,
+      :business,
       :name,
       :description,
       :fob_price,
@@ -47,6 +47,14 @@ shared_examples "BusinessItemPresenter" do
       f
     end
 
+    let(:business) { create(:business, country: country) }
+    let(:country) { create(:country, translations: []) }
+    let!(:country_translation) do
+      create(:translation, translatable: country,
+                           locale: locale,
+                           value: "Poland")
+    end
+
     before do
       expect(BusinessItemCategoryPresenter).to receive(:new)
         .with(business_item.category, locale).and_return("category")
@@ -71,5 +79,14 @@ shared_examples "BusinessItemPresenter" do
     it { expect(subject[:fob_price_unit]).to eq("Box/Boxes") }
     it { expect(subject[:supply_ability_unit]).to eq("Box/Boxes") }
     it { expect(subject[:supply_ability_frequency]).to eq("Quater") }
+
+    context "returns business data" do
+      subject { presenter.as_json[:business].as_json }
+
+      it { expect(subject[:id]).to eq(business.id) }
+      it { expect(subject[:name]).to eq(business.name) }
+      it { expect(subject[:city]).to eq(business.city) }
+      it { expect(subject[:country]).to eq(country_translation.value) }
+    end
   end
 end

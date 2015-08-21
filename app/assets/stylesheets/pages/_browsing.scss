@@ -2,19 +2,13 @@
   position: relative;
   background-color: white;
 
-  .title {
-    padding: 0 $bs2;
+  @media screen and (min-width: $medium-desktop) {
+    min-height: 100vh;
+    min-height: calc(100vh - 106px);
   }
 
-  .breadcrumbs {
-    font-size: $bs09;
-    margin: $bs0 0 0;
-    padding: 0 $bs2 $bs1;
-    border-bottom: $default-border;
-
-    a {
-      border: 0;
-    }
+  .title {
+    padding: 0 $bs2;
   }
 }
 
@@ -47,6 +41,10 @@
     background-color: $blue-basic;
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: $big-phone) {
     font-size: $bs09;
   }
@@ -57,7 +55,7 @@
     width: auto;
   }
 
-  span {
+  .icon {
     font-size: $bs3;
     vertical-align: middle;
     display: none;
@@ -126,7 +124,18 @@
     &.active {
       color: $purple-basic;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
+}
+
+.empty-results {
+  padding: 0 $bs2;
+  font-size: $bs2;
+  color: $grey;
+  text-align: center;
 }
 
 .search-results {
@@ -135,7 +144,7 @@
   list-style: none;
 
   @media screen and (min-width: $tablet) {
-    padding: 0;
+    padding: 0 0 $bs2 0;
   }
 }
 
@@ -234,6 +243,10 @@
     }
   }
 
+  .breadcrumbs {
+    margin-top: 0;
+  }
+
   .result-item-description {
     @include float-direction;
     font-size: $bs09;
@@ -322,10 +335,14 @@
   }
 
   .result-item-title {
-    margin: $bs0 0 $bs-3;
+    margin: 0 0 $bs-3 0;
+    display: block;
+    max-height: 2.8rem;
+    overflow: hidden;
 
     @media screen and (min-width: $tablet) {
       font-size: $bs1;
+      max-height: 3.2rem;
     }
   }
 
@@ -333,6 +350,7 @@
     max-width: none;
     width: 100%;
     float: none;
+    overflow: hidden;
   }
 
   .item-img-link {
@@ -383,6 +401,14 @@
 
     @media screen and (min-width: $big-desktop) {
       width: 20%;
+    }
+
+    @media screen and (min-width: 1820px) {
+      width: 16.66%;
+    }
+
+    @media screen and (min-width: 2120px) {
+      width: 14.285%;
     }
 
     .from {

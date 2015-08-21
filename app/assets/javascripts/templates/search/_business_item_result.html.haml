@@ -1,0 +1,33 @@
+%a.item-img-link{ 'ui-sref': '{{ result.showPath() }}' }
+  %img{ "ng-src": "{{ result.coverPhotoUrl('bigger_thumb') }}" }
+.result-header-info
+  %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
+    {{ result.get('name') }}
+  .from
+    %span {{ "results.from" | translate }}:
+    %a{ 'ui-sref': '{{ result.businessPath() }}' } {{ result.businessName() }}
+.result-item-description
+  %breadcrumbs{ 'business-item': 'result' }
+
+  %table.item-details
+    %tr{ 'ng-repeat': 'property in result.basicInfoSnapshot()' }
+      %td.attribute
+        {{ result.translationKeyFor(property) | translate }}:
+      %td
+        {{ result.displayProperty(property) }}
+
+    %tr{ 'ng-repeat': 'attribute in result.get("attributes")',
+    'ng-show': 'result.hasAttributes()' }
+      %td.attribute {{ attribute.name }}
+      %td {{ attribute.value }}
+.business-summary
+  .business-name
+    {{ result.businessName() }}
+  .business-location
+    %span {{ "results.location" | translate }}:
+    {{ result.businessLocation() }}
+  %a.plain-link{ 'ui-sref': '{{ result.businessPath() }}' }
+    {{ "results.see_company_profile" | translate }}
+  %button.contact-supplier.contact-supplier{ "ng-click": "MessageModal.new(result.businessId())" }
+    %span.icon.icon-envelope
+    %span.value {{ "contact_seller" | translate }}

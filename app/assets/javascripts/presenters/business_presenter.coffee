@@ -1,4 +1,4 @@
-class BusinessPresenter
+class SIM.BusinessPresenter
   constructor: (business, tags, types) ->
     @business = business
     @tags = tags
@@ -40,4 +40,15 @@ class BusinessPresenter
     else
       undefined
 
-@Sim.value('BusinessPresenter', BusinessPresenter)
+  showPath: ->
+    "business({ id: #{@id()} })"
+
+  templatePath: ->
+    'search/_business_result.html'
+
+  coverPhotoUrl: (type) ->
+    # TODO: change when logo is implemented
+    @business.logo = {}
+    @business.logo[type || 'url']
+
+@Sim.value('BusinessPresenter', SIM.BusinessPresenter)

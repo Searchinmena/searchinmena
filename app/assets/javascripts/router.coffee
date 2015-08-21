@@ -17,7 +17,7 @@
       controller: 'DashboardHomeCtrl'
     )
     .state('dashboard.products',
-      url: '/products',
+      url: '/products?:page',
       templateUrl: 'products/index.html',
       controller: 'ProductsIndexCtrl'
     )
@@ -27,7 +27,7 @@
       controller: 'ProductsNewCtrl'
     )
     .state('dashboard.services',
-      url: '/services',
+      url: '/services?:page',
       templateUrl: 'services/index.html',
       controller: 'ServicesIndexCtrl'
     )
@@ -75,12 +75,10 @@
     #   templateUrl: 'browse.html'
     # )
     $stateProvider.state('results',
-      url: '/results',
-      templateUrl: 'results.html'
+      url: '/results?:type&:query&:page',
+      templateUrl: 'search/results.html',
+      controller: 'ResultsCtrl'
     )
-    # TODO
-    # it needs to be parametried with id,
-    # but for now it's Gosia's mockup
     $stateProvider.state('business',
       url: '/company/:id',
       templateUrl: 'business/show.html'

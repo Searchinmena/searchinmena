@@ -3,7 +3,7 @@ require "rails_helper"
 describe ProductPresenter do
   it_behaves_like "BusinessItemPresenter" do
     let(:business_item) do
-      item = create(:product)
+      item = create(:product, business: business)
 
       item.product_attributes << create(:product_attribute)
       item.payment_terms << create(:payment_term)
