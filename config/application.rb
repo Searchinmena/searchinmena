@@ -36,6 +36,7 @@ module Sim
     config.action_mailer.default_url_options = { host: A9n.app_host }
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
+    config.action_mailer.asset_host = A9n.app_host
 
     # Override field error wrapper
     config.action_view.field_error_proc = proc { |html_tag|

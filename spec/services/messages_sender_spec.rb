@@ -2,8 +2,12 @@ require "rails_helper"
 
 describe MessagesSender do
   describe "#perform" do
-    let(:sender) { MessagesSender.new(validator_factory) }
+    let(:sender) { MessagesSender.new(validator_factory, message_formatter) }
     let(:validator_factory) { double(:validator_factory, new: validator) }
+    let(:message_formatter) do
+      double(:messasage_formatter, perform: formatted_body)
+    end
+    let(:formatted_body) { "formatted body" }
     let(:validator) { double(:validator, valid?: valid) }
 
     subject { sender.perform(business_id, user, message_subject, message_body) }
@@ -36,10 +40,10 @@ describe MessagesSender do
 
     it do
       expect(UserMailer).to receive(:contact_seller)
-        .with(business.user, user, message_subject, message_body)
+        .with(business.user, user, message_subject, formatted_body)
         .and_return(double(:mailer, deliver_now: nil))
       expect(UserMailer).to receive(:message_confirmation)
-        .with(business, user, message_subject, message_body)
+        .with(business, user, message_subject, formatted_body)
         .and_return(double(:mailer, deliver_now: nil))
       subject
     end
