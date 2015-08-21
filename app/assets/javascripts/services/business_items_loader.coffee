@@ -12,7 +12,10 @@
           businessItemFactory.buildPresenter(attributes)
         scope.total = data.count
 
-      businessItemFactory.get({ page: $stateParams.page }, scope.dataLoaded)
+      scope.reloadPage = ->
+        businessItemFactory.get({ page: $stateParams.page }, scope.dataLoaded)
+
+      scope.reloadPage()
 
       scope.pageChanged = (newPage) ->
         $state.go(businessItemFactory.indexPath(), { page: newPage })
@@ -20,4 +23,5 @@
       scope.deleteClicked = (businessItem) ->
         params = { id: businessItem.get('id'), page: scope.pagination.current }
         businessItemFactory.delete(params, scope.assignData)
+        scope.reloadPage()
 ]
