@@ -1,8 +1,6 @@
 @Sim.service 'BusinessItemsLoader', ['ITEMS_PER_PAGE', 'BusinessItemPresenter',
   (ITEMS_PER_PAGE, BusinessItemPresenter) ->
     initialize: (businessItemFactory, scope) ->
-      scope.businessItems = []
-      scope.total = 0
       scope.perPage = ITEMS_PER_PAGE
       scope.pagination = {
         current: 1

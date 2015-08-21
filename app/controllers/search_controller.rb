@@ -6,8 +6,8 @@ class SearchController < ApplicationController
   def index
     response = search_service.perform(params[:type], params[:query])
     if response.successful?
-      render json: response.results
-        .map { |result| result_presenter_factory.build(result, locale) }
+      render json: SearchResultsPresenter.new(result_presenter_factory,
+                                              response.results, params[:page], locale)
     else
       head :conflict
     end

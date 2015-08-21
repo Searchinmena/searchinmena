@@ -75,7 +75,7 @@
     #   templateUrl: 'browse.html'
     # )
     $stateProvider.state('results',
-      url: '/results?:type&:query',
+      url: '/results?:type&:query&:page',
       templateUrl: 'search/results.html',
       controller: 'ResultsCtrl'
     )
