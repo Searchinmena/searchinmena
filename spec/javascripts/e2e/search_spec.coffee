@@ -27,7 +27,6 @@ describe SearchPage, ->
       helpers.select(page.searchTypeSelect(), "Product")
       page.searchQueryInput().sendKeys("New Product")
       page.submitButton().click()
-      browser.pause()
 
       expect(page.resultItem("New Product").isDisplayed()).toBe(true)
 
