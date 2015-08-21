@@ -24,7 +24,7 @@
 
   %h3.title {{ resultsCount }} {{ "results.title" | translate }}
 
-  %p{ 'ng-hide': 'results.length > 0' }
+  %p.empty-results{ 'ng-hide': 'results.length > 0' }
     {{ "results.no_results" | translate }}
 
   %ul.search-results{ 'ng-class': '{ "net-view": isNetViewSelected() }',
