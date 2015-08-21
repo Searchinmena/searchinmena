@@ -7,7 +7,9 @@ class SearchController < ApplicationController
     response = search_service.perform(params[:type], params[:query])
     if response.successful?
       render json: SearchResultsPresenter.new(result_presenter_factory,
-                                              response.results, params[:page], locale)
+                                              response.results,
+                                              params[:page],
+                                              locale)
     else
       head :conflict
     end
