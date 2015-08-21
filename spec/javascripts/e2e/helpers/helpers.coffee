@@ -12,3 +12,9 @@ module.exports =
         expect(browser.driver.getCurrentUrl()).toBe(url)
       )
     )
+
+  select: (selectElement, optionName) ->
+    selectElement.click()
+    selectElement.element(By.cssContainingText("option", optionName)).click()
+    browser.actions().mouseDown().mouseUp().perform()
+
