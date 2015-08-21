@@ -19,8 +19,8 @@ class SearchResultsPresenter
 
   def present_paginated
     offset = (page - 1) * LIMIT
-    ordered = results.to_a.sort! { |a, b| b.created_at <=> a.created_at }
-    paginated = ordered[offset..offset + LIMIT] || []
+    ordered = results.to_a.sort { |a, b| b.created_at <=> a.created_at }
+    paginated = ordered[offset...(offset + LIMIT)] || []
     paginated.map do |result|
       result_presenter_factory.build(result, locale)
     end
