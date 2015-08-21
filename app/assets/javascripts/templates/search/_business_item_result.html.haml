@@ -7,8 +7,7 @@
     %span {{ "results.from" | translate }}:
     %a{ 'ui-sref': '{{ result.businessPath() }}' } {{ result.businessName() }}
 .result-item-description
-  %breadcrumbs{ 'business-item': 'result',
-    'ng-show': 'result.showBreadcrumbs()' }
+  %breadcrumbs{ 'business-item': 'result' }
 
   %table.item-details
     %tr{ 'ng-repeat': 'property in result.basicInfoSnapshot()' }
