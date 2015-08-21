@@ -34,12 +34,12 @@
   .breadcrumbs {
     border: 0;
     color: $grey;
-    padding: 0 0 $bs0;
+    margin: 0 0 $bs-3;
   }
 
   .item-title {
     font-weight: normal;
-    margin: $bs-1 0 $bs0;
+    margin: $bs-1 0 $bs-3;
     line-height: 1.3;
   }
 
