@@ -9,7 +9,6 @@ module Sim
         @repository[table] ||= {}
 
         @repository[table][old_id] = new_id
-        p @repository
       end
 
       def new_id(table, old_id)

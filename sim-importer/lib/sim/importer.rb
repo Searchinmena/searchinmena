@@ -9,6 +9,7 @@ require "./lib/sim/importer/new_connection"
 require "./lib/sim/importer/mapper"
 require "./lib/sim/importer/old_data_retriever"
 require "./lib/sim/importer/standard_sql_builder"
+require "./lib/sim/importer/business_item_sql_builder"
 require "./lib/sim/importer/user_sql_builder"
 require "./lib/sim/importer/sql_builder_factory"
 require "./lib/sim/importer/columns_mapper"
@@ -46,12 +47,12 @@ module Sim
       run_cleaning(new_connection)
     end
 
-    def run_mapping(mapping, old_data_retriever, new_connection, migrator)
+    def self.run_mapping(mapping, old_data_retriever, new_connection, migrator)
       mapper = Mapper.new(mapping, old_data_retriever, new_connection, migrator)
       mapper.run
     end
 
-    def run_cleaning(new_connection)
+    def self.run_cleaning(new_connection)
       cleaner = Cleaner.new(new_connection)
       cleaner.run
     end

@@ -2,7 +2,9 @@ module Sim
   module Importer
     class SqlBuilderFactory
       REPOSITORY = {
-        users: UserSqlBuilder
+        users: UserSqlBuilder,
+        products: BusinessItemSqlBuilder,
+        services: BusinessItemSqlBuilder
       }
 
       attr_accessor :mapping, :columns_mapper, :relations_mapper
