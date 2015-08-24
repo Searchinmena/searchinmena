@@ -26,11 +26,7 @@ module Sim
         mapped_columns = columns_mapper.run(new_table, row)
         mapped_relations = relations_mapper.run(new_table, row)
         mapped_all = (mapped_columns + additional_values + mapped_relations)
-        "(#{quoted(mapped_all).join(", ")})"
-      end
-
-      def quoted(list)
-        list.map { |v| "'#{v}'" }
+        "(#{mapped_all.join(", ")})"
       end
 
       def additional_columns

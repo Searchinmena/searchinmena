@@ -13,14 +13,18 @@ module Sim
       def run(new_table)
         old_data = old_data(new_table)
         old_data = old_data.flatten.group_by { |v| v[GROUP_KEY] }
-        old_data.values.map { |v| Row.new(v.reduce({}, :merge)) }
+        old_data.values.map do |v|
+          data = v.reduce({}, :merge)
+          data = data.merge("id" => data[GROUP_KEY])
+          Row.new(data)
+        end
       end
 
       private
 
       def old_data(new_table)
         mapping.old_tables(new_table).map do |old_table|
-          command = "SELECT * FROM #{old_table} LIMIT 3"
+          command = "SELECT * FROM #{old_table}"
           data = old_connection.select_all(command)
           data.map do |row|
             key = mapping.group_by(new_table, old_table)

@@ -11,7 +11,7 @@ module Sim
       end
 
       def additional_values
-        [generate_encrypted_password]
+        ["'#{generate_encrypted_password}'"]
       end
 
       private
