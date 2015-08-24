@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823105226) do
+ActiveRecord::Schema.define(version: 20150824074355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,13 +100,13 @@ ActiveRecord::Schema.define(version: 20150823105226) do
   add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.string   "name",                                                                                 null: false
+    t.string   "name",                                                 null: false
     t.string   "model_number"
     t.string   "brand_name"
     t.string   "description"
     t.integer  "category_id"
-    t.datetime "created_at",                                           default: '2015-08-23 10:56:00', null: false
-    t.datetime "updated_at",                                           default: '2015-08-23 10:56:00', null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.integer  "min_order_quantity_number"
     t.integer  "min_order_quantity_unit_id"
     t.decimal  "fob_price",                   precision: 17, scale: 2
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 20150823105226) do
     t.integer  "supply_ability_unit_id"
     t.integer  "supply_ability_frequency_id"
     t.string   "packaging_details"
-    t.integer  "business_id",                                                                          null: false
+    t.integer  "business_id",                                          null: false
   end
 
   add_index "products", ["fob_price_currency_id"], name: "index_products_on_fob_price_currency_id", using: :btree
@@ -159,7 +159,7 @@ ActiveRecord::Schema.define(version: 20150823105226) do
   add_index "service_photos", ["service_id"], name: "index_service_photos_on_service_id", using: :btree
 
   create_table "services", force: :cascade do |t|
-    t.string   "name",                                                                                     null: false
+    t.string   "name",                                                     null: false
     t.string   "place_of_origin"
     t.text     "scope_of_work"
     t.string   "description"
@@ -174,9 +174,9 @@ ActiveRecord::Schema.define(version: 20150823105226) do
     t.integer  "supply_ability_unit_id"
     t.integer  "supply_ability_frequency_id"
     t.string   "packaging_details"
-    t.integer  "business_id",                                                                              null: false
-    t.datetime "created_at",                                               default: '2015-08-23 10:56:00', null: false
-    t.datetime "updated_at",                                               default: '2015-08-23 10:56:00', null: false
+    t.integer  "business_id",                                              null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
   end
 
   add_index "services", ["average_completion_time_unit_id"], name: "index_services_on_average_completion_time_unit_id", using: :btree

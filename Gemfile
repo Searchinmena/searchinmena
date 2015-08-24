@@ -43,6 +43,7 @@ end
 group :test do
   gem 'factory_girl'
   gem 'simplecov'
+  gem 'timecop'
 end
 
 group :development do

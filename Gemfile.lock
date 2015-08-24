@@ -445,6 +445,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    timecop (0.8.0)
     timers (4.0.1)
       hitimes
     tzinfo (1.2.2)
@@ -506,6 +507,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   therubyracer
+  timecop
   uglifier (>= 1.3.0)
   unicorn
   whenever

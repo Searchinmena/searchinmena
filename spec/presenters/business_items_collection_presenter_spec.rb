@@ -2,8 +2,14 @@ require "rails_helper"
 
 describe BusinessItemsCollectionPresenter do
   describe "#as_json" do
+    let(:now) { DateTime.parse("10.07.1987") }
+
     let!(:products) do
-      20.times.map { create(:product, business: user.business) }
+      20.times.map do |i|
+        Timecop.freeze(now + i.day) do
+          create(:product, business: user.business, created_at: Time.now)
+        end
+      end
     end
     let(:user) { create(:seller) }
     let(:page) { "1" }
