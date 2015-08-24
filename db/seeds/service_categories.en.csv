@@ -59,17 +59,17 @@ Agency Services,Used Machinery & Equipment Auction Service
 Agency Services,Watch Agents
 Assurance Services,
 Auction,
-Brokerage, Intermediary Service
+"Brokerage, Intermediary Service"
 Business Travel Services,Business Travel Packages
 Business Travel Services,Corporate Travel
 Business Travel Services,Hotels Services
 Business Travel Services,Other Business Travel Services
 Business Travel Services,Tickets
-Certification,Inspection & Credit Management,Credit Investigation & Management
-Certification,Inspection & Credit Management,Inspection & Quality Control Service
-Certification,Inspection & Credit Management,Management System Certification
-Certification,Inspection & Credit Management,Other Certification, Inspection & Credit Management
-Certification,Inspection & Credit Management,Product Certification
+"Certification,Inspection & Credit Management",Credit Investigation & Management
+"Certification,Inspection & Credit Management",Inspection & Quality Control Service
+"Certification,Inspection & Credit Management",Management System Certification
+"Certification,Inspection & Credit Management","Other Certification, Inspection & Credit Management"
+"Certification,Inspection & Credit Management",Product Certification
 Computer & Information Technology Service,Data Processing
 Computer & Information Technology Service,Other Computer & Information Technology Service
 Computer & Information Technology Service,Software Development
