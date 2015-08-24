@@ -20,6 +20,7 @@ require "./lib/sim/importer/migrator"
 require "./lib/sim/importer/ids_mapper"
 require "./lib/sim/importer/countries_mapper"
 require "./lib/sim/importer/row"
+require "./lib/sim/importer/cleaner"
 
 module Sim
   module Importer
@@ -41,8 +42,18 @@ module Sim
                                    relations_mapper)
       migrator = Migrator.new(new_connection, sql_builder_factory, ids_mapper)
 
+      run_mapping(mapping, old_data_retriever, new_connection, migrator)
+      run_cleaning(new_connection)
+    end
+
+    def run_mapping(mapping, old_data_retriever, new_connection, migrator)
       mapper = Mapper.new(mapping, old_data_retriever, new_connection, migrator)
       mapper.run
+    end
+
+    def run_cleaning(new_connection)
+      cleaner = Cleaner.new(new_connection)
+      cleaner.run
     end
   end
 end

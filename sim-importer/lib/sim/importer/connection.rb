@@ -8,6 +8,10 @@ module Sim
       def self.insert(command)
         connection.insert(command)
       end
+
+      def self.update(command)
+        connection.update(command)
+      end
     end
   end
 end
