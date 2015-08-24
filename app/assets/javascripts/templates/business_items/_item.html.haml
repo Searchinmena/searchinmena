@@ -6,7 +6,7 @@
   %breadcrumbs{ 'business-item': 'businessItem' }
 
 .item-options
-  %a.edit{ href: "#" }
+  %a.edit{ "ui-sref": "{{ businessItem.editPath() }}" }
     %span.icon.icon-pencil
     {{ "business_items.edit" | translate }}
   %a.see-page{ "ui-sref": "{{ businessItem.showPath() }}", target: "_blank" }

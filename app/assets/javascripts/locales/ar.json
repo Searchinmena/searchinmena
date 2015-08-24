@@ -188,9 +188,11 @@
     "add_new_product": "أضف منتج جديد",
     "successfully_added": "تمت إضافة المنتج بنجاح",
     "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
+    "form": {
+      "basic_section": "المعلومات الأساسية"
+    },
     "new": {
       "form_title": "منتج جديد",
-      "basic_section": "المعلومات الأساسية",
       "name": "أسم المنتج",
       "details_section": "تفاصيل المنتج",
       "model": "رقم الموديل",
@@ -199,6 +201,10 @@
       "order": "حد الطلب الأدنى",
       "order_comment": " مثال: 1,000 علبة",
       "submit": "أضف منتج جديد"
+    },
+    "edit": {
+      "form_title": "Edit product",
+      "submit": "Save product"
     }
   },
   "services": {
@@ -207,9 +213,11 @@
     "add_new_service": "أضف خدمة جديدة",
     "successfully_added": "تمّ إضافة الخدمة بنجاح",
     "adding_failed": "خطأ ما حدث أثتاء إضافة الخدمة، تأكد من الحقول مرة أخرى",
+    "form": {
+      "basic_section": "المعلومات الأساسية"
+    },
     "new": {
       "form_title": "خدمة جديدة",
-      "basic_section": "معلومات أساسية",
       "name": "اسم الخدمة",
       "details_section": "تفاصيل الخدمة",
       "place_of_origin": "المكان",
@@ -218,6 +226,10 @@
       "average_completion_time": "متوسط زمن الإنتهاء",
       "average_completion_time_comment": "مثال: 100 ساعة",
       "submit": "أضف"
+    },
+    "edit": {
+      "form_title": "Edit service",
+      "submit": "Save service"
     }
   },
   "other": {

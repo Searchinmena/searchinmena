@@ -1,10 +1,10 @@
 %section.dashboard-content
-  %h2.header-title {{ "services.new.form_title" | translate }}
+  %h2.header-title {{ "services.edit.form_title" | translate }}
 
   %form{ "ng-submit": "submit($event)" }
     %div{ "ng-include": "'services/_form.html'" }
-
+      
     .actions.with-spinner
-      %input{ type: "submit", value: '{{ "services.new.submit" | translate }}',
+      %input{ type: "submit", value: '{{ "services.edit.submit" | translate }}',
         "ng-disabled": "loading" }
       .spinner{ "ng-show": "loading" }

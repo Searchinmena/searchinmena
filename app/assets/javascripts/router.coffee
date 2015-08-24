@@ -26,6 +26,11 @@
       templateUrl: 'products/new.html',
       controller: 'ProductsNewCtrl'
     )
+    .state('dashboard.edit_product',
+      url: '/products/:id/edit',
+      templateUrl: 'products/edit.html',
+      controller: 'ProductsEditCtrl'
+    )
     .state('dashboard.services',
       url: '/services?:page',
       templateUrl: 'services/index.html',
@@ -35,6 +40,11 @@
       url: '/services/new',
       templateUrl: 'services/new.html',
       controller: 'ServicesNewCtrl'
+    )
+    .state('dashboard.edit_service',
+      url: '/services/:id/edit',
+      templateUrl: 'services/edit.html',
+      controller: 'ServicesEditCtrl'
     )
     .state('dashboard.business',
       url: '/company',

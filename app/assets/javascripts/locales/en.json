@@ -188,9 +188,11 @@
     "add_new_product": "Add new product",
     "successfully_added": "Product was successfully added",
     "adding_failed": "Error occurred while adding product, please check the form",
+    "form": {
+      "basic_section": "Basic info"
+    },
     "new": {
       "form_title": "New product",
-      "basic_section": "Basic info",
       "name": "Product name",
       "details_section": "Product details",
       "model": "Model number",
@@ -199,6 +201,10 @@
       "order": "Min order",
       "order_comment": "eg. 10'000 bottles",
       "submit": "Add new product"
+    },
+    "edit": {
+      "form_title": "Edit product",
+      "submit": "Save product"
     }
   },
   "services": {
@@ -207,9 +213,11 @@
     "add_new_service": "Add new service",
     "successfully_added": "Service was successfully added",
     "adding_failed": "Error occurred while adding service, please check the form",
+    "form": {
+      "basic_section": "Basic info"
+    },
     "new": {
       "form_title": "New service",
-      "basic_section": "Basic info",
       "name": "Service name",
       "details_section": "Service details",
       "place_of_origin": "Place of origin",
@@ -218,6 +226,10 @@
       "average_completion_time": "Average completion time",
       "average_completion_time_comment": "eg. 100 hours",
       "submit": "Add new service"
+    },
+    "edit": {
+      "form_title": "Edit service",
+      "submit": "Save service"
     }
   },
   "other": {
