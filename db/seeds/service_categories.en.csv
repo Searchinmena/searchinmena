@@ -8,8 +8,8 @@ Advertising,Radio Advertising
 Advertising,Trade Show Advertising
 Advertising,Tv Advertising
 Agency Services,Advertisement Agents
-Agency Services,زراعة & By- Product Agents
-Agency Services,أزياء Agents
+Agency Services,Agricultrual Agents
+Agency Services,Fashion Agents
 Agency Services,Automotive & Motorcycle Parts Agents
 Agency Services,Bag & Luggage Agents
 Agency Services,Beauty Products Agents
@@ -59,17 +59,17 @@ Agency Services,Used Machinery & Equipment Auction Service
 Agency Services,Watch Agents
 Assurance Services,
 Auction,
-"Brokerage, Intermediary Service",
+Brokerage, Intermediary Service,
 Business Travel Services,Business Travel Packages
 Business Travel Services,Corporate Travel
 Business Travel Services,Hotels Services
 Business Travel Services,Other Business Travel Services
 Business Travel Services,Tickets
-"Certification,Inspection & Credit Management",Credit Investigation & Management
-"Certification,Inspection & Credit Management",Inspection & Quality Control Service
-"Certification,Inspection & Credit Management",Management System Certification
-"Certification,Inspection & Credit Management","Other Certification, Inspection & Credit Management"
-"Certification,Inspection & Credit Management",Product Certification
+Certification,Inspection & Credit Management,Credit Investigation & Management
+Certification,Inspection & Credit Management,Inspection & Quality Control Service
+Certification,Inspection & Credit Management,Management System Certification
+Certification,Inspection & Credit Management,Other Certification, Inspection & Credit Management
+Certification,Inspection & Credit Management,Product Certification
 Computer & Information Technology Service,Data Processing
 Computer & Information Technology Service,Other Computer & Information Technology Service
 Computer & Information Technology Service,Software Development
@@ -108,7 +108,7 @@ Logistics Services,Warehouse Services
 Logistics Services,Waterway Freight
 Other Business Services,
 Passport & Visa,
-Processing Services,زراعة Products Processing
+Processing Services,Agricultural Products Processing
 Processing Services,Construction Materials Processing
 Processing Services,Electronic Products & Components Processing
 Processing Services,Fashion Accessories Processing
@@ -127,8 +127,8 @@ Processing Services,Packaging Product Processing
 Processing Services,Plating Services
 Processing Services,Shoe Processing
 Processing Services,Telecommunication Processing
-Project Cooperation,زراعة Projects
-Project Cooperation,أزياء Projects
+Project Cooperation,Agricultural Projects
+Project Cooperation,Fashion Projects
 Project Cooperation,Chemical Projects
 Project Cooperation,Computer Related Projects
 Project Cooperation,Construction Projects
