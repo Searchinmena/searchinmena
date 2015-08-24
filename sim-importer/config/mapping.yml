@@ -5,10 +5,14 @@ users:
       email: email
       first_name: first_name
       last_name: last_name
+      created_at: created_at
+      updated_at: updated_at
 businesses:
   companies:
     columns:
       name: name
+      created_at: created_at
+      updated_at: updated_at
     relations:
       user_id:
         new_name: user_id
