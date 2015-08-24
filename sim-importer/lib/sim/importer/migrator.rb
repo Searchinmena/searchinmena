@@ -17,6 +17,7 @@ module Sim
           new_id = new_connection.insert(command)
           ids_mapper.set(new_table, row["id"], new_id)
         end
+        ids_mapper.save
       end
     end
   end
