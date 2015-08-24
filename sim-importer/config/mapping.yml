@@ -27,15 +27,6 @@ businesses:
     group_by: company_id
     columns:
       year_established: year_registered
-trading_informations:
-  businesses_business_types:
-    relations:
-      company_id:
-        new_name: business_id
-        rel_table: businesses
-      #business_type_id1:
-        #new_name: business_type_id
-        #rel_table: missing!
 products:
   products:
     columns:
