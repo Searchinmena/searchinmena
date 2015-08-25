@@ -74,7 +74,10 @@ shared_examples "BusinessItemPresenter" do
       business_item.supply_ability_frequency = frequency
     end
 
-    it { expect(Set.new(subject.keys)).to eq(Set.new(expected_keys + additional_keys)) }
+    it do
+      expect(Set.new(subject.keys)).to eq(
+        Set.new(expected_keys + additional_keys))
+    end
     it { expect(subject[:breadcrumbs]).to eq("category") }
     it { expect(subject[:attributes]).to eq(["attribute"]) }
     it { expect(subject[:photos]).to eq(["photo"]) }
