@@ -1,36 +1,21 @@
 # Sim::Importer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sim/importer`. To experiment with that code, run `bin/console` for an interactive prompt.
+change database name in ../config/database.yml to sim_old_production_pg
+change database name in config/database.yml to sim_old_production_pg
 
-TODO: Delete this and the text above, and describe your gem
+cd ..
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+cd sim-importer
 
-## Installation
+./bin/run
+pg_dump -Fc sim_old_production_pg > old_production.dump
+scp -P 20022 old_production.dump root@sim.demo.llp.pl:~/
+scp -P 20022 config/ids_mapping.yml lunar@sim.demo.llp.pl:~/apps/sim/current/sim-importer/config/
+ssh root@sim.demo.llp.pl -p 20022
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -U lunar -d sim old_production.dump
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'sim-importer'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sim-importer
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sim-importer.
-
+cd /home/lunar/apps/sim/current
+RAILS_ENV=production bundle exec rake upload_production_photos
+RAILS_ENV=production bundle exec rake update_categories
