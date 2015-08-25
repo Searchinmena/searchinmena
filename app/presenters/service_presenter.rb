@@ -4,6 +4,8 @@ class ServicePresenter < BusinessItemPresenter
       place_of_origin: business_item.place_of_origin,
       scope_of_work: business_item.scope_of_work,
       average_completion_time: business_item.average_completion_time,
+      average_completion_time_unit_id:
+        business_item.average_completion_time_unit_id,
       average_completion_time_unit: average_completion_time_unit
     )
   end

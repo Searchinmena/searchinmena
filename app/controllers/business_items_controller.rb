@@ -55,7 +55,9 @@ class BusinessItemsController < ApplicationController
   end
 
   def photos_params
-    files = params.select { |key, _| key.to_s.include? "file" }.values
+    files = params.select do |key, path|
+      path.present? && key.to_s.include?("file")
+    end.values
     files.any? ? files : []
   end
 

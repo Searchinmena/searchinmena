@@ -46,7 +46,7 @@
           %td.attribute
             {{ "business_item.payment_terms" | translate }}:
           %td
-            %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.get('payment_terms')" }
+            %span.payment-term{ "ng-repeat": "paymentTerm in businessItem.paymentTerms()" }
               {{ paymentTerm }}
         %tr{ "ng-show": "businessItem.get('packaging_details')" }
           %td.attribute

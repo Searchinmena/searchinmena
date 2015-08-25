@@ -9,9 +9,7 @@ class SIM.BusinessItemPresenter
   constructor: (attributes) ->
     @attributes = attributes
     @business = new SIM.BusinessPresenter(attributes.business)
-    @breadcrumbs = new SIM.Breadcrumbs()
-    for categoryAttributes in attributes.breadcrumbs
-      @breadcrumbs.push(new SIM.Category(categoryAttributes))
+    @breadcrumbs = SIM.Breadcrumbs.fromParams(attributes.breadcrumbs)
     @propertyPresenterFactory = new SIM.PropertyPresenterFactory
 
   get: (attribute) ->
@@ -26,8 +24,11 @@ class SIM.BusinessItemPresenter
   coverPhotoUrl: (type) ->
     @get('cover_photo')[type || 'url']
 
+  paymentTerms: ->
+    @get('payment_terms').names
+
   hasPaymentTerms: ->
-    @get('payment_terms').length > 0
+    @paymentTerms().length > 0
 
   hasAttributes: ->
     @get('attributes').length > 0

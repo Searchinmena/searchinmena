@@ -19,6 +19,7 @@ describe ServicePresenter do
         :place_of_origin,
         :scope_of_work,
         :average_completion_time,
+        :average_completion_time_unit_id,
         :average_completion_time_unit
       ]
     end

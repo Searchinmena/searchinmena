@@ -4,6 +4,7 @@ class ProductPresenter < BusinessItemPresenter
       model_number: business_item.model_number,
       brand_name: business_item.brand_name,
       min_order_quantity_number: business_item.min_order_quantity_number,
+      min_order_quantity_unit_id: business_item.min_order_quantity_unit_id,
       min_order_quantity_unit: min_order_quantity_unit
     )
   end

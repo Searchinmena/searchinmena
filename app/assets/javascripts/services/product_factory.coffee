@@ -1,5 +1,8 @@
 @Sim.factory 'ProductFactory', ['Product', 'ProductPresenter',
   (Product, ProductPresenter) ->
+    resourceName: ->
+      'products'
+
     build: (attributes) ->
       new Product(attributes)
 

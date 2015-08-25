@@ -9,14 +9,19 @@ shared_examples "BusinessItemPresenter" do
       :id,
       :business,
       :name,
+      :category_id,
       :description,
       :fob_price,
       :fob_price_currency,
+      :fob_price_currency_id,
       :fob_price_unit,
+      :fob_price_unit_id,
       :port,
       :supply_ability_capacity,
       :supply_ability_unit,
+      :supply_ability_unit_id,
       :supply_ability_frequency,
+      :supply_ability_frequency_id,
       :packaging_details,
       :breadcrumbs,
       :attributes,
@@ -60,7 +65,7 @@ shared_examples "BusinessItemPresenter" do
         .with(business_item.category, locale).and_return("category")
       expect(PhotoPresenter).to receive(:new).and_return("photo")
       expect(AttributePresenter).to receive(:new).and_return("attribute")
-      expect(PaymentTermPresenter).to receive(:new).and_return("payment_term")
+      expect(PaymentTermsPresenter).to receive(:new).and_return("payment_terms")
 
       business_item.fob_price = 0.33
       business_item.fob_price_currency = currency
@@ -69,11 +74,11 @@ shared_examples "BusinessItemPresenter" do
       business_item.supply_ability_frequency = frequency
     end
 
-    it { expect(subject.keys).to eq(expected_keys + additional_keys) }
+    it { expect(Set.new(subject.keys)).to eq(Set.new(expected_keys + additional_keys)) }
     it { expect(subject[:breadcrumbs]).to eq("category") }
     it { expect(subject[:attributes]).to eq(["attribute"]) }
     it { expect(subject[:photos]).to eq(["photo"]) }
-    it { expect(subject[:payment_terms]).to eq(["payment_term"]) }
+    it { expect(subject[:payment_terms]).to eq("payment_terms") }
     it { expect(subject[:fob_price]).to eq(0.33) }
     it { expect(subject[:fob_price_currency]).to eq("USD") }
     it { expect(subject[:fob_price_unit]).to eq("Box/Boxes") }

@@ -6,7 +6,8 @@
   %p.field-comment {{ "photos.comment_thumbnail" | translate:photoCommentTranslationData }}
   %ul.photos-preview
     %li{ "ng-repeat": "photo in businessItem.photos" }
-      %img.preview-image{ "ngf-src": "photo",
+      %img.preview-image{ "ng-src": "{{photo.bigger_thumb}}", "ng-if": "photo.bigger_thumb" }
+      %img.preview-image{ "ngf-src": "photo", "ng-if": "!photo.bigger_thumb",
       "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
       %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
         %span.icon-remove

@@ -1,7 +1,10 @@
 @Sim.factory 'ServiceFactory', ['Service', 'ServicePresenter',
   (Service, ServicePresenter) ->
-    build: ->
-      new Service()
+    resourceName: ->
+      'services'
+
+    build: (attributes) ->
+      new Service(attributes)
 
     buildPresenter: (attributes) ->
       new ServicePresenter(attributes)

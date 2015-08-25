@@ -3,6 +3,12 @@ class SIM.Breadcrumbs
     @items = []
     @defaultTitle = defaultTitle
     @title = @defaultTitle
+ 
+  @fromParams: (breadcrumbsParams) ->
+    breadcrumbs = new SIM.Breadcrumbs()
+    for categoryAttributes in breadcrumbsParams
+      breadcrumbs.push(new SIM.Category(categoryAttributes))
+    breadcrumbs
 
   push: (item) ->
     @title = null

@@ -19,6 +19,7 @@ describe ProductPresenter do
         :model_number,
         :brand_name,
         :min_order_quantity_number,
+        :min_order_quantity_unit_id,
         :min_order_quantity_unit
       ]
     end

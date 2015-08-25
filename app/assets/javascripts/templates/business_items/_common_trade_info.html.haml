@@ -44,7 +44,9 @@
   %label {{ "business_item.payment_terms" | translate }}
   .checkbox-field{ "ng-repeat": "term in payment_terms track by term.id" }
     %input{ type: "checkbox", val: "{{term.id}}",
-    "ng-model": "businessItem.payment_terms[term.id]", id: 'payment_term-{{term.id}}' }
+    "ng-model": "businessItem.payment_terms[term.id]",
+    "ng-checked": "{{businessItem.payment_terms[term.id]}}",
+    id: 'payment_term-{{term.id}}' }
       %label.inline-label{ for: 'payment_term-{{term.id}}' } {{ term.label }}
 
 %form-field{ "error": "errors.business_item.packaging_details" }

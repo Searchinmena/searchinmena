@@ -1,12 +1,11 @@
-@Sim.service 'BusinessItemCreator', ['$rootScope', '$http', '$state'
+@Sim.service 'BusinessItemSaver', ['$http', '$state'
   '$modal', 'TranslatedFlash', 'BusinessItemWithDependencies', 'Upload', 'AttributesErrors',
   'MIN_IMAGE_WIDTH', 'MIN_IMAGE_HEIGHT', 'MAX_FILE_SIZE_IN_MB',
-  ($rootScope, $http, $state, $modal, TranslatedFlash,
+  ($http, $state, $modal, TranslatedFlash,
     BusinessItemWithDependencies, Upload, AttributesErrors,
     MIN_IMAGE_WIDTH, MIN_IMAGE_HEIGHT, MAX_FILE_SIZE_IN_MB) ->
 
-    initialize: (scope, selectsLoader, resourceName, categoriesController, businessItemFactory) ->
-      scope.businessItem = businessItemFactory.build()
+    initialize: (scope, selectsLoader, resourceName, categoriesController) ->
       scope.errors = {}
       scope.attributes = (new SIM.Attribute() for i in [0..1])
 

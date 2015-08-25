@@ -1,9 +1,9 @@
-@Sim.controller 'ProductsNewCtrl', ['$scope', 'BusinessItemCreator',
+@Sim.controller 'ProductsNewCtrl', ['$scope', 'BusinessItemSaver',
   'ProductFactory', 'selectsLoader',
-  ($scope, BusinessItemCreator, ProductFactory, selectsLoader) ->
-    RESOURCE_NAME = 'products'
+  ($scope, BusinessItemSaver, ProductFactory, selectsLoader) ->
+    $scope.businessItem = ProductFactory.build()
 
-    BusinessItemCreator.initialize(
-      $scope, selectsLoader, RESOURCE_NAME,
-      'ProductCategoriesCtrl', ProductFactory)
+    BusinessItemSaver.initialize(
+      $scope, selectsLoader, ProductFactory.resourceName(),
+      'ProductCategoriesCtrl')
 ]

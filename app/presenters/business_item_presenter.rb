@@ -1,5 +1,5 @@
 class BusinessItemPresenter < BasePresenter
-  inject :payment_term_repository, :translatable_repository
+  inject :translatable_repository
 
   takes :business_item, :repository, :photos_repository, :locale
 
@@ -9,7 +9,7 @@ class BusinessItemPresenter < BasePresenter
       attributes: attributes,
       photos: photos,
       cover_photo: cover_photo,
-      payment_terms: payment_terms
+      payment_terms: PaymentTermsPresenter.new(business_item, locale)
     )
   end
 
@@ -30,13 +30,18 @@ class BusinessItemPresenter < BasePresenter
       id: business_item.id,
       business: BasicBusinessPresenter.new(business_item.business, locale),
       name: business_item.name,
+      category_id: business_item.category_id,
       description: business_item.description,
       fob_price: business_item.fob_price,
+      fob_price_currency_id: business_item.fob_price_currency_id,
       fob_price_currency: fob_price_currency,
+      fob_price_unit_id: business_item.fob_price_unit_id,
       fob_price_unit: fob_price_unit,
       port: business_item.port,
       supply_ability_capacity: business_item.supply_ability_capacity,
+      supply_ability_unit_id: business_item.supply_ability_unit_id,
       supply_ability_unit: supply_ability_unit,
+      supply_ability_frequency_id: business_item.supply_ability_frequency_id,
       supply_ability_frequency: supply_ability_frequency,
       packaging_details: business_item.packaging_details
     }
@@ -72,11 +77,5 @@ class BusinessItemPresenter < BasePresenter
 
   def attributes
     attributes_collection.map { |a| AttributePresenter.new(a) }
-  end
-
-  def payment_terms
-    payment_term_repository.for_business_item(business_item, locale).map do |pt|
-      PaymentTermPresenter.new(pt)
-    end
   end
 end
