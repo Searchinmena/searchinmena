@@ -10,17 +10,17 @@ en:
     privacy: "Privacy Policy"
 
   text:
-    title: "What you get"
+    title: "What We Offer"
     description:
       "Create an account with your company's information and products and start selling. For buyers, an account allows you to contact sellers directly through the website."
     line: "As a"
     subtitle_1: "seller"
     subtitle_2: "buyer"
     seller_line_1: "you can create public profile of your company"
-    seller_line_2: "show products and services that you offer"
-    seller_line_3: "reach your potential client."
-    buyer_line_1: "you can create a buying request"
-    buyer_line_2: "find best offer"
+    seller_line_2: "display your products and services"
+    seller_line_3: "attract potential client."
+    buyer_line_1: "send inquiries to the seller"
+    buyer_line_2: "find the best offers"
     category_label: "I am a:"
 
   business:
