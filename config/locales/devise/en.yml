@@ -56,7 +56,7 @@ en:
       submit: "Send"
       submit_edit: "Update"
     registrations:
-      create: "Create Account"
+      create: "Create an Account"
       ask: "Are you sure?"
       unhappy: "Unhappy?"
       cancel_account: "Cancel my account"
