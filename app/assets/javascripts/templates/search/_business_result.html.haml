@@ -32,6 +32,6 @@
 .business-summary
   %a.plain-link{ 'ui-sref': '{{ result.showPath() }}' }
     {{ "results.see_company_profile" | translate }}
-  %button.contact-supplier.contact-supplier{ "ng-click": "MessageModal.new(result.businessId())" }
+  %button.contact-supplier.business-contact{ "ng-click": "MessageModal.new(result.businessId())" }
     %span.icon.icon-envelope
     %span.value {{ "contact_seller" | translate }}

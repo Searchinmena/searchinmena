@@ -33,13 +33,33 @@ address {
 
 .footer-categories {
   @extend %clearfix;
-  max-width: 3 * $bs9;
   margin: 0 0 $bs2;
 
   @media screen and (min-width: $tablet) {
     margin: $bs2 0 0;
   }
 }
+
+.footer-category-btn {
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  display: block;
+  padding: $bs0 0 ;
+
+  span {
+    font-size: $bs5;
+    display: inline-block;
+    vertical-align: sub;
+    height: auto;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+    padding: $bs-3 $bs0 ;
+  }
+}
+
 .social-link {
   @include transition(all, .25s, ease-in-out);
   width: $bs5;
