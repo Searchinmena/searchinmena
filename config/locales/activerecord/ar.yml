@@ -6,7 +6,7 @@ ar:
       too_long: "طويل جدا (الحد الأقصى هو %{count} أحرف)"
       invalid: "غير صالح"
       inclusion: " ليست موجودة في القائمة"
-      uniqueness: "مؤخوذ"
+      uniqueness: "مستخدمة من قبل مستخدم آخر"
       file_too_large: " ميغابايت {max_file_size_in_mb} لايمكنك تحميل ملف أكبر من  "
       invalid_content_type: " %{types} أنواع الملفات التي يمكن تحميلها"
       invalid_size: "٪{in_width} x ٪{min_height} الصورة صغيرة جدا. حجم الصورة على الأقل"
