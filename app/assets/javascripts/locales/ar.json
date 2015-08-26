@@ -247,18 +247,18 @@
   },
   "search": {
     "types": {
-      "all": "All",
-      "product": "Product",
-      "service": "Service",
-      "business": "Company"
+      "all": "الجميع",
+      "product": "منتجات",
+      "service": "خدمات",
+      "business": "شركات"
     }
   },
   "results": {
-    "no_results": "No results found",
-    "from": "from",
-    "location": "location",
-    "see_company_profile": "See company profile",
-    "title": "Search Results",
-    "view_options": "view options"
+    "no_results": "عفوا،لاتوجد نتائج.",
+    "from": "من",
+    "location": "المكان",
+    "see_company_profile": "شاهد ملف الشركة",
+    "title": "نتائج البحث",
+    "view_options": "خيارات المشاهدة"
   }
 }
