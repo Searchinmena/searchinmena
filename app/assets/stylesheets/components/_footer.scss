@@ -7,43 +7,6 @@ footer {
   .title {
     text-transform: none;
   }
-
-  .businesses-list {
-    @extend %clearfix;
-    list-style: none;
-
-    li {
-      @include float-direction;
-      display: inline-block;
-      width: 100%;
-
-      @media screen and (min-width: $desktop) {
-        width: 45%;
-        margin: 0 5% 0 0;
-
-        [dir="rtl"] & {
-          margin: 0 0 0 5%;
-        }
-      }
-
-      @media screen and (min-width: $medium-desktop) {
-        width: 30%;
-
-        margin: 0 3% 0 0;
-
-        [dir="rtl"] & {
-          margin: 0 0 0 3%;
-        }
-      }
-    }
-  }
-
-  .businesses-list-link {
-    color: white;
-    padding: $bs-3 $bs-3 $bs-2 0;
-    display: block;
-    border-bottom: 0;
-  }
 }
 
 .address-title {
@@ -60,7 +23,7 @@ address {
 }
 
 .footer-column {
-  padding: $bs5;
+  padding: $bs2;
 
   @media screen and (min-width: $tablet) {
     @include float-direction;
@@ -68,6 +31,15 @@ address {
   }
 }
 
+.footer-categories {
+  @extend %clearfix;
+  max-width: 3 * $bs9;
+  margin: 0 0 $bs2;
+
+  @media screen and (min-width: $tablet) {
+    margin: $bs2 0 0;
+  }
+}
 .social-link {
   @include transition(all, .25s, ease-in-out);
   width: $bs5;

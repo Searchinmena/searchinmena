@@ -40,9 +40,14 @@
   }
 
   h1 {
-    font-size: $bs3;
+    font-size: $bs2;
     line-height: 1.3;
     color: $blue-basic;
+    padding: 0 $bs2;
+
+    @media screen and (min-width: $standard-desktop) {
+      font-size: $bs3;
+    }
     
     @media screen and (min-width: $standard-desktop) {
       font-size: $bs5;
