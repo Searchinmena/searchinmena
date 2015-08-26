@@ -53,7 +53,7 @@ en:
       edit_page_header: "Change your password"
       new_password_field: "New password"
       confirm_password_field: "Confirm new password"
-      submit: "Send me reset password instructions"
+      submit: "Send"
       submit_edit: "Update"
     registrations:
       create: "Create Account"
