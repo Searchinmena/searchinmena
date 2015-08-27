@@ -1,13 +1,11 @@
 set :application, 'sim'
-server 'sim.demo.llp.pl', user: 'lunar', roles: %w{web app db}, port: 20_022
-set :port, 20_022
+
 set :branch, 'master'
 
 set :repo_url, 'git@github.com:LunarLogic/sim.git'
 set :deploy_via, :remote_cache
 set :copy_exclude, ['.git']
 
-set :user, 'lunar'
 set :deploy_to, -> { "/home/#{fetch(:user)}/apps/#{fetch(:application)}" }
 
 set :unicorn_rack_env, -> { fetch(:rails_env) }

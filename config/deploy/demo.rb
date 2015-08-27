@@ -4,3 +4,4 @@ server "sim.demo.llp.pl",
   roles: %w{web app db},
   port: 20_022
 set :port, 20_022
+set :user, 'lunar'
