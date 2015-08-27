@@ -5,8 +5,10 @@ describe BusinessStoringHandler do
     described_class.new(business,
                         business_params,
                         tags_params,
+                        logo_params,
                         locale,
-                        business_validator)
+                        business_validator,
+                        logo_validator)
   end
 
   subject { handler.perform }
@@ -14,12 +16,15 @@ describe BusinessStoringHandler do
   let(:business) { double(:business) }
   let(:business_params) { double(:business_params) }
   let(:tags_params) { double(:tags_params) }
+  let(:logo_params) { double(:logo_params) }
   let(:locale) { "en" }
 
+  fake(:business_repository)
   fake(:business_validator)
   fake(:storing_handler)
   fake(:tags_storing_handler)
-  fake(:business_repository)
+  fake(:logo_storing_handler)
+  fake(:logo_validator)
 
   before do
     expect(BusinessRepository).to receive(:new)
@@ -30,13 +35,18 @@ describe BusinessStoringHandler do
     expect(TagsStoringHandler).to receive(:new)
       .with(business, tags_params, locale)
       .and_return(tags_storing_handler)
+    expect(LogoStoringHandler).to receive(:new)
+      .with(business, logo_validator, logo_params)
+      .and_return(logo_storing_handler)
   end
 
   describe "#perform" do
     let(:response) { Response.new(success: true) }
 
     it "performs storing handler and tags storing handler" do
-      [storing_handler, tags_storing_handler].each do |handler|
+      [storing_handler,
+       tags_storing_handler,
+       logo_storing_handler].each do |handler|
         expect(handler).to receive(:perform).and_return(response)
       end
 

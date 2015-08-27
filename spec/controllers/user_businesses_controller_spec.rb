@@ -49,6 +49,8 @@ describe UserBusinessesController do
     end
 
     context "user is logged in" do
+      fake(:user_category_service)
+
       let(:business) { build(:business) }
       let(:business_type) { create(:business_type) }
       let(:business_params) do
@@ -59,31 +61,47 @@ describe UserBusinessesController do
           "business_type_ids" => [business_type.id.to_s]
         }
       end
-      let(:params) { { business: business_params } }
+      let(:params) { { business: business_params.to_json } }
       let(:tags_params) { {} }
+      let(:logo_params) { { "logo" => nil } }
       let(:locale) { :en }
+
       let(:base_business_saver) { double(:base_business_saver) }
-      let(:business_saver) { double(:business_saver) }
-      let(:saver_response) do
-        double(successful?: successful, object: business)
+      let(:photos_storing_handler) do
+        double(:photos_storing_handler, photos: photos)
       end
 
-      fake(:user_category_service)
+      let(:business_saver) { double(:business_saver) }
+      let(:saver_response) do
+        double(successful?: successful, object: business, photos: photos)
+      end
+      let(:handlers) do
+        [base_business_saver, photos_storing_handler, user_category_service]
+      end
+      let(:photos) { double(:photos, select: []) }
 
       before do
         sign_in(user)
 
         expect(controller).to receive(:business_repository)
           .and_return(business_repository)
-        expect(controller).to receive(:user_category_service)
-          .and_return(user_category_service)
         expect(business_repository).to receive(:find_or_build)
           .and_return(business)
         expect(BaseBusinessSaver).to receive(:new)
-          .with(business, business_params, tags_params, locale, user)
+          .with(business, business_params, tags_params,
+                logo_params, locale, user)
           .and_return(base_business_saver)
+
+        expect(UserCategoryService).to receive(:new)
+          .and_return(user_category_service)
+
+        expect(Business::PhotosStoringHandler).to receive(:new)
+          .and_return(photos_storing_handler)
+        expect(photos_storing_handler).to receive(:photos)
+          .and_return(photos)
+
         expect(Business::Saver).to receive(:new)
-          .with(base_business_saver, user_category_service)
+          .with(handlers, business, photos)
           .and_return(business_saver)
         expect(business_saver).to receive(:perform).and_return(saver_response)
 

@@ -5,7 +5,6 @@ class LogoStoringHandler < BaseService
   def perform
     return ::Response.new(success: true, object: logo) if logo.blank?
 
-    validate
     success = if errors?
                 copy_errors
                 false
@@ -19,10 +18,11 @@ class LogoStoringHandler < BaseService
   end
 
   def logo
-    logo_params[:logo]
+    logo_params[:logo] if logo_params
   end
 
-  def validate
+  def valid?
+    return true if logo.blank?
     logo_validator.valid?
   end
 

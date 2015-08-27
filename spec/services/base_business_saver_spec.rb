@@ -2,7 +2,8 @@ require "rails_helper"
 
 describe BaseBusinessSaver do
   let(:saver) do
-    described_class.new(business, business_params, tags_params, locale, user)
+    described_class.new(business, business_params, tags_params,
+                        logo_params, locale, user)
   end
   let(:user) { create(:buyer) }
   let(:business_type) { create(:business_type) }
@@ -11,6 +12,7 @@ describe BaseBusinessSaver do
     build_business_params(business)
   end
   let(:tags_params) { {} }
+  let(:logo_params) { nil }
   let(:locale) { "en" }
   let(:valid) { false }
   let(:validator) do

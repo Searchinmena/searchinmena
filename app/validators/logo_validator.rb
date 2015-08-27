@@ -10,7 +10,9 @@ class LogoValidator < FileValidator
 
   validate :validate_minimum_image_size
 
-  def initialize(logo_params = {})
+  def initialize(logo_params)
+    logo_params ||= {}
+
     self.file = logo_params[:logo]
     super(logo_params)
   end

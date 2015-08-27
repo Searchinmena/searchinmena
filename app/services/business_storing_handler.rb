@@ -21,4 +21,8 @@ class BusinessStoringHandler < BaseService
                logo_storing_handler].map(&:perform).all?(&:successful?)
     Response.new(success: success, object: business)
   end
+
+  def valid?
+    [storing_handler, logo_storing_handler].map(&:valid?).all?
+  end
 end

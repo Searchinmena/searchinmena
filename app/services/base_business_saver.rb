@@ -19,6 +19,6 @@ class BaseBusinessSaver < BaseCreator
   end
 
   def valid?
-    logo_validator.valid? && validator.valid?
+    storing_handler.valid?
   end
 end
