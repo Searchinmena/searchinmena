@@ -13,23 +13,25 @@ describe BaseBusinessSaver do
   end
   let(:tags_params) { {} }
   let(:logo_params) { nil }
-
   let(:locale) { "en" }
   let(:valid) { false }
-  let(:validator) do
-    double(:validator, valid?: valid, errors?: !valid, copy_errors: nil)
+  let(:success) { true }
+
+  let(:response) { double(:reponse, successful?: success) }
+  let(:storing_handler) do
+    double(:storing_handler, valid?: valid, perform: response)
   end
 
   before do
-    expect(BusinessValidator).to receive(:new).with(business_params)
-      .and_return(validator)
+    expect(BusinessStoringHandler).to receive(:new)
+      .and_return(storing_handler)
   end
 
   describe "#valid?" do
     subject { saver.valid? }
 
-    it "delegates to business validator" do
-      expect(validator).to receive(:valid?)
+    it "validates" do
+      expect(storing_handler).to receive(:valid?)
       subject
     end
   end
@@ -39,6 +41,7 @@ describe BaseBusinessSaver do
 
     context "failed business creation" do
       let(:valid) { false }
+      let(:success) { false }
 
       it { is_expected.not_to be_successful }
 
@@ -49,7 +52,6 @@ describe BaseBusinessSaver do
 
     context "successful business creation" do
       let(:valid) { true }
-      fake(:user_category_service)
 
       it { is_expected.to be_successful }
 
