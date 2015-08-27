@@ -8,6 +8,6 @@ describe PhotoPresenter do
 
     subject { presenter.as_json.keys }
 
-    it { is_expected.to eq([:thumb, :bigger_thumb, :url]) }
+    it { is_expected.to eq([:id, :thumb, :bigger_thumb, :url]) }
   end
 end

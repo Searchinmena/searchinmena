@@ -22,8 +22,8 @@
     "services": "الخدمات",
     "businesses": "الشركات",
     "header_line_1": "انضم إلى البحث في مينا",
-    "header_line_2": "وابدأ باستقبال طلبات من مشترين.",
-    "sub_header": "نحن أكبر موقع للشركات التي ترغب في بيع منتجاتها وخدماتها في منطقة الشرق الأوسط وشمال إفريقيا",
+    "header_line_2": "وابدأ باستقبال طلبات من مشترين",
+    "sub_header": "أكبر موقع للشركات التي ترغب في بيع منتجاتها وخدماتها في منطقة الشرق الأوسط وشمال إفريقيا.",
     "watch_video": "شاهد الفيديو",
     "see_dashboard": "لوحة التحكم",
     "join_now": "انضم الآن",
@@ -186,7 +186,7 @@
     "empty_list": "لايوجد منتجات بعد.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
-    "successfully_added": "تمت إضافة المنتج بنجاح",
+    "successfully_saved": "Product was successfully saved",
     "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "form": {
       "basic_section": "المعلومات الأساسية"
@@ -211,7 +211,7 @@
     "empty_list": "لايوجد خدمات بعد",
     "your_services": "الخدمات",
     "add_new_service": "أضف خدمة جديدة",
-    "successfully_added": "تمّ إضافة الخدمة بنجاح",
+    "successfully_saved": "Service was successfully saved",
     "adding_failed": "خطأ ما حدث أثتاء إضافة الخدمة، تأكد من الحقول مرة أخرى",
     "form": {
       "basic_section": "المعلومات الأساسية"

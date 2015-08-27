@@ -11,7 +11,7 @@ class BusinessItem::ProductCreator < BaseService
   private
 
   def business_item_handler(business, params)
-    product = product_repository.new_for_business(
+    product = product_repository.find_or_new_for_business(
       business,
       params[:business_item]
     )

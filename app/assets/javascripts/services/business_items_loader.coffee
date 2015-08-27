@@ -22,6 +22,5 @@
 
       scope.deleteClicked = (businessItem) ->
         params = { id: businessItem.get('id'), page: scope.pagination.current }
-        businessItemFactory.delete(params, scope.assignData)
-        scope.reloadPage()
+        businessItemFactory.delete(params, scope.reloadPage)
 ]

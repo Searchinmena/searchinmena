@@ -229,7 +229,7 @@
     }
   }
 
-  .result-item-title {
+  .result-item-title, .result-item-title-strict {
     border-color: white;
     display: inline;
     line-height: 1.4;
@@ -241,6 +241,10 @@
     &:hover, &:focus {
       border-color: $blue-basic;
     }
+  }
+
+  .result-item-title-strict {
+    display: none;
   }
 
   .breadcrumbs {
@@ -269,7 +273,7 @@
     }
 
     @media screen and (min-width: $medium-desktop) {
-      max-width: 4.4 * $bs8;
+      max-width: 5 * $bs8;
     }
 
     @media screen and (min-width: $standard-desktop) {
@@ -298,7 +302,7 @@
 
     [dir="rtl"] & {
       right: auto;
-      left: 0;
+      left: $bs2;
     }
 
     @media screen and (min-width: $tablet) {
@@ -306,6 +310,17 @@
       right: auto;
       top: auto;
       width: 100%;
+      padding: $bs-3;
+      margin-top: $bs-3;
+
+      @media screen and (min-width: $big-desktop) {
+        padding: $bs1;
+        margin-top: $bs2;
+      }
+
+      [dir="rtl"] & {
+        left: auto;
+      }
     }
 
     .value {
@@ -328,7 +343,7 @@
 
     a {
       color: $basic-font;
-      border-color: $basic-font;
+      border: none;
     }
   }
 }
@@ -344,14 +359,14 @@
   }
 
   .result-item-title {
-    margin: 0 0 $bs-3 0;
-    display: block;
-    max-height: 2.8rem;
-    overflow: hidden;
-
+    display: none
+  }
+  
+  .result-item-title-strict {
+    display: inline;
+    
     @media screen and (min-width: $tablet) {
       font-size: $bs1;
-      max-height: 3.2rem;
     }
   }
 
@@ -405,7 +420,7 @@
 
     @media screen and (min-width: $desktop) {
       width: 25%;
-      height: 23em;
+      height: 24em;
     }
 
     @media screen and (min-width: $big-desktop) {
@@ -453,10 +468,15 @@
   }
 
   .business-name {
+    line-height: 1.4;
     margin: $bs-5 0;
     font-weight: bold;
 
     @media screen and (min-width: $tablet) {
+      font-size: $bs0;
+    }
+
+    @media screen and (min-width: $big-desktop) {
       font-size: $bs1;
     }
   }

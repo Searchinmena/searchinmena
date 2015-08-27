@@ -51,14 +51,19 @@ class BusinessItemsController < ApplicationController
   end
 
   def payment_terms_params
-    params[:payment_terms] ? JSON.parse(params[:payment_terms]).keys : []
+    if params[:payment_terms]
+      JSON.parse(params[:payment_terms]).select { |_, v| v }.keys
+    else
+      []
+    end
   end
 
   def photos_params
-    files = params.select do |key, path|
+    existing_files = JSON.parse(params[:business_item])["photos"] || []
+    new_files = params.select do |key, path|
       path.present? && key.to_s.include?("file")
     end.values
-    files.any? ? files : []
+    BusinessItem::Photo::Params.new(existing_files, new_files)
   end
 
   def render_collection
@@ -90,7 +95,8 @@ class BusinessItemsController < ApplicationController
 
   def business_item_params
     business_item_parsed_params.permit(
-      [:name,
+      [:id,
+       :name,
        :description,
        :category_id,
        :fob_price,

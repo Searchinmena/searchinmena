@@ -3,6 +3,7 @@ class PhotoPresenter
 
   def as_json(*)
     {
+      id: photo.id,
       thumb: repository.photo_url(photo, :thumb),
       bigger_thumb: repository.photo_url(photo, :bigger_thumb),
       url: repository.photo_url(photo)

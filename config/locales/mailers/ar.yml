@@ -1,0 +1,15 @@
+ar:
+  mailers:
+    contact_seller:
+      message_title: "A message has been sent to you:"
+    message_confirmation:
+      subject: "Subject:"
+      message_title: "You've just sent a message to"
+    shared:
+      address_title: "Our mailing address is:"
+      address_line_1: "MENA Network LTD"
+      address_line_2: "DSO - Techno Hub Building"
+      address_line_3: "Block A - G029"
+      address_line_4: "Dubai"
+      address_line_5: "United Arab Emirates"
+

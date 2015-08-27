@@ -99,6 +99,10 @@ $alert-dark-green: #236900;
     background: none;
     border: none;
 
+    [dir="rtl"] & {
+      float: left;
+    }
+
     &:focus, &:hover {
       color: black;
       outline: 0;
@@ -110,7 +114,7 @@ $alert-dark-green: #236900;
   }
 
   [dynamic="flash.text"] {
-    float: left;
+    @include float-direction;
     max-width: 90%;
   }
 }

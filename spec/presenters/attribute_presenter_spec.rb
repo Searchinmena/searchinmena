@@ -7,6 +7,6 @@ describe AttributePresenter do
 
     subject { presenter.as_json.keys }
 
-    it { is_expected.to eq([:name, :value]) }
+    it { is_expected.to eq([:id, :name, :value]) }
   end
 end

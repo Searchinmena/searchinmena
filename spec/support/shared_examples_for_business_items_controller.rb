@@ -9,12 +9,15 @@ shared_examples "BusinessItemsController" do |resource_name|
       "supply_ability_capacity" => "2",
       "supply_ability_unit_id" => "1",
       "supply_ability_frequency_id" => "1",
-      "packaging_details" => "packaging"
+      "packaging_details" => "packaging",
+      "photos" => existing_photos
     }
   end
   let(:user) { create(:seller) }
   let(:attributes_params) { [{ name: "ania", value: "hai" }] }
   let(:payment_terms_params) { { "12" => true } }
+  let(:existing_photos) { ["existing photos"] }
+  let(:photos_params) { double(:photos_params) }
 
   before do
     allow(controller).to receive(:repository)
@@ -29,7 +32,13 @@ shared_examples "BusinessItemsController" do |resource_name|
     end
 
     context "user is logged in" do
-      before { sign_in(user) }
+      before do
+        sign_in(user)
+
+        expect(BusinessItem::Photo::Params).to receive(:new)
+          .with(existing_photos, [])
+          .and_return(photos_params)
+      end
 
       let(:creator) { double(:creator, perform: creator_response) }
       let(:creator_response) do
@@ -43,17 +52,20 @@ shared_examples "BusinessItemsController" do |resource_name|
       let(:business_item) { double(:business_item) }
       let(:expected_params) do
         {
-          business_item: business_item_params,
-          photos: [],
+          business_item: expected_business_items_params,
+          photos: photos_params,
           attributes: attributes_params,
           payment_terms: payment_terms_params.keys
         }
+      end
+      let(:expected_business_items_params) do
+        business_item_params.except("photos")
       end
 
       let(:new_business_item_params) do
         {
           business_item: business_item_params.to_json,
-          photos: [].to_json,
+          photos: [],
           attributes: attributes_params.to_json,
           payment_terms: payment_terms_params.to_json
         }
@@ -83,8 +95,8 @@ shared_examples "BusinessItemsController" do |resource_name|
           let(:attributes_params) { [] }
           let(:expected_params) do
             {
-              business_item: business_item_params,
-              photos: [],
+              business_item: expected_business_items_params,
+              photos: photos_params,
               attributes: [],
               payment_terms: payment_terms_params.keys
             }
@@ -97,8 +109,8 @@ shared_examples "BusinessItemsController" do |resource_name|
           let(:payment_terms_params) { {} }
           let(:expected_params) do
             {
-              business_item: business_item_params,
-              photos: [],
+              business_item: expected_business_items_params,
+              photos: photos_params,
               attributes: attributes_params,
               payment_terms: []
             }

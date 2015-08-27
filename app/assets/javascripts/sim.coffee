@@ -1,6 +1,6 @@
 @Sim = angular.module('sim', ['ui.router', 'templates', 'pascalprecht.translate', 'ngSanitize',
   'ngTagsInput', 'ngAnimate', 'ngResource', 'ngCookies', 'flash', 'ngFileUpload', 'ui.bootstrap',
-  'offClick', 'angularUtils.directives.dirPagination', 'bootstrapLightbox'])
+  'offClick', 'angularUtils.directives.dirPagination', 'bootstrapLightbox', 'truncate'])
 
 @Sim.SCROLL_TO_TOP_SPEED = 300
 

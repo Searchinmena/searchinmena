@@ -59,4 +59,4 @@ describe DashboardPage, ->
     it "redirects to sign in", ->
       page.get()
 
-      helpers.expectUrlChanged("/users/sign_in")
+      helpers.expectUrlChanged("/users/sign_in#/")
