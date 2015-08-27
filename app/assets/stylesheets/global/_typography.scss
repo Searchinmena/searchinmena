@@ -1,7 +1,7 @@
 $base-font: "Roboto", Helvetica, sans-serif;
 $bold-font: "Roboto", Helvetica, sans-serif;
-$base-arabic-font: "NotoNaskhArabic-Regular", Helvetica, serif;
-$bold-arabic-font: "NotoNaskhArabic-Bold", Helvetica, serif;
+$base-arabic-font: "NotoNaskhArabic-Regular", NotoSans-Regular, Helvetica, serif;
+$bold-arabic-font: "NotoNaskhArabic-Bold", NotoSans-Bold, Helvetica, serif;
 
 body {
   font-family: $base-font;
