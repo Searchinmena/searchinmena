@@ -186,7 +186,7 @@
     "empty_list": "No products yet.",
     "your_products": "Your products",
     "add_new_product": "Add new product",
-    "successfully_added": "Product was successfully added",
+    "successfully_saved": "Product was successfully saved",
     "adding_failed": "Error occurred while adding product, please check the form",
     "form": {
       "basic_section": "Basic info"
@@ -211,7 +211,7 @@
     "empty_list": "No services yet.",
     "your_services": "Your services",
     "add_new_service": "Add new service",
-    "successfully_added": "Service was successfully added",
+    "successfully_saved": "Service was successfully saved",
     "adding_failed": "Error occurred while adding service, please check the form",
     "form": {
       "basic_section": "Basic info"

@@ -186,7 +186,7 @@
     "empty_list": "لايوجد منتجات بعد.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
-    "successfully_added": "تمت إضافة المنتج بنجاح",
+    "successfully_saved": "Product was successfully saved",
     "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "form": {
       "basic_section": "المعلومات الأساسية"
@@ -211,7 +211,7 @@
     "empty_list": "لايوجد خدمات بعد",
     "your_services": "الخدمات",
     "add_new_service": "أضف خدمة جديدة",
-    "successfully_added": "تمّ إضافة الخدمة بنجاح",
+    "successfully_saved": "Service was successfully saved",
     "adding_failed": "خطأ ما حدث أثتاء إضافة الخدمة، تأكد من الحقول مرة أخرى",
     "form": {
       "basic_section": "المعلومات الأساسية"
