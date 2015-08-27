@@ -11,10 +11,10 @@ class Business::PhotosStoringHandler
 
   def perform
     success = if valid?
-      store
-    else
-      copy_errors
-    end
+                store
+              else
+                copy_errors
+              end
 
     Response.new(success: success, object: object)
   end

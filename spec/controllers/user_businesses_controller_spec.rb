@@ -95,7 +95,7 @@ describe UserBusinessesController do
         expect(UserCategoryService).to receive(:new)
           .and_return(user_category_service)
 
-        expect(Business::PhotosStoringHandler).to receive(:new)
+        expect(Business::PhotosStoringHandler).to receive(:new).twice
           .and_return(photos_storing_handler)
         expect(photos_storing_handler).to receive(:photos)
           .and_return(photos)

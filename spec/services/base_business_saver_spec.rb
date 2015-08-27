@@ -13,6 +13,7 @@ describe BaseBusinessSaver do
   end
   let(:tags_params) { {} }
   let(:logo_params) { nil }
+
   let(:locale) { "en" }
   let(:valid) { false }
   let(:validator) do

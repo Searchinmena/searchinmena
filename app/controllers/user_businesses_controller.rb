@@ -11,22 +11,27 @@ class UserBusinessesController < ApplicationController
   end
 
   def update
-    business = business_repository.find_or_build(user_id: current_user.id)
-    base_business_saver = BaseBusinessSaver.new(business, business_params,
-                                tags_params, logo_params, locale, current_user)
-    photos_storing_handler = Business::PhotosStoringHandler.new(
-      business_photo_repository, business, photos_params)
-    user_category_service = UserCategoryService.new(user_repository,
-                                                    current_user, business)
-    handlers = [base_business_saver, photos_storing_handler,
-                user_category_service]
+    @business = business_repository.find_or_build(user_id: current_user.id)
     photos = photos_storing_handler.photos
-    business_saver = Business::Saver.new(handlers, business, photos)
-    response = business_saver.perform()
+    business_saver = Business::Saver.new(handlers, @business, photos)
+    response = business_saver.perform
     render_response(response)
   end
 
   private
+
+  def handlers
+    base_business_saver = BaseBusinessSaver.new(@business, business_params,
+                                tags_params, logo_params, locale, current_user)
+    user_category_service = UserCategoryService.new(user_repository,
+                                                    current_user, @business)
+    [base_business_saver, photos_storing_handler, user_category_service]
+  end
+
+  def photos_storing_handler
+    Business::PhotosStoringHandler.new(
+      business_photo_repository, @business, photos_params)
+  end
 
   def render_response(response)
     if response.successful?

@@ -9,10 +9,10 @@ class Business::Saver < BaseService
 
   def perform
     success = if valid?
-      store
-    else
-      copy_errors
-    end
+                store
+              else
+                copy_errors
+              end
 
     Business::BusinessResponse.new(success: success,
                                    business: business,

@@ -3,9 +3,7 @@ require "rails_helper"
 describe BusinessStoringHandler do
   let(:handler) do
     described_class.new(business,
-                        business_params,
-                        tags_params,
-                        logo_params,
+                        params,
                         locale,
                         business_validator,
                         logo_validator)
@@ -19,6 +17,14 @@ describe BusinessStoringHandler do
   let(:logo_params) { double(:logo_params) }
   let(:locale) { "en" }
 
+  let(:params) do
+    {
+      business: business_params,
+      tags: tags_params,
+      logo: logo_params
+    }
+  end
+
   fake(:business_repository)
   fake(:business_validator)
   fake(:storing_handler)
@@ -30,13 +36,14 @@ describe BusinessStoringHandler do
     expect(BusinessRepository).to receive(:new)
       .and_return(business_repository)
     expect(StoringHandler).to receive(:new)
-      .with(business, business_params, business_repository, business_validator)
+      .with(business, params[:business], business_repository,
+            business_validator)
       .and_return(storing_handler)
     expect(TagsStoringHandler).to receive(:new)
-      .with(business, tags_params, locale)
+      .with(business, params[:tags], locale)
       .and_return(tags_storing_handler)
     expect(LogoStoringHandler).to receive(:new)
-      .with(business, logo_validator, logo_params)
+      .with(business, logo_validator, params[:logo])
       .and_return(logo_storing_handler)
   end
 
