@@ -229,7 +229,7 @@
     }
   }
 
-  .result-item-title {
+  .result-item-title, .result-item-title-strict {
     border-color: white;
     display: inline;
     line-height: 1.4;
@@ -241,6 +241,10 @@
     &:hover, &:focus {
       border-color: $blue-basic;
     }
+  }
+
+  .result-item-title-strict {
+    display: none;
   }
 
   .breadcrumbs {
@@ -344,14 +348,14 @@
   }
 
   .result-item-title {
-    margin: 0 0 $bs-3 0;
-    display: block;
-    max-height: 2.8rem;
-    overflow: hidden;
-
+    display: none
+  }
+  
+  .result-item-title-strict {
+    display: inline;
+    
     @media screen and (min-width: $tablet) {
       font-size: $bs1;
-      max-height: 3.2rem;
     }
   }
 
