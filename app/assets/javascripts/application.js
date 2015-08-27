@@ -29,6 +29,7 @@
 //= require ng-file-upload
 //= require angular-bootstrap
 //= require angular-off-click
+//= require angular-truncate
 //= require sim
 //= require router
 //= require constants

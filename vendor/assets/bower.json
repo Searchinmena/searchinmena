@@ -18,6 +18,7 @@
     "underscore": "latest",
     "angular-off-click": "0.0.7",
     "angular-utils-pagination": "0.8.2",
-    "angular-bootstrap-lightbox": "git@github.com:LunarLogic/angular-bootstrap-lightbox.git#0.6.1"
+    "angular-bootstrap-lightbox": "git@github.com:LunarLogic/angular-bootstrap-lightbox.git#0.6.1",
+    "angular-truncate": "latest"
   }
 }
