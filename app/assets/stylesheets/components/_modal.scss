@@ -75,7 +75,6 @@
     padding: $bs-3 0;
     border: none;
     display: inline-block;
-    
 
     &:hover {
       cursor: pointer;
@@ -113,6 +112,16 @@
 
 #category {
   margin: $bs0 0 0;
+}
+
+.lightbox-modal {
+  .modal-dialog {
+    max-width: 1250px;
+  }
+
+  .modal-content {
+    max-height: 1020px;
+  }
 }
 
 .lightbox-image-container {

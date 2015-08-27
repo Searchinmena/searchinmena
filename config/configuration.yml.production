@@ -15,8 +15,8 @@ production:
     max_name_length: 130
     max_phone_length: 50
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
-    min_image_width: 300
-    min_image_height: 250
+    min_image_width: 120
+    min_image_height: 120
     min_business_item_photo_count: 1
     max_business_item_photo_count: 10
     max_file_size_in_mb: 5
