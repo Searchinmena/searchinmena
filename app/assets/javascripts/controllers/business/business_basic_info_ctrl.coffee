@@ -35,14 +35,15 @@
     }
 
     namesForImages = (images) ->
-      names = _.map(images, (image, index) ->
-        'file' + index
-      )
+      if images
+        names = _.map(images, (image, index) ->
+          'file' + index
+        )
 
-      logoIndex = images.indexOf($scope.form.business.logo[0])
-      if logoIndex != -1
-        names[logoIndex] = 'logo'
-      names
+        logoIndex = images.indexOf($scope.form.business.logo[0])
+        if logoIndex != -1
+          names[logoIndex] = 'logo'
+        names
 
     $scope.saveAndUploadPhotos = ->
       $scope.loading = true
@@ -85,21 +86,6 @@
     $scope.submit = (e) ->
       e.preventDefault()
       $scope.saveAndUploadPhotos()
-
-      # $http(
-      #   url: USER_BUSINESS_PATH,
-      #   data: $scope.form,
-      #   method: 'PUT'
-      # ).success(->
-      #   # reauthorize user to show correct menu
-      #   CurrentUser.authorize()
-
-      #   $scope.errors = {}
-      #   TranslatedFlash.success('business.successfully_saved')
-      # ).error((errors) ->
-      #   $scope.errors = errors
-      #   TranslatedFlash.error('business.saving_failed')
-      # )
 
       false
 ]
