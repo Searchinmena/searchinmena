@@ -5,7 +5,7 @@
     {{ result.get('name') }}
   .from
     %span {{ "results.from" | translate }}:
-    %a{ 'ui-sref': '{{ result.businessPath() }}' } {{ result.businessName() }}
+    %a{ 'ui-sref': '{{ result.businessPath() }}' } {{ result.businessName() | characters:45 }}
 .result-item-description
   %breadcrumbs{ 'business-item': 'result' }
 
@@ -22,7 +22,7 @@
       %td {{ attribute.value }}
 .business-summary
   .business-name
-    {{ result.businessName() }}
+    {{ result.businessName() | characters: 65 }}
   .business-location
     %span {{ "results.location" | translate }}:
     {{ result.businessLocation() }}
