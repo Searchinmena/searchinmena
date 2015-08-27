@@ -8,6 +8,15 @@ module PhotoRepository
     photo.photo_url(type)
   end
 
+  def delete_other_than(business_item, ids)
+    relation = business_item.photos(business_item)
+    if ids.empty?
+      relation.delete_all
+    else
+      relation.where("id not in (?)", ids).delete_all
+    end
+  end
+
   private
 
   def tmp_photo_dir(photo)

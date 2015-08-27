@@ -8,7 +8,12 @@ module BusinessItemRepository
   end
 
   def new_for_business(business, params)
-    klass.new params.merge(business_id: business.id)
+    klass.new(params.merge(business_id: business.id))
+  end
+
+  def find_or_new_for_business(business, params)
+    business_item = klass.find_by(id: params[:id], business: business)
+    business_item || new_for_business(business, params)
   end
 
   def cover_photo_url_for(business_item, photos_repository, type = nil)

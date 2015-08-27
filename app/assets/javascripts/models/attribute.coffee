@@ -5,6 +5,7 @@ class SIM.Attribute
 
   @fromParams: (params) ->
     attribute = new SIM.Attribute()
+    attribute.id = params.id
     attribute.name = params.name
     attribute.value = params.value
     attribute

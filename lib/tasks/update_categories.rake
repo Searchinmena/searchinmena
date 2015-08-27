@@ -18,19 +18,13 @@ task update_categories: :environment do
         p "Updating #{resource} #{old_id}..."
 
         new_id = ids_map[resource.to_s][old_id.to_i]
-        p "no new_id" unless new_id
         next unless new_id
 
         business_item = factory.klass.find_by_id(new_id)
-        p "no business_item" unless business_item
         next unless business_item
 
-        category = factory.category_repository.
-          find_by_translation(category_name, "en")
-        unless category
-          binding.pry
-        end
-        p "no category" unless category
+        category = factory.category_repository
+          .find_by_translation(category_name, "en")
 
         business_item.category = category
         business_item.save
