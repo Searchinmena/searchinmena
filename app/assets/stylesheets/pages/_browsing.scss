@@ -273,7 +273,7 @@
     }
 
     @media screen and (min-width: $medium-desktop) {
-      max-width: 4.4 * $bs8;
+      max-width: 5 * $bs8;
     }
 
     @media screen and (min-width: $standard-desktop) {
@@ -310,6 +310,17 @@
       right: auto;
       top: auto;
       width: 100%;
+      padding: $bs-3;
+      margin-top: $bs-3;
+
+      @media screen and (min-width: $big-desktop) {
+        padding: $bs1;
+        margin-top: $bs2;
+      }
+
+      [dir="rtl"] & {
+        left: auto;
+      }
     }
 
     .value {
@@ -462,6 +473,10 @@
     font-weight: bold;
 
     @media screen and (min-width: $tablet) {
+      font-size: $bs0;
+    }
+
+    @media screen and (min-width: $big-desktop) {
       font-size: $bs1;
     }
   }
