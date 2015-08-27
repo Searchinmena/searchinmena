@@ -52,7 +52,7 @@
 
     .column.description-column
       %h4.section-title.line-behind{ "ng-show": "businessItem.get('scope_of_work')" }
-        %span {{ "business_item..scope_of_work" | translate }}
+        %span {{ "business_item.scope_of_work" | translate }}
       %p.item-description {{ businessItem.get('scope_of_work') }}
 
       %div{ "ng-include": "'business_item/_description.html'" }
