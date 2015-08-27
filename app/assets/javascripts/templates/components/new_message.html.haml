@@ -16,5 +16,6 @@
       %textarea{ "ng-model": "message.body" }
 
     .actions
-      %input{ type: "submit", value: '{{ "messages.new.submit" | translate }}' }
+      %input{ type: "submit", "ng-disabled": "loading",
+      value: '{{ "messages.new.submit" | translate }}' }
 
