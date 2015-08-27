@@ -3,12 +3,11 @@ class LogoStoringHandler < BaseService
   takes :business, :logo_validator, :logo_params
 
   def perform
-    return ::Response.new(success: true, object: logo) if logo.blank?
-
     success = if errors?
                 copy_errors
                 false
               else
+                business.remove_logo! if !logo
                 business.logo = logo
                 business_repository.save(business)
                 true
@@ -22,7 +21,6 @@ class LogoStoringHandler < BaseService
   end
 
   def valid?
-    return true if logo.blank?
     logo_validator.valid?
   end
 

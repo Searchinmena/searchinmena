@@ -6,7 +6,7 @@
   %div
     .business-logo-holder
       %img.preview-image{ "ngf-src": "form.business.logo[0]", "ngf-default-src": "{{ form.business.logo[0] || \"#{asset_path('default-image.png')}\" }}", "ngf-accept": "'image/*'", "ngf-multiple": false, "ngf-keep": false, multiple: false }
-      %button.remove-button.remove-photo{ type: "button", "ng-click": "removeLogo()", "ng-show": "form.business.logo" }
+      %button.remove-button.remove-photo{ type: "button", "ng-click": "removeLogo()", "ng-show": "form.business.logo.length" }
         %span.icon-remove
     %error-message-for{ "error": "errors.business.logo" }
     %button.small-button{ type: "button", "ngf-select": "", "ng-model": "form.business.logo" } {{ "business.basic_info.add_logo" | translate }}

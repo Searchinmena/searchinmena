@@ -32,13 +32,15 @@ class LogoValidator < FileValidator
   end
 
   def validate_minimum_image_size
-    image = MiniMagick::Image.open(file.path)
-    if image[:width] < min_size || image[:height] < min_size
-      errors.add(
-        :file,
-        I18n.t('errors.messages.invalid_size',
-          min_width: min_size, min_height: min_size)
-      )
+    if file.present?
+      image = MiniMagick::Image.open(file.path)
+      if image[:width] < min_size || image[:height] < min_size
+        errors.add(
+          :file,
+          I18n.t('errors.messages.invalid_size',
+            min_width: min_size, min_height: min_size)
+        )
+      end
     end
   end
 

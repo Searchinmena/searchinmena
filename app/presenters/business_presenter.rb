@@ -1,7 +1,7 @@
 class BusinessPresenter < BasicBusinessPresenter
   def as_json(*)
     super.merge(
-      logo: [business.logo_url],
+      logo: [business.logo_url].compact,
       phone: business.phone,
       country_id: business.country_id,
       year_registered: business.year_registered,
