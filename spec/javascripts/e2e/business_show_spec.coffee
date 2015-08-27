@@ -23,7 +23,7 @@ describe BusinessShowPage, ->
       it "redirects to sign in page", ->
         page.get()
         page.contactSupplierButton().click()
-        helpers.expectUrlChanged("/users/sign_in")
+        helpers.expectUrlChanged("/users/sign_in#/")
 
     describe "when user logged in", ->
       it "opens contact sender modal", ->
