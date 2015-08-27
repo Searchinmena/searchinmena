@@ -49,6 +49,7 @@
   .column {
     @include float-direction;
     margin: 0 $bs2 0 0;
+    max-width: 100%;
 
     [dir="rtl"] & {
       margin: 0 0 0 $bs2;
