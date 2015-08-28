@@ -1,20 +1,24 @@
 class BusinessItem::Photo::StoringHandler < BusinessItem::BaseStoringHandler
-  attr_reader :busiess_item, :handlers
+  attr_accessor :busiess_item, :handlers, :photos_params, :repository
 
   def initialize(repository, busiess_item, photos_params)
-    @busiess_item = busiess_item
-    @photos_params = photos_params
-
-    repository.delete_other_than(busiess_item, photos_params.existing_ids)
+    self.busiess_item = busiess_item
+    self.photos_params = photos_params
+    self.repository = repository
 
     to_create = photos_params.new_files
-    @handlers = to_create.map do |photo|
+    self.handlers = to_create.map do |photo|
       BusinessItem::Photo::Creator.new(repository, busiess_item, photo)
     end
   end
 
+  def store
+    repository.delete_other_than(busiess_item, photos_params.existing_ids)
+    super
+  end
+
   def valid?
-    @photos_params.count > 0 && super
+    photos_params.count > 0 && super
   end
 
   def object

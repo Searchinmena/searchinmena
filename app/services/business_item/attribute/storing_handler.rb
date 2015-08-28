@@ -1,22 +1,42 @@
 class BusinessItem::Attribute::StoringHandler < BusinessItem::BaseStoringHandler
-  attr_reader :product, :handlers, :repository
+  attr_accessor :product, :create_handlers, :update_handlers, :repository
 
   def initialize(repository, product, attributes_params)
-    @repository = repository
-    @product = product
-    @attributes_params = attributes_params
-    to_create = to_create(attributes_params)
-    @handlers = to_create.map do |attribute|
-      new_attribute = repository.new_for_business_item(product, attribute)
-      BusinessItem::Attribute::Creator.new(repository, new_attribute, attribute)
+    self.repository = repository
+    self.product = product
+
+    build_handlers(attributes_params)
+  end
+
+  def build_handlers(params)
+    self.create_handlers = to_create_params(params).map do |attribute_params|
+      new_attribute = repository.new_for_business_item(product, attribute_params)
+      BusinessItem::Attribute::Creator.new(repository, new_attribute, attribute_params)
+    end
+
+    self.update_handlers = to_update_params(params).map do |attribute, attribute_params|
+      BusinessItem::Attribute::Creator.new(repository, attribute, attribute_params)
     end
   end
 
-  def to_create(params)
-    to_update = params.select { |h| h[:id].present? }
-    updated_ids = repository.update_for_business_item(product, to_update)
+  def handlers
+    create_handlers + update_handlers
+  end
+
+  def store
+    success = super
+    updated_ids = self.update_handlers.map { |h| h.attribute.id }
     repository.delete_other_than(product, updated_ids)
+    success
+  end
+
+  def to_create_params(params)
     params.select { |h| h[:id].blank? }
+  end
+
+  def to_update_params(params)
+    to_update_ids = params.select { |h| h[:id].present? }
+    repository.to_update(product, to_update_ids)
   end
 
   def object
