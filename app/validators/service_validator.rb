@@ -17,7 +17,7 @@ class ServiceValidator < BusinessItemValidator
               greater_than: 0,
               less_than_or_equal_to: A9n.validations[:max_integer],
               only_integer: true,
-              allow_nil: true
+              allow_blank: true
             }
 
   min_photos = A9n.validations[:min_business_item_photo_count].to_i

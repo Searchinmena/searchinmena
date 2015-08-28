@@ -19,7 +19,7 @@ class BusinessValidator < BaseValidator
       greater_than: 0,
       less_than_or_equal_to: A9n.validations[:max_integer],
       only_integer: true,
-      allow_nil: true
+      allow_blank: true
     }
   validates :year_registered, format: {
     with: A9n.validations[:year_format],

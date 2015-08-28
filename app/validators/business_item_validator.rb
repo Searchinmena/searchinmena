@@ -22,12 +22,12 @@ class BusinessItemValidator < BaseValidator
       greater_than: 0,
       less_than_or_equal_to: A9n.validations[:max_integer],
       only_integer: true,
-      allow_nil: true
+      allow_blank: true
     }
   validates :fob_price,
             numericality: { greater_than: 0 },
             format: { with: /#{A9n.validations[:price_format]}/ },
-            allow_nil: true
+            allow_blank: true
 
   validates :fob_price_unit_id, :fob_price_currency_id,
     presence: true, if: proc { |i| i.fob_price.present? }

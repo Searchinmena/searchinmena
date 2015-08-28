@@ -13,7 +13,7 @@ class ProductValidator < BusinessItemValidator
       greater_than: 0,
       less_than_or_equal_to: A9n.validations[:max_integer],
       only_integer: true,
-      allow_nil: true
+      allow_blank: true
     }
 
   validates :min_order_quantity_unit_id,
