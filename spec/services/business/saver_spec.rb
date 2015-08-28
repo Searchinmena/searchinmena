@@ -4,26 +4,29 @@ describe Business::Saver do
   fake(:base_business_saver)
   fake(:user_category_service)
 
-  let(:saver) do
-    described_class.new(base_business_saver, user_category_service)
+  let(:photos_storing_handler) do
+    double(:photos_storing_handler, photos: [], valid?: true)
+  end
+  let(:handlers) do
+    [base_business_saver, photos_storing_handler, user_category_service]
   end
   let(:user) { build(:user) }
   let(:business) { build(:business) }
+  let(:photos) { photos_storing_handler.photos }
   let(:response) { double(:response, successful?: true) }
 
+  let(:saver) do
+    described_class.new(handlers, business, photos)
+  end
+
   describe "#perform" do
-    subject { saver.perform(user, business) }
+    subject { saver.perform }
 
-    it "uses UserCategoryService to change category" do
-      expect(saver).to receive(:base_business_saver)
-        .and_return(base_business_saver)
-      expect(base_business_saver).to receive(:perform)
-        .and_return(response)
-
-      expect(saver).to receive(:user_category_service)
-        .and_return(user_category_service)
-      expect(user_category_service).to receive(:perform).with(user, business)
-        .and_return(response)
+    it "calls perform on each handler" do
+      handlers.each do |handler|
+        expect(handler).to receive(:perform)
+          .and_return(response)
+      end
 
       is_expected.to be_successful
     end

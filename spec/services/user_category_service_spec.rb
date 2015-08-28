@@ -5,15 +5,13 @@ describe UserCategoryService do
     double(:user_repository, perform: double(succesful?: true))
   end
 
-  let(:service) { described_class.new(user_repository) }
-
   describe "#perform" do
-    let(:business) { build(:business) }
-
-    subject { service.perform(user, business) }
+    subject { service.perform }
 
     context "user has type buyer" do
       let(:user) { build(:buyer) }
+      let(:business) { build(:business) }
+      let(:service) { described_class.new(user_repository, user, business) }
 
       before do
         expect(user_repository).to receive(:update_category).with(user, "both")
@@ -25,6 +23,7 @@ describe UserCategoryService do
 
     context "user has type other than buyer" do
       let(:user) { build(:seller) }
+      let(:service) { described_class.new(user_repository, user) }
 
       it "doesn't update category" do
         expect(user_repository).not_to receive(:update_category)

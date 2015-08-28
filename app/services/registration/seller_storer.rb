@@ -6,6 +6,7 @@ class Registration::SellerStorer < Registration::Storer
     business_saver = BaseBusinessSaver.new(records[:business],
                                            registration_params[:business],
                                            registration_params[:tags],
+                                           nil,
                                            registration_params[:locale],
                                            user)
 

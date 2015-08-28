@@ -78,7 +78,7 @@
       "year_registered": "Year company registered",
       "no_of_employees": "No. of employees",
       "introduction": "Detailed introduction",
-      "business_photos": "Company photos",
+      "photos_title": "Company photos",
       "add_photos": "Add photos",
       "max_images": "max 5 images",
       "submit": "Save changes"

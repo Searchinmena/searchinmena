@@ -15,6 +15,7 @@ production:
     max_name_length: 130
     max_phone_length: 50
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
+    min_logo_size: 120
     min_image_width: 120
     min_image_height: 120
     min_business_item_photo_count: 1
@@ -31,6 +32,7 @@ production:
   original_height: 900
   bigger_thumbnail_size: 240
   thumbnail_size: 120
+  max_logo_size: 500
   aws:
     bucket_name: sim-uploads-production
     access_key_id: AKIAIDRXJKFHXQCSAVBA

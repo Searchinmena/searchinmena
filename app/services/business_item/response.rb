@@ -1,5 +1,5 @@
 class BusinessItem::Response < ::Response
-  attr_accessor :object, :photos, :attributes
+  attr_accessor :photos, :attributes
 
   def initialize(success: true, business_item: nil, attributes: [], photos: [])
     self.success = success

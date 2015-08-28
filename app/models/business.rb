@@ -6,4 +6,9 @@ class Business < ActiveRecord::Base
   has_many :products
   has_many :services
   belongs_to :country
+
+  has_many :photos, class_name: "BusinessPhoto", dependent: :delete_all
+
+  mount_uploader :logo, LogoUploader
+  store_in_background :logo
 end

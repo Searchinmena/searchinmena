@@ -14,6 +14,7 @@ defaults: &defaults
     max_name_length: 130
     max_phone_length: 50
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
+    min_logo_size: 120
     min_image_width: 120
     min_image_height: 120
     min_business_item_photo_count: 1
@@ -25,11 +26,12 @@ defaults: &defaults
     port:
     user_name:
     password:
+  items_per_page: 10
   original_width: 1200
   original_height: 900
   bigger_thumbnail_size: 240
   thumbnail_size: 120
-  items_per_page: 10
+  max_logo_size: 500
   aws:
     bucket_name: sim-uploads-development
     access_key_id: AKIAI3456PKJOR6S4P6Q

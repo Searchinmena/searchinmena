@@ -225,17 +225,17 @@
       max-width: 2 * $bs9;
     }
   }
+}
 
-  .preview-image {
-    @extend %four-sides-border;
-    @include float-direction;
-    width: 100%;
-    max-width: 2 * $bs8;
-    max-height: 100%;
+.preview-image {
+  @extend %four-sides-border;
+  @include float-direction;
+  width: 100%;
+  max-width: 2 * $bs8;
+  max-height: 100%;
 
-    @media screen and (min-width: $tablet) {
-      width: auto;
-    }
+  @media screen and (min-width: $tablet) {
+    width: auto;
   }
 }
 
