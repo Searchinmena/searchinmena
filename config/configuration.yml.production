@@ -1,6 +1,6 @@
 production:
   email_from: 'confirmation@searchinmena.com'
-  app_host: http://sim.pl
+  app_host: http://searchinmena.com
   env: production
   fb_app_id: 443629002492719
   fb_app_secret: 4b2dec4b31307e340c945f5229519c01
