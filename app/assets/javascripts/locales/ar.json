@@ -23,7 +23,7 @@
     "businesses": "الشركات",
     "header_line_1": "انضم إلى البحث في مينا",
     "header_line_2": "وابدأ باستقبال طلبات من مشترين",
-    "sub_header": "أكبر موقع للشركات التي ترغب في بيع منتجاتها وخدماتها في منطقة الشرق الأوسط وشمال إفريقيا.",
+    "sub_header": "الموقع الرائد للشركات التي ترغب في بيع منتجاتها وخدماتها في منطقة الشرق الأوسط وشمال إفريقيا.",
     "watch_video": "شاهد الفيديو",
     "see_dashboard": "لوحة التحكم",
     "join_now": "انضم الآن",
@@ -140,7 +140,7 @@
     "max_photos_exceeded": "صور كحد أقصى {{max_count}} تستطيع إضافة",
     "button": "أضف صور",
     "comment": " 10 صور حد أقصى، كل صورة لاتزيد عن {{max_file_size_in_mb}}  ميغابايبت",
-    "comment_thumbnail": "  الصورة المرفوعة أولا تظهر على الكتالوج. حاول أن ترفع صور بقياس {{min_image_height}} x {{min_image_width}}       "
+    "comment_thumbnail": "المرفوعة أولا تظهر على الكتالوج. حاول أن ترفع صور بقياس  {{min_image_height}} x {{min_image_width}} أو أكثر "
   },
   "attributes": {
     "title": "الخصائص",
@@ -186,7 +186,7 @@
     "empty_list": "لايوجد منتجات بعد.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
-    "successfully_saved": "Product was successfully saved",
+    "successfully_saved": "تم حفظ المنتج بنجاح.",
     "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "form": {
       "basic_section": "المعلومات الأساسية"
@@ -203,15 +203,15 @@
       "submit": "أضف منتج جديد"
     },
     "edit": {
-      "form_title": "Edit product",
-      "submit": "Save product"
+      "form_title": "تعديل المنتج",
+      "submit": "حفظ"
     }
   },
   "services": {
-    "empty_list": "لايوجد خدمات بعد",
+    "empty_list": "لايوجد خدمات بعد.",
     "your_services": "الخدمات",
     "add_new_service": "أضف خدمة جديدة",
-    "successfully_saved": "Service was successfully saved",
+    "successfully_saved": "تم حفظ الخدمة بنجاح",
     "adding_failed": "خطأ ما حدث أثتاء إضافة الخدمة، تأكد من الحقول مرة أخرى",
     "form": {
       "basic_section": "المعلومات الأساسية"
@@ -228,8 +228,8 @@
       "submit": "أضف"
     },
     "edit": {
-      "form_title": "Edit service",
-      "submit": "Save service"
+      "form_title": "تعديل",
+      "submit": "حفظ"
     }
   },
   "other": {

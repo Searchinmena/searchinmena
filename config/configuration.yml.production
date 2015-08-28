@@ -2,8 +2,8 @@ production:
   email_from: 'confirmation@searchinmena.com'
   app_host: http://sim.pl
   env: production
-  fb_app_id:
-  fb_app_secret:
+  fb_app_id: 443629002492719
+  fb_app_secret: 4b2dec4b31307e340c945f5229519c01
   validations:
     email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
     password_min_length: 8
