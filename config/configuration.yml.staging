@@ -32,7 +32,7 @@ production:
   bigger_thumbnail_size: 240
   thumbnail_size: 120
   aws:
-    bucket_name: sim-uploads-demo
+    bucket_name: sim-uploads-staging
     access_key_id: AKIAJ4W5KE65VD6QDZFQ
     secret_access_key: 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
     region: us-west-2
