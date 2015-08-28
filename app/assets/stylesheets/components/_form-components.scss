@@ -236,13 +236,8 @@ textarea {
 
 .business-logo-holder {
   @extend %clearfix;
-  //@extend %four-sides-border;
-  //max-width: 2 * $bs8;
-  max-height: 2 * $bs8;
+  // max-height: 2 * $bs8;
   margin: 0 0 $bs1 0;
-  //background: image-url('icon-picture.png') center center no-repeat;
-  //background-size: 70% auto;
-  background-color: $snow-white;
 }
 
 .compound-field {
