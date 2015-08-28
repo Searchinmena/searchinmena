@@ -26,7 +26,7 @@ production:
     address: smtp.mandrillapp.com
     port: 587
     user_name: aiham@searchinmena.com
-    password:
+    password: hS06i5O7FOtKvfhjZX_FNA
   items_per_page: 10
   original_width: 1200
   original_height: 900
