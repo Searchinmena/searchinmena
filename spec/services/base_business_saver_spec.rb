@@ -30,7 +30,7 @@ describe BaseBusinessSaver do
   describe "#valid?" do
     subject { saver.valid? }
 
-    it "validates" do
+    it "delegates validate?" do
       expect(storing_handler).to receive(:valid?)
       subject
     end
@@ -39,26 +39,9 @@ describe BaseBusinessSaver do
   describe "#perform" do
     subject { saver.perform }
 
-    context "failed business creation" do
-      let(:valid) { false }
-      let(:success) { false }
-
-      it { is_expected.not_to be_successful }
-
-      it "doesn't save business" do
-        expect { subject }.not_to change { Business.count }
-      end
-    end
-
-    context "successful business creation" do
-      let(:valid) { true }
-
-      it { is_expected.to be_successful }
-
-      it "saves business" do
-        expect { subject }.to change { Business.count }.by(1)
-        expect(user.business).to be_present
-      end
+    it "delegates perform" do
+      expect(storing_handler).to receive(:perform)
+      subject
     end
   end
 end
