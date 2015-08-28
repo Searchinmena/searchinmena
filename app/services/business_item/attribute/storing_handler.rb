@@ -9,7 +9,7 @@ class BusinessItem::Attribute::StoringHandler < BusinessItem::BaseStoringHandler
   end
 
   def build_handlers(params)
-    to_create = to_update_params(params)
+    to_create = to_create_params(params)
     self.create_handlers = to_create.map do |attribute_params|
       new_attribute = repository.new_for_business_item(product,
                                                        attribute_params)
@@ -29,10 +29,9 @@ class BusinessItem::Attribute::StoringHandler < BusinessItem::BaseStoringHandler
   end
 
   def store
-    success = super
     updated_ids = update_handlers.map { |h| h.attribute.id }
     repository.delete_other_than(product, updated_ids)
-    success
+    super
   end
 
   def to_create_params(params)
