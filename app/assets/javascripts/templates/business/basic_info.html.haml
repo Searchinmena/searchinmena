@@ -65,24 +65,24 @@
   /   %button.small-button {{ "business.basic_info.add_photos" | translate }}
   /   %p.field-comment {{ "business.basic_info.max_images" | translate }}
 
-  %div
-    %label {{ "business.basic_info.photos_title" | translate }}
-    %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "form.business.photos",
-      "ngf-keep": "true", multiple: "true" } {{ "business.basic_info.add_photos" | translate }}
-    %p.field-comment {{ "business.basic_info.max_images" | translate }}
-    %p.field-comment {{ "photos.comment_thumbnail" | translate:photoCommentTranslationData }}
-    %ul.photos-preview
-      %li{ "ng-repeat": "photo in form.business.photos" }
-        %img.preview-image{ "ngf-src": "photo",
-        "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
-        %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
-          %span.icon-remove
+  / %div
+  /   %label {{ "business.basic_info.photos_title" | translate }}
+  /   %button.small-button{ type: "button", "ngf-select": "true", "ng-model": "form.business.photos",
+  /     "ngf-keep": "true", multiple: "true" } {{ "business.basic_info.add_photos" | translate }}
+  /   %p.field-comment {{ "business.basic_info.max_images" | translate }}
+  /   %p.field-comment {{ "photos.comment_thumbnail" | translate:photoCommentTranslationData }}
+  /   %ul.photos-preview
+  /     %li{ "ng-repeat": "photo in form.business.photos" }
+  /       %img.preview-image{ "ngf-src": "photo",
+  /       "ngf-default-src": "#{asset_path('default-image.png')}", "ngf-accept": "'image/*'" }
+  /       %button.remove-button.remove-photo{ type: "button", "ng-click": "removePhoto(photo)" }
+  /         %span.icon-remove
 
-    %error-message-for{ "error": "errors.photos_general" }
-    .error{ "ng-repeat": "(i, photo_errors) in errors.photos" }
-      {{photo_errors.file_name}}:
-      %div{ "ng-repeat": "(j, error) in photo_errors.errors.photo" }
-        {{error}}
+  /   %error-message-for{ "error": "errors.photos_general" }
+  /   .error{ "ng-repeat": "(i, photo_errors) in errors.photos" }
+  /     {{photo_errors.file_name}}:
+  /     %div{ "ng-repeat": "(j, error) in photo_errors.errors.photo" }
+  /       {{error}}
 
   .actions.with-spinner
     %input{ type: "submit", value: '{{ "business.basic_info.submit" | translate }}', "ng-disabled": "loading" }
