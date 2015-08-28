@@ -5,7 +5,8 @@
     $scope.search = new Search(
       type: $stateParams.type,
       query: $stateParams.query,
-      page: $stateParams.page
+      page: $stateParams.page,
+      viewOption: $stateParams.viewOption
     )
     $scope.MessageModal = MessageModal
 
@@ -14,9 +15,9 @@
       current: $stateParams.page
     }
     
-    $scope.viewOptionSelected = 'list-view'
+    $scope.search.viewOption = $stateParams.viewOption || 'list-view'
     $scope.isNetViewSelected = ->
-      $scope.viewOptionSelected == 'net-view'
+      $scope.search.viewOption == 'net-view'
     
     $scope.dataLoaded = (data) ->
       $scope.results = for resultData in data.items

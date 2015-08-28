@@ -6,7 +6,7 @@
 
     angular.extend(Search.prototype,
       toParams: ->
-        { type: @type, query: @query, page: @page }
+        { type: @type, query: @query, page: @page, viewOption: @viewOption }
     )
 
     Search
