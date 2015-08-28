@@ -4,6 +4,9 @@ class SIM.BusinessPresenter
     @tags = tags
     @types = types
 
+  logo: (type) ->
+    @business.logo[0]
+
   id: -> @business.id
 
   name: -> @business.name
@@ -45,10 +48,5 @@ class SIM.BusinessPresenter
 
   templatePath: ->
     'search/_business_result.html'
-
-  coverPhotoUrl: (type) ->
-    # TODO: change when logo is implemented
-    @business.logo = {}
-    @business.logo[type || 'url']
 
 @Sim.value('BusinessPresenter', SIM.BusinessPresenter)

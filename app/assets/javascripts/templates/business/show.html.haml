@@ -1,7 +1,7 @@
 %section.business-view
   .business-header
     .business-logo-holder
-      = image_tag('logo-3.png', class: "business-logo")
+      %img{ src: "{{ businessPresenter.logo() }}", class: "business-logo" }
     .business-short-info
       %h2.business-name
         {{ businessPresenter.name() }}
@@ -10,7 +10,7 @@
           %span.icon.icon-phone-alt
           {{ businessPresenter.phone() }}
         .contact-item
-          %span.icon.icon-pushpin{ 'ng-show': 'businessPresenter.location()' }
+          %span.icon.icon-pushpin{ "ng-show": "businessPresenter.location()" }
           {{ businessPresenter.location() }}
           %span.address-line
             {{ businessPresenter.addressLine1() }}
@@ -19,31 +19,31 @@
       %button.contact-supplier{ "ng-click": "MessageModal.new(businessPresenter.id())" }
         %span.icon.icon-envelope
         {{ "contact_seller" | translate }}
-  -#%ul.business-tabs
-    -#%li.tab
-      -#%a.tab-link.active
-        -#{{ "business.show.information" | translate }}
-        -#.icon-chevron-down
-    -#%li.tab
-      -#%a.tab-link
-        -#{{ "business.show.products" | translate }}
-        -#.icon-chevron-down
-    -#%li.tab
-      -#%a.tab-link
-        -#{{ "business.show.services" | translate }}
-        -#.icon-chevron-down
+  / %ul.business-tabs
+  /   %li.tab
+  /     %a.tab-link.active
+  /       {{ "business.show.information" | translate }}
+  /       .icon-chevron-down
+  /   %li.tab
+  /     %a.tab-link
+  /       {{ "business.show.products" | translate }}
+  /       .icon-chevron-down
+  /   %li.tab
+  /     %a.tab-link
+  /       {{ "business.show.services" | translate }}
+  /       .icon-chevron-down
   .item-basic-info
     %table.item-details
-      %tr{ 'ng-show': 'businessPresenter.businessTypes()' }
+      %tr{ "ng-show": "businessPresenter.businessTypes()" }
         %td.attribute {{ "business.show.business_types" | translate }}:
         %td {{ businessPresenter.businessTypes() }}
-      %tr{ 'ng-show': 'businessPresenter.mainProducts()' }
+      %tr{ "ng-show": "businessPresenter.mainProducts()" }
         %td.attribute {{ "business.show.main_products" | translate }}:
         %td {{ businessPresenter.mainProducts() }}
-      %tr{ 'ng-show': 'businessPresenter.yearRegistered()' }
+      %tr{ "ng-show": "businessPresenter.yearRegistered()" }
         %td.attribute {{ "business.show.year_registered" | translate }}:
         %td {{ businessPresenter.yearRegistered() }}
-      %tr{ 'ng-show': 'businessPresenter.noOfEmployees()' }
+      %tr{ "ng-show": "businessPresenter.noOfEmployees()" }
         %td.attribute {{ "business.show.no_of_employees" | translate }}:
         %td {{ businessPresenter.noOfEmployees() }}
   / .item-detailed-info
@@ -100,21 +100,21 @@
   /     .cert-origin
   /       %span issued by:
   /       SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
-  .item-detailed-info{ 'ng-show': 'businessPresenter.introduction()' }
+  .item-detailed-info{ "ng-show": "businessPresenter.introduction()" }
     %h4.section-title.line-behind
       %span
         %span.icon.icon-comment
         {{ "business.show.business_introduction" | translate }}
     %p.item-description
       {{ businessPresenter.introduction() }}
-  .item-detailed-info
-    %h4.section-title.line-behind
-      %span
-        %span.icon.icon-picture
-        {{ "business.show.business_gallery" | translate }}
-    .business-gallery
-      = image_tag("warehouse-1.jpg")
-      = image_tag("warehouse-2.jpg")
-      = image_tag("strange-1.jpg")
-      = image_tag("strange-2.jpg")
-      = image_tag("strange-1.jpg")
+  / .item-detailed-info
+  /   %h4.section-title.line-behind
+  /     %span
+  /       %span.icon.icon-picture
+  /       {{ "business.show.business_gallery" | translate }}
+  /   .business-gallery
+  /     = image_tag("warehouse-1.jpg")
+  /     = image_tag("warehouse-2.jpg")
+  /     = image_tag("strange-1.jpg")
+  /     = image_tag("strange-2.jpg")
+  /     = image_tag("strange-1.jpg")
