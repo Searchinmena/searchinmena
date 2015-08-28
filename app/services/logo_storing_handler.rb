@@ -7,7 +7,7 @@ class LogoStoringHandler < BaseService
                 copy_errors
                 false
               else
-                business.remove_logo! if !logo
+                business.remove_logo! unless logo
                 business.logo = logo
                 business_repository.save(business)
                 true
