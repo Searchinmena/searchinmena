@@ -1,7 +1,7 @@
 %section.business-view
   .business-header
     .business-logo-holder
-      %img{ src: "{{ businessPresenter.logo() }}", class: "business-logo" }
+      %img{ src: "{{ businessPresenter.logo() || businessPresenter.default_logo() }}", class: "business-logo" }
     .business-short-info
       %h2.business-name
         {{ businessPresenter.name() }}
