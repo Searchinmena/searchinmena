@@ -4,8 +4,11 @@ class SIM.BusinessPresenter
     @tags = tags
     @types = types
 
-  logo: (type) ->
+  logo: ->
     @business.logo[0]
+
+  default_logo: ->
+    @business.default_logo
 
   id: -> @business.id
 

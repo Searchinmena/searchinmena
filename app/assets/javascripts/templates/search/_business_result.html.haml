@@ -1,5 +1,5 @@
 %a.item-img-link{ 'ui-sref': '{{ result.showPath() }}' }
-  %img{ "ng-src": "{{ result.coverPhotoUrl('thumb') }}" }
+  %img{ "ng-src": "{{ result.logo() || result.default_logo() }}" }
 .result-header-info
   %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
     {{ result.name() }}
