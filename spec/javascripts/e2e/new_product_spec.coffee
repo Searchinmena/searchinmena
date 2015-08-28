@@ -88,7 +88,7 @@ describe NewProductPage, ->
     page.chooseCategory("Paraffin")
     page.submitCategoryButton().click()
 
-    expect(element(By.css(page.categoriesModalCss)).isElementPresent()).toBe(false)
+    expect(element(By.css(page.categoriesModalCss)).isPresent()).toBe(false)
     expect(page.breadcrumbInForm("Paraffin").isDisplayed()).toBe(true)
 
   it "is possible to add product", ->
