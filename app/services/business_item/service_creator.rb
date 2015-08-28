@@ -12,8 +12,10 @@ class BusinessItem::ServiceCreator < BaseService
   private
 
   def business_item_handler(business, params)
-    service = service_repository.new_for_business(business,
-                                                  params[:business_item])
+    service = service_repository.find_or_new_for_business(
+      business,
+      params[:business_item]
+    )
     records = { user: user, business_item: service }
     BusinessItem::ServiceStoringHandler.new(
       records[:business_item], params[:business_item],
