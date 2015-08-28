@@ -12,6 +12,13 @@ task upload_production_photos: :environment do
     services: Factory.new(ServicePhoto, :service_id)
   }
 
+  def photo(photo_url)
+    string_io = open(photo_url).read
+    path = "public/uploads/tmp/tmp_photo"
+    File.open(path, "wb") { |f| f.write(string_io) }
+    File.open(path)
+  end
+
   factories.each do |resource, factory|
     CSV.foreach(path(resource)) do |old_id, photo_url|
       begin
@@ -20,18 +27,28 @@ task upload_production_photos: :environment do
         business_item_id = ids_map[resource.to_s][old_id.to_i]
         next unless business_item_id
 
-        string_io = open(photo_url).read
-        tmp_photo = Tempfile.new(['tmp', '.jpg'])
-        tmp_photo.binmode
-        tmp_photo.write(string_io)
-        photo = File.open(tmp_photo.path)
-
         pp = factory.klass.create(factory.relation_name => business_item_id,
-                                  :photo => photo)
+                                  :photo => photo(photo_url))
         pp.photo.recreate_versions!
       rescue => e
         p e
       end
+    end
+  end
+
+  CSV.foreach(path(:businesses)) do |old_id, photo_url|
+    begin
+      p "Uploading #{photo_url}..."
+
+      business_id = ids_map["businesses"][old_id.to_i]
+      business = Business.find_by_id(business_id)
+      next unless business
+
+      business.logo = photo(photo_url)
+      business.save
+      business.logo.recreate_versions!
+    rescue => e
+      p e
     end
   end
 end
