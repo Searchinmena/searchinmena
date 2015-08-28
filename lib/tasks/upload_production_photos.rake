@@ -12,9 +12,9 @@ task upload_production_photos: :environment do
     services: Factory.new(ServicePhoto, :service_id)
   }
 
-  def photo(photo_url)
+  def photo(photo_url, resource, id)
     string_io = open(photo_url).read
-    path = "public/uploads/tmp/tmp_photo"
+    path = "public/uploads/tmp/#{resource}-photo-#{id}"
     File.open(path, "wb") { |f| f.write(string_io) }
     File.open(path)
   end
@@ -27,8 +27,9 @@ task upload_production_photos: :environment do
         business_item_id = ids_map[resource.to_s][old_id.to_i]
         next unless business_item_id
 
+        photo = photo(photo_url, resource, business_item_id)
         pp = factory.klass.create(factory.relation_name => business_item_id,
-                                  :photo => photo(photo_url))
+                                  :photo => photo)
         pp.photo.recreate_versions!
       rescue => e
         p e
@@ -44,7 +45,7 @@ task upload_production_photos: :environment do
       business = Business.find_by_id(business_id)
       next unless business
 
-      business.logo = photo(photo_url)
+      business.logo = photo(photo_url, :businesses, business_id)
       business.save
       business.logo.recreate_versions!
     rescue => e
