@@ -1,15 +1,15 @@
 ar:
   mailers:
     contact_seller:
-      message_title: "A message has been sent to you:"
+      message_title: "أحد المشترين أرسل لك الرسالة التالية: "
     message_confirmation:
-      subject: "Subject:"
-      message_title: "You've just sent a message to"
+      subject: "العنوان"
+      message_title: "لقد أرسلت رسالة إلى:"
     shared:
-      address_title: "Our mailing address is:"
-      address_line_1: "MENA Network LTD"
-      address_line_2: "DSO - Techno Hub Building"
-      address_line_3: "Block A - G029"
-      address_line_4: "Dubai"
-      address_line_5: "United Arab Emirates"
+      address_title: "عنوان الشركة:"
+      address_line_1: "شبكة مينا ال ال سي"
+      address_line_2: "مركز دبي التكنولوجي لريادة الأعمال"
+      address_line_3: "المبنى أ - المكتب ٢٩ الطابق الأرضي"
+      address_line_4: "دبي"
+      address_line_5: "الإمارات العربية المتحدة"
 
