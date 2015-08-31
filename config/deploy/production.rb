@@ -9,7 +9,7 @@
 # :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 set :stage, :production
-server "54.148.90.128",
+server "54.68.69.42",
   user: "sim",
   roles: %w{web app db}
 set :user, 'sim'
