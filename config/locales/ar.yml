@@ -65,10 +65,9 @@ ar:
   footer:
     about_us: "من نحن"
     about_description:
-      "MENA Network LTD manages an online B2B advertising directory,
-      HQ in Dubai Silicon Oasis - UAE, owned by Salim Akil, Silicon Oasis Founders a wholly
-      owned entity of DSOA (Government of Dubai) and other 23 shareholders. MENA Network has
-      offices in Dubai, Riyadh and San Francisco."
+      "شبكة مينا المحدودة تدير محرك بحث على الانترنت يحوي منتجات و خدمات لشركات في منطقة الشرق الأوسط وشمال أفريقيا. وتعود ملكية شبكة مينا ل40 من المساهمين في جميع أنحاء العالم. 
+يقع المقر الرئيسي لشبكة مينا في دبي – الامارات العربية المتحدة (واحة السيليكون )، ولها مكاتب في الرياض – المملكة العربية السعودية وسان فرانسيسكو – الولايات المتحدة الامريكية.
+"
     find_us: "موقعنا"
     businesses: "الشركات"
     address_title: "العنوان"
