@@ -19,7 +19,7 @@ describe "Locale switching", ->
 
     expect(helper.dirAttribute()).toEqual("rtl")
 
-    helper.switchLanguage("english")
+    helper.switchLanguage("English")
 
     expect(helper.dirAttribute()).not.toEqual("rtl")
 
