@@ -20,10 +20,13 @@
     LightboxProvider.templateUrl = 'components/lightbox.html'
 ])
 
-@Sim.run(['$rootScope', '$http', ($rootScope, $http) ->
+@Sim.run(['$rootScope', '$http', 'GoogleAnalyticsTrack', ($rootScope, $http, GoogleAnalyticsTrack) ->
   $rootScope.$on('$viewContentLoaded', ->
     $('html, body').animate({ scrollTop: 0 }, @Sim.SCROLL_TO_TOP_SPEED)
   )
+  GoogleAnalyticsTrack.run()
+  $rootScope.$on '$stateChangeSuccess', (event) ->
+    GoogleAnalyticsTrack.preview()
 
   $http.defaults.headers.common['Accept'] = 'application/json'
   $http.defaults.headers.common['Content-Type'] = 'application/json'
