@@ -3,6 +3,8 @@
 .result-header-info
   %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
     {{ result.name() }}
+  %a.result-item-title-strict{ 'ui-sref': '{{ result.showPath() }}' }
+    {{ result.name() | characters: 48 }}
 .result-item-description
   .clearfix
     .contact-item
