@@ -1,6 +1,7 @@
 module Users
   class RegistrationsController < Devise::RegistrationsController
-    inject :user_repository, :business_repository, :user_params_factory
+    inject :user_repository, :business_repository, :user_params_factory,
+           :customer_io_service
 
     def new
       user_params = user_params_factory.build(session["devise.auth_data"])
@@ -20,6 +21,8 @@ module Users
         sign_up(:user, response.user)
         flash[:notice] = t("devise.registrations.signed_up")
         head :ok
+        u = response.user
+        customer_io_service.cio('user_signup', u)
       else
         render_error(response.user, response.business)
       end

@@ -1,4 +1,6 @@
 class CustomerIoService
+  CUSTOMIO = Customerio::Client.new("3823999354dd63de1f8d",
+                                       "1a4d2164782635ea53b1")
   def cio(cio_event, parm)
     send cio_event, cio_event, parm
   end
@@ -6,7 +8,7 @@ class CustomerIoService
   private
 
   def identify_user(parm)
-    $customerio.identify(
+    CUSTOMIO.identify(
       id: parm.id,
       email: parm.email,
       created_at: parm.created_at.to_i,
@@ -19,12 +21,12 @@ class CustomerIoService
 
   def user_signup(cio_event, parm)
     identify_user(parm)
-    $customerio.track(parm.id, cio_event)
+    CUSTOMIO.track(parm.id, cio_event)
   end
 
   def user_just_login(cio_event, parm)
     identify_user(parm)
-    $customerio.track(parm.id, cio_event)
+    CUSTOMIO.track(parm.id, cio_event)
   end
 
   def user_updated_company(cio_event, parm)
@@ -36,7 +38,7 @@ class CustomerIoService
   end
 
   def company_info_track(cio_event, parm)
-    $customerio.track(
+    CUSTOMIO.track(
       parm.user_id,
       cio_event,
       company_id: parm.id,
@@ -74,7 +76,7 @@ class CustomerIoService
   end
 
   def user_add_product_track(uid, cio_event, parm, attributes)
-    $customerio.track(
+    CUSTOMIO.track(
       uid, cio_event,
       product_id: parm.id,
       company_name: parm.name,
@@ -84,17 +86,6 @@ class CustomerIoService
       category_id: parm.category_id,
       created_at: parm.created_at.to_i,
       updated_at: parm.updated_at.to_i,
-      min_order_quantity_number: parm.min_order_quantity_number,
-      min_order_quantity_unit_id: parm.min_order_quantity_unit_id,
-      fob_price: parm.fob_price,
-      fob_price_currency_id: parm.fob_price_currency_id,
-      fob_price_unit_id: parm.fob_price_unit_id,
-      port: parm.port,
-      supply_ability_capacity: parm.supply_ability_capacity,
-      supply_ability_unit_id: parm.supply_ability_unit_id,
-      supply_ability_frequency_id: parm.supply_ability_frequency_id,
-      packaging_details: parm.packaging_details,
-      business_id: parm.business_id,
       characteristics_attr_name: attributes['name'],
       characteristics_attr_value: attributes['value']
     )
