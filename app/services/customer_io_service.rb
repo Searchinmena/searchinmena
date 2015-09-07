@@ -5,10 +5,6 @@ class CustomerIoService < Customerio::Client
     send cio_event, parm, cio_event
   end
 
-  def cio(parm, cio_event)
-    send cio_event, parm, cio_event
-  end
-
   private
 
   def identify_user(parm)
@@ -63,12 +59,13 @@ class CustomerIoService < Customerio::Client
     }
   end
 
-  def user_update_product(parm, cio_event)
-    product_attributes = pro_serv_attr(parm[:response])
-    order_attributes = pro_serv_order_attr(parm)
-    event_attributes = product_attributes.merge!(order_attributes)
-    if parm[:response].updated_at.to_i == parm[:response].created_at.to_i
-      cio_event = 'user_add_product'
+  def business_item_update(parm, cio_event)
+    object = parm[:response].object
+    product_attributes = pro_serv_attr(object)
+    attributes = pro_serv_order_attr(object).merge!(product_attributes)
+    event_attributes = item_detail_attr(object).merge!(attributes)
+    if object.updated_at.to_i == object.created_at.to_i
+      cio_event = 'business_item_added'
     end
     track_event(parm[:user].id, cio_event, event_attributes)
   end
@@ -77,42 +74,51 @@ class CustomerIoService < Customerio::Client
     {
       product_id: parm.id,
       product_name: parm.name,
-      model_number: parm.model_number,
-      brand_name: parm.brand_name,
-      description: parm.description,
-      category_id: parm.category_id,
       created_at: parm.created_at.to_i,
-      updated_at: parm.updated_at.to_i
+      updated_at: parm.updated_at.to_i,
+      description: parm.description,
+      category_id: parm.category_id
     }
   end
 
   def pro_serv_order_attr(parm)
     {
-      min_order: attribute_exist(parm, ':min_order_quantity_number'),
-      min_order_unit: attribute_exist(parm, ':min_order_quantity_unit_id'),
-      fob_price: attribute_exist(parm, ':fob_price'),
-      fob_price_currency_id: attribute_exist(parm, ':fob_price_currency_id'),
-      fob_price_unit_id: attribute_exist(parm, ':fob_price_unit_id'),
-      port: attribute_exist(parm, ':port'),
-      supply_capacity: attribute_exist(parm, ':supply_ability_capacity'),
-      supply_unit: attribute_exist(parm, ':supply_ability_unit_id'),
-      supply_frequency: attribute_exist(parm, ':supply_ability_frequency_id'),
-      packaging_details: attribute_exist(parm, ':packaging_details'),
-      business_id: attribute_exist(parm, ':business_id'),
+      fob_price: parm.fob_price,
+      fob_price_currency_id: parm.fob_price_currency_id,
+      fob_price_unit_id: parm.fob_price_unit_id,
+      port: parm.port,
+      supply_capacity: parm.supply_ability_capacity,
+      supply_unit: parm.supply_ability_unit_id,
+      supply_frequency: parm.supply_ability_frequency_id,
+      packaging_details: parm.packaging_details,
+      business_id: parm.business_id,
       characteristics_attr_name: tags_attr(parm, ':name'),
       characteristics_attr_value: tags_attr(parm, ':value')
     }
   end
 
-  def attribute_exist(parm, attr_name)
-    if parm.present?
-      parm[attr_name].present? ? parm[attr_name] : nil
-    end
+  def item_detail_attr(parm)
+    {
+      place_of_origin: attribute_exist(parm, ':place_of_origin'),
+      scope_of_work: attribute_exist(parm, 'scope_of_work'),
+      completion_time: attribute_exist(parm, 'average_completion_time'),
+      completion_unit: attribute_exist(parm, 'average_completion_time_unit_id'),
+      model_number: attribute_exist(parm, 'model_number'),
+      brand_name: attribute_exist(parm, 'brand_name'),
+      min_order: attribute_exist(parm, 'min_order_quantity_number'),
+      min_order_unit: attribute_exist(parm, 'min_order_quantity_unit_id')
+    }
   end
 
   def tags_attr(parm, attr_name)
     if defined? parm.attributes
       attribute_exist(parm.attributes, attr_name)
+    end
+  end
+
+  def attribute_exist(parm, attr_name)
+    if parm.present?
+      parm[attr_name].present? ? parm[attr_name] : nil
     end
   end
 end
