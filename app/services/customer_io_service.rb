@@ -121,4 +121,39 @@ class CustomerIoService < Customerio::Client
       parm[attr_name].present? ? parm[attr_name] : nil
     end
   end
+
+  def reset_password_request(parm, cio_event)
+    identify_user(parm)
+    event_attributes = {
+      email: parm.email,
+      reset_password_token: parm.reset_password_token
+    }
+    track_event(parm.id, cio_event, event_attributes)
+  end
+
+  def user_update_password(parm, cio_event)
+    identify_user(parm)
+    track_event(parm.id, cio_event)
+  end
+
+  def message_company(parm, cio_event)
+    params = parm[:params]
+    user = parm[:user]
+    business = Business.find_by_id(params[:business_id])
+    event_attributes = message_company_attr(params, user, business)
+    track_event(user.id, cio_event, event_attributes)
+  end
+
+  def message_company_attr(parm, user, business)
+    {
+      message_subject: parm[:subject],
+      message_description: parm[:body],
+      sender_email_address: user.email,
+      recipient_company_name: business.name,
+      recipient_company_logo: business.logo,
+      recipient_email_address: business.user.email,
+      recipient_first_name: business.user.first_name,
+      recipient_last_name: business.user.last_name
+    }
+  end
 end
