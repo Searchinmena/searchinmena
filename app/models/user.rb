@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   enum category: [:seller, :buyer, :both]
 
-  has_many :businesses, dependent: :delete_all
+  has_one :business, dependent: :delete
 
   validates_confirmation_of :password
 
