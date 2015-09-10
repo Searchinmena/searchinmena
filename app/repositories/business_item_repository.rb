@@ -4,7 +4,7 @@ module BusinessItemRepository
     return klass.none unless business
 
     klass.includes(:category, :category_translations, :photos)
-      .where("business_id = ?", user.business.id)
+      .where("business_id = ?", user.business.first.id)
   end
 
   def new_for_business(business, params)

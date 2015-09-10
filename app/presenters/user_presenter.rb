@@ -10,7 +10,7 @@ class UserPresenter
       uid: user.uid,
       can_see_business_items: user.can_see_business_items?,
       confirmed_at: user.confirmed_at,
-      business_id: user.business.try(:id)
+      business_id: user.businesses.first.try(:id)
     }
   end
 end
