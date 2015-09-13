@@ -1,0 +1,251 @@
+// Place all the styles related to the landing_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.landing-pages {
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+
+  .business-info {
+    clear: both;
+  }
+  .section-title {
+    text-align: center;
+    font-size: $bs3;
+  }
+  .section-container {
+    max-width: $big-desktop;
+    margin: auto;
+  }
+  .sign-up-wrapper {
+    border-radius: 0 !important;
+    background: none;
+    border: 0 none;
+  }
+  .form-additional-panel {
+    right: auto;
+  }
+  .section {
+    width: 100%;
+    clear: both;
+    padding-top: 50px;
+  }
+  .sim-in-color {
+    color: #a41954;
+  }
+  .section.one {
+    background-image: url("/marking/images/section-one-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    padding: 15px 0px;
+
+    @media screen and (max-width: $tablet) {
+      background-size: 100% 40%;
+    }
+    .form-additional-panel {
+      border-radius: 0px;
+      background: none;
+      text-shadow: 2px 2px 2px #333;
+      line-height: 40px;
+      word-spacing: 5px;
+      text-align: left;
+      float: left;
+
+      @media screen and (max-width: $big-phone) {
+        line-height: 25px;
+      }
+      @media screen and (min-width: $desktop) {
+        max-width: 55%;
+      }
+      .title {
+        font-size: 26px;
+        @media screen and (max-width: $big-phone) {
+          font-size: 22px;
+        }
+      }
+      hr {
+        border: 1px solid #dddddd;
+        margin: 20px 0px;
+      }
+      .subtitle {
+        margin-top: 0px;
+        text-transform: none;
+        @media screen and (max-width: $big-phone) {
+          font-size: 20px;
+        }
+      }
+      .watch-video-btn {
+        margin-top: 30px;
+      }
+      .videobutton {
+        background-color: #0d6c97;
+        background-image: url("/marking/images/video-play.png");
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-size: 45px 44px;
+        color: #fff;
+        font-size: 20px;
+        opacity: 0.8;
+        padding: 15px 15px 15px 55px;
+      }
+    }
+    .form-wrapper {
+      float: right;
+      background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+
+      @media screen and (min-width: $desktop) {
+        width: 35%;
+      }
+      @media screen and (max-width: $tablet) {
+        clear: both;
+        float: none;
+        text-align: center;
+        width: 100%;
+        background: none;
+        color: #333333;
+        max-width: 450px;
+        margin: auto;
+
+        .actions {
+          clear: both;
+          input {
+            margin: auto;
+            max-width: 300px;
+          }
+        }
+        .field {
+          display: block;
+          margin: 15px auto;
+          max-width: 450px;
+        }
+
+        .user-category {
+          text-align: left;
+
+          .checkbox-field {
+            float: left;
+            width: 33%;
+          }
+        }
+      }
+      .form-header {
+        min-width: 100%;
+      }
+      .line-behind {
+        margin: 1.625rem 0 0rem;
+      }
+    }
+
+    .field-comment {
+      color: #fff;
+    }
+  }
+
+  .section.two {
+    min-height: 300px;
+
+    .icons-list {
+      max-width: $big-desktop;
+      margin: auto;
+
+      .home-icons {
+        float: left;
+        padding: 5px;
+        text-align: center;
+        width: 14.2857%;
+        .home-icons-img {
+          height: 75px;
+        }
+        @media screen and (max-width: $tablet) {
+          width: 25%;
+        }
+        @media screen and (max-width: $big-phone) {
+          width: 33%;
+        }
+      }
+    }
+
+  }
+
+  .section.three {
+    min-height: 370px;
+    min-height: 470px;
+    background: #f0f0f0;
+    text-align: left;
+
+    .get-more-buyers-markup {
+      .get-more-buyers-text {
+        max-width: $desktop;
+        margin: auto;
+        text-align: center;
+      }
+      .box {
+        float: left;
+        padding: 15px;
+        width: 33%;
+        @media screen and (max-width: $tablet) {
+          width: 100%;
+          padding: 0px 20px;
+        }
+      }
+    }
+  }
+
+  .section.four {
+    .form-wrapper {
+      float: none;
+      background: none;
+      margin: auto;
+      max-width: 768px;
+      width: 100%;
+      @media screen and (max-width: $tablet) {
+        max-width: 450px;
+        margin: auto;
+      }
+      .facebook-signup {
+        text-align: center;
+      }
+      .field {
+        float: left;
+        max-width: 356px;
+        padding: 0 10px;
+        width: 100%;
+        @media screen and (max-width: $tablet) {
+          max-width: 450px;
+          float: none;
+          margin: 20px auto;
+        }
+      }
+      .user-category {
+        .field {
+          clear: both;
+          max-width: 100%;
+          text-align: center;
+
+          @media screen and (max-width: $tablet) {
+            text-align: left;
+          }
+          label {
+            max-width: 100%;
+          }
+        }
+        .checkbox-field {
+          float: left;
+          width: 33%;
+        }
+      }
+      .field.tags {
+        clear: both;
+      }
+      .actions {
+        clear: both;
+        input {
+          margin: 20px auto;
+        }
+      }
+
+    }
+  }
+
+}

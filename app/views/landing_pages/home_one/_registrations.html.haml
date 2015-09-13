@@ -1,0 +1,62 @@
+.form-wrapper
+  = form_for user, url: registration_path(:user),
+    html: { "ng-submit": "submit($event)" } do |f|
+
+    .facebook-signup{ "ng-hide": "isFacebookSignup()" }
+      = link_to(localized_omniauth_path(:facebook),
+                class: "facebook-sign-up") do
+        .icon-facebook
+        = t("sign_up.facebook")
+
+      %p.line-behind
+        %span= t('sign_up.or')
+
+    .fb-notice{ "ng-show": "isFacebookSignup()" }
+      %span.icon-login
+      %p
+        = t("sign_up.facebook_explanation")
+
+    = f.hidden_field :provider
+    = f.hidden_field :uid
+
+    = form_field("user.first_name") do
+      = f.text_field :first_name, autofocus: true,
+      "ng-model": "form.user.first_name", placeholder: t("devise.active_record.attributes.user.first_name")
+
+    = form_field("user.last_name") do
+      = f.text_field :last_name, "ng-model": "form.user.last_name",
+      placeholder: t("devise.active_record.attributes.user.last_name")
+
+    = form_field("user.email") do
+      = f.text_field :email, "ng-model": "form.user.email",
+      placeholder: t("devise.active_record.attributes.user.email")
+
+    - unless user.provider.present?
+      = form_field("user.password") do
+        - if @validatable
+          .field-comment= t("devise.registrations.password_field_info",
+          number: @minimum_password_length)
+        = f.password_field :password, autocomplete: "off",
+          "ng-model": "form.user.password",
+          placeholder: t("devise.registrations.password")
+
+      = form_field("user.password_confirmation") do
+        = f.password_field :password_confirmation, autocomplete: "off",
+          "ng-model": "form.user.password_confirmation",
+          placeholder: t("devise.registrations.password_confirmation")
+
+    .user-category
+      = form_field("user.category") do
+        %label= t("text.category_label")
+        - User.categories.keys.each do |cat|
+          .checkbox-field
+            = f.radio_button :category, cat, "ng-model": "form.user.category"
+            = f.label User.category_name(cat), for: "user_category_#{cat}",
+              class: "inline-label"
+
+    .fields-group.business-info{ "ng-show": "shouldShowBusinessInfo()" }
+      = render partial: "landing_pages/home_one/business_info", locals: { f: f, business: business }
+
+    .actions
+      %input{ type: "submit", value: '{{ "registration.submit" | translate }}',
+        "ng-disabled": "loading" }

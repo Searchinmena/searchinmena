@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   get "/home" => "pages#home", as: :home
+  get "/home-1" => "landing_pages#home_one", as: :home_one
 
   root to: "pages#home"
 

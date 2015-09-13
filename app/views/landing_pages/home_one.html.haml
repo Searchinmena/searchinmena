@@ -1,0 +1,35 @@
+.landing-pages.home-one.container{ "ng-controller": "RegistrationsCtrl",
+  "ng-init": "init('#{escape_javascript(user_presenter.to_json)}')" }
+  .section.one
+    .sign-up-wrapper.section-container
+      .form-additional-panel
+        %h1.title
+          Join Search in MENA marketplace and start getting inquiries from buyers today.
+        %hr
+        %h2.subtitle
+          We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.
+        .watch-video-btn
+          %a.videobutton{ :href=> "https://www.youtube.com/watch?v=QQAl7qlojuI&list=PLgnvtGyQN2bzViGmw0bZFSm812t6hsoX-" }
+            %span.wrap
+              %span.play
+                Watch Video
+
+      = render partial: "landing_pages/home_one/registrations",
+      locals: { user: user, business: business }
+
+  .section.two
+    = render partial: "landing_pages/home_one/we_help"
+  .section.three
+    = render partial: "landing_pages/home_one/get_more_buyers"
+
+  .section.four
+    .section-container
+      .section-title
+        Join thousands of
+        %span.sim-in-color
+          Sellers
+        and reach new
+        %span.sim-in-color
+          Buyers
+      = render partial: "landing_pages/home_one/registrations",
+      locals: { user: user, business: business }
