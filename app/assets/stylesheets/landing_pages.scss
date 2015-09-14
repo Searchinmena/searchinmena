@@ -41,8 +41,9 @@
     padding: 15px 0px;
 
     @media screen and (max-width: $tablet) {
-      background-size: 100% 40%;
+      background-size: 100% 43%;
     }
+
     .form-additional-panel {
       border-radius: 0px;
       background: none;
@@ -55,7 +56,7 @@
       @media screen and (max-width: $big-phone) {
         line-height: 25px;
       }
-      @media screen and (min-width: $desktop) {
+      @media screen and (min-width: 769px) {
         max-width: 55%;
       }
       .title {
@@ -71,7 +72,7 @@
       .subtitle {
         margin-top: 0px;
         text-transform: none;
-        @media screen and (max-width: $big-phone) {
+        @media screen and (max-width: 636px) {
           font-size: 20px;
         }
       }
@@ -135,6 +136,9 @@
       .line-behind {
         margin: 1.625rem 0 0rem;
       }
+      multiselect, .tags {
+        color: #333;
+      }
     }
 
     .field-comment {
@@ -161,7 +165,7 @@
           width: 25%;
         }
         @media screen and (max-width: $big-phone) {
-          width: 33%;
+          width: 50%;
         }
       }
     }
@@ -169,11 +173,15 @@
   }
 
   .section.three {
-    min-height: 370px;
     min-height: 470px;
     background: #f0f0f0;
     text-align: left;
-
+    @media screen and (max-width: $tablet) {
+      min-height: 635px;
+    }
+    @media screen and (max-width: $big-phone) {
+      min-height: 740px;
+    }
     .get-more-buyers-markup {
       .get-more-buyers-text {
         max-width: $desktop;
@@ -225,14 +233,14 @@
 
           @media screen and (max-width: $tablet) {
             text-align: left;
+            .checkbox-field {
+              float: left;
+              width: 33%;
+            }
           }
           label {
             max-width: 100%;
           }
-        }
-        .checkbox-field {
-          float: left;
-          width: 33%;
         }
       }
       .field.tags {
