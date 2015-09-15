@@ -101,7 +101,7 @@
   /       %span issued by:
   /       SHANGHAI SHAGNPAI NETWORK TECHNOLOGY CO.,LTD
   .item-detailed-info{ "ng-show": "businessPresenter.introduction()" }
-    %h4.section-title.line-behind
+    %h4.section-title.line-behind.products
       %span
         %span.icon.icon-comment
         {{ "business.show.business_introduction" | translate }}
@@ -118,3 +118,28 @@
   /     = image_tag("strange-1.jpg")
   /     = image_tag("strange-2.jpg")
   /     = image_tag("strange-1.jpg")
+  %h4.section-title.line-behind.products
+    %span.company-items
+      %span.icon.icon-comment
+      Company Products
+  .company-products
+    %ul
+      %li{ "ng-repeat": "product in business_products"}
+        %a.item-img-link{ href: '{{ PRODUCT_SHOW_PATH }}/{{product.id}}' }
+          %img{ src: "{{ product.photos[0].thumb }}" }
+        .product-item-title
+          %a{ href: '{{ PRODUCT_SHOW_PATH }}/{{product.id}}' }
+          {{ product.name }}
+
+  %h4.section-title.line-behind.products
+    %span.company-items
+      %span.icon.icon-comment
+      Company Services
+  .company-products
+    %ul
+      %li{ "ng-repeat": "service in business_services"}
+        %a.item-img-link{ href: '{{ SERVICE_SHOW_PATH }}/{{service.id}}' }
+          %img{ src: "{{ service.photos[0].thumb }}" }
+        .product-item-title
+          %a{ href: '{{ SERVICE_SHOW_PATH }}/{{service.id}}' }
+          {{ service.name }}
