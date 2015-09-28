@@ -7,6 +7,9 @@
     angular.extend(Search.prototype,
       toParams: ->
         { type: @type, query: @query, page: @page, viewOption: @viewOption }
+
+      toFilterParams: (pageParam = '1') ->
+        { type: @type, query: @query, page: pageParam, viewOption: @viewOption }
     )
 
     Search

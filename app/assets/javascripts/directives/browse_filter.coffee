@@ -16,6 +16,6 @@
         return if $scope.search.type == $scope.type
 
         $scope.search.type = $scope.type
-        $state.go("results", $scope.search.toParams())
+        $state.go("results", $scope.search.toFilterParams("1"))
 ]
 
