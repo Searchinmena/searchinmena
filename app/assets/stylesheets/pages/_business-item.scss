@@ -345,3 +345,38 @@
     color: $grey;
   }
 }
+.products.line-behind {
+  clear: both;
+  .icon {
+    font-size: $bs2;
+    top: -0.15rem;
+    vertical-align: middle;
+  }
+
+}
+.company-products {
+  clear: both;
+  ul {
+    list-style: outside none none;
+    li {
+      float: left;
+      margin: 5px;
+      max-width: 180px;
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+      width: 100%;
+
+      &:hover {
+        box-shadow: 0 0 5px 2px #dddddd;
+        z-index: 99;
+      }
+      a {
+        border: none;
+      }
+      .product-item-title {
+        margin-top: 15px;
+      }
+    }
+  }
+}

@@ -10,7 +10,9 @@ class BusinessPresenter < BasicBusinessPresenter
       introduction: business.introduction,
       address_line_1: business.address_line_1,
       address_line_2: business.address_line_2,
-      business_type_ids: business.business_type_ids
+      business_type_ids: business.business_type_ids,
+      business_products: business.products,
+      business_services: business.services
     )
   end
 
