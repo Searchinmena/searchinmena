@@ -75,8 +75,9 @@ nav {
     float: right;
     padding-top: 0;
     width: auto;
-    overflow: auto;
-    max-height: initial;
+    overflow: hidden;
+    max-height: 60px;
+
     
     [dir="rtl"] & {
       float: left;
