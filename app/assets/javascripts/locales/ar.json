@@ -65,6 +65,8 @@
       "business_name": "أسم الشركة",
       "add_logo": "أضف شعار الشركة",
       "contact_number": "رقم الإتصال",
+      "contact_number_placeholder": "رمز البلد - رقم الهاتف",
+      "contact_number_help": "مثال: (00971-43311050)",
       "city": "المدينة",
       "location": "المكان",
       "select_country": "إختر بلد",

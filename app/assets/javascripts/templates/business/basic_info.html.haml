@@ -13,7 +13,8 @@
 
   %form-field{ "error": "errors.business.phone" }
     %label {{ "business.basic_info.contact_number" | translate }}
-    %input{ type: "text", "ng-model": "form.business.phone" }
+    %input{ type: "text", "ng-model": "form.business.phone", placeholder: '{{ "business.basic_info.contact_number_placeholder" | translate }}' }
+    %h5 {{ "business.basic_info.contact_number_help" | translate }}
 
   %form-field{ "error": "errors.business.city" }
     %label {{ "business.basic_info.city" | translate }}

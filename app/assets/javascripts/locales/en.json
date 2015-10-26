@@ -65,6 +65,8 @@
       "business_name": "Company name",
       "add_logo": "Add logo",
       "contact_number": "Contact number",
+      "contact_number_placeholder": "Country Code - Phone Number",
+      "contact_number_help": "Example: (00971-43311050)",
       "city": "City",
       "location": "Location",
       "select_country": "Select country",
