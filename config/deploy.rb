@@ -2,7 +2,7 @@ set :application, 'sim'
 
 set :branch, 'master'
 
-set :repo_url, 'git@github.com:LunarLogic/sim.git'
+set :repo_url, 'git@github.com:Searchinmena/searchinmena.git'
 set :deploy_via, :remote_cache
 set :copy_exclude, ['.git']
 
