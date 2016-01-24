@@ -7,7 +7,7 @@ class TestUsersSeeder
   TEST_PASSWORD = "testtest"
 
   def seed
-    # return if Rails.env.production?
+    return if Rails.env.production?
 
     require 'factory_girl'
     require './spec/support/factories'
