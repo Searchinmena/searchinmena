@@ -2,6 +2,11 @@ machine:
   node:
     version:
       0.12.2
+deployment:
+  staging:
+    branch: master
+    commands:
+      - bundle exec cap staging deploy
 test:
   pre:
     - bundle exec rake bower:install
@@ -18,4 +23,4 @@ test:
     - bundle exec haml-lint app/views/
     - RAILS_ENV=test RACK_ENV=test bundle exec rake spec:javascript
     - bundle exec rake db:seed
-    - npm run protractor
+    #- npm run protractor

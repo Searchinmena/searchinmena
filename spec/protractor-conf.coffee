@@ -1,6 +1,6 @@
 exports.config =
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
   specs: ['javascripts/e2e/*.coffee'],
   baseUrl: 'http://localhost:3000/',
