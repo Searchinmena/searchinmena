@@ -22,5 +22,5 @@ test:
     - bundle exec rubocop
     - bundle exec haml-lint app/views/
     - RAILS_ENV=test RACK_ENV=test bundle exec rake spec:javascript
-    - bundle exec rake db:seed
+    #- bundle exec rake db:seed
     #- npm run protractor
