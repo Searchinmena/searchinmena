@@ -27,6 +27,9 @@
   GoogleAnalyticsTrack.run()
   $rootScope.$on '$stateChangeSuccess', (event) ->
     GoogleAnalyticsTrack.preview()
+    $('html title').html('largest online B2B marketplace in The Middle East and North Africa - Searchinmena.com')
+    $('html meta[name=description]').attr('content', '')
+    $('html meta[name=keywords]').attr('content', '')
 
   $http.defaults.headers.common['Accept'] = 'application/json'
   $http.defaults.headers.common['Content-Type'] = 'application/json'
