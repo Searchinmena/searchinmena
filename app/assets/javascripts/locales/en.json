@@ -65,6 +65,8 @@
       "business_name": "Company name",
       "add_logo": "Add logo",
       "contact_number": "Contact number",
+      "contact_number_placeholder": "Country Code - Phone Number",
+      "contact_number_help": "Example: (00971-43311050)",
       "city": "City",
       "location": "Location",
       "select_country": "Select country",
@@ -90,7 +92,7 @@
       "main_products": "Main Products",
       "year_registered": "Year Company Registered",
       "no_of_employees": "No. of employees",
-      "business_introduction": "Company Introduction",
+      "business_introduction": "Description",
       "business_gallery": "Company Gallery"
     },
     "trade_details": {

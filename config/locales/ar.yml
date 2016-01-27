@@ -64,10 +64,6 @@ ar:
 
   footer:
     about_us: "من نحن"
-    about_description:
-      "شبكة مينا المحدودة تدير محرك بحث على الانترنت يحوي منتجات و خدمات لشركات في منطقة الشرق الأوسط وشمال أفريقيا. وتعود ملكية شبكة مينا ل40 من المساهمين في جميع أنحاء العالم. 
-يقع المقر الرئيسي لشبكة مينا في دبي – الامارات العربية المتحدة (واحة السيليكون )، ولها مكاتب في الرياض – المملكة العربية السعودية وسان فرانسيسكو – الولايات المتحدة الامريكية.
-"
     find_us: "موقعنا"
     businesses: "الشركات"
     address_title: "العنوان"
@@ -75,3 +71,207 @@ ar:
     address_line_2: "مبنى أ، مكتب ٢٩"
     address_line_3: "رقم الهاتف: ٠٠٩٧١٤٣٣١١٠٥٠"
     copyright: "الحقوق محفوظة لشبكة مينا"
+    about_description: "شبكة مينا المحدودة تدير محرك بحث على الانترنت يحوي منتجات و خدمات لشركات في منطقة الشرق الأوسط وشمال أفريقيا. وتعود ملكية شبكة مينا ل40 من المساهمين في جميع أنحاء العالم.
+يقع المقر الرئيسي لشبكة مينا في دبي – الامارات العربية المتحدة (واحة السيليكون )، ولها مكاتب في الرياض – المملكة العربية السعودية وسان فرانسيسكو – الولايات المتحدة الامريكية."
+
+
+  home_one:
+    Join_sim: "انضم إلى البحث في مينا وابدأ باستقبال طلبات من المشترين"
+    marketplace: "نحن موقع رائد للشركات في الشرق الأوسط يتيح للمشترين والبائعين التواصل والقيام بالأعمال."
+    watch_video: "شاهد الفيديو"
+    we_help: "نحن نساعد"
+    manufacturers: "الصناعيين"
+    trading: "الشركات تجارية"
+    agents: "الوكلاء"
+    buying_office: "مكاتب المشتريات"
+    wholesalers: "تجار الجملة"
+    service_provider: "شركات الخدمات"
+    others: "أخرى"
+    more_buyers: "خطوات بسيطة لتصل لمشترين جدد"
+    explanation: "يقوم المشترون اليوم باستخدام الإنترنت لشراء منتجات وخدمات لشركاتهم. البحث في مينا يساعد البائعون في الوصل لهؤلاء المشترين."
+    box_one_heading: "أضف شركنك"
+    box_one_desc:
+      "سجّل الآن واضف شركتك من خلال استمارة التسجيل. تأكد من إضافة كل تفاصيل الشركة بالإضافة إلى اللوغو ومعلومات الإتصال."
+    box_two_heading: "أضف خدماتك"
+    box_two_desc:
+      "يبحث المشترون عن منتجات، لا شركات، لذلك تأكد من إضافة كل المنتجات التي تبيعها مع الصور والتفاصيل."
+    box_three_heading: "استقبل طلبات الشراء"
+    box_three_desc:
+      "عند استكمال ملف شركتك ستستقبل العديد من الإتصالات وطلبات الشراء من مشترين. "
+    join_sellers: "انضم إلى الآلاف"
+    seller: "من البائعين"
+    reach_new: "وتواصل مع"
+    buyers: "المشترين مباشرة"
+
+  pages:
+    about_us_title: "About Us"
+    about_us_description:
+      "MENA Network LTD manages Search in MENA.com which is a b2b marketplace for products and services of the companies in the Middle East & North Africa.
+       MENA Network’s HQ is located in Dubai, Silicon Oasis and has offices in Riyadh and San Francisco.
+       Search in MENA.com is aiming  to be rated as the largest b2b marketplace of companies in the region, consistently providing the combination of a wide variety of services,
+        business information, visibility and outstanding service, that creates an extraordinary lead generation experience."
+    mission_title: "Mission"
+    mission_description:
+      "Our mission is to establish an integrated e-commerce b2b ecosystem in the MENA region by enabling buyers and sellers to interact on a global level.
+       The mission can be achieved by introducing necessary tools on the platform, where users will be able to send targeted trade leads, post trade offers,
+        announce tenders, exchange products samples or buy and sell products. Search in MENA .com aims to solve four core issues for SMEs discovery, workflow, data management,
+         and price transparency. It helps merchants organize relevant information to aid in comparison, negotiating, order-tracking, and future re-ordering."
+    terms_date:
+      "Updated September 1, 2015"
+    terms_point_1: "1.  ACCEPTANCE OF TERMS"
+    terms_point_1_desc:
+      "MENA Network, Search in MENA (www.searchinmena.com) provides a collection of online resources, including business directories, posts, offers, and network messages and notes
+      (referred to hereafter as the Service) subject to the following Terms of Use (TOU). By using the Service in any way, you are agreeing to comply with the TOU. In addition,
+      when using particular Search in MENA services, you agree to abide by any applicable posted guidelines for all Search in MENA services, which may change from time to time.
+      Should you object to any term or condition of the TOU, any guidelines, or any subsequent modifications thereto or become dissatisfied with Search in MENA.com in any way,
+      your only recourse is to immediately discontinue use of Search in MENA.com. MENA Network has the right, but is not obligated, to strictly enforce the TOU through self-help,
+      community moderation, active investigation, litigation and prosecution."
+    terms_point_2: "2. MODIFICATIONS TO THIS AGREEMENT"
+    terms_point_2_desc:
+      "We reserve the right, at our sole discretion, to change, modify or otherwise alter these terms and conditions at any time. Such modifications shall become effective immediately
+       upon the posting thereof. You must review this agreement on a regular basis to keep yourself apprised of any changes. You can find the most recent version of the TOU at
+       www.searchinmena.com/termsofuse/"
+    terms_point_3: "3. CONTENT"
+    terms_point_3_desc:
+      "You understand that all postings, messages, text, files, images, photos, video, sounds, or other materials (Content) posted on, transmitted through, or linked from the Service,
+       are the sole responsibility of the person from whom such Content originated. More specifically, you are entirely responsible for each individual post, response, note, message,
+       or other item (Item) of Content that you post, email or otherwise make available via the Service. You understand that MENA Network does not control, and is not responsible for
+       Content made available through the Service, and that by using the Service, you may be exposed to Content that is offensive, indecent, inaccurate, misleading, or otherwise
+       objectionable. Furthermore, the Search in MENA.com and Content available through the Service may contain links to other websites, which are completely independent of MENA Network.
+       MENA Network makes no representation or warranty as to the accuracy, completeness or authenticity of the information contained in any such site. Your linking to any other websites
+        is at your own risk. You agree that you must evaluate, and bear all risks associated with, the use of any Content, that you may not rely on said Content, and that under no
+        circumstances will MENA Network be liable in any way for any Content or for any loss or damage of any kind incurred as a result of the use of any Content posted, emailed or
+        otherwise made available via the Service. You acknowledge that MENA Network does not pre-screen or approve Content, but that MENA Network shall have the right
+        (but not the obligation) in its sole discretion to refuse, delete or move any Content that is available via the Service, for violating the letter or spirit of the TOU
+        or for any other reason."
+    terms_point_4: "4. THIRD PARTY CONTENT, SITES, AND SERVICES"
+    terms_point_4_desc:
+      "The Search in MENA .com and Content available through the Service may contain features and functionalities that may link you or provide you with access to third party content
+       which is completely independent of MENA Network, including web sites, directories, servers, networks, systems, information and databases, applications, software, programs,
+       products or services, and the Internet as a whole. 
+       Your interactions with organizations and/or individuals found on or through the Service, including payment and delivery of goods or services, and any other terms, conditions,
+        warranties or representations associated with such dealings, are solely between you and such organizations and/or individuals. You should make whatever investigation you feel
+         necessary or appropriate before proceeding with any online or offline transaction with any of these third parties. 
+       You agree that MENA Network shall not be responsible or liable for any loss or damage of any sort incurred as the result of any such dealings.
+        If there is a dispute between participants on this site, or between users and any third party, you understand and agree that MENA Network is under no obligation to become involved.
+         In the event that you have a dispute with one or more other users, you hereby release MENA Network, its officers, employees, agents and successors in rights from claims,
+         demands and damages (actual and consequential) of every kind or nature, known or unknown, suspected and unsuspected, disclosed and undisclosed,
+         arising out of or in any way related to such disputes and / or our service."
+    terms_point_5: "5. NOTIFICATION OF CLAIMS OF INFRINGEMENT"
+    terms_point_5_desc:
+      "If you believe that your work has been copied in a way that constitutes copyright infringement, or your intellectual property rights have been otherwise violated,
+      please notify MENA Network’s team for notice of claims of copyright or other intellectual property infringement, at info@searchinmena.com. 
+
+       MENA Network will remove the infringing posting(s), subject to the procedures outlined in the Digital Millenium Copyright Act (DMCA)."
+    terms_point_6: "6. PRIVACY AND INFORMATION DISCLOSURE"
+    terms_point_6_desc:
+      "MENA Network has established a Privacy Policy to explain to users how their information is collected and used, which is located at the following web address: 
+       www.searchinmena.com/privacy 
+       Your use of the Search in MENA.com or the Service signifies acknowledgement of and agreement to our Privacy Policy. You further acknowledge and agree that MENA Network may,
+       in its sole discretion, preserve or disclose your Content, as well as your information, such as email addresses, IP addresses, timestamps, and other user information,
+       if required to do so by law or in the good faith belief that such preservation or disclosure is reasonably necessary to: comply with legal process; enforce the TOU;
+       respond to claims that any Content violates the rights of third-parties; respond to claims that contact information (e.g. phone number, street address) of a third-party has been
+        posted or transmitted without their consent or as a form of harassment; protect the rights, property, or personal safety of MENA Network, its users or the general public."
+    terms_point_7: "7. CONDUCT"
+    terms_point_7_desc:
+      "You agree not to post, email, or otherwise make available Content: 
+
+       a. that is unlawful, harmful, threatening, abusive, harassing, defamatory, libelous, invasive of another's privacy, or is harmful to minors in any way;
+       b. that is pornographic or depicts a human being engaged in actual sexual conduct including but not limited to (i) sexual intercourse, including genital-genital, oral-genital, anal-genital, or oral-anal, whether between persons of the same or opposite sex, or (ii) bestiality, or (iii) masturbation, or (iv) sadistic or masochistic abuse, or (v) lascivious exhibition of the genitals or pubic area of any person;
+       c. that harasses, degrades, intimidates or is hateful toward an individual or group of individuals on the basis of religion, gender, sexual orientation, race, ethnicity, age, or disability;
+       d. that violates the Fair Housing Act by stating, in any notice or ad for the sale or rental of any dwelling, a discriminatory preference based on race, color, national origin, religion, sex, familial status or handicap (or violates any state or local law prohibiting discrimination on the basis of these or other characteristics);
+       e. that violates federal, state, or local equal employment opportunity laws, including but not limited to, stating in any advertisement for employment a preference or requirement based on race, color, religion, sex, national origin, age, or disability.
+       f. that includes personal or identifying information about another person without that person's explicit consent;
+       g. that is false, deceptive, misleading, deceitful, misinformative, or constitutes 'bait and switch';
+       h. that infringes any patent, trademark, trade secret, copyright or other proprietary rights of any party, or Content that you do not have a right to make available under any law or under contractual or fiduciary relationships;
+       i. that constitutes or contains 'affiliate marketing,' 'link referral code,' 'junk mail,' 'spam,' 'chain letters,' 'pyramid schemes,' or unsolicited commercial advertisement;
+       j. that constitutes or contains any form of advertising or solicitation if: posted in areas of the  which are not designated for such purposes; or emailed to Search in MENA users who have not indicated in writing that it is ok to contact them about other services, products or commercial interests.
+       k. that includes links to commercial services or web sites, except as allowed in 'services';
+       l. that advertises any illegal service or the sale of any items the sale of which is prohibited or restricted by any applicable law, including without limitation items the sale of which is prohibited or regulated by UAE & BVI law. A partial list of prohibited items for sale and prohibited services offered is provided here for your convenience:
+       Obscene material or child pornography
+       Offer or solicitation of illegal prostitution
+       Weapons and related items, including but not limited to firearms, disguised, undetectable or switchblade knives, martial arts weapons, scopes, silencers, ammunition, ammunition magazines, BB guns, tear gas or stun guns
+       Items issued to Armed Forces that have not been disposed of in accordance with Department of Defense demilitarization policies
+       Fireworks, including but not limited to 'safe and sane' fireworks or any destructive devices or explosives
+       Controlled substances or illegal drugs, substances and items used to manufacture controlled substances and drug paraphernalia
+       Prescription drugs and medical devices, including but not limited to prescription or contact lenses, defibrillators, hypodermic needles or hearing aids
+       Nonprescription drugs that make false or misleading treatment claims or treatment claims that require FDA approval
+       Blood, bodily fluids or body parts
+       Household pets of any kind including but not limited to dogs, cats, primates, cage birds, rodents, reptiles, amphibians, fish. Re-homing with small adoption fee OK
+       Pet animal parts, blood, or fluids - including but not limited to stud/breeding service
+       Restricted or regulated plants and insects, including but not limited to noxious weeds, endangered plant species, or live insects or pests
+       Pesticides or hazardous substances, or items containing hazardous substances including but not limited to contaminated toys, or art or craft material containing toxic substances without a warning label
+       Illegal telecommunications equipment, including but not limited to access cards, password sniffers, access card programmers and unloopers, or cable descramblers
+       Stolen property, or property with serial number removed or altered
+       Burglary tools, including but not limited to lock-picks or motor vehicle master keys
+       False identification cards, items with police insignia, citizenship documents, or birth certificates
+       Counterfeit currency, coins and stamps, tickets, as well as equipment designed to make them
+       Counterfeit, replica, or knock-off brand name goods
+       Material that infringes copyright, including but not limited to software or other digital goods you are not authorized to sell, warez, bootlegs (without consent of the band)
+       Airline tickets that restrict transfer, and tickets of any kind which you are not authorized to sell
+       Coupons or gift cards that restrict transfer, and coupons or gift cards which you are not authorized to sell
+       Gambling items, including but not limited to lottery tickets, sports trading card 'grab bags', raffle tickets, sweepstakes entries or slot machines
+       Used or rebuilt batteries, or batteries containing mercury
+       Used bedding and clothing, unless sanitized in accordance with law
+       Non-packaged food items or adulterated food
+       Bulk email or mailing lists that contain names, addresses, phone numbers, or other personal identifying information
+       m. that contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment;
+       n. that disrupts the normal flow of dialogue with an excessive amount of Content (flooding attack) to the Service, or that otherwise negatively affects other users' ability to use the Service; or
+       o. that employs misleading email addresses, or forged headers or otherwise manipulated identifiers in order to disguise the origin of Content transmitted through the Service.
+       p. Additionally, you agree not to: 
+       'stalk' or otherwise harass anyone;
+       q. collect personal data about other users for commercial or unlawful purposes;
+       r. use automated means, including spiders, robots, crawlers, data mining tools, or the like to download data from the Service - unless expressly permitted by Search in MENA;
+       s. attempt to gain unauthorized access to Search in MENA's computer systems or engage in any activity that disrupts, diminishes the quality of, interferes with the performance of, or impairs the functionality of, the Service or the Search in MENA.com; or
+       t. use any form of automated device or computer program ('flagging tool') that enables the use of MENA Network's 'flagging system' or other community moderation systems without each flag being manually entered by the person that initiates the flag (an 'automated flagging device'), or use the flagging tool to remove posts of competitors, or to remove posts without a good faith belief that the post being flagged violates these TOU;
+       "
+    terms_point_7_1: "7.1 SUPPLIER CONDUCT"
+    terms_point_7_1_desc:
+      "All suppliers agree to report all won or lost Search in MENA Leads to Search in MENA via Search in MENA’s interface or via a designated email address within 30 days of either (a) supplier’s first knowledge of the won or lost Search in MENA Lead or (b) the supplier’s issuance of an invoice related to the won Search in MENA Lead. A won or lost Search in MENA Lead is defined as a lead where the customer first purchased a product substantially similar to the product presented in the lead that was sent to the Supplier via Search in MENA.com. Failure to comply with the above terms may result in termination of the Supplier’s Search in MENA account."
+    terms_point_8: "8. NO SPAM POLICY"
+    terms_point_8_desc:
+      "You understand and agree that sending unsolicited email advertisements to Search in MENA email addresses or through Search in MENA computer systems, which is expressly prohibited by these Terms, will use or cause to be used servers located in Texas. Any unauthorized use of Search in MENA computer systems is a violation of these Terms and certain federal and state laws, including without limitation the Computer Fraud and Abuse Act (18 U.S.C. 1030 et seq.). Such violations may subject the sender and his or her agents to civil and criminal penalties."
+    terms_point_9: "9. LIMITATIONS ON SERVICE"
+    terms_point_9_desc:
+      "You acknowledge that MENA Network may establish limits concerning use of the Service, including the maximum number of days that Content will be retained by the Service, the maximum number and size of postings, email messages, or other Content that may be transmitted or stored by the Service, and the frequency with which you may access the Service. You agree that MENA Network has no responsibility or liability for the deletion or failure to store any Content maintained or transmitted by the Service. You acknowledge that MENA Network reserves the right at any time to modify or discontinue the Service (or any part thereof) with or without notice, and that MENA Network shall not be liable to you or to any third party for any modification, suspension or discontinuance of the Service."
+    terms_point_10: "10. ACCESS TO THE SERVICE"
+    terms_point_10_desc:
+      "MENA Network grants you a limited, revocable, nonexclusive license to access the Service for your own use. This license does not include: (a) access to the Service by Posting Agents; or (b) any collection, aggregation, copying, duplication, display or derivative use of the Service nor any use of data mining, robots, spiders, or similar data gathering and extraction tools for any purpose unless expressly permitted by MENA Network. A limited exception to (b) is provided to general purpose internet search engines and non-commercial public archives that use such tools to gather information for the sole purpose of displaying hyperlinks to the Service, provided they each do so from a stable IP address or range of IP addresses using an easily identifiable agent and comply with our robots.txt file. 'General purpose internet search engine' does not include a website or search engine or other service that specializes in classified listings or in any subset of classifieds listings such as jobs, housing, for sale, services, or personals, or which is in the business of providing classified ad listing services. 
+
+       MENA Network may offer various parts of the Service in RSS format, and reserves all rights in the content of the RSS feeds and may terminate any RSS feed at any time. 
+       Use of the Service beyond the scope of authorized access granted to you by MENA Network immediately terminates said permission or license. In order to collect, aggregate, copy, duplicate, display or make derivative use of the the Service or any Content made available via the Service for other purposes (including commercial purposes) not stated herein, you must first obtain a license from MENA Network."
+    terms_point_11: "11. TERMINATION OF SERVICE"
+    terms_point_11_desc:
+      "You agree that MENA Network, in its sole discretion, has the right (but not the obligation) to delete or deactivate your account, block your email or IP address, or otherwise terminate your access to or use of the Service (or any part thereof), immediately and without notice, and remove and discard any Content within the Service, for any reason, including, without limitation, if MENA Network believes that you have acted inconsistently with the letter or spirit of the TOU. Further, you agree that MENA Network shall not be liable to you or any third-party for any termination of your access to the Service. Further, you agree not to attempt to use the Service after said termination. Sections 2, 4, 6 and 10-16 shall survive termination of the TOU."
+    terms_point_12: "12. PROPRIETARY RIGHTS"
+    terms_point_12_desc:
+      "The Service is protected to the maximum extent permitted by copyright laws and international treaties. Content displayed on or through the Service is protected by copyright as a collective work and/or compilation, pursuant to copyrights laws, and international conventions. Any reproduction, modification, creation of derivative works from or redistribution of the site or the collective work, and/or copying or reproducing the sites or any portion thereof to any other server or location for further reproduction or redistribution is prohibited without the express written consent of MENA Network. You further agree not to reproduce, duplicate or copy Content from the Service without the express written consent of MENA Network, and agree to abide by any and all copyright notices displayed on the Service. You may not decompile or disassemble, reverse engineer or otherwise attempt to discover any source code contained in the Service. Without limiting the foregoing, you agree not to reproduce, duplicate, copy, sell, resell or exploit for any commercial purposes, any aspect of the Service. 
+
+       Although MENA Network does not claim ownership of content that its users post, by posting Content to any public area of the Service, you automatically grant, and you represent and warrant that you have the right to grant, to MENA Network an irrevocable, perpetual, non-exclusive, fully paid, worldwide license to use, copy, perform, display, and distribute said Content and to prepare derivative works of, or incorporate into other works, said Content, and to grant and authorize sublicenses (through multiple tiers) of the foregoing. Furthermore, by posting Content to any public area of the Service, you automatically grant MENA Network all rights necessary to prohibit any subsequent aggregation, display, copying, duplication, reproduction, or exploitation of the Content on the Service by any party for any purpose. MENA Network will make every effort to protect your private pricing information, and will not share your pricing in a way that would be attributable to you without your express consent. MENA Network may, from time to time, aggregate pricing information from multiple members on an anonymous basis for analysis."
+    terms_point_13: "13. DISCLAIMER OF WARRANTIES"
+    terms_point_13_desc:
+      "YOU AGREE THAT USE OF THE SEARCHINMENA.COM AND THE SERVICE IS ENTIRELY AT YOUR OWN RISK. THE SEARCHINMENA.COM AND THE SERVICE ARE PROVIDED ON AN 'AS IS' OR 'AS AVAILABLE' BASIS, WITHOUT ANY WARRANTIES OF ANY KIND. ALL EXPRESS AND IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT OF PROPRIETARY RIGHTS ARE EXPRESSLY DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. TO THE FULLEST EXTENT PERMITTED BY LAW, MENA NETWORK DISCLAIMS ANY WARRANTIES FOR THE SECURITY, RELIABILITY, TIMELINESS, ACCURACY, AND PERFORMANCE OF THE SEARCHINMENA.COM AND THE SERVICE. TO THE FULLEST EXTENT PERMITTED BY LAW, MENA Network DISCLAIMS ANY WARRANTIES FOR OTHER SERVICES OR GOODS RECEIVED THROUGH OR ADVERTISED ON THE SEARCHINMENA.COM OR THE SITES OR SERVICE, OR ACCESSED THROUGH ANY LINKS ON THE SEARCHINMENA.COM. TO THE FULLEST EXTENT PERMITTED BY LAW, MENA NETWORK DISCLAIMS ANY WARRANTIES FOR VIRUSES OR OTHER HARMFUL COMPONENTS IN CONNECTION WITH THE SEARCHINMENA.COM OR THE SERVICE. Some jurisdictions do not allow the disclaimer of implied warranties. In such jurisdictions, some of the foregoing disclaimers may not apply to you insofar as they relate to implied warranties."
+    terms_point_14: "14. LIMITATIONS OF LIABILITY"
+    terms_point_14_desc:
+      "UNDER NO CIRCUMSTANCES SHALL MENA NETWORK BE LIABLE FOR DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES (EVEN IF MENA NETWORK HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), RESULTING FROM ANY ASPECT OF YOUR USE OF THE SEARCHINMENA.COM OR THE SERVICE, WHETHER THE DAMAGES ARISE FROM USE OR MISUSE OF THE SEARCHINMENA.COM OR THE SERVICE, FROM INABILITY TO USE THE SEARCHINMENA.COM OR THE SERVICE, OR THE INTERRUPTION, SUSPENSION, MODIFICATION, ALTERATION, OR TERMINATION OF THE SEARCHINMENA.COM OR THE SERVICE. SUCH LIMITATION SHALL ALSO APPLY WITH RESPECT TO DAMAGES INCURRED BY REASON OF OTHER SERVICES OR PRODUCTS RECEIVED THROUGH OR ADVERTISED IN CONNECTION WITH THE SEARCHINMENA.COM OR THE SERVICE OR ANY LINKS ON THE SEARCHINMENA.COM, AS WELL AS BY REASON OF ANY INFORMATION OR ADVICE RECEIVED THROUGH OR ADVERTISED IN CONNECTION WITH THE SEARCHINMENA.COM OR THE SERVICE OR ANY LINKS ON THE SEARCHINMENA.COM. THESE LIMITATIONS SHALL APPLY TO THE FULLEST EXTENT PERMITTED BY LAW. In some jurisdictions, limitations of liability are not permitted. In such jurisdictions, some of the foregoing limitation may not apply to you."
+    terms_point_15: "15. INDEMNITY"
+    terms_point_15_desc:
+      "You agree to indemnify and hold MENA Network, its officers, subsidiaries, affiliates, successors, assigns, directors, officers, agents, service providers, suppliers and employees, harmless from any claim or demand, including reasonable attorney fees and court costs, made by any third party due to or arising out of Content you submit, post or make available through the Service, your use of the Service, your violation of the TOU, your breach of any of the representations and warranties herein, or your violation of any rights of another."
+    terms_point_16: "16. GENERAL INFORMATION"
+    terms_point_16_desc:
+      "The TOU constitute the entire agreement between you and MENA Network and govern your use of the Service, superceding any prior agreements between you and MENA Network. The TOU and the relationship between you and MENA Network shall be governed by the laws of the State of New York without regard to its conflict of law provisions. You and MENA Network agree to submit to the personal and exclusive jurisdiction of the courts located within the county of New York, New York. The failure of MENA Network to exercise or enforce any right or provision of the TOU shall not constitute a waiver of such right or provision. If any provision of the TOU is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties' intentions as reflected in the provision, and the other provisions of the TOU remain in full force and effect. You agree that regardless of any statute or law to the contrary, any claim or cause of action arising out of or related to use of the Service or the TOU must be filed within one (1) year after such claim or cause of action arose or be forever barred."
+    terms_point_17: "17. VIOLATION OF TERMS AND LIQUIDATED DAMAGES"
+    terms_point_17_desc:
+      "Please report any violations of the TOU, by emailing to: 
+
+       info@searchinmena.com 
+
+       Our failure to act with respect to a breach by you or others does not waive our right to act with respect to subsequent or similar breaches. 
+       You understand and agree that, because damages are often difficult to quantify, if it becomes necessary for MENA Network to pursue legal action to enforce these Terms, you will be liable to pay MENA Network the following amounts as liquidated damages, which you accept as reasonable estimates of MENA Network’s damages for the specified breaches of these Terms: 
+
+       a. If you post a message that (1) impersonates any person or entity; (2) falsely states or otherwise misrepresents your affiliation with a person or entity; or (3) that includes personal or identifying information about another person without that person's explicit consent, you agree to pay MENA Network one thousand dollars ($1,000) for each such message. This provision does not apply to Content that constitutes lawful non-deceptive parody of public figures.
+       b. If you aggregate, display, copy, duplicate, reproduce, or otherwise exploit for any purpose any Content (except for your own Content) in violation of these Terms without MENA Network 's express written permission, you agree to pay MENA Network three thousand dollars ($3,000) for each day on which you engage in such conduct.
+       c. Otherwise, you agree to pay MENA Network's actual damages, to the extent such actual damages can be reasonably calculated. Notwithstanding any other provision of these Terms, MENA Network retains the right to seek the remedy of specific performance of any term contained in these Terms, or a preliminary or permanent injunction against the breach of any such term or in aid of the exercise of any power granted in these Terms, or any combination thereof."
+    terms_point_18: "18. FEEDBACK"
+    terms_point_18_desc:
+      "We welcome your questions and comments on this document, by contacting us at info@searchinmena.com"

@@ -1,0 +1,19 @@
+%section.page-view.service-view.result-item
+  %h1
+    = t("main_nav.contact_us")
+  %h3.address-title= t("footer.address_title")
+  %address
+    = t("footer.address_line_1")
+    %br
+    = t("footer.address_line_2")
+    %br
+    = t("footer.address_line_3")
+  %h3.title= t("footer.find_us")
+  = link_to("", "https://www.facebook.com/searchinmena",
+      class: "social-link facebook-link")
+  = link_to("", "https://twitter.com/searchinmena",
+      class: "social-link twitter-link")
+  = link_to("", "https://plus.google.com/+Searchinmena/",
+      class: "social-link google-plus-link")
+  = link_to("", "https://www.linkedin.com/company/search-in-mena-fzllc",
+      class: "social-link linkedin-link")

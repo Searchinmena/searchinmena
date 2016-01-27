@@ -3,27 +3,23 @@
 
 = f.fields_for business do |b|
   = form_field("business.name") do
-    = b.label :name, t("sign_up.business_name")
-    = b.text_field :name, "ng-model": "form.business.name"
+    = b.text_field :name, "ng-model": "form.business.name",
+    placeholder: t("sign_up.business_name")
 
   = form_field("business.country_id") do
-    = b.label :country, t("sign_up.location")
     .select-field
       %select{ "ng-options": "country.id as country.label for country in countries | orderBy:'label'", "ng-model": "form.business.country_id" }
         %option{ value: "" }= t("sign_up.location_select")
 
   = form_field("business.phone") do
-    = b.label :phone, t("sign_up.contact_number")
-    = b.text_field :phone, "ng-model": "form.business.phone"
+    = b.text_field :phone, "ng-model": "form.business.phone",
+    placeholder: t("sign_up.contact_number")
 
   .field{ "ng-class": "{'field-with-errors': errors.business.business_type_ids}" }
-    %label {{ "business.basic_info.business_types" | translate }}
     %multiselect{ "model": "form.business.business_type_ids", "options": "business_types", "select-button-text": "{{ 'business.basic_info.select_business_types' | translate }}" }
     %error-message-for{ "error": "errors.business.business_type_ids" }
 
-  .field
-    = label_tag :main_products, t("sign_up.main_products")
-
+  .field.tags
     %tags-input{ "ng-model": "form.tags", "display-property": "label",
       "replace-spaces-with-dashes": "false" }
       %auto-complete{ source: "loadTags($query)",

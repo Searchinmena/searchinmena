@@ -1,0 +1,35 @@
+.landing-pages.home-one.container{ "ng-controller": "RegistrationsCtrl",
+  "ng-init": "init('#{escape_javascript(user_presenter.to_json)}')" }
+  .section.one
+    .sign-up-wrapper.section-container
+      .form-additional-panel
+        %h1.title
+          = t("home_one.Join_sim")
+        %hr
+        %h2.subtitle
+          = t("home_one.marketplace")
+        .watch-video-btn
+          %a.videobutton{ href: "https://www.youtube.com/watch?v=QQAl7qlojuI&list=PLgnvtGyQN2bzViGmw0bZFSm812t6hsoX-" }
+            %span.wrap
+              %span.play
+                = t("home_one.watch_video")
+
+      = render partial: "landing_pages/home_one/registrations",
+      locals: { user: user, business: business }
+
+  .section.two
+    = render partial: "landing_pages/home_one/we_help"
+  .section.three
+    = render partial: "landing_pages/home_one/get_more_buyers"
+
+  .section.four
+    .section-container
+      .section-title
+        = t("home_one.join_sellers")
+        %span.sim-in-color
+          = t("home_one.seller")
+        = t("home_one.reach_new")
+        %span.sim-in-color
+          = t("home_one.buyers")
+      = render partial: "landing_pages/home_one/registrations",
+      locals: { user: user, business: business }

@@ -24,7 +24,7 @@
 
   %h3.title {{ resultsCount }} {{ "results.title" | translate }}
 
-  %p.empty-results{ 'ng-hide': 'results.length > 0' }
+  %p.empty-results{ 'ng-show': 'results.length < 1' }
     {{ "results.no_results" | translate }}
 
   %ul.search-results{ 'ng-class': '{ "net-view": isNetViewSelected() }',
@@ -33,5 +33,5 @@
       'total-items': 'total', 'current-page': 'pagination.current' }
       %ng-include{ 'src': 'result.templatePath()' }
 
-  .pagination-container
-    %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }
+    .pagination-container
+      %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }
