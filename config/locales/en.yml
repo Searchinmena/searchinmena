@@ -77,3 +77,39 @@ en:
     address_line_2: "Block A, Office G029"
     address_line_3: "Office Number: 0097143311050"
     copyright: "MENA Network LTD, All rights reserved."
+
+  home_one:
+    Join_sim: "Join Search in MENA marketplace and start getting inquiries from buyers today."
+    marketplace:
+      "We are a b2b marketplace for sellers and buyers in the MENA region.
+       Sellers create business profiles and buyers browse sellers they want to source from."
+    watch_video: "Watch Video"
+
+    we_help: "We help"
+    manufacturers: "Manufacturers"
+    trading: "Trading Companies"
+    agents: "Agents"
+    buying_office: "Buying Offices"
+    wholesalers: "Wholesalers"
+    service_provider: "Service Providers"
+    others: "Others"
+
+    more_buyers: "Few Easy Steps To Get More Buyers"
+    explanation:
+      "Today,users surf the Internet looking for sellers to source products and services from them.
+      Searchinmena.com generates quality inquiries for sellers in just a few steps."
+    box_one_heading: "Create Your Company"
+    box_one_desc:
+      "Sign up and add your company using the registration form. Your company profile basically explains your
+      whole business so make sure to add your logo and all of your company’s information."
+    box_two_heading: "Add Your Products"
+    box_two_desc:
+      "Buyers search for products, not companies. Make sure to add all your products and exemplify them with details and images."
+    box_three_heading: "Receive Inquiries"
+    box_three_desc:
+      "Once your profile is completed, buyers will reach you by phone or through email, so stay up to date with your profile and respond to your emails and inquiries."
+
+    join_sellers: "Join thousands of"
+    seller: "Sellers"
+    reach_new: "and reach new"
+    buyers: "Buyers"

@@ -4,15 +4,15 @@
     .sign-up-wrapper.section-container
       .form-additional-panel
         %h1.title
-          Join Search in MENA marketplace and start getting inquiries from buyers today.
+          = t("home_one.Join_sim")
         %hr
         %h2.subtitle
-          We are a b2b marketplace for sellers and buyers in the MENA region. Sellers create business profiles and buyers browse sellers they want to source from.
+          = t("home_one.marketplace")
         .watch-video-btn
           %a.videobutton{ href: "https://www.youtube.com/watch?v=QQAl7qlojuI&list=PLgnvtGyQN2bzViGmw0bZFSm812t6hsoX-" }
             %span.wrap
               %span.play
-                Watch Video
+                = t("home_one.watch_video")
 
       = render partial: "landing_pages/home_one/registrations",
       locals: { user: user, business: business }
@@ -25,11 +25,11 @@
   .section.four
     .section-container
       .section-title
-        Join thousands of
+        = t("home_one.join_sellers")
         %span.sim-in-color
-          Sellers
-        and reach new
+          = t("home_one.sellers")
+        = t("home_one.reach_new")
         %span.sim-in-color
-          Buyers
+          = t("home_one.buyers")
       = render partial: "landing_pages/home_one/registrations",
       locals: { user: user, business: business }
