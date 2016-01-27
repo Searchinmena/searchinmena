@@ -118,28 +118,28 @@
   /     = image_tag("strange-1.jpg")
   /     = image_tag("strange-2.jpg")
   /     = image_tag("strange-1.jpg")
-  %h4.section-title.line-behind.products
+  %h4.section-title.line-behind.products{ "ng-show": "business_products.length"}
     %span.company-items
       %span.icon.icon-comment
-      Company Products
+      {{ "business.show.products" | translate }}
   .company-products
     %ul
       %li{ "ng-repeat": "product in business_products"}
-        %a.item-img-link{ href: '{{ PRODUCT_SHOW_PATH }}/{{product.id}}' }
+        %a.item-img-link{ href: '{{ productshowpath }}/{{product.id}}' }
           %img{ src: "{{ product.photos[0].thumb }}" }
         .product-item-title
-          %a{ href: '{{ PRODUCT_SHOW_PATH }}/{{product.id}}' }
+          %a{ href: '{{ productshowpath }}/{{product.id}}' }
             {{ product.name }}
 
-  %h4.section-title.line-behind.products
+  %h4.section-title.line-behind.products{ "ng-show": "business_services.length"}
     %span.company-items
       %span.icon.icon-comment
-      Company Services
+      {{ "business.show.services" | translate }}
   .company-products
     %ul
       %li{ "ng-repeat": "service in business_services"}
-        %a.item-img-link{ href: '{{ SERVICE_SHOW_PATH }}/{{service.id}}' }
+        %a.item-img-link{ href: '{{ serviceshowpath }}/{{service.id}}' }
           %img{ src: "{{ service.photos[0].thumb }}" }
         .product-item-title
-          %a{ href: '{{ SERVICE_SHOW_PATH }}/{{service.id}}' }
+          %a{ href: '{{ serviceshowpath }}/{{service.id}}' }
             {{ service.name }}
