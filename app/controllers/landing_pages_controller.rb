@@ -6,6 +6,7 @@ class LandingPagesController < ApplicationController
       redirect_to '/#/dashboard'
       return
     end
+    
     user_params = user_params_factory.build(session["devise.auth_data"])
     user = user_repository.new(user_params)
     business = business_repository.new
