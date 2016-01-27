@@ -1,8 +1,8 @@
 @Sim.controller 'BusinessShowCtrl', ['$scope', '$http', '$stateParams',
   'BusinessPresenter', 'language', 'BUSINESSES_PATH', 'BUSINESS_TYPES_PATH',
-  'BUSINESS_TAGS_PATH', 'MessageModal', '$controller',
+  'BUSINESS_TAGS_PATH', 'MessageModal', 'BusinessSpecificProducts', 'BusinessSpecificServices',
   ($scope, $http, $stateParams, BusinessPresenter, language,
-    BUSINESSES_PATH, BUSINESS_TYPES_PATH, BUSINESS_TAGS_PATH, MessageModal, $controller) ->
+    BUSINESSES_PATH, BUSINESS_TYPES_PATH, BUSINESS_TAGS_PATH, MessageModal, BusinessSpecificProducts, BusinessSpecificServices) ->
     params = {
       params: {
         business_id: $stateParams.id,
