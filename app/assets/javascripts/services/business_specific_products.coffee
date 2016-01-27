@@ -1,5 +1,5 @@
-@Sim.service 'BusinessSpecificProducts', ['ProductFactory', 'BUSINESSES_PATH', '$http',
-  (ProductFactory, BUSINESSES_PATH, $http) ->
+@Sim.service 'BusinessSpecificProducts', ['ProductFactory', 'BUSINESSES_PATH', '$http', 'PRODUCT_SHOW_PATH',
+  (ProductFactory, BUSINESSES_PATH, $http, PRODUCT_SHOW_PATH) ->
     initialize: (id, scope) ->
       $http.get(BUSINESSES_PATH + id).success((businessAttributes) ->
         #console.log businessAttributes
@@ -15,4 +15,5 @@
             (attributes) ->
               ProductFactory.buildPresenter(attributes)
           )
+        scope.productshowpath = PRODUCT_SHOW_PATH;
 ]
