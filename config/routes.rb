@@ -20,6 +20,14 @@ Rails.application.routes.draw do
   end
 
   get "/home" => "pages#home", as: :home
+  get "/about_us" => "pages#about_us", as: :about_us
+  get "/contact_us" => "pages#contact_us", as: :contact_us
+  get "/press" => "pages#press", as: :press
+  get "/blog" => "pages#blog", as: :blog
+  get "/faqs" => "pages#faqs", as: :faqs
+  get "/careers" => "pages#careers", as: :careers
+  get "/terms" => "pages#terms", as: :terms
+
   get "/home-1" => "landing_pages#home_one", as: :home_one
 
   root to: "pages#home"
