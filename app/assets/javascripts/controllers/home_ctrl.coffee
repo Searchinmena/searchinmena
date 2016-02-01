@@ -1,5 +1,9 @@
 @Sim.controller 'HomeCtrl', ['$scope', '$state', 'User', 'Search', 'SearchService',
-  ($scope, $state, User, Search, SearchService) ->
+                             '$controller',
+  ($scope, $state, User, Search, SearchService, $controller) ->
+
+    $controller('MetaCtrl').homeMeta()
+
     User.get((data) ->
       $scope.user = new User(data)
     )

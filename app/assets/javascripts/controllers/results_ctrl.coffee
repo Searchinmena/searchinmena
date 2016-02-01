@@ -1,13 +1,16 @@
 @Sim.controller 'ResultsCtrl', ['$scope', '$state', '$stateParams',
   'Search', 'SearchService', 'ResultPresenterFactory', 'MessageModal', 'ITEMS_PER_PAGE',
+  '$controller',
   ($scope, $state, $stateParams, Search, SearchService,
-  ResultPresenterFactory, MessageModal, ITEMS_PER_PAGE) ->
+  ResultPresenterFactory, MessageModal, ITEMS_PER_PAGE, $controller) ->
     $scope.search = new Search(
       type: $stateParams.type,
       query: $stateParams.query,
       page: $stateParams.page,
       viewOption: $stateParams.viewOption
     )
+    # add meta
+    $controller('MetaCtrl').resultPage($stateParams.type)
     $scope.MessageModal = MessageModal
 
     $scope.perPage = ITEMS_PER_PAGE
