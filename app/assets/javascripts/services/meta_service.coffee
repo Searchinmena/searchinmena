@@ -4,12 +4,12 @@
       set: (title, description, keywords) ->
         metaTitle = this.titleRule(title+' | ')
         metaKeywords = keywords
-        if description? || description == null
+        if description == null
           metaDescription = this.descriptionRule(title)
         else
           metaDescription = this.descriptionRule(description)
 
-        $('html title').prepend(metaTitle)
+        $('html title').html(metaTitle)
         $('html meta[name=description]').attr('content', metaDescription)
         $('html meta[name=keywords]').attr('content', metaKeywords)
 
