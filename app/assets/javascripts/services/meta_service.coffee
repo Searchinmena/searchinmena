@@ -2,7 +2,7 @@
   () ->
     {
       set: (title, description, keywords) ->
-        metaTitle = this.titleRule(title+' | ')
+        metaTitle = this.titleRule(title)
         metaKeywords = keywords
         if description == null
           metaDescription = this.descriptionRule(title)

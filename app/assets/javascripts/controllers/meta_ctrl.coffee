@@ -21,7 +21,7 @@
         itemDescription = 'Find the trusted supplier and source products and samples from Saudi Arabia, UAE, Turkey, Egypt, Morocco and other Middle East & North Africa countries'
         itemKeywords = 'Trusted, supplier, source, products, order, samples, Saudi Arabia, UAE, Turkey, Egypt, Morocco, Middle East, North Africa'
       else if type == 'service'
-        itemTitle = 'Connect with businesses & buy high quality of service'
+        itemTitle = 'Connect with businesses & buy high quality of services'
         itemDescription = 'Connect with the best business providers & buy high quality of services in Saudi Arabia, UAE, Turkey, Egypt, Morocco & other Middle East & North Africa countries'
         itemKeywords = 'Business providers, buy, order, services, Saudi Arabia, UAE, Turkey, Egypt, Morocco, Middle East, North Africa'
       else

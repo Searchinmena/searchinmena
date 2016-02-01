@@ -27,7 +27,7 @@
   GoogleAnalyticsTrack.run()
   $rootScope.$on '$stateChangeSuccess', (event) ->
     GoogleAnalyticsTrack.preview()
-    $('html title').html('largest online B2B marketplace in The Middle East and North Africa - Searchinmena.com')
+    $('html title').html('Search in MENA | Grow your business in Middle East & North Africa')
     $('html meta[name=description]').attr('content', '')
     $('html meta[name=keywords]').attr('content', '')
 
