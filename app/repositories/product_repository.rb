@@ -1,4 +1,4 @@
 class ProductRepository < UserResourceRepository
   include BusinessItemRepository
-  include SearchableByNameRepository
+  include SearchableByNameRepository, SearchableByCategory
 end
