@@ -1,16 +1,41 @@
 @Sim.controller 'ResultsCtrl', ['$scope', '$state', '$stateParams',
-  'Search', 'SearchService', 'ResultPresenterFactory', 'MessageModal', 'ITEMS_PER_PAGE',
-  '$controller',
+  'Search', 'SearchService', 'ResultPresenterFactory', 'selectsLoader', 'MessageModal', 'ITEMS_PER_PAGE',
+                                'CategoriesModal', '$modal', '$controller',
   ($scope, $state, $stateParams, Search, SearchService,
-  ResultPresenterFactory, MessageModal, ITEMS_PER_PAGE, $controller) ->
+  ResultPresenterFactory, selectsLoader, MessageModal, ITEMS_PER_PAGE, CategoriesModal, $modal, $controller) ->
+
     $scope.search = new Search(
       type: $stateParams.type,
       query: $stateParams.query,
+      business_type: $stateParams.business_type,
+      country: $stateParams.country,
+      category: $stateParams.category,
       page: $stateParams.page,
       viewOption: $stateParams.viewOption
     )
     # add meta
     $controller('MetaCtrl').resultPage($stateParams.type)
+
+    config = {
+      countries: '/countries',
+      business_types: '/business_types'
+    }
+
+    selectsLoader.loadSelectsData($scope, config)
+
+    $scope.showCategories = ->
+      modalInstance = $modal.open(
+        templateUrl: 'business_items/categories.html',
+        controller: 'CategoriesForSearchCtrl',
+        animation: false,
+        size: 'lg'
+      )
+      modalInstance.result.then($scope.setCategory)
+
+    $scope.setCategory = (breadcrumbs) ->
+      $scope.breadcrumbs = breadcrumbs
+      $scope.search.category = breadcrumbs.current().id
+
     $scope.MessageModal = MessageModal
 
     $scope.perPage = ITEMS_PER_PAGE
@@ -39,4 +64,11 @@
     $scope.submit = (e) ->
       e.preventDefault()
       $scope.reloadPage()
+
+    $scope.searchFilter = (type) ->
+      if $scope.search.type == 'business'
+        $scope.showBusinessFilter = true
+      if $scope.search.type == 'product' || $scope.search.type == 'service'
+        $scope.showProServFilter = true
+    $scope.searchFilter($scope.search.type)
 ]

@@ -3,7 +3,15 @@
     .field.search-field
       %input{ type: 'text', value: '{{ search.query }}', 'ng-model': 'search.query' }
       %input{ type: 'submit', value: '{{ "search_submit" | translate }}' }
-
+    .select-field
+      %select{ 'ng-show': 'showBusinessFilter', "ng-options": "business_type.label for business_type in business_types track by business_type.id", "ng-model": "search._business_type", "ng-init": "search._business_type ={id: search.business_type}", "ng-change": "search.business_type = search._business_type.id" }
+        %option{ value: "" } -- {{ "business.basic_info.select_business_types" | translate }} --
+    .select-field
+      %select{ 'ng-show': 'showBusinessFilter', "ng-options": "country.label for country in countries track by country.id", "ng-model": "search._country", "ng-init": "search._country ={id: search.country}", "ng-change": "search.country = search._country.id" }
+        %option{ value: "" } -- {{ "business.basic_info.select_country" | translate }} --
+    .field{ "ng-show": "showProServFilter", "ng-include": "'business_items/_category.html'" }
+    .field.search-field
+      %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category = ''", "ng-hide": "true" }
   .search-filters
     .browse-options
       %browse-filter{ type: 'all', search: 'search' }

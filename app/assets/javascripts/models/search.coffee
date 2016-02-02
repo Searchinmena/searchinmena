@@ -6,10 +6,10 @@
 
     angular.extend(Search.prototype,
       toParams: ->
-        { type: @type, query: @query, page: @page, viewOption: @viewOption }
+        { type: @type, query: @query, business_type: @business_type, country: @country, category: @category, page: @page, viewOption: @viewOption }
 
       toFilterParams: (pageParam = '1') ->
-        { type: @type, query: @query, page: pageParam, viewOption: @viewOption }
+        { type: @type, query: @query, business_type: @business_type, country: @country, category: @category, page: pageParam, viewOption: @viewOption }
     )
 
     Search

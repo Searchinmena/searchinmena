@@ -3,6 +3,6 @@ class Search::Service
 
   def perform(type, query)
     search_strategy = search_strategy_factory.build(type)
-    search_strategy.perform(query)
+    search_strategy.perform(type, query)
   end
 end
