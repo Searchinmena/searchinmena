@@ -14,7 +14,7 @@
       %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category = ''", "ng-hide": "true" }
   .search-filters
     .browse-options
-      %browse-filter{ type: 'all', search: 'search' }
+      %browse-filter{ type: 'all', search: 'search', 'ng-hide': 'true' }
         {{ 'home.all' | translate }}
       %browse-filter{ type: 'product', search: 'search' }
         %span.icon.icon-shopping-cart
