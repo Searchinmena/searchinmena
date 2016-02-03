@@ -73,6 +73,78 @@
   border-top:$default-border;
   font-size: $bs09;
 
+  .search-field input[type="text"] {
+    max-width: 220px;
+    height: 45px;
+  }
+  .search-results-form {
+    float: none;
+    width: 68rem;
+    padding-left: 15%;
+
+    .select-field:after {
+      top: 0px;
+    }
+    input[type="submit"] {
+      max-width: 4.976rem;
+      padding: 0.7rem 1.618rem;
+    }
+    .select-field.browse-filter {
+      padding: 0rem 1.618rem;
+      margin-right: 5px;
+      width: 30%;
+    }
+    .search-field.browse-filter {
+      padding: 0rem;
+      border-right: none;
+    }
+
+    @media screen and (max-width: $desktop) {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      border: none;
+
+      .select-field.browse-filter {
+        width: 28%;
+        padding-left: 0rem;
+        padding-right: 0rem;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      .select-field.browse-filter {
+        width: 25%;
+      }
+      .search-field.browse-filter {
+        width: 45%;
+
+        input {
+          border-radius: 0;
+          float: left;
+          margin-top: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 668px) {
+      padding: 0.7rem 1.618rem;
+      .select-field.browse-filter {
+        width: 100%;
+      }
+      .search-field.browse-filter {
+        width: 100%;
+
+
+        input {
+          max-width: 100%;
+        }
+      }
+    }
+
+  }
+
+
+
   @media screen and (min-width: $tablet) {
     padding: 0 $bs2;
   }
