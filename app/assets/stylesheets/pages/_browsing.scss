@@ -85,6 +85,15 @@
     .select-field:after {
       top: 0px;
     }
+    .field-category.browse-filter {
+      margin: 0rem;
+      padding: 0rem 1rem;
+      border: none;
+
+      #choose-category {
+        margin: 0rem;
+      }
+    }
     input[type="submit"] {
       max-width: 4.976rem;
       padding: 0.7rem 1.618rem;
@@ -130,6 +139,15 @@
       padding: 0.7rem 1.618rem;
       .select-field.browse-filter {
         width: 100%;
+      }
+      .field-category.browse-filter {
+        width: 100%;
+        margin-bottom: 1rem;
+        
+        #choose-category {
+          max-width: 220px;
+          margin: auto;
+        }
       }
       .search-field.browse-filter {
         width: 100%;

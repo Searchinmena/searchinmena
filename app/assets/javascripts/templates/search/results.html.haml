@@ -7,7 +7,7 @@
       .select-field.browse-filter{ 'ng-show': 'showBusinessFilter'}
         %select{"ng-options": "country.label for country in countries track by country.id", "ng-model": "search._country", "ng-init": "search._country ={id: search.country}", "ng-change": "search.country = search._country.id" }
           %option{ value: "" } -- {{ "business.basic_info.select_country" | translate }} --
-      .field.browse-filter{ "ng-show": "showProServFilter", "ng-include": "'business_items/_category.html'" }
+      .field.field-category.browse-filter{ "ng-show": "showProServFilter", "ng-include": "'business_items/_category.html'" }
       .field.search-field.browse-filter{ "ng-hide": "true" }
         %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category = ''" }
       .field.search-field.browse-filter
