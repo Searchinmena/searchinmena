@@ -80,7 +80,7 @@
   .search-results-form {
     float: none;
     width: 68rem;
-    padding-left: 15%;
+    padding-left: 10%;
 
     .select-field:after {
       top: 0px;
@@ -95,8 +95,8 @@
       }
     }
     input[type="submit"] {
-      max-width: 4.976rem;
-      padding: 0.7rem 1.618rem;
+      max-width: 72px;
+      padding: 0.7rem 0rem;
     }
     .select-field.browse-filter {
       padding: 0rem 1.618rem;
@@ -106,6 +106,7 @@
     .search-field.browse-filter {
       padding: 0rem;
       border-right: none;
+      width: 35%;
     }
 
     @media screen and (max-width: $desktop) {
@@ -113,11 +114,15 @@
       padding-left: 0;
       padding-right: 0;
       border: none;
+      margin: 0px;
 
       .select-field.browse-filter {
         width: 28%;
         padding-left: 0rem;
         padding-right: 0rem;
+      }
+      .search-field.browse-filter {
+        width: 40%;
       }
     }
 
