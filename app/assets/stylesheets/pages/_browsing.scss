@@ -79,9 +79,10 @@
   }
   .search-results-form {
     float: none;
-    padding-left: 0px;
+    padding-left: 10px;
     padding-right: 0px;
     min-width: 50%;
+    border-right: none;
 
     .select-field:after {
       top: 0px;
