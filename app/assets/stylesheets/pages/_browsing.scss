@@ -74,13 +74,14 @@
   font-size: $bs09;
 
   .search-field input[type="text"] {
-    max-width: 220px;
+    max-width: 180px;
     height: 45px;
   }
   .search-results-form {
     float: none;
-    width: 68rem;
-    padding-left: 10%;
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 50%;
 
     .select-field:after {
       top: 0px;
@@ -92,6 +93,7 @@
 
       #choose-category {
         margin: 0rem;
+        max-width: 200px;
       }
     }
     input[type="submit"] {
@@ -101,12 +103,12 @@
     .select-field.browse-filter {
       padding: 0rem 1.618rem;
       margin-right: 5px;
-      width: 30%;
+      width: 28%;
     }
     .search-field.browse-filter {
       padding: 0rem;
       border-right: none;
-      width: 35%;
+      width: 42%;
     }
 
     @media screen and (max-width: $desktop) {
@@ -150,7 +152,7 @@
         margin-bottom: 1rem;
         
         #choose-category {
-          max-width: 220px;
+          max-width: 200px;
           margin: auto;
         }
       }
