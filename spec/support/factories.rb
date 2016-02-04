@@ -23,7 +23,7 @@ FactoryGirl.define do
 
   factory :business do
     sequence(:name) { |n| "Business#{n}" }
-    phone { "777-777-777" }
+    phone { "777777777" }
     year_registered { 2011 }
     no_of_employees { 123 }
     city { "Krakow" }
