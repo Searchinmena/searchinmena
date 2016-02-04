@@ -8,7 +8,13 @@ class BusinessValidator < BaseValidator
 
   validates :name, :country_id, :phone, :business_type_ids, presence: true
   validates :name, :city, length: { maximum: A9n.validations[:max_name_length] }
-  validates :phone, length: { maximum: A9n.validations[:max_phone_length] }
+  validates :phone,
+            numericality: { only_integer: true },
+            length:
+              {
+                maximum: A9n.validations[:max_phone_length],
+                minimum: A9n.validations[:min_phone_length]
+              }
   validates :address_line_1, :address_line_2, :no_of_employees,
             :year_registered,
             length: { maximum: A9n.validations[:max_text_field_size] }

@@ -13,7 +13,8 @@ production:
     max_integer: 20000000000
     year_format: !ruby/regexp '/\A(18|19|20)\d{2}\z/i'
     max_name_length: 130
-    max_phone_length: 50
+    max_phone_length: 15
+    min_phone_length: 9
     price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
     min_logo_size: 120
     min_image_width: 120
