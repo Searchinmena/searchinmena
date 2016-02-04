@@ -6,7 +6,7 @@ class BusinessShowPage
     element(By.cssContainingText("h2", "Business1")).isDisplayed()
 
   isPhoneDisplayed: ->
-    element(By.cssContainingText("div", "777-777-777")).isDisplayed()
+    element(By.cssContainingText("div", "777777777")).isDisplayed()
 
   isCityAndCountryNameDisplayed: ->
     element(By.cssContainingText("div", "Krakow, Value1")).isDisplayed()
