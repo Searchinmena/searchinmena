@@ -6,3 +6,8 @@ end
 every 1.day, at: '5:00 AM' do
   rake "-s sitemap:refresh"
 end
+
+every 2.minutes do
+  rake "-s sitemap:refresh"
+  Rails.logger.debug "sitemap update successfully"
+end
