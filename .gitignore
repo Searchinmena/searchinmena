@@ -22,3 +22,5 @@ phantomjsdriver.log
 npm-debug.log
 public/uploads
 sim-importer/config/ids_mapping.yml
+sitemap.xml.gz
+.idea/*

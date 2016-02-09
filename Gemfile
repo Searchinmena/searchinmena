@@ -28,6 +28,7 @@ gem 'carrierwave_backgrounder',
   git: 'git@github.com:lesniakania/carrierwave_backgrounder.git'
 gem 'sidekiq'
 gem 'sinatra', require: nil
+gem 'sitemap_generator'
 
 group :development, :test do
   gem 'pry'
