@@ -6,7 +6,9 @@ CARRIERWAVE_CONFIG = {
 }
 
 CarrierWave.configure do |config|
+  config.cache_dir = "#{Rails.root}/tmp/"
   config.storage = :fog
+  config.permissions = 0666
   config.fog_credentials = CARRIERWAVE_CONFIG
   config.fog_directory  = A9n.aws[:bucket_name]
 end
