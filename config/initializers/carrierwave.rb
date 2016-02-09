@@ -6,6 +6,7 @@ CARRIERWAVE_CONFIG = {
 }
 
 CarrierWave.configure do |config|
+  config.storage = :fog
   config.fog_credentials = CARRIERWAVE_CONFIG
   config.fog_directory  = A9n.aws[:bucket_name]
 end
