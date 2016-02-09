@@ -9,5 +9,4 @@ end
 
 every 5.minutes do
   rake "-s sitemap:refresh"
-  Rails.logger.debug "sitemap update successfully"
 end
