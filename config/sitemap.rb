@@ -2,7 +2,7 @@
 SitemapGenerator::Sitemap.default_host = A9n.app_host
 
 # The remote host where your sitemaps will be hosted
-sm_host_path = "http://s3.amazonaws.com/sitemap-generator/"
+sm_host_path = "https://#{A9n.aws[:bucket_name]}.s3.amazonaws.com"
 SitemapGenerator::Sitemap.sitemaps_host = sm_host_path
 
 # The directory to write sitemaps to locally
