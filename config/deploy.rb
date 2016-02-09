@@ -40,7 +40,9 @@ after "deploy:publishing", "unicorn:restart"
 after "deploy:published", "db:seed"
 after "deploy:finishing", "deploy:cleanup"
 after 'deploy:finished', 'god:restart'
-after "deploy:finished", "deploy:sitemap:refresh"
+after "deploy:restart", 'deploy:sitemap:create'
+after "deploy:restart", 'deploy:sitemap:refresh'
+after "deploy:restart", 'deploy:sitemap:clean'
 after 'god:restart', 'sidekiq:restart'
 
 before 'deploy:compile_assets', 'bower:install'
