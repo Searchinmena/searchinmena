@@ -4,6 +4,8 @@ class BusinessItemsController < ApplicationController
   def create
     response = business_item_creator.perform
     if response.successful?
+      # parm = { 'response': response.object, 'user': current_user }
+      # CustomerIoService.new(parm, 'user_update_product')
       render_success(response.object)
     else
       render_error(response.object, response.attributes, response.photos)

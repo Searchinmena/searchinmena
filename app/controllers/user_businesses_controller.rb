@@ -16,6 +16,11 @@ class UserBusinessesController < ApplicationController
     business_saver = Business::Saver.new(handlers, @business, photos)
     response = business_saver.perform
     render_response(response)
+    if response.successful?
+      cio_event = 'user_updated_company'
+      b = { response: response.object, user: current_user }
+      CustomerIoService.new(b, cio_event)
+    end
   end
 
   private
