@@ -32,6 +32,10 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
+  sitemap_path = "sitemaps/sitemap.xml.gz"
+  aws_path = "https://#{A9n.aws[:bucket_name]}.s3.amazonaws.com/#{sitemap_path}"
+  get '/sitemap.xml.gz', to: redirect(aws_path), as: :sitemap
+
   resources :tags, only: [:index]
   resources :units, only: [:index]
   resources :currencies, only: [:index]
