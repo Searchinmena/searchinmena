@@ -29,7 +29,7 @@ gem 'carrierwave_backgrounder',
 gem 'sidekiq'
 gem 'sinatra', require: nil
 gem 'sitemap_generator'
-gem 'customerio'
+gem 'customerio', git: 'https://github.com/customerio/customerio-ruby'
 
 group :development, :test do
   gem 'pry'
