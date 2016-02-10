@@ -1,6 +1,4 @@
 class CustomerIoService
-  CUSTOMIO = Customerio::Client.new("3823999354dd63de1f8d",
-                                       "1a4d2164782635ea53b1")
   def cio(cio_event, parm)
     send cio_event, cio_event, parm
   end
@@ -8,7 +6,7 @@ class CustomerIoService
   private
 
   def identify_user(parm)
-    CUSTOMIO.identify(
+    @cio.identify(
       id: parm.id,
       email: parm.email,
       created_at: parm.created_at.to_i,
@@ -21,12 +19,12 @@ class CustomerIoService
 
   def user_signup(cio_event, parm)
     identify_user(parm)
-    CUSTOMIO.track(parm.id, cio_event)
+    @cio.track(parm.id, cio_event)
   end
 
   def user_just_login(cio_event, parm)
     identify_user(parm)
-    CUSTOMIO.track(parm.id, cio_event)
+    @cio.track(parm.id, cio_event)
   end
 
   def user_updated_company(cio_event, parm)
@@ -38,7 +36,7 @@ class CustomerIoService
   end
 
   def company_info_track(cio_event, parm)
-    CUSTOMIO.track(
+    @cio.track(
       parm.user_id,
       cio_event,
       company_id: parm.id,
@@ -76,7 +74,7 @@ class CustomerIoService
   end
 
   def user_add_product_track(uid, cio_event, parm, attributes)
-    CUSTOMIO.track(
+    @cio.track(
       uid, cio_event,
       product_id: parm.id,
       company_name: parm.name,
