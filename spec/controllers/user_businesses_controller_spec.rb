@@ -61,7 +61,7 @@ describe UserBusinessesController do
           "business_type_ids" => [business_type.id.to_s]
         }
       end
-      let(:params) { { business: business_params.to_json } }
+      let(:params) { { business: business_params.to_json, tags: '{}' } }
       let(:tags_params) { {} }
       let(:logo_params) { { "logo" => nil } }
       let(:locale) { :en }
