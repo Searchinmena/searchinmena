@@ -16,6 +16,14 @@ GIT
     carrierwave_backgrounder (0.4.1)
       carrierwave (~> 0.5)
 
+GIT
+  remote: https://github.com/customerio/customerio-ruby
+  revision: 24e56e7466dceef5d4dde85926aaddcb2edbf3e3
+  specs:
+    customerio (0.6.1)
+      httparty (>= 0.5, < 0.12)
+      multi_json (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -102,8 +110,6 @@ GEM
     coffee-script-source (1.9.1.1)
     colorize (0.7.7)
     connection_pool (2.2.0)
-    customerio (0.5.1)
-      httparty (>= 0.5, < 1.0)
     daemons (1.2.3)
     dependor (1.0.1)
     devise (3.5.1)
@@ -252,8 +258,8 @@ GEM
     hike (1.2.3)
     hitimes (1.2.2)
     honeybadger (2.1.1)
-    httparty (0.13.5)
-      json (~> 1.8)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     inflecto (0.0.2)
@@ -485,7 +491,7 @@ DEPENDENCIES
   carrierwave
   carrierwave_backgrounder!
   coffee-rails (~> 4.1.0)
-  customerio
+  customerio!
   dependor
   devise
   factory_girl
