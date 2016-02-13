@@ -47,7 +47,7 @@
 
     $scope.saveAndUploadPhotos = ->
       $scope.loading = true
-
+      
       logo = $scope.form.business.logo
       photos = $scope.form.business.photos
       allImages = if logo then _.compact(logo.concat(photos)) else photos
@@ -55,7 +55,7 @@
       Upload.upload(
         url: USER_BUSINESS_PATH,
         method: 'PUT',
-        fields: { business: $scope.form.business },
+        fields: { business: $scope.form.business, tags: $scope.form.tags },
         file: allImages,
         fileFormDataName: namesForImages(allImages)
       ).then(->
