@@ -9,6 +9,8 @@ class MessagesController < ApplicationController
 
     if response.successful?
       head :ok
+      parm = { params: params, user: current_user }
+      CustomerIoService.new(parm, 'message_company')
     else
       render json: ErrorsPresenter.new(response.object),
              status: :conflict

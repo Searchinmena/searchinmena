@@ -20,6 +20,8 @@ module Users
         sign_up(:user, response.user)
         flash[:notice] = t("devise.registrations.signed_up")
         head :ok
+        u = response.user
+        CustomerIoService.new(u, 'user_signup')
       else
         render_error(response.user, response.business)
       end

@@ -5,6 +5,7 @@ class BusinessItemsController < ApplicationController
     response = business_item_creator.perform
     if response.successful?
       render_success(response.object)
+      _define_cio_callback(response)
     else
       render_error(response.object, response.attributes, response.photos)
     end
@@ -112,6 +113,23 @@ class BusinessItemsController < ApplicationController
 
   def business_item_creator
     fail NotImplementedError
+  end
+
+  def _define_cio_callback(response)
+    response_param = { 'response': response, 'user': current_user }
+    obj_class = response.object.class.name.downcase
+    if obj_class == 'product'
+      obj_business_item = response.object.business.products.count
+    else
+      obj_business_item = response.object.business.services.count
+    end
+
+    if obj_business_item < 2
+      event = "user_add_first_#{obj_class}"
+    else
+      event = 'business_item_update'
+    end
+    CustomerIoService.new(response_param, event)
   end
 
   private

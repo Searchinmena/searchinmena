@@ -12,10 +12,14 @@ class UserBusinessesController < ApplicationController
 
   def update
     @business = business_repository.find_or_build(user_id: current_user.id)
+
     photos = photos_storing_handler.photos
     business_saver = Business::Saver.new(handlers, @business, photos)
     response = business_saver.perform
     render_response(response)
+    if response.successful?
+      _define_cio_callback(@business, response)
+    end
   end
 
   private
@@ -80,5 +84,23 @@ class UserBusinessesController < ApplicationController
 
   def tags_params
     params.permit(tags: [:id, :label])[:tags] || {}
+  end
+
+  def _define_cio_callback(business, response)
+    if business.introduction.present? && current_user.category == 'seller'
+      if (business.products.count + business.services.count) < 1
+        _cio_callback(response, 'seller_completed_profile')
+      else
+        _cio_callback(response, 'user_updated_company')
+      end
+
+    else
+      _cio_callback(response, 'user_updated_company')
+    end
+  end
+
+  def _cio_callback(response, event)
+    b = { response: response.object, user: current_user }
+    CustomerIoService.new(b, event)
   end
 end

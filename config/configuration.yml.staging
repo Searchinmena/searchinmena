@@ -39,3 +39,6 @@ production:
     access_key_id: AKIAJ4W5KE65VD6QDZFQ
     secret_access_key: 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
     region: us-west-2
+  cio:
+    id: 13674ef57152313177c1
+    key: f1dc2071671435570c1d
