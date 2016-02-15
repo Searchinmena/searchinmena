@@ -1,6 +1,7 @@
 class CustomerIoService < Customerio::Client
   def initialize(parm, cio_event)
-    @cio = Customerio::Client.new(A9n.cio[:id], A9n.cio[:key], json: true)
+    @cio = Customerio::Client.new("#{A9n.cio[:id]}",
+                                  "#{A9n.cio[:key]}", json: true)
     send cio_event, parm, cio_event
   end
 
@@ -40,6 +41,10 @@ class CustomerIoService < Customerio::Client
     track_event(parm[:user].id, cio_event, event_attributes)
   end
 
+  def seller_completed_profile(parm, cio_event)
+    user_updated_company(parm, cio_event)
+  end
+
   def business_item_update(parm, cio_event)
     object = parm[:response].object
     product_attributes = _pro_serv_attr(object)
@@ -49,6 +54,14 @@ class CustomerIoService < Customerio::Client
       cio_event = 'business_item_added'
     end
     track_event(parm[:user].id, cio_event, event_attributes)
+  end
+
+  def user_add_first_product(parm, cio_event)
+    _first_business_item(parm, cio_event)
+  end
+
+  def user_add_first_service(parm, cio_event)
+    _first_business_item(parm, cio_event)
   end
 
   def reset_password_request(parm, cio_event)
@@ -71,6 +84,16 @@ class CustomerIoService < Customerio::Client
     business = Business.find_by_id(params[:business_id])
     event_attributes = _message_company_attr(params, user, business)
     track_event(user.id, cio_event, event_attributes)
+  end
+
+  def _first_business_item(parm, cio_event)
+    object = parm[:response].object
+    product_attributes = _pro_serv_attr(object)
+    attributes = _pro_serv_order_attr(object).merge!(product_attributes)
+    event_attributes = _item_detail_attr(object).merge!(attributes)
+    if object.updated_at.to_i == object.created_at.to_i
+      track_event(parm[:user].id, cio_event, event_attributes)
+    end
   end
 
   def _company_info_attr(parm)
@@ -133,7 +156,7 @@ class CustomerIoService < Customerio::Client
 
   def _tags_attr(parm, attr_name)
     if defined? parm.attributes
-      attribute_exist(parm.attributes, attr_name)
+      _attr_exist(parm.attributes, attr_name)
     end
   end
 
@@ -148,6 +171,8 @@ class CustomerIoService < Customerio::Client
       message_subject: parm[:subject],
       message_description: parm[:body],
       sender_email_address: user.email,
+      sender_first_name: user.first_name,
+      sender_last_name: user.last_name,
       recipient_company_name: business.name,
       recipient_company_logo: business.logo,
       recipient_email_address: business.user.email,
