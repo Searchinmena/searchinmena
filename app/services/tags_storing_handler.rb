@@ -12,6 +12,7 @@ class TagsStoringHandler < BaseService
   private
 
   def find_or_create_tag(attributes)
+    attributes = attributes.symbolize_keys
     if id = attributes[:id]
       tag_repository.find_by_id(id)
     else

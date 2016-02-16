@@ -83,7 +83,7 @@ class UserBusinessesController < ApplicationController
   end
 
   def tags_params
-    params.permit(tags: [:id, :label])[:tags] || {}
+    JSON.parse(params.permit(:tags)[:tags]) || {}
   end
 
   def _define_cio_callback(business, response)
