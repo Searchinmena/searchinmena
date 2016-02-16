@@ -5,7 +5,10 @@ module Users
         flash.now[:error] = full_error_message_for(resource)
       end
       if resource.reset_password_token.present?
-        CustomerIoService.new(resource, 'reset_password_request')
+        # This customerIo event we are calling from views files
+        # As we cannot get exist reset token in controller
+        # app/views/users/mailer/reset_password_instructions.html.haml
+        # CustomerIoService.new(resource, 'reset_password_request')
       end
     end
 
