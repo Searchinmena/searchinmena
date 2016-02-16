@@ -1,5 +1,6 @@
-@Sim.config ['$stateProvider', '$urlRouterProvider',
-  ($stateProvider, $urlRouterProvider) ->
+@Sim.config ['$stateProvider', '$locationProvider', '$urlRouterProvider',
+  ($stateProvider, $locationProvider, $urlRouterProvider) ->
+    
     $stateProvider.state('root',
       url: '/',
       templateUrl: 'home.html',
@@ -94,6 +95,12 @@
       templateUrl: 'business/show.html'
       controller: 'BusinessShowCtrl'
     )
-
-    $urlRouterProvider.otherwise('/')
+    $locationProvider.html5Mode(true);
+    
+    $urlRouterProvider.otherwise ->
+      url = localStorage.getItem('preRequest');
+      if(url != location.pathname)
+        window.location = location.pathname
+        localStorage.setItem('preRequest', location.pathname);
+      
 ]
