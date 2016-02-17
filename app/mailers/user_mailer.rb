@@ -9,7 +9,7 @@ class UserMailer < ApplicationMailer
     @subject = subject
     @body = body
 
-    subject = "Confirgmation of your message send to #{business.name}"
+    subject = "Confirmation of your message send to #{business.name}"
     mail(to: user.email, from: A9n.email_from, subject: subject)
   end
 end
