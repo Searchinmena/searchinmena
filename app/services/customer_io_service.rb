@@ -73,6 +73,11 @@ class CustomerIoService < Customerio::Client
     track_event(parm.id, cio_event, event_attributes)
   end
 
+  def user_account_activate(parm, cio_event)
+    identify_user(parm)
+    track_event(parm.id, cio_event)
+  end
+
   def user_update_password(parm, cio_event)
     identify_user(parm)
     track_event(parm.id, cio_event)
