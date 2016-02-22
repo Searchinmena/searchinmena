@@ -35,13 +35,10 @@ class CustomerIoService < Customerio::Client
 
   def user_updated_company(parm, cio_event)
     event_attributes = _company_info_attr(parm[:response])
-    if parm[:response].updated_at.to_i == parm[:response].created_at.to_i
-      cio_event = 'user_add_company'
-    end
     track_event(parm[:user].id, cio_event, event_attributes)
   end
 
-  def seller_completed_profile(parm, cio_event)
+  def user_completed_profile(parm, cio_event)
     user_updated_company(parm, cio_event)
   end
 
