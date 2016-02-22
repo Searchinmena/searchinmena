@@ -87,13 +87,9 @@ class UserBusinessesController < ApplicationController
   end
 
   def _define_cio_callback(business, response)
-    if business.introduction.present? && current_user.category == 'seller'
-      if (business.products.count + business.services.count) < 1
-        _cio_callback(response, 'seller_completed_profile')
-      else
-        _cio_callback(response, 'user_updated_company')
-      end
-
+    total_item = business.products.count + business.services.count
+    if business.introduction.present? && total_item < 1
+      _cio_callback(response, 'user_completed_profile')
     else
       _cio_callback(response, 'user_updated_company')
     end
