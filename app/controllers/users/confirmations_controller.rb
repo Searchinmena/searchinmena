@@ -12,10 +12,9 @@ module Users
       Sim::Routes.dashboard_path
     end
 
-    def after_confirmation_path_for(resource_name, resource)
+    def after_confirmation_path_for(_resource_name, resource)
       CustomerIoService.new(resource, 'user_account_activate')
       Sim::Routes.dashboard_path
     end
-
   end
 end
