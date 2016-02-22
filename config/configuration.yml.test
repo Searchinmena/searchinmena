@@ -1,0 +1,44 @@
+production:
+  email_from: 'confirmation@searchinmena.com'
+  app_host: http://54.149.229.100
+  env: staging
+  fb_app_id: 1491240367857061
+  fb_app_secret: 067d436d332fd54f549e27c900fd8ce2
+  validations:
+    email_format: !ruby/regexp '/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/'
+    password_min_length: 8
+    password_max_length: 72
+    max_text_area_size: 2000
+    max_text_field_size: 255
+    max_integer: 20000000000
+    year_format: !ruby/regexp '/\A(18|19|20)\d{2}\z/i'
+    max_name_length: 130
+    max_phone_length: 15
+    min_phone_length: 9
+    price_format: !ruby/regexp '/\A\d{1,15}([.,]?\d{1,2})?\z/'
+    min_logo_size: 120
+    min_image_width: 120
+    min_image_height: 120
+    min_business_item_photo_count: 1
+    max_business_item_photo_count: 10
+    max_file_size_in_mb: 5
+  angular_flash_timeout: 5000
+  mandrill:
+    address: smtp.mandrillapp.com
+    port: 587
+    user_name: aiham@searchinmena.com
+    password: UqkQa7zmtEEbh0Kb0WRdMQ
+  items_per_page: 10
+  original_width: 1200
+  original_height: 900
+  bigger_thumbnail_size: 240
+  thumbnail_size: 120
+  max_logo_size: 500
+  aws:
+    bucket_name: sim-uploads-staging
+    access_key_id: AKIAJ4W5KE65VD6QDZFQ
+    secret_access_key: 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
+    region: us-west-2
+  cio:
+    id: 13674ef57152313177c1
+    key: f1dc2071671435570c1d
