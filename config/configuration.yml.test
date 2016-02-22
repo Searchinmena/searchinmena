@@ -1,6 +1,6 @@
 production:
   email_from: 'confirmation@searchinmena.com'
-  app_host: http://54.149.229.100
+  app_host: http://54.201.69.168
   env: staging
   fb_app_id: 1491240367857061
   fb_app_secret: 067d436d332fd54f549e27c900fd8ce2
