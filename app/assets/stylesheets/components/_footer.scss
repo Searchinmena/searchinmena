@@ -108,6 +108,15 @@ address {
   }
 }
 
+.instagram-link {
+  background-image: image-url("icon-instagram.png");
+  background-color: #325c86;
+
+  &:hover, &:focus {
+    outline: 3px solid #4174A8;
+  }
+}
+
 .sitemap {
   @extend %clearfix;
   background-color: $purple-super-dark;

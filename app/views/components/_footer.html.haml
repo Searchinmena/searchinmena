@@ -5,13 +5,15 @@
     %p.about-desc= t("footer.about_description")
     %h2.title= t("footer.find_us")
     = link_to("", "https://www.facebook.com/searchinmena",
-      class: "social-link facebook-link")
+      class: "social-link facebook-link", target: "_blank")
     = link_to("", "https://twitter.com/searchinmena",
-      class: "social-link twitter-link")
+      class: "social-link twitter-link", target: "_blank")
     = link_to("", "https://plus.google.com/+Searchinmena/",
-      class: "social-link google-plus-link")
+      class: "social-link google-plus-link", target: "_blank")
     = link_to("", "https://www.linkedin.com/company/search-in-mena-fzllc",
-      class: "social-link linkedin-link")
+      class: "social-link linkedin-link", target: "_blank")
+    = link_to("", "https://www.instagram.com/searchinmena",
+      class: "social-link instagram-link", target: "_blank")
     %h4.address-title= t("footer.address_title")
     %address
       = t("footer.address_line_1")
