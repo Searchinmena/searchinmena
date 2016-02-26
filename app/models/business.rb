@@ -6,7 +6,7 @@ class Business < ActiveRecord::Base
   has_many :products
   has_many :services
   belongs_to :country
-
+  validates :name, presence: true
   has_many :photos, class_name: "BusinessPhoto", dependent: :delete_all
 
   mount_uploader :logo, LogoUploader
