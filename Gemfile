@@ -8,6 +8,7 @@ gem 'dependor'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'whenever', require: false
+gem 'activeadmin', github: 'activeadmin'
 
 # assets
 gem 'sass-rails', '~> 5.0'
