@@ -7,25 +7,34 @@ ActiveAdmin.register Product do
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
+      f.input :business_id, 
+              as: :select, 
+              collection: Business.all.map { |c| [c.name, c.id] }
+      f.input :category_id, 
+              as: :select, 
+              collection: ProductCategory.all.map { |c| [c.translations.where(locale: 'en').pluck(:value).join(' '), c.id] }        
       f.input :name
       f.input :model_number
       f.input :brand_name
       f.input :description
-      f.input :category_id, as: :select, collection:
-      Category.all.map { |c| [c.id, c.id] }
       f.input :min_order_quantity_number
       f.input :min_order_quantity_unit_id
       f.input :fob_price
-      f.input :fob_price_currency_id
+      f.input :fob_price_currency_id,
+              as: :select,
+              collection: Currency.all.map { |c| [c.name, c.id] }
       f.input :fob_price_unit_id
+              as: :select,
+              collection: Unit.all.map { |c| [c.name, c.id] }
       f.input :port
       f.input :supply_ability_capacity
       f.input :supply_ability_unit_id
       f.input :supply_ability_frequency_id
+              as: :select,
+              collection: Frequency.all.map { |c| [c.name, c.id] } 
       f.input :packaging_details
-      f.input :business_id, as: :select, collection:
-      Business.all.map { |c| [c.name, c.id] }
+      
     end
-    actions         # adds the 'Submit' and 'Cancel' buttons
+    actions
   end
 end
