@@ -24,3 +24,4 @@ public/uploads
 sim-importer/config/ids_mapping.yml
 sitemap.xml.gz
 .idea/*
+/.byebug_history
