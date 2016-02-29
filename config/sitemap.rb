@@ -51,13 +51,16 @@ SitemapGenerator::Sitemap.create do
   add Sim::Routes.new_user_registration_path, priority: 0.0
 
   Business.find_each do |b|
-    add "/#/company/#{b.id}", priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
+    add "/#/company/#{b.id}",
+        priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
   end
 
   Product.find_each do |p|
-    add "/#/products/#{p.id}", priority: 1.0, changefreq: 'daily', lastmod: p.updated_at
+    add "/#/products/#{p.id}",
+        priority: 1.0, changefreq: 'daily', lastmod: p.updated_at
   end
   Service.find_each do |s|
-    add "/#/services/#{s.id}", priority: 1.0, changefreq: 'daily', lastmod: s.updated_at
+    add "/#/services/#{s.id}",
+        priority: 1.0, changefreq: 'daily', lastmod: s.updated_at
   end
 end
