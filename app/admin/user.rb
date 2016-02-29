@@ -1,8 +1,4 @@
 ActiveAdmin.register User do
-  filter :email, as: :select, collection:
-          User.all.map { |c| [c.email, c.id] }
-  filter :business_id, as: :select, collection:
-          Business.all.map { |c| [c.name, c.id] }
   permit_params	:email, :password, :uid, :first_name, :last_name
   form do |f|
     semantic_errors # shows errors on :base

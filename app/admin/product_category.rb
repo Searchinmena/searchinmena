@@ -1,7 +1,6 @@
 ActiveAdmin.register ProductCategory do
   menu parent: 'Manage Category'
-  filter :parent_id, as: :select, collection:
-  ProductCategory.all.map { |c| [c.english_title, c.id] }
+  
   permit_params :parent_id
 
   index do

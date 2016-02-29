@@ -1,14 +1,4 @@
 ActiveAdmin.register Service do
-  filter :category_id, as: :select, collection:
-  proc { ServiceCategory.all.map { |c| [c.english_title, c.id] } }
-  filter :business_id, as: :select, collection:
-          Business.all.map { |c| [c.name, c.id] }
-  filter :fob_price_unit_id, as: :select, collection:
-          Unit.all.map { |c| [c.english_title, c.id] }
-  filter :fob_price_currency_id, as: :select, collection:
-          Currency.all.map { |c| [c.english_title, c.id] }
-  filter :supply_ability_frequency_id, as: :select, collection:
-          Frequency.all.map { |c| [c.english_title, c.id] }
   permit_params	:name, :place_of_origin, :scope_of_work, :description,
                 :category_id, :fob_price, :fob_price_currency_id,
                 :fob_price_unit_id, :port, :average_completion_time,

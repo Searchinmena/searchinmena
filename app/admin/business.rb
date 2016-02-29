@@ -1,6 +1,4 @@
 ActiveAdmin.register Business do
-  filter :user_id, as: :select, collection:
-  User.all.map { |c| [c.first_name, c.id] }
   filter :country_id, as: :select, collection:
           proc { Country.all.map { |c| [c.english_title, c.id] } }
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city
