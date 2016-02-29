@@ -1,6 +1,6 @@
 ActiveAdmin.register ProductCategory do
   menu parent: 'Manage Category'
-  
+
   permit_params :parent_id
 
   index do

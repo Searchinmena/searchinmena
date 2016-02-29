@@ -15,7 +15,4 @@ ActiveAdmin.register User do
     end
     actions
   end
-  before_create do |user|
-    user.skip_confirmation!
-  end
 end

@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
   filter :category_id, as: :select, collection:
           proc { ProductCategory.all.map { |c| [c.english_title, c.id] } }
-          
+
   permit_params :category_id, :name, :model_number, :brand_name,
                 :min_order_quantity_number, :min_order_quantity_unit_id,
                 :fob_price, :fob_price_currency_id, :fob_price_unit_id,
