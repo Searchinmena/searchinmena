@@ -1,12 +1,16 @@
 ActiveAdmin.register ServiceCategory do
   menu parent: 'Manage Category'
+  filter :parent_id, as: :select, collection:
+  proc { ServiceCategory.all.map { |c| [c.english_title, c.id] } }
   permit_params :parent_id
 
   index do
     selectable_column
     id_column
     column 'Parent' do |category|
-      category.parent.translations.where(locale: 'en').pluck(:value).join(" ") if category.parent
+      if category.parent
+        category.parent.english_title
+      end
     end
     column 'Title' do |category|
       category.translations.pluck(:value).join('        ')
@@ -18,8 +22,10 @@ ActiveAdmin.register ServiceCategory do
     attributes_table do
       row :id
       row 'Parent' do |category|
-      category.parent.translations.where(locale: 'en').pluck(:value).join(" ")  if category.parent
-    end
+        if category.parent
+          category.parent.english_title
+        end
+      end
       row 'English Title' do |category|
         category.translations.where(locale: 'en').pluck(:value).join('  ')
       end
@@ -34,19 +40,20 @@ ActiveAdmin.register ServiceCategory do
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
-      f.input :parent_id, as: :select, collection:
-      ServiceCategory.all.map { |c| [c.translations.where(locale: 'en').pluck(:value).join(' '), c.id] }
-     
+      f.input :parent_id,
+               as: :select, collection:
+               ServiceCategory.all.map { |c| [c.english_title, c.id] }
+
       f.has_many :translations do |translation|
-        translation.input :locale, 
-                          label: 'Language',
-                          as: :select, 
-                          collection: CategoryTranslation::LOCALE.collect { |locale| [locale, locale] }
-        translation.input :value, 
+        translation.input :locale,
+                           label: 'Language',
+                           as: :select, collection:
+                           CategoryTranslation::LOCALE.collect { |l| [l, l] }
+        translation.input :value,
                           label: 'Title',
                           input_html: { rows: 1 }
       end
-      actions         # adds the 'Submit' and 'Cancel' buttons
+      actions
     end
   end
 end

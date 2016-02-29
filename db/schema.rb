@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(version: 20160223095925) do
     t.integer  "supply_ability_unit_id"
     t.integer  "supply_ability_frequency_id"
     t.string   "packaging_details"
-    t.integer  "business_id",                                          null: false
+    t.integer  "business_id"                                         null: false
   end
 
   add_index "products", ["fob_price_currency_id"], name: "index_products_on_fob_price_currency_id", using: :btree
