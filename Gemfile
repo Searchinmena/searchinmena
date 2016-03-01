@@ -54,7 +54,6 @@ group :development do
   gem 'haml-lint', require: false
   gem 'mailcatcher'
   gem 'foreman'
-  gem 'guard'
 end
 
 group :production do
