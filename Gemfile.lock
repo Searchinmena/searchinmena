@@ -546,6 +546,7 @@ DEPENDENCIES
   factory_girl
   fog
   foreman
+  guard
   guard-rspec
   guard-rubocop
   haml
