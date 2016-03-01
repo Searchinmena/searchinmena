@@ -16,11 +16,4 @@ class Service < ActiveRecord::Base
   has_many :service_payment_terms, dependent: :delete_all
   has_many :payment_terms, through: :service_payment_terms,
                            dependent: :delete_all
-  validates :business_id, presence: true
-  validates :category_id, presence: true
-  validates :fob_price_currency_id, presence: true
-  validates :fob_price_unit_id, presence: true
-  validates :average_completion_time_unit_id, presence: true
-  validates :supply_ability_unit_id, presence: true
-  validates :supply_ability_frequency_id, presence: true
 end
