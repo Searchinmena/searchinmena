@@ -4,7 +4,7 @@ ActiveAdmin.register Service do
                 :fob_price_unit_id, :port, :average_completion_time,
                 :average_completion_time_unit_id, :supply_ability_capacity,
                 :supply_ability_unit_id, :supply_ability_frequency_id,
-                :business_id
+                :business_id, :packaging_details
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

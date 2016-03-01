@@ -6,8 +6,8 @@ CategoriesSeeder.new(:service, service_category_repository).seed
 TranslatableSeeder.new.seed
 
 # user for e2e tests
-# TestUsersSeeder.new.seed
-# unless User.find_by_email('admin@example.com').present?
-#   AdminUser.create!(email: 'admin@example.com', password: 'password',
-#                     password_confirmation: 'password')
-# end
+TestUsersSeeder.new.seed
+unless AdminUser.find_by_email('admin@example.com').present?
+  AdminUser.create!(email: 'admin@example.com', password: 'password',
+                    password_confirmation: 'password')
+end

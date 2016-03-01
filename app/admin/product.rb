@@ -3,7 +3,8 @@ ActiveAdmin.register Product do
                 :min_order_quantity_number, :min_order_quantity_unit_id,
                 :fob_price, :fob_price_currency_id, :fob_price_unit_id,
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
-                :supply_ability_capacity, :business_id
+                :supply_ability_capacity, :business_id, :description,
+                :packaging_details
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
