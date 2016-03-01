@@ -14,6 +14,10 @@
 
       $scope.browseFilterClicked = ->
         return if $scope.search.type == $scope.type
+        $scope.search.business_type = ''
+        $scope.search.country = ''
+        $scope.search.category = ''
+        console.log $scope.search.category
 
         $scope.search.type = $scope.type
         $state.go("results", $scope.search.toFilterParams("1"))
