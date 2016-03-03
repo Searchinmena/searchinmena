@@ -2,7 +2,7 @@ class Search::Strategies::BaseStrategy
   takes :repositories
 
   def perform(type, query)
-    results = repository.where_name_like(query[:query])
+    results = repository.where_name_like(type, query[:query])
     results = search_with_business_type(results, type, query)
     results = search_with_country(results, type, query)
     results = search_with_category(results, type, query)
