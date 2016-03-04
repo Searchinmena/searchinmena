@@ -5,6 +5,7 @@
     {{ result.name() }}
   %a.result-item-title-strict{ 'ui-sref': '{{ result.showPath() }}' }
     {{ result.name() | characters: 48 }}
+%span.icon.icon-star{'ng-show': 'result["business"]["feature"] '}
 .result-item-description
   .clearfix
     .contact-item

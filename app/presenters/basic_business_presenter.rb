@@ -8,7 +8,9 @@ class BasicBusinessPresenter < BasePresenter
       id: business.id,
       name: business.name,
       city: business.city,
-      country: country
+      country: country,
+      feature: business.feature,
+      weight: business.weight
     }
   end
 

@@ -6,7 +6,7 @@ class Search::Strategies::BaseStrategy
     results = search_with_business_type(results, type, query)
     results = search_with_country(results, type, query)
     results = search_with_category(results, type, query)
-
+    results = sort_business_on_weight(results, type)
     Search::Response.new(success: true, results: results)
   end
 
@@ -34,5 +34,26 @@ class Search::Strategies::BaseStrategy
     else
       results
     end
+  end
+
+  def sort_business_on_weight(results, type)
+    if type == 'business'
+      ordered = []
+      filered_results = results.select { |u| u.feature == true }
+      .sort { |a, b|  a.weight <=> b.weight }.reverse
+      results = (filered_results + (results - filered_results)).uniq.flatten
+    elsif type == 'service'
+      filered_results = Service.joins(:business)
+      .where("services.id IN (?) and businesses.feature = true",
+      results.map(&:id))
+      .order("businesses.weight DESC")
+      results = (filered_results + (results - filered_results)).uniq.flatten
+    else
+      filered_results = Product.joins(:business)
+      .where("products.id IN (?) and businesses.feature = true",
+      results.map(&:id)).order("businesses.weight DESC")
+      results = (filered_results + (results - filered_results)).uniq.flatten
+    end
+    results
   end
 end
