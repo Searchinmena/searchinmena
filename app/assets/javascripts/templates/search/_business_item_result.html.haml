@@ -4,7 +4,7 @@
   %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
     {{ result.get('name') }}
   %a.result-item-title-strict{ 'ui-sref': '{{ result.showPath() }}' }
-    {{ result.get('name') | characters: 48 }}
+    {{result | characters: 48 }}
   .from
     %span {{ "results.from" | translate }}:
     %a{ 'ui-sref': '{{ result.businessPath() }}' } {{ result.businessName() | characters:45 }}
@@ -22,6 +22,7 @@
     'ng-show': 'result.hasAttributes()' }
       %td.attribute {{ attribute.name }}
       %td {{ attribute.value }}
+%span{'class': 'feature-{{result.attributes.business.feature}}'}      
 .business-summary
   .business-name
     {{ result.businessName() | characters: 65 }}

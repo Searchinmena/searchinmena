@@ -38,8 +38,8 @@
   %ul.search-results{ 'ng-class': '{ "net-view": isNetViewSelected() }',
     'ng-show': 'results.length > 0' }
     %li.result-item{ 'dir-paginate': 'result in results | itemsPerPage: perPage',
-      'total-items': 'total', 'current-page': 'pagination.current' }
-      %ng-include{ 'src': 'result.templatePath()' }
+      'total-items': 'total', 'current-page': 'pagination.current'}
+      %ng-include{ 'src': 'result.templatePath()'}
 
     .pagination-container
       %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }

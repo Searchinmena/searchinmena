@@ -1,7 +1,7 @@
 %section.dashboard-content
   %h2.header-title {{ "products.your_products" | translate }}
   %section.items-index
-    .index-options
+    .index-options{'ng-show': "business.can_add_products" }
       %button.small-button{ "ui-sref": "dashboard.new_product" }
         %span.icon-plus
         {{ "products.add_new_product" | translate }}

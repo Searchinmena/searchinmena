@@ -28,6 +28,9 @@ FactoryGirl.define do
     no_of_employees { 123 }
     city { "Krakow" }
     introduction { "business introduction" }
+    feature { true }
+    weigth { 10 }
+    limit { 3 }
     association :country
     association :user
 
