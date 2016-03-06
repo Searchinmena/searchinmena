@@ -29,7 +29,7 @@ FactoryGirl.define do
     city { "Krakow" }
     introduction { "business introduction" }
     feature { true }
-    weigth { 10 }
+    weight { 1 }
     limit { 3 }
     association :country
     association :user
