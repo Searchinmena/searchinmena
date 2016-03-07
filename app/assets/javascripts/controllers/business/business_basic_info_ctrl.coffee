@@ -74,7 +74,6 @@
       )
 
     $scope.removeLogo = ->
-      console.log('asdasd')
       $scope.form.business.logo = null
    
     $scope.limit_tag = (feature)->
