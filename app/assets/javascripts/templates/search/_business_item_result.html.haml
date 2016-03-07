@@ -4,7 +4,7 @@
   %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
     {{ result.get('name') }}
   %a.result-item-title-strict{ 'ui-sref': '{{ result.showPath() }}' }
-    {{result | characters: 48 }}
+    {{result.get('name') | characters: 48 }}
   .from
     %span {{ "results.from" | translate }}:
     %a{ 'ui-sref': '{{ result.businessPath() }}' } {{ result.businessName() | characters:45 }}

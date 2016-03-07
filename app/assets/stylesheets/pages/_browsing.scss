@@ -597,3 +597,13 @@
   display: list-item;
   position: relative;
 }
+.net-view{
+  .feature-true{
+    width: 83px;
+    height: 83px;
+    background: asset-url('feature.png') no-repeat 0px 1px;
+    display: list-item;
+    position: relative;
+    top: -287px;
+  }
+}
