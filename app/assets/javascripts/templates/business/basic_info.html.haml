@@ -2,7 +2,6 @@
   %form-field{ "error": "errors.business.name" }
     %label {{ "business.basic_info.business_name" | translate }}
     %input{ type: "text", "ng-model": "form.business.name" }
-
   %div
     .business-logo-holder
       %img.preview-image{ "ngf-src": "form.business.logo[0]", "ngf-default-src": "{{ form.business.logo[0] || \"#{asset_path('default-image.png')}\" }}", "ngf-accept": "'image/*'", "ngf-multiple": false, "ngf-keep": false, multiple: false }
@@ -41,7 +40,7 @@
   .field
     %label {{ "business.basic_info.main_products" | translate }}
     %tags-input{ "ng-model": "form.tags", "display-property": "label",
-      "replace-spaces-with-dashes": "false" }
+      "replace-spaces-with-dashes": "false"}
       %auto-complete{ source: "loadTags($query)",
         "select-first-match": "false" }
     %p.field-comment

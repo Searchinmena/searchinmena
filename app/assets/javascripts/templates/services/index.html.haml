@@ -1,7 +1,7 @@
 %section.dashboard-content
   %h2.header-title {{ "services.your_services" | translate }}
   %section.items-index
-    .index-options
+    .index-options{'ng-show': "business.can_add_services" }
       %button.small-button{ "ui-sref": "dashboard.new_service" }
         %span.icon-plus
         {{ "services.add_new_service" | translate }}

@@ -36,8 +36,8 @@
     %a.header-link{ "ui-sref": "dashboard.products" }
       %span.icon.icon-eye-open
       {{ "dashboard.see_all" | translate }}
-
-  .index-options
+      
+  .index-options{'ng-show': "business.can_add_products" }
     %button.small-button{ "ui-sref": "dashboard.new_product" }
       %span.icon-plus
       {{ "products.add_new_product" | translate }}
@@ -54,7 +54,7 @@
       %span.icon.icon-eye-open
       {{ "dashboard.see_all" | translate }}
 
-  .index-options
+  .index-options{'ng-show': "business.can_add_services" }
     %button.small-button{ "ui-sref": "dashboard.new_service" }
       %span.icon-plus
       {{ "services.add_new_service" | translate }}

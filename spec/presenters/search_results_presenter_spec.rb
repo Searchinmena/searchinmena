@@ -28,7 +28,7 @@ describe SearchResultsPresenter do
     it { expect(subject[:count]).to eq(20) }
     it "returns first page by default" do
       expect(subject[:items].map(&:id)).to eq(
-        results[10...20].map(&:id).reverse)
+        results[0...10].map(&:id))
     end
 
     context "second page" do
@@ -37,7 +37,7 @@ describe SearchResultsPresenter do
       it { expect(subject[:count]).to eq(20) }
       it "returns second page of business items" do
         expect(subject[:items].map(&:id)).to eq(
-          results[0...10].map(&:id).reverse)
+          results[10...20].map(&:id))
       end
     end
   end

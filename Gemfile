@@ -23,6 +23,7 @@ gem 'non-stupid-digest-assets'
 gem 'angular-rails-templates', '~> 0.2.0'
 
 gem 'mini_magick'
+gem 'byebug'
 gem 'fog'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder',

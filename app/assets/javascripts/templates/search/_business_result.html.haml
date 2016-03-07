@@ -17,6 +17,7 @@
         {{ result.addressLine1() }}
       %span.address-line
         {{ result.addressLine2() }}
+
   %table.item-details
     %tr{ 'ng-show': 'result.businessTypes()' }
       %td.attribute {{ "business.show.business_types" | translate }}:
@@ -30,7 +31,7 @@
     %tr{ 'ng-show': 'result.noOfEmployees()' }
       %td.attribute {{ "business.show.no_of_employees" | translate }}:
       %td {{ result.noOfEmployees() }}
-
+%span{'class': 'feature-{{result.business.feature}}'}
 .business-summary
   %a.plain-link{ 'ui-sref': '{{ result.showPath() }}' }
     {{ "results.see_company_profile" | translate }}

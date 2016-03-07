@@ -1,7 +1,6 @@
 ActiveAdmin.register Business do
-  filter :country_id, as: :select, collection:
-          proc { Country.all.map { |c| [c.english_title, c.id] } }
-  permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city
+  permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
+                :feature, :weight, :logo, :logo_tmp, :limit
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
@@ -19,6 +18,9 @@ ActiveAdmin.register Business do
       f.input :city
       f.input :logo
       f.input :logo_tmp
+      f.input :feature
+      f.input :weight
+      f.input :limit
     end
     actions         # adds the 'Submit' and 'Cancel' buttons
   end
