@@ -46,7 +46,7 @@
         scope.breadcrumbs.push(category)
 
         scope.loadCategoriesForParentId(category.id, (categories) ->
-          if categories.length > 0
+          if categories.length > 0 && scope.level < 2
             scope.level += 1
             scope.updateCategories(categories)
           else
