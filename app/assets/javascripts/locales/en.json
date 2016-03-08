@@ -26,7 +26,8 @@
     "watch_video": "watch video",
     "see_dashboard": "See dashboard",
     "join_now": "Join now",
-    "search_placeholder": "I'm looking for..."
+    "search_placeholder": "I'm looking for...",
+    "feature": "Premium"
   },
   "confirm_email_message": {
     "text": "Please confirm your email",

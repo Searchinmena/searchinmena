@@ -26,7 +26,8 @@
     "watch_video": "شاهد الفيديو",
     "see_dashboard": "لوحة التحكم",
     "join_now": "انضم الآن",
-    "search_placeholder": " أبحث عن..."
+    "search_placeholder": " أبحث عن...",
+    "feature": "الممتازة"
   },
   "confirm_email_message": {
     "text": "الرجاء تأكيد حسابك",
