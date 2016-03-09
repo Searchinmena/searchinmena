@@ -1,7 +1,21 @@
 ActiveAdmin.register Business do
-  filter :country_id, as: :select, collection:
-          proc { Country.all.map { |c| [c.english_title, c.id] } }
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :phone
+    column :user_id
+    column :country_id, as: :select, collection:
+           Country.all.map { |c| [c.english_title, c.id] }
+    actions
+  end
+  filter :name, as: :select, collection:
+          Business.all.map { |c| [c.name, c.id] }
+  filter :country_id, as: :select, collection:
+          Country.all.map { |c| [c.english_title, c.id] }
+  filter :phone, as: :select, collection:
+          Business.all.map { |c| [c.phone, c.id] }
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
