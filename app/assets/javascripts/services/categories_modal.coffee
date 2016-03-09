@@ -49,7 +49,7 @@
           if $location.path() == '/results'
             max_level = 2
           else
-            max_level = 3
+            max_level = 4
           if categories.length > 0 && scope.level < max_level
             scope.level += 1
             scope.updateCategories(categories)
