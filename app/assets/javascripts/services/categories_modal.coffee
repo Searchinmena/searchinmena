@@ -1,5 +1,5 @@
-@Sim.service 'CategoriesModal', ['$translate', '$http', 'language',
-  ($translate, $http, language) ->
+@Sim.service 'CategoriesModal', ['$translate', '$http', 'language', '$location',
+  ($translate, $http, language, $location) ->
 
     initialize: (scope, path) ->
       scope.loadBreadcrumbs = ->
@@ -46,7 +46,11 @@
         scope.breadcrumbs.push(category)
 
         scope.loadCategoriesForParentId(category.id, (categories) ->
-          if categories.length > 0 && scope.level < 2
+          if $location.path() == '/results'
+            max_level = 2
+          else
+            max_level = 3
+          if categories.length > 0 && scope.level < max_level
             scope.level += 1
             scope.updateCategories(categories)
           else
