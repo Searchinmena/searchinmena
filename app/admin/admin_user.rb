@@ -9,7 +9,7 @@ ActiveAdmin.register AdminUser do
     column :created_at
     actions
   end
-  filter :email , as: :select, collection:
+  filter :email, as: :select, collection:
          AdminUser.all.map { |c| [c.email, c.id] }
   form do |f|
     f.inputs "Admin Details" do

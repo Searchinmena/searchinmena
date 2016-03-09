@@ -4,13 +4,19 @@ ActiveAdmin.register Product do
                 :fob_price, :fob_price_currency_id, :fob_price_unit_id,
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
                 :supply_ability_capacity, :business_id, :description,
-                :packaging_details
+                :packaging_details, photos_attributes: [:photo]
   index do
     selectable_column
     id_column
-    column :business_id, as: :select, collection:
-           Business.all.map { |c| [c.name, c.id] }
+    column :name
+    column :model_number
+    column :brand_name
+    column :fob_price
+    actions
   end
+  filter :name
+  filter :model_number
+  filter :brand_name
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
@@ -38,7 +44,10 @@ ActiveAdmin.register Product do
       f.input :supply_ability_frequency_id, as: :select, collection:
               Frequency.all.map { |c| [c.english_title, c.id] }
       f.input :packaging_details
+      f.has_many :photos do |p|
+        p.input :photo
+      end
+      actions
     end
-    actions
   end
 end

@@ -8,10 +8,8 @@ ActiveAdmin.register User do
     column :last_name
     actions
   end
-  filter :email, as: :select, collection:
-          User.all.map { |c| [c.email, c.id] }
-  filter :first_name, as: :select, collection:
-          User.all.map { |c| [c.first_name, c.id] }
+  filter :email
+  filter :first_name
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

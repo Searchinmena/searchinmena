@@ -5,6 +5,17 @@ ActiveAdmin.register Service do
                 :average_completion_time_unit_id, :supply_ability_capacity,
                 :supply_ability_unit_id, :supply_ability_frequency_id,
                 :business_id, :packaging_details
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :place_of_origin
+    column :fob_price
+    actions
+  end
+  filter :name
+  filter :place_of_origin
+
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
