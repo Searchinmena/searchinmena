@@ -5,6 +5,12 @@ ActiveAdmin.register Product do
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
                 :supply_ability_capacity, :business_id, :description,
                 :packaging_details
+  index do
+    selectable_column
+    id_column
+    column :business_id, as: :select, collection:
+           Business.all.map { |c| [c.name, c.id] }
+  end
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

@@ -1,21 +1,29 @@
 ActiveAdmin.register Business do
-  permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city
+  permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
+                :year_registered, :introduction, :address_line_1, :address_line_2,
+                :logo, :logo_tmp
   index do
     selectable_column
     id_column
     column :name
     column :phone
-    column :user_id
-    column :country_id, as: :select, collection:
-           Country.all.map { |c| [c.english_title, c.id] }
+    column :year_registered, as: :select, collection:
+           Business.all.map { |c| [c.year_registered, c.id] }
+    column :user do |b|
+      b.user.first_name
+    end
     actions
   end
   filter :name, as: :select, collection:
-          Business.all.map { |c| [c.name, c.id] }
+         Business.all.map { |c| [c.name, c.id] }
   filter :country_id, as: :select, collection:
-          Country.all.map { |c| [c.english_title, c.id] }
+         Country.all.map { |c| [c.english_title, c.id] }
   filter :phone, as: :select, collection:
-          Business.all.map { |c| [c.phone, c.id] }
+         Business.all.map { |c| [c.phone, c.id] }
+  filter :year_registered, as: :select, collection:
+         Business.all.map { |c| [c.year_registered, c.id] }
+  filter :user_id, as: :select, collection:
+         User.all.map { |c| [c.first_name, c.id] }
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
