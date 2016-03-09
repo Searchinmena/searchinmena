@@ -2,45 +2,45 @@
   .first-half
     .container-1
       .row
-        %h3.heading List your Business
+        %h3.heading {{ "premium.list" | translate}}
         %p.set-font.mar-bottom-zero
-          %b Online Visibility
+          %b {{ "premium.visibility" | translate}}
         %hr
         %a.btn.btn-red{ href: Sim::Routes.new_user_registration_path }
           = t('main_nav.signup')
-        %h1.heading.mar-bottom Free
-        %p.set-font.mar-bottom-zero Upto 5 products
+        %h1.heading.mar-bottom {{ "premium.free" | translate}}
+        %p.set-font.mar-bottom-zero {{ "premium.product1" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero Gain new leads
+        %p.set-font.mar-bottom-zero {{ "premium.gain_lead" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero Get a Presence online
+        %p.set-font.mar-bottom-zero {{ "premium.presence" | translate}}
         %hr
 
   .second-half
     .container-2
       .row1
-        %h2.heading-1 Premium
-        %h3.heading.mar-bottom-zero Attract new clients online
+        %h2.heading-1 {{ "premium.pre" | translate}}
+        %h3.heading.mar-bottom-zero {{ "premium.attract" | translate}}
         %hr
         %a.btn.btn-red{ href: Sim::Routes.new_user_registration_path }
           = t('text.subscribe')
         .mar-bottom-one
           %span
-            %b.dollar-sign $
-            %b.price-tag 83/
-            %b.month Month
-            %p.red-color.heading billed annually
-            %b.move $
-            %b.price-tag1 996
-            %b.year / year
-        %p.set-font.mar-bottom-zero Upto 25 products
+            %b.dollar-sign {{ "premium.dollar" | translate}}
+            %b.price-tag {{ "premium.amount1" | translate}}
+            %b.month {{ "premium.month" | translate}}
+            %p.red-color.heading {{ "premium.billed" | translate}}
+            %b.move {{ "premium.dollar" | translate}}
+            %b.price-tag1 {{ "premium.amount2" | translate}}
+            %b.year {{ "premium.year" | translate}}
+        %p.set-font.mar-bottom-zero {{ "premium.product2" | translate}}
         %hr
         %p.set-font.mar-bottom-zero
-          %b Verified Logo
+          %b {{ "premium.logo" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero 1st Priority Ranking
+        %p.set-font.mar-bottom-zero {{ "premium.rank" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero Visible on competitors' page
+        %p.set-font.mar-bottom-zero {{ "premium.competitor_page" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero Display on Google page(SEO)
+        %p.set-font.mar-bottom-zero {{ "premium.google_page" | translate}}
         %hr

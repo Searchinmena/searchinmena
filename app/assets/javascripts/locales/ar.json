@@ -264,5 +264,26 @@
     "see_company_profile": "شاهد ملف الشركة",
     "title": "نتائج البحث",
     "view_options": "معاينة"
+  },
+  "premium": {
+    "list": "List your business",
+    "visibility": "Online visibility",
+    "free": "Free",
+    "product1": "Upto 5 products",
+    "gain_lead": "Gain new leads",
+    "presence": "Get a presence online",
+    "pre": "Premium",
+    "attract": "Attract new clients online",
+    "dollar": "$",
+    "amount1": "83",
+    "billed": "billed annually",
+    "month": "/ MONTH",
+    "amount2": "996",
+    "year": "/ YEAR",
+    "product2": "Upto 25 products",
+    "logo": "Verified logo",
+    "rank": "1st priority Ranking",
+    "competitor_page": "Visible on competitors' page",
+    "google_page": "Display on Google(SEO)"
   }
 }
