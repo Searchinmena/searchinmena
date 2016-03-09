@@ -1,0 +1,46 @@
+.premium-container
+  .first-half
+    .container-1
+      .row
+        %h3.heading {{ "premium.list" | translate}}
+        %p.set-font.mar-bottom-zero
+          %b {{ "premium.visibility" | translate}}
+        %hr
+        %a.btn.btn-red{ href: Sim::Routes.new_user_registration_path }
+          = t('main_nav.signup')
+        %h1.heading.mar-bottom {{ "premium.free" | translate}}
+        %p.set-font.mar-bottom-zero {{ "premium.product1" | translate}}
+        %hr
+        %p.set-font.mar-bottom-zero {{ "premium.gain_lead" | translate}}
+        %hr
+        %p.set-font.mar-bottom-zero {{ "premium.presence" | translate}}
+        %hr
+
+  .second-half
+    .container-2
+      .row1
+        %h2.heading-1 {{ "premium.pre" | translate}}
+        %h3.heading.mar-bottom-zero {{ "premium.attract" | translate}}
+        %hr
+        %a.btn.btn-red{ href: Sim::Routes.new_user_registration_path }
+          = t('text.subscribe')
+        .mar-bottom-one
+          %span
+            %b.dollar-sign {{ "premium.dollar" | translate}}
+            %b.price-tag {{ "premium.amount1" | translate}}
+            %b.month {{ "premium.month" | translate}}
+            %p.red-color.heading {{ "premium.billed" | translate}}
+            %b.move {{ "premium.dollar" | translate}}
+            %b.price-tag1 {{ "premium.amount2" | translate}}
+            %b.year {{ "premium.year" | translate}}
+        %p.set-font.mar-bottom-zero {{ "premium.product2" | translate}}
+        %hr
+        %p.set-font.mar-bottom-zero
+          %b {{ "premium.logo" | translate}}
+        %hr
+        %p.set-font.mar-bottom-zero {{ "premium.rank" | translate}}
+        %hr
+        %p.set-font.mar-bottom-zero {{ "premium.competitor_page" | translate}}
+        %hr
+        %p.set-font.mar-bottom-zero {{ "premium.google_page" | translate}}
+        %hr

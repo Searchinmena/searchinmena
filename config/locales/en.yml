@@ -22,6 +22,7 @@ en:
     buyer_line_1: "Send inquiries to the seller"
     buyer_line_2: "Find the best offers"
     category_label: "I am a:"
+    subscribe: "Subscribe"
 
   business:
     business_types:

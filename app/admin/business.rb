@@ -19,8 +19,8 @@ ActiveAdmin.register Business do
       f.input :logo
       f.input :logo_tmp
       f.input :feature
-      f.input :weight
-      f.input :limit
+      f.input :weight, as: :select, collection: ((0..100).map { |i| [i, i] })
+      f.input :limit, as: :select, collection: ((0..100).map { |i| [i, i] })
     end
     actions         # adds the 'Submit' and 'Cancel' buttons
   end

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get "/faqs" => "pages#faqs", as: :faqs
   get "/careers" => "pages#careers", as: :careers
   get "/terms" => "pages#terms", as: :terms
+  get "/premium" => "pages#premium", as: :premium
 
   get "/home-1" => "landing_pages#home_one", as: :home_one
 

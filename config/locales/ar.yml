@@ -22,6 +22,7 @@ ar:
     buyer_line_1: "تصفّح جميع الشركات والمنتجات والخدمات"
     buyer_line_2: "تواصل مع البائعين بشكل مباشر"
     category_label: "أنا:"
+    subscribe: "الاشتراك"
 
   business:
     business_types:
