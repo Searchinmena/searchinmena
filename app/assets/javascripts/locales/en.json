@@ -269,7 +269,7 @@
     "list": "List your business",
     "visibility": "Online visibility",
     "free": "Free",
-    "product1": "Upto 5 products",
+    "product1": "Upto 10 products",
     "gain_lead": "Gain new leads",
     "presence": "Get a presence online",
     "pre": "Premium",
@@ -280,10 +280,11 @@
     "month": "/ MONTH",
     "amount2": "996",
     "year": "/ YEAR",
-    "product2": "Upto 25 products",
+    "product2": "Upto 50 products",
     "logo": "Verified logo",
     "rank": "1st priority Ranking",
     "competitor_page": "Visible on competitors' page",
-    "google_page": "Display on Google(SEO)"
+    "google_page": "Display on Google (SEO)",
+    "customer_services": "Customer Services"
   }
 }

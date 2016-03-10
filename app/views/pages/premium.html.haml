@@ -1,46 +1,58 @@
-.premium-container
-  .first-half
-    .container-1
+%section.landing-header.premium
+  .landing-header-info
+    %h1
+      {{ "home.header_line_1" | translate }}
+      %br
+      {{ "home.header_line_2" | translate }}
+
+    .landing-header-sub-info
+      %h2
+      %a{ href: "https://goo.gl/VJhhcl",
+        target: "_blank", class: "video-link" }
+        %span.icon-play-circle
+        {{ "home.watch_video" | translate }}
+  .container
+    .first-half
       .row
         %h3.heading {{ "premium.list" | translate}}
-        %p.set-font.mar-bottom-zero
-          %b {{ "premium.visibility" | translate}}
+        %p {{ "premium.visibility" | translate}}
         %hr
-        %a.btn.btn-red{ href: Sim::Routes.new_user_registration_path }
+        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
           = t('main_nav.signup')
-        %h1.heading.mar-bottom {{ "premium.free" | translate}}
-        %p.set-font.mar-bottom-zero {{ "premium.product1" | translate}}
+        .heading {{ "premium.free" | translate}}
+        %p
         %hr
-        %p.set-font.mar-bottom-zero {{ "premium.gain_lead" | translate}}
+        %p {{ "premium.product1" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero {{ "premium.presence" | translate}}
+        %p {{ "premium.gain_lead" | translate}}
         %hr
+        %p {{ "premium.presence" | translate}}
 
-  .second-half
-    .container-2
-      .row1
-        %h2.heading-1 {{ "premium.pre" | translate}}
-        %h3.heading.mar-bottom-zero {{ "premium.attract" | translate}}
+    .second-half
+      .row
+        %h3.heading {{ "premium.pre" | translate}}
+        %p {{ "premium.attract" | translate}}
         %hr
-        %a.btn.btn-red{ href: Sim::Routes.new_user_registration_path }
+        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
           = t('text.subscribe')
-        .mar-bottom-one
+        %p
           %span
-            %b.dollar-sign {{ "premium.dollar" | translate}}
-            %b.price-tag {{ "premium.amount1" | translate}}
-            %b.month {{ "premium.month" | translate}}
-            %p.red-color.heading {{ "premium.billed" | translate}}
-            %b.move {{ "premium.dollar" | translate}}
-            %b.price-tag1 {{ "premium.amount2" | translate}}
-            %b.year {{ "premium.year" | translate}}
-        %p.set-font.mar-bottom-zero {{ "premium.product2" | translate}}
+            %span.dollar-sign.heading {{ "premium.dollar" | translate}}
+            %span.price-tag.heading {{ "premium.amount1" | translate}}
+            %span.month {{ "premium.month" | translate}}
+            %p {{ "premium.billed" | translate}}
+            %span.move {{ "premium.dollar" | translate}}
+            %span.price-tag {{ "premium.amount2" | translate}}
+            %span.year {{ "premium.year" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero
-          %b {{ "premium.logo" | translate}}
+        %p {{ "premium.product2" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero {{ "premium.rank" | translate}}
+        %p {{ "premium.logo" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero {{ "premium.competitor_page" | translate}}
+        %p {{ "premium.rank" | translate}}
         %hr
-        %p.set-font.mar-bottom-zero {{ "premium.google_page" | translate}}
+        %p {{ "premium.competitor_page" | translate}}
         %hr
+        %p {{ "premium.google_page" | translate}}
+        %hr
+        %p {{ "premium.customer_services" | translate}}

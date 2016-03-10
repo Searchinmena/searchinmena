@@ -1,135 +1,58 @@
-.premium-container{
-  background-color: white;
-  width: 800px;
-  height: 1000px;
-}
-.first-half,.second-half{
-  width: 49%;
-  border: 5px solid #dddddd;
-  margin: 0;
-  float: left;
-}
+.premium {
+  height: 55em;
+  
+  @media screen and (max-width: $tablet) {
+    height: auto;
+  }
 
-.first-half{
-  background-color: #d9d9d9;
-  height: 550px;
-}
+  p {
+    margin: 10px auto;
+  }
 
-.second-half{
-  height: 550px;
-}
+  .landing-header-info {
+    height: auto;
+    padding: 10px 0;
+  }
+  .sign-up-btn {
+    margin: 15px auto;
+  }
+  hr {
+    margin: 0px;
+  }
+  .container {
+    max-width: $desktop;
+    text-align: center;
+    margin: 0px auto;
+    height: 45em;
 
-.heading{
-  text-align: center;
-}
+    @media screen and (max-width: $tablet) {
+      height: auto;
+    }
 
-.btn-red{
-  background-color: red;
-  color: white;
-  margin-left: 120px;
-  margin-right: 110px;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: px;
-}
-.mar-bottom-zero{
-  margin-bottom: -5px;
-  margin-top: -10px;
-}
+    h3 {
+      margin: 15px 0px;
+    }
+    .first-half {
+      margin-right: 10px;
+    }
+    .first-half, .second-half {
+      width: 48%;
+      border: 1px solid #272951;
+      float: left;
 
-.set-font{
-  font-size: 10;
-  text-align: center;
-}
+      @media screen and (max-width: $tablet) {
+        float: none;
+        margin: 10px auto;
+        width: 100%;
+      }
 
-.mar-bottom{
-  margin-bottom: 85px;
-  margin-top: 40px;
-}
-
-.dollar-sign{
-  color: red;
-  font-size: 50px;
-  margin-left: 100px;
-  margin-right: 215px;
-}
-
-.price-tag{
-  font-size: 30px;
-  margin-left: -200px;
-  margin-right: -200px;
-}
-
-.red-color{
-  color: red;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.move{
-  color: red;
-  margin-left: 100px;
-  margin-right: 215px;
-}
-
-.mar-bottom-one{
-  margin-bottom: 50px;
-  margin-top: 5px;
-}
-
-.container-1{
-  padding-right: 0px;
-  padding-right: 0px;
-  padding: 5px;
-  background: #EFEAEA;
-  width: 95%;
-  float: right;
-  height: 500px;
-  margin-top: 15px;
-}
-
-.container-2{
-  padding-right: 0px;
-  padding-right: 0px;
-  padding: 5px;
-  width: 95%;
-  float: right;
-  height: 475px;
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
-
-.heading-1{
-  text-align: center;
-  margin-top: 6px;
-  margin-bottom: 20px;
-}
-
-.premium-container{
-  margin-left: 20%;
-  margin-top: 10%;
-  margin-right: 225px;
-  height: 650px;
-}
-
-.month{
-  color: red;
-  margin-left: 200px;
-  margin-right: 90px;
-}
-
-.price-tag1{
-  margin-left: -200px;
-  margin-right: -160px;
-}
-
-.year{
-  color: red;
-  margin-right: 100px;
-  margin-left: 160px;
+    }
+    .heading {
+      color: #a41954;
+      font-size: 26px;
+    }
+    .dollar-sign {
+      font-size: 26px;
+    }
+  }
 }
