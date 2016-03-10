@@ -9,6 +9,14 @@ ActiveAdmin.register AdminUser do
     column :created_at
     actions
   end
+  show do
+    attributes_table do
+      row :email
+      row :current_sign_in_at
+      row :sign_in_count
+      row :created_at
+    end
+  end
   filter :email, as: :select, collection:
          AdminUser.all.map { |c| [c.email, c.id] }
   form do |f|

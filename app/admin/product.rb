@@ -11,8 +11,56 @@ ActiveAdmin.register Product do
     column :name
     column :model_number
     column :brand_name
+    column :category_id do |b|
+      b.category.english_title
+    end
+    column :business_id do |b|
+      b.business.name
+    end
     column :fob_price
     actions
+  end
+  show do |product|
+    attributes_table do
+      row :id
+      row :name
+      row :model_number
+      row :brand_name
+      row :category_id do |b|
+        b.category.english_title
+      end
+      row :business_id do |b|
+        b.business.name
+      end
+      row :description
+      row :min_order_quantity_number
+      row :min_order_quantity_unit_id do |b|
+        b.min_order_quantity_unit.english_title
+      end
+      row :fob_price
+      row :fob_price_currency_id do |b|
+        b.fob_price_currency.english_title
+      end
+      row :fob_price_unit_id do |b|
+        b.fob_price_unit.english_title
+      end
+      row :port
+      row :supply_ability_capacity
+      row :supply_ability_unit_id do |b|
+        b.supply_ability_unit.english_title
+      end
+      row :supply_ability_frequency_id do |b|
+        b.supply_ability_frequency.english_title
+      end
+      row :packaging_details
+      row "Images" do
+        ul do
+          li do
+            image_tag(product.photos.first.photo)
+          end
+        end
+      end
+    end
   end
   filter :name
   filter :model_number

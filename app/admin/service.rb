@@ -10,12 +10,48 @@ ActiveAdmin.register Service do
     id_column
     column :name
     column :place_of_origin
+    column :scope_of_work
     column :fob_price
     actions
   end
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :place_of_origin
+      row :scope_of_work
+      row :category_id do |b|
+        b.category.english_title
+      end
+      row :business_id do |b|
+        b.business.name
+      end
+      row :description
+      row :fob_price
+      row :fob_price_currency_id do |b|
+        b.fob_price_currency.english_title
+      end
+      row :fob_price_unit_id do |b|
+        b.fob_price_unit.english_title
+      end
+      row :port
+      row :supply_ability_capacity
+      row :supply_ability_unit_id do |b|
+        b.supply_ability_unit.english_title
+      end
+      row :supply_ability_frequency_id do |b|
+        b.supply_ability_frequency.english_title
+      end
+      row :average_completion_time
+      row :average_completion_time_unit_id do |b|
+        b.average_completion_time_unit.english_title
+      end
+      row :packaging_details
+    end
+  end
   filter :name
   filter :place_of_origin
-
+  filter :scope_of_work
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

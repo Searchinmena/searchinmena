@@ -31,9 +31,9 @@ ActiveAdmin.register ServiceCategory do
         category.translations.where(locale: 'ar').pluck(:value).join('  ')
       end
     end
-    active_admin_comments
   end
-
+  filter :parent_id, as: :select, collection:
+  ServiceCategory.all.map { |c| [c.english_title, c.id] }
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
