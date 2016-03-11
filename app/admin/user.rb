@@ -10,15 +10,15 @@ ActiveAdmin.register User do
     column :category
     actions
   end
-  show do
-    attributes_table do
-      row :email
-      row :first_name
-      row :last_name
-      row :provider
-      row :category
-    end
-  end
+  # show do
+  #   attributes_table do
+  #     row :email
+  #     row :first_name
+  #     row :last_name
+  #     row :provider
+  #     row :category
+  #   end
+  # end
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
