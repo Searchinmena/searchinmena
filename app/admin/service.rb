@@ -4,7 +4,8 @@ ActiveAdmin.register Service do
                 :fob_price_unit_id, :port, :average_completion_time,
                 :average_completion_time_unit_id, :supply_ability_capacity,
                 :supply_ability_unit_id, :supply_ability_frequency_id,
-                :business_id, :packaging_details
+                :business_id, :packaging_details,
+                photos_attributes: [:photo, :id, :_destroy]
   index do
     selectable_column
     id_column
@@ -47,6 +48,13 @@ ActiveAdmin.register Service do
         b.average_completion_time_unit.english_title
       end
       row :packaging_details
+      row "Images" do |m|
+        m.photos.each do |img|
+          span do
+            image_tag(img.photo.url(:thumb))
+          end
+        end
+      end
     end
   end
   filter :name
@@ -78,6 +86,11 @@ ActiveAdmin.register Service do
       f.input :supply_ability_frequency_id, as: :select, collection:
               Frequency.all.map { |c| [c.english_title, c.id] }
       f.input :packaging_details
+      f.has_many :photos do |p|
+        p.input :photo, as: :file, label: "Image", hint:
+                p.template.image_tag(p.object.photo.url(:thumb))
+        p.input :_destroy, as: :boolean, required: false, label: "remove photo"
+      end
     end
     actions         # adds the 'Submit' and 'Cancel' buttons
   end

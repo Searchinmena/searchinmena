@@ -4,7 +4,7 @@ ActiveAdmin.register Product do
                 :fob_price, :fob_price_currency_id, :fob_price_unit_id,
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
                 :supply_ability_capacity, :business_id, :description,
-                :packaging_details, photos_attributes: [:photo]
+                :packaging_details, photos_attributes: [:photo, :id, :_destroy]
   index do
     selectable_column
     id_column
@@ -20,7 +20,7 @@ ActiveAdmin.register Product do
     column :fob_price
     actions
   end
-  show do |product|
+  show do
     attributes_table do
       row :id
       row :name
@@ -53,10 +53,10 @@ ActiveAdmin.register Product do
         b.supply_ability_frequency.english_title
       end
       row :packaging_details
-      row "Images" do
-        ul do
-          li do
-            image_tag(product.photos.first.photo)
+      row "Images" do |m|
+        m.photos.each do |img|
+          span do
+            image_tag(img.photo.url(:thumb))
           end
         end
       end
@@ -93,7 +93,9 @@ ActiveAdmin.register Product do
               Frequency.all.map { |c| [c.english_title, c.id] }
       f.input :packaging_details
       f.has_many :photos do |p|
-        p.input :photo
+        p.input :photo, as: :file, label: "Image", hint:
+                p.template.image_tag(p.object.photo.url(:thumb))
+        p.input :_destroy, as: :boolean, required: false, label: "remove photo"
       end
       actions
     end
