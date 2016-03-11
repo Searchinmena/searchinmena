@@ -57,9 +57,6 @@ ActiveAdmin.register Service do
       end
     end
   end
-  filter :name
-  filter :place_of_origin
-  filter :scope_of_work
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

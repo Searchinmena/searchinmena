@@ -32,8 +32,6 @@ ActiveAdmin.register ServiceCategory do
       end
     end
   end
-  filter :parent_id, as: :select, collection:
-  ServiceCategory.all.map { |c| [c.english_title, c.id] }
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

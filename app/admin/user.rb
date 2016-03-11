@@ -19,10 +19,6 @@ ActiveAdmin.register User do
       row :category
     end
   end
-  filter :email
-  filter :first_name
-  filter :last_name
-  filter :category, as: :select, collection: User.categories.keys.zip([0, 1, 2])
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

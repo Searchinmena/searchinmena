@@ -62,9 +62,6 @@ ActiveAdmin.register Product do
       end
     end
   end
-  filter :name
-  filter :model_number
-  filter :brand_name
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

@@ -18,13 +18,6 @@ ActiveAdmin.register Business do
     end
     actions
   end
-  filter :name
-  filter :country_id, as: :select, collection:
-         Country.all.map { |c| [c.english_title, c.id] }
-  filter :phone
-  filter :year_registered
-  filter :user_id, as: :select, collection:
-         User.all.map { |c| [c.first_name, c.id] }
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
