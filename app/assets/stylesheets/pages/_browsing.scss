@@ -590,20 +590,20 @@
   }
 }
 
-.feature-true{
+.feature-true {
   width: 83px;
   height: 83px;
   background: asset-url('feature.png') no-repeat 0px 1px;
   display: list-item;
   position: relative;
+
+  @media screen and (max-width: $tablet) {
+    margin: 0 0 0 $bs1;
+  }
+
 }
-.net-view{
+.net-view {
   .feature-true{
-    width: 83px;
-    height: 83px;
-    background: asset-url('feature.png') no-repeat 0px 1px;
-    display: list-item;
-    position: relative;
     top: -287px;
   }
 }
