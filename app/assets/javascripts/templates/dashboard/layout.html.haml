@@ -21,6 +21,10 @@
       %a.nav-link{ "ui-sref": "dashboard.services", "ui-sref-active": "active" }
         {{ "dashboard_nav.services" | translate }}
         %span.icon.icon-user
+    %li{ "ng-hide": "premium" }
+      %a.nav-link{ "href": "/premium" }
+        {{ "premium.pre" | translate }}
+        %span.icon.icon-star
     %li{ hidden: true }
       %a.nav-link{ href: "#" }
         {{ "dashboard_nav.messages" | translate }}
