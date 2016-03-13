@@ -1,5 +1,6 @@
 production:
   email_from: 'confirmation@searchinmena.com'
+  email_bcc: 'salim@searchinmena.net'
   app_host: http://sim.demo.llp.pl
   env: demo
   fb_app_id: 838866496206335
