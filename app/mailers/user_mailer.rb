@@ -10,6 +10,7 @@ class UserMailer < ApplicationMailer
     @body = body
 
     subject = "You have sent a message to #{business.name}"
-    mail(to: user.email, bcc:A9n.email_bcc, from: A9n.email_from, subject: subject)
+    mail(to: user.email, bcc: A9n.email_bcc,
+         from: A9n.email_from, subject: subject)
   end
 end
