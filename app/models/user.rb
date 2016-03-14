@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
   has_one :business, dependent: :delete
 
   validates_confirmation_of :password
+
+  def self.category_name(type)
+    I18n.t("user.categories.#{type}")
+  end
+
+  def can_see_business_items?
+    seller? || both?
+  end
 end
