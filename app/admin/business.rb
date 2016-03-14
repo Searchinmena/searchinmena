@@ -24,7 +24,7 @@ ActiveAdmin.register Business do
       f.input :name
       f.input :phone
       f.input :user_id, as: :select, collection:
-              User.all.map { |c| [c.first_name, c.id] }
+              User.associated_users(business).map { |c| [c.first_name, c.id] }
       f.input :year_registered
       f.input :no_of_employees
       f.input :introduction
