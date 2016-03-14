@@ -1,7 +1,7 @@
 @Sim.service 'SearchService', ['Search',
   (Search) ->
     searchTypes: ->
-      ['business', 'product', 'service']
+      ['product', 'business', 'service']
 
     translationKeyFor: (type) ->
       "search.types.#{type}"
