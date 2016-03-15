@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :lockable and :timeoutable
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :trackable, :confirmable, :validatable,
+         :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:facebook]
 
   enum category: [:seller, :buyer, :both]

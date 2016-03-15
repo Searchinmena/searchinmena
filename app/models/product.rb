@@ -12,6 +12,7 @@ class Product < ActiveRecord::Base
   belongs_to :min_order_quantity_unit, class_name: "Translatable"
 
   has_many :photos, class_name: "ProductPhoto", dependent: :delete_all
+  accepts_nested_attributes_for :photos, allow_destroy: true
   has_many :product_attributes, dependent: :delete_all
   has_many :product_payment_terms, dependent: :delete_all
   has_many :payment_terms, through: :product_payment_terms,

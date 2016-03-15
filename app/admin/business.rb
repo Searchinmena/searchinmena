@@ -1,6 +1,24 @@
 ActiveAdmin.register Business do
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
-                :feature, :weight, :logo, :logo_tmp, :limit
+                :year_registered, :introduction, :address_line_1, :limit,
+                :address_line_2, :logo, :feature, :weight, :logo, :logo_tmp
+  index do
+    selectable_column
+    id_column
+    column :name, as: :select, collection:
+           Business.all.map { |c| [c.name, c.id] }
+    column :phone
+    column :year_registered, as: :select, collection:
+           Business.all.map { |c| [c.year_registered, c.id] }
+    column :user do |b|
+      b.user.email
+    end
+    column :country do |b|
+      b.country.english_title
+    end
+    actions
+  end
+
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

@@ -4,7 +4,64 @@ ActiveAdmin.register Product do
                 :fob_price, :fob_price_currency_id, :fob_price_unit_id,
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
                 :supply_ability_capacity, :business_id, :description,
-                :packaging_details
+                :packaging_details, photos_attributes: [:photo, :id, :_destroy]
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :model_number
+    column :brand_name
+    column :category_id do |b|
+      b.category.english_title
+    end
+    column :business_id do |b|
+      b.business.name
+    end
+    column :fob_price
+    actions
+  end
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :model_number
+      row :brand_name
+      row :category_id do |b|
+        b.category.english_title
+      end
+      row :business_id do |b|
+        b.business.name
+      end
+      row :description
+      row :min_order_quantity_number
+      row :min_order_quantity_unit_id do |b|
+        b.min_order_quantity_unit.english_title
+      end
+      row :fob_price
+      row :fob_price_currency_id do |b|
+        b.fob_price_currency.english_title
+      end
+      row :fob_price_unit_id do |b|
+        b.fob_price_unit.english_title
+      end
+      row :port
+      row :supply_ability_capacity
+      row :supply_ability_unit_id do |b|
+        b.supply_ability_unit.english_title
+      end
+      row :supply_ability_frequency_id do |b|
+        b.supply_ability_frequency.english_title
+      end
+      row :packaging_details
+      row "Images" do |m|
+        m.photos.each do |img|
+          span do
+            image_tag(img.photo.url(:thumb))
+          end
+        end
+      end
+    end
+  end
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
@@ -32,7 +89,12 @@ ActiveAdmin.register Product do
       f.input :supply_ability_frequency_id, as: :select, collection:
               Frequency.all.map { |c| [c.english_title, c.id] }
       f.input :packaging_details
+      f.has_many :photos do |p|
+        p.input :photo, as: :file, label: "Image", hint:
+                p.template.image_tag(p.object.photo.url(:thumb))
+        p.input :_destroy, as: :boolean, required: false, label: "remove photo"
+      end
+      actions
     end
-    actions
   end
 end

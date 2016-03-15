@@ -1,8 +1,6 @@
 ActiveAdmin.register ServiceCategory do
   menu parent: 'Manage Category'
-
-  permit_params :parent_id
-
+  permit_params :parent_id, translations_attributes: [:locale, :value]
   index do
     selectable_column
     id_column
@@ -33,9 +31,7 @@ ActiveAdmin.register ServiceCategory do
         category.translations.where(locale: 'ar').pluck(:value).join('  ')
       end
     end
-    active_admin_comments
   end
-
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do

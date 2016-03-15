@@ -9,10 +9,14 @@ ActiveAdmin.register AdminUser do
     column :created_at
     actions
   end
-  filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
+  show do
+    attributes_table do
+      row :email
+      row :current_sign_in_at
+      row :sign_in_count
+      row :created_at
+    end
+  end
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
