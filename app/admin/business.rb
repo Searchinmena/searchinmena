@@ -5,16 +5,14 @@ ActiveAdmin.register Business do
   index do
     selectable_column
     id_column
-    column :name, as: :select, collection:
-           Business.all.map { |c| [c.name, c.id] }
+    column :name
     column :phone
-    column :year_registered, as: :select, collection:
-           Business.all.map { |c| [c.year_registered, c.id] }
+    column :year_registered
     column :user do |b|
-      b.user.email
+      b.user.email if b.user
     end
     column :country do |b|
-      b.country.english_title
+      b.country.english_title if b.country
     end
     actions
   end
