@@ -5,6 +5,8 @@ ActiveAdmin.register Product do
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
                 :supply_ability_capacity, :business_id, :description,
                 :packaging_details, photos_attributes: [:photo, :id, :_destroy]
+  filter :name
+  filter :business, collection: proc { Business.all.order('name asc') }
   index do
     selectable_column
     id_column
@@ -12,10 +14,10 @@ ActiveAdmin.register Product do
     column :model_number
     column :brand_name
     column :category_id do |b|
-      b.category.english_title
+      b.category.english_title if b.category
     end
     column :business_id do |b|
-      b.business.name
+      b.business.name if b.business
     end
     column :fob_price
     actions
@@ -27,10 +29,10 @@ ActiveAdmin.register Product do
       row :model_number
       row :brand_name
       row :category_id do |b|
-        b.category.english_title
+        b.category.english_title if b.category
       end
       row :business_id do |b|
-        b.business.name
+        b.business.name if b.business
       end
       row :description
       row :min_order_quantity_number

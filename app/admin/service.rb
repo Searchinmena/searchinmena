@@ -6,15 +6,22 @@ ActiveAdmin.register Service do
                 :supply_ability_unit_id, :supply_ability_frequency_id,
                 :business_id, :packaging_details,
                 photos_attributes: [:photo, :id, :_destroy]
+  filter :name
+  filter :business, collection: proc { Business.all.order('name asc') }
+
   index do
     selectable_column
     id_column
     column :name
-    column :place_of_origin
-    column :scope_of_work
-    column :fob_price
+    column :business do |b|
+      b.business.name if b.business
+    end
+    column :category do |b|
+      b.category.english_title if b.category
+    end
     actions
   end
+
   show do
     attributes_table do
       row :id
