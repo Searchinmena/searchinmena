@@ -1,6 +1,6 @@
 shared_examples "Searchable by name" do |resource_name|
   describe "#where_name_like" do
-    subject { repository.where_name_like(query) }
+    subject { repository.where_name_like(resource_name, query) }
     let!(:resource) { create(resource_name, name: "Resource Name") }
     let!(:other) { create(resource_name, name: "Other") }
 

@@ -3,6 +3,7 @@
   (ITEMS_PER_PAGE, BusinessItemPresenter, $state, $stateParams) ->
     initialize: (businessItemFactory, scope) ->
       scope.perPage = ITEMS_PER_PAGE
+       
       scope.pagination = {
         current: $stateParams.page
       }
@@ -23,4 +24,5 @@
       scope.deleteClicked = (businessItem) ->
         params = { id: businessItem.get('id'), page: scope.pagination.current }
         businessItemFactory.delete(params, scope.reloadPage)
+        window.location.reload()
 ]

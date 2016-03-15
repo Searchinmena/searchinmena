@@ -9,7 +9,7 @@
           %option{ value: "" } -- {{ "business.basic_info.select_country" | translate }} --
       .field.field-category.browse-filter{ "ng-show": "showProServFilter", "ng-include": "'business_items/_category.html'" }
       .field.search-field.browse-filter{ "ng-hide": "true" }
-        %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category = ''" }
+        %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category" }
       .field.search-field.browse-filter
         %input{ type: 'text', value: '{{ search.query }}', 'ng-model': 'search.query' }
         %input{ type: 'submit', value: '{{ "search_submit" | translate }}' }
@@ -38,8 +38,8 @@
   %ul.search-results{ 'ng-class': '{ "net-view": isNetViewSelected() }',
     'ng-show': 'results.length > 0' }
     %li.result-item{ 'dir-paginate': 'result in results | itemsPerPage: perPage',
-      'total-items': 'total', 'current-page': 'pagination.current' }
-      %ng-include{ 'src': 'result.templatePath()' }
+      'total-items': 'total', 'current-page': 'pagination.current'}
+      %ng-include{ 'src': 'result.templatePath()'}
 
     .pagination-container
       %dir-pagination-controls{ "on-page-change": "pageChanged(newPageNumber)" }

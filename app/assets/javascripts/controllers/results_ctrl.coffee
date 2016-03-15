@@ -42,7 +42,7 @@
     $scope.pagination = {
       current: $stateParams.page
     }
-    
+
     $scope.search.viewOption = $stateParams.viewOption || 'list-view'
     $scope.isNetViewSelected = ->
       $scope.search.viewOption == 'net-view'
@@ -63,6 +63,7 @@
 
     $scope.submit = (e) ->
       e.preventDefault()
+      $scope.search.page = 1
       $scope.reloadPage()
 
     $scope.searchFilter = (type) ->

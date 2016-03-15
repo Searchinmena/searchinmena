@@ -1,0 +1,58 @@
+.premium {
+  height: 55em;
+  
+  @media screen and (max-width: $tablet) {
+    height: auto;
+  }
+
+  p {
+    margin: 10px auto;
+  }
+
+  .landing-header-info {
+    height: auto;
+    padding: 10px 0;
+  }
+  .sign-up-btn {
+    margin: 15px auto;
+  }
+  hr {
+    margin: 0px;
+  }
+  .container {
+    max-width: $desktop;
+    text-align: center;
+    margin: 0px auto;
+    height: 45em;
+
+    @media screen and (max-width: $tablet) {
+      height: auto;
+    }
+
+    h3 {
+      margin: 15px 0px;
+    }
+    .first-half {
+      margin-right: 10px;
+    }
+    .first-half, .second-half {
+      width: 48%;
+      border: 1px solid #272951;
+      float: left;
+
+      @media screen and (max-width: $tablet) {
+        float: none;
+        margin: 10px auto;
+        width: 100%;
+      }
+
+    }
+    .heading {
+      color: #a41954;
+      font-size: 26px;
+    }
+    .dollar-sign {
+      font-size: 26px;
+    }
+  }
+}

@@ -10,8 +10,10 @@
   "scripts": {
     "update-webdriver": "./node_modules/protractor/bin/webdriver-manager update",
     "start-webdriver": "./node_modules/protractor/bin/webdriver-manager start",
-
     "protractor": "./node_modules/protractor/bin/protractor spec/protractor-conf.coffee",
     "protractor-specs": "./node_modules/protractor/bin/protractor spec/protractor-conf.coffee --specs"
+  },
+  "dependencies": {
+    "ng-tags-input": "^3.0.0"
   }
 }

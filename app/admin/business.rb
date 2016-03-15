@@ -1,7 +1,7 @@
 ActiveAdmin.register Business do
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
-                :year_registered, :introduction, :address_line_1,
-                :address_line_2, :logo
+                :year_registered, :introduction, :address_line_1, :limit,
+                :address_line_2, :logo, :feature, :weight, :logo, :logo_tmp
   index do
     selectable_column
     id_column
@@ -18,6 +18,7 @@ ActiveAdmin.register Business do
     end
     actions
   end
+
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
@@ -34,6 +35,10 @@ ActiveAdmin.register Business do
       f.input :address_line_2
       f.input :city
       f.input :logo
+      f.input :logo_tmp
+      f.input :feature
+      f.input :weight, as: :select, collection: ((0..100).map { |i| [i, i] })
+      f.input :limit, as: :select, collection: ((0..100).map { |i| [i, i] })
     end
     actions         # adds the 'Submit' and 'Cancel' buttons
   end

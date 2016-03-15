@@ -1,0 +1,58 @@
+%section.landing-header.premium
+  .landing-header-info
+    %h1
+      {{ "home.header_line_1" | translate }}
+      %br
+      {{ "home.header_line_2" | translate }}
+
+    .landing-header-sub-info
+      %h2
+      %a.video-link{ href: "https://goo.gl/VJhhcl",
+        target: "_blank" }
+        %span.icon-play-circle
+        {{ "home.watch_video" | translate }}
+  .container
+    .first-half
+      .row
+        %h3.heading {{ "premium.list" | translate}}
+        %p {{ "premium.visibility" | translate}}
+        %hr
+        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
+          = t('main_nav.signup')
+        .heading {{ "premium.free" | translate}}
+        %p
+        %hr
+        %p {{ "premium.product1" | translate}}
+        %hr
+        %p {{ "premium.gain_lead" | translate}}
+        %hr
+        %p {{ "premium.presence" | translate}}
+
+    .second-half
+      .row
+        %h3.heading {{ "premium.pre" | translate}}
+        %p {{ "premium.attract" | translate}}
+        %hr
+        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
+          = t('text.subscribe')
+        %p
+          %span
+            %span.dollar-sign.heading {{ "premium.dollar" | translate}}
+            %span.price-tag.heading {{ "premium.amount1" | translate}}
+            %span.month {{ "premium.month" | translate}}
+            %p {{ "premium.billed" | translate}}
+            %span.move {{ "premium.dollar" | translate}}
+            %span.price-tag {{ "premium.amount2" | translate}}
+            %span.year {{ "premium.year" | translate}}
+        %hr
+        %p {{ "premium.product2" | translate}}
+        %hr
+        %p {{ "premium.logo" | translate}}
+        %hr
+        %p {{ "premium.rank" | translate}}
+        %hr
+        %p {{ "premium.competitor_page" | translate}}
+        %hr
+        %p {{ "premium.google_page" | translate}}
+        %hr
+        %p {{ "premium.customer_services" | translate}}

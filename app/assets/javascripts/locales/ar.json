@@ -26,7 +26,8 @@
     "watch_video": "شاهد الفيديو",
     "see_dashboard": "لوحة التحكم",
     "join_now": "انضم الآن",
-    "search_placeholder": " أبحث عن..."
+    "search_placeholder": " أبحث عن...",
+    "feature": "الممتازة"
   },
   "confirm_email_message": {
     "text": "الرجاء تأكيد حسابك",
@@ -187,6 +188,7 @@
     "empty_list": "لايوجد منتجات بعد.",
     "your_products": "المنتجات",
     "add_new_product": "أضف منتج جديد",
+    "limit": " يرجى تحديث حسابك ل بريميوم ل إضافة المزيد من المنتجات",
     "successfully_saved": "تم حفظ المنتج بنجاح.",
     "adding_failed": " حدث خطأ أثناء إضافة المنتج، أنظر مجددا",
     "form": {
@@ -212,6 +214,7 @@
     "empty_list": "لايوجد خدمات بعد.",
     "your_services": "الخدمات",
     "add_new_service": "أضف خدمة جديدة",
+    "limit": "يرجى تحديث حسابك ل بريميوم ل إضافة المزيد من الخدمات",
     "successfully_saved": "تم حفظ الخدمة بنجاح",
     "adding_failed": "خطأ ما حدث أثتاء إضافة الخدمة، تأكد من الحقول مرة أخرى",
     "form": {
@@ -261,5 +264,27 @@
     "see_company_profile": "شاهد ملف الشركة",
     "title": "نتائج البحث",
     "view_options": "معاينة"
+  },
+  "premium": {
+    "list": "List your business",
+    "visibility": "Online visibility",
+    "free": "Free",
+    "product1": "Upto 10 products",
+    "gain_lead": "Gain new leads",
+    "presence": "Get a presence online",
+    "pre": "Premium",
+    "attract": "Attract new clients online",
+    "dollar": "$",
+    "amount1": "83",
+    "billed": "billed annually",
+    "month": "/ MONTH",
+    "amount2": "996",
+    "year": "/ YEAR",
+    "product2": "Upto 50 products",
+    "logo": "Verified logo",
+    "rank": "1st priority Ranking",
+    "competitor_page": "Visible on competitors' page",
+    "google_page": "Display on Google (SEO)",
+    "customer_services": "Customer Services"
   }
 }

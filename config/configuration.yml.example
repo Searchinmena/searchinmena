@@ -1,5 +1,6 @@
 defaults: &defaults
   email_from: 'confirmation@searchinmena.com'
+  email_bcc: 'salim@searchinmena.net'
   app_host: http://localhost:3000
   fb_app_id: 846825152077136
   fb_app_secret: abdfcbbba0fc00ea4ecf83922c15d2ea

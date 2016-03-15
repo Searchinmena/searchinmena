@@ -252,6 +252,7 @@
   border-top: $default-border;
   display: block;
   padding: $bs1 0 0;
+ /* background-color: #fff1a8;*/
 
   @media screen and (min-width: $tablet) {
     padding: $bs3;
@@ -586,5 +587,23 @@
     span {
       color: grey;
     }
+  }
+}
+
+.feature-true {
+  width: 83px;
+  height: 83px;
+  background: asset-url('feature.png') no-repeat 0px 1px;
+  display: list-item;
+  position: relative;
+
+  @media screen and (max-width: $tablet) {
+    margin: 0 0 0 $bs1;
+  }
+
+}
+.net-view {
+  .feature-true{
+    top: -287px;
   }
 }

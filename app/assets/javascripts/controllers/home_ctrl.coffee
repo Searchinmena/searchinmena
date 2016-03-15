@@ -7,7 +7,7 @@
     User.get((data) ->
       $scope.user = new User(data)
     )
-    $scope.search = new Search(type: 'all')
+    $scope.search = new Search(type: 'product')
     $scope.SearchService = SearchService
 
     $scope.submit = (e) ->

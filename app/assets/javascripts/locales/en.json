@@ -26,7 +26,8 @@
     "watch_video": "watch video",
     "see_dashboard": "See dashboard",
     "join_now": "Join now",
-    "search_placeholder": "I'm looking for..."
+    "search_placeholder": "I'm looking for...",
+    "feature": "Premium"
   },
   "confirm_email_message": {
     "text": "Please confirm your email",
@@ -187,6 +188,7 @@
     "empty_list": "No products yet.",
     "your_products": "Your products",
     "add_new_product": "Add new product",
+    "limit": "Please update your account to Premium to Add more products",
     "successfully_saved": "Product was successfully saved",
     "adding_failed": "Error occurred while adding product, please check the form",
     "form": {
@@ -212,6 +214,7 @@
     "empty_list": "No services yet.",
     "your_services": "Your services",
     "add_new_service": "Add new service",
+    "limit": "Please update your account to Premium to Add more services",
     "successfully_saved": "Service was successfully saved",
     "adding_failed": "Error occurred while adding service, please check the form",
     "form": {
@@ -261,5 +264,27 @@
     "see_company_profile": "See company profile",
     "title": "Search Results",
     "view_options": "view"
+  },
+  "premium": {
+    "list": "List your business",
+    "visibility": "Online visibility",
+    "free": "Free",
+    "product1": "Upto 10 products",
+    "gain_lead": "Gain new leads",
+    "presence": "Get a presence online",
+    "pre": "Premium",
+    "attract": "Attract new clients online",
+    "dollar": "$",
+    "amount1": "83",
+    "billed": "billed annually",
+    "month": "/ MONTH",
+    "amount2": "996",
+    "year": "/ YEAR",
+    "product2": "Upto 50 products",
+    "logo": "Verified logo",
+    "rank": "1st priority Ranking",
+    "competitor_page": "Visible on competitors' page",
+    "google_page": "Display on Google (SEO)",
+    "customer_services": "Customer Services"
   }
 }
