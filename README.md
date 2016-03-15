@@ -41,7 +41,7 @@ all with password: "testtest".
 
 Run all tests
 
-```
+````
 bundle exec rake spec:run_all
 ```
 
