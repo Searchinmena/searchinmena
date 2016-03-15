@@ -22,30 +22,32 @@ ActiveAdmin.register Service do
       row :place_of_origin
       row :scope_of_work
       row :category_id do |b|
-        b.category.english_title
+        b.category.english_title if b.category
       end
       row :business_id do |b|
-        b.business.name
+        b.business.name if b.business
       end
       row :description
       row :fob_price
       row :fob_price_currency_id do |b|
-        b.fob_price_currency.english_title
+        b.fob_price_currency.english_title if b.fob_price_currency
       end
       row :fob_price_unit_id do |b|
-        b.fob_price_unit.english_title
+        b.fob_price_unit.english_title if b.fob_price_unit
       end
       row :port
       row :supply_ability_capacity
       row :supply_ability_unit_id do |b|
-        b.supply_ability_unit.english_title
+        b.supply_ability_unit.english_title if b.supply_ability_unit
       end
       row :supply_ability_frequency_id do |b|
-        b.supply_ability_frequency.english_title
+        b.supply_ability_frequency.english_title if b.supply_ability_frequency
       end
       row :average_completion_time
       row :average_completion_time_unit_id do |b|
-        b.average_completion_time_unit.english_title
+        if b.average_completion_time_unit
+          b.average_completion_time_unit.english_title
+        end
       end
       row :packaging_details
       row "Images" do |m|
