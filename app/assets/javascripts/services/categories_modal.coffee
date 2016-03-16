@@ -41,6 +41,8 @@
       scope.next = (category) ->
         currentCategory = scope.breadcrumbs.current()
         if currentCategory && currentCategory.level == category.level
+          scope.breadcrumbs.pop()
+          scope.breadcrumbs.push(category)
           return
 
         scope.breadcrumbs.push(category)
