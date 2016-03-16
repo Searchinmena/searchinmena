@@ -2,6 +2,7 @@ class BasicBusinessPresenter < BasePresenter
   inject :translatable_repository
 
   takes :business, :locale
+  ITEM_LIMIT = A9n.validations[:max_product_service_limit]
 
   def as_json(*)
     {
@@ -19,11 +20,11 @@ class BasicBusinessPresenter < BasePresenter
   private
 
   def can_add_products
-    business.feature || (business.products.count < business.limit)
+    business.feature || (business.products.count < ITEM_LIMIT)
   end
 
   def can_add_services
-    business.feature || (business.services.count < business.limit)
+    business.feature || (business.services.count < ITEM_LIMIT)
   end
 
   def country

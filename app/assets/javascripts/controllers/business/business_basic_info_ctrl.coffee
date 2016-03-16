@@ -75,10 +75,6 @@
 
     $scope.removeLogo = ->
       $scope.form.business.logo = null
-   
-    $scope.limit_tag = (feature)->
-      unless feature
-        return 5
 
     $scope.removePhoto = (photo) ->
       index = $scope.form.business.photos.indexOf(photo)
