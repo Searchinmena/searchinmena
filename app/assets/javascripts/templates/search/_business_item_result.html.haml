@@ -1,4 +1,5 @@
 %a.item-img-link{ 'ui-sref': '{{ result.showPath() }}' }
+  %span{'class': 'feature-{{result.attributes.business.feature}}'}
   %img{ "ng-src": "{{ result.coverPhotoUrl('bigger_thumb') }}" }
 .result-header-info
   %a.result-item-title{ 'ui-sref': '{{ result.showPath() }}' }
@@ -22,7 +23,6 @@
     'ng-show': 'result.hasAttributes()' }
       %td.attribute {{ attribute.name }}
       %td {{ attribute.value }}
-%span{'class': 'feature-{{result.attributes.business.feature}}'}      
 .business-summary
   .business-name
     {{ result.businessName() | characters: 65 }}

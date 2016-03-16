@@ -595,15 +595,5 @@
   height: 83px;
   background: asset-url('feature.png') no-repeat 0px 1px;
   display: list-item;
-  position: relative;
-
-  @media screen and (max-width: $tablet) {
-    margin: 0 0 0 $bs1;
-  }
-
-}
-.net-view {
-  .feature-true{
-    top: -287px;
-  }
+  position: absolute;
 }
