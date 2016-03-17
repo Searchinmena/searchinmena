@@ -19,6 +19,9 @@ ActiveAdmin.register Service do
     column :category do |b|
       b.category.english_title if b.category
     end
+    column :feature do |b|
+      status_tag b.business.feature ? 'Yes' : 'No' if b.business
+    end
     actions
   end
 

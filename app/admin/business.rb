@@ -4,19 +4,21 @@ ActiveAdmin.register Business do
                 :address_line_2, :logo, :feature, :weight, :logo, :logo_tmp
   filter :name
   filter :phone
+  filter :feature
 
   index do
     selectable_column
     id_column
     column :name
-    column :phone
-    column :year_registered
     column :user do |b|
       b.user.email if b.user
     end
     column :country do |b|
       b.country.english_title if b.country
     end
+    column :weight
+    column :feature
+    column :created_at
     actions
   end
 
@@ -26,7 +28,7 @@ ActiveAdmin.register Business do
       f.input :name
       f.input :phone
       f.input :user_id, as: :select, collection:
-              User.all.map { |c| [c.first_name, c.id] }
+              User.all.map { |c| [c.email, c.id] }
       f.input :year_registered
       f.input :no_of_employees
       f.input :introduction

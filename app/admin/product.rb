@@ -11,15 +11,16 @@ ActiveAdmin.register Product do
     selectable_column
     id_column
     column :name
-    column :model_number
     column :brand_name
-    column :category_id do |b|
+    column :category do |b|
       b.category.english_title if b.category
     end
-    column :business_id do |b|
+    column :business do |b|
       b.business.name if b.business
     end
-    column :fob_price
+    column :feature do |b|
+      b.business.feature if b.business
+    end
     actions
   end
   show do
