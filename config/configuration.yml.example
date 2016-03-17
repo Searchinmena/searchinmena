@@ -43,6 +43,7 @@ defaults: &defaults
   cio:
     id: 14fb026b30004395b8b3
     key: 9dac8438c3df406a063b
+  paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'
 
 development:
   env: development

@@ -33,7 +33,7 @@
         %h3.heading {{ "premium.pre" | translate}}
         %p {{ "premium.attract" | translate}}
         %hr
-        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
+        %a.sign-up-btn{ href: "#{A9n.paypal}", target: "_blank" }
           = t('text.subscribe')
         %p
           %span

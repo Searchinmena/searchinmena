@@ -40,3 +40,4 @@ production:
     access_key_id: AKIAJ4W5KE65VD6QDZFQ
     secret_access_key: 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
     region: us-west-2
+  paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'

@@ -44,3 +44,4 @@ production:
   cio:
     id: 3823999354dd63de1f8d
     key: 1a4d2164782635ea53b1
+  paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'
