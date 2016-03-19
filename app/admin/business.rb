@@ -1,7 +1,7 @@
 ActiveAdmin.register Business do
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
                 :year_registered, :introduction, :address_line_1, :limit,
-                :address_line_2, :logo, :feature, :weight, :logo, :logo_tmp
+                :address_line_2, :logo, :feature, :weight, :remove_logo
   filter :name
   filter :phone
   filter :feature
@@ -37,11 +37,11 @@ ActiveAdmin.register Business do
       f.input :address_line_1
       f.input :address_line_2
       f.input :city
-      f.input :logo
-      f.input :logo_tmp
+      f.input :logo, as: :file, hint: image_tag(f.object.logo)
+      f.input :remove_logo, as: :boolean, required: :false, label: 'Remove Logo'
+      f.input :limit, as: :select, collection: ((0..100).map { |i| [i, i] })
       f.input :feature
       f.input :weight, as: :select, collection: ((0..100).map { |i| [i, i] })
-      f.input :limit, as: :select, collection: ((0..100).map { |i| [i, i] })
     end
     actions         # adds the 'Submit' and 'Cancel' buttons
   end

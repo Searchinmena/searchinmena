@@ -12,23 +12,37 @@ ActiveAdmin.register User do
     column :category
     actions
   end
-  # show do
-  #   attributes_table do
-  #     row :email
-  #     row :first_name
-  #     row :last_name
-  #     row :provider
-  #     row :category
-  #   end
-  # end
+
+  controller do
+    def update
+      password = params[:user][:password]
+      confirm_password = params[:user][:password_confirmation]
+      if password.blank? && confirm_password.blank?
+        params[:user].delete("password")
+        params[:user].delete("password_confirmation")
+      end
+      super
+    end
+  end
+
+  show do
+    attributes_table do
+      row :email
+      row :first_name
+      row :last_name
+      row :category
+    end
+  end
+
   form do |f|
     semantic_errors # shows errors on :base
     f.inputs do
+      f.input :category, as: :select, collection: User.categories.keys
       f.input :first_name
       f.input :last_name
       f.input :email
       f.input :password
-      f.input :category, as: :select, collection: User.categories.keys
+      f.input :password_confirmation
     end
     actions
   end
