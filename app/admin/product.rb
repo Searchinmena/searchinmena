@@ -5,19 +5,22 @@ ActiveAdmin.register Product do
                 :port, :supply_ability_unit_id, :supply_ability_frequency_id,
                 :supply_ability_capacity, :business_id, :description,
                 :packaging_details, photos_attributes: [:photo, :id, :_destroy]
+  filter :name
+  filter :business, collection: proc { Business.all.order('name asc') }
   index do
     selectable_column
     id_column
     column :name
-    column :model_number
     column :brand_name
-    column :category_id do |b|
-      b.category.english_title
+    column :category do |b|
+      b.category.english_title if b.category
     end
-    column :business_id do |b|
-      b.business.name
+    column :business do |b|
+      b.business.name if b.business
     end
-    column :fob_price
+    column :feature do |b|
+      b.business.feature if b.business
+    end
     actions
   end
   show do
@@ -27,10 +30,10 @@ ActiveAdmin.register Product do
       row :model_number
       row :brand_name
       row :category_id do |b|
-        b.category.english_title
+        b.category.english_title if b.category
       end
       row :business_id do |b|
-        b.business.name
+        b.business.name if b.business
       end
       row :description
       row :min_order_quantity_number
@@ -63,11 +66,15 @@ ActiveAdmin.register Product do
     end
   end
   form do |f|
+    parent_categories = ProductCategory.where(parent_id: nil)
     semantic_errors # shows errors on :base
     f.inputs do
       f.input :category_id,
               as: :select, collection:
-              ProductCategory.all.map { |c| [c.english_title, c.id] }
+              option_groups_from_collection_for_select(parent_categories,
+                                                      :children, :english_title,
+                                                      :id, :english_title),
+              group_by: :parent
       f.input :business_id, as: :select, collection:
               Business.all.map { |c| [c.name, c.id] }
       f.input :name

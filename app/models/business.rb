@@ -1,4 +1,7 @@
 class Business < ActiveRecord::Base
+  before_save :logo_destroy
+  attr_accessor :remove_logo
+
   belongs_to :user
   has_and_belongs_to_many :tags, join_table: :businesses_tags
   has_and_belongs_to_many :business_types,
@@ -11,4 +14,10 @@ class Business < ActiveRecord::Base
 
   mount_uploader :logo, LogoUploader
   store_in_background :logo
+
+  private
+
+  def logo_destroy
+    self.remove_logo! if remove_logo == '1'
+  end
 end
