@@ -1,5 +1,7 @@
 class Category < ActiveRecord::Base
   belongs_to :parent, class_name: 'Category', foreign_key: :parent_id
+  has_many :children, class_name: 'Category', foreign_key: :parent_id
+
   has_many :translations, class_name: 'CategoryTranslation'
   accepts_nested_attributes_for :translations
   def parent?
