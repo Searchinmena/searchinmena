@@ -1,12 +1,12 @@
 ActiveAdmin.register Business do
   users = User.all.order('email asc')
-  cty = Translatable.where(type: :country).all
+  #cty = Translatable.where(type: :country).all
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
                 :year_registered, :introduction, :address_line_1, :limit,
                 :address_line_2, :logo, :feature, :weight, :remove_logo
   filter :name
   filter :user, collection: proc { users.map { |c| [c.email, c.id] } }
-  filter :country, collection: proc { cty.map { |c| [c.english_title, c.id] } }
+  #filter :country, collection: proc { cty.map { |c| [c.english_title, c.id] } }
   filter :phone
   filter :feature
 
