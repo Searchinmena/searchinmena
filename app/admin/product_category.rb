@@ -3,10 +3,13 @@ ActiveAdmin.register ProductCategory do
   permit_params :parent_id, translations_attributes: [:id, :locale, :value]
 
   filter :id
+  filter :parent_id, as: :numeric
   filter :translations
+
   index do
     selectable_column
     id_column
+    column :parent_id
     column 'Parent' do |category|
       if category.parent
         category.parent.translations.where(locale: 'en').pluck(:value).join(" ")
