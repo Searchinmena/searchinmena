@@ -1,6 +1,6 @@
 ActiveAdmin.register Business do
   users = User.all.order('email asc')
-  cty = Country.all
+  cty = Translatable.where(type: :country).all
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
                 :year_registered, :introduction, :address_line_1, :limit,
                 :address_line_2, :logo, :feature, :weight, :remove_logo
