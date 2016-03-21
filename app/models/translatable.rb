@@ -3,6 +3,10 @@ class Translatable < ActiveRecord::Base
   has_many :translations
 
   def english_title
-    translations.where(locale: 'en').pluck(:value).join(' ')
+    if translations.present?
+      translations.where(locale: 'en').pluck(:value).join(' ')
+    else
+     ' '
+    end
   end
 end
