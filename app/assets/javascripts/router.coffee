@@ -102,5 +102,5 @@
         window.location = location.pathname
         localStorage.setItem('preRequest', location.pathname);
 
-#    $urlRouterProvider.otherwise('/')
+    # $urlRouterProvider.otherwise('/')
 ]
