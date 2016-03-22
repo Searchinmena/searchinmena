@@ -1,5 +1,9 @@
-@Sim.config ['$stateProvider', '$urlRouterProvider',
-  ($stateProvider, $urlRouterProvider) ->
+@Sim.config ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+  ($stateProvider, $urlRouterProvider, $locationProvider) ->
+    $locationProvider.html5Mode
+      enabled: true
+      requireBase: false
+
     $stateProvider.state('root',
       url: '/',
       templateUrl: 'home.html',

@@ -52,11 +52,16 @@ Rails.application.routes.draw do
   resource :user_business, only: [:show, :update]
   resource :user
 
-  resources :products, only: [:create, :index, :show, :destroy]
+  scope format: false, constraints: { format: /json/ } do
+    resources :products, only: [:create, :index, :show, :destroy]
+  end
+
   resources :services, only: [:create, :index, :show, :destroy]
   resources :product_categories, only: [:index]
   resources :service_categories, only: [:index]
   resources :messages, only: [:create]
 
   get '/search' => "search#index", as: :search
+
+  match '*path' => "pages#home", via: :all
 end
