@@ -71,11 +71,16 @@ ActiveAdmin.register Service do
   end
   form do |f|
     semantic_errors # shows errors on :base
+    parent_categories = ServiceCategory.where(parent_id: nil)
     f.inputs do
       f.input :business_id, as: :select, collection:
-               Business.all.map { |c| [c.name, c.id] }
-      f.input :category_id, as: :select, collection:
-               ServiceCategory.all.map { |c| [c.english_title, c.id] }
+               Business.all.order('name asc').map { |c| [c.name, c.id] }
+      f.input :category_id,
+              as: :select, collection:
+              option_groups_from_collection_for_select(parent_categories,
+                                                      :children, :english_title,
+                                                      :id, :english_title),
+              group_by: :parent
       f.input :name
       f.input :place_of_origin
       f.input :scope_of_work

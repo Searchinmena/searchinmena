@@ -76,7 +76,7 @@ ActiveAdmin.register Product do
                                                       :id, :english_title),
               group_by: :parent
       f.input :business_id, as: :select, collection:
-              Business.all.map { |c| [c.name, c.id] }
+              Business.all.order('name asc').map { |c| [c.name, c.id] }
       f.input :name
       f.input :model_number
       f.input :brand_name

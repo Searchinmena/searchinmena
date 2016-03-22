@@ -4,10 +4,12 @@ ActiveAdmin.register ServiceCategory do
 
   filter :id
   filter :translations
+  filter :parent_id, as: :numeric
 
   index do
     selectable_column
     id_column
+    column :parent_id
     column 'Parent' do |category|
       if category.parent
         category.parent.english_title
