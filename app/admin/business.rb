@@ -41,6 +41,10 @@ ActiveAdmin.register Business do
       f.input :address_line_1
       f.input :address_line_2
       f.input :city
+      f.input :business_types, collection:
+              BusinessType.all.map { |c| [c.english_title, c.id] }
+      f.input :tags, collection:
+              Tag.all.map { |c| [c.english_title, c.id] }
       f.input :logo, as: :file, hint: image_tag(f.object.logo)
       f.input :remove_logo, as: :boolean, required: :false, label: 'Remove Logo'
       f.input :limit, as: :select, collection: ((0..100).map { |i| [i, i] })
