@@ -12,7 +12,7 @@ ActiveAdmin.register ProductCategory do
     column :parent_id
     column 'Parent' do |category|
       if category.parent
-        category.parent.translations.where(locale: 'en').pluck(:value).join(" ")
+        category.parent.english_title
       end
     end
     column 'Title' do |category|
