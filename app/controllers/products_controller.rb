@@ -1,13 +1,6 @@
 class ProductsController < BusinessItemsController
   inject :product_repository, :product_photo_repository
 
-  # before_action :ensure_json_request
-
-  # def ensure_json_request
-  #   return if request.format == :json
-  #   render "pages/home"
-  # end
-
   def repository
     product_repository
   end
