@@ -23,13 +23,13 @@
       = t("footer.address_line_3")
   %section.footer-column
     .footer-categories
-      %a.footer-category-btn{ 'ui-sref': 'results({ type: "product" })' }
+      %a.footer-category-btn{ 'ui-sref': 'results({ type: "product" })', target: "_self" }
         %span.icon-shopping-cart
         {{ "home.products" | translate }}
-      %a.footer-category-btn{ 'ui-sref': 'results({ type: "service" })' }
+      %a.footer-category-btn{ 'ui-sref': 'results({ type: "service" })', target: "_self" }
         %span.icon-user
         {{ "home.services" | translate }}
-      %a.footer-category-btn{ 'ui-sref': 'results({ type: "business" })' }
+      %a.footer-category-btn{ 'ui-sref': 'results({ type: "business" })', target: "_self" }
         %span.icon-briefcase
         {{ "home.businesses" | translate }}
       %a.footer-category-btn{ href: "/premium", target: "_self" }

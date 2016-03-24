@@ -6,7 +6,7 @@
       class: "language-choice", "ng-click": "changeLanguage($event, 'ar')",
       lang: "ar"
 
-  %a.logo{ href: "/#/" }
+  %a.logo{ href: "/", target: "_self" }
     = image_tag("search_in_mena_logo.png")
   .mobile-menu-btn{ tabindex: "0", "toggle-nav": "true" }
     %span.icon-list-alt
@@ -18,19 +18,19 @@
           = t('main_nav.browse')
       - if user_signed_in?
         %li
-          %a.nav-link.user-link{ href: Sim::Routes.dashboard_path }
+          %a.nav-link.user-link{ href: Sim::Routes.dashboard_path, target: "_self" }
             %span.icon.icon-home
             = t('main_nav.dashboard')
         %li
-          %a.nav-link.user-link{ href: Sim::Routes.destroy_user_session_path }
+          %a.nav-link.user-link{ href: Sim::Routes.destroy_user_session_path, target: "_self" }
             %span.icon.icon-off
             = t('main_nav.logout')
       - else
         %li
-          %a.nav-link.user-link{ href: Sim::Routes.new_user_registration_path }
+          %a.nav-link.user-link{ href: Sim::Routes.new_user_registration_path, target: "_self" }
             = t('main_nav.signup')
         %li
-          %a.nav-link.user-link{ href: Sim::Routes.user_session_path }
+          %a.nav-link.user-link{ href: Sim::Routes.user_session_path, target: "_self" }
             = t('main_nav.login')
 
 .gradient-decor

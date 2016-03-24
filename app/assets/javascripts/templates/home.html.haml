@@ -36,5 +36,5 @@
         %a.dashboard-btn{ href: Sim::Routes.dashboard_path }
           {{ "home.see_dashboard" | translate }}
       %div{ "ng-hide": "currentUser.isPresent()" }
-        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path }
+        %a.sign-up-btn{ href: Sim::Routes.new_user_registration_path, target: "_self" }
           {{ "home.join_now" | translate }}
