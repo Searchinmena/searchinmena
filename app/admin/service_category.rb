@@ -1,6 +1,6 @@
 ActiveAdmin.register ServiceCategory do
   menu parent: 'Manage Category'
-  permit_params :parent_id, translations_attributes: [:locale, :value]
+  permit_params :parent_id, translations_attributes: [:id, :locale, :value]
 
   filter :id
   filter :translations
