@@ -3,7 +3,8 @@ ActiveAdmin.register Business do
   # cty = Translatable.where(type: :country).all
   permit_params :name, :phone, :user_id, :no_of_employees, :country_id, :city,
                 :year_registered, :introduction, :address_line_1, :limit,
-                :address_line_2, :logo, :feature, :weight, :remove_logo
+                :address_line_2, :logo, :feature, :weight, :remove_logo,
+                business_type_ids: [], tag_ids: []
   filter :name
   filter :user, collection: proc { users.map { |c| [c.email, c.id] } }
   # filter :country,collection: proc { cty.map { |c| [c.english_title, c.id] } }
@@ -24,6 +25,35 @@ ActiveAdmin.register Business do
     column :feature
     column :created_at
     actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row 'business_type' do |b|
+        b.business_types.map(&:english_title).join(', ')
+      end
+      row :tags do |b|
+        b.tags.map.map(&:english_title).join(', ')
+      end
+      row :phone
+      row :user
+      row :year_registered
+      row :no_of_employees
+      row :introduction
+      row :address_line_1
+      row :address_line_2
+      row :city
+      row :country  do |b|
+        b.country.english_title if b.country
+      end
+      row "Logo" do |m|
+        span do
+          image_tag(m.logo)
+        end
+      end
+    end
   end
 
   form do |f|
