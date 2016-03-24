@@ -89,7 +89,7 @@
     getTags: (tags) ->
       tagsValue = ''
       for key,value of tags
-        tagsValue += value.label
+        tagsValue += value.label + ', '
       return tagsValue
 
     getBusinessType: (type) ->
