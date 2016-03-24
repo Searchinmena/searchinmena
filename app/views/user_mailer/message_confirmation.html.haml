@@ -14,7 +14,7 @@
               %td{ style: "padding: 10px 10px 20px 10px; text-transform: uppercase; color: #777777", colspan: "3" }
                 %b
                   = t("mailers.message_confirmation.message_title")
-                  = link_to @business.name, "#{A9n.app_host}/#/company/#{@business.id}", style: "color: #007BC5"
+                  = link_to @business.name, "#{A9n.app_host}#{Sim::Routes.business_show_path}#{@business.id}", style: "color: #007BC5"
             %tr
               %td{ style: "width: 10px;" }
               %td{ style: "padding: 10px; margin: 0 0 30px 0; border: 1px solid #dddddd; background-color: #fafafa" }

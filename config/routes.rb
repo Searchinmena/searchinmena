@@ -56,7 +56,10 @@ Rails.application.routes.draw do
     resources :products, only: [:create, :index, :show, :destroy]
   end
 
-  resources :services, only: [:create, :index, :show, :destroy]
+  scope format: false, constraints: { format: /json/ } do
+    resources :services, only: [:create, :index, :show, :destroy]
+  end
+
   resources :product_categories, only: [:index]
   resources :service_categories, only: [:index]
   resources :messages, only: [:create]

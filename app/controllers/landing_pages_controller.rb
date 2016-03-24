@@ -3,7 +3,7 @@ class LandingPagesController < ApplicationController
   skip_before_filter :authenticate_user!
   def home_one
     if user_signed_in?
-      redirect_to '/#/dashboard'
+      redirect_to Sim::Routes.dashboard_path
       return
     end
     user_params = user_params_factory.build(session["devise.auth_data"])
