@@ -3,7 +3,7 @@
     %h1.form-title= t("devise.registrations.create")
     %h3
       = t("devise.links.login_text")
-      = link_to t("devise.sessions.submit"), user_session_path
+      = link_to t("devise.sessions.submit"), user_session_path, target: "_self"
 
   = form_for user, url: registration_path(:user),
     html: { "ng-submit": "submit($event)" } do |f|

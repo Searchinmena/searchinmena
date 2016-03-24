@@ -13,4 +13,4 @@
     .form-links
       %p.text= t("devise.links.signup_text")
       = link_to t("devise.links.signup"), new_registration_path(resource_name),
-        class: "form-link"
+        class: "form-link", target: "_self"

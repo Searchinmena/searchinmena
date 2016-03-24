@@ -35,7 +35,7 @@
     businessMeta: (item) ->
       businessTags = this.getTags(item.tags)
       businessTyps = this.getBusinessType(item.types)
-      businessTitle = item.business.name  + ' in ' + item.business.country + businessTags
+      businessTitle = item.business.name  + ' in ' + item.business.country + ' | ' + businessTags
       businessDescription = businessTyps + ' for ' + businessTags + ' in ' + item.business.country
 
       businessKeywords = businessDescription
