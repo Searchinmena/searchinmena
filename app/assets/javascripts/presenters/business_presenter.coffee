@@ -52,4 +52,7 @@ class SIM.BusinessPresenter
   templatePath: ->
     'search/_business_result.html'
 
+  feature: ->
+    @business.feature
+
 @Sim.value('BusinessPresenter', SIM.BusinessPresenter)
