@@ -8,6 +8,7 @@
         (attributes) ->
           scope.businessItem = businessItemFactory.buildPresenter(attributes)
           scope.business = Business.get({ id: scope.businessItem.businessId() })
+          scope.business
           scope.photos = scope.businessItem.get('photos')
           scope.coverPhoto = scope.businessItem.get('cover_photo')
         ,

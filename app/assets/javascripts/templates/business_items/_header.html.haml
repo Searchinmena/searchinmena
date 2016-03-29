@@ -1,5 +1,6 @@
 %section.item-gallery
   %a{ "ng-click": "openCoverPhoto()" }
+    %span{'class': 'feature-{{business.feature}}'}
     %img{ "ng-src": "{{ businessItem.coverPhotoUrl() }}", class: "product-main-image" }
 
   %ul.gallery-thumbs{ "ng-show": "photos.length" }
