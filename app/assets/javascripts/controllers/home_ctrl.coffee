@@ -2,6 +2,9 @@
                              '$controller',
   ($scope, $state, User, Search, SearchService, $controller) ->
 
+    number = 1 + Math.floor(Math.random() * 14);
+    $('.search-form').css('background-image', 'url("/images/slider/'+number+'.jpg")');
+
     $controller('MetaCtrl').homeMeta()
 
     User.get((data) ->

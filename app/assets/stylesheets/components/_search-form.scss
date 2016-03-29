@@ -1,6 +1,8 @@
 .search-form {
   background-color: $purple-dark;
   padding: $bs2;
+  background-size: 100% 100%;
+  background-repeat:  no-repeat;
 
   @media screen and (min-width: 940px) {
     padding: $bs4 $bs2 $bs6;
