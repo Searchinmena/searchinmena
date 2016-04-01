@@ -8,6 +8,21 @@
     padding: $bs4 $bs2 $bs6;
   }
 
+  .form-content-header {
+    background: none repeat scroll 0 0 #343045;
+    opacity: 0.6;
+    max-width: 625px;
+    margin: auto;
+  }
+
+  .form-content {
+    background: none repeat scroll 0 0 #343045;
+    margin: auto;
+    max-width: 380px;
+    opacity: 0.6;
+    padding: 1px 0 20px;
+  }
+
   .title {
     text-align: center;
     margin-bottom: $bs2;
