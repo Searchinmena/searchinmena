@@ -3,7 +3,8 @@
   ($scope, $state, User, Search, SearchService, $controller) ->
 
     number = 1 + Math.floor(Math.random() * 14);
-    $('.search-form').css('background-image', 'url("/images/slider/'+number+'.jpg")');
+    $('.search-form').css('background-image', 'url("/images/slider/bg-homepage'+number+'.png")');
+    $scope.number = number
 
     $controller('MetaCtrl').homeMeta()
 
