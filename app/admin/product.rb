@@ -65,15 +65,14 @@ ActiveAdmin.register Product do
       end
     end
   end
+
   form do |f|
     parent_categories = ProductCategory.where(parent_id: nil)
     semantic_errors # shows errors on :base
     f.inputs do
       f.input :category_id,
               as: :select, collection:
-              option_groups_from_collection_for_select(parent_categories,
-                                                      :children, :english_title,
-                                                      :id, :english_title),
+              option_groups_from_collection_for_select2(parent_categories),
               group_by: :parent
       f.input :business_id, as: :select, collection:
               Business.all.order('name asc').map { |c| [c.name, c.id] }
