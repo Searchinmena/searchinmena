@@ -117,6 +117,24 @@ address {
   }
 }
 
+.youtube-link {
+  background-image: image-url("icon-youtube.png");
+  background-color: #DE2825;
+
+  &:hover, &:focus {
+    outline: 3px solid #DD4425;
+  }
+}
+
+.angel-link {
+  background-image: image-url("icon-angel.png");
+  background-color: #ffffff;
+
+  &:hover, &:focus {
+    outline: 3px solid #FCFCFC;
+  }
+}
+
 .sitemap {
   @extend %clearfix;
   background-color: $purple-super-dark;
