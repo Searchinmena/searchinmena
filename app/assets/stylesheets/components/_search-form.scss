@@ -7,19 +7,22 @@
   @media screen and (min-width: 940px) {
     padding: $bs4 $bs2 $bs6;
   }
+  @media screen and (max-width: $desktop) {
+    background-image: none !important;
+  }
 
   .form-content-header {
     background: none repeat scroll 0 0 #343045;
-    opacity: 0.8;
-    max-width: 564px;
+    opacity: 0.6;
+    max-width: 580px;
     margin: auto;
   }
 
   .form-content {
     background: none repeat scroll 0 0 #343045;
     margin: auto;
-    max-width: 319px;
-    opacity: 0.8;
+    max-width: 330px;
+    opacity: 0.6;
   }
 
   .title {
