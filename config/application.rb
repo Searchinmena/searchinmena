@@ -22,6 +22,7 @@ module Sim
     # Run "rake -D time" for a list of tasks for finding time zone names.
     # Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Abu Dhabi'
 
     config.autoload_paths << Rails.root.join('lib', 'seeders')
 
