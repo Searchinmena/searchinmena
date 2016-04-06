@@ -77,7 +77,8 @@ ActiveAdmin.register Service do
                Business.all.order('name asc').map { |c| [c.name, c.id] }
       f.input :category_id,
               as: :select, collection:
-              option_groups_from_collection_for_select2(parent_categories),
+              option_groups_from_collection_for_select2(parent_categories,
+                                                        f.object.category_id),
               group_by: :parent
       f.input :name
       f.input :place_of_origin
