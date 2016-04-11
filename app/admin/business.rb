@@ -10,7 +10,13 @@ ActiveAdmin.register Business do
   # filter :country,collection: proc { cty.map { |c| [c.english_title, c.id] } }
   filter :phone
   filter :feature
+  dft_country = Country.joins(:translations)
+                .where('translations.locale': 'en',
+                       'translations.value': 'Saudi Arabia').first
 
+  dft_bus_type = BusinessType.joins(:translations)
+                 .where('translations.locale': 'en',
+                        'translations.value': 'Other').first
   index do
     selectable_column
     id_column
@@ -82,5 +88,50 @@ ActiveAdmin.register Business do
       f.input :weight, as: :select, collection: ((0..100).map { |i| [i, i] })
     end
     actions         # adds the 'Submit' and 'Cancel' buttons
+  end
+
+  active_admin_importable do |model, hash|
+    begin
+      user = User.find_by_email(hash[:email])
+      if user.nil?
+        hash[:first_name] ||= hash[:email]
+        hash[:last_name] ||= hash[:email]
+
+        user = User.new(first_name: hash[:first_name],
+                        last_name: hash[:last_name],
+                        email: hash[:email],
+                        password: '1234#abcd',
+                        password_confirmation: '1234#abcd',
+                        category: 0)
+
+        user.skip_confirmation!
+        user.save
+      end
+
+      if user.persisted? && user.business.nil?
+        hash[:phone] ||= '009661234567'
+        country = Country.joins(:translations)
+                  .where('translations.locale': 'en',
+                         'translations.value': hash[:location])
+
+        country = country.present? ? country.first : dft_country
+        bus = model.create!(name: hash[:company_name],
+                            user_id: user.id,
+                            phone: hash[:phone],
+                            country_id: country.id,
+                            address_line_1: hash[:address_1],
+                            address_line_2: hash[:address_2],
+                            city: hash[:city])
+
+        bus_type = BusinessType.joins(:translations)
+                   .where('translations.locale': 'en',
+                          'translations.value': hash[:category])
+
+        bus_type = bus_type.present? ? bus_type.first : dft_bus_type
+        bus.business_types << bus_type
+      end
+    rescue
+      puts 'skiping record....'
+    end
   end
 end
