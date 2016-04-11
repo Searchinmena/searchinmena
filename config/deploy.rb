@@ -30,7 +30,7 @@ set :bundle_cmd, -> { File.join(fetch(:bundle_path), 'bin/bundle') }
 
 set :bundle_binstubs, -> { File.join(fetch(:bundle_path), 'bin') }
 
-set :keep_releases, 10
+set :keep_releases, 5
 
 set :linked_files, %w{config/database.yml config/unicorn.rb}
 set :linked_dirs, %w{pids log public/assets public/uploads}
