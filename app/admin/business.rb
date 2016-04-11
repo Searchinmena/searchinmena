@@ -10,10 +10,8 @@ ActiveAdmin.register Business do
   # filter :country,collection: proc { cty.map { |c| [c.english_title, c.id] } }
   filter :phone
   filter :feature
-  dft_country = Country.joins(:translations)
-                .where('translations.locale': 'en',
-                       'translations.value': 'Saudi Arabia').first
 
+  dft_country = nil
   dft_bus_type = BusinessType.joins(:translations)
                  .where('translations.locale': 'en',
                         'translations.value': 'Other').first
@@ -91,6 +89,11 @@ ActiveAdmin.register Business do
   end
 
   active_admin_importable do |model, hash|
+    if dft_country.nil?
+      dft_country = Country.joins(:translations)
+                   .where('translations.locale': 'en',
+                          'translations.value': 'Saudi Arabia').first
+    end
     begin
       user = User.find_by_email(hash[:email])
       if user.nil?
