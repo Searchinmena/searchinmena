@@ -12,9 +12,8 @@ ActiveAdmin.register Business do
   filter :feature
 
   dft_country = nil
-  dft_bus_type = BusinessType.joins(:translations)
-                 .where('translations.locale': 'en',
-                        'translations.value': 'Other').first
+  dft_bus_type = nil
+
   index do
     selectable_column
     id_column
@@ -93,6 +92,12 @@ ActiveAdmin.register Business do
       dft_country = Country.joins(:translations)
                    .where('translations.locale': 'en',
                           'translations.value': 'Saudi Arabia').first
+    end
+
+    if dft_bus_type.nil?
+      dft_bus_type = BusinessType.joins(:translations)
+                     .where('translations.locale': 'en',
+                            'translations.value': 'Other').first
     end
     begin
       user = User.find_by_email(hash[:email])
