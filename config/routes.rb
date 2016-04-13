@@ -53,11 +53,19 @@ Rails.application.routes.draw do
   resource :user
 
   scope format: false, constraints: { format: /json/ } do
-    resources :products, only: [:create, :index, :show, :destroy]
+    resources :products, only: [:create, :index, :show, :destroy] do
+      member do
+        get "/related_items" => "products#related_items", as: :related_items
+      end
+    end
   end
 
   scope format: false, constraints: { format: /json/ } do
-    resources :services, only: [:create, :index, :show, :destroy]
+    resources :services, only: [:create, :index, :show, :destroy] do
+      member do
+        get "/related_items" => "services#related_items", as: :related_items
+      end
+    end
   end
 
   resources :product_categories, only: [:index]

@@ -1,5 +1,5 @@
-@Sim.factory 'ServiceFactory', ['Service', 'ServicePresenter',
-  (Service, ServicePresenter) ->
+@Sim.factory 'ServiceFactory', ['Service', 'ServicePresenter','SimilarServices',
+  (Service, ServicePresenter,SimilarServices) ->
     resourceName: ->
       'services'
 
@@ -11,6 +11,9 @@
 
     get: (params, successCallback, errorCallback) ->
       Service.get(params, successCallback, errorCallback)
+
+    get_similar: (params, successCallback, errorCallback) ->
+      SimilarServices.get(params, successCallback, errorCallback)
 
     delete: (params, successCallback, errorCallback) ->
       Service.delete(params, successCallback, errorCallback)

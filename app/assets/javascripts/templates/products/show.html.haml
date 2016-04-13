@@ -4,7 +4,6 @@
     %button.contact-supplier{ "ng-click": "MessageModal.new(business.id)" }
       %span.icon.icon-envelope
       {{ "contact_seller" | translate }}
-
     .column{ "ng-show": "businessItem.hasAnyBasicInfoPresent()" }
       %h4.subtitle
         {{ "business_item.basic_info" | translate }}
@@ -57,3 +56,12 @@
 
     .column.description-column
       %div{ "ng-include": "'business_item/_description.html'" }
+  %span.company-products.similar-items
+    %ul
+      %li{ "ng-repeat": "product in similar_items"}
+        %a.item-img-link{ href: '{{ showpath }}/{{product.id}}' }
+          %img{ src: "{{ product.photo.photo.thumb.url }}" }
+        .product-item-title
+          %a{ href: '{{ showpath }}/{{product.id}}' }
+            {{ product.name }}
+
