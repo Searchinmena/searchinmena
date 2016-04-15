@@ -81,6 +81,6 @@ ActiveAdmin.register Business do
       f.input :feature
       f.input :weight, as: :select, collection: ((0..100).map { |i| [i, i] })
     end
-    actions# adds the 'Submit' and 'Cancel' buttons
+    actions # adds the 'Submit' and 'Cancel' buttons
   end
 end
