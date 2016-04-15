@@ -5,5 +5,4 @@ class ServiceRepository < UserResourceRepository
   def find_similar category,object_id
     klass.where(category: category).where.not(id: object_id).first(6)
   end
-
 end

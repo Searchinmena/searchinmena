@@ -52,7 +52,7 @@ ActiveAdmin.register ProductCategory do
                           label: 'Title',
                           input_html: { rows: 1 }
       end
-      actions         # adds the 'Submit' and 'Cancel' buttons
+      actions# adds the 'Submit' and 'Cancel' buttons
     end
   end
 end

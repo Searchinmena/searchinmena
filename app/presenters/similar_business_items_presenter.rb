@@ -10,9 +10,8 @@ class SimilarBusinessItemsPresenter
   end
 
   private
-  
-  def business_item_photo
-    business_item.photos.first.present? ? business_item.photos.first.photo : '' 
-  end
 
+  def business_item_photo
+    business_item.photos.first.present? ? business_item.photos.first.photo : ''
+  end
 end
