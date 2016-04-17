@@ -78,6 +78,9 @@ en:
     address_line_2: "Block A, Office G029"
     address_line_3: "Office Number: 0097143311050"
     copyright: "MENA Network LTD, All rights reserved."
+    press: "Press"
+    terms: "Terms"
+    faqs: "FAQs"
 
   home_one:
     Join_sim: "Join Search in MENA marketplace and start getting inquiries from buyers today."
