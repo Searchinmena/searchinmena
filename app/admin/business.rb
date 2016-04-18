@@ -142,5 +142,4 @@ ActiveAdmin.register Business do
       puts 'skiping record....'
     end
   end
-
 end
