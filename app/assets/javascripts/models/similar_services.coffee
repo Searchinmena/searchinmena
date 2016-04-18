@@ -1,4 +1,4 @@
-@Sim.factory 'SimilarServices', ['$resource',
-  ($resource) ->
-    $resource('/services/:id/related_items', { id: '@id' })
+@Sim.factory 'SimilarServices', ['$resource','FETCH_SIMILAR_SERVICES',
+  ($resource,FETCH_SIMILAR_SERVICES) ->
+    $resource(FETCH_SIMILAR_SERVICES, { id: '@id' })
 ]
