@@ -383,9 +383,14 @@
 }
 .similar-items {
   ul{
-    float: none;
+    margin-right: 20px;
+    float: right;
     li{
       float: none;
     }
   }
+}
+
+.mar-left-20{
+  margin-left: 20px;
 }

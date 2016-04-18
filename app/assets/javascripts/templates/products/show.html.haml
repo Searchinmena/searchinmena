@@ -56,8 +56,10 @@
 
     .column.description-column
       %div{ "ng-include": "'business_item/_description.html'" }
-  %span.company-products.similar-items
+  %span.company-products.similar-items 
     %ul
+      %span.mar-left-20
+        = "Related Products"
       %li{ "ng-repeat": "product in similar_items"}
         %a.item-img-link{ href: '{{ showpath }}/{{product.id}}' }
           %img{ src: "{{ product.photo.photo.thumb.url }}" }
