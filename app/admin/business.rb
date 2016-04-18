@@ -126,7 +126,10 @@ ActiveAdmin.register Business do
                             country_id: country.id,
                             address_line_1: hash[:address_1],
                             address_line_2: hash[:address_2],
-                            city: hash[:city])
+                            city: hash[:city],
+                            year_registered: hash[:year_registered],
+                            no_of_employees: hash[:no_of_employees],
+                            introduction: hash[:introduction])
 
         bus_type = BusinessType.joins(:translations)
                    .where('translations.locale': 'en',
@@ -139,4 +142,5 @@ ActiveAdmin.register Business do
       puts 'skiping record....'
     end
   end
+
 end
