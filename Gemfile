@@ -32,7 +32,6 @@ gem 'sidekiq'
 gem 'sinatra', require: nil
 gem 'sitemap_generator'
 gem 'customerio', git: 'https://github.com/customerio/customerio-ruby'
-gem 'active_admin_importable'
 
 group :development, :test do
   gem 'pry'
