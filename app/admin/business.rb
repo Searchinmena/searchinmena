@@ -11,6 +11,8 @@ ActiveAdmin.register Business do
   filter :phone
   filter :feature
 
+  dft_country = nil
+  dft_bus_type = nil
   index do
     selectable_column
     id_column
