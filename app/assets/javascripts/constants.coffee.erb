@@ -8,6 +8,8 @@
 @Sim.constant('TAGS_PATH', '/tags')
 @Sim.constant('PRODUCT_SHOW_PATH', '/products')
 @Sim.constant('SERVICE_SHOW_PATH', '/services')
+@Sim.constant('FETCH_SIMILAR_PRODUCTS', '/products/:id/related_items')
+@Sim.constant('FETCH_SIMILAR_SERVICES', '/services/:id/related_items')
 @Sim.constant('ITEMS_PER_PAGE', <%= A9n.items_per_page %>)
 @Sim.constant('MIN_IMAGE_WIDTH', <%= A9n.validations[:min_image_width] %>)
 @Sim.constant('MIN_IMAGE_HEIGHT', <%= A9n.validations[:min_image_height] %>)

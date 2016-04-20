@@ -1,5 +1,5 @@
-@Sim.factory 'ProductFactory', ['Product', 'ProductPresenter',
-  (Product, ProductPresenter) ->
+@Sim.factory 'ProductFactory', ['Product', 'ProductPresenter','SimilarProducts',
+  (Product, ProductPresenter,SimilarProducts) ->
     resourceName: ->
       'products'
 
@@ -11,6 +11,9 @@
 
     get: (params, successCallback, errorCallback) ->
       Product.get(params, successCallback, errorCallback)
+
+    get_similar: (params, successCallback, errorCallback) ->
+      SimilarProducts.get(params, successCallback, errorCallback)
 
     delete: (params, successCallback, errorCallback) ->
       Product.delete(params, successCallback, errorCallback)

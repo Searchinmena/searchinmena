@@ -1,5 +1,5 @@
 class BusinessItemsController < ApplicationController
-  skip_before_filter :authenticate_user!, only: [:show]
+  skip_before_filter :authenticate_user!, only: [:show, :related_items]
 
   def create
     response = business_item_creator.perform
@@ -30,6 +30,12 @@ class BusinessItemsController < ApplicationController
     repository.destroy(@business_item)
 
     render_collection
+  end
+
+  def related_items
+    similar_products = SimilarBusinessItems.new(repository, params[:id]).perform
+    render json: { similar_products: similar_products
+                  .map { |sp|  SimilarBusinessItemsPresenter.new(sp) } }
   end
 
   private

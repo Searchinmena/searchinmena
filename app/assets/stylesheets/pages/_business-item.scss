@@ -381,3 +381,32 @@
     }
   }
 }
+.similar-items {
+  ul{
+
+    float: none;
+    margin-left: 25%;
+
+    @media screen and (min-width: $tablet) {
+      float: none;
+      margin-left: 35%;
+    }
+
+    @media screen and (min-width:  $desktop) {
+      margin-right: 20px;
+      float: right;
+      margin-left: 0%;
+    }
+
+    li{
+      float: none;
+    }
+  }
+}
+
+.mar-left-28{
+  margin-left: 28px;
+}
+
+
+

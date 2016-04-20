@@ -56,3 +56,11 @@
       %p.item-description {{ businessItem.get('scope_of_work') }}
 
       %div{ "ng-include": "'business_item/_description.html'" }
+  %span.company-products.similar-items
+    %ul
+      %li{ "ng-repeat": "product in similar_items"}
+        %a.item-img-link{ href: '{{ showpath }}/{{product.id}}' }
+          %img{ src: "{{ product.photo.photo.thumb.url }}" }
+        .product-item-title
+          %a{ href: '{{ showpath }}/{{product.id}}' }
+            {{ product.name }}

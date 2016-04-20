@@ -45,7 +45,7 @@ ActiveAdmin.register Business do
       row :address_line_1
       row :address_line_2
       row :city
-      row :country  do |b|
+      row :country do |b|
         b.country.english_title if b.country
       end
       row "Logo" do |m|
@@ -81,6 +81,6 @@ ActiveAdmin.register Business do
       f.input :feature
       f.input :weight, as: :select, collection: ((0..100).map { |i| [i, i] })
     end
-    actions         # adds the 'Submit' and 'Cancel' buttons
+    actions # adds the 'Submit' and 'Cancel' buttons
   end
 end
