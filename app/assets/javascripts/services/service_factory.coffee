@@ -15,6 +15,12 @@
     get_similar: (params, successCallback, errorCallback) ->
       SimilarServices.get(params, successCallback, errorCallback)
 
+    get_prev: (params, successCallback, errorCallback) ->
+      Service.get_prev(params, successCallback, errorCallback)
+
+    get_next: (params, successCallback, errorCallback) ->
+      Service.get_next(params, successCallback, errorCallback)
+
     delete: (params, successCallback, errorCallback) ->
       Service.delete(params, successCallback, errorCallback)
 

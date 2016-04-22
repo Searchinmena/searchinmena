@@ -56,6 +56,8 @@ Rails.application.routes.draw do
     resources :products, only: [:create, :index, :show, :destroy] do
       member do
         get "/related_items" => "products#related_items", as: :related_items
+        get "/prev_item" => "products#prev_item"
+        get "/next_item" => "products#next_item"
       end
     end
   end
@@ -64,6 +66,8 @@ Rails.application.routes.draw do
     resources :services, only: [:create, :index, :show, :destroy] do
       member do
         get "/related_items" => "services#related_items", as: :related_items
+        get "/prev_item" => "services#prev_item"
+        get "/next_item" => "services#next_item"
       end
     end
   end

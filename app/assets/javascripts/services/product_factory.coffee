@@ -15,6 +15,12 @@
     get_similar: (params, successCallback, errorCallback) ->
       SimilarProducts.get(params, successCallback, errorCallback)
 
+    get_prev: (params, successCallback, errorCallback) ->
+      Product.get_prev(params, successCallback, errorCallback)
+
+    get_next: (params, successCallback, errorCallback) ->
+      Product.get_next(params, successCallback, errorCallback)
+
     delete: (params, successCallback, errorCallback) ->
       Product.delete(params, successCallback, errorCallback)
 

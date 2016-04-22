@@ -1,5 +1,11 @@
 %section.service-view
   %div{ "ng-include": "'business_items/_header.html'" }
+  %span.next-previous
+    %button.btn.btn-default.prev{"ng-disabled": "!prevItem", "ui-sref": "service({id: prevItem.id})"}
+      %span.icon-chevron-left prev
+    %button.btn.btn-default.next{"ng-disabled": "!nextItem", "ui-sref": "service	({id: nextItem.id})"}
+      next
+      %span.icon-chevron-right
   .item-short-info
     %button.contact-supplier{ "ng-click": "MessageModal.new(business.id)" }
       %span.icon.icon-envelope

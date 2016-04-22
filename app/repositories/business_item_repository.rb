@@ -20,4 +20,16 @@ module BusinessItemRepository
     photo = business_item.photos.first
     photos_repository.photo_url(photo, type)
   end
+
+  def prev(object_id)
+    business_item = klass.find_by_id(object_id)
+    klass.where("id < ? AND business_id = ? ",
+                business_item.id, business_item.business_id).last
+  end
+
+  def next(object_id)
+    business_item = klass.find_by_id(object_id)
+    klass.where("id > ? AND business_id = ? ",
+                business_item.id, business_item.business_id).first
+  end
 end
