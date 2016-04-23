@@ -1,6 +1,6 @@
 .container{ "ng-controller": "RegistrationsCtrl",
   "ng-init": "init( '#{escape_javascript(user_presenter.to_json)}' )" }
-  %div{"ng-model" => "next_page_path", "ng-init" => "next_page='#{session[:previous_url]}'"}
+  %div{ "ng-model" => "next_page_path", "ng-init" => "next_page='#{session[:previous_url]}'" }
   .sign-up-wrapper
     = render partial: "users/registrations/form",
     locals: { user: user, business: business }
