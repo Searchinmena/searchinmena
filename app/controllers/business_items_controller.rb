@@ -38,6 +38,18 @@ class BusinessItemsController < ApplicationController
                   .map { |sp|  SimilarBusinessItemsPresenter.new(sp) } }
   end
 
+  def prev_item
+    prev_item = repository.prev(params[:id])
+
+    render json: { prev_item: prev_item }
+  end
+
+  def next_item
+    next_item = repository.next(params[:id])
+
+    render json: { next_item: next_item }
+  end
+
   private
 
   def business_item_data
