@@ -37,7 +37,7 @@
           data: $scope.form,
           method: 'POST'
         ).success(->
-          window.location = DASHBOARD_PATH
+          window.location = $scope.next_page || DASHBOARD_PATH
         ).error((errors) ->
           $scope.errors = errors
           $scope.loading = false

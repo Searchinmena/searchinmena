@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!
   before_filter :set_locale
+  before_filter :store_location
 
   after_filter :set_csrf_cookie_for_ng
 
@@ -30,6 +31,15 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  # store last url - this is needed for post-login redirect
+  # to whatever the user last visited.
+  def store_location
+    if !request.env["HTTP_REFERER"].nil? &&
+       !request.env["HTTP_REFERER"].match("/users")
+      session[:previous_url]  = request.env["HTTP_REFERER"]
+    end
+  end
 
   def set_csrf_cookie_for_ng
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
