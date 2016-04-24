@@ -1,5 +1,6 @@
 class BusinessItemsController < ApplicationController
-  skip_before_filter :authenticate_user!, only: [:show, :related_items, :prev_item, :next_item]
+  skip_before_filter :authenticate_user!, only: [:show, :related_items,
+                                                 :prev_item, :next_item]
 
   def create
     response = business_item_creator.perform
