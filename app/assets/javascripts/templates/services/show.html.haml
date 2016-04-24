@@ -63,7 +63,9 @@
 
       %div{ "ng-include": "'business_item/_description.html'" }
   %span.company-products.similar-items
-    %ul{ "ng-show": "similar_items" }
+    %ul{ "ng-show": "similar_items_length > 0" }
+      %span.mar-left-28
+      = "Related Services"
       %li{ "ng-repeat": "product in similar_items"}
         %a.item-img-link{ href: '{{ showpath }}/{{product.id}}' }
           %img{ src: "{{ product.photo.photo.thumb.url }}" }

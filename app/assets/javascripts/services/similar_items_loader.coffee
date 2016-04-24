@@ -5,7 +5,8 @@
         (object) ->
           scope.similar_items = object.similar_products
           scope.showpath = path;
-        ,
+          scope.similar_items_length = scope.similar_items.length
+      ,
         ->
           $state.go("root")
       )
