@@ -1,11 +1,11 @@
 %section.product-view
-  %div{ "ng-include": "'business_items/_header.html'" }
-  %span
-    %button.btn.btn-default.prev{"ng-disabled": "!prevItem", "ui-sref": "product({id: prevItem.id})"}
-      %span.icon-chevron-left prev
-    %button.btn.btn-default.next{"ng-disabled": "!nextItem", "ui-sref": "product({id: nextItem.id})"}
-      next
+  %span.next-previous-region
+    %button.previous{"ng-disabled": "!prevItem", "ui-sref": "product({id: prevItem.id})"}
+      %span.icon-chevron-left Previous
+    %button.next{"ng-disabled": "!nextItem", "ui-sref": "product({id: nextItem.id})"}
+      Next
       %span.icon-chevron-right
+  %div{ "ng-include": "'business_items/_header.html'" }
   .item-short-info
     %button.contact-supplier{ "ng-click": "MessageModal.new(business.id)" }
       %span.icon.icon-envelope
@@ -63,7 +63,7 @@
     .column.description-column
       %div{ "ng-include": "'business_item/_description.html'" }
   %span.company-products.similar-items 
-    %ul
+    %ul{ "ng-show": "similar_items" }
       %span.mar-left-28
         = "Related Products"
       %li{ "ng-repeat": "product in similar_items"}

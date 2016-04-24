@@ -407,10 +407,28 @@
 .mar-left-28{
   margin-left: 28px;
 }
+.next-previous-region {
+  float: right;
+  height: 0px;
 
+  .next, .previous {
+    background-color: #007bc5;
+    border-bottom: 0.236rem solid #005384;
+    border-color: #007bc5 #007bc5 #005384;
+    border-radius: 0.382rem;
+    color: white;
+    margin: 5px;
+    padding: 0.5rem;
+    width: 120px;
+    margin: 1.618rem 1rem 0 0;
+  }
 
-button.btn.btn-default.prev {
-  margin-left: -10%;
-  margin-top: 1%;
+  .next[disabled=disabled], .previous[disabled=disabled] {
+    opacity: 0.5;
+  }
+  @media screen and (max-width: $desktop) {
+    display: block;
+    float: none !important;
+    text-align: center;
+  }
 }
-
