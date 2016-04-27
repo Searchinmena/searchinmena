@@ -18,6 +18,7 @@ module Users
       response = user_creator.perform
       if response.successful?
         sign_up(:user, response.user)
+        insightly_create(response.user)
         flash[:notice] = t("devise.registrations.signed_up")
         head :ok
         u = response.user
@@ -58,6 +59,13 @@ module Users
 
     def tags_params
       params.permit(tags: [:id, :label])[:tags] || {}
+    end
+
+    # TODO:  Put it in background job
+    def insightly_create(user)
+      if user.seller? || user.both?
+        InsightlyService::InsightlyCreator.new(user).perform
+      end
     end
   end
 end
