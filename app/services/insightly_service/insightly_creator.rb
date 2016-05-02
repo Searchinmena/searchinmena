@@ -12,6 +12,17 @@ class InsightlyService::InsightlyCreator < BaseService
     InsightlyService::UserOrganization.new(@user).perform
     InsightlyService::UserOpportunity.new(@user).perform
     InsightlyService::UserTask.new(@user).perform
+  rescue => e
+    puts "insightly unable to create record  #{e}"
+  end
+
+  def update
+    InsightlyService::UserContact.new(user).update
+    InsightlyService::UserOrganization.new(user).update
+    InsightlyService::UserOpportunity.new(user).update
+    InsightlyService::UserTask.new(@user).perform
+  rescue => e
+    puts "insightly unable to update record  #{e}"
   end
 
   def contact_infos
@@ -23,15 +34,6 @@ class InsightlyService::InsightlyCreator < BaseService
 
   def find_insightly_type_id(type)
     insightly_repository.find_user_insightly(@user, type).try(:type_id)
-  end
-
-  def insightly_hash(name, type, id, user_id = nil)
-    {
-      name: name,
-      insightly_type: type,
-      type_id: id,
-      user_id: user_id
-    }
   end
 
   def inslightly_create(type, id, user_id = nil, name = nil)

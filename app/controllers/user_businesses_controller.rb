@@ -103,8 +103,6 @@ class UserBusinessesController < ApplicationController
   # TODO: Put this in background job
   def update_inslightly
     user = @business.user
-    InsightlyService::UserContact.new(user).update
-    InsightlyService::UserOrganization.new(user).update
-    InsightlyService::UserOpportunity.new(user).update
+    InsightlyService::InsightlyCreator.new(user).update
   end
 end

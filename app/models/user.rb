@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_one :business, dependent: :delete
   has_many :insightlies
 
+  delegate :name, :description, :main_products, to: :business, prefix: :company
+
   validates_confirmation_of :password
 
   def self.category_name(type)

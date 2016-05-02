@@ -14,6 +14,8 @@ class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
     if type_id.present?
       @insightly.update_opportunity(opportunity: opportunity_params
                 .merge!(opportunity_id: type_id))
+    else
+      perform
     end
   end
 
@@ -25,10 +27,10 @@ class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
 
   def opportunity_params
     {
-      opportunity_name: @user.business.name,
+      opportunity_name: user.company_name,
       opportunity_state: 'open',
       bind_currency: 996,
-      # opportunity_details: ' tag functionality'
+      opportunity_details: user.main_products,
       visible_to: 'EVERYONE',
       links: links_params
     }

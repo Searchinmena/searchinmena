@@ -6,11 +6,11 @@ class InsightlyService::UserTask < InsightlyService::InsightlyCreator
 
     attributes = task_params
     titles.each do |title|
-      unless  @user.insightlies.where(name: title).present?
-        attributes[:title] = title
-        task = @insightly.create_task(task: attributes)
-        inslightly_create('task', task.task_id, @user.id, title)
-      end
+      next if @user.insightlies.where(name: title).present?
+
+      attributes[:title] = title
+      task = @insightly.create_task(task: attributes)
+      inslightly_create('task', task.task_id, @user.id, title)
     end
   end
 

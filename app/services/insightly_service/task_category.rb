@@ -10,8 +10,8 @@ class InsightlyService::TaskCategory < InsightlyService::InsightlyCreator
 
   def category_params
     {
-      category_name: @user,
-      background_color: 'ffff',
+      category_name: user,
+      background_color: '4e469f',
       active: true
     }
   end

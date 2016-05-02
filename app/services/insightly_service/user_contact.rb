@@ -20,10 +20,10 @@ class InsightlyService::UserContact < InsightlyService::InsightlyCreator
 
   def user_contact_params
     {
-      first_name: @user.first_name,
-      last_name: @user.last_name,
+      first_name: user.first_name,
+      last_name: user.last_name,
       contactinfos: contact_infos,
-      date_created_utc:  @user.created_at.strftime("%Y-%m-%d %H:%M:%S")
+      date_created_utc:  user.created_at.strftime("%Y-%m-%d %H:%M:%S")
     }
   end
 end

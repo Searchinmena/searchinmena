@@ -9,15 +9,18 @@ class InsightlyService::UserOrganization < InsightlyService::InsightlyCreator
     if type_id.present?
       @insightly.update_organisation(organisation: org_params
                                      .merge!(organisation_id: type_id))
+    else
+      perform
     end
   end
 
   def org_params
     {
-      organisation_name: user.business.name,
-      # background: user.location,
+      organisation_name: user.company_name,
+      background: user.company_description,
       active: true,
       contactinfos: contact_infos
+
     }
   end
 end
