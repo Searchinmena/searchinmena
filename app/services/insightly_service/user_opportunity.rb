@@ -30,7 +30,7 @@ class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
       opportunity_name: user.company_name,
       opportunity_state: 'open',
       bind_currency: 996,
-      opportunity_details: user.main_products,
+      opportunity_details: user.company_main_products,
       visible_to: 'EVERYONE',
       links: links_params
     }
