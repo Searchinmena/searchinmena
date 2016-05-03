@@ -1,12 +1,9 @@
 class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
   def perform
-    unless insightly_repository.find_by_name(@user.business.name).present?
-
-      opportunity = @insightly.create_opportunity(opportunity:
-                                                  opportunity_params)
-      inslightly_create('opportunity', opportunity.opportunity_id,
-                        @user.id, opportunity.opportunity_name)
-    end
+    opportunity = @insightly.create_opportunity(opportunity:
+                                                opportunity_params)
+    inslightly_create('opportunity', opportunity.opportunity_id,
+                      user.id, opportunity.opportunity_name)
   end
 
   def update
@@ -19,6 +16,10 @@ class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
     end
   end
 
+  def opportunity_category_id
+    insightly_repository.find_by_name('Premium Subscription').type_id
+  end
+
   def opportunity_params
     {
       opportunity_name: user.company_name,
@@ -29,6 +30,8 @@ class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
       opportunity_details: user.company_description,
       visible_to: 'EVERYONE',
       links: links_params,
+      responsible_user_id: A9n.insightly[:owner_user_id],
+      category_id:  opportunity_category_id,
       stage_id: A9n.insightly[:pipeline_stage_id],
       pipeline_id: A9n.insightly[:pipeline_id]
     }

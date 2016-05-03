@@ -7,10 +7,12 @@ class InsightlyService::UserTask < InsightlyService::InsightlyCreator
     attributes = task_params
     titles.each do |title|
       next if @user.insightlies.where(name: title).present?
-
+      c_id = insightly_repository.find_by_name_and_type(title,
+                                                       'task_category').type_id
       attributes[:title] = title
+      attributes[:category_id] = c_id
       task = @insightly.create_task(task: attributes)
-      inslightly_create('task', task.task_id, @user.id, title)
+      inslightly_create('task', task.task_id, user.id, title)
     end
   end
 

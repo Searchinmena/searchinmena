@@ -105,6 +105,7 @@ describe UserBusinessesController do
           .and_return(business_saver)
         expect(business_saver).to receive(:perform).and_return(saver_response)
 
+        allow(controller).to receive(:update_inslightly)
         put :update, params
       end
 

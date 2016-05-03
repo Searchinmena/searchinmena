@@ -8,10 +8,10 @@ class InsightlyService::InsightlyCreator < BaseService
   end
 
   def perform
-    InsightlyService::UserContact.new(@user).perform
-    InsightlyService::UserOrganization.new(@user).perform
-    InsightlyService::UserOpportunity.new(@user).perform
-    InsightlyService::UserTask.new(@user).perform
+    InsightlyService::UserContact.new(user).perform
+    InsightlyService::UserOrganization.new(user).perform
+    InsightlyService::UserOpportunity.new(user).perform
+    InsightlyService::UserTask.new(user).perform
   rescue => e
     puts "insightly unable to create record  #{e}"
   end
@@ -20,14 +20,14 @@ class InsightlyService::InsightlyCreator < BaseService
     InsightlyService::UserContact.new(user).update
     InsightlyService::UserOrganization.new(user).update
     InsightlyService::UserOpportunity.new(user).update
-    InsightlyService::UserTask.new(@user).perform
+    InsightlyService::UserTask.new(user).perform
   rescue => e
     puts "insightly unable to update record  #{e}"
   end
 
   def contact_infos
-    [{ type: "Email", label: "Work", detail: @user.email },
-     { type: "Phone", label: "Work", detail: @user.business.phone
+    [{ type: "Email", label: "Work", detail: user.email },
+     { type: "Phone", label: "Work", detail: user.business.phone
      }
     ]
   end
@@ -39,7 +39,7 @@ class InsightlyService::InsightlyCreator < BaseService
   end
 
   def find_insightly_type_id(type)
-    insightly_repository.find_user_insightly(@user, type).try(:type_id)
+    insightly_repository.find_user_insightly(user, type).try(:type_id)
   end
 
   def inslightly_create(type, id, user_id = nil, name = nil)
