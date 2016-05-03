@@ -19,20 +19,18 @@ class InsightlyService::UserOpportunity < InsightlyService::InsightlyCreator
     end
   end
 
-  def links_params
-    contact_id = find_insightly_type_id('contact')
-    organigasation_id = find_insightly_type_id('organisation')
-    [{ contact_id: contact_id }, { organisation_id: organigasation_id }]
-  end
-
   def opportunity_params
     {
       opportunity_name: user.company_name,
       opportunity_state: 'open',
-      bind_currency: 996,
-      opportunity_details: user.company_main_products,
+      bid_currency: 'USD',
+      bid_amount: 996,
+      bid_type: 'Fixed Bid',
+      opportunity_details: user.company_description,
       visible_to: 'EVERYONE',
-      links: links_params
+      links: links_params,
+      stage_id: A9n.insightly[:pipeline_stage_id],
+      pipeline_id: A9n.insightly[:pipeline_id]
     }
   end
 end

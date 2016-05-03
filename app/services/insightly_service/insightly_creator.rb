@@ -32,6 +32,12 @@ class InsightlyService::InsightlyCreator < BaseService
     ]
   end
 
+  def links_params
+    contact_id = find_insightly_type_id('contact')
+    organigasation_id = find_insightly_type_id('organisation')
+    [{ contact_id: contact_id }, { organisation_id: organigasation_id }]
+  end
+
   def find_insightly_type_id(type)
     insightly_repository.find_user_insightly(@user, type).try(:type_id)
   end

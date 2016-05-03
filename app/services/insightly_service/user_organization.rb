@@ -19,7 +19,8 @@ class InsightlyService::UserOrganization < InsightlyService::InsightlyCreator
       organisation_name: user.company_name,
       background: user.company_description,
       active: true,
-      contactinfos: contact_infos
+      contactinfos: contact_infos,
+      links: links_params
 
     }
   end
