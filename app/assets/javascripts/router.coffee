@@ -89,6 +89,13 @@
       templateUrl: 'search/results.html',
       controller: 'ResultsCtrl'
     )
+
+    $stateProvider.state('categories',
+      url: '/categories?:type',
+      templateUrl: 'categories/index.html',
+      controller: 'CategoriesCtrl'
+    )
+
     $stateProvider.state('business',
       url: '/company/:id',
       templateUrl: 'business/show.html'
