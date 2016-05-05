@@ -3,7 +3,7 @@ namespace :insightly do
   task :create_category do
     on roles(:app) do
       within fetch(:release_path) do
-        system  "rake create_insightly_category"
+        system "rake create_insightly_category"
       end
     end
   end
