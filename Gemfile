@@ -56,7 +56,7 @@ end
 
 group :development do
   gem 'rubocop', git: 'git@github.com:bbatsov/rubocop.git'
-  gem 'haml-lint', require: false
+  gem 'haml_lint', require: false
   gem 'mailcatcher'
   gem 'foreman'
 end

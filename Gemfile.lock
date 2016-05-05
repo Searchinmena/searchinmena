@@ -279,7 +279,7 @@ GEM
       rubocop (~> 0.20)
     haml (4.0.6)
       tilt
-    haml-lint (0.13.0)
+    haml_lint (0.15.2)
       haml (~> 4.0)
       rubocop (>= 0.25.0)
       sysexits (~> 1.1)
@@ -300,6 +300,9 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    insightly2 (0.1.9)
+      activesupport
+      faraday
     ipaddress (0.8.0)
     jasmine-core (2.3.4)
     jasmine-rails (0.10.8)
@@ -553,8 +556,9 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   haml
-  haml-lint
+  haml_lint
   honeybadger (~> 2.0)
+  insightly2
   jasmine-rails
   jquery-cookie-rails
   jquery-rails
