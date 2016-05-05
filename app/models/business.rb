@@ -15,6 +15,16 @@ class Business < ActiveRecord::Base
   mount_uploader :logo, LogoUploader
   store_in_background :logo
 
+  def description
+    [main_products,
+     business_types.map(&:english_title),
+     country.english_title].flatten.join(', ')
+  end
+
+  def main_products
+    tags.map(&:english_title).join(', ')
+  end
+
   private
 
   def logo_destroy

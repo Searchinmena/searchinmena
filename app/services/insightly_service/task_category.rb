@@ -1,0 +1,19 @@
+class InsightlyService::TaskCategory < InsightlyService::InsightlyCreator
+  def perform
+    # @user is category name here
+    category = insightly_repository.find_by_name_and_type(user, 'task_category')
+    unless category.present?
+      category = @insightly.create_task_category(category: category_params)
+      inslightly_create('task_category', category.category_id, '',
+                        category.category_name)
+    end
+  end
+
+  def category_params
+    {
+      category_name: user,
+      background_color: '4e469f',
+      active: true
+    }
+  end
+end

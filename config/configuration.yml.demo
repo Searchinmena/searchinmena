@@ -40,4 +40,9 @@ production:
     access_key_id: AKIAJ4W5KE65VD6QDZFQ
     secret_access_key: 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
     region: us-west-2
+  insightly:
+    api_key: a73366d6-d057-472a-8d4a-a6c8fbdd19a8
+    owner_user_id: 1120880
+    pipeline_id: 267488
+    pipeline_stage_id: 851170
   paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'

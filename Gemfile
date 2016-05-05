@@ -34,6 +34,9 @@ gem 'sinatra', require: nil
 gem 'sitemap_generator'
 gem 'customerio', git: 'https://github.com/customerio/customerio-ruby'
 
+# insightly crm
+gem 'insightly2'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'

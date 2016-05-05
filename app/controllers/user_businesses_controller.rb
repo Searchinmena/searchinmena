@@ -12,12 +12,12 @@ class UserBusinessesController < ApplicationController
 
   def update
     @business = business_repository.find_or_build(user_id: current_user.id)
-
     photos = photos_storing_handler.photos
     business_saver = Business::Saver.new(handlers, @business, photos)
     response = business_saver.perform
     render_response(response)
     if response.successful?
+      update_inslightly
       _define_cio_callback(@business, response)
     end
   end
@@ -98,5 +98,11 @@ class UserBusinessesController < ApplicationController
   def _cio_callback(response, event)
     b = { response: response.object, user: current_user }
     CustomerIoService.new(b, event)
+  end
+
+  # TODO: Put this in background job
+  def update_inslightly
+    user = @business.user
+    InsightlyService::InsightlyCreator.new(user).update
   end
 end
