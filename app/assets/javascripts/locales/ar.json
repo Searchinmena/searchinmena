@@ -130,7 +130,12 @@
   "category": {
     "title": "الفئة",
     "in": "في:",
-    "button": "إختر الفئة"
+    "button": "إختر الفئة",
+    "product" : "أصناف المنتجات",
+    "service" : "خدمة الفئات",
+    "show_more" : "أظهر المزيد",
+    "show_less" : "أقل"
+
   },
   "categories_modal": {
     "choose": "إختر فئة",
