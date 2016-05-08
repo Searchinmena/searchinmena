@@ -289,7 +289,6 @@ GEM
     hashie (3.4.2)
     hike (1.2.3)
     hitimes (1.2.2)
-    honeybadger (2.1.1)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -557,7 +556,6 @@ DEPENDENCIES
   guard-rubocop
   haml
   haml_lint
-  honeybadger (~> 2.0)
   insightly2
   jasmine-rails
   jquery-cookie-rails
