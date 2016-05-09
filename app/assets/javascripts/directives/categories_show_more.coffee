@@ -2,23 +2,24 @@
   restrict: 'A'
   link: (scope, element, attrs) ->
     element.bind 'click', -> 
-      $("#list-"+ attrs['showMore']).css("height", "100%");
+      $("#list-"+ attrs['showMore']).addClass("list-max-height");
       $("#show-more-"+ attrs['showMore']).addClass("hide");
 
 @Sim.directive 'showLess', ->
   restrict: 'A'
   link: (scope, element, attrs) ->
     element.bind 'click', ->
-      $("#list-"+ attrs['showLess']).css("height", "250px");
+      $("#list-"+ attrs['showLess']).addClass("list-min-height");
       $("#show-more-"+ attrs['showLess']).removeClass("hide");
  
 
-@Sim.directive 'scrollTo', ->
+@Sim.directive 'scrollTo', ['MAX_FIX_HEADER_SCREEN_SIZE', (MAX_FIX_HEADER_SCREEN_SIZE) ->
   restrict: 'A'
   link: (scope, element, attrs) ->
     element.bind 'click', ->
-      if $(window).width() > 1100
+      if $(window).width() > MAX_FIX_HEADER_SCREEN_SIZE
         height =  $('.sticky').height()
       else
         height = 0
       $('html, body').animate { scrollTop: $('#'+ attrs['scrollTo']).offset().top - height - 20}, 500
+]

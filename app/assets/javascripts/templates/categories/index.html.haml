@@ -17,14 +17,14 @@
           %span{"ng-repeat": "child_cat in child_categories[c.id]"}
             %a.no_text_decoration{"ng-href": "{{link + (c.id)}}"} {{child_cat.name}}
             %br
-          %a.font-size-12{"id": "show-less-{{c.id}}","show-less": "{{c.id}}","ng-if": "child_categories[c.id].length > 13"} {{ "category.show_less" | translate }}
-        .show-more.font-size-12{"id": "show-more-{{c.id}}", "show-more": "{{c.id}}","ng-if": "child_categories[c.id].length > 13"}
+          %a.font-size-12{"id": "show-less-{{c.id}}","show-less": "{{c.id}}","ng-if": "child_categories[c.id].length > max_sub_cat_length"} {{ "category.show_less" | translate }}
+        .show-more.font-size-12{"id": "show-more-{{c.id}}", "show-more": "{{c.id}}","ng-if": "child_categories[c.id].length > max_sub_cat_length"}
           %a {{ "category.show_more" | translate }}
         
    
     .list-div{"ng-if": "child_categories[c.id].length == 0","ng-repeat": "c in categories"} 
       %h5
-        %a{"ng-href": "{{serviceLink(c.id)}}" ,"ng-attr-id": "{{c.id}}"} {{c.name}}
+        %a{"ng-href": "{{link + (c.id)}}","ng-attr-id": "{{c.id}}"} {{c.name}}
       .div
         %span{"ng-repeat": "child_cat in child_categories[c.id]"}
           %a.no_text_decoration{"ng-href": "{{serviceLink(c.id)}}"} {{child_cat.name}}

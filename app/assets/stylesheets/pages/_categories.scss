@@ -60,11 +60,17 @@
         color: gray;
       }
     }
-   
   }
-  
+  .list-max-height{
+    height: 100% !important;
+  }
+  .list-min-height{
+    height: 250px !important;
+  }
 }
-
+.mar-top-0{
+  margin-top: 0px !important;
+}
 .font-size-12{
   font-size: 12px;
 }
