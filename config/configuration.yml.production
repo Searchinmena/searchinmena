@@ -45,8 +45,8 @@ production:
     id: 3823999354dd63de1f8d
     key: 1a4d2164782635ea53b1
   insightly:
-    api_key: a73366d6-d057-472a-8d4a-a6c8fbdd19a8
-    owner_user_id: 1120880
-    pipeline_id: 267488
-    pipeline_stage_id: 851170
+    api_key: 162263ae-574a-4472-aead-61f61f1f639c
+    owner_user_id: 1108250
+    pipeline_id: 263707
+    pipeline_stage_id: 838238
   paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'
