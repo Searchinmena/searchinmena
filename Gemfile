@@ -9,7 +9,8 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'whenever', require: false
 gem 'activeadmin', github: 'activeadmin'
-gem 'active_admin_importable'
+gem 'active_admin_importable',
+  git: "https://github.com/awais4123/active_admin_importable.git"
 
 # assets
 gem 'sass-rails', '~> 5.0'
