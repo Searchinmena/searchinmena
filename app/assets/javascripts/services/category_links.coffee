@@ -1,0 +1,12 @@
+@Sim.service 'CategoryLinks', ['RESULT_WITH_SERVICE_CATEGORY','RESULT_WITH_PRODUCT_CATEGORY','PRODUCT_CATEGORIES'
+  ,'SERVICE_CATEGORIES',
+  (RESULT_WITH_SERVICE_CATEGORY,RESULT_WITH_PRODUCT_CATEGORY,PRODUCT_CATEGORIES,SERVICE_CATEGORIES) ->
+
+    setLinks: (scope)->
+      if scope.type == 'product'
+        scope.link = RESULT_WITH_PRODUCT_CATEGORY
+        scope.path = PRODUCT_CATEGORIES
+      else
+        scope.link = RESULT_WITH_SERVICE_CATEGORY
+        scope.path = SERVICE_CATEGORIES
+]

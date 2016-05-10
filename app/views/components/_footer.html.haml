@@ -34,10 +34,12 @@
       = t("footer.address_line_3")
   %section.footer-column
     .footer-categories
-      %a.footer-category-btn{ 'ui-sref': 'results({ type: "product" })', target: "_self" }
+      -# %a.footer-category-btn{ 'ui-sref': 'results({ type: "product" })', target: "_self" }
+      %a.footer-category-btn{ href: "/categories?type=product", target: "_self" }
         %span.icon-shopping-cart
         {{ "home.products" | translate }}
-      %a.footer-category-btn{ 'ui-sref': 'results({ type: "service" })', target: "_self" }
+      -# %a.footer-category-btn{ 'ui-sref': 'results({ type: "service" })', target: "_self" }
+      %a.footer-category-btn{ href: "/categories?type=service", target: "_self" }
         %span.icon-user
         {{ "home.services" | translate }}
       %a.footer-category-btn{ 'ui-sref': 'results({ type: "business" })', target: "_self" }
@@ -46,6 +48,11 @@
       %a.footer-category-btn{ href: "/premium", target: "_self" }
         %span.icon-star
         {{ "home.feature" | translate}}
+      -# %a.footer-category-btn{ href: "/categories?type=product", target: "_self" }
+      -# {{ "category.product" | translate}}
+      -# %a.footer-category-btn{ href: "/categories?type=service", target: "_self" }
+      -# {{ "category.service" | translate}}
+
   %section.sitemap
     %p.copyright
       © #{current_year}

@@ -130,7 +130,11 @@
   "category": {
     "title": "Category",
     "in": "in",
-    "button": "Choose category"
+    "button": "Choose category",
+    "product" : "Product Categories",
+    "service" : "Service Categories",
+    "show_more" : "show more",
+    "show_less" : "less"
   },
   "categories_modal": {
     "choose": "Choose Category",
