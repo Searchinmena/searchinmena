@@ -9,5 +9,4 @@
       else
         scope.link = RESULT_WITH_SERVICE_CATEGORY
         scope.path = SERVICE_CATEGORIES
-
 ]
