@@ -67,6 +67,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_admin_importable (1.1.2)
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -529,6 +530,7 @@ PLATFORMS
 
 DEPENDENCIES
   a9n
+  active_admin_importable
   activeadmin!
   angular-rails-templates (~> 0.2.0)
   bogus

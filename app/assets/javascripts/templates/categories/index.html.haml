@@ -8,22 +8,19 @@
         .list-div{"ng-repeat": "c in categories"} 
           %span
             %a{"scroll-to": "{{c.id}}",href: "#"} {{c.name}}
-  %br  
   .list-container
     .list-div-multiple{"ng-if": "child_categories[c.id].length > 0","ng-repeat": "c in categories"} 
       .category-list-div
-        %h5{"id": "{{c.id}}" } {{c.name}}
+        %h4{"id": "{{c.id}}" } {{c.name}}
         .category-list{"id": "list-{{c.id}}"}
           %span{"ng-repeat": "child_cat in child_categories[c.id]"}
             %a.no_text_decoration{"ng-href": "{{link + (c.id)}}"} {{child_cat.name}}
             %br
-          %a.font-size-12{"id": "show-less-{{c.id}}","show-less": "{{c.id}}","ng-if": "child_categories[c.id].length > max_sub_cat_length"} {{ "category.show_less" | translate }}
-        .show-more.font-size-12{"id": "show-more-{{c.id}}", "show-more": "{{c.id}}","ng-if": "child_categories[c.id].length > max_sub_cat_length"}
+          %a{"id": "show-less-{{c.id}}","show-less": "{{c.id}}","ng-if": "child_categories[c.id].length > max_sub_cat_length"} {{ "category.show_less" | translate }}
+        .show-more{"id": "show-more-{{c.id}}", "show-more": "{{c.id}}","ng-if": "child_categories[c.id].length > max_sub_cat_length"}
           %a {{ "category.show_more" | translate }}
-        
-   
-    .list-div{"ng-if": "child_categories[c.id].length == 0","ng-repeat": "c in categories"} 
-      %h5
+    .list-div{"ng-if": "child_categories[c.id].length == 0","ng-repeat": "c in categories"}
+      %h4
         %a{"ng-href": "{{link + (c.id)}}","ng-attr-id": "{{c.id}}"} {{c.name}}
       .div
         %span{"ng-repeat": "child_cat in child_categories[c.id]"}
