@@ -36,6 +36,12 @@ GIT
       carrierwave (~> 0.5)
 
 GIT
+  remote: https://github.com/awais4123/active_admin_importable.git
+  revision: 60b976d87e8369df024d8fd8fdebe88aba087a28
+  specs:
+    active_admin_importable (1.1.2)
+
+GIT
   remote: https://github.com/customerio/customerio-ruby
   revision: 24e56e7466dceef5d4dde85926aaddcb2edbf3e3
   specs:
@@ -67,7 +73,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_admin_importable (1.1.2)
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -532,7 +537,7 @@ PLATFORMS
 
 DEPENDENCIES
   a9n
-  active_admin_importable
+  active_admin_importable!
   activeadmin!
   angular-rails-templates (~> 0.2.0)
   bogus
@@ -583,4 +588,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.11.2
+   1.12.2
