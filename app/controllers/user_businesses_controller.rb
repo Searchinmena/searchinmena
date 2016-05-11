@@ -100,9 +100,8 @@ class UserBusinessesController < ApplicationController
     CustomerIoService.new(b, event)
   end
 
-  # TODO: Put this in background job
   def update_inslightly
-    user = @business.user
-    InsightlyService::InsightlyCreator.new(user).update
+    user_id = @business.user.id
+    InsightlyUpdateWorker.perform_async(user_id)
   end
 end

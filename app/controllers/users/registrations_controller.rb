@@ -61,10 +61,9 @@ module Users
       params.permit(tags: [:id, :label])[:tags] || {}
     end
 
-    # TODO:  Put it in background job
     def insightly_create(user)
       if user.seller? || user.both?
-        InsightlyService::InsightlyCreator.new(user).perform
+        InsightlyCreateWorker.perform_async(user.id)
       end
     end
   end
