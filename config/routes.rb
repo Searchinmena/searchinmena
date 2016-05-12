@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 
-  require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
 
   devise_for :users,

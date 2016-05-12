@@ -49,4 +49,7 @@ production:
     owner_user_id: 1108250
     pipeline_id: 263707
     pipeline_stage_id: 838238
+  sidekiq:
+    username: sidekiqadmin
+    password: salim@#16S
   paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'
