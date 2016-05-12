@@ -40,7 +40,7 @@ describe MessagesSender do
 
     it do
       expect(UserMailer).to receive(:contact_seller)
-        .with(business.user, user, message_subject, formatted_body)
+        .with(business.user, message_subject, formatted_body)
         .and_return(double(:mailer, deliver_now: nil))
       expect(UserMailer).to receive(:message_confirmation)
         .with(business, user, message_subject, formatted_body)

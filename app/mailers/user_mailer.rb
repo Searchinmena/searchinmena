@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  def contact_seller(seller, user, subject, body)
+  def contact_seller(seller, subject, body)
     @body = body
     mail(to: seller.email, from: A9n.email_from, subject: subject)
   end
