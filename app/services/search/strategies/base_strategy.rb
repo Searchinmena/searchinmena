@@ -10,6 +10,11 @@ class Search::Strategies::BaseStrategy
     Search::Response.new(success: true, results: results)
   end
 
+  def autocomplete(type, query)
+    results = repository.where_search_like(type, query[:query])
+    Search::Response.new(success: true, results: results)
+  end
+
   private
 
   def search_with_business_type(results, type, query)

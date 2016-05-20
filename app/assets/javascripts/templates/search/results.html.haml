@@ -1,4 +1,5 @@
-.search-results-content
+.search-results-content{ "ng-class" => "{'companies-main-block': search.type == 'business'}" }
+
   .search-filters
     %form.search-results-form.browse-filter{ 'ng-submit': 'submit($event)' }
       .select-field.browse-filter{ 'ng-show': 'showBusinessFilter', }
@@ -11,8 +12,12 @@
       .field.search-field.browse-filter{ "ng-hide": "true" }
         %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category" }
       .field.search-field.browse-filter
-        %input{ type: 'text', value: '{{ search.query }}', 'ng-model': 'search.query' }
+        %input{ type: 'text', value: '{{ search.query }}', 'ng-model': 'search.query',  :type => "text", "ng-show" => "search.type == 'business'"}
+
+        %input#prduct-service-control{ type: 'text', value: '{{ search.query }}',  'ng-model': 'search.query', "auto-search" => "=", "ng-change" => "search.searchItems('query')", "ng-focus" => "search.searchItems('query')", "control" => "search", "ng-hide" => "search.type == 'business'", "ng-init" => "search.searchItems('query')" }
+
         %input{ type: 'submit', value: '{{ "search_submit" | translate }}' }
+
     .browse-options
       %browse-filter{ type: 'all', search: 'search', 'ng-hide': 'true' }
         {{ 'home.all' | translate }}

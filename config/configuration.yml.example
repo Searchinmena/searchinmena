@@ -30,6 +30,7 @@ defaults: &defaults
     user_name:
     password:
   items_per_page: 10
+  items_in_autocomplete: 10
   original_width: 1200
   original_height: 900
   bigger_thumbnail_size: 240

@@ -1,0 +1,146 @@
+.search-results-content {
+
+	.dropdown{
+
+		top:61px;
+		width: 41.6%;
+
+			.dropdown-menu.drop-down-list {
+				left: 500px;
+				.dropdown-submenu{
+					width: 274px;
+					line-height: 22px;
+				}
+					.category-box{
+						left: 275px;
+
+						li{
+							line-height: 22px;
+						}
+					}
+			}
+	}
+	.search-filters {
+
+		.search-field {
+			input[type="text"] {
+				max-width: 88%;
+			}
+		}
+		.search-field.browse-filter {
+			width: 100%;
+		}
+	}
+
+}
+.search-results-content.companies-main-block{
+	.search-filters{
+		.search-field{
+			input[type="text"]{
+				max-width: 180px;
+			}
+		}
+		.search-field.browse-filter{
+			width: 42%;
+		}
+	}
+}
+
+@media(min-width: 300px) and (max-width: 359px){
+	.search-results-content{
+		.search-filters{
+			.search-field{
+				input[type="text"]{
+					max-width: 99%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.dropdown{
+	    top: -14px;
+	    width: 86%;
+
+      .dropdown-menu.drop-down-list{
+        left: 27px;
+        top: 70px;
+        width: 97%;
+
+				.dropdown-submenu{
+				  width: 263px;
+				}
+        .category-box{
+          left: 30px;
+          min-width: 236px;
+        }
+      }
+    }
+  }
+}
+@media(min-width: 360px) and (max-width: 767px){
+
+	.search-results-content{
+
+		.search-filters{
+
+			.search-field{
+
+				input[type="text"]{
+					max-width: 100%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.dropdown{
+
+	    top: -14px;
+	    width: 86%;
+
+      .dropdown-menu.drop-down-list{
+        left: 27px;
+        top: 70px;
+        .category-box{
+          left: 40px;
+          min-width: 269px;
+        }
+      }
+    }
+  }
+ .search-results-content.companies-main-block{
+
+		.search-filters{
+
+			.search-field{
+
+				input[type="text"]{
+
+					max-width: 100%;
+				}
+			}
+		.search-field.browse-filter{
+
+			width: 100%;
+		}
+		}
+}
+}
+@media(min-width: 768px) and (max-width: 1024px){
+	.search-results-content {
+
+		.dropdown{
+
+			width: 82%;
+				.dropdown-menu.drop-down-list{
+
+					left: 28px;
+						.dropdown-submenu{
+
+							width: 309px;
+						}
+						.category-box{
+
+							left: 315px;
+						}
+				}
+		}
+	}
+}

@@ -15,6 +15,10 @@ class ControllersInjector
     Search::Service.new(search_strategy_factory)
   end
 
+  def autocomplete_search
+    Search::ElasticSearchService.new(search_strategy_factory)
+  end
+
   def search_strategy_factory
     Search::StrategyFactory.new(product_repository,
                                 service_repository,
@@ -29,4 +33,3 @@ class ControllersInjector
                                       business_repository)
   end
 end
-

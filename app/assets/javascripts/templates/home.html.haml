@@ -3,11 +3,11 @@
     %h2.title {{ "home.search_header" | translate }}
   .field.search-field
     .select-field
-      %select{ "ng-model": "search.type" }
+      %select{ "ng-model": "search.type", "ng-change": "search.searchItems('type')" }
         %option{ 'ng-repeat': 'type in SearchService.searchTypes()', value: '{{type}}' }
           {{ SearchService.translationKeyFor(type) | translate }}
-    %input{ type: "text", placeholder: "{{ 'home.search_placeholder' | translate }}",
-      "ng-model": "search.query" }
+    %input.form-control{ :autocomplete => "false", "ng-model" => "search.query", :type => "text", "auto-search" => "=", "ng-change" => "search.searchItems('query')", "ng-focus" => "search.searchItems('query')", "placeholder" => "I'm looking for...", "control" => "search" }
+
     %input{ type: "submit", value: "{{ 'search_submit' | translate }}" }
   %br
   .form-content

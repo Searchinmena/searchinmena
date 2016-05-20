@@ -1,0 +1,8 @@
+.dropdown
+  %ul.dropdown-menu.drop-down-list{"ng-hide" => "!ngModel.length || !filitered.length || selected", :style => "display:block;"}
+    %li.dropdown-submenu{"ng-class" => "{active:$index==active}", "ng-click" => "onSelect(item.name)", "ng-mouseenter" => "mouseenter($index, item)", "ng-repeat" => "item in filitered = (items | filter:{name:ngModel} | limitTo:20) track by $index"}
+      %a{"ng-class" => "{rightarrow: item.categories[0]}"} {{item.name}}
+      %ul.dropdown-menu.category-box{"ng-if" => "item.categories[0]"}
+        %h4 {{item.name}}
+        %li{"ng-click" => "onSelect(catagory.name)", "ng-repeat" => "catagory in item.categories | limitTo:8"}
+          %a.category-btn{:href => "javascript:void(0)", :tabindex => "-1"} {{catagory.name}}

@@ -34,10 +34,10 @@ gem 'sidekiq'
 gem 'sinatra', require: nil
 gem 'sitemap_generator'
 gem 'customerio', git: 'https://github.com/customerio/customerio-ruby'
+gem 'searchkick'
 
 # insightly crm
 gem 'insightly2'
-
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
@@ -73,3 +73,4 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+

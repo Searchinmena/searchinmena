@@ -3,7 +3,9 @@ shared_examples "Searchable by name" do |resource_name|
     subject { repository.where_name_like(resource_name, query) }
     let!(:resource) { create(resource_name, name: "Resource Name") }
     let!(:other) { create(resource_name, name: "Other") }
-
+    before(:each) do
+      resource_name.to_s.classify.constantize.reindex
+    end
     context "query matches name from right" do
       let(:query) { "Name" }
 

@@ -152,6 +152,14 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    elasticsearch (1.0.17)
+      elasticsearch-api (= 1.0.17)
+      elasticsearch-transport (= 1.0.17)
+    elasticsearch-api (1.0.17)
+      multi_json
+    elasticsearch-transport (1.0.17)
+      faraday
+      multi_json
     erubis (2.7.0)
     eventmachine (1.0.5)
     excon (0.45.4)
@@ -465,6 +473,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    searchkick (1.3.0)
+      activemodel
+      elasticsearch (>= 1)
+      hashie
     shellany (0.0.1)
     sidekiq (3.4.2)
       celluloid (~> 0.16.0)
@@ -575,6 +587,7 @@ DEPENDENCIES
   rspec-rails (~> 3.0)
   rubocop!
   sass-rails (~> 5.0)
+  searchkick
   sidekiq
   simplecov
   sinatra

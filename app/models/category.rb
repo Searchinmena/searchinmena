@@ -11,4 +11,15 @@ class Category < ActiveRecord::Base
   def english_title
     translations.where(locale: 'en').pluck(:value).join(' ')
   end
+
+  def search_data
+    {
+      name: english_title,
+      sub_categories: children.map(&:category_id_and_name)
+    }
+  end
+
+  def category_id_and_name
+    { id: id, name: english_title }
+  end
 end
