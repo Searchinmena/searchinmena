@@ -50,11 +50,11 @@
   }
 
   .select-field {
-    
+
     &:after {
       top: $bs1;
     }
-    
+
     select {
       height: 52px;
     }
@@ -63,7 +63,7 @@
   //combined styles for inline field
 
   @media screen and (min-width: 940px) {
-    
+
     input[type="text"], .select-field, input[type="submit"] {
       @include float-direction;
       display: inline-block;
@@ -106,11 +106,11 @@
 
 .search-results-form {
   padding: $bs1 $bs2 0;
-  
+
   input[type="submit"] {
     margin: $bs1 0 0;
   }
-  
+
   input[type="text"] {
     font-size: $bs1;
     height: 56px;
@@ -154,4 +154,15 @@
 .search-field {
   @extend %clearfix;
   margin: 0;
+}
+.search-field .select-field:after{
+  color: #fff;
+  content: "";
+}
+.select-field{
+  background: #fff image-url("select-arrow.png") no-repeat scroll 90% 50%;
+  overflow: hidden;
+}
+.search-form .search-field .select-field select{
+  background: none;
 }
