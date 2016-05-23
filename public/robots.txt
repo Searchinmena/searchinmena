@@ -3,6 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
-Sitemap: http://www.searchinmena.com/sitemap.xml.gz
-Sitemap: https://s3-us-west-2.amazonaws.com/sim-uploads-production/sitemaps/sitemap.xml.gz
-Disallow: mena.searchinmena.com
+Sitemap: http://searchinmena.com/sitemap.xml.gz
