@@ -53,5 +53,5 @@ production:
     username: sidekiqadmin
     password: salim@#16S
   elasticsearch:
-    url: ''
+    url: 'localhost:9200'
   paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'
