@@ -1,19 +1,26 @@
-@Sim.directive 'autoSearch', ['$compile', '$timeout', 'AutoSuggest', '$state',  ($compile, $timeout, AutoSuggest, $state) ->
+@Sim.directive 'autoSearch', ['$compile', '$timeout', 'AutoSuggest', '$state', '$document',  ($compile, $timeout, AutoSuggest, $state, $document) ->
   restrict: 'A'
   transclude: true
   scope:
     ngModel: '='
-    typeahead1: '='
-    search: '='
     control: '='
   link: (scope, elem, attrs) ->
-    template = '<div class="dropdown"><ul class="dropdown-menu drop-down-list" style="display:block;" ng-hide="!ngModel.length || !filitered.length || selected"><li ng-repeat="item in filitered = (items | filter:{name:ngModel} | limitTo:20) track by $index" ng-class="{active:$index==active}"  class="dropdown-submenu" ng-mouseenter= "mouseenter($index, item)" ><a ng-class="{rightarrow: item.categories[0]}" ng-click="onSelect(item.name)">{{item.name}}</a><ul class="dropdown-menu category-box" ng-if="item.categories[0]"><h4>{{item.name}}</h4><li ng-repeat="catagory in item.categories | limitTo:8"><a class="category-btn" ng-click="onSelect(catagory.name)" href="javascript:void(0)" tabindex="-1">{{catagory.name}}</a></li></ul></li></ul></div>'
+    scope.filitered = []
+    clickOnUl = false
+    selected = null
+    template = '<div class="dropdown"><ul class="dropdown-menu drop-down-list" style="display:block;" ng-hide="!ngModel.length || !filitered.length || hideSuggestions" ng-click="clickInside()" ><li ng-repeat="item in filitered = (items | filter:{name:ngModel} | limitTo:20) track by $index" ng-class="{active:$index==active}"  class="dropdown-submenu" ng-mouseenter= "mouseenter($index, item)" ><a ng-class="{rightarrow: item.categories[0]}" ng-click="onSelect(item.name)">{{item.name}}</a><ul class="dropdown-menu category-box" ng-if="item.categories[0]" ng-click="clickInside()"><h4>{{item.name}}</h4><li ng-repeat="catagory in item.categories | limitTo:8"><a class="category-btn" ng-click="onSelect(catagory.name)" href="javascript:void(0)" tabindex="-1">{{catagory.name}}</a></li></ul></li></ul></div>'
 
     elem.bind 'blur', ->
       $timeout (->
-        scope.selected = true
-        return
+        if !clickOnUl
+          scope.hideSuggestions = true
+        else
+          elem[0].focus();
       ), 250
+      return
+
+    scope.clickInside = () ->
+      clickOnUl = true
       return
 
     elem.bind 'keydown', ($event) ->
@@ -34,9 +41,7 @@
 
     scope.click = (item) ->
       scope.ngModel = item.name
-      scope.selected = item
-      if scope.typeaheadCallback
-        scope.typeaheadCallback item
+      selected = item
       return
 
     scope.onSelect = (name) ->
@@ -48,11 +53,15 @@
       return
 
     scope.control.searchItems = (type) ->
-      AutoSuggest.query({ type: scope.control.type, query: scope.control.query},
-        (object) ->
-          scope.items = object.items
-          scope.selected = if type == 'query' then false else true
+      if type == 'type'
+        return
+      else if !clickOnUl
+        AutoSuggest.query({ type: scope.control.type, query: scope.control.query},
+          (object) ->
+            scope.items = object.items
+            scope.hideSuggestions = false;
       )
+      clickOnUl = false
 
     scope.mouseenter = ($index, item) ->
       scope.active = $index
@@ -60,11 +69,11 @@
       return
 
     scope.$watch 'ngModel', (input) ->
-      if scope.selected and scope.selected.name == input
+      if selected and selected.name == input
         return
 
       scope.active = -1
-      scope.selected = false
+      scope.hideSuggestions = false
       # if we have an exact match and there is only one item in the list, automatically select it
       if input and scope.filitered.length == 1 and scope.filitered[0].name.toLowerCase() == input.toLowerCase()
         scope.click scope.filitered[0]
