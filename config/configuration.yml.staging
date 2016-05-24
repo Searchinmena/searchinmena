@@ -31,6 +31,7 @@ production:
     user_name: salim@searchinmena.com
     password: UqkQa7zmtEEbh0Kb0WRdMQ
   items_per_page: 10
+  items_in_autocomplete: 10
   original_width: 1200
   original_height: 900
   bigger_thumbnail_size: 240
