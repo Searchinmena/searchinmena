@@ -1,4 +1,6 @@
 class Service < ActiveRecord::Base
+  searchkick text_start: [:name], text_middle: [:name]
+
   belongs_to :category
   belongs_to :business
 
@@ -17,4 +19,10 @@ class Service < ActiveRecord::Base
   has_many :service_payment_terms, dependent: :delete_all
   has_many :payment_terms, through: :service_payment_terms,
                            dependent: :delete_all
+
+  def search_data
+    attributes.merge(
+      category_name: category.english_title
+    )
+  end
 end

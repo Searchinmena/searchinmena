@@ -20,11 +20,15 @@ cp config/pre-push .git/hooks/pre-push
 
 brew install imagemagick
 brew install node
+brew install elasticsearch
 npm install
 
 npm run update-webdriver
 
 bundle exec rake bower:install
+
+# start the server
+elasticsearch
 
 bundle exec rails s
 ```

@@ -49,4 +49,6 @@ production:
     owner_user_id: 1120880
     pipeline_id: 267488
     pipeline_stage_id: 851170
+  elasticsearch:
+    url: 'localhost:9200'
   paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'

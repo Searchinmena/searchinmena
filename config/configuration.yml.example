@@ -30,6 +30,7 @@ defaults: &defaults
     user_name:
     password:
   items_per_page: 10
+  items_in_autocomplete: 10
   original_width: 1200
   original_height: 900
   bigger_thumbnail_size: 240
@@ -48,6 +49,8 @@ defaults: &defaults
     owner_user_id: 1120880
     pipeline_id: 267488
     pipeline_stage_id: 851170
+  elasticsearch:
+    url: 'http://localhost:9200'
 
   paypal: 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZGMPETHPGHK58'
 

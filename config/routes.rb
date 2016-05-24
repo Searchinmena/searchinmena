@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 
   mount Sidekiq::Web => '/sidekiq'
-
   devise_for :users,
     controllers: {
       registrations: "users/registrations",
@@ -76,6 +75,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
 
   get '/search' => "search#index", as: :search
+  get '/autosuggestion' => "search#autosuggestion"
 
   match '*path' => "pages#home", via: :all
 end

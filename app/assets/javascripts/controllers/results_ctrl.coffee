@@ -46,7 +46,7 @@
     $scope.search.viewOption = $stateParams.viewOption || 'list-view'
     $scope.isNetViewSelected = ->
       $scope.search.viewOption == 'net-view'
-    
+
     $scope.dataLoaded = (data) ->
       $scope.results = for resultData in data.items
         ResultPresenterFactory.build(resultData)
@@ -69,7 +69,5 @@
     $scope.searchFilter = (type) ->
       if $scope.search.type == 'business'
         $scope.showBusinessFilter = true
-      if $scope.search.type == 'product' || $scope.search.type == 'service'
-        $scope.showProServFilter = true
     $scope.searchFilter($scope.search.type)
 ]

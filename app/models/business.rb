@@ -1,4 +1,6 @@
 class Business < ActiveRecord::Base
+  searchkick text_start: [:name], text_middle: [:name]
+
   before_save :logo_destroy
   attr_accessor :remove_logo
 
@@ -23,6 +25,12 @@ class Business < ActiveRecord::Base
 
   def main_products
     tags.map(&:english_title).join(', ')
+  end
+
+  def search_data
+    attributes.merge(
+      tag_name: tags.map(&:english_title)
+    )
   end
 
   private

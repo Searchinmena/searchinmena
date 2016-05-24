@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  searchkick text_start: [:name], text_middle: [:name]
   belongs_to :category
   belongs_to :business
 
@@ -17,4 +18,24 @@ class Product < ActiveRecord::Base
   has_many :product_payment_terms, dependent: :delete_all
   has_many :payment_terms, through: :product_payment_terms,
                            dependent: :delete_all
+
+  def search_data
+    attributes.merge(
+      category_name: category.english_title,
+      product_attributes: product_attr,
+      business: business_attr
+    )
+  end
+
+  def product_attr
+    data = {}
+    product_attributes.each do |property|
+      data[property.name] = property.value
+    end
+    data
+  end
+
+  def business_attr
+    { name: business.name, phone: business.phone }
+  end
 end
