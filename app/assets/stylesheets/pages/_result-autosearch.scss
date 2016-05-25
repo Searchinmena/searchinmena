@@ -46,37 +46,7 @@
 	}
 }
 
-@media(min-width: 300px) and (max-width: 359px){
-	.search-results-content{
-		.search-filters{
-			.search-field{
-				input[type="text"]{
-					max-width: 99%;
-					margin-bottom: 10px;
-				}
-			}
-		}
-		.dropdown{
-	    top: -14px;
-	    width: 86%;
-
-      .dropdown-menu.drop-down-list{
-        left: 27px;
-        top: 70px;
-        width: 97%;
-
-				.dropdown-submenu{
-				  width: 263px;
-				}
-        .category-box{
-          left: 30px;
-          min-width: 236px;
-        }
-      }
-    }
-  }
-}
-@media(min-width: 300px) and (max-width: 767px){
+@media screen and (min-width: 300px) and (max-width: $all-phone){
 
 	.search-results-content{
 
@@ -123,8 +93,12 @@
 		}
 		}
 }
+
+.companies-main-block .dropdown-menu {
+	top: 160px !important;
+}
 .companies-main-block .dropdown-menu li.dropdown-submenu{
-	width: 308px !important;
+	width: 273px !important;
 }
 .companies-main-block .search-filters .search-results-form{
 	width: 100% !important;
@@ -133,7 +107,7 @@
 	width: 100% !important;
 }
 }
-@media(min-width: 768px) and (max-width: 1024px){
+@media(min-width: $tablet) and (max-width: $desktop){
 	.search-results-content {
 
 		.dropdown{
@@ -184,4 +158,23 @@
 
 .companies-main-block .search-filters .search-results-form .select-field.browse-filter{
 	width: 29%;
+}
+@media screen and (min-width: 300px) and (max-width: $all-phone){
+	.search-results-content{
+	  .dropdown {
+	    .dropdown-menu{
+				.category-box{
+					min-width: 100px !important;
+					width: 77% !important;
+					left: auto !important;
+					right: 2px;
+				}
+			}
+	    .dropdown-menu.drop-down-list{
+				left: 27px;
+				top: 70px;
+				width: 100%;
+		  }
+		}
+	}
 }
