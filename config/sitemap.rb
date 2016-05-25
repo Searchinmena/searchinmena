@@ -50,10 +50,10 @@ SitemapGenerator::Sitemap.create do
   add Sim::Routes.user_session_path, priority: 0.0
   add Sim::Routes.new_user_registration_path, priority: 0.0
 
-  Business.find_each do |b|
-    add "#{Sim::Routes.business_show_path}#{b.id}",
-        priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
-  end
+  # Business.find_each do |b|
+  #   add "#{Sim::Routes.business_show_path}#{b.id}",
+  #       priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
+  # end
 
   Product.find_each do |p|
     add "#{Sim::Routes.product_show_path}#{p.id}",
