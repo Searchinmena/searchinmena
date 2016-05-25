@@ -151,7 +151,7 @@
       .field-category.browse-filter {
         width: 100%;
         margin-bottom: 1rem;
-        
+
         #choose-category {
           max-width: 200px;
           margin: auto;
@@ -260,7 +260,6 @@
 
   &:hover {
     @include box-shadow(0, 0, 5px, 2px, $border-grey);
-    z-index: 99;
   }
 
   .item-img-link {
@@ -460,10 +459,10 @@
   .result-item-title {
     display: none
   }
-  
+
   .result-item-title-strict {
     display: inline;
-    
+
     @media screen and (min-width: $tablet) {
       font-size: $bs1;
     }

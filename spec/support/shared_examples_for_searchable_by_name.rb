@@ -21,7 +21,19 @@ shared_examples "Searchable by name" do |resource_name|
     context "query matches name in the middle" do
       let(:query) { "source Na" }
 
-      it { is_expected.to eq([resource]) }
+      it { is_expected.to eq([]) }
+    end
+
+    context "query does not match name" do
+      let(:query) { "Resource Other" }
+
+      it { is_expected.to eq([resource, other]) }
+    end
+
+    context "query match name from combination string" do
+      let(:query) { "Something else" }
+
+      it { is_expected.to eq([]) }
     end
 
     context "query does not match name" do

@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  searchkick text_start: [:name], text_middle: [:name]
+  searchkick text_start: [:name]
   belongs_to :category
   belongs_to :business
 

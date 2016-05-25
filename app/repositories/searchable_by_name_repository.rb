@@ -3,13 +3,12 @@ module SearchableByNameRepository
 
   def where_name_like(_type, keywords)
     keywords = '*' if keywords.blank? || keywords.nil?
-    klass.search(keywords, fields: [{ name: :text_middle },
-                                    { name: :text_end },
-                                    { name: :text_start }]).records
+    klass.search(keywords, operator: "or").records
   end
 
   # TODO: Create single method for search by just changing class name
   def where_search_like(type, keywords)
+    keywords = '*' if keywords.blank?
     categories = case type
                  when :business
                    Tag.search(keywords, limit: LIMIT,
