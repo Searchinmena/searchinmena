@@ -8,7 +8,7 @@
     scope.filitered = []
     clickOnUl = false
     selected = null
-    template = '<div class="dropdown"><ul class="dropdown-menu drop-down-list" style="display:block;" ng-hide="!ngModel.length || !filitered.length || hideSuggestions" ng-click="clickInside()" ><li ng-repeat="item in filitered = (items | filter:{name:ngModel} | limitTo:20) track by $index" ng-class="{active:$index==active}"  class="dropdown-submenu" ng-mouseenter= "mouseenter($index, item)" ><a ng-class="{rightarrow: item.categories[0]}" ng-click="onSelect(item.name)">{{item.name}}</a><ul class="dropdown-menu category-box" ng-if="item.categories[0]" ng-click="clickInside()"><h4>{{item.name}}</h4><li ng-repeat="catagory in item.categories | limitTo:8"><a class="category-btn" ng-click="onSelect(catagory.name)" href="javascript:void(0)" tabindex="-1">{{catagory.name}}</a></li></ul></li></ul></div>'
+    template = '<div class="dropdown"><ul class="dropdown-menu drop-down-list" style="display:block;" ng-hide="hideSuggestions ||  !filitered.length " ng-click="clickInside()" ><li ng-repeat="item in filitered = (items | filter:{name:ngModel} | limitTo:20) track by $index" ng-class="{active:$index==active}"  class="dropdown-submenu" ng-mouseenter= "mouseenter($index, item)" ><a ng-class="{rightarrow: item.categories[0]}" ng-click="onSelect(item.name)">{{item.name}}</a><ul class="dropdown-menu category-box" ng-if="item.categories[0]" ng-click="clickInside()"><h4>{{item.name}}</h4><li ng-repeat="catagory in item.categories | limitTo:8"><a class="category-btn" ng-click="onSelect(catagory.name)" href="javascript:void(0)" tabindex="-1">{{catagory.name}}</a></li></ul></li></ul></div>'
 
     elem.bind 'blur', ->
       $timeout (->
@@ -53,10 +53,11 @@
       return
 
     scope.control.searchItems = (type) ->
+      scope.items = []
       if type == 'type'
         return
       else if !clickOnUl
-        AutoSuggest.query({ type: scope.control.type, query: scope.control.query},
+        AutoSuggest.query({ type: scope.control.type, query: scope.control.query },
           (object) ->
             scope.items = object.items
             scope.hideSuggestions = false;
