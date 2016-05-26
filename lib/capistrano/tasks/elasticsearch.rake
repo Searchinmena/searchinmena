@@ -11,3 +11,21 @@ namespace :elasticsearch do
     end
   end
 end
+
+namespace :elasticsearch do
+  desc "start elasticsearch"
+  task :start do
+    on roles(:app) do
+      execute "sudo service elasticsearch start"
+    end
+  end
+end
+
+namespace :elasticsearch do
+  desc "restart elasticsearch"
+  task :restart do
+    on roles(:app) do
+      execute "sudo service elasticsearch restart"
+    end
+  end
+end
