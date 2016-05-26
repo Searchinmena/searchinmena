@@ -17,7 +17,7 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 SitemapGenerator.verbose = false
 
 # To always create an index
-# SitemapGenerator::Sitemap.create_index = true
+SitemapGenerator::Sitemap.create_index = true
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
