@@ -5,12 +5,11 @@ class SearchController < ApplicationController
 
   def index
     response = search_service.perform(params[:type], params)
-
     if response.successful?
       render json: SearchResultsPresenter.new(result_presenter_factory,
                                               response.results,
                                               params[:page],
-                                              locale)
+                                              locale, response.count)
     else
       head :conflict
     end

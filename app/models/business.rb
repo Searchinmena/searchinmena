@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
-  searchkick text_start: [:name], text_middle: [:name]
+  searchkick text_start: [:name], text_middle: [:name],
+             settings: { index: { max_result_window: 100_000 } }
 
   before_save :logo_destroy
   attr_accessor :remove_logo

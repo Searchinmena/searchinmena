@@ -1,9 +1,15 @@
 module SearchableByNameRepository
   LIMIT = A9n.items_in_autocomplete
 
-  def where_name_like(_type, keywords)
+  def where_name_like(_type, keywords, page = nil)
     keywords = '*' if keywords.blank? || keywords.nil?
-    klass.search(keywords, operator: "or").records
+    page = 1 if page.nil?
+    offset = (page.to_i - 1) * 10
+    klass.search(keywords, fields: [:name, :category_name],
+                           limit: 10, misspellings: false,
+                           offset: offset).records
+
+    # klass.search(keywords, limit: 10, operator: "or", offset: offset).records
   end
 
   # TODO: Create single method for search by just changing class name
