@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  searchkick text_start: [:name]
+  searchkick text_start: [:name, :category_name],
+             settings: { index: { max_result_window: 100_000 } }
   belongs_to :category
   belongs_to :business
 
@@ -20,22 +21,9 @@ class Product < ActiveRecord::Base
                            dependent: :delete_all
 
   def search_data
-    attributes.merge(
-      category_name: category.english_title,
-      product_attributes: product_attr,
-      business: business_attr
-    )
-  end
-
-  def product_attr
-    data = {}
-    product_attributes.each do |property|
-      data[property.name] = property.value
-    end
-    data
-  end
-
-  def business_attr
-    { name: business.name, phone: business.phone }
+    {
+      name: name,
+      category_name: category.try(:english_title)
+    }
   end
 end
