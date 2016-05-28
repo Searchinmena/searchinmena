@@ -23,6 +23,6 @@ class Service < ActiveRecord::Base
   def search_data
     attributes.merge(
       category_name: category.english_title
-    )
+    ).merge(feature: business.try(:feature))
   end
 end

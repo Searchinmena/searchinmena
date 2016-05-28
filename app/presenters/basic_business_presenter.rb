@@ -5,16 +5,18 @@ class BasicBusinessPresenter < BasePresenter
   ITEM_LIMIT = A9n.validations[:max_product_service_limit]
 
   def as_json(*)
-    {
-      id: business.id,
-      name: business.name,
-      city: business.city,
-      country: country,
-      feature: business.feature,
-      weight: business.weight,
-      can_add_products: can_add_products,
-      can_add_services: can_add_services
-    }
+    if business.present?
+      {
+        id: business.id,
+        name: business.name,
+        city: business.city,
+        country: country,
+        feature: business.feature,
+        weight: business.weight,
+        can_add_products: can_add_products,
+        can_add_services: can_add_services
+      }
+    end
   end
 
   private

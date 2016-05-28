@@ -2,13 +2,14 @@ class Search::Strategies::BaseStrategy
   takes :repositories
 
   def perform(type, query)
-    results = repository.where_name_like(type, query[:query], query[:page])
+    results, total_count = repository.where_name_like(type, query[:query],
+                                                       query[:page])
     results = search_with_business_type(results, type, query)
     results = search_with_country(results, type, query)
     results = search_with_category(results, type, query)
     results = sort_business_on_weight(results, type)
     Search::Response.new(success: true, results: results,
-                         count: repository.count)
+                         count: total_count)
   end
 
   def autocomplete(type, query)

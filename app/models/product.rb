@@ -24,6 +24,6 @@ class Product < ActiveRecord::Base
     {
       name: name,
       category_name: category.try(:english_title)
-    }
+    }.merge(feature: business.try(:feature))
   end
 end
