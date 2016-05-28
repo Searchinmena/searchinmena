@@ -4,12 +4,12 @@ module SearchableByNameRepository
   def where_name_like(_type, keywords, page = nil)
     keywords = '*' if keywords.blank? || keywords.nil?
     page = 1 if page.nil?
-    offset = (page.to_i - 1) * 10
-    klass.search(keywords, fields: [:name, :category_name],
-                           limit: 10, misspellings: false,
-                           offset: offset).records
-
-    # klass.search(keywords, limit: 10, operator: "or", offset: offset).records
+    # offset = (page.to_i - 1) * 10
+    results = klass.search(keywords, fields: [:name, :category_name],
+                                     misspellings: false,
+                                     order: { feature: :desc },
+                                     page: page, per_page: 10)
+    [results.records, results.total_count]
   end
 
   # TODO: Create single method for search by just changing class name
