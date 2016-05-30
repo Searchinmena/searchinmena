@@ -5,7 +5,6 @@ describe BusinessRepository do
 
   it_behaves_like "any repository"
   it_behaves_like "Searchable by name", :business
-  it_behaves_like "Searchable By Country BusinessType Id", :business
 
   describe "#assign_tags" do
     let(:tags) { [build(:tag)] }
