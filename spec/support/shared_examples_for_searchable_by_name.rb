@@ -1,6 +1,6 @@
 shared_examples "Searchable by name" do |resource_name|
   describe "#where_name_like" do
-    subject { repository.where_name_like(resource_name, query) }
+    subject { repository.where_name_like(resource_name, query).first }
     let!(:resource) { create(resource_name, name: "Resource Name") }
     let!(:other) { create(resource_name, name: "Other") }
     before(:each) do
@@ -26,12 +26,6 @@ shared_examples "Searchable by name" do |resource_name|
 
     context "query does not match name" do
       let(:query) { "Resource Other" }
-
-      it { is_expected.to eq([]) }
-    end
-
-    context "query match name from combination string" do
-      let(:query) { "Something else" }
 
       it { is_expected.to eq([]) }
     end
