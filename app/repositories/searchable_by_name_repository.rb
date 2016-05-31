@@ -7,7 +7,7 @@ module SearchableByNameRepository
     # offset = (page.to_i - 1) * 10
     results = klass.search(keywords, fields: [:name, :category_name],
                                      misspellings: false,
-                                     order: { feature: :desc },
+                                     order: { feature: :desc, weight: :desc },
                                      page: page, per_page: 10)
     [results.records, results.total_count]
   end

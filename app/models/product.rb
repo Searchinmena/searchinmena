@@ -23,7 +23,9 @@ class Product < ActiveRecord::Base
   def search_data
     {
       name: name,
-      category_name: category.try(:english_title)
-    }.merge(feature: business.try(:feature))
+      category_name: category.try(:english_title),
+      feature: business.try(:feature),
+      weight: business.try(:weight)
+    }
   end
 end
