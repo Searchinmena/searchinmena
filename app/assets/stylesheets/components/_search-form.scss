@@ -160,8 +160,12 @@
   content: "";
 }
 .select-field{
-  background: #fff image-url("select-arrow.png") no-repeat scroll 90% 50%;
+  background: #fff image-url("select-arrow.png") no-repeat scroll 97% 50%;
   overflow: hidden;
+}
+
+.search-form .select-field {
+	background-position:  90% 50% !important;
 }
 .search-form .search-field .select-field select{
   background: none;
