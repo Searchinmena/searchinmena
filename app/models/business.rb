@@ -30,8 +30,13 @@ class Business < ActiveRecord::Base
 
   def search_data
     attributes.merge(
-      tag_name: tags.map(&:english_title)
+      tag_names: main_products,
+      business_type_ids: business_type
     )
+  end
+
+  def business_type
+    business_types.ids.join(',')
   end
 
   private

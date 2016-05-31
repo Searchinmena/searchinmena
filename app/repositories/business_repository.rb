@@ -1,6 +1,5 @@
 class BusinessRepository < AbstractRepository
-  include SearchableByNameRepository, SearchableByBusinessType,
-          SearchableByCountry
+  include SearchableByNameRepository, SearchableByCountryBusinessTypeId
 
   def assign_tags(business, tags)
     business.assign_attributes(tags: tags)

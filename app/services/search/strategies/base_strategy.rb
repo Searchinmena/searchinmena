@@ -2,14 +2,17 @@ class Search::Strategies::BaseStrategy
   takes :repositories
 
   def perform(type, query)
-    results, total_count = repository.where_name_like(type, query[:query],
-                                                       query[:page])
-    results = search_with_business_type(results, type, query)
-    results = search_with_country(results, type, query)
+    results, total_count =
+      if query[:business_type].present? || query[:country].present?
+        filter = business_type_country_filter_query(type, query)
+        repository.search_with_country_or_business(query[:query], filter,
+                                                   query[:page])
+      else
+        repository.where_name_like(type, query[:query], query[:page])
+      end
     results = search_with_category(results, type, query)
     results = sort_business_on_weight(results, type)
-    Search::Response.new(success: true, results: results,
-                         count: total_count)
+    Search::Response.new(success: true, results: results, count: total_count)
   end
 
   def autocomplete(type, query)
@@ -18,6 +21,16 @@ class Search::Strategies::BaseStrategy
   end
 
   private
+
+  def business_type_country_filter_query(_type, query)
+    if query[:business_type].present? && query[:country].present?
+      { business_type_ids: query[:business_type], country_id: query[:country] }
+    elsif query[:business_type].present?
+      { business_type_ids: query[:business_type] }
+    elsif query[:country].present?
+      { country_id: query[:country] }
+    end
+  end
 
   def search_with_business_type(results, type, query)
     if query[:business_type].present? && type == 'business'
