@@ -5,7 +5,6 @@
     ngModel: '='
     control: '='
   link: (scope, elem, attrs) ->
-    scope.filitered = []
     clickOnUl = false
     selected = null
     template = '<div class="dropdown"><ul class="dropdown-menu drop-down-list" style="display:block;" ng-hide="hideSuggestions ||  !filitered.length " ng-click="clickInside()" ><li ng-repeat="item in filitered = (items | filter:{name:ngModel} | limitTo:20) track by $index" ng-class="{active:$index==active}"  class="dropdown-submenu" ng-mouseenter= "mouseenter($index, item)" ><a ng-class="{rightarrow: item.categories[0]}" ng-click="onSelect(item.name)">{{item.name}}</a><ul class="dropdown-menu category-box" ng-if="item.categories[0]" ng-click="clickInside()"><h4>{{item.name}}</h4><li ng-repeat="catagory in item.categories | limitTo:8"><a class="category-btn" ng-click="onSelect(catagory.name)" href="javascript:void(0)" tabindex="-1">{{catagory.name}}</a></li></ul></li></ul></div>'
@@ -49,6 +48,7 @@
       scope.ngModel = name
       scope.control.query = name
       scope.search = scope.control;
+      if scope.search.page then (scope.search.page = 1) else null
       $state.go("results", scope.search.toParams())
       return
 
@@ -75,9 +75,6 @@
 
       scope.active = -1
       scope.hideSuggestions = false
-      # if we have an exact match and there is only one item in the list, automatically select it
-      if input and scope.filitered.length == 1 and scope.filitered[0].name.toLowerCase() == input.toLowerCase()
-        scope.click scope.filitered[0]
       return
 
     elem.after $compile(template)(scope)
