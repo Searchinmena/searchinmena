@@ -62,6 +62,4 @@ SitemapGenerator::Sitemap.create do
     add "#{Sim::Routes.business_show_path}#{b.id}",
         priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
   end
-
-
 end
