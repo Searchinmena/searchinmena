@@ -17,7 +17,7 @@ SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 SitemapGenerator.verbose = false
 
 # To always create an index
-SitemapGenerator::Sitemap.create_index = true
+# SitemapGenerator::Sitemap.create_index = true
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -43,24 +43,25 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add about_us_path, priority: 0.0
-  add contact_us_path, priority: 0.0
+  add about_us_path, priority: 0.1
+  add contact_us_path, priority: 0.1
   add terms_path, priority: 0.1
   # add posts_path, changefreq: 'weekly'
   add Sim::Routes.user_session_path, priority: 0.0
   add Sim::Routes.new_user_registration_path, priority: 0.0
 
-  # Business.find_each do |b|
-  #   add "#{Sim::Routes.business_show_path}#{b.id}",
-  #       priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
-  # end
-
   Product.find_each do |p|
     add "#{Sim::Routes.product_show_path}#{p.id}",
-        priority: 1.0, changefreq: 'daily', lastmod: p.updated_at
+        priority: 1.0, changefreq: 'daily'
   end
   Service.find_each do |s|
     add "#{Sim::Routes.service_show_path}#{s.id}",
-        priority: 1.0, changefreq: 'daily', lastmod: s.updated_at
+        priority: 1.0, changefreq: 'daily'
   end
+  Business.find_each do |b|
+    add "#{Sim::Routes.business_show_path}#{b.id}",
+        priority: 1.0, changefreq: 'daily', lastmod: b.updated_at
+  end
+
+
 end
