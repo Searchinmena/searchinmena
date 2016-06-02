@@ -42,4 +42,47 @@ shared_examples "Searchable by name" do |resource_name|
       it { is_expected.to eq([resource, other]) }
     end
   end
+  describe "#where_name_like total record" do
+    subject { repository.where_name_like(resource_name, query).last }
+    let!(:resource) { create(resource_name, name: "Resource Name") }
+    let!(:other) { create(resource_name, name: "Other") }
+    before(:each) do
+      resource_name.to_s.classify.constantize.reindex
+    end
+    context "query matches name from right" do
+      let(:query) { "Name" }
+
+      it { is_expected.to eq(1) }
+    end
+
+    context "query matches name from left" do
+      let(:query) { "Resource" }
+
+      it { is_expected.to eq(1) }
+    end
+
+    context "query matches name in the middle" do
+      let(:query) { "source Na" }
+
+      it { is_expected.to eq(0) }
+    end
+
+    context "query does not match name" do
+      let(:query) { "Resource Other" }
+
+      it { is_expected.to eq(0) }
+    end
+
+    context "query does not match name" do
+      let(:query) { "Something else" }
+
+      it { is_expected.to eq(0) }
+    end
+
+    context "query is empty" do
+      let(:query) { "" }
+
+      it { is_expected.to eq(2) }
+    end
+  end
 end

@@ -21,10 +21,13 @@ class Service < ActiveRecord::Base
                            dependent: :delete_all
 
   def search_data
-    attributes.merge(
+    {
+      name: name,
       category_name: category.english_title,
+      categries_name: category.try(:herarchy).join(','),
       feature: business.try(:feature),
       weight: business.try(:weight)
-    )
+    }
   end
 end
+

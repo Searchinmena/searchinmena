@@ -36,8 +36,14 @@ shared_examples "Searchable By Country BusinessType Id" do |resource_name|
 
     context "query matches business type id" do
       let(:query) { "Name" }
-      let(:condition) { { business_type_ids: resource.business_type  } }
-      it { is_expected.to eq([resource]) }
+      let(:condition) do
+        { business_type_ids:
+                          resource.business_types.ids.first }
+      end
+
+      it do
+        is_expected.to eq([resource])
+      end
     end
 
     context "query does not match business_type id" do
@@ -50,7 +56,7 @@ shared_examples "Searchable By Country BusinessType Id" do |resource_name|
     context "query match business_type id and country_id" do
       let(:query) { "Other" }
       let(:condition) do
-        { business_type_ids: other.business_type,
+        { business_type_ids: other.business_types.ids.first,
           country_id: 13 }
       end
       it { is_expected.to eq([other]) }

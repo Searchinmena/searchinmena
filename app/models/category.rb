@@ -1,7 +1,6 @@
 class Category < ActiveRecord::Base
   belongs_to :parent, class_name: 'Category', foreign_key: :parent_id
   has_many :children, class_name: 'Category', foreign_key: :parent_id
-
   has_many :translations, class_name: 'CategoryTranslation'
   accepts_nested_attributes_for :translations
   def parent?
@@ -17,6 +16,11 @@ class Category < ActiveRecord::Base
       name: english_title,
       sub_categories: children.map(&:category_id_and_name)
     }
+  end
+
+  # store all category id in array
+  def herarchy
+    (parent ? parent.herarchy : []) << english_title
   end
 
   def category_id_and_name
