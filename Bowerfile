@@ -1,6 +1,6 @@
 asset 'angular', '1.4.0'
 asset 'angular-mocks', '1.4.0'
-asset 'angular-ui-router', '0.2.15'
+asset 'angular-ui-router', '0.2.18'
 asset 'angular-resource', '1.4.0'
 asset 'angular-cookies', '1.4.0'
 asset 'jquery.cookie', '1.4.1'
