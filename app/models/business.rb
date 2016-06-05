@@ -29,17 +29,19 @@ class Business < ActiveRecord::Base
   end
 
   def search_data
+    # added tag name as categories name due to need not to change
+    # our searching method parameter
     attributes.merge(
-      tag_names: main_products,
+      categries_name: main_products,
       business_type_ids: business_type
     )
   end
 
+  private
+
   def business_type
     business_types.ids.join(',')
   end
-
-  private
 
   def logo_destroy
     self.remove_logo! if remove_logo == '1'

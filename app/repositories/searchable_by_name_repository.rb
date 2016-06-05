@@ -4,8 +4,7 @@ module SearchableByNameRepository
   def where_name_like(_type, keywords, page = nil)
     keywords = '*' if keywords.blank? || keywords.nil?
     page = 1 if page.nil?
-    # offset = (page.to_i - 1) * 10
-    results = klass.search(keywords, fields: [:name, :category_name],
+    results = klass.search(keywords, fields: [:categries_name, :name],
                                      misspellings: false,
                                      order: { feature: :desc, weight: :desc },
                                      page: page, per_page: 10)

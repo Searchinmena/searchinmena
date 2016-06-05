@@ -24,6 +24,7 @@ class Product < ActiveRecord::Base
     {
       name: name,
       category_name: category.try(:english_title),
+      categries_name: category.try(:herarchy),
       feature: business.try(:feature),
       weight: business.try(:weight)
     }
