@@ -13,13 +13,13 @@
   .form-content
     .browse-buttons
       %h2.title {{ "home.browse_header" | translate }}
-      %a.category-btn{ 'ui-sref': 'results({ type: "product" })' }
+      %a.category-btn{ 'ui-sref': 'categories({ type: "product" })' }
         %span.icon-shopping-cart
         {{ "home.products" | translate }}
-      %a.category-btn{ 'ui-sref': 'results({ type: "service" })' }
+      %a.category-btn{ 'ui-sref': 'categories({ type: "service" })' }
         %span.icon-user
         {{ "home.services" | translate }}
-      %a.category-btn{ 'ui-sref': 'results({ type: "business" })' }
+      %a.category-btn{ 'ui-sref': 'categories({ type: "business" })' }
         %span.icon-briefcase
         {{ "home.businesses" | translate }}
 %section.landing-header
