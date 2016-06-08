@@ -36,6 +36,7 @@ production:
   bigger_thumbnail_size: 240
   thumbnail_size: 120
   max_logo_size: 500
+  search_sub_categories_limit: 20
   aws:
     bucket_name: sim-uploads-demo
     access_key_id: AKIAJ4W5KE65VD6QDZFQ
