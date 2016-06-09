@@ -8,7 +8,11 @@
     {{ result.name() | characters: 48 }}
 .result-item-description
   .clearfix
-    .contact-item
+    .contact-item{ "ng-hide": "showPhoneNumber" }
+      %button.contact-supplier{ "ng-click": "showPhone()" }
+        %span.icon.icon-phone-alt
+        {{ "business.show.business_show_phone" | translate }}
+    .contact-item{ "ng-show": "showPhoneNumber" }
       %span.icon.icon-phone-alt
       {{ result.phone() }}
     .contact-item
