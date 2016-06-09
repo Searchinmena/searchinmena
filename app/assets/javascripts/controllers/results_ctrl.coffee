@@ -1,8 +1,8 @@
 @Sim.controller 'ResultsCtrl', ['$scope', '$state', '$stateParams',
   'Search', 'SearchService', 'ResultPresenterFactory', 'selectsLoader', 'MessageModal', 'ITEMS_PER_PAGE',
-                                'CategoriesModal', '$modal', '$controller',
+                                'CategoriesModal', '$modal', '$controller', 'ShowPhoneNumber',
   ($scope, $state, $stateParams, Search, SearchService,
-  ResultPresenterFactory, selectsLoader, MessageModal, ITEMS_PER_PAGE, CategoriesModal, $modal, $controller) ->
+  ResultPresenterFactory, selectsLoader, MessageModal, ITEMS_PER_PAGE, CategoriesModal, $modal, $controller, ShowPhoneNumber) ->
 
     $scope.search = new Search(
       type: $stateParams.type,
@@ -13,6 +13,11 @@
       page: $stateParams.page,
       viewOption: $stateParams.viewOption
     )
+
+    $scope.showPhoneNumber = false
+    $scope.showPhone = () ->
+      $scope.showPhoneNumber = true
+
     # add meta
     $controller('MetaCtrl').resultPage($stateParams.type)
 
