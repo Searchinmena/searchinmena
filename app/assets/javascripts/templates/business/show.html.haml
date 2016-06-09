@@ -7,7 +7,11 @@
       %h2.business-name
         {{ businessPresenter.name() }}
       .clearfix
-        .contact-item
+        .contact-item{ "ng-hide": "showPhoneNumber" }
+          %button.contact-supplier{ "ng-click": "showPhone()" }
+            %span.icon.icon-phone-alt
+            {{ "business.show.business_show_phone" | translate }}
+        .contact-item{ "ng-show": "showPhoneNumber" }
           %span.icon.icon-phone-alt
           {{ businessPresenter.phone() }}
         .contact-item

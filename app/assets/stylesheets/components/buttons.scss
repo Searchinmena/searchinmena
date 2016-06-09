@@ -5,7 +5,7 @@
   width: 100%;
   text-align: center;
   background: none;
-  padding: $bs1 $bs2 $bs0;
+  padding: $bs0 $bs-3;
   border: none;
   border-radius: $bs-4;
   text-transform: uppercase;
@@ -188,7 +188,7 @@ input[type="submit"] {
 
   @media screen and (min-width: $tablet) {
     width: 100%;
-    max-width: 2 * $bs8;
+    max-width: 2 * $bs10;
   }
 }
 

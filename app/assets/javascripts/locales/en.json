@@ -94,7 +94,8 @@
       "year_registered": "Year Company Registered",
       "no_of_employees": "No. of employees",
       "business_introduction": "Description",
-      "business_gallery": "Company Gallery"
+      "business_gallery": "Company Gallery",
+      "business_show_phone": "Show Phone Number"
     },
     "trade_details": {
       "annual_sales_value": "Annual sales value",
