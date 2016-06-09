@@ -94,7 +94,8 @@
       "year_registered": "سنة تسجيل الشركة",
       "no_of_employees": "عدد الموظفين",
       "business_introduction": "الوصف",
-      "business_gallery": "صور الشركة"
+      "business_gallery": "صور الشركة",
+      "business_show_phone": "عرض رقم الهاتف"
     },
     "trade_details": {
       "annual_sales_value": "حجم المبيعات السنوي",
