@@ -4,3 +4,4 @@
 # User-agent: *
 # Disallow: /
 Sitemap: http://searchinmena.com/sitemap.xml.gz
+Sitemap: http://54.149.229.100/sitemap.xml.gz
