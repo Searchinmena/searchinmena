@@ -37,10 +37,6 @@ Rails.application.routes.draw do
   aws_path = "https://#{A9n.aws[:bucket_name]}.s3.amazonaws.com/#{sitemap_path}"
   get '/sitemap.xml.gz', to: redirect(aws_path), as: :sitemap
 
-  verify = "sitemaps/google896380ac8a467f1b.html"
-  aws_verify = "https://#{A9n.aws[:bucket_name]}.s3.amazonaws.com/#{verify}"
-  get '/google896380ac8a467f1b.html', to: redirect(aws_verify), as: :verifysite
-
   resources :tags, only: [:index]
   resources :units, only: [:index]
   resources :currencies, only: [:index]
