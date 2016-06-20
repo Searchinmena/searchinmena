@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   resource :user_business, only: [:show, :update]
   resource :user
 
-  scope format: false, constraints: { format: /json/ } do
+  scope format: false, constraints: { format: /(js|json)/ } do
     resources :products, only: [:create, :index, :show, :destroy] do
       member do
         get "/related_items" => "products#related_items", as: :related_items
