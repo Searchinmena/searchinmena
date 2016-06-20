@@ -69,12 +69,12 @@
     )
 
     $stateProvider.state('product',
-      url: '/products/:id',
+      url: '/product/:id',
       templateUrl: 'products/show.html',
       controller: 'ProductsShowCtrl'
     )
     $stateProvider.state('service',
-      url: '/services/:id',
+      url: '/service/:id',
       templateUrl: 'services/show.html',
       controller: 'ServicesShowCtrl'
     )
