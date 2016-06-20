@@ -14,10 +14,10 @@ class Routes
   end
 
   def product_show_path
-    "/products/"
+    "/product/"
   end
 
   def service_show_path
-    "/services/"
+    "/service/"
   end
 end

@@ -52,11 +52,11 @@ SitemapGenerator::Sitemap.create do
 
   Product.find_each do |p|
     add "#{Sim::Routes.product_show_path}#{p.id}",
-        priority: 1.0, changefreq: 'daily'
+        priority: 1.0, changefreq: 'daily', lastmod: p.updated_at
   end
   Service.find_each do |s|
     add "#{Sim::Routes.service_show_path}#{s.id}",
-        priority: 1.0, changefreq: 'daily'
+        priority: 1.0, changefreq: 'daily', lastmod: s.updated_at
   end
   Business.find_each do |b|
     add "#{Sim::Routes.business_show_path}#{b.id}",
