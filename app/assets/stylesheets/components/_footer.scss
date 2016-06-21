@@ -29,6 +29,24 @@ address {
     @include float-direction;
     width: 50%;
   }
+
+  .award-section {
+    max-width: 640px;
+    text-align: center;
+
+    a {
+      border: none;
+    }
+
+    .award-img {
+      margin: 25px 0 0;
+      max-width: 300px;
+
+      @media screen and (max-width: $tablet) {
+        margin: 0px;
+      }
+    }
+  }
 }
 
 .footer-categories {
@@ -44,7 +62,6 @@ address {
   color: white;
   text-transform: uppercase;
   border: none;
-  display: block;
   padding: $bs0 0 ;
 
   span {
@@ -57,6 +74,10 @@ address {
   @media screen and (min-width: $tablet) {
     display: inline-block;
     padding: $bs-3 $bs0 ;
+  }
+
+  @media screen and (max-width: $big-phone) {
+    display: block;
   }
 }
 
@@ -146,10 +167,4 @@ address {
   font-size: $bs09;
   margin: $bs1 0 0;
   text-align: center;
-}
-
-.award-img {
-  margin: 25px;
-  max-width: 400px;
-  width: 100%;
 }
