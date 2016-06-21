@@ -8,13 +8,13 @@
     {{ result.name() | characters: 48 }}
 .result-item-description
   .clearfix
-    .contact-item{ "ng-hide": "showPhoneNumber" }
-      %button.contact-supplier{ "ng-click": "showPhone()" }
-        %span.icon.icon-phone-alt
-        {{ "business.show.business_show_phone" | translate }}
-    .contact-item{ "ng-show": "showPhoneNumber" }
-      %span.icon.icon-phone-alt
-      {{ result.phone() }}
+    -#.contact-item{ "ng-hide": "showPhoneNumber" }
+    -#  %button.contact-supplier{ "ng-click": "showPhone()" }
+    -#    %span.icon.icon-phone-alt
+    -#    {{ "business.show.business_show_phone" | translate }}
+    -#.contact-item{ "ng-show": "showPhoneNumber" }
+    -#  %span.icon.icon-phone-alt
+    -#  {{ result.phone() }}
     .contact-item
       %span.icon.icon-pushpin{ 'ng-show': 'result.location()' }
       {{ result.location() }}
@@ -37,9 +37,16 @@
       %td.attribute {{ "business.show.no_of_employees" | translate }}:
       %td {{ result.noOfEmployees() }}
 .business-summary
-  %a.plain-link{ 'ui-sref': '{{ result.showPath() }}' }
+  %a.clearfix.plain-link{ 'ui-sref': '{{ result.showPath() }}' }
     {{ "results.see_company_profile" | translate }}
-  %button.contact-supplier.business-contact{ "ng-click": "MessageModal.new(result.id())" }
-    %span.icon.icon-envelope
-    %span.value {{ "contact_seller" | translate }}
-    
+  .phone-number{ "ng-hide": "showPhoneNumber" }
+    %button.contact-supplier{ "ng-click": "showPhone()" }
+      %span.icon.icon-phone-alt
+      %span {{ "business.show.business_show_phone" | translate }}
+  .contact-item{ "ng-show": "showPhoneNumber" }
+    %span.icon.icon-phone-alt
+    {{ result.phone() }}
+  .phone-number
+    %button.contact-supplier.business-contact{ "ng-click": "MessageModal.new(result.id())" }
+      %span.icon.icon-envelope
+      %span {{ "contact_seller" | translate }}

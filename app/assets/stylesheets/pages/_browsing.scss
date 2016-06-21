@@ -389,9 +389,7 @@
 
   .contact-supplier {
     margin: $bs2 0 $bs0;
-    width: $bs7;
     position: absolute;
-    right: $bs2;
     top: 0;
 
     &.business-contact {
@@ -408,7 +406,6 @@
       right: auto;
       top: auto;
       width: 100%;
-      padding: $bs-3;
       margin-top: $bs-3;
 
       @media screen and (min-width: $big-desktop) {
@@ -418,6 +415,11 @@
       [dir="rtl"] & {
         left: auto;
       }
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin: $bs-5;
+      position: relative;
     }
 
     .value {
@@ -548,7 +550,7 @@
   @media screen and (min-width: $tablet) {
     position: absolute;
     border-left: $default-border;
-    width: 3 * $bs7;
+    width: 3 * $bs8;
 
     [dir="rtl"] & {
       border-left: 0;
