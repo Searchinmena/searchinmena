@@ -7,13 +7,13 @@
       %h2.business-name
         {{ businessPresenter.name() }}
       .clearfix
-        .contact-item{ "ng-hide": "showPhoneNumber" }
-          %button.contact-supplier{ "ng-click": "showPhone()" }
-            %span.icon.icon-phone-alt
-            {{ "business.show.business_show_phone" | translate }}
-        .contact-item{ "ng-show": "showPhoneNumber" }
-          %span.icon.icon-phone-alt
-          {{ businessPresenter.phone() }}
+        -#.contact-item{ "ng-hide": "showPhoneNumber" }
+        -#  %button.contact-supplier{ "ng-click": "showPhone()" }
+        -#    %span.icon.icon-phone-alt
+        -#    {{ "business.show.business_show_phone" | translate }}
+        -#.contact-item{ "ng-show": "showPhoneNumber" }
+        -#  %span.icon.icon-phone-alt
+        -#  {{ businessPresenter.phone() }}
         .contact-item
           %span.icon.icon-pushpin{ "ng-show": "businessPresenter.location()" }
           {{ businessPresenter.location() }}
@@ -21,6 +21,14 @@
             {{ businessPresenter.addressLine1() }}
           %span.address-line
             {{ businessPresenter.addressLine2() }}
+      .phone-number
+        %span{ "ng-hide": "showPhoneNumber" }
+          %button.contact-supplier{ "ng-click": "showPhone()" }
+            %span.icon.icon-phone-alt
+            {{ "business.show.business_show_phone" | translate }}
+        .contact-item{ "ng-show": "showPhoneNumber" }
+          %span.icon.icon-phone-alt
+          {{ businessPresenter.phone() }}
       %button.contact-supplier{ "ng-click": "MessageModal.new(businessPresenter.id())" }
         %span.icon.icon-envelope
         {{ "contact_seller" | translate }}

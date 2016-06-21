@@ -301,6 +301,17 @@
       margin-top: 0;
     }
   }
+
+  .phone-number {
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    @media screen and (max-width: $desktop) {
+      float: none;
+      margin-right: 0px;
+    }
+  }
 }
 
 .business-gallery {
