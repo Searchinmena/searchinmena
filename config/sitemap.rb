@@ -2,16 +2,16 @@
 SitemapGenerator::Sitemap.default_host = A9n.app_host
 
 # The remote host where your sitemaps will be hosted
-sm_host_path = "https://#{A9n.aws[:bucket_name]}.s3.amazonaws.com"
-SitemapGenerator::Sitemap.sitemaps_host = sm_host_path
+# sm_host_path = "https://#{A9n.aws[:bucket_name]}.s3.amazonaws.com"
+# SitemapGenerator::Sitemap.sitemaps_host = sm_host_path
 
 # The directory to write sitemaps to locally
-SitemapGenerator::Sitemap.public_path = 'tmp'
+# SitemapGenerator::Sitemap.public_path = 'tmp'
 
 # Directory/path if we don't want to upload to the root of sitemaps_host
-SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.sitemaps_path = '../shared/sitemaps/'
 
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
+# SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 
 # To disable all non-essential output
 SitemapGenerator.verbose = false

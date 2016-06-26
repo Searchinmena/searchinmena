@@ -4,4 +4,3 @@
 # User-agent: *
 # Disallow: /
 Sitemap: http://searchinmena.com/sitemap.xml.gz
-Sitemap: https://sim-uploads-production.s3.amazonaws.com/sitemaps/sitemap.xml.gz
