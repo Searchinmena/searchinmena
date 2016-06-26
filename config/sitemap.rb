@@ -9,7 +9,7 @@ SitemapGenerator::Sitemap.default_host = A9n.app_host
 # SitemapGenerator::Sitemap.public_path = 'tmp'
 
 # Directory/path if we don't want to upload to the root of sitemaps_host
-SitemapGenerator::Sitemap.sitemaps_path = '../../shared/sitemaps/'
+# SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
 # SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 
