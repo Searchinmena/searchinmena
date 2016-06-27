@@ -1,25 +1,27 @@
-%section.business-view
+%section.business-view{:itemscope => true, :itemtype => "http://schema.org/LocalBusiness"}
   .business-header
     .business-logo-holder
       %span{'class': 'feature-{{businessPresenter.feature()}}'}
-      %img{ src: "{{ businessPresenter.logo() || businessPresenter.default_logo() }}", class: "business-logo" }
+      %img{ :itemprop => "image", src: "{{ businessPresenter.logo() || businessPresenter.default_logo() }}", class: "business-logo" }
     .business-short-info
-      %h2.business-name
+      %h2.business-name{ :itemprop => "name" }
         {{ businessPresenter.name() }}
-      .clearfix
-        .contact-item
-          %span.icon.icon-pushpin{ "ng-show": "businessPresenter.location()" }
-          {{ businessPresenter.location() }}
-          %span.address-line
-            {{ businessPresenter.addressLine1() }}
-          %span.address-line
-            {{ businessPresenter.addressLine2() }}
+      .clearfix{ :itemscope => true, :itemtype => "http://schema.org/LocalBusiness" }
+        .contact-item{ :itemprop => "address", :itemscope => true, :itemtype => "http://schema.org/PostalAddress" }
+          %span.icon.icon-pushpin{ :itemprop => "addressCountry", "ng-show": "businessPresenter.location()" }
+          %span{ :itemprop => "addressCountry" }
+            {{ businessPresenter.location() }}
+          %span{ :itemprop => "streetAddress" }
+            %span.address-line
+              {{ businessPresenter.addressLine1() }}
+            %span.address-line
+              {{ businessPresenter.addressLine2() }}
       .phone-number
         %span{ "ng-hide": "showPhoneNumber" }
           %button.contact-supplier{ "ng-click": "showPhone()" }
             %span.icon.icon-phone-alt
             {{ "business.show.business_show_phone" | translate }}
-        .contact-item{ "ng-show": "showPhoneNumber" }
+        .contact-item{ :itemprop => "telephone", "ng-show": "showPhoneNumber" }
           %span.icon.icon-phone-alt
           {{ businessPresenter.phone() }}
       %button.contact-supplier{ "ng-click": "MessageModal.new(businessPresenter.id())" }
