@@ -1,7 +1,7 @@
 %section.item-gallery
   %a{ "ng-click": "openCoverPhoto()" }
     %span{'class': 'feature-{{business.feature}}'}
-    %img{ "ng-src": "{{ businessItem.coverPhotoUrl() }}", class: "product-main-image" }
+    %img{ :itemprop => "image", "ng-src": "{{ businessItem.coverPhotoUrl() }}", class: "product-main-image" }
 
   %ul.gallery-thumbs{ "ng-show": "photos.length" }
     %li.item-img-holder{ "ng-repeat": "photo in photos" }
@@ -9,9 +9,11 @@
         %img.item-img{ "ng-src": "{{ photo['thumb'] }}" }
 
 .item-header
-  %h1.item-title {{ businessItem.get('name') }}
+  %h1.item-title{:itemprop => "name"}
+    {{ businessItem.get('name') }}
   %breadcrumbs{ 'business-item': 'businessItem' }
 
   .seller
     {{ "business_item.seller" | translate }}:
-    %a{ "ui-sref": "business({ id: business.id })" } {{ business.name }}
+    %a{ :itemprop => "brand", :itemscope => true, :itemtype => "http://schema.org/Brand", "ui-sref": "business({ id: business.id })" }
+      %span{ :itemprop => "name" } {{ business.name }}
