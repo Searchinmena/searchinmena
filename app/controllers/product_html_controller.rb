@@ -8,7 +8,7 @@ class ProductHtmlController < BusinessItemsController
     @product_presenter = business_item_presenter_factory.new(
       business_item, repository, photos_repository, locale).as_json
 
-    if browser.bot?
+    if browser.bot
       redirect_to "/product/#{params[:id]}"
     end
   end
