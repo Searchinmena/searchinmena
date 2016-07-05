@@ -1,0 +1,2 @@
+module ProductHtmlHelper
+end

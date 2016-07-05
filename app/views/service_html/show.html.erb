@@ -1,0 +1,21 @@
+<ui-view>
+	<section itemtype="http://schema.org/Product" itemscope="" class="product-view">
+		<section class="item-gallery">
+			<img itemprop="image" class="product-main-image" src="<%= @service_presenter[:cover_photo][:url] %>">
+		</section>
+		<div class="item-header">
+			<h1 itemprop="name" class="item-title">
+				<%= @service_presenter[:business].business.name %>
+			</h1>
+		</div>
+		<div class="column description-column">
+			<div><h4 class="section-title line-behind">
+				<span>Description</span>
+			</h4>
+
+				<p itemprop="description" class="item-description"><%= @service_presenter[:description] %></p></div>
+		  </div>
+		</div>
+
+	</section>
+</ui-view>
