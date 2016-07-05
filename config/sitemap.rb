@@ -55,7 +55,7 @@ SitemapGenerator::Sitemap.create do
         priority: 1.0, changefreq: 'daily', lastmod: p.updated_at
   end
   Service.find_each do |s|
-    add "#{Sim::Routes.html_service_path(p.id)}",
+    add "#{Sim::Routes.html_service_path(s.id)}",
         priority: 1.0, changefreq: 'daily', lastmod: s.updated_at
   end
   Business.find_each do |b|
