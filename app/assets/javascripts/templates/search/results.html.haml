@@ -12,7 +12,7 @@
       .field.search-field.browse-filter{ "ng-hide": "true" }
         %input{ type: 'text', value: '',  "ng-model": "search.category", "ng-init": "search.category" }
       .field.search-field.browse-filter
-        %input{ type: 'text', value: '{{ search.query }}', 'ng-model': 'search.query',  :type => "text", "ng-show" => "search.type == 'business'",  "auto-search" => "=", "ng-change" => "search.searchItems('query')", "ng-focus" => "search.searchItems('query')", "control" => "search" }
+        %input{ value: '{{ search.query }}', 'ng-model': 'search.query',  :type => "text", "ng-show" => "search.type == 'business'",  "auto-search" => "=", "ng-change" => "search.searchItems('query')", "ng-focus" => "search.searchItems('query')", "control" => "search" }
 
         %input#prduct-service-control{ type: 'text', value: '{{ search.query }}',  'ng-model': 'search.query', "auto-search" => "=", "ng-change" => "search.searchItems('query')", "ng-focus" => "search.searchItems('query', 'true')", "control" => "search", "ng-hide" => "search.type == 'business'" }
 
