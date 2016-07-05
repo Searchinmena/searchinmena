@@ -51,11 +51,11 @@ SitemapGenerator::Sitemap.create do
   add Sim::Routes.new_user_registration_path, priority: 0.0
 
   Product.find_each do |p|
-    add "#{Sim::Routes.product_show_path}#{p.id}",
+    add "#{Sim::Routes.html_product_path(p.id)}",
         priority: 1.0, changefreq: 'daily', lastmod: p.updated_at
   end
   Service.find_each do |s|
-    add "#{Sim::Routes.service_show_path}#{s.id}",
+    add "#{Sim::Routes.html_service_path(p.id)}",
         priority: 1.0, changefreq: 'daily', lastmod: s.updated_at
   end
   Business.find_each do |b|

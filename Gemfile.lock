@@ -106,6 +106,7 @@ GEM
       sass (~> 3.4)
       thor (~> 0.19)
     bower-rails (0.10.0)
+    browser (2.2.0)
     builder (3.2.2)
     byebug (8.2.2)
     capistrano (3.4.0)
@@ -554,6 +555,7 @@ DEPENDENCIES
   angular-rails-templates (~> 0.2.0)
   bogus
   bower-rails
+  browser
   byebug
   capistrano (~> 3.3)
   capistrano-bundler

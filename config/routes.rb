@@ -30,6 +30,10 @@ Rails.application.routes.draw do
   get "/premium" => "pages#premium", as: :premium
 
   get "/home-1" => "landing_pages#home_one", as: :home_one
+  get "/product/:id/html" => "product_html#show", as: :html_product
+  get "/service/:id/html" => "service_html#show", as: :html_service
+  get '/google896380ac8a467f1b.html',
+      to: redirect('/google896380ac8a467f1b.html')
 
   root to: "pages#home"
 
