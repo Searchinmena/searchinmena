@@ -11,6 +11,7 @@ gem 'whenever', require: false
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_importable',
   git: "https://github.com/awais4123/active_admin_importable.git"
+gem "browser"
 
 # assets
 gem 'sass-rails', '~> 5.0'
