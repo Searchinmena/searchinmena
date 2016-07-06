@@ -7,10 +7,11 @@ class ProductHtmlController < BusinessItemsController
 
     @product_presenter = business_item_presenter_factory.new(
       business_item, repository, photos_repository, locale).as_json
+    redirect_to "/product/#{params[:id]}" unless browser.bot?
+  end
 
-    if !browser.bot?
-      redirect_to "/product/#{params[:id]}"
-    end
+  def self.detect_empty_ua!
+    @detect_empty_ua = true
   end
 
   def repository

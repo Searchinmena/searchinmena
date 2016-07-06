@@ -6,9 +6,12 @@ class ServiceHtmlController < BusinessItemsController
     return head :not_found unless business_item
     @service_presenter = business_item_presenter_factory.new(
       business_item, repository, photos_repository, locale).as_json
-    if !browser.bot?
-      redirect_to "/service/#{params[:id]}"
-    end
+
+    redirect_to "/service/#{params[:id]}" unless browser.bot?
+  end
+
+  def self.detect_empty_ua!
+    @detect_empty_ua = true
   end
 
   def repository
