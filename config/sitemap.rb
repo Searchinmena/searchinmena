@@ -65,15 +65,20 @@ SitemapGenerator::Sitemap.create do
   # Product categories
   Category.where(type: 'ProductCategory').find_each do |ct|
     c = CategoryTranslation.where(category_id: ct.id, locale: 'en')
-    name = ERB::Util.url_encode(c[0].value)
-    add "#{Sim::Routes.product_category_path}#{name}",
-        priority: 1.0, changefreq: 'daily', lastmod: c[0].updated_at
+    if c[0].value.present?
+      name = ERB::Util.url_encode(c[0].value)
+      add "#{Sim::Routes.product_category_path}#{name}",
+          priority: 1.0, changefreq: 'daily', lastmod: c[0].updated_at
+    end
   end
   # Service categories
   Category.where(type: 'ServiceCategory').find_each do |ct|
     c = CategoryTranslation.where(category_id: ct.id, locale: 'en')
-    name = ERB::Util.url_encode(c[0].value)
-    add "#{Sim::Routes.service_category_path}#{name}",
-        priority: 1.0, changefreq: 'daily', lastmod: c[0].updated_at
+    if c[0].value.present?
+      name = ERB::Util.url_encode(c[0].value)
+      add "#{Sim::Routes.service_category_path}#{name}",
+          priority: 1.0, changefreq: 'daily', lastmod: c[0].updated_at
+    end
   end
+
 end
