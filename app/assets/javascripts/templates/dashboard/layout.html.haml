@@ -21,6 +21,14 @@
       %a.nav-link{ "ui-sref": "dashboard.services", "ui-sref-active": "active" }
         {{ "dashboard_nav.services" | translate }}
         %span.icon.icon-user
+    %li
+      %a.nav-link{ "ui-sref": "dashboard.free_courses", "ui-sref-active": "active" }
+        {{ "dashboard_nav.free_courses" | translate }}
+        %span.icon.icon-book
+    %li
+      %a.nav-link{ "ui-sref": "dashboard.free_translation", "ui-sref-active": "active" }
+        {{ "dashboard_nav.free_translation" | translate }}
+        %span.icon.icon-transfer
     %li{ "ng-hide": "premium" }
       %a.nav-link{ "href": "/premium", target: "_self" }
         {{ "premium.pre" | translate }}

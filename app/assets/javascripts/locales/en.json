@@ -39,6 +39,8 @@
     "business": "Company",
     "products": "Products",
     "services": "Services",
+    "free_courses": "Free Courses",
+    "free_translation": "Free Translation",
     "messages": "Messages",
     "settings": "Account Settings"
   },

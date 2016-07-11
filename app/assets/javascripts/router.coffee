@@ -57,6 +57,16 @@
       templateUrl: 'business/basic_info.html',
       controller: 'BusinessBasicInfoCtrl'
     )
+    .state('dashboard.free_courses',
+      url: '/free_courses',
+      templateUrl: 'promotion/free_courses.html',
+      controller: 'FreeCoursesCtrl'
+    )
+    .state('dashboard.free_translation',
+      url: '/free_translation',
+      templateUrl: 'promotion/free_translation.html',
+      controller: 'FreeTranslationCtrl'
+    )
     .state('dashboard.business.trade_details',
       url: '/trade_details',
       templateUrl: 'business/trade_details.html',

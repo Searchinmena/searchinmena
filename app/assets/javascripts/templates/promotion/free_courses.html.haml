@@ -1,0 +1,23 @@
+%section.dashboard-content
+  %h1.title.greeting
+    {{ "dashboard.greeting" | translate }}
+    {{ currentUser.fullName() }}
+
+%section.buyer-dashboard-content.dashboard-content{ "ng-hide": "currentUser.canSeeBusinessItems()" }
+  .index-options
+    / %p {{ "dashboard.browse_message" | translate }}
+    / %button.small-button{ "ui-sref": "browse" }
+    /   {{ "home.browse" | translate }}
+
+    %p {{ "dashboard.create_business_message" | translate }}
+    %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
+      {{ "dashboard.create_business_button" | translate }}
+
+%section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()" }
+  %h2.header-title {{ "Free Online Courses" | translate }}
+  .business-short-info.business-profile-summary
+    %h2.business-name {{ business.name }}
+    .clearfix
+      .contact-item
+        %span.icon.icon-phone-alt
+        %span {{ business.phone }}
