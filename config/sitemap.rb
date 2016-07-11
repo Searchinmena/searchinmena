@@ -80,5 +80,4 @@ SitemapGenerator::Sitemap.create do
           priority: 1.0, changefreq: 'daily', lastmod: c[0].updated_at
     end
   end
-
 end
