@@ -1,6 +1,5 @@
 class CategoryPresenter
   takes :category
-  require 'uri'
 
   def as_json(*)
     {

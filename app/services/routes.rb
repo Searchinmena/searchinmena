@@ -20,4 +20,12 @@ class Routes
   def service_show_path
     "/service/"
   end
+
+  def product_category_path
+    "/results?type=product&query="
+  end
+
+  def service_category_path
+    "/results?type=service&query="
+  end
 end

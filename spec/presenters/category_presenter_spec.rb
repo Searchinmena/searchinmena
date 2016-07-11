@@ -13,7 +13,8 @@ describe CategoryPresenter do
     it do
       is_expected.to eq(id: category.id,
                         name: translation.value,
-                        parent_id: category.parent_id)
+                        parent_id: category.parent_id,
+                        path: ERB::Util.url_encode(translation.value))
     end
   end
 end
