@@ -293,5 +293,9 @@
     "competitor_page": "Visible on competitors' page",
     "google_page": "Display on Google (SEO)",
     "customer_services": "Customer Services"
+  },
+  "promotion": {
+    "free_courses": "دورات على الانترنت مجانا",
+    "free_translation": "دعوة إلى مؤتمر الترجمة"
   }
 }

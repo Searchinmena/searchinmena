@@ -4,20 +4,15 @@
     {{ currentUser.fullName() }}
 
 %section.buyer-dashboard-content.dashboard-content{ "ng-hide": "currentUser.canSeeBusinessItems()" }
-  .index-options
-    / %p {{ "dashboard.browse_message" | translate }}
-    / %button.small-button{ "ui-sref": "browse" }
-    /   {{ "home.browse" | translate }}
+  %p {{ "dashboard.create_business_message" | translate }}
+  %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
+    {{ "dashboard.create_business_button" | translate }}
 
-    %p {{ "dashboard.create_business_message" | translate }}
-    %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
-      {{ "dashboard.create_business_button" | translate }}
-
-%section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()" }
-  %h2.header-title {{ "Conference Call Translation" | translate }}
-  .business-short-info.business-profile-summary
-    %h2.business-name {{ business.name }}
-    .clearfix
-      .contact-item
-        %span.icon.icon-phone-alt
-        %span {{ business.phone }}
+%section.dashboard-content.promotion{ "ng-show": "currentUser.canSeeBusinessItems()" }
+  .free-translation
+    %h2.header-title {{ "promotion.free_translation" | translate }}
+    .content
+      %img.content-image{ src: '/promotion/free_translation/tarjemli-content.png' }
+    .footer
+      %a{ href: "http://tarjemly-live.com/?utm_source=SIM-wesbite&utm_medium=dashboard&utm_term=download&utm_campaign=registrations#download", target: "_blank" }
+        %img.content-image{ src: '/promotion/free_translation/tarjemli-footer.png' }

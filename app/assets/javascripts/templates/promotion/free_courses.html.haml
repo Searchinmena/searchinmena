@@ -4,20 +4,12 @@
     {{ currentUser.fullName() }}
 
 %section.buyer-dashboard-content.dashboard-content{ "ng-hide": "currentUser.canSeeBusinessItems()" }
-  .index-options
-    / %p {{ "dashboard.browse_message" | translate }}
-    / %button.small-button{ "ui-sref": "browse" }
-    /   {{ "home.browse" | translate }}
+  %p {{ "dashboard.create_business_message" | translate }}
+  %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
+    {{ "dashboard.create_business_button" | translate }}
 
-    %p {{ "dashboard.create_business_message" | translate }}
-    %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
-      {{ "dashboard.create_business_button" | translate }}
-
-%section.dashboard-content{ "ng-show": "currentUser.canSeeBusinessItems()" }
-  %h2.header-title {{ "Free Online Courses" | translate }}
-  .business-short-info.business-profile-summary
-    %h2.business-name {{ business.name }}
-    .clearfix
-      .contact-item
-        %span.icon.icon-phone-alt
-        %span {{ business.phone }}
+%section.dashboard-content.promotion{ "ng-show": "currentUser.canSeeBusinessItems()" }
+  .free-courses
+    %h2.header-title {{ "promotion.free_courses" | translate }}
+    %a{ href: 'https://www.courses.potential.com/c/search-mena-courses/?couponcode=SearchinMENA2016', target: "_blank" }
+      %img.promotion-image{ src: '/promotion/free_courses/potential-content.png' }

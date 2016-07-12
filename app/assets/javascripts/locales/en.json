@@ -293,5 +293,9 @@
     "competitor_page": "Visible on competitors' page",
     "google_page": "Display on Google (SEO)",
     "customer_services": "Customer Services"
+  },
+  "promotion": {
+    "free_courses": "Free Online Courses",
+    "free_translation": "Conference Call Translation"
   }
 }

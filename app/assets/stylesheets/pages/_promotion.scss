@@ -1,0 +1,32 @@
+.promotion {
+  a {
+    border: none;
+  }
+  .free-courses {
+    .promotion-image {
+      width: 100%;
+    }
+  }
+
+  .free-translation {
+
+    .content {
+      text-align: center;
+      margin: auto;
+      max-width: 680px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .footer {
+      margin: auto;
+      max-width: 1153px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
