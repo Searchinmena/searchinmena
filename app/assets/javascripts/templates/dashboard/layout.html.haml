@@ -22,11 +22,11 @@
         {{ "dashboard_nav.services" | translate }}
         %span.icon.icon-user
     %li
-      %a.nav-link{ "ui-sref": "dashboard.free_courses", "ui-sref-active": "active" }
+      %a.nav-link{ "ng-show": "currentUser.canSeeBusinessItems()", "ui-sref": "dashboard.free_courses", "ui-sref-active": "active" }
         {{ "dashboard_nav.free_courses" | translate }}
         %span.icon.icon-book
     %li
-      %a.nav-link{ "ui-sref": "dashboard.free_translation", "ui-sref-active": "active" }
+      %a.nav-link{"ng-show": "currentUser.canSeeBusinessItems()", "ui-sref": "dashboard.free_translation", "ui-sref-active": "active" }
         {{ "dashboard_nav.free_translation" | translate }}
         %span.icon.icon-transfer
     %li{ "ng-hide": "premium" }
