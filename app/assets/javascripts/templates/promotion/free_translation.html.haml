@@ -3,11 +3,6 @@
     {{ "dashboard.greeting" | translate }}
     {{ currentUser.fullName() }}
 
-%section.buyer-dashboard-content.dashboard-content
-  %p {{ "dashboard.create_business_message" | translate }}
-  %button.small-button{ "ui-sref": "dashboard.business.basic_info" }
-    {{ "dashboard.create_business_button" | translate }}
-
 %section.dashboard-content.promotion
   .free-translation
     %h2.header-title {{ "promotion.free_translation" | translate }}
