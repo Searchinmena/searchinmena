@@ -41,6 +41,6 @@ after "deploy:published", "db:seed"
 after "deploy:finishing", "deploy:cleanup"
 after 'deploy:finished', 'god:restart'
 after 'god:restart', 'sidekiq:restart'
-# after 'deploy:finished', 'deploy:sitemap:refresh'
+after 'deploy:finished', 'deploy:sitemap:refresh:no_ping'
 
 before 'deploy:compile_assets', 'bower:install'
