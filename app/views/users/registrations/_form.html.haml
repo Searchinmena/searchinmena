@@ -10,7 +10,7 @@
 
     %div{ "ng-hide": "isFacebookSignup()" }
       = link_to(localized_omniauth_path(:facebook),
-                class: "facebook-sign-up") do
+                class: "facebook-sign-up", target: "_self") do
         .icon-facebook
         = t("sign_up.facebook")
 
