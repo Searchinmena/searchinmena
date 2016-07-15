@@ -17,7 +17,7 @@ class UserBusinessesController < ApplicationController
     response = business_saver.perform
     render_response(response)
     if response.successful?
-      update_inslightly unless Rails.env.production?
+      update_inslightly
       _define_cio_callback(@business, response)
     end
   end
