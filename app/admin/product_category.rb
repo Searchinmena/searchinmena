@@ -1,6 +1,7 @@
 ActiveAdmin.register ProductCategory do
   menu parent: 'Manage Category'
-  permit_params :parent_id, translations_attributes: [:id, :locale, :value]
+  permit_params :parent_id, :meta_title, :meta_keywords, :meta_description,
+                translations_attributes: [:id, :locale, :value]
 
   filter :id
   filter :parent_id, as: :numeric
@@ -18,6 +19,9 @@ ActiveAdmin.register ProductCategory do
     column 'Title' do |category|
       category.translations.pluck(:value).join('  ')
     end
+    column :meta_title
+    column :meta_keywords
+    column :meta_description
     actions
   end
 
@@ -36,6 +40,9 @@ ActiveAdmin.register ProductCategory do
       row 'Arabic Title' do |category|
         category.translations.where(locale: 'ar').pluck(:value).join('  ')
       end
+      row :meta_title
+      row :meta_keywords
+      row :meta_description
     end
   end
   form do |f|
@@ -52,6 +59,9 @@ ActiveAdmin.register ProductCategory do
                           label: 'Title',
                           input_html: { rows: 1 }
       end
+      f.input :meta_title
+      f.input :meta_keywords
+      f.input :meta_description
       actions # adds the 'Submit' and 'Cancel' buttons
     end
   end
