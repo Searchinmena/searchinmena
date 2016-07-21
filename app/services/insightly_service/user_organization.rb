@@ -1,7 +1,8 @@
 class InsightlyService::UserOrganization < InsightlyService::InsightlyCreator
   def perform
     org = @insightly.create_organisation(organisation: org_params)
-    inslightly_create('organisation', org.organisation_id, @user.id)
+    inslightly_create('organisation', org.organisation_id, @user.id,
+                      org.organisation_name)
   end
 
   def update
@@ -21,7 +22,6 @@ class InsightlyService::UserOrganization < InsightlyService::InsightlyCreator
       active: true,
       contactinfos: contact_infos,
       links: links_params
-
     }
   end
 end
