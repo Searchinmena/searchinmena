@@ -1,7 +1,8 @@
 class InsightlyService::UserContact < InsightlyService::InsightlyCreator
   def perform
     contact = @insightly.create_contact(contact: user_contact_params)
-    inslightly_create('contact', contact.contact_id, @user.id)
+    inslightly_create('contact', contact.contact_id, @user.id,
+                      user_full_name(@user))
   end
 
   def update

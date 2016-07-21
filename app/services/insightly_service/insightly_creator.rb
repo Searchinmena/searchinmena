@@ -28,14 +28,19 @@ class InsightlyService::InsightlyCreator < BaseService
   def contact_infos
     [{ type: "Email", label: "Work", detail: user.email },
      { type: "Phone", label: "Work", detail: user.business.phone
-     }
-    ]
+     }]
   end
 
   def links_params
     contact_id = find_insightly_type_id('contact')
-    organigasation_id = find_insightly_type_id('organisation')
-    [{ contact_id: contact_id }, { organisation_id: organigasation_id }]
+    organisation_id = find_insightly_type_id('organisation')
+    [{ contact_id: contact_id, organisation_id: organisation_id }]
+  end
+
+  def opportunity_links_params
+    contact_id = find_insightly_type_id('contact')
+    organisation_id = find_insightly_type_id('organisation')
+    [{ contact_id: contact_id }, { organisation_id: organisation_id }]
   end
 
   def find_insightly_type_id(type)
@@ -46,5 +51,9 @@ class InsightlyService::InsightlyCreator < BaseService
     insightly_repository.find_or_create(insightly_type: type,
                                         type_id: id, name: name,
                                         user_id: user_id)
+  end
+
+  def user_full_name(user)
+    user.first_name + " " + user.last_name
   end
 end
