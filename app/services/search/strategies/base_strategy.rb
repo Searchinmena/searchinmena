@@ -10,7 +10,7 @@ class Search::Strategies::BaseStrategy
       else
         repository.where_name_like(type, query[:query], query[:page])
       end
-    results = search_with_category(results, type, query)
+    # results = search_with_category(results, type, query)
     results = sort_business_on_weight(results, type)
     Search::Response.new(success: true, results: results, count: total_count)
   end
@@ -48,13 +48,13 @@ class Search::Strategies::BaseStrategy
     end
   end
 
-  def search_with_category(results, type, query)
-    if query[:category].present? && (type == 'product' || type == 'service')
-      repository.where_category_id(results, query[:category])
-    else
-      results
-    end
-  end
+  # def search_with_category(results, type, query)
+  #   if query[:category].present? && (type == 'product' || type == 'service')
+  #     repository.where_category_id(results, query[:category])
+  #   else
+  #     results
+  #   end
+  # end
 
   def sort_business_on_weight(results, type)
     if type == 'business'

@@ -1,8 +1,8 @@
-@Sim.controller 'ServicesShowCtrl', ['$scope', '$stateParams',
-  'BusinessItemLoader', 'ServiceFactory', '$controller','SimilarItemsLoader', 'PrevItemLoader',
-   'NextItemLoader', 'SERVICE_SHOW_PATH',
-  ($scope, $stateParams, BusinessItemLoader, ServiceFactory, $controller, SimilarItemsLoader,PrevItemLoader, NextItemLoader,
-  SERVICE_SHOW_PATH) ->
+@Sim.controller 'ServicesShowCtrl', ['$scope', '$stateParams', 'BusinessItemLoader', 'ServiceFactory',
+                                     'SimilarItemsLoader', 'PrevItemLoader', 'NextItemLoader',
+                                     'SERVICE_SHOW_PATH', 'MetaService',
+  ($scope, $stateParams, BusinessItemLoader, ServiceFactory, SimilarItemsLoader, PrevItemLoader, NextItemLoader,
+   SERVICE_SHOW_PATH, MetaService) ->
     BusinessItemLoader.initialize(
       ServiceFactory, $stateParams.id, $scope)
     SimilarItemsLoader.initialize(
@@ -13,5 +13,17 @@
     NextItemLoader.initialize(
         ServiceFactory, $stateParams.id, $scope)
 
-    $controller('MetaCtrl').serviceMeta($stateParams.id)
+    # Set meta tags
+    ServiceFactory.get({ id: $stateParams.id },
+      (attributes) ->
+        businessItem = ServiceFactory.buildPresenter(attributes)
+        businessItemName = businessItem.attributes.name
+        businessItemCountry = businessItem.attributes.business.country
+        businessItemCategories = MetaService.getCategories(businessItem.attributes.breadcrumbs)
+
+        businessItemtitle = businessItemName + ' in ' + businessItemCountry + ' | ' + businessItemCategories
+
+        MetaService.set businessItemtitle, businessItem.attributes.description,
+          businessItemtitle
+    )
 ]
