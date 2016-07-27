@@ -56,7 +56,8 @@
 
       # set meta tags
       if $scope.total > 0 && $scope.search.type != 'business'
-        metaInfo =  $scope.results[0].attributes.breadcrumbs[0]
+        metaInfo =  $scope.results[0].attributes.breadcrumbs
+        metaInfo = metaInfo[metaInfo.length-1]
         MetaService.set metaInfo.meta_title, metaInfo.meta_description, metaInfo.meta_keywords
       else
         MetaService.set '','',''

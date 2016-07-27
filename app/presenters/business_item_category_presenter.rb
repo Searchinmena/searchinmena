@@ -8,9 +8,9 @@ class BusinessItemCategoryPresenter < BasePresenter
       {
         id: c.id,
         name: category_repository.translation_for(c, locale),
-        meta_title: c.meta_title
-        # meta_keywords: c.meta_keywords,
-        # meta_description: c.meta_description
+        meta_title: c.meta_title,
+        meta_keywords: c.meta_keywords,
+        meta_description: c.meta_description
       }
     end
   end
